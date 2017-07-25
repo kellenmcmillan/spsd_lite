@@ -685,9 +685,9 @@
                 "component_colors": {
                     "background_color": {
                         "color": "b",
-                        "hue": "hlr",
+                        "hue": "hlst",
                         "property": "bg",
-                        "opaqueness": ""
+                        "opaqueness": "lst"
                     },
                     "border_color": {
                         "color": "b",
@@ -825,9 +825,9 @@
                 "component_colors": {
                     "background_color": {
                         "color": "b",
-                        "hue": "hlr",
+                        "hue": "hlst",
                         "property": "bg",
-                        "opaqueness": ""
+                        "opaqueness": "lst"
                     },
                     "border_color": {
                         "color": "b",
