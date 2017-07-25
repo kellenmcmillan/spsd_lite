@@ -1,9 +1,8 @@
 
-<div minfull-screen class="full-width no-margin no-padding" style="background: transparent; margin-top: -48px">
+<div minfull-screen class="full-width" style="background: transparent; margin-top: -48px">
 
-    <div class="mdl-grid component full-width" style="min-height: 100%">
-        <div class="mdl-layout-spacer mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-
+    <div class="mdl-grid component" style="min-height: 100%">
+        <div class="mdl-cell--2-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
         <div class="portfolio_item mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone {{base_hue_darkest.name}} mdl-shadow--4dp" ng-repeat="item in primary_gallery.component_data.galleries[0].items">
             <div class="lightweight-portfolio--content" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false">
 
@@ -21,7 +20,6 @@
                 <p class="mdl-typography--font-regular" style="padding: 8px; margin: 0;" color="b" hue="hlr" property="txt" opaqueness lw-color>{{item.title}}</p>
             </div>
         </div>
-
-        <div class="mdl-layout-spacer mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-cell--2-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
     </div>
 </div>
