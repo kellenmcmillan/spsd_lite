@@ -4,7 +4,7 @@
     <div class="mdl-grid component full-width" style="min-height: 100%">
         <div class="mdl-layout-spacer mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
 
-        <div class="portfolio_item mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone {{base_hue_darkest.name}} mdl-shadow--4dp" ng-repeat="item in primary_gallery.component_data.galleries[0].items" style="margin-top: -64px;">
+        <div class="portfolio_item mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone {{base_hue_darkest.name}} mdl-shadow--4dp" ng-repeat="item in primary_gallery.component_data.galleries[0].items">
             <div class="lightweight-portfolio--content" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false">
 
                 <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.image_src}}">
