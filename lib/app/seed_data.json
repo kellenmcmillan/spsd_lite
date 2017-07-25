@@ -721,7 +721,19 @@
                             "Screen": "Color_Editor"
                         }
                     }
-                ]
+                ],
+                "component_background_media": {
+                    "media_type": "image",
+                    "image": {
+                        "landscape": "assets/portfolios/maintenance-jobs/landscape/maintenanceJobs1-landscape.jpg",
+                        "portrait": null,
+                        "thumbnail": null
+                    },
+                    "video_src": {
+                        "mp4": null,
+                        "ogg": null
+                    }
+                }
             },
             "primary_blog_feed": {
                 "component_data": [
@@ -843,7 +855,19 @@
                             "Screen": "Color_Editor"
                         }
                     }
-                ]
+                ],
+                "component_background_media": {
+                    "media_type": "image",
+                    "image": {
+                        "landscape": "assets/portfolios/maintenance-jobs/landscape/maintenanceJobs1-landscape.jpg",
+                        "portrait": null,
+                        "thumbnail": null
+                    },
+                    "video_src": {
+                        "mp4": null,
+                        "ogg": null
+                    }
+                }
             }
         }
     ],
