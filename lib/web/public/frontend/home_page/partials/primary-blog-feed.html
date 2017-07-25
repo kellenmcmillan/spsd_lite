@@ -1,0 +1,22 @@
+<style>
+
+</style>
+<div 
+ minfull-screen
+ class="mdl-grid no-margin full-width no-padding" 
+ color="{{primary_blog_feed.component_colors.background_color.color}}" 
+ hue="{{primary_blog_feed.component_colors.background_color.hue}}" 
+ property="{{primary_blog_feed.component_colors.background_color.property}}" 
+ opaqueness="{{primary_blog_feed.component_colors.background_color.opaqueness}}" 
+ lw-color>
+    <div ng-repeat="post in primary_blog_feed.component_data" class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width no-margin no-padding">
+        <div class="mdl-grid" ng-if="index % 2 == 0">
+            <div>even</div>
+            <div></div>
+        </div>
+        <div class="mdl-grid" ng-if="index % 2 != 0">
+            <div>odd</div>
+            <div></div>
+        </div>
+    </div>
+</div>

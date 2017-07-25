@@ -1,0 +1,31 @@
+<!-- adjustments made for template-zero slideshow header -->
+<style ng-if="is_stretched && location == '/'">
+    .mdl-layout__drawer-button i {color: {{base_hue_text__lightest.value}}!important;}
+</style>
+<style ng-if="location == '/' && !is_stretched">
+    .header-navigation {color: {{base_hue_text__darker.value}}!important;}
+</style>
+<style ng-if="!is_stretched">
+    .mdl-layout__drawer-button i {color: {{base_hue_text__darker.value}};}
+    .header-navigation {color: {{base_hue_text__darker.value}}!important;}
+    .mdl-layout__header {border-bottom: {{primary_hue_normal.value}} 2px solid;}
+    .mdl-badge[data-badge]:after {background: {{base_hue_text__lighter.value}}!important; color: {{primary_hue_normal.value}}!important}
+</style>
+<style ng-if="is_stretched">
+    .mdl-badge[data-badge]:after {background: {{primary_hue_normal.value}}!important; color: {{base_hue_text__lightest.value}}!important}
+</style>
+<style ng-if="location !== '/'">
+	.mdl-layout__header {border-bottom: {{primary_hue_normal.value}} 2px solid;}
+	.header-navigation {color: {{base_hue_text__darker.value}}!important;}
+    .mdl-layout__header {background-color: {{base_hue_lightest.value}}!important;}
+    .mdl-layout__drawer-button i {color: {{base_hue_text__darker.value}}!important;}
+    .mdl-layout__header .mdl-layout-title i {color: {{base_hue_text__darker.value}}!important;}
+</style>
+<style ng-if="location !== '/' && is_stretched">
+    .mdl-layout__header {border-bottom: {{primary_hue_normal.value}} 2px solid;}
+    .header-navigation {color: {{base_hue_text__lightest.value}}!important;}
+    .mdl-layout__header {background-color: transparent!important;}
+    .mdl-layout__drawer-button i {color: {{base_hue_text__lightest.value}}!important;}
+    .mdl-layout__header .mdl-layout-title i {color: {{base_hue_text__lightest.value}}!important;}
+</style>
+<!-- adjustments made for template-zero slideshow header -->

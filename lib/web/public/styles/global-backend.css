@@ -1,0 +1,121 @@
+@charset "UTF-8";
+/* CSS Document */
+.backend-app__header {display: -webkit-flex!important; display: flex!important; box-sizing: border-box; position: fixed; top: 100px; left: 0; width: 100%; height: 48px; z-index: 1; }
+.backend-app__header .backend-app__title {font-size: 18px!important; margin: 12px 8px;}
+.app-lab-user__list {margin-top: 68px;}
+.backend-app__menu {
+    width: 275px; position: fixed; 
+    top: 148px; left: 0; overflow-y: auto; 
+    vertical-align: baseline; 
+    display: block;
+    -webkit-flex-direction: column; -ms-flex-direction: column; flex-direction: column;
+    -webkit-flex-wrap: nowrap; -ms-flex-wrap: nowrap; flex-wrap: nowrap;
+    box-sizing: border-box;
+}
+.backend-app__menu i {
+    padding-right: 16px;
+}
+.backend_app__menu-item {
+    display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; 
+    -webkit-box-orient: horizontal; box-orient: horizontal; -webkit-box-direction: normal; box-direction: normal; 
+    -webkit-flex-direction: row; -ms-flex-direction: row; flex-direction: row; 
+    -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; 
+    font-weight: 500; padding: 8px 24px;
+}
+.backend-app__content {width: calc(100% - 275px); position: absolute; right: 0; top: 48px;}
+.app-lab-control--container {height: 36px; opacity: 0; transition: all .7s ease-in-out; position: absolute; bottom: 16px; left: 16px;}
+.component:hover .app-lab-control--container {opacity: 1;}
+
+
+
+
+
+
+
+
+/* modal widget */
+#update-user__curtain {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,.52); z-index: 1000; display: none;}
+/*******Delete this*******/
+.modal {height: calc(100% - 16px); z-index: 1001;}
+/*******Delete this*******/
+.modal > .mdl-card__title {height: 60px;}
+.modal h3 {font-size: 18px;}
+.modal h4 {margin: 0px; font-size: 16px;}
+.modal .textField li {height: 40px;}
+.mdl-textfield {height: 68px;}
+.modal .mdl-textfield__input {width: 100%; border-bottom: 2px solid rgba(0,0,0,.12);}
+.modal .mdl-textfield__label:after {background-color: #333; height: 2px;}
+.modal .credentials .mdl-textfield__input {border-bottom: 2px solid rgba(0,0,0,0);}
+.modal .credentials .mdl-textfield__label:after {background-color: transparent;}
+.modal input:focus {border-bottom: 2px #333 solid!important;}
+.center--left-right {margin-left: auto; margin-right: auto;}
+/*******alter this*******/
+.modal .mdl-card__actions {position: absolute; bottom: 0px;}
+/*******alter this*******/
+.noData {height: 75px; line-height: 75px; border: 4px solid rgb(249,168,37); display: -webkit-box !important; display: -webkit-flex !important; display: -ms-flexbox !important; display: flex !important; -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; -ms-flex-direction: row;flex-direction: row; -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; font-weight: 700;}
+.noData .material-icons {font-size: 35px; margin-right: 32px; margin-left: 20px;}
+/* radio button hack */
+.mdl-radio.is-checked .mdl-radio__outer-circle {border: 2px solid #F9A825;}
+.mdl-radio__inner-circle {background: #F9A825;}
+.mdl-radio__ripple-container .mdl-ripple {background: #F9A825;}
+.modal p {font-size: 16px;}
+.modal.mdl-card__supporting-text {overflow-y: auto!important;}
+.sub--account-card > .mdl-card__title {height: 45px;}
+.sub--account-card > .mdl-card__supporting-text {height: 45px;}
+.sub--account-card h3 {font-size: 14px;}
+.sub--account-card {min-height: 100px!important; margin-bottom: 10px;}
+.sub--account-card p {font-size: 12px;}
+/* end modal widget */
+
+
+
+
+
+
+
+
+
+
+
+/* user action confirmation box */
+#confirmation__curtain {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,.52); z-index: 2000; display: none;}
+#confirmation {display:none;}
+.confimation-card.mdl-card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  width: 300px;
+  height: 256px;
+  background: #e0e0e0;
+}
+.confimation-card > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.confimation-card > .mdl-card__title {
+  align-items: flex-start;
+  height: 53px;
+}
+.confimation-card > .mdl-card__supporting-text {
+  align-items: flex-start;
+  height: 150px;
+}
+.confimation-card > .mdl-card__title > p {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+.confimation-card > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+  background-color: #616161;
+}
+.confimation-card > .mdl-card__title{
+  color: #333;
+}
+.confimation-card > .mdl-card__actions > .mdl-button{
+color: rgba(255, 255, 255, 0.56)
+}
+
+
+

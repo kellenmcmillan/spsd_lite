@@ -1,0 +1,35 @@
+/* CSS Document */
+
+/* ========== Lightweight Portfolio ========== */
+.portfolio_folder_container {width: 100%;}
+.portfolio_item {height: 170px; float: left; overflow: hidden; position: relative; cursor: pointer;}
+.portfolio_item img {transition: all .5s ease-in-out; transform: scale(1.3); width: 135%!important; will-change: transform;}
+.portfolio_item .lightweight-portfolio--content img.expand.lightweight-portfolio--content-overlay-active {transform: scale(1.15);}
+.portfolio_item .lightweight-portfolio--content {overflow: hidden; text-align: center; position: relative;}
+.portfolio_item_title {position: absolute; bottom: 0; transition: all .2s ease-in-out; background-color: rgba(0,0,0,0.2); width: 100%; opacity: 1; cursor: default;}
+.portfolio-slide-down-hide {transition: all .2s ease-in-out; transform: translateY(16px); opacity: 0;}
+.lightweight-portfolio--content-overlay {height: 100%; width: 100%; position: absolute; top: 0; left: 0; transition: all .3s ease-in-out; opacity: 0;}
+.lightweight-portfolio--content-overlay.overlay-active {opacity: 1; transition: all .3s ease-in-out;}
+.lightweight-portfolio--closer-view_container {position: fixed; left: 0; z-index: 10000!important; overflow-y: scroll; opacity: 1;}
+.portfolio_media {height: 100%; overflow: hidden; width: 100%; float: left; position: relative;}
+.portfolio_object_media {height:inherit;}
+.portfolio_object_photo_roll {overflow: hidden;}
+@media (min-width: 840px) and (max-width: 1200px) {
+	.lightweight-portfolio--content img {width: 150%;}
+	.portfolio_media_thumbs img {transform: scale(1.9); width: 120%;}
+}
+@media (min-width: 1201px) and (max-width: 1500px) {
+	.lightweight-portfolio--content img {width: 120%;}
+	.portfolio_item {height: 160px!important;}
+	.portfolio_media_thumbs {height: 180px!important;}
+}
+@media (min-width: 1501px) {
+	.lightweight-portfolio--content img {width: 120%;}
+	.portfolio_item {height: 200px!important;}
+	.portfolio_media_thumbs {height: 180px!important;}
+}
+.portfolio_media_thumbs {height: 150px; overflow: hidden; position: relative; cursor: pointer;}
+.portfolio_media_thumbs img {transform: scale(1.6);}
+.lightweight-portfolio--closer-view-overlay {height: 100%; width: 100%; position: absolute; top: 0; left: 0; opacity: 0; text-align: center;}
+.lightweight-portfolio--closer-view-overlay:hover {opacity: 1!important}
+/* ========== Lightweight Portfolio ========== */

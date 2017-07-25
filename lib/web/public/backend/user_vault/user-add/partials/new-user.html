@@ -1,0 +1,179 @@
+<div class="mdl-card lightweight-user__MDL-CARD mdl-color--grey-300 mdl-shadow--4dp mdl-cell mdl-cell--12-col" ng-controller="newUserCtrl">
+    <div class="mdl-card__title mdl-color-text--grey-800 mdl-color--yellow-800">
+        <h3 class="mdl-typography--font-bold">Add A New User</h3>
+        <div class="mdl-layout-spacer"></div>
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" for="modalClose" href="/backend">
+            <i class="material-icons mdl-typography--font-bold" id="modalClose">clear</i>
+        </a>
+    </div>
+    <form autocomplete="off" class="forms" name="crud--add-user-form">
+        
+            
+        <div class="mdl-card__supporting-text mdl-color-text--grey-800 mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-grid">
+                
+                <!-- new user sheet one -->
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp mdl-color--grey-200">
+                    <ul>
+                        <div>
+                            <h4 class="mdl-typography--font-bold">Basic Information</h4>
+                            
+                            <li>
+                                <div class="lightweight-textfield">
+                                    <label class="lightweight-texfield--label" for="firstname">First Name...</label>
+                                    <input class="lightweight-input" type="text" id="firstname" ng-model="person.info.firstname" spellcheck="false">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lightweight-textfield">
+                                    <label class="lightweight-texfield--label" for="lastname">Last Name...</label>
+                                    <input class="lightweight-input" type="text" id="lastname" ng-model="person.info.lastname" spellcheck="false">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lightweight-textfield">
+                                    <label class="lightweight-texfield--label" for="birthday">Birthday...</label>
+                                    <input class="lightweight-input" type="text" id="birthday" ng-model="person.info.birthday" spellcheck="false">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lightweight-textfield">
+                                    <label class="lightweight-texfield--label" for="phone">Phone...</label>
+                                    <input class="lightweight-input" type="text" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" id="phone" ng-model="person.info.phone" spellcheck="false">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lightweight-textfield">
+                                    <label class="lightweight-texfield--label" for="email">Email...</label>
+                                    <input class="lightweight-input" type="text" id="email" ng-model="person.info.email" spellcheck="false">
+                                </div>
+                            </li>
+                            <h4 class="mdl-typography--font-bold">Address Information</h4>
+                            
+                            <li>
+                                <div class="lightweight-textfield">
+                                    <label class="lightweight-texfield--label" for="streetAddress">Street Address...</label>
+                                    <input class="lightweight-input" type="text" id="streetAddress" ng-model="person.info.address.street" spellcheck="false">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lightweight-textfield">
+                                    <label class="lightweight-texfield--label" for="city">City...</label>
+                                    <input class="lightweight-input" type="text" id="city" ng-model="person.info.address.city" spellcheck="false">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lightweight-textfield">
+                                    <label class="lightweight-texfield--label" for="state">State...</label>
+                                    <input class="lightweight-input" type="text" id="state" ng-model="person.info.address.state" spellcheck="false">
+                                </div>
+                            </li>
+                            <li>
+                                <div class="lightweight-textfield">
+                                    <label class="lightweight-texfield--label" for="zipcode">Zip Code...</label>
+                                    <input class="lightweight-input" type="text" id="zipcode" ng-model="person.info.address.zip" ng-maxlength="maxlength" maxlength="10" ng-minlength="minlength" minlength="5" pattern="^\d{5}(?:[-\s]\d{4})?$" spellcheck="false">
+                                </div>
+                            </li>
+                            <br>
+                            
+                        </div>
+                    </ul>
+                </div>
+                <!-- new user end sheet one -->
+
+                <!-- new user sheet two -->
+                <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-shadow--2dp mdl-color--grey-200">
+                    <ul>
+                        <div>
+                            
+                            <h4 class="mdl-typography--font-bold">User Type</h4>
+                            
+                            <li>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="Admin">
+                                    <input ng-model="person.role.position" class="mdl-radio__button" id="Admin" type="radio"
+                                    value="Admin">
+                                    <span class="mdl-radio__label">Admin</span>
+                                </label>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="Vendor">
+                                    <input ng-model="person.role.position" class="mdl-radio__button" id="Vendor" type="radio" value="Vendors">
+                                    <span class="mdl-radio__label">Vendor</span>
+                                </label>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="Staff">
+                                    <input ng-model="person.role.position" class="mdl-radio__button" id="Staff" type="radio" value="Staff">
+                                    <span class="mdl-radio__label">Staff</span>
+                                </label>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="Client">
+                                    <input ng-model="person.role.position" class="mdl-radio__button" id="Client" type="radio" value="Clients">
+                                    <span class="mdl-radio__label">Client</span>
+                                </label>
+                                <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="Candidate">
+                                    <input ng-model="person.role.position" class="mdl-radio__button" id="Candidate" type="radio" value="Candidates">
+                                    <span class="mdl-radio__label">Candidate</span>
+                                </label>
+                            </li>
+                            
+                            <h4 class="mdl-typography--font-bold">Permissions</h4>
+
+                            <li>
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+                                    <input type="checkbox" id="switch-1" class="mdl-switch__input" ng-model="person.security_clearance.permissions.access_app" ng-init="person.security_clearance.permissions.access_app = false">
+                                    <span class="mdl-switch__label">Access App Permission</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+                                    <input type="checkbox" id="switch-2" class="mdl-switch__input" ng-model="person.security_clearance.permissions.console_app" ng-init="person.security_clearance.permissions.console_app = false">
+                                    <span class="mdl-switch__label">Console App Permission</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
+                                    <input type="checkbox" id="switch-3" class="mdl-switch__input" ng-model="person.security_clearance.permissions.feedback_app" ng-init="person.security_clearance.permissions.feedback_app = false">
+                                    <span class="mdl-switch__label">Feedback App Permission</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-4">
+                                    <input type="checkbox" id="switch-4" class="mdl-switch__input" ng-model="person.security_clearance.permissions.front_desk_app" ng-init="person.security_clearance.permissions.front_desk_app = false">
+                                    <span class="mdl-switch__label">FrontDesk App Permission</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-5">
+                                    <input type="checkbox" id="switch-5" class="mdl-switch__input" ng-model="person.security_clearance.permissions.metrics" ng-init="person.security_clearance.permissions.metrics = false">
+                                    <span class="mdl-switch__label">Metrics App Permission</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-6">
+                                    <input type="checkbox" id="switch-6" class="mdl-switch__input" ng-model="person.security_clearance.permissions.workspace" ng-init="person.security_clearance.permissions.workspace = false">
+                                    <span class="mdl-switch__label">Workspace App Permission</span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-7">
+                                    <input type="checkbox" id="switch-7" class="mdl-switch__input" ng-model="person.security_clearance.permissions.restricted" ng-init="person.security_clearance.permissions.restricted = false">
+                                    <span class="mdl-switch__label">Restricted App Permission</span>
+                                </label>
+                            </li>
+                            <br>
+                        </div>
+                    </ul>
+                </div>
+                <!-- new user end sheet two -->
+            
+            </div>
+        </div>
+    
+            
+        
+        <!-- Actions Container -->    
+        <div class="mdl-card__actions mdl-card--border mdl-color--grey-700">
+            <!-- make code for when editing show cancel text, when updated show back -->
+            <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-50" value="cancel" href="/backend">Cancel</a>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-50 updateBtn" value="Save" ng-click="saveUser(person)">Save</button>
+        </div>
+        <!-- End Actions Container -->
+
+    </form>
+</div>

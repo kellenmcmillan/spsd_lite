@@ -1,0 +1,48 @@
+<style>
+.primary-standard-container-background {
+    position: absolute;
+    background-size: cover;
+    top: 0px;
+    background-image: url('{{primary_standard_container.component_background_media.image.landscape}}');
+    z-index: -1;
+}
+</style>
+<div
+ class="mdl-grid center--text component full-width no-margin no-padding"  
+ full-screen
+ color="{{primary_standard_container.component_colors.background_color.color}}"
+ hue="{{primary_standard_container.component_colors.background_color.hue}}"
+ property="{{primary_standard_container.component_colors.background_color.property}}" 
+ opaqueness="{{primary_standard_container.component_colors.background_color.opaqueness}}" 
+ lw-color>
+
+    <div 
+    class="primary-standard-container-background" 
+    full-screen>
+    </div>
+
+    <!-- Title -->
+    <div class="center--text mdl-cell mdl-cell--12-col">
+        <style>
+           @media screen and (max-width: 840px){
+            .launch-slideshow-button-container {text-align: center!important;}
+           }
+           .launch-slideshow-button-container {text-align: right;} 
+        </style>
+        <div class="launch-slideshow-button-container">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect lightweight-button--transparent-without-border-transparent" ng-click="toggle()" color='base' hue='hue darkest' property='text' opaqueness='""' lw-color><i class="material-icons" color="base" hue="hdst" property="txt" opaqueness="" lw-color>launch</i>&nbsp;Launch Slideshow</button>
+        </div>
+
+        <h1 
+        class="primary-heading-text mdl-typography--font-bold" 
+        color="{{primary_standard_container.component_colors.text_color.color}}" 
+        hue="{{primary_standard_container.component_colors.text_color.hue}}" 
+        property="{{primary_standard_container.component_colors.text_color.property}}" 
+        opaqueness="{{primary_standard_container.component_colors.text_color.opaqueness}}" 
+        lw-color ng-bind-html="primary_standard_container.component_data.title[0]">
+        </h1>
+
+    </div>
+    <!-- Title -->
+
+</div>

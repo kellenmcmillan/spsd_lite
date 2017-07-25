@@ -1,0 +1,28 @@
+/* ========== Lightweight Animations ========== */
+.horizontal-animate-left {opacity: 0; transform: translate(16px,0); transition: all .5s ease-in-out;}
+.horizontal-animate-right {opacity: 0; transform: translate(-16px,0); transition: all .5s ease-in-out;}
+.vertical-animate-down {opacity: 0; transform: translate(0,-16px); transition: all 1s ease-in-out;}
+.vertical-animate-up {opacity: 0; transform: translate(0,16px); transition: all 1s ease-in-out;}
+.vertical-animate-down {opacity: 0; transform: translate(0,-16px); transition: all 1s ease-in-out;}
+.vertical-animate-down-visible {transform: translate(0,0); transition: all .5s ease-in-out;}
+.KIT-animate-down {transform: translate(0,0); transition: all 1s ease-in-out;}
+.start-hover-vertical-animate {transform: translate(0,16px); transition: all 1s ease-in-out;}
+.start-horizontal-animate,
+.start-vertical-animate {transform: translate(0,0); opacity: 1!important;}
+.end-vertical-animate {transform: translate(0,16px); opacity: 0!important;}
+.start-slideshow-image-animate {opacity: 1!important;}
+.start-hover-vertical-down-animate {transform: translate(0,16px); transition: all .5s ease-in-out;}
+.start-click-vertical-down-animate {transform: translate(0,24px);}
+.start-KIT-vertical-animate {transform: translate(0,100%);}
+.start-KIT-appear-animate {opacity: 1!important; transition: all .5s ease-in-out;}
+.start-appear-animate {opacity: 1!important; transition: all .2s ease-in-out;}
+.appear-animate {opacity: 0; transition: all .2s ease-in-out;}
+.start-disappear-animate {opacity: 0!important; transition: all .5s ease-in-out; transition-delay: .5s;}
+.disappear-animate {opacity: 1; transition: all .2s ease-in-out;}
+/*.start-shrink-title-animation {height: 0px!important; line-height: 8px!important; transition: all .5s ease-in-out; top: 0!important;}
+.start-shrink-margin-body-animation {margin-top: 8px!important; transition: all .5s ease-in-out;}*/
+.attach-to-top-animation {top: 0!important; transition: all .5s ease-in-out;}
+@media all and (max-width: 840px) {
+	.disable-animation-css-hook {transform: translate(0,0)!important; opacity: 1!important;}
+}
+/* ========== Lightweight Animations ========== */

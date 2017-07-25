@@ -1,0 +1,29 @@
+/* css */
+.dialog-curtain {position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 10; overflow: hidden; background-color: rgba(255,255,255,0.6)!important; overflow: hidden;}
+.dialog-configuration {z-index: 2000; position: fixed; top: 0; left: 0; width: 100%; height:100%;}
+.dialog-widget {z-index: 2000;}
+.dialog {height: 600px;}
+@media (max-width: 1500px){
+	.dialog {height: 400px;}
+}
+@media (max-width: 400px){
+	.dialog {height: 400px;}
+	.dialog_item i.material-icons {font-size: 18px; padding: 10px 4px;}
+	.dialog h2.mdl-card__title-text {font-size: 16px!important;}
+}
+.dialog .mdl-card__supporting-text {height: 450px; overflow-y: auto; width: initial;}
+.dialog_item {height: 48px; margin-bottom: 8px; box-sizing: border-box; display: -webkit-flex; display: flex; cursor: pointer;}
+.dialog_item img.list {height: 48px; width: auto;}
+.dialog_item .media {width: 48px!important; overflow: hidden;}
+.dialog_item .title {height: 48px!important; padding-left: 8px;}
+.dialog_item i.material-icons {font-size: 24px; padding: 12px;}
+.dialog_item .mdl-button {padding: 0!important; height: 48px;}
+.list_asset_options {}
+.list_asset_options.ng-hide-remove {}
+.list_asset_options.ng-hide-add {}
+.dialog-tabs.active {background: rgba(0,0,0,0.2);}
+.asset_container {height: 350px; cursor: pointer;}
+.overlay-text {height: 50px; cursor: pointer;}
+.noScroll {overflow: hidden!important;}
+.media_asset img {transform: scale(1.3); height:170px; width: auto;}
+.media_asset .mdl-cell {overflow: hidden;}

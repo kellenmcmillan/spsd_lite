@@ -1,0 +1,93 @@
+<style ng-if="user || window_width < 840">
+    .mdl-layout__drawer-button i, .mdl-layout__drawer-button {display: inline-block!important; font-weight: 300!important;}
+    .header-text-logo, 
+    .header-graphic-logo {margin-left: 0!important;}
+</style>
+<style ng-if="window_width < 840">
+    .mdl-layout__header .mdl-navigation {display: none!important;}
+</style>
+<style>
+    .header-text-logo, 
+    .header-graphic-logo {margin-left: -64px;}
+    .mdl-layout__header {background-color: {{base_hue_lightest.value}};}
+    .mdl-layout__header.stretched-nav {height: {{window_height}}px!important;}
+    .mdl-layout__drawer-button i, .mdl-layout__drawer-button {display: none; font-weight: 300!important;}
+    .mdl-layout__drawer-button {margin: 22px 4px!important;}
+    .lightweight-hero--slideshow {width: {{window_width}}px;}
+    
+    /* ===== Lightweight Buttons ===== */
+    .lightweight-button--transparent-with-border {
+        height: 48px!important; background-color: rgba(255,255,255,.4); 
+        border-width: 2px; border-style: solid; transition: all .3s ease-in-out;
+    }
+    .lightweight-button--transparent-without-border-dark {
+        height: 48px!important; background-color: rgba(0,0,0,.4); 
+        transition: all .3s ease-in-out;
+    }
+    .lightweight-button--transparent-without-border-transparent {
+        height: 48px!important; background-color: rgba(0,0,0,0); 
+        transition: all .3s ease-in-out;
+    }
+    .lightweight-button--transparent-without-border {
+        height: 48px!important; background-color: rgba(255,255,255,0.7); transition: all .3s ease-in-out;
+    }
+    .lightweight-button--transparent-without-border:hover, 
+    .lightweight-button--transparent-with-border:hover,
+    .lightweight-button--transparent-without-border-dark:hover,
+    .lightweight-button--transparent-without-border-transparent:hover {
+        background-color: rgba(0,0,0,.1)!important; 
+        color: #FAFAFA; transition: all .3s ease-in-out;
+    }
+    .lightweight-button--transparent-with-border-alt {
+        height: 48px!important; background-color: rgba(255,255,255,0); 
+        border: 2px solid rgb(255,255,255)!important; transition: all .3s ease-in-out;
+    }
+    .lightweight-button--transparent-with-border-alt:hover {
+        background-color: rgb(255,255,255)!important; 
+        color: {{primary_hue_text__normal.value}}!important; transition: all .3s ease-in-out;
+    }
+    .lightweight--communication-hub-button-close:after {background: {{primary_hue_normal.value}}!important;}
+    .lightweight-KIT {border-bottom: 8px solid {{primary_hue_normal.value}};}
+    .lightweight--panel-dropdown .form-instructions:after {background: {{primary_hue_normal.value}}!important;}
+    .wide-button {min-width: 150px;}
+    .lightweight--portfolio-button-close {
+        height: 36px; transition: all .5s ease-in-out; 
+        z-index: 2000; position: absolute; right: 0; top: 0;
+    }
+    .lightweight--portfolio-button-close i {font-size: 24px;}
+    .lightweight--portfolio-button-close:hover:after {width: 100%; transition: all .3s ease-in-out;}
+    /* ===== Lightweight Buttons ===== */
+    
+    .lightweight--portfolio-button-close:after {
+        content:''; background: {{primary_hue_text__normal.value}}!important; height: 4px; width: 0;
+        margin-left: auto; margin-right: auto; display: block; transition: all .3s ease-in-out;
+        position: absolute; bottom: 0; left: 0;
+    }
+    .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
+        background-color: {{primary_hue_normal.value}}; color: {{base_hue_text__lightest.value}};
+    }
+    .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover i {
+        color: {{base_hue_text__lightest.value}}!important;
+    }
+    .company-color--border-bottom {border-bottom: 8px solid {{primary_hue_normal.value}}!important;}
+    .lightweight-textfield .lightweight-input:focus {
+        border-bottom-color: {{primary_hue_normal.value}}!important;
+    }
+    .forms .lightweight-input::selection {
+        background: {{primary_hue_normal.value}}!important;
+    }
+    .mdl-textfield__input::selection {
+        background: {{primary_hue_normal.value}}!important;
+    }
+    .lightweight-sidebar-tabs:after {
+        background: {{primary_hue_normal.value}}!important; 
+    }
+    .material-icons.mdl-list__item-icon {color:{{primary_hue_text__normal.value}}!important;}
+    h1.small-border-background:after {background: {{primary_hue_normal.value}}!important;}
+    h1.small-border-background-no-align:after {background: {{primary_hue_normal.value}}!important;}
+    .login-card .mdl-card__supporting-text .mdl-textfield.is-focused 
+    .mdl-textfield__label:after, .mdl-textfield .mdl-textfield__label:after {
+        background-color: {{primary_hue_normal.value}}!important;
+    }
+    .backend-app__header {background-color: {{primary_hue_normal.value}}!important;}
+</style>

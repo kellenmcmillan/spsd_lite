@@ -1,0 +1,28 @@
+{
+  "name": "spsd-lightweight-App",
+  "description": "A MEAN app for small businesses.",
+  "success_url": "/",
+  "keywords": [
+    "node",
+    "express",
+    "production"
+  ],
+  "env": {
+    "THRIFTY": {
+      "description": "run on a single (free) dyno",
+      "value": "true"
+    },
+    "CONCURRENCY": {
+      "description": "level of concurrency for web processes",
+      "value": "1"
+    },
+    "WORKER_CONCURRENCY": {
+      "description": "level of concurrency for worker processes",
+      "value": "1"
+    },
+    "COOKIE_SECRET": {
+      "description": "a secret key for signed cookies",
+      "generator": "secret"
+    }
+  }
+}

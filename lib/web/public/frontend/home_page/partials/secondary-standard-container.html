@@ -1,0 +1,38 @@
+<style>
+.secondary-standard-container-background {
+    position: absolute;
+    background-size: cover;
+    top: 0px;
+    background-image: url('{{secondary_standard_container.component_background_media.image.landscape}}');
+    z-index: -1;
+}
+</style>
+<div
+ class="mdl-grid center--text component full-width no-margin no-padding"  
+ full-screen
+ color="{{secondary_standard_container.component_colors.background_color.color}}"
+ hue="{{secondary_standard_container.component_colors.background_color.hue}}"
+ property="{{secondary_standard_container.component_colors.background_color.property}}" 
+ opaqueness="{{secondary_standard_container.component_colors.background_color.opaqueness}}" 
+ lw-color>
+
+    <div 
+    class="secondary-standard-container-background" 
+    full-screen>
+    </div>
+
+    <!-- Title -->
+    <div class="center--text mdl-cell mdl-cell--12-col">
+        <h1 
+        class="primary-heading-text mdl-typography--font-bold" 
+        color="{{secondary_standard_container.component_colors.text_color.color}}" 
+        hue="{{secondary_standard_container.component_colors.text_color.hue}}" 
+        property="{{secondary_standard_container.component_colors.text_color.property}}" 
+        opaqueness="{{secondary_standard_container.component_colors.text_color.opaqueness}}" 
+        lw-color ng-bind-html="secondary_standard_container.component_data.title[0]">
+        </h1>
+
+    </div>
+    <!-- Title -->
+    
+</div>

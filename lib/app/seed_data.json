@@ -1,0 +1,923 @@
+{
+    "app_configs": {
+        "company_legal_name": "SPSD Inc.",
+        "name": "SPSD",
+        "site_name": "SPSD.com",
+        "address": {
+            "info": {
+                "street": "1108 107th Street",
+                "city": "Arlington",
+                "state": "TX",
+                "zipcode": "76011",
+                "ste": ""
+            },
+            "google_address_link": "https://www.google.com/maps/place/Site+Planning+Site+Development/@32.7624209,-97.0596739,17z/data=!4m13!1m7!3m6!1s0x864e87197b873ea1:0xd006f012897c78b5!2s1108+107th+St,+Arlington,+TX+76011!3b1!8m2!3d32.7624209!4d-97.0574852!3m4!1s0x864e87197bd9f1f3:0x3eeddf2c92d450d2!8m2!3d32.7625289!4d-97.0576733",
+            "google_map_widget": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3355.1248753601926!2d-97.0596739!3d32.7624209!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864e87197bd9f1f3%3A0x3eeddf2c92d450d2!2sSite+Planning+Site+Development!5e0!3m2!1sen!2sus!4v1477445255386"
+        },
+        "graphic_logo_src": "assets/brand/spsd-logo.png",
+        "use_graphic_logo": true,
+        "template": {
+            "name": "template_zero",
+            "version": "transparent header"
+        },
+        "roles": {
+            "support": { 
+              "role_name": "Support",
+              "role_id": 1
+            },
+            "admin":  { 
+              "role_name": "Administrator",
+              "role_id": 2
+            },
+            "system_Manager":  { 
+              "role_name": "System Manager",
+              "role_id": 3
+            },
+            "staff_1":  { 
+              "role_name": "Staff 1",
+              "role_id": 4
+            },
+            "staff_2":  { 
+              "role_name": "Staff 2",
+              "role_id": 5
+            },
+            "staff_3":  { 
+              "role_name": "Staff 3",
+              "role_id": 6
+            },
+            "staff_4":  { 
+              "role_name": "Staff 4",
+              "role_id": 7
+            },
+            "staff_5":  { 
+              "role_name": "Staff 5",
+              "role_id": 8
+            },
+            "basic_user":  { 
+              "role_name": "Basic User",
+              "role_id": 9
+            },
+            "business_contact":  { 
+              "role_name": "Business Contact",
+              "role_id": 16
+            },
+            "client":  { 
+              "role_name": "Customer",
+              "role_id": 10
+            },
+            "prospect":  { 
+              "role_name": "Potential Customer",
+              "role_id": 11
+            },
+            "shareholder":  { 
+              "role_name": "Shareholder",
+              "role_id": 12
+            },
+            "vendor":  { 
+              "role_name": "Vendor",
+              "role_id": 13
+            },
+            "government_agent":  { 
+              "role_name": "Government Agent",
+              "role_id": 14
+            },
+            "regulatory_agent":  { 
+              "role_name": "Regulatory Agent",
+              "role_id": 15
+            }
+        },
+        "primary_navigation": [
+            {
+                "name": "WELCOME",
+                "icon": "home",
+                "class": "material-icons",
+                "href": "/#/",
+                "target": "_self"
+            },
+            {
+                "name": "GALLERIES",
+                "icon": "receipt",
+                "class": "material-icons",
+                "href": "/#/services",
+                "target": "_self"
+            },
+            {
+                "name": "LATEST NEWS",
+                "icon": "photo_library",
+                "class": "material-icons",
+                "href": "/#/portfolio",
+                "target": "_self"
+            },
+            {
+                "name": "LOCATE US",
+                "icon": "work",
+                "class": "material-icons",
+                "href": "/#/careers",
+                "target": "_self"
+            },
+            {
+                "name": "cONTACT US",
+                "icon": "free_breakfast",
+                "class": "material-icons",
+                "href": "/#/about",
+                "target": "_self"
+            }
+        ],
+        "backend_navigation": [
+            {
+                "name": "TASK RUNNER",
+                "icon": "assignment",
+                "class": "material-icons",
+                "href": "/#/backend-suite/TaskRunner",
+                "target": "_self",
+                "action": ""
+            },
+            {
+                "name": "USER VAULT",
+                "icon": "face",
+                "class": "material-icons",
+                "href": "/#/backend/user_vault/user-list",
+                "target": "_self",
+                "action": ""
+            },
+            {
+                "name": "APP LAB",
+                "icon": "web",
+                "class": "material-icons",
+                "href": "/#/backend/app_lab/editor",
+                "target": "_self",
+                "action": ""
+            },
+            {
+                "name": "MEDIA VAULT",
+                "icon": "library_add",
+                "class": "material-icons",
+                "href": "/#/backend-suite/MediaVault",
+                "target": "_self",
+                "action": ""
+            },
+            {
+                "name": "CHAT SUPPORT",
+                "icon": "help_outline",
+                "class": "material-icons",
+                "href": "/#/backend-suite/Support",
+                "target": "_self",
+                "action": ""
+            }
+        ]
+    },
+    "home_page_configs": [
+        {
+            "name": "SPSD Home",
+            "type": "landing_page",
+            "url": "/#/home",
+            "enabled": true,
+            "slideshow_controls": false,
+            "primary_slideshow_hero": {
+                "slides": [
+                    {
+                        "landscape_src": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands4-landscape.jpg",
+                        "type": "image",
+                        "alt": "Arlington Highlands Site Development",
+                        "title": "Arlington Highlands",
+                        "tagline": "Arlington, TX",
+                        "text": null,
+                        "background": "light",
+                        "no_textual_content": false,
+                        "no_text_content": true
+                    },
+                    {
+                        "landscape_src":"/assets/portfolios/bob-jones/landscape/bob-jones2-landscape.jpg",
+                        "type":"image",
+                        "alt":"Nature Center In Arlington",
+                        "title":"Bob Jones Nature Center",
+                        "text": null,
+                        "tagline":"Arlington, TX",
+                        "background": "light",
+                        "no_textual_content": false,
+                        "no_text_content": true
+                    },
+                    {
+                        "landscape_src":"/assets/portfolios/campus-edge/landscape/campusEdge3-landscape.jpg",
+                        "type":"image",
+                        "alt":"Campus Edge UTA Apartments",
+                        "title":"Campus Edge - UTA",
+                        "tagline":"Arlington, TX",
+                        "text": null,
+                        "background": "light",
+                        "no_textual_content": false,
+                        "no_text_content": true
+                    },
+                    {
+                        "landscape_src": "/assets/portfolios/capital-one/landscape/capitalOne1-landscape.jpg",
+                        "type": "image",
+                        "alt": "Capital One",
+                        "title": "Capital One Bank",
+                        "tagline": "Dallas, TX",
+                        "text": null,
+                        "background": "light",
+                        "no_textual_content": false,
+                        "no_text_content": true
+                    },
+                    {
+                        "landscape_src":"/assets/portfolios/center-entryways/landscape/centerEntryway10-landscape.jpg",
+                        "type":"image",
+                        "alt":"Center Street Entryway",
+                        "title":"Center Street Entryway",
+                        "tagline":"Arlington, TX",
+                        "text": null,
+                        "background": "light",
+                        "no_textual_content": false,
+                        "no_text_content": true
+                    },
+                    {
+                        "landscape_src":"/assets/portfolios/maintenance-jobs/landscape/maintenanceJobs3-landscape.jpg",
+                        "type":"image",
+                        "alt":"Maintenance work at the Hilton",
+                        "title":"Hilton Hotel",
+                        "tagline":"Dallas, TX",
+                        "text": null,
+                        "background": "light",
+                        "no_textual_content": false,
+                        "no_text_content": true
+                    },
+                    {
+                        "landscape_src":"/assets/portfolios/monaco-pool/landscape/monacoPool2-landscape.jpg",
+                        "type":"image",
+                        "alt":"Monaco Pool",
+                        "title":"Monaco Pool",
+                        "tagline":"Dallas, TX",
+                        "text": null,
+                        "background": "light",
+                        "no_textual_content": false,
+                        "no_text_content": true
+                    },
+                    {
+                        "landscape_src":"/assets/portfolios/rd-kitchen/landscape/rdKitchen5-landscape.jpg",
+                        "type":"image",
+                        "alt":"RD Kitchen",
+                        "title":"R + D Kitchen",
+                        "tagline":"Dallas, TX",
+                        "text": null,
+                        "background": "light",
+                        "no_textual_content": false,
+                        "no_text_content": true
+                    }
+                ],
+                "component_transition_speed": 6000,
+                "component_editable_feature_buttons": [
+                    {
+                        "icon": "add",
+                        "view": {
+                            "Screen": "Add_Assets"
+                        }
+                    },
+                    {
+                        "icon": "photo_library",
+                        "view": {
+                            "Screen": "Asset_List"
+                        }
+                    },
+                    {
+                        "icon": "schedule",
+                        "view": {
+                            "Screen": "Timer"
+                        }
+                    }
+                ]
+            },
+            "primary_standard_container": {
+                "component_data": {
+                    "title": ["Featured Galleries"],
+                    "tagline": null,
+                    "text": null
+                },
+                "component_background_media": {
+                    "media_type": "image",
+                    "image": {
+                        "landscape": "assets/portfolios/maintenance-jobs/landscape/maintenanceJobs1-landscape.jpg",
+                        "portrait": null,
+                        "thumbnail": null
+                    },
+                    "video_src": {
+                        "mp4": null,
+                        "ogg": null
+                    }
+                },
+                "component_colors": {
+                    "background_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "bg",
+                        "opaqueness": ""
+                    },
+                    "border_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "bdr",
+                        "opaqueness": ""
+                    },
+                    "text_color": {
+                        "color": "b",
+                        "hue": "hdr",
+                        "property": "txt",
+                        "opaqueness": ""
+                    }
+                },
+                "component_editable_feature_buttons": [
+                    {
+                        "icon": "add",
+                        "view": {
+                            "Screen": "Add_Assets"
+                        }
+                    },
+                    {
+                        "icon": "edit",
+                        "view": {
+                            "Screen": "Plain_Text_Editor"
+                        }
+                    },
+                    {
+                        "icon": "color_lens",
+                        "view": {
+                            "Screen": "Color_Editor"
+                        }
+                    }
+                ]
+            },
+            "primary_gallery": {
+                "url": "/#/#featured-galleries",
+                "component_data": {
+                    "title": null,
+                    "galleries": [
+                        {
+                            "title": "Arlington Highlands",
+                            "description": null,
+                            "items": [
+                                {
+                                    "image_src": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands1-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/arlington-highlands/thumbs/arlingtonHighlands1-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Arlington Highlands Artisan Creek"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands2-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/arlington-highlands/thumbs/arlingtonHighlands2-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Arlington Highlands Artisan Creek"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands3-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/arlington-highlands/thumbs/arlingtonHighlands3-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Arlington Highlands Artisan Creek"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands4-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/arlington-highlands/thumbs/arlingtonHighlands4-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Arlington Highlands Artisan Creek"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands5-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/arlington-highlands/thumbs/arlingtonHighlands5-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Arlington Highlands Artisan Creek"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands6-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/arlington-highlands/thumbs/arlingtonHighlands6-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Arlington Highlands Artisan Creek"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands7-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/arlington-highlands/thumbs/arlingtonHighlands7-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Arlington Highlands Artisan Creek"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands8-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/arlington-highlands/thumbs/arlingtonHighlands8-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Arlington Highlands Artisan Creek"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands9-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/arlington-highlands/thumbs/arlingtonHighlands9-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Arlington Highlands Artisan Creek"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Bob Jones Nature Center",
+                            "description": null,
+                            "items": [
+                                {
+                                    "image_src": "/assets/portfolios/bob-jones/landscape/bob-jones1-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/bob-jones/thumbs/bob-jones1-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "An image of Bob Jones Nature Center"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/bob-jones/landscape/bob-jones2-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/bob-jones/thumbs/bob-jones2-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "An image of Bob Jones Nature Center"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/bob-jones/landscape/bob-jones3-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/bob-jones/thumbs/bob-jones3-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "An image of Bob Jones Nature Center"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/bob-jones/landscape/bob-jones4-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/bob-jones/thumbs/bob-jones4-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "An image of Bob Jones Nature Center"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/bob-jones/landscape/bob-jones5-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/bob-jones/thumbs/bob-jones5-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "An image of Bob Jones Nature Center"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/bob-jones/landscape/bob-jones6-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/bob-jones/thumbs/bob-jones6-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "An image of Bob Jones Nature Center"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Capital One",
+                            "description": null,
+                            "items": [
+                                {
+                                    "image_src": "/assets/portfolios/capital-one/landscape/capitalOne1-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/capital-one/thumbs/capitalOne1-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "Capital One Bank"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/capital-one/landscape/capitalOne2-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/capital-one/thumbs/capitalOne2-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "Capital One Bank"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/capital-one/landscape/capitalOne3-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/capital-one/thumbs/capitalOne3-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "Capital One Bank"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/capital-one/landscape/capitalOne4-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/capital-one/thumbs/capitalOne4-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "Capital One Bank"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Center Street Entryway",
+                            "description": null,
+                            "items": [
+                                {
+                                    "image_src": "/assets/portfolios/center-entryways/landscape/centerEntryway1-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/center-entryways/thumbs/centerEntryway1-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Center Street Entryway"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/center-entryways/landscape/centerEntryway2-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/center-entryways/thumbs/centerEntryway2-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Center Street Entryway"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/center-entryways/landscape/centerEntryway3-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/center-entryways/thumbs/centerEntryway3-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Center Street Entryway"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/center-entryways/landscape/centerEntryway4-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/center-entryways/thumbs/centerEntryway4-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Center Street Entryway"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/center-entryways/landscape/centerEntryway5-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/center-entryways/thumbs/centerEntryway5-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Center Street Entryway"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/center-entryways/landscape/centerEntryway6-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/center-entryways/thumbs/centerEntryway6-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "Center Street Entryway"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/center-entryways/landscape/centerEntryway7-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/center-entryways/thumbs/centerEntryway7-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Center Street Entryway"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/center-entryways/landscape/centerEntryway8-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/center-entryways/thumbs/centerEntryway8-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Center Street Entryway"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/center-entryways/landscape/centerEntryway9-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/center-entryways/thumbs/centerEntryway9-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Center Street Entryway"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/center-entryways/landscape/centerEntryway10-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/center-entryways/thumbs/centerEntryway10-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"Center Street Entryway"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Monaco Pool",
+                            "description": null,
+                            "items": [
+                                {
+                                    "image_src": "/assets/portfolios/monaco-pool/landscape/monacoPool1-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/monaco-pool/thumbs/monacoPool1-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "An image of The Monoco Pool"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/monaco-pool/landscape/monacoPool2-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/monaco-pool/thumbs/monacoPool2-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "An image of The Monoco Pool"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/monaco-pool/landscape/monacoPool3-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/monaco-pool/thumbs/monacoPool3-thumb.jpg",
+                                    "type": "image",
+                                    "alt": "An image of The Monoco Pool"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "R + D Kitchen",
+                            "description": null,
+                            "items": [
+                                {
+                                    "image_src": "/assets/portfolios/rd-kitchen/landscape/rdKitchen1-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/rd-kitchen/thumbs/rdKitchen1-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"R + D Kitchen"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/rd-kitchen/landscape/rdKitchen2-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/rd-kitchen/thumbs/rdKitchen2-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"R + D Kitchen"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/rd-kitchen/landscape/rdKitchen3-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/rd-kitchen/thumbs/rdKitchen3-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"R + D Kitchen"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/rd-kitchen/landscape/rdKitchen4-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/rd-kitchen/thumbs/rdKitchen4-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"R + D Kitchen"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/rd-kitchen/landscape/rdKitchen5-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/rd-kitchen/thumbs/rdKitchen5-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"R + D Kitchen"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/rd-kitchen/landscape/rdKitchen6-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/rd-kitchen/thumbs/rdKitchen6-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"R + D Kitchen"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/rd-kitchen/landscape/rdKitchen7-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/rd-kitchen/thumbs/rdKitchen7-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"R + D Kitchen"
+                                },
+                                {
+                                    "image_src": "/assets/portfolios/rd-kitchen/landscape/rdKitchen8-landscape.jpg",
+                                    "thumb_image_src": "/assets/portfolios/rd-kitchen/thumbs/rdKitchen8-thumb.jpg",
+                                    "type": "image",
+                                    "alt":"R + D Kitchen"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "component_colors": {
+                    "background_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "bg",
+                        "opaqueness": ""
+                    },
+                    "icon_color": {
+                        "color": "p",
+                        "hue": "hn",
+                        "property": "text",
+                        "opaqueness": ""
+                    },
+                    "text_color": {
+                        "color": "b",
+                        "hue": "hdst",
+                        "property": "text",
+                        "opaqueness": ""
+                    },
+                    "overlay_color": {
+                        "color": "p",
+                        "hue": "hn",
+                        "property": "bg",
+                        "opaqueness": "dst"         
+                    }
+                },
+                "component_editable_feature_buttons": [
+                    {
+                        "icon": "add",
+                        "view": {
+                            "Screen": "Add_Assets"
+                        }
+                    },
+                    {
+                        "icon": "photo_library",
+                        "view": {
+                            "Screen": "Asset_List"
+                        }
+                    },
+                    {
+                        "icon": "color_lens",
+                        "view": {
+                            "Screen": "Color_Editor"
+                        }
+                    }
+                ]
+            },
+            "secondary_standard_container": {
+                "url": "/#/#latest-news",
+                "component_data": {
+                    "title": ["What's SPSD doing in DFW?"],
+                    "tagline": null,
+                    "text": null
+                },
+                "component_colors": {
+                    "background_color": {
+                        "color": "b",
+                        "hue": "hlr",
+                        "property": "bg",
+                        "opaqueness": ""
+                    },
+                    "border_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "bdr",
+                        "opaqueness": ""
+                    },
+                    "text_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "txt",
+                        "opaqueness": ""
+                    }
+                },
+                "component_editable_feature_buttons": [
+                    {
+                        "icon": "add",
+                        "view": {
+                            "Screen": "Add_Assets"
+                        }
+                    },
+                    {
+                        "icon": "edit",
+                        "view": {
+                            "Screen": "Plain_Text_Editor"
+                        }
+                    },
+                    {
+                        "icon": "color_lens",
+                        "view": {
+                            "Screen": "Color_Editor"
+                        }
+                    }
+                ]
+            },
+            "primary_blog_feed": {
+                "component_data": [
+                    {
+                        "title": "TAP INTO",
+                        "text": "With over 30 years of experience, we have a vast knowledge of landscaping + masonry best practices."
+                    },
+                    {
+                        "title": "DISCOVER HOW",
+                        "text": "Go deeper to discover why SPSD is a preferred partner in DFW landscape planning and development."
+                    }
+                ],
+                "component_background_media": [
+                    {
+                        "media_type": "image",
+                        "image": {
+                            "landscape": "assets/portfolios/maintenance-jobs/landscape/maintenanceJobs1-landscape.jpg",
+                            "portrait": null,
+                            "thumbnail": null
+                        },
+                        "video_src": {
+                            "mp4": null,
+                            "ogg": null
+                        },
+                        "description": null
+                    },
+                    {
+                        "media_type": "image",
+                        "image": {
+                            "landscape": "assets/portfolios/maintenance-jobs/landscape/maintenanceJobs1-landscape.jpg",
+                            "portrait": null,
+                            "thumbnail": null
+                        },
+                        "video_src": {
+                            "mp4": null,
+                            "ogg": null
+                        },
+                        "description": null
+                    }
+                ],
+                "component_colors": {
+                    "border_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "bdr",
+                        "opaqueness": ""
+                    },
+                    "text_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "txt",
+                        "opaqueness": ""
+                    },
+                    "background_color": {
+                        "color": "b",
+                        "hue": "hlr",
+                        "property": "bg",
+                        "opaqueness": "lst"
+                    }
+                },
+                "component_editable_feature_buttons": [
+                    {
+                        "icon": "add",
+                        "view": {
+                            "Screen": "Add_Assets"
+                        }
+                    },
+                    {
+                        "icon": "edit",
+                        "view": {
+                            "Screen": "Plain_Text_Editor"
+                        }
+                    },
+                    {
+                        "icon": "color_lens",
+                        "view": {
+                            "Screen": "Color_Editor"
+                        }
+                    }
+                ]
+            },
+            "tertiary_standard_container": {
+                "url": "/#/#locate-us",
+                "component_data": {
+                    "title": ["We're in the neighborhood"],
+                    "tagline": null,
+                    "text": null
+                },
+                "component_colors": {
+                    "background_color": {
+                        "color": "b",
+                        "hue": "hlr",
+                        "property": "bg",
+                        "opaqueness": ""
+                    },
+                    "border_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "bdr",
+                        "opaqueness": ""
+                    },
+                    "text_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "txt",
+                        "opaqueness": ""
+                    }
+                },
+                "component_editable_feature_buttons": [
+                    {
+                        "icon": "edit",
+                        "view": {
+                            "Screen": "Plain_Text_Editor"
+                        }
+                    },
+                    {
+                        "icon": "color_lens",
+                        "view": {
+                            "Screen": "Color_Editor"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "interior_page_configs": [
+        {
+            "name": "Unauthorized",
+            "type": "error_page",
+            "url": "/#/unauthorized",
+            "component_page_data": {
+                "page_title": ["Unauthorized"]
+            },
+            "component_colors": {
+                "background_color": {
+                    "color": "b",
+                    "hue": "hlst",
+                    "property": "bg",
+                    "opaqueness": ""
+                },
+                "icon_color": {
+                    "color": "p",
+                    "hue": "hn",
+                    "property": "text",
+                    "opaqueness": ""
+                },
+                "text_color": {
+                    "color": "b",
+                    "hue": "hdst",
+                    "property": "text",
+                    "opaqueness": ""
+                },
+                "overlay_color": {
+                    "color": "p",
+                    "hue": "hn",
+                    "property": "bg",
+                    "opaqueness": "dst"         
+                }
+            }
+        },
+        {
+            "name": "404 Not Found",
+            "type": "error_page",
+            "url": "/#/not-found",
+            "enabled": true,
+            "component_page_data": {
+                "page_title": ["Not Found"]
+            },
+            "component_colors": {
+                "background_color": {
+                    "color": "b",
+                    "hue": "hlst",
+                    "property": "bg",
+                    "opaqueness": ""
+                },
+                "icon_color": {
+                    "color": "p",
+                    "hue": "hn",
+                    "property": "text",
+                    "opaqueness": ""
+                },
+                "text_color": {
+                    "color": "b",
+                    "hue": "hdst",
+                    "property": "text",
+                    "opaqueness": ""
+                },
+                "overlay_color": {
+                    "color": "p",
+                    "hue": "hn",
+                    "property": "bg",
+                    "opaqueness": "dst"         
+                }
+            }
+        }
+    ]
+}
+
+

@@ -1,0 +1,119 @@
+<!--feedback-->
+
+        <!-- Confirmation Dialog -->
+    <div class="confirmation-curtain" ng-if="DeleteUserState;">
+        <div ng-if="DeleteUserState;">
+            <!--Confirmation Card-->
+
+            <div class="confirmation-card mdl-cell center--block mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--4dp" ng-if="DeleteUserState;">
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text mdl-color-text--grey-800">Confirmation</h2>
+              </div>
+                  
+                    <!-- login form -->
+                        <div class="mdl-card__supporting-text center--block">
+                            <p>{{confirmation.message}}<br>
+                            </p>
+                        </div>                
+                    <!-- login form -->
+              <div class="mdl-card__actions">
+                <button class="mdl-button mdl-js-button mdl-js-ripple-effect {{base_hue_text__darkest.name}}" ng-click="confirmation.confirmAction()">{{confirmation.confirm}}</button>
+                <button ng-click='confirmation.denyAction()' class="mdl-button mdl-js-button mdl-js-ripple-effect {{base_hue_text__darkest.name}}">{{confirmation.deny}}</button>
+              </div>
+              
+            </div>
+        <!--Confirmation Card-->
+        </div>
+    </div>
+    <!-- Confirmation Dialog -->
+
+    <!--Feedback Home-->
+    <div class="page-content app-lab-user__list mdl-grid">
+      <!-- <div class="lightweight-tabs__tab-bar mdl-color--grey-800">
+        <a ng-repeat="filterBtn in filterBtns" ng-click="setSelectedFilter();active = !active" class="mdl-tabs__tab mdl-color-text--grey-50 mdl-typography--font-bold" ng-class="{'is-active': active}">{{filterBtn.name}}</a>
+      </div> -->
+      <div class="backend-app__menu no-padding no-margin" backend-menu color="b" hue="hue lighter" property="bg" opaqueness lw-color>
+        <a class="backend_app__menu-item mdl-button mdl-js-button" ng-repeat="item in filterBtns">
+          <i class="material-icons" role="presentation" color="primary" hue="hue normal" property="text" opaqueness="" lw-color>label</i>{{item.name}}
+        </a>
+      </div>
+      <div class="backend-app__content mdl-grid no-padding no-margin">
+        <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width no-margin" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+          <table class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+            <thead ng-if="results.length !== 0" class="lightweight-animate-repeat">
+              <tr>
+                <th class="user_vault--table-data mdl-data-table__cell--non-numeric">Firstname</th>
+                <th class="user_vault--table-data mdl-data-table__cell--non-numeric">Lastname</th>
+                <th class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">Phone</th>
+                <th class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">Email</th>
+                <th class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">Role</th>
+              </tr>
+            </thead>
+            <tbody class="lightweight-animate-repeat">
+
+              <!--User is iterated-->
+
+              <tr ng-repeat="user in users | filter:query | filter:q as results" ng-class="{'action--row': toggle.item == $index}" style="border: 1px solid rgba(0,0,0,.12); border-collapse: collapse" ng-click="toggle.item = $index;" ng-dblclick="toggle.item = null" class="lightweight-animate-repeat">
+
+                <!--User Actions-->
+                <td colspan="5" ng-hide="toggle.item != $index">
+                  <div class="mdl-cell mdl-cell--12-col action--container left--text">
+                    <a ng-href="/backend/#/feedback/person/{{user._id}}" class="mdl-button mdl-js-button mdl-js-ripple-effect feedback-table--action mdl-typography--font-bold" color="b" hue="hdst" property="txt" opaqueness lw-color>
+                      <i class="material-icons user_vault--table-data" role="presentation">create</i><span class="user_vault--table-data">Edit</span>
+                    </a>
+
+                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect feedback-table--action mdl-typography--font-bold" ng-click="initiateUserDelete(user)" color="b" hue="hdst" property="txt" opaqueness lw-color>
+                      <i class="material-icons user_vault--table-data" role="presentation">delete_forever</i>Delete
+                    </button>
+                  </div>
+                </td>
+                <!--User Actions-->
+
+                <!--User Data-->
+                <td class="user_vault--table-data mdl-data-table__cell--non-numeric" ng-hide="toggle.item == $index">{{user.personal_info.firstname}}</td>
+                <td class="user_vault--table-data mdl-data-table__cell--non-numeric" ng-hide="toggle.item == $index">{{user.personal_info.lastname}}</td>
+                <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone" ng-hide="toggle.item == $index">{{user.personal_info.phone}}</td>
+                <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone" ng-hide="toggle.item == $index">{{user.personal_info.email}}</td>
+                <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone" ng-hide="toggle.item == $index">{{user.role.position}}</td>
+                <!--User Data-->
+              </tr>
+
+              <!--User is iterated-->
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!--No Results Section-->
+      <div class="no-results-curtain lightweight-animate-repeat-no-results" ng-if="results.length === 0">
+
+        <!--No Results Card-->
+        <div class="no-results-card mdl-cell center--block mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--4dp lightweight-animate-repeat-message">
+          <div class="mdl-card__title">
+            <i class="material-icons no-results-emoji mdl-typography--font-thin mdl-color-text--red-500" role="presentation">warning</i>
+            <h2 class="mdl-card__title-text {{base_hue_text__darkest.name}}">No Results Found!</h2>
+          </div>
+
+          <!-- NO Results Message -->
+          <div class="mdl-card__supporting-text center--block">
+            <h4 class="mdl-typography--font-thin {{base_hue_text__darkest.name}}">Uh oh, your search didn't return any results...
+            </h4>
+          </div>                
+          <!-- No Results Message -->
+
+        </div>
+        <!--No Results Card-->
+
+      </div>
+      <!--No Results Section-->
+
+      <!--Add New User Action Button-->
+      <a href="/backend/#/feedback/new-user">
+        <i id="add--user-fab" class="{{primary_hue_text__normal.name}} material-icons" role="presentation">add_circle</i>
+      </a>
+      <!--Add New User Action Button-->
+
+    </div>
+    <!--Feedback Home-->      
+
+<!--feedback-->

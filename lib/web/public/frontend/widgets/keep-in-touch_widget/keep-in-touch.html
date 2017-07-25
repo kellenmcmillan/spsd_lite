@@ -1,0 +1,110 @@
+<!-- KIT Container -->
+<div class="kit-bg-media" ng-show="$parent.KIT_Activation == true">
+    <video autoplay muted loop poster="assets/html5_video/working-with-espresso.jpg" ng-if="$parent.default_active == true">
+        <source src="assets/html5_video/working-with-espresso.mp4" type="video/mp4">
+        <source src="assets/html5_video/working-with-espresso.webm" type="video/webm">
+        <source src="assets/html5_video/working-with-espresso.ogv" type="video/ogg">
+    </video>
+    <video autoplay muted loop poster="assets/html5_video/new-york-traffic-jam.jpg" ng-if="$parent.directions_active == true">
+        <source src="assets/html5_video/new-york-traffic-jam.mp4" type="video/mp4">
+        <source src="assets/html5_video/new-york-traffic-jam.webm" type="video/webm">
+        <source src="assets/html5_video/new-york-traffic-jam.ogv" type="video/ogg">
+    </video>
+    <video autoplay muted loop poster="assets/html5_video/using-mouse.jpg" ng-if="$parent.appointment_active == true">
+        <source src="assets/html5_video/using-mouse.mp4" type="video/mp4">
+        <source src="assets/html5_video/using-mouse.webm" type="video/webm">
+        <source src="assets/html5_video/using-mouse.ogv" type="video/ogg">
+    </video>
+</div>
+
+
+<div class="lightweight-KIT mdl-grid" ng-show="$parent.KIT_Activation == true" lightweight-kit>
+
+<!-- Correction -->
+<!-- <div orientation-correction class="orientation-correction {{$parent.primary_hue_normal_darkest_opacity.name}}" ng-show="$parent.KIT_Activation == true">
+    <div class="center--text center--block no-padding orientation-message" style="width: 400px;" fix-orientation>
+        <div class="center--text center--block no-padding" style="width: inherit;">
+            <h1 class="no-border h1 base-hlr--text" style="margin-top: 100px; width: inherit;">PLEASE ROTATE YOUR SCREEN</h1>
+            <i class="material-icons" color="b" hue="hlst" property="text" opaqueness="" lw-color style="font-size: 48px; height: 48px; width: 48px; width: inherit;">screen_rotation</i>
+        </div>
+    </div>
+</div> -->
+<!-- Correction -->
+
+    <button class="mdl-button mdl-js-button mdl-js-ripple-effect lightweight--communication-hub-button-close" ng-click="$parent.KIT_Activation = false; $parent.default_active = false; $parent.mail_active = false; $parent.directions_active = false;" color="p" hue="hn" property="bdr" opaqueness="" lw-color>
+        <i class="material-icons" color="p" hue="hn" property="txt" opaqueness="" lw-color>close</i>
+    </button>
+    
+
+    <!-- Default Form -->
+    <div class="lightweight--panel-dropdown mdl-cell--6-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone" kit-content>
+        <img src="assets/brand/spsd-logo.png" class="custom-logo">
+    </div>
+    <div class="lightweight--panel-dropdown mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" kit-content ng-if="$parent.mail_active == true" >
+        
+        <p class="mdl-color-text--grey-700 form-instructions" style="margin-top: 64px;">Email Us To Stay In Touch With {{$parent.miniAppName}} or Subscribe To Our Monthly Newsletter. P.S. We'd like to know you on first name basis...</p1>
+        <form autocomplete="off" class="forms" name="subscribe_form">
+            <ul>
+                <li>
+                    <div class="lightweight-textfield">
+                        <label class="lightweight-texfield--label" for="firstname">First Name...</label>
+                        <input class="lightweight-input" type="text" id="firstname" name="Firstname" ng-model="person.info.firstname" ng-value="user.info.firstname" spellcheck="false">
+                    </div>
+                </li>
+                <li>
+                    <div class="lightweight-textfield">
+                        <label class="lightweight-texfield--label" for="lastname">First Name...</label>
+                        <input class="lightweight-input" type="text" id="lastname" name="lastname" ng-model="person.info.lastname" ng-value="user.info.lastname" spellcheck="false">
+                    </div>
+                </li>
+                <li>
+                    <div class="lightweight-textfield">
+                        <label class="lightweight-texfield--label" for="email">Email...</label>
+                        <input class="lightweight-input" type="text" id="email" name="Email" ng-model="person.info.email" ng-value="user.email" spellcheck="false">
+                    </div>
+                </li>
+            </ul>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect updateBtn lightweight-button--transparent-with-border" value="submit" ng-click="initiateUserUpdate(person)" color='primary,primary' hue='hue normal,hue normal' property='border,text' opaqueness='"",""' lw-color>Send</button>
+        </form>
+        
+    </div>
+    <!-- Default Form -->
+
+    <!-- Inquiries Form --> 
+    <div class="lightweight--panel-dropdown mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" kit-content ng-if="$parent.default_active == true">
+
+        <p class="mdl-color-text--grey-700 form-instructions" style="margin-top: 64px;">Email {{$parent.miniAppName}} with questions, comments, suggestions, &amp; inquiries. P.S. We'd like to know you on first name basis...</p1>
+        <form autocomplete="off" class="forms" name="email_us">
+            <ul>
+                <li>
+                    <div class="lightweight-textfield">
+                        <label class="lightweight-texfield--label" for="firstname">First Name...</label>
+                        <input class="lightweight-input" type="text" id="firstname" name="Firstname" ng-model="person.info.firstname" ng-value="user.info.firstname" spellcheck="false">
+                    </div>
+                </li>
+                <li>
+                    <div class="lightweight-textfield">
+                        <label class="lightweight-texfield--label" for="email">Email...</label>
+                        <input class="lightweight-input" type="text" id="email" name="Email" ng-model="person.info.email" ng-value="user.email" spellcheck="false">
+                    </div>
+                </li>
+                <div class="lightweight-textfield" style="padding-bottom: 8px;">
+                    <label class="lightweight-texfield--label" for="SIT_mail_body">Message:</label>
+                    <textarea class="lightweight-input" rows="3" type="text" id="SIT_mail_body" name="SIT_mail_body" spellcheck="false"></textarea>
+                </div>
+            </ul>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect updateBtn lightweight-button--transparent-with-border" value="submit" ng-click="initiateUserUpdate(person)" color='primary,primary' hue='hue normal,hue normal' property='border,text' opaqueness='"",""' lw-color>Send</button>
+        </form>
+    </div>
+    <!-- Inquiries Form -->
+
+    <!-- Directions Widget --> 
+    <div class="lightweight--panel-dropdown mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-if="$parent.directions_active == true" kit-content>
+        <!-- Directions Widget -->
+        <lw-directions class="lightweight-sidebar-directions-widget content-box mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone disable-animation-css-hook"></lw-directions>
+        <!-- Directions Widget -->
+    </div>
+    <!-- Directions Widget -->     
+</div>
+
+<!-- KIT Container -->
