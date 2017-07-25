@@ -309,7 +309,7 @@
                         "color": "b",
                         "hue": "hlst",
                         "property": "bg",
-                        "opaqueness": ""
+                        "opaqueness": "lst"
                     },
                     "border_color": {
                         "color": "b",
