@@ -3,21 +3,20 @@
 
     <div class="mdl-grid component" style="min-height: 100%">
         <div class="mdl-cell--2-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-        <div class="portfolio_item mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone {{base_hue_darkest.name}} mdl-shadow--4dp" ng-repeat="item in primary_gallery.component_data.galleries[0].items">
-            <div class="lightweight-portfolio--content" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false">
-
-                <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.image_src}}">
-
-                <div class="lightweight-portfolio--content-overlay primary-hn opacity-lightest" ng-class="{'overlay-active': overlay_active}" click-go="/portfolio/{{item._id}}">
-                    <div class="lightweight-portfolio--content-overlay-container" portfolio-overlay-content>
-                        <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlst" property="txt" opaqueness lw-color>search</i>
-                        <p class="padded-text" color="b" hue="hlst" property="txt" opaqueness lw-color>Open {{item.title}}</p>
+        <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="portfolio_item mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone {{base_hue_darkest.name}} mdl-shadow--4dp mdl-grid mdl-grid--no-spacing" ng-repeat="item in primary_gallery.component_data.galleries[0].items">
+                <div class="lightweight-portfolio--content mdl-cell mdl-cell--6-col" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false">
+                    <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.image_src}}">
+                    <div class="lightweight-portfolio--content-overlay primary-hn opacity-lightest" ng-class="{'overlay-active': overlay_active}" click-go="/portfolio/{{item._id}}">
+                        <div class="lightweight-portfolio--content-overlay-container" portfolio-overlay-content>
+                            <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlst" property="txt" opaqueness lw-color>search</i>
+                            <p class="padded-text" color="b" hue="hlst" property="txt" opaqueness lw-color>Open {{item.title}}</p>
+                        </div>
                     </div>
                 </div>
+                <div class="mdl-cell mdl-cell--6-col base-hlst">
 
-            </div>
-            <div class="portfolio_item_title" ng-class="{'portfolio-slide-down-hide': overlay_active}">
-                <p class="mdl-typography--font-regular" style="padding: 8px; margin: 0;" color="b" hue="hlr" property="txt" opaqueness lw-color>{{item.title}}</p>
+                </div>
             </div>
         </div>
         <div class="mdl-cell--2-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>

@@ -72,7 +72,7 @@ rgb(66, 66, 66)
 /*Primary Color Background Classes*/
 .primary-hn {background-color: #388E3C!important;}
 .primary-hlr {background-color: #66BB6A!important;}
-.primary-hn.opacity-lightest {background-color: rgba(56, 142, 60, 0.6)!important;}
+.primary-hn.opacity-lightest {background-color: rgba(56, 142, 60, 0.4)!important;}
 .primary-hn.opacity-darkest {background-color: rgba(56, 142, 60, 0.9)!important;}
 /*Primary Color Background Classes*/
 
@@ -92,7 +92,7 @@ rgb(66, 66, 66)
 .base-hn {background-color: #BDBDBD!important;}
 .base-hdr {background-color: #757575!important;}
 .base-hdst {background-color: #424242!important;}
-.base-hlst.opacity-lightest {background-color: rgba(117, 117, 117, 0.6)!important;}    
+.base-hlst.opacity-lightest {background-color: rgba(117, 117, 117, 0.4)!important;}    
 .base-hdst.opacity-darkest {background-color: rgba(66, 66, 66, 0.9)!important;}
 /*Base Color Background Classes*/
 

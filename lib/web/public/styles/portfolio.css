@@ -2,7 +2,7 @@
 
 /* ========== Lightweight Portfolio ========== */
 .portfolio_folder_container {width: 100%;}
-.portfolio_item {height: 170px; float: left; overflow: hidden; position: relative; cursor: pointer;}
+.portfolio_item {height: 250px; float: left; overflow: hidden; position: relative; cursor: pointer;}
 .portfolio_item img {transition: all .5s ease-in-out; transform: scale(1.3); width: 135%!important; will-change: transform;}
 .portfolio_item .lightweight-portfolio--content img.expand.lightweight-portfolio--content-overlay-active {transform: scale(1.15);}
 .portfolio_item .lightweight-portfolio--content {overflow: hidden; text-align: center; position: relative;}
