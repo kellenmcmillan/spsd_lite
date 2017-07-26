@@ -319,7 +319,7 @@
                     },
                     "text_color": {
                         "color": "b",
-                        "hue": "hdr",
+                        "hue": "hlst",
                         "property": "txt",
                         "opaqueness": ""
                     }
