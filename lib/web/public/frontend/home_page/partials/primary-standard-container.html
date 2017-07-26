@@ -1,10 +1,5 @@
 <style>
 .primary-standard-container-background {
-    position: absolute;
-    background-size: cover;
-/*    background-attachment: fixed;*/
-    top: 0px;
-/*    background-image: url('{{primary_standard_container.component_background_media.image.landscape}}');*/
     z-index: -1;
 }
 </style>
@@ -19,7 +14,7 @@
  lw-color>
 
     <div 
-    ng-parallax pattern="'{{primary_standard_container.component_background_media.image.landscape}}'" 
+    ng-parallax pattern="{{primary_standard_container.component_background_media.image.landscape}}" 
     speed="5" 
     reverse="false"
     class="primary-standard-container-background full-width" 
