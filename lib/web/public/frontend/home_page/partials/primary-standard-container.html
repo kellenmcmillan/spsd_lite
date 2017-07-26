@@ -1,13 +1,14 @@
 <style>
 .primary-standard-container-background {
     position: absolute;
-    min-width: 100%; 
-    min-height: 140%;
+    width: 100%;
+    height: auto;
+    transform: scale(1.3);
     top: 0px;
     background-image: url('{{primary_standard_container.component_background_media.image.landscape}}');
     background-repeat: no-repeat;
     z-index: -1;
-    transform: translate3d(0px, -{{scroll *.05}}px, 0px);
+    transform: translate3d(0px, -{{scroll *.07}}px, 0px);
 }
 </style>
 <div
