@@ -1,14 +1,12 @@
 <style>
 .primary-standard-container-background {
     position: absolute;
-    width: 100%;
-    height: auto;
-    transform: scale(1.3);
+    width: 120%;
+    height: 120%;
     top: 0px;
-    background-image: url('{{primary_standard_container.component_background_media.image.landscape}}');
-    background-repeat: no-repeat;
     z-index: -1;
     transform: translate3d(0px, -{{scroll *.07}}px, 0px);
+    background: blue;
 }
 </style>
 <div
@@ -21,8 +19,8 @@
  opaqueness="{{primary_standard_container.component_colors.background_color.opaqueness}}" 
  lw-color>
 
-    <div 
-    class="primary-standard-container-background">
+    <div class="primary-standard-container-background">
+        <img src="{{primary_standard_container.component_background_media.image.landscape}}">
     </div>
 
     <!-- Title -->
