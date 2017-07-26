@@ -2,11 +2,10 @@
 .primary-standard-container-background {
     position: absolute;
     width: auto; 
-    height: auto;
-    min-height: 120%;
-    min-width: 100%;
+    height: 140%;
     top: 0px;
     background-image: url('{{primary_standard_container.component_background_media.image.landscape}}');
+    background-repeat: none;
     z-index: -1;
     transform: translate3d(0px, -{{scroll *.3}}px, 0px);
 }
@@ -22,8 +21,7 @@
  lw-color>
 
     <div 
-    class="primary-standard-container-background full-width" 
-    full-screen>
+    class="primary-standard-container-background">
     </div>
 
     <!-- Title -->
