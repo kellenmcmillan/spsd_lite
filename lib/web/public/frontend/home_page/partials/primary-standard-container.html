@@ -6,6 +6,7 @@
     top: 0px;
     background-image: url('{{primary_standard_container.component_background_media.image.landscape}}');
     z-index: -1;
+    translate: translate3d(0px -{{scroll}}px 0px);
 }
 </style>
 <div
@@ -43,7 +44,6 @@
         opaqueness="{{primary_standard_container.component_colors.text_color.opaqueness}}" 
         lw-color ng-bind-html="primary_standard_container.component_data.title[0]">
         </h1>
-        {{scroll}}
 
     </div>
     <!-- Title -->
