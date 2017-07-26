@@ -1,0 +1,33 @@
+<style>
+.map-container-background {
+    position: absolute;
+    background-size: cover;
+    top: 0px;
+    z-index: -1;
+}
+</style>
+<div
+ class="mdl-grid component full-width no-margin no-padding"
+ style="position: relative;"  
+ full-screen
+ color="b"
+ hue="hlst"
+ property="bg" 
+ opaqueness="lst" 
+ lw-color>
+
+    <div 
+    class="map-container-background full-width" 
+    full-screen>
+        <video autoplay muted loop poster="assets/html5_video/new-york-traffic-jam.jpg">
+            <source src="assets/html5_video/new-york-traffic-jam.mp4" type="video/mp4">
+            <source src="assets/html5_video/new-york-traffic-jam.webm" type="video/webm">
+            <source src="assets/html5_video/new-york-traffic-jam.ogv" type="video/ogg">
+        </video>
+    </div>
+
+
+    <iframe src="{{iframe_src}}" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+    
+</div>
