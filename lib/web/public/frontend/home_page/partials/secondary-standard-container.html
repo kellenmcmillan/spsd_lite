@@ -5,7 +5,7 @@
     height: 120%;
     top: 0px;
     z-index: -1;
-    transform: translate3d(0px, {{second_parallax_scroll}}px, 0px);
+    transform: translate3d(0px, {{-scroll *.2 + window_height * 2}}px, 0px);
     background: blue;
     transition: all .1s ease-in-out;
 }
@@ -21,7 +21,7 @@
  lw-color>
 
     <div 
-    class="secondary-standard-container-background">
+    class="secondary-standard-container-background" screens-before="2" scroll="{{scroll}}">
         <img src="{{secondary_standard_container.component_background_media.image.landscape}}">
     </div>
 
