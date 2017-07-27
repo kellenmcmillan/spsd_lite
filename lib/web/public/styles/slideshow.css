@@ -39,12 +39,12 @@
 /* Structural */
 
 /* Media */
-.slideshow_slide_image {opacity: 1; width: 100%; height: auto;}
+.slideshow_slide_image {opacity: 1; width: 100%; height: auto; will-change: opacity;}
 .slideshow_slide_image.ng-hide-add,
 .slideshow_slide_image.ng-hide-remove {
   transition: all linear 0.5s;
 }
-.slideshow_slide_image.ng-hide {opacity: 0;}
+.slideshow_slide_image.ng-hide {opacity: 0; display: inline-block!important;}
 /* Media */
 
 /* Slideshow Control */
