@@ -4,7 +4,7 @@
     <div class="mdl-grid component" style="min-height: 100%">
         <div class="mdl-cell--2-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
         <div class="mdl-cell mdl-shadow--6dp mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid mdl-grid--no-spacing no-margin">
-            <div class="portfolio_item {{base_hue_lightest.name}} mdl-grid no-padding no-margin mdl-cell mdl-cell--6-col" style="z-index: 10;" ng-repeat="item in primary_gallery.component_data.galleries[0].items">
+            <div class="portfolio_item {{base_hue_lightest.name}} mdl-grid no-padding no-margin mdl-cell mdl-cell--6-col" style="z-index: 10;" ng-repeat="item in primary_gallery.component_data.galleries[1].items">
                 <div class="lightweight-portfolio--content mdl-cell mdl-cell--6-col no-margin no-margin" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false"  style="height: 250px;">
                     <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.image_src}}">
                     <div class="lightweight-portfolio--content-overlay primary-hn opacity-lightest" ng-class="{'overlay-active': overlay_active}" click-go="/portfolio/{{item._id}}">
