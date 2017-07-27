@@ -1,16 +1,18 @@
 <style>
 .secondary-standard-container-background {
     position: absolute;
-    background-size: cover;
-    background-attachment: fixed;
+    width: 120%;
+    height: 120%;
     top: 0px;
-    background-image: url('{{secondary_standard_container.component_background_media.image.landscape}}');
     z-index: -1;
+    transform: translate3d(0px, -{{(scroll *.2) - scroll}}px, 0px);
+    background: blue;
+    transition: all .1s ease-in-out;
 }
 </style>
 <div
  class="mdl-grid center--text component full-width no-margin no-padding"
- style="position: relative;"  
+ style="position: relative; overflow: hidden;"  
  full-screen
  color="{{secondary_standard_container.component_colors.background_color.color}}"
  hue="{{secondary_standard_container.component_colors.background_color.hue}}"
@@ -19,8 +21,8 @@
  lw-color>
 
     <div 
-    class="secondary-standard-container-background full-width" 
-    full-screen>
+    class="secondary-standard-container-background">
+        <img src="{{secondary_standard_container.component_background_media.image.landscape}}">
     </div>
 
     <!-- Title -->
