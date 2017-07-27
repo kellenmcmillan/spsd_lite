@@ -6,7 +6,7 @@
         <div class="mdl-cell mdl-shadow--6dp mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid mdl-grid--no-spacing no-margin">
             <div class="portfolio_item {{base_hue_lightest.name}} mdl-grid no-padding no-margin mdl-cell mdl-cell--6-col" style="z-index: 10;" ng-repeat="item in primary_gallery.component_data.galleries[1].items">
                 <div class="lightweight-portfolio--content mdl-cell mdl-cell--6-col no-margin no-margin" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false"  style="height: 250px;">
-                    <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.image_src}}">
+                    <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.image_thumb_src}}">
                     <div class="lightweight-portfolio--content-overlay primary-hn opacity-lightest" ng-class="{'overlay-active': overlay_active}" click-go="/portfolio/{{item._id}}">
                         <div class="lightweight-portfolio--content-overlay-container" portfolio-overlay-content>
                             <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlst" property="txt" opaqueness lw-color>search</i>
