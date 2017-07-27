@@ -3,9 +3,9 @@
 
     <div class="mdl-grid component" style="min-height: 100%">
         <div class="mdl-cell--1-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-        <div class="mdl-cell mdl-shadow--6dp mdl-cell--10-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid mdl-grid--no-spacing no-margin">
+        <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-padding no-margin">
             <div class="portfolio_item {{base_hue_lightest.name}} mdl-grid no-padding no-margin mdl-cell mdl-cell--6-col" style="z-index: 10;" ng-repeat="item in primary_gallery.component_data.galleries[1].items">
-                <div class="lightweight-portfolio--content mdl-cell mdl-cell--6-col no-margin" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false"  style="height: 350px;">
+                <div class="lightweight-portfolio--content mdl-cell mdl-cell--6-col no-margin no-padding" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false" ng-class="{'mdl-cell--order-1': index == 1 || 2 || 5 || 6, 'mdl-cell--order-2': index == 3 || 4}" style="height: 350px;">
                     <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.thumb_image_src}}" style="height: 100%; width: auto;">
                     <div class="lightweight-portfolio--content-overlay primary-hn opacity-lightest" ng-class="{'overlay-active': overlay_active}" click-go="/portfolio/{{item._id}}">
                         <div class="lightweight-portfolio--content-overlay-container" portfolio-overlay-content>
@@ -14,8 +14,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="mdl-cell mdl-cell--6-col base-hlst no-margin no-padding" style="min-height: 250px;">
-
+                <div class="mdl-cell mdl-cell--6-col base-hlst no-margin no-padding" style="min-height: 250px;" ng-class="{'mdl-cell--order-2': index == 1 || 2 || 5 || 6, 'mdl-cell--order-1': index == 3 || 4}">
+                <h1>Title Goes Here...</h1>
+                <br>
+                <p>Description of the gallery</p>
+                <br>
+                <p>Tagline of the gallery</p>
                 </div>
             </div>
         </div>
