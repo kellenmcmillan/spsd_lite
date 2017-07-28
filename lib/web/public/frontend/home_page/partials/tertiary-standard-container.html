@@ -1,12 +1,15 @@
 <style>
-.tertiary-standard-container-background {
-    position: absolute;
-    width: 130%;
-    height: 120%;
-    top: 0px;
-    z-index: -1;
-    transform: translate3d(0px, {{scroll/2 - third_offset}}px, 0px);
-}
+    .tertiary-standard-container-background {
+        position: absolute;
+        width: 130%;
+        height: 120%;
+        top: 0px;
+        z-index: -1;
+        transform: translate3d(0px, {{scroll/2 - third_offset}}px, 0px);
+    }
+    @media screen (max-width: 839px) and (max-width: 480px){.tertiary-standard-container-background img {height:100%!important; width: auto!important;}}
+    @media screen and (max-width: 479px){.tertiary-standard-container-background img {height:100%!important; width: auto!important;}}
+
 </style>
 <div
  class="mdl-grid center--text component full-width no-margin no-padding vertical-center-container"
