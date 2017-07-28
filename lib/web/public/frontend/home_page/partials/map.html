@@ -1,12 +1,3 @@
-<style>
-.map-container-background {
-    position: absolute;
-    background-size: cover;
-    top: 0px;
-    z-index: -1;
-    overflow:hidden;
-}
-</style>
 <div
  class="mdl-grid component full-width no-margin no-padding"
  style="position: relative;"  
@@ -14,21 +5,20 @@
  color="b"
  hue="hlst"
  property="bg" 
- opaqueness="lst" 
+ opaqueness="" 
  lw-color>
 
-    <div 
-    class="map-container-background full-width" 
-    full-screen>
-        <video style="min-height: 100%; min-width: 100%; width: auto; height: auto;" autoplay muted loop poster="assets/html5_video/new-york-traffic-jam.jpg">
-            <source src="assets/html5_video/new-york-traffic-jam.mp4" type="video/mp4">
-            <source src="assets/html5_video/new-york-traffic-jam.webm" type="video/webm">
-            <source src="assets/html5_video/new-york-traffic-jam.ogv" type="video/ogg">
-        </video>
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" style="position:relative; height: 300px; margin-top: 48px;">
+
+        <iframe src="{{trusted_google_address_widget_map}}" width="100%" height="100%" frameborder="0" style="border:0; opacity: 0.6" allowfullscreen></iframe>
+
     </div>
 
+    <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" style="position:relative; margin-top: 48px;">
 
-    <iframe src="{{trusted_google_address_widget_map}}" width="100%" height="100%" frameborder="0" style="border:0; opacity: 0.6" allowfullscreen></iframe>
+        <h1>{{company_address_one}}</h1>
+
+    </div>
 
     
 </div>
