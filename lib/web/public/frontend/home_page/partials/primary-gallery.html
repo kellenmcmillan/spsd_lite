@@ -1,8 +1,8 @@
-<div minfull-screen class="full-width {{base_hue_lighter.name}}" style="background: transparent; margin-top: -48px; margin-bottom: -48px;">
+<div minfull-screen class="full-width" style="background: transparent; margin-top: -48px; margin-bottom: -48px;">
 
     <div class="mdl-grid component" style="min-height: 100%">
         <div class="mdl-cell--1-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-        <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-padding no-margin">
+        <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-padding no-margin {{base_hue_lighter.name}}">
             <div class="portfolio_item {{base_hue_lightest.name}} mdl-grid no-padding no-margin mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" style="z-index: 10; min-width: 50%" ng-repeat="item in primary_gallery.component_data.galleries[1].items">
                 <div class="lightweight-portfolio--content mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone no-margin no-padding" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false" ng-class="{'mdl-cell--order-1': featured_first($index), 'mdl-cell--order-2': featured_second($index)}" style="height: 350px;">
                     <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.thumb_image_src}}" style="height: 100%; width: auto;">
