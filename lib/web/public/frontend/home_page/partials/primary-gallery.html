@@ -1,4 +1,9 @@
-<div minfull-screen class="full-width" style="background: {{base_hue_normal.value}}; margin-top: -48px; margin-bottom: -48px;">
+<style>
+    @media screen and (min-width: 840px){.component .portfolio_item {width:calc(100%)!important;}}
+    @media screen (max-width: 839px) and (max-width: 480px){.component .portfolio_item {width:calc(50%)!important;}}
+    @media screen and (max-width: 479px){.component .portfolio_item {width:calc(33.33%)!important;}}
+</style>
+<div minfull-screen class="full-width" style="background: transparent; margin-top: -48px; margin-bottom: -48px;">
 
     <div class="mdl-grid component" style="min-height: 100%">
         <div class="mdl-cell--1-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
