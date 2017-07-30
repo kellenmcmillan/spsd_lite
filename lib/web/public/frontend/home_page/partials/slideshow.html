@@ -1,5 +1,18 @@
 <!-- Hero Slideshow -->
-
+<style>
+    .slide--display {
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        top: 0px;
+        z-index: -1;
+        transform: translate3d(0px, {{scroll/2}}px, 0px);
+        background: blue;
+    }
+/*    @media screen and (min-width: 840px){.component .portfolio_item .component, .lightweight-portfolio--content {width:calc(50%)!important;}}*/
+    @media screen (max-width: 839px) and (min-width: 480px){.primary-standard-container-background img {height:100%!important; width: auto!important;}}
+    @media screen and (max-width: 479px){.primary-standard-container-background img {height:100%!important; width: auto!important;}}
+</style>
 <div class="lightweight-hero--slideshow mdl-grid component primary-slideshow" hero-element>
 
 	<div class="slide--display" hero-slider-content-container ng-repeat="slide in primary_slideshow_hero.component_data.slides" orientation-aware>
