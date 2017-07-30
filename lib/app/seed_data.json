@@ -316,7 +316,7 @@
                     },
                     "text_color": {
                         "color": "b",
-                        "hue": "hlst",
+                        "hue": "hdst",
                         "property": "txt",
                         "opaqueness": ""
                     }
