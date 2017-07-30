@@ -1,0 +1,52 @@
+<!-- mission -->
+<div
+ minfull-screen
+ class="mdl-grid center--text component quaternary-mission" 
+ color="{{quaternary_standard_container.component_colors.background_color.color}}"
+ hue="{{quaternary_standard_container.component_colors.background_color.hue}}"
+ property="{{quaternary_standard_container.component_colors.background_color.property}}" 
+ opaqueness="{{quaternary_standard_container.component_colors.background_color.opaqueness}}" 
+ lw-color>
+
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+    <div class="content-box mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <!-- Title -->
+        <h1 
+        class="h1 mdl-typography--font-bold" 
+        color="{{quaternary_standard_container.component_colors.text_color.color}}" 
+        hue="{{quaternary_standard_container.component_colors.text_color.hue}}" 
+        property="{{quaternary_standard_container.component_colors.text_color.property}}" 
+        opaqueness="{{quaternary_standard_container.component_colors.text_color.opaqueness}}" 
+        lw-color ng-bind-html="quaternary_standard_container.component_data.title[0]">
+        </h1>
+        <!-- SVG Title Border Asset -->
+        <svg 
+        version="1.1" 
+        id="Layer_1" 
+        xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink" 
+        x="0px" y="0px" viewBox="0 0 300 20" 
+        style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+        width="288" height = "13" 
+        path fill="{{base_hue_darker.value}}" 
+        xml:space="preserve">
+            <polygon points="165.8,5.9 151.8,17.4 137.8,5.9 141.3,5.9 151.8,14.5 162.3,5.9 "/><g><circle cx="10" cy="9.5" r="4.5"/></g><g><circle cx="38" cy="9.5" r="4.5"/></g><g><circle cx="66" cy="9.5" r="4.5"/></g><g><circle cx="94" cy="9.5" r="4.5"/></g><g><circle cx="122" cy="9.5" r="4.5"/></g><g><circle cx="178" cy="9.5" r="4.5"/></g><g><circle cx="206" cy="9.5" r="4.5"/></g><g><circle cx="234" cy="9.5" r="4.5"/></g><g><circle cx="262" cy="9.5" r="4.5"/></g><g><circle cx="290" cy="9.5" r="4.5"/></g>
+        </svg>
+        <!-- SVG Title Border Asset -->
+        <!-- Title -->
+        <p 
+        color="{{quaternary_standard_container.component_colors.text_color.color}}" 
+        hue="{{quaternary_standard_container.component_colors.text_color.hue}}" 
+        property="{{quaternary_standard_container.component_colors.text_color.property}}" 
+        opaqueness="{{quaternary_standard_container.component_colors.text_color.opaqueness}}" 
+        lw-color ng-bind-html="quaternary_standard_container.component_data.text[0]">
+        </p>
+    </div>
+    <div class="content-box mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <img ng-src="quaternary_standard_container.component_data.image[0].landscape">
+        </div>
+    </div>
+    <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+</div>
+<!-- mission -->

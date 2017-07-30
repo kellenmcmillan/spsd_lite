@@ -138,65 +138,40 @@
 
         <div class="mdl-layout mdl-js-layout">
 
-            <header class="mdl-layout__header" ng-class="{'stretched-nav': is_stretched, 'mdl-layout__header--transparent': is_stretched}" style="position:relative;">
-
-                <!-- Slideshow Goes Here -->
-
-
-                <!-- Slideshow -->
-                <div style="position: fixed; top: 0; left: 0; width: {{window_width}}px; height: {{window_height}}px;" ng-include src="'frontend/home_page/partials/slideshow.html'" ng-class="{'hide': !is_stretched}"></div>
-                <!-- Slideshow -->
-
-                <div style="position: fixed; bottom: 16px; width: 100%; text-align: right;" ng-class="{'hide': !is_stretched}">
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect updateBtn lightweight-button--transparent-without-border-dark" style="margin-right: 16px;" ng-click="toggle()" color='base' hue='hue lightest' property='text' opaqueness='""' lw-color><i class="material-icons">play_for_work</i>&nbsp;Launch Web App</button>
-                </div>
-
-                <!-- Slideshow Goes Here -->
+            <header class="mdl-layout__header" style="position:relative;">
 
                 <div class="mdl-layout__header-row">
 
-                    <span ng-show="is_stretched" class="mdl-layout-title header-text-logo base-hlst--text">
+                    <div class="mdl-layout-spacer"></div>
+
+                    <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
                         <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
                     </span>
 
-                    <span ng-show="app_data.app_configs.use_graphic_logo && !is_stretched" class="mdl-layout-title header-graphic-logo">
+                    <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
                         <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
                     </span>
 
-                    <div class="mdl-layout-spacer"></div>
-
                     <!-- Header Navigation -->
-                    <nav class="mdl-navigation" ng-class="{'hide': is_stretched}">
+                    <nav class="mdl-navigation">
                         <a 
-                        class="mdl-navigation__link mdl-typography--font-bold header-navigation"
+                        class="mdl-navigation__link mdl-typography--font-bold header-navigation base-hdr--text"
                         href="{{item.href}}" 
-                        ng-repeat="item in app_data.app_configs.primary_navigation"
-                        ng-class="{'base-hlst--text': is_stretched, 'base-hdr--text': !is_stretched}"
-                        >
+                        ng-repeat="item in app_data.app_configs.primary_navigation">
                             {{item.name}}
                         </a>
                     </nav>
                     <!-- Header Navigation -->
 
-                    <div class="mdl-layout-spacer"></div>
-
                     <span class="mdl-layout-title">
 
                         <!-- Right aligned menu below button -->
-                        <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !is_stretched, 'base-hlst--text': is_stretched}">account_circle</i>
+                        <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
                         <!-- Right aligned menu below button -->
 
                     </span>
 
-                    <!-- <span class="mdl-layout-title">
-
-                        <button id="lightweight-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
-
-                            <i class="material-icons" ng-class="{'base-hdr--text': !is_stretched, 'base-hlst--text': is_stretched}">apps</i>
-
-                        </button>
-
-                    </span> -->
+                    <div class="mdl-layout-spacer"></div>
 
                 </div>
 
@@ -204,7 +179,7 @@
 
             <!-- Backend App Toolbar -->
             <div dialog-widget ng-show="show_dialog == true"></div>
-            <div class="backend-app__header mdl-shadow--6dp" ng-show="location.indexOf('backend') > 0">
+            <!-- <div class="backend-app__header mdl-shadow--6dp" ng-show="location.indexOf('backend') > 0">
 
                 <span class="mdl-layout-title">
                     <i class="material-icons" style="line-height: 1.9; padding: 2px 12px 0 24px;" color="base" hue="hue lightest" property="txt" opaqueness lw-color>web</i>
@@ -212,7 +187,7 @@
 
                 <button style="letter-spacing: 2px!important; height: 48px;" class="mdl-typography--font-bold mdl-button mdl-js-button" color="base" hue="hue lightest" property="txt" opaqueness lw-color disabled>{{pageTitle}}</button>
 
-            </div>
+            </div> -->
             <!-- Backend App Toolbar -->
 
             <!-- Right aligned menu below button -->

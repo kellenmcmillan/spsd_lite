@@ -3,7 +3,7 @@
         position: absolute;
         width: 120%;
         height: 120%;
-        top: 0px;
+        top: {{first_offset}}px;
         z-index: -1;
         transform: translate3d(0px, {{scroll/2}}px, 0px);
         background: blue;
@@ -29,15 +29,6 @@
 
     <!-- Title -->
     <div class="center--text mdl-cell mdl-cell--12-col">
-        <style>
-           @media screen and (max-width: 840px){
-            .launch-slideshow-button-container {text-align: center!important;}
-           }
-           .launch-slideshow-button-container {text-align: right;} 
-        </style>
-        <div class="launch-slideshow-button-container">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect lightweight-button--transparent-without-border-transparent" ng-click="toggle()" color='base' hue='hue darkest' property='text' opaqueness='""' lw-color><i class="material-icons" color="base" hue="hdst" property="txt" opaqueness="" lw-color>launch</i>&nbsp;Launch Slideshow</button>
-        </div>
 
         <h1 
         vertical-center

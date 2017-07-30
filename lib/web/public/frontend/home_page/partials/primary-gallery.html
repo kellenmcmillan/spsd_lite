@@ -4,29 +4,26 @@
     @media screen and (max-width: 479px){.component .portfolio_item, .component .lightweight-portfolio--content {width:calc(100%)!important;}}
 </style>
 <div minfull-screen data-size class="full-width primary-gallery" style="background: transparent; margin-top: -48px; margin-bottom: -48px;">
-
     <div class="mdl-grid component" style="min-height: 100%">
-        <div class="mdl-cell--1-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-layout-spacer"></div>
         <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-padding no-margin {{base_hue_lighter.name}}">
-            <div class="portfolio_item {{base_hue_lightest.name}} mdl-grid no-padding no-margin mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" style="z-index: 10; min-width: 50%" ng-repeat="item in primary_gallery.component_data.galleries[1].items">
-                <div class="lightweight-portfolio--content mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone no-margin no-padding" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false" ng-class="{'mdl-cell--order-1': featured_first($index), 'mdl-cell--order-2': featured_second($index)}" style="height: 350px;">
-                    <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.thumb_image_src}}" style="height: 100%; width: auto;">
-                    <div class="lightweight-portfolio--content-overlay primary-hn opacity-lightest" ng-class="{'overlay-active': overlay_active}" click-go="/portfolio/{{item._id}}">
+            <div class="portfolio_item {{base_hue_lightest.name}} mdl-grid no-padding no-margin mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" style="z-index: 10; min-width: 50%" ng-repeat="item in featured_galleries">
+                <div class="lightweight-portfolio--content mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone no-margin no-padding" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false" ng-class="{'mdl-cell--order-1': featured_first($index), 'mdl-cell--order-2': featured_second($index)}" style="height: 250px;">
+                    <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.thumbnail}}" style="height: 100%; width: auto;">
+                    <div class="lightweight-portfolio--content-overlay primary-hn opacity-lightest" ng-class="{'overlay-active': overlay_active}" click-go="/portfolio/{{item.gallery_url_param}}">
                         <div class="lightweight-portfolio--content-overlay-container" portfolio-overlay-content>
                             <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlst" property="txt" opaqueness lw-color>search</i>
                             <p class="padded-text" color="b" hue="hlst" property="txt" opaqueness lw-color>Open {{item.title}}</p>
                         </div>
                     </div>
                 </div>
-                <div class="portfolio_item {{base_hue_lightest.name}} mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone no-margin no-padding center--text" style="min-height: 250px; min-width: 50%" ng-class="{'mdl-cell--order-2': featured_first($index), 'mdl-cell--order-1': featured_second($index)}">
-                <h1>Title Goes Here...</h1>
+                <div class="portfolio_item {{base_hue_lightest.name}} mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone no-margin no-padding center--text" style="min-height: 250px; min-width: 50%" ng-class="{'mdl-cell--order-2': featured_first($index) && window_width > 479, 'mdl-cell--order-1': featured_second($index) && window_width > 479}">
+                <h1 class="h1">{{item.title}}</h1>
                 <br>
-                <p>Description of the gallery</p>
-                <br>
-                <p>Tagline of the gallery</p>
+                <p>{{item.description}}</p>
                 </div>
             </div>
         </div>
-        <div class="mdl-cell--1-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+        <div class="mdl-layout-spacer"></div>
     </div>
 </div>
