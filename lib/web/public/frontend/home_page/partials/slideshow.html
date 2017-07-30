@@ -1,6 +1,6 @@
 <!-- Hero Slideshow -->
 <style>
-    .slide--display {
+    .lightweight-hero--slideshow {
         position: absolute;
         width: 120%;
         height: 120%;
@@ -33,8 +33,8 @@
 </div>
 
 <!-- Slideshow Control -->
-<i ng-if="primary_slideshow_hero.component_data.slideshow_controls" class="material-icons mdl-typography--font-thin slideshow-control-left {{$parent.base_hue_text__lightest.name}}" role="presentation" ng-click="left_slideshow_control()" ng-class="{'contrast-button': slideshow[visible_slide].background == 'light'}" hero-slider-left-control>chevron_left</i>
-<i ng-if="primary_slideshow_hero.component_data.slideshow_controls" class="material-icons mdl-typography--font-thin slideshow-control-right {{$parent.base_hue_text__lightest.name}}" role="presentation" ng-click="right_slideshow_control()" ng-class="{'contrast-button': slideshow[visible_slide].background == 'light'}" hero-slider-right-control>chevron_right</i>
+<i ng-if="primary_slideshow_hero.component_data.slideshow_controls == true" class="material-icons mdl-typography--font-thin slideshow-control-left {{$parent.base_hue_text__lightest.name}}" role="presentation" ng-click="left_slideshow_control()" ng-class="{'contrast-button': slideshow[visible_slide].background == 'light'}" hero-slider-left-control>chevron_left</i>
+<i ng-if="primary_slideshow_hero.component_data.slideshow_controls == true" class="material-icons mdl-typography--font-thin slideshow-control-right {{$parent.base_hue_text__lightest.name}}" role="presentation" ng-click="right_slideshow_control()" ng-class="{'contrast-button': slideshow[visible_slide].background == 'light'}" hero-slider-right-control>chevron_right</i>
 <!-- Slideshow Control -->
 
 <!-- Hero Slideshow -->
