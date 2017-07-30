@@ -176,7 +176,7 @@
                     "slideshow_controls": false,
                     "slides": [
                         {
-                            "landscpae": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands4-landscape.jpg",
+                            "landscape": "/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands4-landscape.jpg",
                             "type": "image",
                             "alt": "Arlington Highlands Site Development",
                             "title": "Arlington Highlands",
@@ -187,7 +187,7 @@
                             "no_description": true
                         },
                         {
-                            "landscpae":"/assets/portfolios/bob-jones/landscape/bob-jones2-landscape.jpg",
+                            "landscape":"/assets/portfolios/bob-jones/landscape/bob-jones2-landscape.jpg",
                             "type":"image",
                             "alt":"Nature Center In Arlington",
                             "title":"Bob Jones Nature Center",
@@ -198,7 +198,7 @@
                             "no_description": true
                         },
                         {
-                            "landscpae":"/assets/portfolios/campus-edge/landscape/campusEdge3-landscape.jpg",
+                            "landscape":"/assets/portfolios/campus-edge/landscape/campusEdge3-landscape.jpg",
                             "type":"image",
                             "alt":"Campus Edge UTA Apartments",
                             "title":"Campus Edge - UTA",
@@ -209,7 +209,7 @@
                             "no_description": true
                         },
                         {
-                            "landscpae": "/assets/portfolios/capital-one/landscape/capitalOne1-landscape.jpg",
+                            "landscape": "/assets/portfolios/capital-one/landscape/capitalOne1-landscape.jpg",
                             "type": "image",
                             "alt": "Capital One",
                             "title": "Capital One Bank",
@@ -220,7 +220,7 @@
                             "no_description": true
                         },
                         {
-                            "landscpae":"/assets/portfolios/center-entryways/landscape/centerEntryway10-landscape.jpg",
+                            "landscape":"/assets/portfolios/center-entryways/landscape/centerEntryway10-landscape.jpg",
                             "type":"image",
                             "alt":"Center Street Entryway",
                             "title":"Center Street Entryway",
@@ -231,7 +231,7 @@
                             "no_description": true
                         },
                         {
-                            "landscpae":"/assets/portfolios/maintenance-jobs/landscape/maintenanceJobs3-landscape.jpg",
+                            "landscape":"/assets/portfolios/maintenance-jobs/landscape/maintenanceJobs3-landscape.jpg",
                             "type":"image",
                             "alt":"Maintenance work at the Hilton",
                             "title":"Hilton Hotel",
@@ -242,7 +242,7 @@
                             "no_description": true
                         },
                         {
-                            "landscpae":"/assets/portfolios/monaco-pool/landscape/monacoPool2-landscape.jpg",
+                            "landscape":"/assets/portfolios/monaco-pool/landscape/monacoPool2-landscape.jpg",
                             "type":"image",
                             "alt":"Monaco Pool",
                             "title":"Monaco Pool",
@@ -253,7 +253,7 @@
                             "no_description": true
                         },
                         {
-                            "landscpae":"/assets/portfolios/rd-kitchen/landscape/rdKitchen5-landscape.jpg",
+                            "landscape":"/assets/portfolios/rd-kitchen/landscape/rdKitchen5-landscape.jpg",
                             "type":"image",
                             "alt":"RD Kitchen",
                             "title":"R + D Kitchen",
