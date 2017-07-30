@@ -6,7 +6,6 @@
         top: {{first_offset}}px;
         z-index: -1;
         transform: translate3d(0px, {{scroll/2}}px, 0px);
-        background: blue;
     }
 /*    @media screen and (min-width: 840px){.component .portfolio_item .component, .lightweight-portfolio--content {width:calc(50%)!important;}}*/
     @media screen (max-width: 839px) and (min-width: 480px){.primary-standard-container-background img {height:100%!important; width: auto!important;}}
@@ -28,10 +27,9 @@
     </div>
 
     <!-- Title -->
-    <div class="center--text mdl-cell mdl-cell--12-col">
+    <div vertical-center class="center--text mdl-cell mdl-cell--12-col">
 
         <h1 
-        vertical-center
         class="primary-heading-text mdl-typography--font-bold vertical-element" 
         color="{{primary_standard_container.component_colors.text_color.color}}" 
         hue="{{primary_standard_container.component_colors.text_color.hue}}" 
