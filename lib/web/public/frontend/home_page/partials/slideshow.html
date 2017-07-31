@@ -12,7 +12,7 @@
     @media screen (max-width: 839px) and (min-width: 480px){.primary-standard-container-background img {height:100%!important; width: auto!important;}}
     @media screen and (max-width: 479px){.primary-standard-container-background img {height:100%!important; width: auto!important;}}
 </style>
-<div class="lightweight-hero--slideshow mdl-grid component primary-slideshow" hero-element>
+<div class="lightweight-hero--slideshow mdl-grid component primary-slideshow" full-screen>
 
 	<div class="slide--display" hero-slider-content-container ng-repeat="slide in primary_slideshow_hero.component_data.slides" orientation-aware>
 		<img class="slideshow_slide_image" ng-src="{{slide.landscape}}" ng-show="$index == visible_slide && slide.type == 'image'">
