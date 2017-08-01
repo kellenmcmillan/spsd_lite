@@ -91,28 +91,28 @@
                 "name": "WELCOME",
                 "icon": "home",
                 "class": "material-icons",
-                "href": "/#/",
+                "href": "/#/#welcome",
                 "target": "_self"
             },
             {
                 "name": "GALLERIES",
                 "icon": "receipt",
                 "class": "material-icons",
-                "href": "/#/services",
+                "href": "/#/#galleries",
                 "target": "_self"
             },
             {
                 "name": "LATEST NEWS",
                 "icon": "photo_library",
                 "class": "material-icons",
-                "href": "/#/portfolio",
+                "href": "/#/#latest-news",
                 "target": "_self"
             },
             {
                 "name": "LOCATE US",
                 "icon": "work",
                 "class": "material-icons",
-                "href": "/#/careers",
+                "href": "/#/#locate-us",
                 "target": "_self"
             },
             {

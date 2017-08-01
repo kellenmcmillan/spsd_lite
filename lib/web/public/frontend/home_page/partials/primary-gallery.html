@@ -8,8 +8,8 @@
         <div class="mdl-layout-spacer"></div>
         <div class="mdl-cell mdl-cell--10-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-padding no-margin {{base_hue_lighter.name}}">
             <div class="portfolio_item {{base_hue_lightest.name}} mdl-grid no-padding no-margin mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" style="z-index: 10; min-width: 50%" ng-repeat="item in featured_galleries">
-                <div class="lightweight-portfolio--content mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone no-margin no-padding" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false" ng-class="{'mdl-cell--order-1': featured_first($index), 'mdl-cell--order-2': featured_second($index)}" style="height: 350px;">
-                    <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.thumbnail}}" style="height: 100%; width: auto;">
+                <div class="lightweight-portfolio--content mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone no-margin no-padding" ng-mouseenter="overlay_active = true" ng-mouseleave="overlay_active = false" ng-class="{'mdl-cell--order-1': featured_first($index) && window_width > 479, 'mdl-cell--order-2': featured_second($index) && window_width > 479}" style="height: 350px;">
+                    <img class="expand" ng-class="{'lightweight-portfolio--content-overlay-active': overlay_active}" ng-src="{{item.thumbnail}}" style="height: 100%; width: auto; display: block; margin: 0 auto;">
                     <div class="lightweight-portfolio--content-overlay primary-hn opacity-lightest" ng-class="{'overlay-active': overlay_active}" click-go="/portfolio/{{item.gallery_url_param}}">
                         <div class="lightweight-portfolio--content-overlay-container" portfolio-overlay-content>
                             <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlst" property="txt" opaqueness lw-color>search</i>
