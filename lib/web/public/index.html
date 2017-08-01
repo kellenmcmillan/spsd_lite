@@ -156,9 +156,10 @@
                     <nav class="mdl-navigation">
                         <a 
                         class="mdl-navigation__link mdl-typography--font-bold header-navigation base-hdr--text"
-                        href="{{item.href}}" 
+                        
                         du-scrollspy
                         du-smooth-scroll
+                        ng-click="site_main_scroller({{item.href}})"
                         ng-repeat="item in app_data.app_configs.primary_navigation">
                             {{item.name}}
                         </a>
