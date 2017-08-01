@@ -153,13 +153,13 @@
                     <div class="mdl-layout-spacer"></div>
 
                     <!-- Header Navigation -->
-                    <nav class="mdl-navigation">
+                    <nav class="mdl-navigation" du-scroll-container="lightweight_content">
                         <a 
                         class="mdl-navigation__link mdl-typography--font-bold header-navigation base-hdr--text"
-                        
+                        href="{{item.href}}" 
                         du-scrollspy
                         du-smooth-scroll
-                        ng-click="site_main_scroller({{item.href}})"
+
                         ng-repeat="item in app_data.app_configs.primary_navigation">
                             {{item.name}}
                         </a>
@@ -432,7 +432,7 @@
                 </nav>
             </div>
 
-            <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content" scroll-position="scroll">
+            <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content" scroll-position="scroll" du-scroll-container>
                 
                 <div ng-view></div>
 
