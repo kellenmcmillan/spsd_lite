@@ -386,7 +386,7 @@
 
                 <!-- frontend navigation -->
 
-                <nav class="navigation mdl-navigation">
+                <nav class="navigation mdl-navigation" du-scroll-container="scroll-container">
                     <img ng-show="app_data.app_configs.use_graphic_logo" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" style="margin: 0 auto;" ng-cloak="true">
                     <br>
                     <br>
@@ -432,10 +432,10 @@
                 </nav>
             </div>
 
-            <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content" scroll-position="scroll" du-scroll-container>
-                
+            <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content" du-scroll-container>
+                <div scroll-position="scroll">
                 <div ng-view></div>
-
+                </div>
 
                 <!-- Footer -->
                 <footer class="company-color--border-bottom mdl-mini-footer" color="b" hue="hdst" property="bg" opaqueness="" lw-color>
