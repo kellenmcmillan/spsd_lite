@@ -398,49 +398,48 @@
 
             <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content" du-scroll-container>
 
-                <div scroll-position="scroll">
-                <div ng-view>
-                    <header class="mdl-layout__header mdl-layout__header--scroll" style="position:fixed; top: 0;">
+                <div scroll-position="scroll" style="position:relative;">
+                <header class="mdl-layout__header mdl-layout__header--scroll" style="position:fixed; top: 0;">
 
-                        <div class="mdl-layout__header-row">
+                    <div class="mdl-layout__header-row">
 
-                            <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
-                                <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
-                            </span>
+                        <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
+                            <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
+                        </span>
 
-                            <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
-                                <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
-                            </span>
+                        <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
+                            <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+                        </span>
 
-                            <div class="mdl-layout-spacer"></div>
+                        <div class="mdl-layout-spacer"></div>
 
-                            <!-- Header Navigation -->
-                            <nav class="mdl-navigation" du-scroll-container="lightweight_content">
-                                <a 
-                                class="mdl-navigation__link header-navigation base-hdr--text"
-                                style="font-size: 16px;"
-                                href="{{item.href}}" 
-                                du-scrollspy
-                                du-smooth-scroll
+                        <!-- Header Navigation -->
+                        <nav class="mdl-navigation" du-scroll-container="lightweight_content">
+                            <a 
+                            class="mdl-navigation__link header-navigation base-hdr--text"
+                            style="font-size: 16px;"
+                            href="{{item.href}}" 
+                            du-scrollspy
+                            du-smooth-scroll
 
-                                ng-repeat="item in app_data.app_configs.primary_navigation">
-                                    {{item.name}}
-                                </a>
-                            </nav>
-                            <!-- Header Navigation -->
+                            ng-repeat="item in app_data.app_configs.primary_navigation">
+                                {{item.name}}
+                            </a>
+                        </nav>
+                        <!-- Header Navigation -->
 
-                            <span class="mdl-layout-title">
+                        <span class="mdl-layout-title">
 
-                                <!-- Right aligned menu below button -->
-                                <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
-                                <!-- Right aligned menu below button -->
+                            <!-- Right aligned menu below button -->
+                            <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
+                            <!-- Right aligned menu below button -->
 
-                            </span>
+                        </span>
 
-                        </div>
+                    </div>
 
-                    </header>
-                </div>
+                </header>
+                <div ng-view></div>
                 </div>
 
                 <!-- Footer -->
