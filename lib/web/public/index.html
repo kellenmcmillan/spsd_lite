@@ -399,7 +399,8 @@
             <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content" du-scroll-container>
 
                 <div scroll-position="scroll" style="position:relative;">
-                <header class="mdl-layout__header mdl-layout__header--scroll" style="position:fixed; top: 0;">
+                <div ng-view></div>
+                <header class="mdl-layout__header mdl-layout__header--scroll" style="position:fixed; top: 0; z-index: 1000;">
 
                     <div class="mdl-layout__header-row">
 
@@ -439,7 +440,6 @@
                     </div>
 
                 </header>
-                <div ng-view></div>
                 </div>
 
                 <!-- Footer -->
