@@ -16,7 +16,7 @@
     padding: 0;
     border: none;
     height: 100px;
-    z-index: 3;
+    z-index: 1000;
     transition-duration: .2s;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-property: height;
