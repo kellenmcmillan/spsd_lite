@@ -40,9 +40,9 @@
 <div ng-include src="'frontend/home_page/partials/map.html'"></div>
 <!-- Directions -->
 
-<header class="lightweight-header" style="position:absolute; top: {{scroll}}px; background-color: rgba(255,255,255,0.9);">
+<header class="lightweight-header" style="position:absolute; top: {{scroll}}px;">
 
-    <div class="lightweight-header-row">
+    <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
 
         <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
             <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    

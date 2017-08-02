@@ -15,11 +15,7 @@
     margin: 0;
     padding: 0;
     border: none;
-    height: 100px;
     z-index: 1000;
-    transition-duration: .2s;
-    transition-timing-function: cubic-bezier(.4,0,.2,1);
-    transition-property: height;
 }
 
 .lightweight-header-row {
@@ -45,7 +41,12 @@
     height: 100px;
     margin: 0;
     padding: 0 48px 0 48px;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: height, opacity;
 }
+
+.lightweight-header-row.at-top {height: 140px; border-bottom: 0 solid traansparent; background-color: transparent!important;}
 
 .lightweight-header-row > * {
     -webkit-flex-shrink: 0;
