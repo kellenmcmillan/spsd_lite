@@ -53,18 +53,6 @@
     flex-shrink: 0;
 }
 
-.lightweight-header-row {
-    margin: 0;
-    padding: 0;
-    height: 64px;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: center;
-    -ms-flex-align: center:
-    align-items: center;
-}
-
 .lightweight-navigation-item {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -73,4 +61,13 @@
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
     box-sizing: border-box;
+}
+
+.lightweight-navigation-link {
+    text-decoration: none;
+    margin: 0;
+    font-weight: 400;
+    line-height: 64px;
+    padding: 0 24px;
+    
 }
