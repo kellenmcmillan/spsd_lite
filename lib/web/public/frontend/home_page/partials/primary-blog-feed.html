@@ -13,15 +13,15 @@
 </style>
 <div 
  minfull-screen
- class="mdl-grid no-margin full-width no-padding primary-blog-feed" 
+ class="mdl-grid primary-blog-feed" 
  color="{{primary_blog_feed.component_colors.background_color.color}}" 
  hue="{{primary_blog_feed.component_colors.background_color.hue}}"
  data-size 
  property="{{primary_blog_feed.component_colors.background_color.property}}" 
  opaqueness="{{primary_blog_feed.component_colors.background_color.opaqueness}}" 
  lw-color>
-    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone no-margin no-padding">
-        <div class="blog-feed-card mdl-card" ng-repeat="post in primary_blog_feed.component_data">
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="post in primary_blog_feed.component_data">
+        <div class="blog-feed-card mdl-card">
           <div class="mdl-card__title" style="background: url('{{primary_blog_feed.component_background_media[$index].image.landscape}}') center / cover;">
             <h2 class="mdl-card__title-text" ng-bind-html="post.title">{{post.title}}</h2>
           </div>
