@@ -15,6 +15,7 @@
             "google_map_widget": "https://snazzymaps.com/embed/6375"
         },
         "graphic_logo_src": "assets/brand/spsd-logo.png",
+        "graphic_logo_src_white": "assets/brand/spsd-logo.png",
         "use_graphic_logo": true,
         "template": {
             "name": "template_zero",
