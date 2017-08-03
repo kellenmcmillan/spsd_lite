@@ -337,6 +337,47 @@
                     }
                 ]
             },
+            "primary_contact": {
+                "component_data": {
+                    "title": ["Contact Us"],
+                    "text": ["Come On. Don't be shy. We're Texans, and we're in the area. We're not gonna bite. Promise"],
+                    "url": null,
+                },
+                "component_colors": {
+                    "background_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "bg",
+                        "opaqueness": null
+                    },
+                    "border_color": {
+                        "color": "b",
+                        "hue": "hlst",
+                        "property": "bdr",
+                        "opaqueness": ""
+                    },
+                    "text_color": {
+                        "color": "b",
+                        "hue": "hdst",
+                        "property": "txt",
+                        "opaqueness": ""
+                    }
+                },
+                "component_editable_feature_buttons": [
+                    {
+                        "icon": "edit",
+                        "view": {
+                            "Screen": "Plain_Text_Editor"
+                        }
+                    },
+                    {
+                        "icon": "color_lens",
+                        "view": {
+                            "Screen": "Color_Editor"
+                        }
+                    }
+                ]
+            },
             "primary_standard_container": {
                 "component_data": {
                     "title": ["Featured Galleries"],
