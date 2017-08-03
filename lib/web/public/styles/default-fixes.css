@@ -7,4 +7,5 @@ a, div, .mdl-card__supporting-text, button{letter-spacing: 0em!important; font-f
 ::selection, .service-panel--slide-container::selection {background: transparent!important; background-color: transparent!important;}
 * {outline: none!important;}
 @media (max-width: 840px ) {h2.mdl-card__title-text {font-size: 16px;}}
+p {font-size: 16px;}
 /*Default fixes*/

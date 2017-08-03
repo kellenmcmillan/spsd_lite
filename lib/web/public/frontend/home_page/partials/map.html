@@ -38,16 +38,18 @@
                 </div>
                 <!-- SVG Title Border Asset -->
                 <!-- Title -->
-                <p 
-                class="padded--top16"
-                color="{{quaternary_standard_container.component_colors.text_color.color}}" 
-                hue="{{quaternary_standard_container.component_colors.text_color.hue}}" 
-                property="{{quaternary_standard_container.component_colors.text_color.property}}" 
-                opaqueness="{{quaternary_standard_container.component_colors.text_color.opaqueness}}" 
-                lw-color><i class="material-icons" role="presentation" color="p" hue="hn" property="txt" opaqueness lw-color>room</i><br>
-                {{app_data.app_configs.address.info.street}}<br>
-                {{app_data.app_configs.address.info.city}}, {{app_data.app_configs.address.info.state}} {{app_data.app_configs.address.info.zipcode}}
+                <div class="center--text">
+	                <p 
+	                class="padded--top16"
+	                color="b" 
+	                hue="hdst" 
+	                property="txt" 
+	                opaqueness="" 
+	                lw-color><i class="material-icons" role="presentation" color="p" hue="hn" property="txt" opaqueness lw-color>room</i>
+	                {{app_data.app_configs.address.info.street}}<br>
+	                {{app_data.app_configs.address.info.city}}, {{app_data.app_configs.address.info.state}} {{app_data.app_configs.address.info.zipcode}}
                 </p>
+                </div>
 
             </div>
         </div>
