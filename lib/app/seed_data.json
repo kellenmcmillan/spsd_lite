@@ -120,7 +120,7 @@
                 "name": "CONTACT US",
                 "icon": "free_breakfast",
                 "class": "material-icons",
-                "href": "/#/about",
+                "href": "/#/#contact",
                 "target": "_self"
             }
         ],
