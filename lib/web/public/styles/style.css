@@ -22,7 +22,12 @@
 	.mdl-layout__header.hidden-nav .mdl-layout-title {display:none!important;}
 	.mdl-layout__header-row, .mdl-layout__header {height: 100px!important; transition: all .5s ease-in-out;}
 	.mdl-layout__header .mdl-layout__drawer-button {margin: 8px 12px!important; line-height: 54px!important}
-	.header-logo {max-width: 120px;}
+	.header-logo {
+		max-width: 120px;
+		transition-duration: .4s;
+	    transition-timing-function: cubic-bezier(.4,0,.2,1);
+	    transition-property: height;
+	}
 	#primaryLogo {max-height: 72px; width: auto; transition: all .5s ease-in-out;}
 	#loadingScreenPrimaryLogo {max-height: 120px; width: auto; transition: all .5s ease-in-out;}
 	@media (max-width: 640px) {#primaryLogo {max-height: 64px; width: auto;}}
