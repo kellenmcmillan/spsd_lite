@@ -1,29 +1,63 @@
+<!-- Locate Us -->
 <div
- class="mdl-grid component full-width no-margin no-padding"
- id="locate-us"
- style="position: relative;"  
  minfull-screen
+ class="component map mdl-grid no-padding no-margin"
  color="b"
- hue="hlr"
+ hue="hlst"
  property="bg" 
  opaqueness="" 
  lw-color>
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-cell mdl-cell--12-col quaternary--1">
+            <!-- Title -->
+            <div class="quaternary-center--1" quaternaryone-center>
+                <div class="center--text">
+                    <h2 
+                    class="mdl-typography--font-bold" 
+                    color="{{quaternary_standard_container.component_colors.text_color.color}}" 
+                    hue="{{quaternary_standard_container.component_colors.text_color.hue}}" 
+                    property="{{quaternary_standard_container.component_colors.text_color.property}}" 
+                    opaqueness="{{quaternary_standard_container.component_colors.text_color.opaqueness}}" 
+                    lw-color>
+                    Company Address
+                    </h2>
+                    <!-- SVG Title Border Asset -->
+                    <svg 
+                    version="1.1" 
+                    id="Layer_1" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    x="0px" y="0px" viewBox="0 0 300 20" 
+                    style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+                    width="288" height = "13" 
+                    path fill="{{base_hue_darker.value}}" 
+                    xml:space="preserve">
+                        <polygon points="165.8,5.9 151.8,17.4 137.8,5.9 141.3,5.9 151.8,14.5 162.3,5.9 "/><g><circle cx="10" cy="9.5" r="4.5"/></g><g><circle cx="38" cy="9.5" r="4.5"/></g><g><circle cx="66" cy="9.5" r="4.5"/></g><g><circle cx="94" cy="9.5" r="4.5"/></g><g><circle cx="122" cy="9.5" r="4.5"/></g><g><circle cx="178" cy="9.5" r="4.5"/></g><g><circle cx="206" cy="9.5" r="4.5"/></g><g><circle cx="234" cy="9.5" r="4.5"/></g><g><circle cx="262" cy="9.5" r="4.5"/></g><g><circle cx="290" cy="9.5" r="4.5"/></g>
+                    </svg>
+                </div>
+                <!-- SVG Title Border Asset -->
+                <!-- Title -->
+                <p 
+                class="padded--top16"
+                color="{{quaternary_standard_container.component_colors.text_color.color}}" 
+                hue="{{quaternary_standard_container.component_colors.text_color.hue}}" 
+                property="{{quaternary_standard_container.component_colors.text_color.property}}" 
+                opaqueness="{{quaternary_standard_container.component_colors.text_color.opaqueness}}" 
+                lw-color>
+                {{view_data.app_configs.address.info.street}}<br>
+                {{view_data.app_configs.address.info.city}}, {{view_data.app_configs.address.info.state}} {{view_data.app_configs.address.info.zipcode}}
+                </p>
 
-    <div class="mdl-cell mdl-cell--2-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-
-    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" style="position:relative; height: 400px; margin-top: 64px;">
-
-        <iframe src="{{trusted_google_address_widget_map}}" width="100%" height="100%" frameborder="0" style="border:0; opacity: 0.8" allowfullscreen></iframe>
-
+            </div>
+        </div>
     </div>
-
-    <div class="mdl-cell mdl-cell--2-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" style="position:relative; margin-top: 48px;">
-
-        <h3>Company Address</h3>
-        <h3>{{company_address_one}}</h3>
-
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid quaternary--2" style="overflow: hidden; position: relative;">
+        <span class="quaternary-center--2" quaternarytwo-center style="height: 350px; overflow: hidden">
+            <iframe src="{{trusted_google_address_widget_map}}" width="100%" height="100%" frameborder="0" style="border:0; opacity: 0.8" allowfullscreen></iframe>
+        </span>
     </div>
-
-    <div class="mdl-cell mdl-cell--2-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
-    
+    <div class="mdl-layout-spacer"></div>
 </div>
+<!-- Locate Us -->
