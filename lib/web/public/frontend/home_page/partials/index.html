@@ -44,6 +44,8 @@
 
     <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
 
+    	<div class="mdl-layout-spacer mdl-cell--hide-desktop mdl-cell--hide-tablet"></div>
+
         <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
             <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
         </span>
@@ -56,7 +58,7 @@
         <div class="mdl-layout-spacer"></div>
 
         <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item" du-scroll-container="lightweight_content">
+        <nav class="lightweight-navigation-item mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px;"

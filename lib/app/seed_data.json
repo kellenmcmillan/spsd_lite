@@ -833,12 +833,14 @@
             "primary_blog_feed": {
                 "component_data": [
                     {
-                        "title": "8/7/17 Latest Project",
-                        "text": "With over 30 years of experience, we have a vast knowledge of landscaping + masonry best practices."
+                        "title": "Latests Project",
+                        "date": "7/20/17",
+                        "text": "Our Latest Projects:<br><ul class=\"lightweight-list-icon mdl-list\"><li class=\"mdl-list__item\"><span class=\"mdl-list__item-primary-content\"><i class=\"material-icons mdl-list__item-icon mdl-color-text--green-800\">navigate_next</i> Trinity River Park - Fort Worth, TX</span></li><li class=\"mdl-list__item\"><span class=\"mdl-list__item-primary-content\"><i class=\"material-icons mdl-list__item-icon mdl-color-text--green-800\">navigate_next</i> Hilton Hotel - Plano, TX</span></li></ul>"
                     },
                     {
-                        "title": "8/16/17",
-                        "text": "Go deeper to discover why SPSD is a preferred partner in DFW landscape planning and development."
+                        "title": "Dive Deeper - SPSD Tips",
+                        "date": "8/16/17",
+                        "text": "Go deeper to discover why SPSD is a preferred partner in DFW landscape planning and development. Not only are we a leader in DFW with landscaping and masonry construction works, we also do so with accountability in mind. Never sell yourself short. Do your research and see why we are chosen for only the best projects in DFW."
                     }
                 ],
                 "component_background_media": [

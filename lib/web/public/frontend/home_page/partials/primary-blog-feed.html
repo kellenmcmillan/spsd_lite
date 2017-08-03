@@ -1,5 +1,15 @@
 <style>
-
+.blog-feed-card.mdl-card {
+  width: 512px;
+}
+.blog-feed-card > .mdl-card__title {
+  color: #fff;
+  height: 400px;
+  background: url('../assets/demos/welcome_card.jpg') center / cover;
+}
+.blog-feed-card > .mdl-card__menu {
+  color: #fff;
+}
 </style>
 <div 
  minfull-screen
@@ -10,7 +20,28 @@
  property="{{primary_blog_feed.component_colors.background_color.property}}" 
  opaqueness="{{primary_blog_feed.component_colors.background_color.opaqueness}}" 
  lw-color>
-    <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width no-margin no-padding">
+    <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone no-margin no-padding">
+        <div class="blog-feed-card mdl-card" ng-repeat="post in primary_blog_feed.component_data">
+          <div class="mdl-card__title" style="background: url('{{primary_blog_feed.component_background_media[$index]}}') center / cover;">
+            <h2 class="mdl-card__title-text">{{post.title}}</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
+            {{post.date}}<br>
+            {{post.text}}
+          </div>
+          <!-- <div class="mdl-card__actions mdl-card--border">
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+              Get Started
+            </a>
+          </div> -->
+          <div class="mdl-card__menu">
+            <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+              <i class="material-icons">share</i>
+            </button>
+          </div>
+        </div>
+    </div>
+    <!-- <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width no-margin no-padding">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
                 <h1 class="h1" ng-bind="primary_blog_feed.component_data[0].title"></h1>
@@ -25,5 +56,6 @@
             </div>
             <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"><img src="{{primary_blog_feed.component_background_media[1].image.landscape}}"></div>
         </div>
-    </div>
+    </div> -->
 </div>
+
