@@ -24,10 +24,10 @@
 	.mdl-layout__header .mdl-layout__drawer-button {margin: 8px 12px!important; line-height: 54px!important}
 	.header-logo {
 		max-width: 120px;
-		transition-duration: .4s;
+		/*transition-duration: .4s;
 	    transition-timing-function: cubic-bezier(.4,0,.2,1);
 	    transition-property: max-width;
-	    will-change: transform;
+	    will-change: transform;*/
 	}
 	#primaryLogo {max-height: 72px; width: auto; transition: all .5s ease-in-out;}
 	#loadingScreenPrimaryLogo {max-height: 120px; width: auto; transition: all .5s ease-in-out;}
