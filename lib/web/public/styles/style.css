@@ -27,7 +27,7 @@
 		transition-duration: .4s;
 	    transition-timing-function: cubic-bezier(.4,0,.2,1);
 	    transition-property: max-width;
-	    will-change: width;
+	    will-change: transform;
 	}
 	#primaryLogo {max-height: 72px; width: auto; transition: all .5s ease-in-out;}
 	#loadingScreenPrimaryLogo {max-height: 120px; width: auto; transition: all .5s ease-in-out;}
