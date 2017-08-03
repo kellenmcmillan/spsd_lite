@@ -19,7 +19,7 @@
                     hue="{{primary_contact.component_colors.text_color.hue}}" 
                     property="{{primary_contact.component_colors.text_color.property}}" 
                     opaqueness="{{primary_contact.component_colors.text_color.opaqueness}}" 
-                    lw-color ng-bind-html="primary_contact.component_data.title[0]">
+                    lw-color ng-bind-html="{{primary_contact.component_data.title[0]}}">
                     </h2>
                     <!-- SVG Title Border Asset -->
                     <svg 
@@ -43,7 +43,7 @@
                 hue="{{primary_contact.component_colors.text_color.hue}}" 
                 property="{{primary_contact.component_colors.text_color.property}}" 
                 opaqueness="{{primary_contact.component_colors.text_color.opaqueness}}" 
-                lw-color ng-bind-html="primary_contact.component_data.text[0]">
+                lw-color ng-bind-html="{{primary_contact.component_data.text[0]}}">
                 </p>
 
             </div>
@@ -52,8 +52,8 @@
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid contact--2" style="position: relative;">
         <span class="contact-center--2" primary-contact-two-center>
-            <p class="mdl-color-text--grey-700 form-instructions">Reach out to us below.</p1>
-            <form autocomplete="off" class="forms" name="subscribe_form">
+            <p class="mdl-color-text--grey-700 form-instructions">Reach out to us below.</p>
+            <form autocomplete="off" class="forms" name="subscribe_form" class="full-width">
                 <ul>
                     <li>
                         <div class="lightweight-textfield">
