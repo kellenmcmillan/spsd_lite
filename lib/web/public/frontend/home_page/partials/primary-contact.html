@@ -1,13 +1,25 @@
+<style>
+    .contact-bg-media {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;}
+    .contact-bg-media video  {width: auto; height: 120%;}
+</style>
 <!-- mission -->
+
 <div
  minfull-screen
  id="contact"
  class="component primary-contact mdl-grid no-padding no-margin"
- color="{{primary_contact.component_colors.background_color.color}}"
- hue="hlr"
- property="{{primary_contact.component_colors.background_color.property}}" 
- opaqueness="{{primary_contact.component_colors.background_color.opaqueness}}" 
+ color="b"
+ hue="hlst"
+ property="bg" 
+ opaqueness="lst" 
  lw-color>
+     <div class="contact-bg-media">
+        <video autoplay muted loop poster="assets/html5_video/using-mouse.jpg">
+            <source src="assets/html5_video/using-mouse.mp4" type="video/mp4">
+            <source src="assets/html5_video/using-mouse.webm" type="video/webm">
+            <source src="assets/html5_video/using-mouse.ogv" type="video/ogg">
+        </video>
+    </div>
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
         <div class="mdl-cell mdl-cell--12-col contact--1">
