@@ -9,7 +9,7 @@
 	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-madding full-width photo_roll">
 
 			<div 
-			class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--4dp thumb-{{$index}}" 
+			class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
 			ng-repeat="item in portfolio_item.images" 
 			ng-click="$parent.currentPorfolioImage = $index; portfolio_scroller('portfolio_top');"
 			du-scrollspy
@@ -25,4 +25,4 @@
 			</div>
 	</div>
 </div>
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored primary-hn" style="position: fixed; top: 48px; right: 48px" click-go="/"><i class="material-icons" color="b" hue="hlst" property="txt" opaqueness lw-color>home</i>&nbsp;</button>
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored primary-hn mdl-shadow--4dp" style="position: fixed; top: 48px; right: 48px" click-go="/"><i class="material-icons" color="b" hue="hlst" property="txt" opaqueness lw-color>home</i>&nbsp;</button>
