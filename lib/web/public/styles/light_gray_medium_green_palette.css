@@ -92,7 +92,7 @@ rgb(66, 66, 66)
 .base-hn {background-color: #BDBDBD!important;}
 .base-hdr {background-color: #757575!important;}
 .base-hdst {background-color: #424242!important;}
-.base-hlst.opacity-lightest {background-color: rgba(255, 255, 255, 0.6)!important;}    
+.base-hlst.opacity-lightest {background-color: rgba(255, 255, 255, 0.8)!important;}    
 .base-hdst.opacity-darkest {background-color: rgba(66, 66, 66, 0.4)!important;}
 /*Base Color Background Classes*/
 
