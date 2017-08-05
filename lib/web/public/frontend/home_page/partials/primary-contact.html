@@ -80,7 +80,7 @@
                             <textarea class="lightweight-input" rows="3" type="text" id="SIT_mail_body" name="SIT_mail_body" spellcheck="false"></textarea>
                         </l1>
                     </ul>
-                    <button ng-init="hovered = false" class="mdl-button mdl-js-button mdl-js-ripple-effect {{base_hue_text__lightest.name}}" ng-class="{'primary_hue_lightest': hovered, primary_hue_normal': !hovered}" ng-mouseenter="hovered = true" style="width: 150px;" value="submit" ng-click="">Send</button>
+                    <button ng-init="hovered = false" class="mdl-button mdl-js-button mdl-js-ripple-effect {{base_hue_text__lightest.name}}" ng-class="{'{{primary_hue_lightest.name}}': hovered, {{primary_hue_normal.name}}': !hovered}" ng-mouseenter="hovered = true" style="width: 150px;" value="submit" ng-click="">Send</button>
                 </form>
             </div>
         </div>
