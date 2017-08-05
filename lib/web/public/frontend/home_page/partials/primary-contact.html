@@ -46,7 +46,7 @@
                 opaqueness="{{primary_contact.component_colors.text_color.opaqueness}}" 
                 lw-color ng-bind-html="primary_contact.component_data.text[0]">
                 </p>
-
+                <p class="base-hdr--text form-instructions" style="font-size: 10px">*We are the sole owners of the information collected on this site. We only have access to/collect information that you voluntarily give us via email or other direct contact from you. We will not sell or rent this information to anyone.<br>We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to ship an order.<br>Unless you ask us not to, we may contact you via email in the future to tell you about specials, new products or services, or changes to this privacy policy.</p>
             </div>
         </div>
     </div>
@@ -80,8 +80,7 @@
                             <textarea class="lightweight-input" rows="3" type="text" id="SIT_mail_body" name="SIT_mail_body" spellcheck="false"></textarea>
                         </l1>
                     </ul>
-                    <p class="base-hdr--text form-instructions" style="font-size: 10px">*We are the sole owners of the information collected on this site. We only have access to/collect information that you voluntarily give us via email or other direct contact from you. We will not sell or rent this information to anyone.<br>We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to ship an order.<br>Unless you ask us not to, we may contact you via email in the future to tell you about specials, new products or services, or changes to this privacy policy.</p>
-                    <button class="mdl-button mdl-js-button mdl-js-ripple-effect" style="width: 150px;" value="submit" ng-click="" color='primary' hue='hue normal' property='bg' opaqueness='""' lw-color>Send</button>
+                    <button ng-init="hovered = false" class="mdl-button mdl-js-button mdl-js-ripple-effect {{base_hue_text__lightest.name}}" ng-class="{'primary_hue_lightest': hovered, primary_hue_normal': !hovered}" ng-mouseenter="hovered = true" style="width: 150px;" value="submit" ng-click="">Send</button>
                 </form>
             </div>
         </div>
