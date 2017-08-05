@@ -17,7 +17,6 @@ h2.h2 {font-size: 16px!important; margin: 0!important; padding: 0!important; dis
 @media (max-width: 640px) {.emphasize {font-size: 12px!important;}}
 .de-emphasize {font-size: 12px!important; line-height: 18px;}
 @media all and (orientation: landscape) and (max-width: 740px) {
-	p {font-size: 11px!important;}
 	.emphasize {font-size: 14px!important;}
 	.de-emphasize {font-size: 10px!important;}
 }
