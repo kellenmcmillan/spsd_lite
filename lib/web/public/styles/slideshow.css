@@ -83,9 +83,9 @@
 .horizontal-animate-right-title {opacity: 0; transform: translate(-16px,0); transition: all .5s ease-in-out; transition-delay: .8s}
 .horizontal-animate-right-tagline {opacity: 0; transform: translate(-16px,0); transition: all .5s ease-in-out; transition-delay: 1.5s}
 .horizontal-animate-right-text {opacity: 0; transform: translate(-16px,0); transition: all .5s ease-in-out; transition-delay: 1.5s}*/
-.lightweight-slideshow--title-container {position: absolute; bottom: 146px; left: 16; padding:  8px 8px 8px 24px; max-width: 350px;}
-.lightweight-slideshow--title-container p {font-size: 24px;}
-.lightweight-slideshow--tagline-container {position: absolute; bottom: 76px; left: 16; padding: 8px 8px 8px 24px; max-width: 350px;}
+.lightweight-slideshow--title-container {position: absolute; bottom: 146px; left: 48px; padding:  8px; max-width: 350px;}
+.lightweight-slideshow--title-container p {font-size: 28px;}
+.lightweight-slideshow--tagline-container {position: absolute; bottom: 124px; left: 48px; padding: 8px; max-width: 350px;}
 .lightweight-slideshow--tagline-container p {font-size: 16px;}
 .lightweight-slideshow--text-container {position: absolute; bottom: 48px; right: 16px; padding: 16px; max-width: 250px;}
 /* Slideshow Text Content */
