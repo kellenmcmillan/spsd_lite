@@ -41,9 +41,9 @@ No Accent
 Base:
 --------------------------------------------------------
 hue lightest
-grey-100
+grey-0
 rgb(245, 245, 245)
-#F5F5F5
+#FAFAFA
 ----------------------------
 hue lighter
 grey-300
@@ -87,7 +87,7 @@ rgb(66, 66, 66)
 /*Primary Color Border Classes*/
 
 /*Base Color Background Classes*/
-.base-hlst {background-color: #F5F5F5!important;}
+.base-hlst {background-color: #FAFAFA!important;}
 .base-hlr {background-color: #E0E0E0!important;}
 .base-hn {background-color: #BDBDBD!important;}
 .base-hdr {background-color: #757575!important;}
@@ -97,7 +97,7 @@ rgb(66, 66, 66)
 /*Base Color Background Classes*/
 
 /*Base Color Text Classes*/
-.base-hlst--text {color: #F5F5F5!important;}
+.base-hlst--text {color: #FAFAFA!important;}
 .base-hlr--text {color: #E0E0E0!important;}
 .base-hn--text {color: #BDBDBD!important;}
 .base-hdr--text {color: #757575!important;}
@@ -105,7 +105,7 @@ rgb(66, 66, 66)
 /*Base Text Classes*/
 
 /*Base Color Border Classes*/
-.base-hlst--border {border-color: #F5F5F5!important;}
+.base-hlst--border {border-color: #FAFAFA!important;}
 .base-hlr--border {border-color: #E0E0E0!important;}
 .base-hn--border {border-color: #BDBDBD!important;}
 .base-hdr--border {border-color: #757575!important;}
