@@ -1,3 +1,14 @@
+<style>
+	.back-home {
+		color: {{base_hue_lightest.value}};
+		background-color: {{primary_hue_normal.value}};
+		transition: all .2s ease-in-out;
+	}
+	.back-home:hover {
+		background-color: {{primary_hue_lighter.value}};
+		transition: all .2s ease-in-out;
+	}
+</style>
 <div class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" du-scroll-container>
 	<div class="portfolio_object_media mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" id="portfolio_top">
 
@@ -24,5 +35,9 @@
 	            </div>
 			</div>
 	</div>
+	<button click-go="/" class="back-home mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp" style="position: fixed; top: 32px; right: 48px">
+		<i class="material-icons">home</i>
+	</button>
 </div>
-<button class="mdl-button mdl-js-button lightweight-button--transparent-with-border" style="letter-spacing: 2px; margin-bottom: 16px; position: fixed; top: 16px; right: 16px" click-go="/" color="p,p" hue="hn,hn" property="txt,bdr" opaqueness="'',''" lw-color><i class="material-icons" color="p" hue="hn" property="txt" opaqueness lw-color>Home</i>&nbsp;Back Home</button>
+
+
