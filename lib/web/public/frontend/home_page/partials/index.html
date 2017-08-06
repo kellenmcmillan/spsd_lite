@@ -36,7 +36,7 @@
 <div ng-include src="'frontend/home_page/partials/primary-contact.html'"></div>
 <!-- Contact Info -->
 
-<header class="lightweight-header" style="position:absolute; top: {{scroll}}px;">
+<header class="lightweight-header" style="position:absolute; top: {{true_scroll}}px;">
 
     <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
 
@@ -69,8 +69,11 @@
 
         <span class="mdl-layout-title">
 
-            
             <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
+            
+        </span>
+
+        <span class="mdl-layout-title">
             
             <!-- Right aligned menu below button -->
             <button id="lightweight-mobile-menu" class="mdl-button mdl-js-button mdl-button--icon mdl-cell--hide-desktop mdl-cell--hide-tablet">

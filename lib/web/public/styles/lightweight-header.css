@@ -69,8 +69,20 @@
     margin: 0;
     font-weight: 400;
     line-height: 64px;
-    padding: 0 24px;
+    padding: 0 16px;
 
 }
-
+.mdl-layout-title h1.h1 {letter-spacing: 2px!important; transition: all .5s ease-in-out; text-transform: uppercase;}
 .lightweight-header .material-icons {font-size: 32px;}
+
+.header-logo {
+    max-width: 120px;
+}
+.auth-circle {cursor: pointer;}
+#primaryLogo {max-height: 72px; width: auto; transition: all .5s ease-in-out;}
+#loadingScreenPrimaryLogo {max-height: 120px; width: auto; transition: all .5s ease-in-out;}
+@media (max-width: 640px) {#primaryLogo {max-height: 64px; width: auto;}}
+
+@media screen and (max-width: 840px) and (min-width) {
+
+}

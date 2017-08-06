@@ -12,36 +12,6 @@
 	}
 	/*Front-End-Critical*/
 	.mdl-layout__content {z-index: 2; scroll-behavior: smooth; width: 100%; display: absolute; overflow-x: hidden;}
-	@media screen and (max-width: 1024px) {
-		.mdl-layout__header {
-			display: flex!important;
-		}
-	}
-	.mdl-layout__header .auth-circle {font-size: 36px; cursor: pointer;}
-	.mdl-layout__header.hidden-nav ~ .mdl-layout__drawer-button {display:none!important;}
-	.mdl-layout__header.hidden-nav .mdl-layout-title {display:none!important;}
-	.mdl-layout__header-row, .mdl-layout__header {height: 100px!important; transition: all .5s ease-in-out;}
-	.mdl-layout__header .mdl-layout__drawer-button {margin: 8px 12px!important; line-height: 54px!important}
-	.header-logo {
-		max-width: 120px;
-	}
-	#primaryLogo {max-height: 72px; width: auto; transition: all .5s ease-in-out;}
-	#loadingScreenPrimaryLogo {max-height: 120px; width: auto; transition: all .5s ease-in-out;}
-	@media (max-width: 640px) {#primaryLogo {max-height: 64px; width: auto;}}
-	.mdl-layout__header .auth-circle {font-size: 36px; cursor: pointer;}
-	.logged-in .auth-circle {font-size: 50px; cursor: pointer;}
-	/*Front-End-Critical*/
-
-	/*Front-End-Critical*/
-	.mdl-layout-title h1.h1 {letter-spacing: 2px!important; transition: all .5s ease-in-out; text-transform: uppercase;}
-	@media (max-width: 400px) {.mdl-layout__header-row {padding: 0 16px 0 64px;}}
-	.mdl-layout__drawer>.mdl-layout-title {padding-left: 0!important; padding-top: 8px; margin-left: auto; margin-right:auto;}
-	/*Front-End-Critical*/
-	
-	/*Front-End-Critical*/
-	.mdl-layout__drawer {border-right: none!important;}
-	.mdl-layout__header .mdl-layout__drawer-button {background: transparent;}
-	.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {padding: 15px 30px;}
 	/*Front-End-Critical*/
 
 	/*Front-End-Critical*/
