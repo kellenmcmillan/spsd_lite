@@ -61,7 +61,6 @@
             href="{{item.href}}" 
             du-scrollspy
             du-smooth-scroll
-
             ng-repeat="item in app_data.app_configs.primary_navigation">
                 {{item.name}}
             </a>
@@ -70,15 +69,60 @@
 
         <span class="mdl-layout-title">
 
-            <!-- Right aligned menu below button -->
+            
             <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
+            
             <!-- Right aligned menu below button -->
-
+            <button id="lightweight-mobile-menu" class="mdl-button mdl-js-button mdl-button--icon mdl-cell--hide-desktop mdl-cell--hide-tablet">
+                <i class="material-icons">menu</i>
+            </button>
+            <!-- Right aligned menu below button -->
         </span>
 
     </div>
 
 </header>
+<!-- Mobile Nav -->
+<!-- Right aligned menu below button -->
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="lightweight-mobile-menu" du-scroll-container="lightweight_content">
+    <li class="mdl-menu__item" ng-repeat="item in app_data.app_configs.primary_navigation">>
+        <a 
+        class="base-hdr--text"
+        style="font-size: 16px; text-decoration: none;"
+        href="{{item.href}}" 
+        du-scrollspy
+        du-smooth-scroll>
+            <i 
+            class="{{item.class}} primary-hn--text" 
+            role="presentation" 
+            color="primary" 
+            hue="hue normal" 
+            property="text" 
+            opaqueness="" 
+            lw-color>
+            {{item.icon}}
+            </i>
+            {{item.name}}
+        </a>
+    </li>
+    <li class="mdl-menu__item" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">
+        <a class="base-hdr--text" href="{{item.href}}">
+                <i 
+                class="{{item.class}} primary-hn--text" 
+                role="presentation" 
+                color="primary" 
+                hue="hue normal" 
+                property="text" 
+                opaqueness="" 
+                lw-color>
+                {{item.icon}}
+                </i>
+                {{item.name}}
+            </a>
+    </li>
+</ul>
+<!-- Right aligned menu below button -->
+<!-- Mobile Nav -->
 
 <!-- Backend App Toolbar -->
 <div dialog-widget ng-show="show_dialog == true"></div>
