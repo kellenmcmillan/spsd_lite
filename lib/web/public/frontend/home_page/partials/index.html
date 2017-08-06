@@ -109,6 +109,7 @@
                         class="base-hdr--text"
                         style="font-size: 16px; text-decoration: none;"
                         href="{{item.href}}" 
+                        ng-click="mobile_menu = false;"
                         du-scrollspy
                         du-smooth-scroll>
                             <span class="mdl-list__item-primary-content">
@@ -127,7 +128,11 @@
                         </a>
                     </li>
                     <li class="mdl-list" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">
-                        <a class="base-hdr--text" href="{{item.href}}">
+                        <a 
+                        class="base-hdr--text" 
+                        href="{{item.href}}"
+                        ng-click="mobile_menu = false;"
+                        >
                             <span class="mdl-list__item-primary-content">
                                 <i 
                                 class="{{item.class}} primary-hn--text mdl-list__item-icon" 
