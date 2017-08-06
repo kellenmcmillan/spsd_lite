@@ -12,7 +12,6 @@ h1.small-border-background:after {content: ''; /*background: #388E3C!important;*
 h1.small-border-background-no-align:after {content: ''; height: 4px; width: 6.25%; margin-top: 16px; display: block; transition: all .5s ease-in-out;}
 .service-panel:hover h1.small-border-background:after {width: 25%; transition: all .5s ease-in-out;}
 h2.h2 {font-size: 16px!important; margin: 0!important; padding: 0!important; display: inline;}
-@media (max-width: 640px) {p {font-size: 11px!important;}}
 .emphasize {font-size: 16px!important; letter-spacing 1.2em; line-height: 24px;}
 @media (max-width: 640px) {.emphasize {font-size: 12px!important;}}
 .de-emphasize {font-size: 12px!important; line-height: 18px;}
