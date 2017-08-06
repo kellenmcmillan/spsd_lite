@@ -96,7 +96,7 @@
 <!-- Menu Card Component -->
 <div style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(255, 255, 255, 0.7); z-index: 10000;" ng-show="mobile_menu">
 
-    <div class="menu-card mdl-card mdl-shadow--4dp" ng-show="mobile_menu" style="z-index: 10001; background-color: transparent;">
+    <div class="menu-card mdl-card" ng-show="mobile_menu" style="z-index: 10001;">
 
         <!-- Supporting Text (Instructions & Inputs) -->
         <div class="mdl-card__supporting-text center--block">
@@ -112,7 +112,7 @@
                         du-scrollspy
                         du-smooth-scroll>
                             <i 
-                            class="{{item.class}} primary-hn--text" 
+                            class="{{item.class}} primary-hn--text mdl-list__item-icon" 
                             role="presentation" 
                             color="primary" 
                             hue="hue normal" 
@@ -129,7 +129,7 @@
                     <span class="mdl-list__item-primary-content">
                         <a class="base-hdr--text" href="{{item.href}}">
                             <i 
-                            class="{{item.class}} primary-hn--text" 
+                            class="{{item.class}} primary-hn--text mdl-list__item-icon" 
                             role="presentation" 
                             color="primary" 
                             hue="hue normal" 
