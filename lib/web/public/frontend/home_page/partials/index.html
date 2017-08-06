@@ -103,12 +103,13 @@
 
             <!-- Menus -->
             <div style="margin: 0 auto; width: inherit;">
-                <ul class="mdl-list" du-scroll-container="lightweight_content" ng-click="mobile_menu = false">
+                <ul class="mdl-list" du-scroll-container="lightweight_content">
                     <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.primary_navigation">
                         <a 
                         class="base-hdr--text"
                         style="font-size: 16px; text-decoration: none;"
-                        href="{{item.href}}" 
+                        href="{{item.href}}"
+                        ng-click="$parent.mobile_menu = false" 
                         du-scrollspy
                         du-smooth-scroll>
                             <span class="mdl-list__item-primary-content">
