@@ -88,7 +88,7 @@
 .menu-card {
      max-height: inherit;
      position: relative;
-     margin: 48px auto 0 auto;
+     margin: 48px auto 48px auto;
      width: 80%;
      z-index: 999;
 }
@@ -102,29 +102,15 @@
         <div class="mdl-card__supporting-text center--block">
 
             <!-- Menus -->
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" du-scroll-container="lightweight_content">
-                <li class="mdl-menu__item" ng-repeat="item in app_data.app_configs.primary_navigation">>
-                    <a 
-                    class="base-hdr--text"
-                    style="font-size: 16px; text-decoration: none;"
-                    href="{{item.href}}" 
-                    du-scrollspy
-                    du-smooth-scroll>
-                        <i 
-                        class="{{item.class}} primary-hn--text" 
-                        role="presentation" 
-                        color="primary" 
-                        hue="hue normal" 
-                        property="text" 
-                        opaqueness="" 
-                        lw-color>
-                        {{item.icon}}
-                        </i>
-                        {{item.name}}
-                    </a>
-                </li>
-                <li class="mdl-menu__item" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">
-                    <a class="base-hdr--text" href="{{item.href}}">
+            <ul class="mdl-list" du-scroll-container="lightweight_content">
+                <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.primary_navigation">
+                    <span class="mdl-list__item-primary-content">
+                        <a 
+                        class="base-hdr--text"
+                        style="font-size: 16px; text-decoration: none;"
+                        href="{{item.href}}" 
+                        du-scrollspy
+                        du-smooth-scroll>
                             <i 
                             class="{{item.class}} primary-hn--text" 
                             role="presentation" 
@@ -137,6 +123,24 @@
                             </i>
                             {{item.name}}
                         </a>
+                    </span>
+                </li>
+                <li class="mdl-list" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">
+                    <span class="mdl-list__item-primary-content">
+                        <a class="base-hdr--text" href="{{item.href}}">
+                            <i 
+                            class="{{item.class}} primary-hn--text" 
+                            role="presentation" 
+                            color="primary" 
+                            hue="hue normal" 
+                            property="text" 
+                            opaqueness="" 
+                            lw-color>
+                            {{item.icon}}
+                            </i>
+                            {{item.name}}
+                        </a>
+                    </span>
                 </li>
             </ul>
             <!-- Menus -->
