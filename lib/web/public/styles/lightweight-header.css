@@ -74,3 +74,9 @@
 }
 
 .lightweight-header .material-icons {font-size: 32px;}
+
+@media screen and (max-width: 840px){
+    .lightweight-header-row {
+        padding: 0 16px 0 16px;
+    }  
+}
