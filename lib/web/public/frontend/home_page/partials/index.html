@@ -1,4 +1,4 @@
-<header class="lightweight-header" style="position:relative;">
+<header class="lightweight-header" style="position:absolute;">
 
     <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
 
@@ -125,8 +125,8 @@
 
 <!-- Mobile Nav -->
 
-<div style="position: fixed; right: 32px; top: 16px" ng-show="scroll < 100">
-    <div class="lightweight-header-row">
+<div style="position: fixed; right: 32px; top: 16px; width: inherit;" ng-show="scroll > 100">
+    <div class="lightweight-header-row" style="height:50px;">
         <span class="mdl-layout-title">
 
             <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
