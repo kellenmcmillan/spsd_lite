@@ -94,7 +94,7 @@
 }
 </style>
 <!-- Menu Card Component -->
-<div style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(255, 255, 255, 0.7); z-index: 10000;" ng-show="mobile_menu">
+<div style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(255, 255, 255, 0.7); z-index: 10000;" ng-show="mobile_menu" ng-click="mobile_menu = false;">
 
     <div class="menu-card mdl-card" ng-show="mobile_menu" style="z-index: 10001;">
 
@@ -102,51 +102,49 @@
         <div class="mdl-card__supporting-text center--block">
 
             <!-- Menus -->
-            <ul class="mdl-list" du-scroll-container="lightweight_content">
-                <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.primary_navigation">
-                    <a 
-                    class="base-hdr--text"
-                    style="font-size: 16px; text-decoration: none;"
-                    href="{{item.href}}" 
-                    du-scrollspy
-                    du-smooth-scroll>
-                        <span class="mdl-list__item-primary-content">
-                            
-                            <i 
-                            class="{{item.class}} primary-hn--text mdl-list__item-icon" 
-                            role="presentation" 
-                            color="primary" 
-                            hue="hue normal" 
-                            property="text" 
-                            opaqueness="" 
-                            lw-color>
-                            {{item.icon}}
-                            </i>
-                            {{item.name}}
-                            
-                        </span>
-                    </a>
-                </li>
-                <li class="mdl-list" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">
-                    <a class="base-hdr--text" href="{{item.href}}">
-                        <span class="mdl-list__item-primary-content">
-                            
-                            <i 
-                            class="{{item.class}} primary-hn--text mdl-list__item-icon" 
-                            role="presentation" 
-                            color="primary" 
-                            hue="hue normal" 
-                            property="text" 
-                            opaqueness="" 
-                            lw-color>
-                            {{item.icon}}
-                            </i>
-                            {{item.name}}
-                            
-                        </span>
-                    </a>
-                </li>
-            </ul>
+            <div style="margin: 0 auto;">
+                <ul class="mdl-list" du-scroll-container="lightweight_content">
+                    <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.primary_navigation">
+                        <a 
+                        class="base-hdr--text"
+                        style="font-size: 16px; text-decoration: none;"
+                        href="{{item.href}}" 
+                        du-scrollspy
+                        du-smooth-scroll>
+                            <span class="mdl-list__item-primary-content">
+                                <i 
+                                class="{{item.class}} primary-hn--text mdl-list__item-icon" 
+                                role="presentation" 
+                                color="primary" 
+                                hue="hue normal" 
+                                property="text" 
+                                opaqueness="" 
+                                lw-color>
+                                {{item.icon}}
+                                </i>
+                                {{item.name}}
+                            </span>
+                        </a>
+                    </li>
+                    <li class="mdl-list" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">
+                        <a class="base-hdr--text" href="{{item.href}}">
+                            <span class="mdl-list__item-primary-content">
+                                <i 
+                                class="{{item.class}} primary-hn--text mdl-list__item-icon" 
+                                role="presentation" 
+                                color="primary" 
+                                hue="hue normal" 
+                                property="text" 
+                                opaqueness="" 
+                                lw-color>
+                                {{item.icon}}
+                                </i>
+                                {{item.name}}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
             <!-- Menus -->
 
         </div>
