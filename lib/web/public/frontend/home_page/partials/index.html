@@ -1,6 +1,46 @@
-<header class="lightweight-header" style="position:absolute;">
+
+
+<!-- Slideshow -->
+<div ng-include src="'frontend/home_page/partials/slideshow.html'"></div>
+<!-- Slideshow -->
+
+<!-- Mission -->
+<div ng-include src="'frontend/home_page/partials/quaternary-standard-container.html'"></div>
+<!-- Mission -->
+
+<!-- Parallax -->
+<div ng-include src="'frontend/home_page/partials/primary-standard-container.html'"></div>
+<!-- Parallax -->
+
+<!-- Gallery -->
+<div ng-include src="'frontend/home_page/partials/primary-gallery.html'" style="margin-top: -64px;"></div>
+<!-- Gallery -->
+
+<!-- Parallax -->
+<div ng-include src="'frontend/home_page/partials/secondary-standard-container.html'"></div>
+<!-- Parallax -->
+
+<!-- Blog Feed -->
+<div ng-include src="'frontend/home_page/partials/primary-blog-feed.html'"></div>
+<!-- Blog Feed -->
+
+<!-- Contact Info -->
+<div ng-include src="'frontend/home_page/partials/tertiary-standard-container.html'"></div>
+<!-- Contact Info -->
+
+<!-- Directions -->
+<div ng-include src="'frontend/home_page/partials/map.html'"></div>
+<!-- Directions -->
+
+<!-- Contact Info -->
+<div ng-include src="'frontend/home_page/partials/primary-contact.html'"></div>
+<!-- Contact Info -->
+
+<header class="lightweight-header" style="position:absolute; top: {{scroll}}px;">
 
     <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
+
+    	<div class="mdl-layout-spacer mdl-cell--hide-desktop mdl-cell--hide-tablet"></div>
 
         <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
             <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
@@ -85,89 +125,40 @@
     </li>
 </ul>
 <!-- Right aligned menu below button -->
-
-<!-- Slideshow -->
-<div ng-include src="'frontend/home_page/partials/slideshow.html'"></div>
-<!-- Slideshow -->
-
-<!-- Mission -->
-<div ng-include src="'frontend/home_page/partials/quaternary-standard-container.html'"></div>
-<!-- Mission -->
-
-<!-- Parallax -->
-<div ng-include src="'frontend/home_page/partials/primary-standard-container.html'"></div>
-<!-- Parallax -->
-
-<!-- Gallery -->
-<div ng-include src="'frontend/home_page/partials/primary-gallery.html'" style="margin-top: -64px;"></div>
-<!-- Gallery -->
-
-<!-- Parallax -->
-<div ng-include src="'frontend/home_page/partials/secondary-standard-container.html'"></div>
-<!-- Parallax -->
-
-<!-- Blog Feed -->
-<div ng-include src="'frontend/home_page/partials/primary-blog-feed.html'"></div>
-<!-- Blog Feed -->
-
-<!-- Contact Info -->
-<div ng-include src="'frontend/home_page/partials/tertiary-standard-container.html'"></div>
-<!-- Contact Info -->
-
-<!-- Directions -->
-<div ng-include src="'frontend/home_page/partials/map.html'"></div>
-<!-- Directions -->
-
-<!-- Contact Info -->
-<div ng-include src="'frontend/home_page/partials/primary-contact.html'"></div>
-<!-- Contact Info -->
-
-
 <!-- Mobile Nav -->
 
-<div style="position: fixed; right: 32px; top: 16px; width: inherit;" ng-show="scroll > 100">
-    <div class="lightweight-header-row" style="height:50px;">
-        <span class="mdl-layout-title">
+<!-- Backend App Toolbar -->
+<div dialog-widget ng-show="show_dialog == true"></div>
+<!-- <div class="backend-app__header mdl-shadow--6dp" ng-show="location.indexOf('backend') > 0">
 
-            <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
-            
-        </span>
+    <span class="mdl-layout-title">
+        <i class="material-icons" style="line-height: 1.9; padding: 2px 12px 0 24px;" color="base" hue="hue lightest" property="txt" opaqueness lw-color>web</i>
+    </span>
 
-        <span class="mdl-layout-title">
-            
-            <!-- Right aligned menu below button -->
-            <button id="lightweight-mobile-menu" class="mdl-button mdl-js-button mdl-button--icon mdl-cell--hide-desktop mdl-cell--hide-tablet">
-                <i class="material-icons">menu</i>
-            </button>
-            <!-- Right aligned menu below button -->
-        </span>
+    <button style="letter-spacing: 2px!important; height: 48px;" class="mdl-typography--font-bold mdl-button mdl-js-button" color="base" hue="hue lightest" property="txt" opaqueness lw-color disabled>{{pageTitle}}</button>
+
+</div> -->
+<!-- Backend App Toolbar -->
+
+<!-- Right aligned menu below button -->
+<!-- <div class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect lightweight-kit-menu-lower-right mdl-shadow--6dp"
+for="lightweight-menu-lower-right" color="base" hue="hue lightest" property="bg" opaqueness lw-color>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--6-col" style="text-align: center">
+            <div class="lightweight-kit-option border--radius-2" ng-click="KIT_Activation = true; directions_active = true;">
+                <i class="material-icons" color="base" hue="hue darker" property="text" opaqueness="" lw-color>directions</i><br>
+                <p>Find Us</p>
+            </div>
+        </div>
+        <div class="mdl-cell mdl-cell--6-col" style="text-align: center">
+            <div class="lightweight-kit-option border--radius-2" ng-click="KIT_Activation = true; default_active = true;">
+                <i class="material-icons" color="base" hue="hue darker" property="text" opaqueness="" lw-color>forum</i><br>
+                <p>Contact</p>
+            </div>
+        </div>
     </div>
-</div>
-
-<div dialog-widget ng-show="show_dialog == true">
-    
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div> -->
+<!-- Right aligned menu below button -->
 
 <!-- Login Card Component -->
 <div style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="user_button">
