@@ -94,15 +94,15 @@
 }
 </style>
 <!-- Menu Card Component -->
-<div style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="mobile_menu">
+<div style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(255, 255, 255, 0.7); z-index: 10000;" ng-show="mobile_menu">
 
-    <div class="menu-card mdl-card mdl-shadow--4dp base-hlst" ng-show="user_button" style="z-index: 10001;">
+    <div class="menu-card mdl-card mdl-shadow--4dp" ng-show="mobile_menu" style="z-index: 10001; background-color: transparent;">
 
         <!-- Supporting Text (Instructions & Inputs) -->
         <div class="mdl-card__supporting-text center--block">
 
             <!-- Menus -->
-            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="lightweight-mobile-menu" du-scroll-container="lightweight_content">
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" du-scroll-container="lightweight_content">
                 <li class="mdl-menu__item" ng-repeat="item in app_data.app_configs.primary_navigation">>
                     <a 
                     class="base-hdr--text"
