@@ -96,13 +96,13 @@
 <!-- Menu Card Component -->
 <div style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="mobile_menu" ng-click="mobile_menu = false;">
 
-    <div class="menu-card mdl-card" ng-show="mobile_menu" style="z-index: 10001;" ng-click="$rootScope.mobile_menu = false">
+    <div class="menu-card mdl-card" ng-show="mobile_menu" style="z-index: 10001;">
 
         <!-- Supporting Text (Instructions & Inputs) -->
         <div class="mdl-card__supporting-text center--block">
 
             <!-- Menus -->
-            <div style="margin: 0 auto; width: inherit;">
+            <div style="margin: 0 auto; width: inherit;" ng-click="mobile_menu = false">
                 <ul class="mdl-list" du-scroll-container="lightweight_content">
                     <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.primary_navigation">
                         <a 
