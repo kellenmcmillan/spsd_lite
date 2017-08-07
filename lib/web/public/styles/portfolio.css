@@ -26,7 +26,7 @@
     .portfolio_item.description, .lightweight-portfolio--content {width:50%!important;}
 }
 
-@media screen (max-width: 839px) and (max-width: 480px){
+@media screen (max-width: 839px) and (min-width: 480px){
 	.gallery-container {width:100%!important;}
 	.portfolio_item {width: 100%!important;}
 	.lightweight-portfolio--content,
