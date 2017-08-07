@@ -1,4 +1,13 @@
 <style>
+    .view-gallery-button {
+        color: {{base_hue_text__lightest.value}};
+        background-color: {{primary_hue_normal.value}};
+        transition: all .3s ease-in-out;
+    }
+    .view-gallery-button:hover {
+        color: {{base_hue_text__darker.value}};
+        background-color: {{primary_hue_lighter.value}};
+    }
     .portfolio_item {height: inherit; width: 50%!important;}
     .portfolio_item.description, .lightweight-portfolio--content: {height: 350px;}
     @media screen and (min-width: 840px){
@@ -15,6 +24,7 @@
         .gallery-container {width:100%!important;}
     }
 </style>
+
 <div minfull-screen data-size class="full-width primary-gallery" style="background: transparent; margin-top: -48px; margin-bottom: -48px;">
     <div class="mdl-grid component" style="min-height: 100%">
         <div class="mdl-layout-spacer"></div>
@@ -33,10 +43,9 @@
 
                 <div class="portfolio_item description {{base_hue_lightest.name}} mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone no-margin no-padding center--text" style="min-width: 50%" ng-class="{'mdl-cell--order-2': featured_first($index) && window_width > 479, 'mdl-cell--order-1': featured_second($index) && window_width > 479}">
                     <br>
-                    <br>
-                    <br>
                     <h1 class="h1">{{item.title}}</h1>
                     <p>{{item.description}}</p>
+                    <button class="view-gallery-button mdl-button mdl-js-button mdl-js-ripple-effect {{base_hue_text__lightest.name}}" style="width: 150px; margin: 8px auto 8px auto;" click-go="/portfolio/{{item.gallery_url_param}}">Open {{item.title}}</button>
                 </div>
 
             </div>
