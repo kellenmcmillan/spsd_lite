@@ -12,12 +12,8 @@
 <div class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" du-scroll-container>
 	<div class="portfolio_object_media mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" id="portfolio_top">
 
-		<!-- <div class="portfolio_media">
+		<div class="portfolio_media">
 			<img src="{{portfolio_item.images[currentPorfolioImage].landscape}}">
-		</div> -->
-
-		<div class="portfolio_media" ng-repeat="slide in portfolio_item.images" orientation-aware>
-			<img class="slideshow_slide_image" ng-src="{{slide.landscape}}" ng-show="$index == visible_slide && slide.type == 'image'" style="display: block; margin: 0 auto;">
 		</div>
 
 	</div>
@@ -26,7 +22,7 @@
 			<div 
 			class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--4dp thumb-{{$index}}" 
 			ng-repeat="item in portfolio_item.images" 
-			
+			ng-click="$parent.currentPorfolioImage = $index; portfolio_scroller('portfolio_top');"
 			du-scrollspy
             du-smooth-scroll
             >
