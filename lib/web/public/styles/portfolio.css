@@ -30,7 +30,7 @@
 	.gallery-container {width:100%!important;}
 	.portfolio_item {width: 100%!important;}
 	.lightweight-portfolio--content,
-	.portfolio_item.description: {height:250px; width:100%!important;}
+	.portfolio_item.description {height:250px; width:100%!important;}
 }
 
 @media screen and (max-width: 479px){
