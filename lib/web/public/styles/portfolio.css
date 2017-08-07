@@ -1,6 +1,24 @@
 /* CSS Document */
 
 /* ========== Lightweight Featured Galleries ========== */
+@media screen and (min-width: 840px){
+    .portfolio_item {width: 50%!important;}
+    .portfolio_item.description, .lightweight-portfolio--content {width:50%!important;}
+}
+
+@media screen and (max-width: 839px) and (min-width: 480px){
+	.gallery-container {width:100%!important;}
+	.portfolio_item {width: 100%!important;}
+	.lightweight-portfolio--content,
+	.portfolio_item.description: {height:250px; width:100%!important;}
+}
+
+@media screen and (max-width: 479px){
+	.gallery-container {width:100%!important;}
+    .portfolio_item {width: 100%!important;}
+    .lightweight-portfolio--content,
+	.portfolio_item.description: {height:200px; width:100%!important;}
+}
 .portfolio_item {
 	height: inherit; width: 50%!important; 
 	overflow: hidden; position: 
@@ -20,25 +38,6 @@
 .portfolio_item img.expand.active {transform: scale(1.15);}
 
 .lightweight-portfolio--content {overflow: hidden; text-align: center; position: relative;}
-
-@media screen and (min-width: 840px){
-    .portfolio_item {width: 50%!important;}
-    .portfolio_item.description, .lightweight-portfolio--content {width:50%!important;}
-}
-
-@media screen (max-width: 839px) and (min-width: 480px){
-	.gallery-container {width:100%!important;}
-	.portfolio_item {width: 100%!important;}
-	.lightweight-portfolio--content,
-	.portfolio_item.description: {height:250px; width:100%!important;}
-}
-
-@media screen and (max-width: 479px){
-	.gallery-container {width:100%!important;}
-    .portfolio_item {width: 100%!important;}
-    .lightweight-portfolio--content,
-	.portfolio_item.description: {height:200px; width:100%!important;}
-}
 /* ========== Lightweight Featured Galleries ========== */
 
 
