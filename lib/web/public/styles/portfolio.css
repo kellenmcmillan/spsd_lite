@@ -9,7 +9,7 @@
 
 .portfolio_item.description, 
 .lightweight-portfolio--content {
-	height: 350px; 
+	height: 350px; width:50%!important; 
 	overflow: hidden; text-align: center; 
 	position: relative;
 }
@@ -38,7 +38,7 @@
 	.gallery-container {width:100%!important;}
     .portfolio_item {width: 100%!important;}
     .lightweight-portfolio--content,
-	.portfolio_item.description: {height:200px; width:100%!important;}
+	.portfolio_item.description {height:200px; width:100%!important;}
 }
 /* ========== Lightweight Featured Galleries ========== */
 
