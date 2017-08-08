@@ -9,7 +9,7 @@
 
 .portfolio_item.description, 
 .lightweight-portfolio--content {
-	height: 350px; width:50%; 
+	height: 350px; 
 	overflow: hidden; text-align: center; 
 	position: relative;
 }
