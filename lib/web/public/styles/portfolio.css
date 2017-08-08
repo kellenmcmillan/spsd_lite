@@ -2,14 +2,14 @@
 
 /* ========== Lightweight Featured Galleries ========== */
 .portfolio_item {
-	height: inherit; width: 50%!important; 
+	height: inherit; width: 50%; 
 	overflow: hidden; position: 
 	relative; cursor: pointer;
 }
 
 .portfolio_item.description, 
 .lightweight-portfolio--content {
-	height: 350px; width:50%!important; 
+	height: 350px; width:50%; 
 	overflow: hidden; text-align: center; 
 	position: relative;
 }
