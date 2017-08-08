@@ -2,7 +2,7 @@
 
 /* ========== Lightweight Featured Galleries ========== */
 .portfolio_item {
-	height: inherit; width: 50%; 
+	height: inherit; width: 50%!important; 
 	overflow: hidden; position: 
 	relative; cursor: pointer;
 }
