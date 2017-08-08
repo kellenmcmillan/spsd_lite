@@ -8,7 +8,11 @@
 }
 
 .portfolio_item.description, 
-.lightweight-portfolio--content {height: 350px; width:50%!important;}
+.lightweight-portfolio--content {
+	height: 350px; width:50%!important; 
+	overflow: hidden; text-align: center; 
+	position: relative;
+}
 
 .portfolio_item img {
 	transition: all .5s ease-in-out; 
@@ -19,10 +23,8 @@
 
 .portfolio_item img.expand.active {transform: scale(1.15);}
 
-.lightweight-portfolio--content {overflow: hidden; text-align: center; position: relative;}
-
 @media screen and (max-width: 1400px) and (min-width: 840px){
-    .lightweight-portfolio--content {height: 275px;}
+    .portfolio_item.description, .lightweight-portfolio--content {height: 275px!important;}
 }
 
 @media screen and (max-width: 839px) and (min-width: 480px){
