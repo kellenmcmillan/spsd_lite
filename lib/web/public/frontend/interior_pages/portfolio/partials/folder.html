@@ -9,14 +9,15 @@
 		transition: all .2s ease-in-out;
 	}
 </style>
-<div class="portfolio-nav--container base-hlr full-width">
+<div class="portfolio-nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15);">
 	<div class="portfolio-nav--row">
 		<span class="mdl-layout-title"> 
             <i class="material-icons base-hdst--text" style="font-weight: normal; cursor: pointer;" click-go="/">keyboard_backspace</i>
-            &nbsp;&nbsp;
+        </span>
+        <span class="mdl-layout-title">
             <p 
             class="portfolio-nav-title base-hdst--text"
-            style="font-size: 16px;">
+            style="font-size: 24px;">
                 {{portfolio_item.title}}
             </p>
         </span>
@@ -38,7 +39,7 @@
 	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll">
 
 			<div 
-			class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--4dp thumb-{{$index}}" 
+			class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
 			ng-repeat="item in portfolio_item.images" 
 			ng-click="$parent.currentPorfolioImage = $index; portfolio_scroller('portfolio_top');"
 			du-scrollspy
