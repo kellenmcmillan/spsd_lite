@@ -9,24 +9,25 @@
 		transition: all .2s ease-in-out;
 	}
 </style>
-<div class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" du-scroll-container>
-	<div class="portfolio-nav--container primary-hn">
-		<div class="portfolio-nav--row">
-			<span class="mdl-layout-title"> 
-                <i class="material-icons base-hlst--text" style="font-weight: normal;" ng-click="mobile_menu = !mobile_menu;">keyboard_backspace</i>
-                &nbsp;&nbsp;
-                <p 
-	            class="portfolio-nav-title base-hlst--text"
-	            style="font-size: 16px;">
-	                {{item.title}}
-	            </p>
-	        </span>
-	        <div class="mdl-layout-spacer"></div>
-	        <span class="mdl-layout-title">
-	            <i class="material-icons base-hlst--text" style="font-weight: normal;" ng-click="mobile_menu = !mobile_menu;">share</i>
-        	</span>
-		</div>
+<div class="portfolio-nav--container base-hlr full-width">
+	<div class="portfolio-nav--row">
+		<span class="mdl-layout-title"> 
+            <i class="material-icons base-hdst--text" style="font-weight: normal; cursor: pointer;" click-go="/">keyboard_backspace</i>
+            &nbsp;&nbsp;
+            <p 
+            class="portfolio-nav-title base-hdst--text"
+            style="font-size: 16px;">
+                {{portfolio_item.title}}
+            </p>
+        </span>
+        <div class="mdl-layout-spacer"></div>
+        <span class="mdl-layout-title">
+            <i class="material-icons base-hdst--text" style="font-weight: normal; cursor: pointer" ng-click="mobile_menu = !mobile_menu;">share</i>
+    	</span>
 	</div>
+</div>
+<br>
+<div class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" du-scroll-container>
 	<!-- <div class="portfolio_object_media mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" id="portfolio_top">
 
 		<div class="portfolio_media">
@@ -52,9 +53,9 @@
 	            </div>
 			</div>
 	</div>
-	<button click-go="/" class="back-home mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--4dp" style="position: fixed; top: 32px; right: 48px">
+	<!-- <button click-go="/" class="back-home mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--4dp" style="position: fixed; top: 32px; right: 48px">
 		<i class="material-icons">home</i>
-	</button>
+	</button> -->
 </div>
 
 
