@@ -17,10 +17,10 @@
 		</div>
 
 	</div>
-	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-madding full-width photo_roll">
+	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll">
 
 			<div 
-			class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-shadow--4dp thumb-{{$index}}" 
+			class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone thumb-{{$index}} no-margin no-padding" 
 			ng-repeat="item in portfolio_item.images" 
 			ng-click="$parent.currentPorfolioImage = $index; portfolio_scroller('portfolio_top');"
 			du-scrollspy
