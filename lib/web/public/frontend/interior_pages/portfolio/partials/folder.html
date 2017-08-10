@@ -10,6 +10,23 @@
 	}
 </style>
 <div class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" du-scroll-container>
+	<div class="portfolio-nav--container primary-hn">
+		<div class="portfolio-nav--row">
+			<span class="mdl-layout-title"> 
+                <i class="material-icons base-hlst--text" style="font-weight: normal;" ng-click="mobile_menu = !mobile_menu;">keyboard_backspace</i>
+                &nbsp;&nbsp;
+                <p 
+	            class="portfolio-nav-title base-hlst--text"
+	            style="font-size: 16px;">
+	                {{item.title}}
+	            </p>
+	        </span>
+	        <div class="mdl-layout-spacer"></div>
+	        <span class="mdl-layout-title">
+	            <i class="material-icons base-hlst--text" style="font-weight: normal;" ng-click="mobile_menu = !mobile_menu;">share</i>
+        	</span>
+		</div>
+	</div>
 	<!-- <div class="portfolio_object_media mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" id="portfolio_top">
 
 		<div class="portfolio_media">
