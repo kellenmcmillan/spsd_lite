@@ -42,12 +42,13 @@
     height: 100px;
     margin: 0;
     padding: 0 48px 0 48px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
     transition-duration: .3s;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-property: height, opacity, background-color;
 }
 
-.lightweight-header-row.at-top {height: 160px; border-bottom: 0 solid transparent; background-color: transparent!important;}
+.lightweight-header-row.at-top {height: 160px; border-bottom: 0 solid transparent; background-color: transparent!important; box-shadow: none!important;}
 
 .lightweight-header-row > * {
     -webkit-flex-shrink: 0;
