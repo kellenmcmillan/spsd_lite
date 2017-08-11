@@ -1,4 +1,4 @@
-/*.mdl-layout__drawer-button {display: none;}*/
+.mdl-layout__drawer-button {z-index: -1;}
 .lightweight-header {
     display: -webkit-flex;
     display: -ms-flexbox;
