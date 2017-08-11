@@ -28,4 +28,5 @@ h2.h2 {font-size: 16px!important; margin: 0!important; padding: 0!important; dis
 @media (max-width: 839px) {.icon-correction {padding-left:8px;}}
 @media (max-width: 840px) {.padding-text--right {padding-right:0px;} .padded-text {padding: 0 25px 0 25px;}}
 .social-footer {margin-top: 16px; letter-spacing: .8px}
+.complementary-text {font-family: 'Alex Brush', cursive;}
 /* ===== text adjustments ===== */
