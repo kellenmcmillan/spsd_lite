@@ -131,9 +131,59 @@
         <div ng-include src="'frontend/dynamic_styles/global-dynamic-styles.html'"></div>
         <!-- Dynamic Global Styles -->
 
-        <div class="mdl-layout mdl-js-layout mdl-layout--no-drawer-button">
+        <div class="mdl-layout mdl-js-layout">
 
-            
+            <div class="mdl-layout__drawer">
+
+                <!-- frontend navigation -->
+
+                <nav class="navigation mdl-navigation" du-scroll-container="scroll-container">
+                    <img ng-show="app_data.app_configs.use_graphic_logo" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" style="margin: 0 auto;" ng-cloak="true">
+                    <br>
+                    <br>
+                    <a 
+                    class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect"
+                    href="{{item.href}}"
+                    du-scrollspy
+                    du-smooth-scroll
+                    menu-close
+                    ng-repeat="item in app_data.app_configs.primary_navigation">
+                        <i 
+                        class="{{item.class}} primary-hn--text" 
+                        role="presentation" 
+                        color="primary" 
+                        hue="hue normal" 
+                        property="text" 
+                        opaqueness="" 
+                        lw-color>
+                        {{item.icon}}
+                        </i>
+                        {{item.name}}
+                    </a>
+                </nav>
+                
+                <!-- backend navigation -->
+                <nav class="navigation mdl-navigation" ng-show="user" style="padding-top: 0px">
+                    <a 
+                    class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" 
+                    menu-close 
+                    href="{{item.href}}" 
+                    ng-repeat="item in app_data.app_configs.backend_navigation">
+                        <i 
+                        class="{{item.class}} primary-hn--text" 
+                        role="presentation" 
+                        color="primary" 
+                        hue="hue normal" 
+                        property="text" 
+                        opaqueness="" 
+                        lw-color>
+                        {{item.icon}}
+                        </i>
+                        {{item.name}}
+                    </a>
+                    <!-- backend navigation -->
+                </nav>
+            </div>
 
             <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content" du-scroll-container>
                 <div scroll-position="scroll">
