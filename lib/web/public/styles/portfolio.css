@@ -67,7 +67,7 @@
 @media (min-width: 1501px) {
 	.portfolio_media_thumbs {height: 280px!important;}
 }
-.portfolio_media_thumbs {height: 150px; overflow: hidden; position: relative; cursor: pointer;}
+.portfolio_media_thumbs {height: 150px; overflow: hidden; position: relative; cursor: pointer; float: left;}
 .portfolio_media_thumbs img {transform: scale(1.6);}
 .lightweight-portfolio--closer-view-overlay {height: 100%; width: 100%; position: absolute; top: 0; left: 0; opacity: 0; text-align: center;}
 .lightweight-portfolio--closer-view-overlay:hover {opacity: 1!important}
