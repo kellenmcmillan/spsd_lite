@@ -65,7 +65,7 @@
 	.portfolio_media_thumbs {height: 180px!important;}
 }
 @media (min-width: 1501px) {
-	.portfolio_media_thumbs {height: 180px!important;}
+	.portfolio_media_thumbs {height: 280px!important;}
 }
 .portfolio_media_thumbs {height: 150px; overflow: hidden; position: relative; cursor: pointer;}
 .portfolio_media_thumbs img {transform: scale(1.6);}
