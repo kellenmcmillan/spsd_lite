@@ -1,13 +1,11 @@
-<style>
+<style ng-if="scrollable">
     .primary-standard-container-background {
         position: absolute;
         width: 120%;
         height: 120%;
         top: {{first_offset}}px;
         z-index: -1;
-        -webkit-transform: translate3d(0px, {{scroll/2}}px, 0px);
         transform: translate3d(0px, {{scroll/2}}px, 0px);
-
     }
 /*    @media screen and (min-width: 840px){.component .portfolio_item .component, .lightweight-portfolio--content {width:calc(50%)!important;}}*/
     @media screen and (max-width: 839px) and (min-width: 480px){.primary-standard-container-background img {height:100%!important; width: auto!important;}}
