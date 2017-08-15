@@ -9,6 +9,17 @@
     }
     @media screen and (max-width: 839px) and (min-width: 480px){.tertiary-standard-container-background img {height:120%!important; width: auto!important;}}
     @media screen and (max-width: 479px){.tertiary-standard-container-background img {height:120%!important; width: auto!important;}}
+</style>
+<style ng-if="!scrollable">
+    .tertiary-standard-container-background {
+        position: absolute;
+        width: 130%;
+        height: 120%;
+        top: 0px;
+        z-index: -1;
+    }
+    @media screen and (max-width: 839px) and (min-width: 480px){.tertiary-standard-container-background img {height:120%!important; width: auto!important;}}
+    @media screen and (max-width: 479px){.tertiary-standard-container-background img {height:120%!important; width: auto!important;}}
 
 </style>
 <div
