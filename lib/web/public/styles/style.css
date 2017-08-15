@@ -14,7 +14,7 @@
 	.mdl-layout__container {position: static;}
 	.mdl-layout__content {
 		z-index: 2; scroll-behavior: smooth; 
-		width: 100%; position: absolute; 
+		width: 100%; position: relative; 
 		overflow-x: hidden;
 	}
 	.header-logo {
