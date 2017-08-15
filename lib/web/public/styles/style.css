@@ -12,7 +12,11 @@
 	}
 	/*Front-End-Critical*/
 	.mdl-layout__container {position: static;}
-	.mdl-layout__content {z-index: 2; scroll-behavior: smooth; width: 100%; display: absolute; overflow-x: hidden;}
+	.mdl-layout__content {
+		z-index: 2; scroll-behavior: smooth; 
+		width: 100%; display: absolute; 
+		overflow-x: hidden; transform: translateZ(0);
+	}
 	.header-logo {
 		max-width: 120px;
 	}
