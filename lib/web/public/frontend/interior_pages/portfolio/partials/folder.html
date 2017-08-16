@@ -49,12 +49,11 @@
 		<div 
 		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
 		ng-repeat="item in portfolio_item.images" 
-		ng-click="$parent.currentPorfolioImage = $index; portfolio_scroller('portfolio_top');"
+		ng-click="lightbox_active = true; fillLightboxImage(item)"
         >
 			<img src="{{item.thumbnail}}">
 			<div 
-			class="lightweight-portfolio--closer-view-overlay overlay-active" 
-			ng-click="lightbox_active = true; fillLightboxImage(item)" 
+			class="lightweight-portfolio--closer-view-overlay overlay-active"  
 			color="primary" hue="hn" property="bg" opaqueness="lst" lw-color
 			>
                 <div class="lightweight-portfolio--closer-look-overlay-container" portfolio-closer-look-overlay-content thumb="{{$index}}">
