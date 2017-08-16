@@ -50,8 +50,6 @@
 		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
 		ng-repeat="item in portfolio_item.images" 
 		ng-click="$parent.currentPorfolioImage = $index; portfolio_scroller('portfolio_top');"
-		du-scrollspy
-        du-smooth-scroll
         >
 			<img src="{{item.thumbnail}}">
 			<div 
