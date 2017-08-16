@@ -53,7 +53,7 @@
 			<img src="{{item.thumbnail}}">
 			<div 
 			class="lightweight-portfolio--closer-view-overlay overlay-active"
-			ng-click="$parent.lightbox_active = true; fillLightboxImage(item)"  
+			ng-click="fillLightboxImage(item)"  
 			color="primary" hue="hn" property="bg" opaqueness="lst" lw-color
 			>
                 <div class="lightweight-portfolio--closer-look-overlay-container" portfolio-closer-look-overlay-content thumb="{{$index}}">
@@ -71,7 +71,7 @@
 <!-- curtain -->
 <div class="lightbox_curtain" style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
 	<!-- Lightbox Close -->
-	<i class="material-icons" style="cursor: pointer; position: absolute; top: 32px; right: 32px;" ng-click="lightbox_active = false; clearLightboxImage()" color="b" hue="hlst" property="txt" opaqueness="" lw-color>close</i>
+	<i class="material-icons" style="cursor: pointer; position: absolute; top: 32px; right: 32px;" ng-click="clearLightboxImage()" color="b" hue="hlst" property="txt" opaqueness="" lw-color>close</i>
 	<!-- Lightbox Close -->
 	<!-- Lightbox Image -->
 	<img class="lightbox-image" ng-if="lightbox_active" src="{{current_lightbox_image}}" lightbox-image>
