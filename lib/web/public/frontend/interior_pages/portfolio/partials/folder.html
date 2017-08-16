@@ -1,19 +1,30 @@
 <style>
 	.back-home {
-		color: {{base_hue_lightest.value}};
-		background-color: {{primary_hue_normal.value}};
+		color: {{base_hue_darker.value}};
 		transition: all .2s ease-in-out;
 	}
 	.back-home:hover {
-		background-color: {{primary_hue_lighter.value}};
+		color: {{base_hue_darkest.value}};
 		transition: all .2s ease-in-out;
 	}
+	.lightbox_curtain {
+		position: fixed; top: 0; 
+		right: 0; bottom: 0; left: 0; 
+		background-color: rgba(0,0,0,.7); z-index: 2;
+		opacity: 0;
+		display: none;
+		transition-duration: .3s;
+	    transition-timing-function: cubic-bezier(.4,0,.2,1);
+	    transition-property: opacity;
+	}
+	.lightbox_curtain.active-lightbox {opacity: 1; display: block;}
 </style>
+<!-- Navbar -->
 <div class="portfolio-nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15);">
 	<div class="portfolio-nav--row">
 		<span class="mdl-layout-title">
-			<a href="/">
-            	<i class="material-icons base-hdst--text" style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>
+			<a class="back-home" href="/">
+            	<i class="material-icons" style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>
             </a>
         </span>
         <span class="mdl-layout-title">
@@ -29,17 +40,11 @@
     	</span>
 	</div>
 </div>
+<!-- Navbar -->
+<!-- Photo Grid -->
 <div style="display: relative;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
 	
 	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" style="display: block;">
-
-<!-- 		<div class="portfolio_object_media mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" id="portfolio_top">
-
-			<div class="portfolio_media">
-				<img src="{{portfolio_item.images[currentPorfolioImage].landscape}}">
-			</div>
-
-		</div> -->
 
 		<div 
 		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
@@ -49,7 +54,11 @@
         du-smooth-scroll
         >
 			<img src="{{item.thumbnail}}">
-			<div class="lightweight-portfolio--closer-view-overlay overlay-active" color="primary" hue="hn" property="bg" opaqueness="lst" lw-color>
+			<div 
+			class="lightweight-portfolio--closer-view-overlay overlay-active" 
+			ng-click="lightbox_active = true; fillLightboxImage(item)" 
+			color="primary" hue="hn" property="bg" opaqueness="lst" lw-color
+			>
                 <div class="lightweight-portfolio--closer-look-overlay-container" portfolio-closer-look-overlay-content thumb="{{$index}}">
                     <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlr" property="txt" opaqueness lw-color>search</i>
                     <p color="base" hue="hlr" property="txt" opaqueness lw-color>View</p>
@@ -57,10 +66,21 @@
             </div>
 		</div>
 	</div>
-	<!-- <button click-go="/" class="back-home mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--4dp" style="position: fixed; top: 32px; right: 48px">
-		<i class="material-icons">home</i>
-	</button> -->
 	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
 </div>
+<!-- Photo Grid -->
+
+<!-- Lightbox -->
+<!-- curtain -->
+<div class="lightbox_curtain" style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
+	<!-- Lightbox Close -->
+	<i class="material-icons" style="cursor: pointer; position: absolute; top: 32px; right: 32px;" ng-click="lightbox_active = false; clearLightboxImage()" color="b" hue="hlst" property="txt" opaqueness="" lw-color>close</i>
+	<!-- Lightbox Close -->
+	<!-- Lightbox Image -->
+	<img class="lightbox-image" ng-if="lightbox_active" src="{{current_lightbox_image}}" lightbox-image>
+	<!-- Lightbox Image -->
+</div>
+<!-- curtain -->
+<!-- Lightbox -->
 
 
