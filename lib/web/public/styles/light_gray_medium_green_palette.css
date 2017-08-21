@@ -41,9 +41,9 @@ No Accent
 Base:
 --------------------------------------------------------
 hue lightest
-grey-0
+grey-100
 rgb(245, 245, 245)
-#FAFAFA
+#F5F5F5
 ----------------------------
 hue lighter
 grey-300
@@ -72,7 +72,7 @@ rgb(66, 66, 66)
 /*Primary Color Background Classes*/
 .primary-hn {background-color: #388E3C!important;}
 .primary-hlr {background-color: #66BB6A!important;}
-.primary-hn.opacity-lightest {background-color: rgba(56, 142, 60, 0.4)!important;}
+.primary-hn.opacity-lightest {background-color: rgba(56, 142, 60, 0.6)!important;}
 .primary-hn.opacity-darkest {background-color: rgba(56, 142, 60, 0.9)!important;}
 /*Primary Color Background Classes*/
 
@@ -87,17 +87,17 @@ rgb(66, 66, 66)
 /*Primary Color Border Classes*/
 
 /*Base Color Background Classes*/
-.base-hlst {background-color: #FAFAFA!important;}
+.base-hlst {background-color: #F5F5F5!important;}
 .base-hlr {background-color: #E0E0E0!important;}
 .base-hn {background-color: #BDBDBD!important;}
 .base-hdr {background-color: #757575!important;}
 .base-hdst {background-color: #424242!important;}
-.base-hlst.opacity-lightest {background-color: rgba(117, 117, 117, 0.2)!important;}    
-.base-hdst.opacity-darkest {background-color: rgba(66, 66, 66, 0.4)!important;}
+.base-hlst.opacity-lightest {background-color: rgba(117, 117, 117, 0.6)!important;}    
+.base-hdst.opacity-darkest {background-color: rgba(66, 66, 66, 0.9)!important;}
 /*Base Color Background Classes*/
 
 /*Base Color Text Classes*/
-.base-hlst--text {color: #FAFAFA!important;}
+.base-hlst--text {color: #F5F5F5!important;}
 .base-hlr--text {color: #E0E0E0!important;}
 .base-hn--text {color: #BDBDBD!important;}
 .base-hdr--text {color: #757575!important;}
@@ -105,7 +105,7 @@ rgb(66, 66, 66)
 /*Base Text Classes*/
 
 /*Base Color Border Classes*/
-.base-hlst--border {border-color: #FAFAFA!important;}
+.base-hlst--border {border-color: #F5F5F5!important;}
 .base-hlr--border {border-color: #E0E0E0!important;}
 .base-hn--border {border-color: #BDBDBD!important;}
 .base-hdr--border {border-color: #757575!important;}
