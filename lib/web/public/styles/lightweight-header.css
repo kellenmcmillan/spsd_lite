@@ -50,7 +50,7 @@
     transition-property: height, opacity, background-color;
 }
 
-.lightweight-header-row.at-top {height: 160px; border-bottom: 0 solid transparent; background-color: transparent!important; box-shadow: none!important;}
+.lightweight-header-row.at-top {height: 200px; border-bottom: 0 solid transparent; background-color: transparent!important; box-shadow: none!important;}
 
 .lightweight-header-row > * {
     -webkit-flex-shrink: 0;
