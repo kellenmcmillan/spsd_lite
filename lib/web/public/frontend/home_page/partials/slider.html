@@ -1,0 +1,235 @@
+<div 
+ class="lightweight-content--container-bigger mdl-grid" 
+ color="{{primary_slider.component_colors.background_color.color}}" 
+ hue="{{primary_slider.component_colors.background_color.hue}}" 
+ property="{{primary_slider.component_colors.background_color.property}}" 
+ opaqueness="{{primary_slider.component_colors.background_color.opaqueness}}" 
+ lw-color>
+    <!-- Title -->
+    <div class="center--text mdl-cell mdl-cell--12-col padded--top16">
+        <h1 
+        class="h1 mdl-typography--font-bold disable-animation-css-hook icon-correction"  
+        color="{{primary_slider.component_colors.text_color.color}}" 
+        hue="{{primary_slider.component_colors.text_color.hue}}" 
+        property="{{primary_slider.component_colors.text_color.property}}" 
+        opaqueness="{{primary_slider.component_colors.text_color.opaqueness}}" 
+        lw-color
+        ng-bind-html="primary_slider.component_panels.title">
+        </h1>
+
+        <!-- SVG Title Border Asset -->
+        <svg 
+        class="disable-animation-css-hook icon-correction" 
+        version="1.1" id="Layer_1" 
+        xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink" 
+        x="0px" y="0px" viewBox="0 0 300 20" 
+        style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+        width="288" height = "13" 
+        path fill="{{base_hue_darker.value}}" 
+        xml:space="preserve">
+            <polygon points="165.8,5.9 151.8,17.4 137.8,5.9 141.3,5.9 151.8,14.5 162.3,5.9 "/><g><circle cx="10" cy="9.5" r="4.5"/></g><g><circle cx="38" cy="9.5" r="4.5"/></g><g><circle cx="66" cy="9.5" r="4.5"/></g><g><circle cx="94" cy="9.5" r="4.5"/></g><g><circle cx="122" cy="9.5" r="4.5"/></g><g><circle cx="178" cy="9.5" r="4.5"/></g><g><circle cx="206" cy="9.5" r="4.5"/></g><g><circle cx="234" cy="9.5" r="4.5"/></g><g><circle cx="262" cy="9.5" r="4.5"/></g><g><circle cx="290" cy="9.5" r="4.5"/></g>
+        </svg>
+        <!-- SVG Title Border Asset -->
+
+    </div>
+    <!-- Title -->
+    <div 
+    class="service-panel--slide-container" 
+    service-slider-container 
+    slidecount="{{slide_count}}">
+        <div 
+        style="width:{{slideContainerWidth}}; transform:translate({{amount_to_slide}},0); height: 100%" 
+        class="service-slider-container" 
+        ng-swipe-left="panel_swipe('left')" 
+        ng-swipe-right="panel_swipe('right')">
+            <div 
+            ng-repeat="panel in primary_slider.component_panels.panes" 
+            class="service-panel--display mdl-grid" 
+            service-slider-content-container>
+                <!-- conditional spacer -->
+                <div 
+                ng-class="{'mdl-cell--4-col-desktop': compressed_slider == false && !primary_slider.component_panels.panes[($index * 2) + 1].title}" 
+                class="mdl-cell mdl-cell--2-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone">
+                </div>
+                <!-- conditional spacer -->
+
+                <div class="mdl-cell mdl-cell--8-col-tablet mdl-cell--4-col-phone center--text cell-padding service-panel">
+                    <div class="center--block disable-animation-css-hook" >
+
+                        <!-- first listing if icon name is not blank or if slider is compressed and this is first slide -->
+                        <i 
+                        ng-if="($index === 0 && primary_slider.component_panels.panes[$index].background_icon !== '') || (compressed_slider == true && $index >= 0 && primary_slider.component_panels.panes[$index].background_icon !== '')" 
+                        class="material-icons icon-on-hex-background" 
+                        ng-class-even="{'icon-correction': true}" 
+                        color="{{primary_slider.component_colors.icon_color.color}}" 
+                        hue="{{primary_slider.component_colors.icon_color.hue}}" 
+                        property="{{primary_slider.component_colors.icon_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.icon_color.opaqueness}}"
+                        ng-bind-html="primary_slider.component_panels.panes[$index].background_icon" 
+                        lw-color>
+                        </i>
+                        <!-- first listing if icon name is not blank or if slider is compressed and this is first slide -->
+
+                        <!-- second listing if icon name is not blank -->
+                        <i 
+                        ng-if="($index > 0 && primary_slider.component_panels.panes[($index * 2)].background_icon !== '' && compressed_slider == false)" 
+                        class="material-icons icon-on-hex-background" 
+                        ng-class-even="{'icon-correction': true}" 
+                        color="{{primary_slider.component_colors.icon_color.color}}" 
+                        hue="{{primary_slider.component_colors.icon_color.hue}}" 
+                        property="{{primary_slider.component_colors.icon_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.icon_color.opaqueness}}"
+                        ng-bind-html="primary_slider.component_panels.panes[($index * 2)].background_icon"
+                        lw-color>
+                        </i>
+                        <!-- hexagon -->
+                        <svg 
+                        style="z-index: -1; position: absolute; left: calc(50% - 87px);" 
+                        version="1.1" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="174" height="200" viewbox="0 0 173.20508075688772 200">
+                        <path fill="{{primary_hue_normal.value}}" d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"></path>
+                        </svg>
+                        <!-- hexagon -->
+                    </div>
+                    <div class="padded--top72">
+                        <h1 
+                        ng-if="$index === 0 || compressed_slider == true" 
+                        class="h1 small-border-background disable-animation-css-hook"  
+                        color="{{primary_slider.component_colors.text_color.color}}" 
+                        hue="{{primary_slider.component_colors.text_color.hue}}" 
+                        property="{{primary_slider.component_colors.text_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.text_color.opaqueness}}"
+                        ng-bind-html="primary_slider.component_panels.panes[$index].title"  
+                        lw-color>
+                        </h1>
+                        <h1 
+                        ng-if="$index > 0 && compressed_slider == false" 
+                        class="h1 small-border-background disable-animation-css-hook"  
+                        color="{{primary_slider.component_colors.text_color.color}}" 
+                        hue="{{primary_slider.component_colors.text_color.hue}}" 
+                        property="{{primary_slider.component_colors.text_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.text_color.opaqueness}}"
+                        ng-bind-html="primary_slider.component_panels.panes[($index * 2)].title" 
+                        lw-color>
+                        </h1>
+                    </div>
+                    <div class="disable-animation-css-hook">
+                        <p 
+                        ng-if="$index === 0 || compressed_slider == true" 
+                        class="de-emphasize mdl-typography--font-regular" 
+                        color="{{primary_slider.component_colors.text_color.color}}" 
+                        hue="{{primary_slider.component_colors.text_color.hue}}" 
+                        property="{{primary_slider.component_colors.text_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.text_color.opaqueness}}" 
+                        ng-bind-html="primary_slider.component_panels.panes[$index].text"
+                        lw-color>
+                        </p>
+                        <p 
+                        ng-if="$index > 0 && compressed_slider == false" 
+                        class="de-emphasize mdl-typography--font-regular" 
+                        color="{{primary_slider.component_colors.text_color.color}}" 
+                        hue="{{primary_slider.component_colors.text_color.hue}}" 
+                        property="{{primary_slider.component_colors.text_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.text_color.opaqueness}}" 
+                        ng-bind-html="primary_slider.component_panels.panes[($index * 2)].text"
+                        lw-color>
+                        </p>
+                    </div>
+                </div>
+                <div 
+                ng-if="compressed_slider == false && primary_slider.component_panels.panes[($index * 2) + 1].title" 
+                class="mdl-cell mdl-cell--8-col-tablet mdl-cell--4-col-phone center--text cell-padding service-panel">
+                    <div class="center--block disable-animation-css-hook">
+                        <i 
+                        ng-if="$index === 0" 
+                        class="material-icons icon-on-hex-background" 
+                        color="{{primary_slider.component_colors.icon_color.color}}" 
+                        hue="{{primary_slider.component_colors.icon_color.hue}}" 
+                        property="{{primary_slider.component_colors.icon_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.icon_color.opaqueness}}"
+                        ng-bind-html="primary_slider.component_panels.panes[($index * 2) + 1].background_icon"
+                        lw-color>
+                        </i>
+                        <i 
+                        ng-if="$index > 0" 
+                        class="material-icons icon-on-hex-background" 
+                        color="{{primary_slider.component_colors.icon_color.color}}" 
+                        hue="{{primary_slider.component_colors.icon_color.hue}}" 
+                        property="{{primary_slider.component_colors.icon_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.icon_color.opaqueness}}"
+                        ng-bind-html="primary_slider.component_panels.panes[($index * 2) + 1].background_icon"
+                        lw-color>
+                        </i>
+                        <!-- SVG Hexagon -->
+                        <svg 
+                        style="z-index: -1; position: absolute; left: calc(50% - 87px);" 
+                        version="1.1" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="174" height="200" viewbox="0 0 173.20508075688772 200">
+                        <path fill="{{primary_hue_normal.value}}" d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"></path>
+                        </svg>
+                        <!-- SVG Hexagon -->
+                    </div>
+                    <div class="padded--top72">
+                        <h1 
+                        ng-if="$index === 0" 
+                        class="h1 small-border-background disable-animation-css-hook"  
+                        color="{{primary_slider.component_colors.text_color.color}}" 
+                        hue="{{primary_slider.component_colors.text_color.hue}}" 
+                        property="{{primary_slider.component_colors.text_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.text_color.opaqueness}}" 
+                        ng-bind-html="primary_slider.component_panels.panes[$index + 1].title"
+                        lw-color>
+                        </h1>
+                        <h1 
+                        ng-if="$index > 0" class="h1 small-border-background disable-animation-css-hook"  
+                        color="{{primary_slider.component_colors.text_color.color}}" 
+                        hue="{{primary_slider.component_colors.text_color.hue}}" 
+                        property="{{primary_slider.component_colors.text_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.text_color.opaqueness}}" 
+                        ng-bind-html="primary_slider.component_panels.panes[($index * 2) + 1].title" 
+                        lw-color>
+                        </h1>
+                    </div>
+                    <div class="disable-animation-css-hook">
+                        <p 
+                        ng-if="$index === 0" 
+                        class="de-emphasize mdl-typography--font-regular" 
+                        color="{{primary_slider.component_colors.text_color.color}}" 
+                        hue="{{primary_slider.component_colors.text_color.hue}}" 
+                        property="{{primary_slider.component_colors.text_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.text_color.opaqueness}}" 
+                        ng-bind-html="primary_slider.component_panels.panes[$index + 1].text"
+                        lw-color>
+                        </p>
+                        <p 
+                        ng-if="$index > 0" 
+                        class="de-emphasize mdl-typography--font-regular" 
+                        color="{{primary_slider.component_colors.text_color.color}}" 
+                        hue="{{primary_slider.component_colors.text_color.hue}}" 
+                        property="{{primary_slider.component_colors.text_color.property}}" 
+                        opaqueness="{{primary_slider.component_colors.text_color.opaqueness}}" 
+                        ng-bind-html="primary_slider.component_panels.panes[($index * 2) + 1].text"
+                        lw-color>
+                        </p>
+                    </div>
+                </div>
+                <div ng-class="{'mdl-cell--4-col-desktop': compressed_slider == false && !primary_slider.component_panels.panes[($index * 2) + 1].title}" class="mdl-cell mdl-cell--2-col-desktop mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+            </div>
+        </div>
+    </div>
+    <style type="text/css">
+        .steps-circle.active {
+            color:{{primary_hue_normal.value}}!important;
+        }
+    </style>
+    <div class="mdl-cell mdl-cell--12-col steps-container mdl-grid" ng-if="panelControls.length > 1">
+        <div class="mdl-layout-spacer"></div>
+        <div>
+            <i ng-repeat="panelControl in panelControls" class="material-icons steps-circle mdl-typography--font-regular" ng-click="panel($index + 1)" ng-class="{'active': active_panel == $index + 1}" color="base" hue="hn" property="txt" opaqueness lw-color>{{active_panel == $index + 1 ? 'radio_button_checked' : 'radio_button_unchecked'}}</i>
+        </div>
+        <div class="mdl-layout-spacer"></div>
+    </div>
+</div>
