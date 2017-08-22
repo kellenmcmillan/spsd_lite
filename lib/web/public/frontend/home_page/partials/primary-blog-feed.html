@@ -45,7 +45,7 @@
  opaqueness="{{primary_blog_feed.component_colors.background_color.opaqueness}}" 
  lw-color>
  <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-repeat="post in primary_blog_feed.component_data">
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="post in primary_blog_feed.component_data">
         <div class="blog-feed-card mdl-card mdl-shadow--4dp">
           <div class="mdl-card__title" style="background: url('{{primary_blog_feed.component_background_media[$index].image.landscape}}') center / cover;">
             <h2 class="mdl-card__title-text" ng-bind-html="post.title">{{post.title}}</h2>
