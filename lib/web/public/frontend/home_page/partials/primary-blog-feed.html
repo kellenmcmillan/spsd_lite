@@ -13,9 +13,12 @@
   color: #fff;
 }
 
-.lightest {color: #4caf50}
-.lighter {color: #388e3c}
-.normal {color: #1b5e20}
+.lightest {background-color: #4caf50}
+.lighter {background-color: #388e3c}
+.normal {background-color: #1b5e20}
+
+.services {background-color: #1b5e20;}
+.services:hover {background-color: #4caf50;}
 
 @media screen and (max-width: 840px) and (min-width: 480px){
   .blog-feed-card > .mdl-card__title {
@@ -56,8 +59,8 @@
           <div class="mdl-card__supporting-text">
             <p ng-bind-html="post.text"></p>
           </div>
-          <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-js-button mdl-js-ripple-effect" style="background-color: #1b5e20; color: #fafafa; width: 80%; margin-left: auto; margin-right: auto;">
+          <div class="mdl-card__actions center--text">
+            <a class="services mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #fafafa; width: 80%;">
               Dive Deeper
             </a>
           </div>
