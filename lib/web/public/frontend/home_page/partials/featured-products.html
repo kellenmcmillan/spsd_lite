@@ -20,6 +20,18 @@
 .services {background-color: #1b5e20;}
 .services:hover {background-color: #4caf50;}
 
+@media screen and (min-width: 840px) {
+  .blog-feed-card.featured-first {
+    margin-left: -64px;
+  }
+  .blog-feed-card.featured-middle {
+    margin-top: -32px;
+  }
+  .blog-feed-card.featured-last {
+    margin-right: 64px;
+  }
+}
+
 @media screen and (max-width: 840px) and (min-width: 480px){
   .blog-feed-card > .mdl-card__title {
     height: 300px;
@@ -41,6 +53,8 @@
   }
 }
 
+
+
 </style>
 <!-- ng-class="{'lightest': $index == 0, 'lighter': $index == 1, 'normal': $index == 2}" -->
 <div 
@@ -49,16 +63,16 @@
  style="background-color:{{base_hue_lightest.value}}" 
  data-size>
  <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="post in primary_blog_feed.component_data">
-        <div class="blog-feed-card mdl-card">
-          <div class="mdl-card__title" style="background: url('{{primary_blog_feed.component_background_media[$index].image.landscape}}') center / cover;">
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="product in featured_products.component_data">
+        <div class="blog-feed-card mdl-card" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'featured-last': $index == 2}">
+          <div class="mdl-card__title" style="background: url('{{featured_products.component_background_media[$index].image.landscape}}') center / cover;">
           </div>
           <div class="mdl-card__supporting-text">
-             <h4 ng-bind-html="post.title" style="font-weight: bold;">{{post.title}}</h4>
+             <h4 ng-bind-html="product.title" style="font-weight: bold;">{{product.title}}</h4>
           </div>
           <hr>
           <div class="mdl-card__supporting-text">
-            <p ng-bind-html="post.text"></p>
+            <p ng-bind-html="product.text"></p>
           </div>
           <div class="mdl-card__actions center--text">
             <a class="services mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #fafafa; width: 100%;">
@@ -76,17 +90,17 @@
     <!-- <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width no-margin no-padding">
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-                <h1 class="h1" ng-bind="primary_blog_feed.component_data[0].title"></h1>
-                <p class="h1" ng-bind="primary_blog_feed.component_data[0].text"></p>
+                <h1 class="h1" ng-bind="featured_products.component_data[0].title"></h1>
+                <p class="h1" ng-bind="featured_products.component_data[0].text"></p>
             </div>
-            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"><img src="{{primary_blog_feed.component_background_media[0].image.landscape}}"></div>
+            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"><img src="{{featured_products.component_background_media[0].image.landscape}}"></div>
         </div>
         <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-                <h1 class="h1" ng-bind="primary_blog_feed.component_data[1].title"></h1>
-                <p class="h1" ng-bind="primary_blog_feed.component_data[1].text"></p>
+                <h1 class="h1" ng-bind="featured_products.component_data[1].title"></h1>
+                <p class="h1" ng-bind="featured_products.component_data[1].text"></p>
             </div>
-            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"><img src="{{primary_blog_feed.component_background_media[1].image.landscape}}"></div>
+            <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone"><img src="{{featured_products.component_background_media[1].image.landscape}}"></div>
         </div>
     </div> -->
 </div>
