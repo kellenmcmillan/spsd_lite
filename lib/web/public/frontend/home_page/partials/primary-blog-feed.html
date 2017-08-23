@@ -52,9 +52,10 @@
         <div class="blog-feed-card mdl-card">
           <div class="mdl-card__title" style="background: url('{{primary_blog_feed.component_background_media[$index].image.landscape}}') center / cover;">
           </div>
-          <div class="mdl-card__supporting-text mdl-card--border">
+          <div class="mdl-card__supporting-text">
              <h4 ng-bind-html="post.title" style="font-weight: bold;">{{post.title}}</h4>
           </div>
+          <hr>
           <div class="mdl-card__supporting-text">
             <p ng-bind-html="post.text"></p>
           </div>
