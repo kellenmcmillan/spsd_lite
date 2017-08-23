@@ -46,7 +46,7 @@
  <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="post in primary_blog_feed.component_data">
         <div class="blog-feed-card mdl-card">
-          <div class="mdl-card__title" ng-class="{'lightest': index == 0, 'lighter': index == 1, 'normal': index == 2}" style="background-color: ">
+          <div class="mdl-card__title" ng-class="{'lightest': $index == 0, 'lighter': $index == 1, 'normal': $index == 2}" style="background-color: ">
             <h2 class="mdl-card__title-text" ng-bind-html="post.title">{{post.title}}</h2>
           </div>
           <div class="mdl-card__supporting-text">
