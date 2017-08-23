@@ -22,13 +22,13 @@
 
 @media screen and (min-width: 840px) {
   .blog-feed-card.featured-first {
-    margin-left: 126px;
+    margin-left: 64px;
   }
   .blog-feed-card.featured-middle {
     margin-top: -16px; z-index: 10;
   }
   .blog-feed-card.featured-last {
-    margin-right: 128px;
+    margin-left: -64px;
   }
 }
 
@@ -62,8 +62,7 @@
  <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="product in featured_products.component_data">
         <div class="blog-feed-card mdl-card" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'mdl-shadow--2dp': $index == 1, 'featured-last': $index == 2}">
-          <div class="mdl-card__title" style="background: url('{{featured_products.component_background_media[$index].image.landscape}}') center / cover;">
-          </div>
+          <img class="mdl-card__title" src="{{featured_products.component_background_media[$index].image.landscape}}">
           <div class="mdl-card__supporting-text">
              <h4 ng-bind-html="product.title" style="font-weight: bold;">{{product.title}}</h4>
           </div>
