@@ -47,19 +47,18 @@
  style="background-color: #fff;">
  <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="post in primary_blog_feed.component_data">
-        <div class="blog-feed-card mdl-card" style="border: 1px rgba(0,0,0,0.1) solid">
+        <div class="blog-feed-card mdl-card">
           <div class="mdl-card__title" style="background: url('{{primary_blog_feed.component_background_media[$index].image.landscape}}') center / cover;">
           </div>
-          <div class="mdl-card__supporting-text">
-             <h2 ng-bind-html="post.title">{{post.title}}</h2>
+          <div class="mdl-card__supporting-text" style="border-bottom: 1px rgba(0,0,0,0.1) solid">
+             <h6 ng-bind-html="post.title">{{post.title}}</h6>
           </div>
           <div class="mdl-card__supporting-text">
-            <p>{{post.date}}</p><br>
             <p ng-bind-html="post.text"></p>
           </div>
           <div class="mdl-card__actions mdl-card--border">
-            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-              Get Started
+            <a class="mdl-button mdl-js-button mdl-js-ripple-effect" style="background-color: #1b5e20; color: #fafafa; width: 80%; margin-left: auto; margin-right: auto;">
+              Dive Deeper
             </a>
           </div>
           <div class="mdl-card__menu">
