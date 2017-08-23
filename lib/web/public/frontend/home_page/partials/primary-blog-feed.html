@@ -13,9 +13,9 @@
   color: #fff;
 }
 
-.lightest {background-color: #4caf50}
-.lighter {background-color: #388e3c}
-.normal {background-color: #1b5e20}
+.lightest {color: #4caf50}
+.lighter {color: #388e3c}
+.normal {color: #1b5e20}
 
 @media screen and (max-width: 840px) and (min-width: 480px){
   .blog-feed-card > .mdl-card__title {
@@ -41,11 +41,12 @@
 </style>
 <div 
  minfull-screen
- class="mdl-grid primary-blog-feed base--hlst" 
- data-size>
+ class="mdl-grid primary-blog-feed" 
+ data-size
+ style="background-color: #fff;">
  <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="post in primary_blog_feed.component_data">
-        <div class="blog-feed-card mdl-card">
+        <div class="blog-feed-card mdl-card" style="border: 1px rgba(0,0,0,0.3)">
           <div class="mdl-card__title" ng-class="{'lightest': $index == 0, 'lighter': $index == 1, 'normal': $index == 2}" style="background-color: ">
             <h2 class="mdl-card__title-text" ng-bind-html="post.title">{{post.title}}</h2>
           </div>
