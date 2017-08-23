@@ -1,7 +1,7 @@
 <style>
 
 .blog-feed-card.mdl-card {
-  width: 85%; margin-left: auto; margin-right: auto; margin-top: 64px; margin-bottom: 64px; overflow: visible;
+  width: 85%; margin-left: auto; margin-right: auto; margin-top: 64px; margin-bottom: 64px; overflow: visible; text-align: center;
 }
 
 .blog-feed-card > .mdl-card__title {
@@ -21,15 +21,15 @@
 .services:hover {background-color: #4caf50;}
 
 @media screen and (min-width: 1028px) {
-  .overflow-image {width: 105%;}
+  .overflow-image {width: 130%; margin-left: -15%; min-height: 250px; overflow: hidden;}
   .blog-feed-card.featured-first {
-    margin-left: 64px;
+    margin-right: -32px;
   }
   .blog-feed-card.featured-middle {
     margin-top: -16px; z-index: 10;
   }
   .blog-feed-card.featured-last {
-    margin-left: -64px;
+    margin-left: -32px;
   }
 }
 
@@ -62,8 +62,9 @@
  data-size>
  <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="product in featured_products.component_data">
-        <div class="blog-feed-card mdl-card" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'mdl-shadow--4dp': $index == 1, 'featured-last': $index == 2}">
-          <img class="overflow-image" src="{{featured_products.component_background_media[$index].image.landscape}}">
+        <div class="blog-feed-card mdl-card" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'mdl-shadow--6dp': $index == 1, 'featured-last': $index == 2}">
+          <span class="overflow-image" ng-class="{'mdl-shadow--6dp': $index == 1" style="background: url('{{featured_products.component_background_media[$index].image.landscape}}'') center/cover no-repeat;">
+          </span>
           <div class="mdl-card__supporting-text">
              <h4 ng-bind-html="product.title" style="font-weight: bold;">{{product.title}}</h4>
           </div>
