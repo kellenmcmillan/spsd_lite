@@ -13,6 +13,10 @@
   color: #fff;
 }
 
+.lightest {background-color: #4caf50}
+.lighter {background-color: #388e3c}
+.normal {background-color: #1b5e20}
+
 @media screen and (max-width: 840px) and (min-width: 480px){
   .blog-feed-card > .mdl-card__title {
     height: 300px;
@@ -37,36 +41,29 @@
 </style>
 <div 
  minfull-screen
- class="mdl-grid primary-blog-feed" 
- color="{{primary_blog_feed.component_colors.background_color.color}}" 
- hue="{{primary_blog_feed.component_colors.background_color.hue}}"
- data-size 
- property="{{primary_blog_feed.component_colors.background_color.property}}" 
- opaqueness="{{primary_blog_feed.component_colors.background_color.opaqueness}}" 
- lw-color>
+ class="mdl-grid primary-blog-feed base--hlst" 
+ data-size>
  <div class="mdl-layout-spacer"></div>
-    <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid" ng-repeat="post in primary_blog_feed.component_data">  
-        <div class="mdl-cell mdl-cell--4-col">
-          <img src="{{primary_blog_feed.component_background_media[$index].image.landscape}}">
-        </div>
-        <div class="mdl-cell mdl-cell--4-col blog-feed-card mdl-card mdl-shadow--4dp">
-          <div class="mdl-card__supporting-text">
+    <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="post in primary_blog_feed.component_data">
+        <div class="blog-feed-card mdl-card">
+          <div class="mdl-card__title" ng-class="{'lightest': index == 0, 'lighter': index == 1, 'normal': index == 2}" style="background-color: ">
             <h2 class="mdl-card__title-text" ng-bind-html="post.title">{{post.title}}</h2>
+          </div>
+          <div class="mdl-card__supporting-text">
             <p>{{post.date}}</p><br>
             <p ng-bind-html="post.text"></p>
           </div>
-          <div class="mdl-card__actions mdl-card--border">
+          <!-- <div class="mdl-card__actions mdl-card--border">
             <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
               Get Started
             </a>
-          </div> 
+          </div> -->
           <div class="mdl-card__menu">
             <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
               <i class="material-icons">share</i>
             </button>
           </div>
         </div>
-
     </div>
     <div class="mdl-layout-spacer"></div>
     <!-- <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width no-margin no-padding">
