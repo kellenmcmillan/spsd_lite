@@ -1,15 +1,15 @@
 <style>
-
-.blog-feed-card.mdl-card {
+.featured-products {position: relative;}
+.featured-product-card.mdl-card {
   width: 85%; margin-left: auto; margin-right: auto; margin-top: 64px; margin-bottom: 64px; overflow: visible; text-align: center; background-color: {{base_hue_lightest.value}};
 }
 
-.blog-feed-card > .mdl-card__title {
+.featured-product-card > .mdl-card__title {
   color: #fff;
   height: 400px;
 }
 
-.blog-feed-card > .mdl-card__menu {
+.featured-product-card > .mdl-card__menu {
   color: #fff;
 }
 
@@ -22,35 +22,35 @@
 
 @media screen and (min-width: 1028px) {
   .overflow-image {width: 130%; margin-left: -15%; min-height: 350px; overflow: hidden;}
-  .product-icon {margin-top: 143px; width: 64px; height: 64px;}
-  .blog-feed-card.featured-first {
+  .product-icon {margin-top: 79px; width: 96px; height: 96px;}
+  .featured-product-card.featured-first {
     margin-right: -32px;
   }
-  .blog-feed-card.featured-middle {
+  .featured-product-card.featured-middle {
     margin-top: 16px; z-index: 10;
   }
-  .blog-feed-card.featured-last {
+  .featured-product-card.featured-last {
     margin-left: -32px;
   }
 }
 
 @media screen and (max-width: 840px) and (min-width: 480px){
-  .blog-feed-card > .mdl-card__title {
+  .featured-product-card > .mdl-card__title {
     height: 300px;
   }
 }
 
 @media screen and (max-width: 840px) and (min-width: 480px){
-  .blog-feed-card > .mdl-card__title {
+  .featured-product-card > .mdl-card__title {
     height: 300px;
   }
 }
 
 @media screen and (max-width: 479px){
-  .blog-feed-card > .mdl-card__title {
+  .featured-product-card > .mdl-card__title {
     height: 200px;
   }
-  .blog-feed-card.mdl-card {
+  .featured-product-card.mdl-card {
     margin-top: 8px; margin-bottom: 8px;
   }
 }
@@ -58,7 +58,7 @@
 </style>
 <div 
  minfull-screen
- class="mdl-grid primary-blog-feed"
+ class="mdl-grid featured-products"
  style="background-color:{{base_hue_lighter.value}}" 
  data-size>
  <span id="capabilities" style="position: absolute; top:0; left: 0; height: 1px; width: 1px;"></span>
@@ -66,10 +66,10 @@
    <!-- Title -->
   <div class="center--text">
   <br><br><br>
-      <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">DFW's Best</h2>
+      <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">North Texas' Best</h2>
       <h2 
       class="mdl-typography--font-bold" 
-      ng-bind-html="featured_products.name">
+      ng-bind-html="featured_products.title">
       </h2>
       <!-- SVG Title Border Asset -->
       <svg 
@@ -89,7 +89,7 @@
   </div>
   <!-- Title -->
   <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="product in featured_products.component_data">
-    <div class="blog-feed-card mdl-card" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'mdl-shadow--6dp': $index == 1, 'featured-last': $index == 2}">
+    <div class="featured-product-card mdl-card" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'mdl-shadow--6dp': $index == 1, 'featured-last': $index == 2}">
       <span class="overflow-image" ng-class="{'mdl-shadow--6dp': $index == 1}" style="background: url('{{featured_products.component_background_media[$index].image.landscape}}') center/cover no-repeat; position: relative;">
         <span style="background-color: {{base_hue_darker_lightest_opacity.value}}; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
           <img class="product-icon" src="{{featured_products.component_data[$index].icon}}">
