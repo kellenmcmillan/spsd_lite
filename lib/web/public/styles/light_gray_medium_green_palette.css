@@ -41,9 +41,9 @@ No Accent
 Base:
 --------------------------------------------------------
 hue lightest
-grey-100
+grey-50
 rgb(245, 245, 245)
-#F5F5F5
+#FAFAFA
 ----------------------------
 hue lighter
 grey-300
@@ -72,8 +72,8 @@ rgb(66, 66, 66)
 /*Primary Color Background Classes*/
 .primary-hn {background-color: #1B5E20!important;}
 .primary-hlr {background-color: #66BB6A!important;}
-.primary-hn.opacity-lightest {background-color: rgba(27, 94, 32, 0.6)!important;}
-.primary-hn.opacity-darkest {background-color: rgba(27, 94, 32, 0.9)!important;}
+.primary-hn.opacity-lightest {background-color: rgba(27, 94, 32, 0.3)!important;}
+.primary-hn.opacity-darkest {background-color: rgba(27, 94, 32, 0.5)!important;}
 /*Primary Color Background Classes*/
 
 /*Primary Color Text Classes*/
@@ -87,17 +87,17 @@ rgb(66, 66, 66)
 /*Primary Color Border Classes*/
 
 /*Base Color Background Classes*/
-.base-hlst {background-color: #F5F5F5!important;}
+.base-hlst {background-color: #FAFAFA!important;}
 .base-hlr {background-color: #E0E0E0!important;}
 .base-hn {background-color: #BDBDBD!important;}
 .base-hdr {background-color: #757575!important;}
 .base-hdst {background-color: #424242!important;}
-.base-hlst.opacity-lightest {background-color: rgba(117, 117, 117, 0.3)!important;}    
+.base-hlst.opacity-lightest {background-color: rgba(250, 250, 250, 0.3)!important;}    
 .base-hdst.opacity-darkest {background-color: rgba(66, 66, 66, 0.5)!important;}
 /*Base Color Background Classes*/
 
 /*Base Color Text Classes*/
-.base-hlst--text {color: #F5F5F5!important;}
+.base-hlst--text {color: #FAFAFA!important;}
 .base-hlr--text {color: #E0E0E0!important;}
 .base-hn--text {color: #BDBDBD!important;}
 .base-hdr--text {color: #757575!important;}
@@ -105,7 +105,7 @@ rgb(66, 66, 66)
 /*Base Text Classes*/
 
 /*Base Color Border Classes*/
-.base-hlst--border {border-color: #F5F5F5!important;}
+.base-hlst--border {border-color: #FAFAFA!important;}
 .base-hlr--border {border-color: #E0E0E0!important;}
 .base-hn--border {border-color: #BDBDBD!important;}
 .base-hdr--border {border-color: #757575!important;}
