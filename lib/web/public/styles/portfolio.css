@@ -18,7 +18,7 @@
 	transition: all .5s ease-in-out; 
 	min-height: 100%; height: auto; 
 	min-width: 100%; width: auto; 
-	will-change: transform;
+	will-change: scale;
 }
 
 .portfolio_item img.expand.active {transform: scale(1.15);}
