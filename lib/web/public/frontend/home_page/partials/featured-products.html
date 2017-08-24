@@ -21,12 +21,13 @@
 .services:hover {background-color: #4caf50;}
 
 @media screen and (min-width: 1028px) {
-  .overflow-image {width: 130%; margin-left: -15%; min-height: 250px; overflow: hidden;}
+  .overflow-image {width: 130%; margin-left: -15%; min-height: 350px; overflow: hidden;}
+  .product-icon {margin-left: calc(65% - 24px); margin-top: 151px; width: 48px; height: 48px;}
   .blog-feed-card.featured-first {
     margin-right: -32px;
   }
   .blog-feed-card.featured-middle {
-    margin-top: -16px; z-index: 10;
+    margin-top: 16px; z-index: 10;
   }
   .blog-feed-card.featured-last {
     margin-left: -32px;
@@ -60,18 +61,44 @@
  class="mdl-grid primary-blog-feed"
  style="background-color:{{base_hue_lightest.value}}" 
  data-size>
+ <!-- Title -->
+<div class="center--text">
+    <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">DFW's Best</h2>
+    <h2 
+    class="mdl-typography--font-bold" 
+    ng-bind-html="featured_products.component_data.title[0]">
+    </h2>
+    <!-- SVG Title Border Asset -->
+    <svg 
+    version="1.1" 
+    id="Layer_1" 
+    xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    x="0px" y="0px" viewBox="0 0 300 20" 
+    style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+    width="288" height = "13" 
+    path fill="{{base_hue_darker.value}}" 
+    xml:space="preserve">
+        <polygon points="165.8,5.9 151.8,17.4 137.8,5.9 141.3,5.9 151.8,14.5 162.3,5.9 "/><g><circle cx="10" cy="9.5" r="4.5"/></g><g><circle cx="38" cy="9.5" r="4.5"/></g><g><circle cx="66" cy="9.5" r="4.5"/></g><g><circle cx="94" cy="9.5" r="4.5"/></g><g><circle cx="122" cy="9.5" r="4.5"/></g><g><circle cx="178" cy="9.5" r="4.5"/></g><g><circle cx="206" cy="9.5" r="4.5"/></g><g><circle cx="234" cy="9.5" r="4.5"/></g><g><circle cx="262" cy="9.5" r="4.5"/></g><g><circle cx="290" cy="9.5" r="4.5"/></g>
+    </svg>  
+</div>
+<!-- SVG Title Border Asset -->
+<!-- Title -->
  <div class="mdl-layout-spacer"></div>
     <div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="product in featured_products.component_data">
         <div class="blog-feed-card mdl-card" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'mdl-shadow--6dp': $index == 1, 'featured-last': $index == 2}">
           <span class="overflow-image" ng-class="{'mdl-shadow--6dp': $index == 1}" style="background: url('{{featured_products.component_background_media[$index].image.landscape}}') center/cover no-repeat;">
+            <span style="background-color: {{primary_hue_normal_darkest_opacity.value}}; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
+              <img class="product-icon" src="{{featured_products.component_background_media[$index].icon}}">
+            </span>
           </span>
           <div class="mdl-card__supporting-text">
              <h4 ng-bind-html="product.title" style="font-weight: bold;">{{product.title}}</h4>
           </div>
           <hr>
-          <div class="mdl-card__supporting-text">
+          <!-- <div class="mdl-card__supporting-text">
             <p ng-bind-html="product.text"></p>
-          </div>
+          </div> -->
           <div class="mdl-card__actions center--text">
             <a class="services mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #fafafa; width: 80%; margin-left: auto; margin-right: auto;">
               Dive Deeper
