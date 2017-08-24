@@ -25,7 +25,6 @@
 </style>
 <div
  class="mdl-grid center--text component full-width no-margin no-padding vertical-center-container tertiary-parallax"
- id="locate-us"
  style="position: relative; overflow: hidden;"  
  full-screen
  color="{{tertiary_standard_container.component_colors.background_color.color}}"
@@ -33,11 +32,10 @@
  property="{{tertiary_standard_container.component_colors.background_color.property}}" 
  opaqueness="{{tertiary_standard_container.component_colors.background_color.opaqueness}}" 
  lw-color>
-
+    <span id="locate-us" style="position: absolute; top:100px; left: 0; height: 1px; width: 1px;"></span>
     <div class="tertiary-standard-container-background">
         <img src="{{tertiary_standard_container.component_background_media.image.landscape}}" style="display: block; margin: 0 auto;">
     </div>
-
     <!-- Title -->
     <div vertical-center class="center--text mdl-cell mdl-cell--12-col">
         <h1 
@@ -48,8 +46,6 @@
         opaqueness="{{tertiary_standard_container.component_colors.text_color.opaqueness}}" 
         lw-color ng-bind-html="tertiary_standard_container.component_data.title[0]">
         </h1>
-
     </div>
     <!-- Title -->
-    
 </div>
