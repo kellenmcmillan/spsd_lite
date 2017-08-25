@@ -17,11 +17,18 @@
 .lighter {background-color: #388e3c}
 .normal {background-color: #1b5e20}
 
-.services {background-color: #1b5e20;}
-.services:hover {background-color: #388e3c;}
+.services:after {
+  content: ''; position: absolute: width: 0; 
+  height: 2px; background-color: #1b5e20; 
+  left: 50%; bottom: 0;
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-property: width, left;
+}
+.services:hover:after {width: 100%; left: 0;}
 
 .overflow-image {width: 130%; margin-left: -15%; min-height: 350px; overflow: hidden;}
-.product-icon {margin-top: 139px; width: 72px; height: 72px;}
+.product-icon {margin-top: 139px; width: 72px; height: 72px; opacity: .5;}
 
 @media screen and (min-width: 1028px) {
   
@@ -105,8 +112,8 @@
         <p ng-bind-html="product.text"></p>
       </div>
       <div class="mdl-card__actions center--text">
-        <a class="services mdl-button mdl-js-button mdl-js-ripple-effect" style="color: #fafafa; width: 80%; margin-left: auto; margin-right: auto;">
-          Dive Deeper
+        <a class="services mdl-button mdl-js-button mdl-js-ripple-effect" style="color: {{primary_hue_normal.value}}; width: 80%; margin-left: auto; margin-right: auto; position: relative;">
+          Learn More
         </a>
       </div>
     </div>
