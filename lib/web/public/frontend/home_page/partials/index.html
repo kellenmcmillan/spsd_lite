@@ -40,7 +40,19 @@
 <div ng-include src="'frontend/home_page/partials/primary-contact.html'"></div>
 <!-- Contact Info -->
 
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="position:absolute; bottom: 32px; right: 0;">
+<style>
+ .back-to-top {
+    background-color: {{primary_hue_normal.value}};
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: background-color;
+}
+.back-to-top:hover {
+    background-color: {{primary_hue_lighter.value}};
+}
+</style>
+
+<button class="back-to-top mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="position: fixed; bottom: 32px; right: 16px;">
     <a 
     href="#top"
     du-scrollspy
