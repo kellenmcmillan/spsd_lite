@@ -43,27 +43,33 @@
 <style>
  .back-to-top {
     background-color: {{primary_hue_normal.value}};
+    opacity: 0;
     transition-duration: .3s;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
-    transition-property: background-color;
+    transition-property: background-color, opacity;
 }
 .back-to-top:hover {
     background-color: {{primary_hue_lighter.value}};
 }
 </style>
+<style ng-if="scroll > 300">
+    .back-to-top {
+        opacity: 1;
+    }
+</style>
 
-<button class="back-to-top mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" style="position: fixed; bottom: 32px; right: 16px;">
-    <a 
-    href="#top"
-    du-scrollspy
-    du-smooth-scroll>
-        <i 
-        class="material-icons base-hlst--text" 
-        role="presentation">
-        keyboard_arrow_up
-        </i>                 
-    </a>
-</button>
+<a 
+ class="back-to-top mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" 
+ style="position: fixed; bottom: 32px; right: 32px;"
+ href="#top"
+ du-scrollspy
+ du-smooth-scroll>
+    <i 
+    class="material-icons base-hlst--text" 
+    role="presentation">
+    keyboard_arrow_up
+    </i>                 
+</a>
 
 <header class="lightweight-header" ng-if="scrollable">
 
