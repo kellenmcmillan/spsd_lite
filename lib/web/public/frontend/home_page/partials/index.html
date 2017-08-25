@@ -40,6 +40,19 @@
 <div ng-include src="'frontend/home_page/partials/primary-contact.html'"></div>
 <!-- Contact Info -->
 
+<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="position:absolute; bottom: 32px; right: 0;">
+    <a 
+    href="#top"
+    du-scrollspy
+    du-smooth-scroll>
+        <i 
+        class="material-icons base-hlst--text" 
+        role="presentation">
+        keyboard_arrow_up
+        </i>                 
+    </a>
+</button>
+
 <header class="lightweight-header" ng-if="scrollable">
 
     <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
