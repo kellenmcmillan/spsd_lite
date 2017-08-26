@@ -5,7 +5,6 @@
         width: 100%;
         height: 140%;
         top: {{fourth_offset}}px;
-        z-index: -1;
         transform: translate3d(0px, {{scroll/2}}px, 0px);
     }
     .staff-container-background img {width: 100%; height: 100%;}
@@ -16,13 +15,13 @@
         width: 100%;
         height: 100%;
         top: 0px;
-        z-index: -1;
     }
     .staff-container-background img {width: 100%; height: 100%;}
 </style>
 <div 
  class="mdl-grid component primary-slider" 
  minfull-screen
+ style="position:relative;"
  color="{{our_team.component_colors.background_color.color}}" 
  hue="{{our_team.component_colors.background_color.hue}}" 
  property="{{our_team.component_colors.background_color.property}}" 
