@@ -2,7 +2,7 @@
 .interior-page-background {
     background: url('{{shrinking_title_image}}') no-repeat;
     background-size: cover; width: 100%!important; height: 100%; 
-    right: 0; top: 400px; padding:0; margin: 0!important; 
+    right: 0; top: 400px; padding:0; margin: 0!important; opacity: 0.1;
 }
 </style>
 
@@ -12,7 +12,7 @@
 	
 	<!-- Shrinking Page Title -->
 	<div class="lightweight-interior--shrinking-title center--text" color="{{page.component_colors.overlay_color.color}}" hue="{{page.component_colors.overlay_color.hue}}" property="{{page.component_colors.overlay_color.property}}" opaqueness="{{page.component_colors.overlay_color.opaqueness}}" lw-color>
-		<div class="lightweight-parallax--background-stationary" parallax-background>
+		<div class="lightweight-parallax--background-stationary" style="width: 100%; height: 100%">
 		    <div class="interior-page-background"></div>
 		</div>
 		<h2 class="h2 {{base_hue_text__lightest.name}}">{{pageTitle}}</h2>
