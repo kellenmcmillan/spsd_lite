@@ -2,7 +2,7 @@
 .lightweight-interior--shrinking-title {height: 200px; line-height: 200px; transition: all .5s ease-in-out; width: 100%; position: relative; top: 0; z-index: 100; overflow: hidden; will-change: transform;}
 .lightweight-interior--shrinking-title h2.h2 {font-size: 36px!important; transition: all .5s ease-in-out; visibility: visible;}
 /*.lightweight-interior--shrinking-title.start-shrink-title-animation h2.h2 {visibility: hidden; transition: all .5s ease-in-out;}*/
-.interior-page-margin {margin-top: 200px;}
+.interior-page-margin {margin-top: 100px;}
 /* ===== Interior Page Shrinking Title ===== */
 
 .interior-page-container {position: relative; width: 100%; z-index: 99; transition: all .5s ease-in-out; padding: 0!important; height: 100%;}
