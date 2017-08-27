@@ -51,6 +51,17 @@
 .back-to-top:hover {
     background-color: {{primary_hue_lighter.value}};
 }
+.lightweight-navigation-item:after {
+    content: ''; position: absolute; width: 0; 
+    height: 2px; background-color: #1b5e20; 
+    left: 50%; bottom: 0;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: width, left;
+}
+.lightweight-navigation-item.actve:after {
+    width: 100%; left: 0;
+}
 </style>
 <style ng-if="scroll > 300">
     .back-to-top {
@@ -94,6 +105,8 @@
             href="{{item.href}}" 
             du-scrollspy
             du-smooth-scroll
+            ng-click="!active = active";
+            ng-class="{'active': active}"
             ng-repeat="item in app_data.app_configs.primary_navigation">
                 {{item.name}}
             </a>
