@@ -39,10 +39,9 @@
 /* ===== Sidebar Widgets - Directions ===== */
 
 /* ===== Lighweight Image Cards ===== */
-.lightweight-card-image.mdl-card {
-  width: auto;
+/*.lightweight-card-image.mdl-card {
   height: 300px;
-}
+}*/
 .lightweight-card-image > .mdl-card__actions {
   height: 52px;
   padding: 16px;
