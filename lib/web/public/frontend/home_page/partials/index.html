@@ -103,7 +103,8 @@
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
             href="{{item.href}}" 
-            du-scrollspy="{{item.href}}"
+            du-spy-context
+            du-scrollspy
             du-smooth-scroll
             ng-repeat="item in app_data.app_configs.primary_navigation">
                 {{item.name}}
@@ -151,6 +152,7 @@
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
             href="{{item.href}}" 
+            du-spy-context
             du-scrollspy
             du-smooth-scroll
             ng-repeat="item in app_data.app_configs.primary_navigation">
