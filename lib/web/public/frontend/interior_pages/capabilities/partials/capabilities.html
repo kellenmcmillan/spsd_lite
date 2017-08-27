@@ -47,16 +47,8 @@
 				        <h1 class="small-border-background-no-align h1" style="margin-top: 8px;" color="{{page.component_colors.text_color.color}}" hue="{{page.component_colors.text_color.hue}}" property="{{page.component_colors.text_color.property}}" opaqueness="{{page.component_colors.text_color.opaqueness}}" lw-color>{{content_data[current_panel].name}}</h1>
 				    </div>
 				    <!-- panel title -->
-				    
-			    	<!-- text -->
-			        <p class="emphasize" ng-bind-html="content_data[current_panel].text[0]" color="{{page.component_colors.text_color.color}}" hue="{{page.component_colors.text_color.hue}}" property="{{page.component_colors.text_color.property}}" opaqueness="{{page.component_colors.text_color.background}}" lw-color></p>
-			        <!-- text -->
 
-			        <!-- list -->
-			        <ul class="lightweight-list-icon mdl-list" ng-bind-html="content_data[current_panel].lists[0]"></ul>
-			        <!-- list -->
-
-			        <div class="mdl-grid full-width no-padding">
+				    <div class="mdl-grid full-width no-padding">
 						<!-- panel image -->
 						<div class="mdl-cell mdl-cell--4-col lightweight-card-image mdl-card mdl-shadow--2dp {{content_data[current_panel].className}}">
 							<div class="mdl-card__title mdl-card--expand"></div>
@@ -78,6 +70,16 @@
 						</div>
 						<!-- panel image -->
 					</div>
+
+			    	<br>
+			    	<br>
+			    	<!-- text -->
+			        <p class="emphasize" ng-bind-html="content_data[current_panel].text[0]" color="{{page.component_colors.text_color.color}}" hue="{{page.component_colors.text_color.hue}}" property="{{page.component_colors.text_color.property}}" opaqueness="{{page.component_colors.text_color.background}}" lw-color></p>
+			        <!-- text -->
+
+			        <!-- list -->
+			        <ul class="lightweight-list-icon mdl-list" ng-bind-html="content_data[current_panel].lists[0]"></ul>
+			        <!-- list -->
 		    	</div>
 		    	<!-- Content Panel -->
 
