@@ -103,10 +103,8 @@
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
             href="{{item.href}}" 
-            du-scrollspy
+            du-scrollspy="{{item.href}}"
             du-smooth-scroll
-            ng-click="!active = active"
-            ng-class="{'active': active}"
             ng-repeat="item in app_data.app_configs.primary_navigation">
                 {{item.name}}
             </a>
