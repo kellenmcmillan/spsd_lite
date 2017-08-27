@@ -98,14 +98,12 @@
         <div class="mdl-layout-spacer"></div>
 
         <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" 
-        du-spy-context
-        du-scrollspy
-        du-scroll-container="lightweight_content">
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
             href="{{item.href}}" 
+            du-scrollspy
             du-smooth-scroll
             ng-repeat="item in app_data.app_configs.primary_navigation">
                 {{item.name}}
@@ -148,14 +146,12 @@
         <div class="mdl-layout-spacer"></div>
 
         <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" 
-        du-spy-context
-        du-scrollspy
-        du-scroll-container="lightweight_content">
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
             href="{{item.href}}" 
+            du-scrollspy
             du-smooth-scroll
             ng-repeat="item in app_data.app_configs.primary_navigation">
                 {{item.name}}
@@ -212,10 +208,7 @@
 
             <!-- Menus -->
             <div style="margin: 0 auto; width: inherit;" ng-click="mobile_menu = false">
-                <ul class="mdl-list" 
-                du-spy-context
-                du-scrollspy
-                du-scroll-container="lightweight_content">
+                <ul class="mdl-list" du-scroll-container="lightweight_content">
                     <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.primary_navigation">
                         <a 
                         class="base-hdr--text"
