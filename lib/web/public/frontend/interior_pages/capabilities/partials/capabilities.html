@@ -85,18 +85,19 @@
         </span>
 
         <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
-            <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+        	<a href="/">
+            	<img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+            </a>
         </span>
 
         <div class="mdl-layout-spacer"></div>
 
         <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
-            href="/" 
-            ng-repeat="item in app_data.app_configs.primary_navigation">
+            href="/">
                 Home
             </a>
         </nav>
