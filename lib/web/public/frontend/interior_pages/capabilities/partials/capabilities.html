@@ -48,14 +48,28 @@
 				    </div>
 				    <!-- panel title -->
 
-					<!-- panel image -->
-					<div class="lightweight-card-image mdl-card mdl-shadow--2dp {{content_data[current_panel].className}}">
-						<div class="mdl-card__title mdl-card--expand"></div>
-						<div class="mdl-card__actions">
-							<span class="lightweight-card-image__filename">{{content_data[current_panel].image.image_name}}</span>
+				    <div class="mdl-grid">
+						<!-- panel image -->
+						<div class="mdl-cell mdl-cell--4-col lightweight-card-image mdl-card mdl-shadow--2dp {{content_data[current_panel].className}}">
+							<div class="mdl-card__title mdl-card--expand"></div>
+							<div class="mdl-card__actions">
+								<span class="lightweight-card-image__filename">{{content_data[current_panel].image.image_name}}</span>
+							</div>
 						</div>
+						<div class="mdl-cell mdl-cell--4-col lightweight-card-image mdl-card mdl-shadow--2dp {{content_data[current_panel].className}}">
+							<div class="mdl-card__title mdl-card--expand"></div>
+							<div class="mdl-card__actions">
+								<span class="lightweight-card-image__filename">{{content_data[current_panel].image.image_name}}</span>
+							</div>
+						</div>
+						<div class="mdl-cell mdl-cell--4-col lightweight-card-image mdl-card mdl-shadow--2dp {{content_data[current_panel].className}}">
+							<div class="mdl-card__title mdl-card--expand"></div>
+							<div class="mdl-card__actions">
+								<span class="lightweight-card-image__filename">{{content_data[current_panel].image.image_name}}</span>
+							</div>
+						</div>
+						<!-- panel image -->
 					</div>
-					<!-- panel image -->
 
 			    	<br>
 			    	<br>
@@ -93,12 +107,15 @@
         <div class="mdl-layout-spacer"></div>
 
         <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone">
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
-            href="/">
-                HOME
+            href="{{item.href}}" 
+            du-scrollspy
+            du-smooth-scroll
+            ng-repeat="item in app_data.app_configs.primary_navigation">
+                {{item.name}}
             </a>
         </nav>
         <!-- Header Navigation -->
