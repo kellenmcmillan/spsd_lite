@@ -9,7 +9,7 @@
         transition-timing-function: cubic-bezier(.4,0,.2,1);
         transition-property: width, left;
     }
-    .view-gallery-button::hover:after {
+    .view-gallery-button:hover:after {
         width: 70%; left: 15%;
     }
 </style>
@@ -30,7 +30,7 @@
                     <br class="mdl-cell--hide-tablet mdl-cell--hide-phone">
                     <h1 class="h1" style="margin: 16px 0;">{{item.title}}</h1>
                     <p>{{item.description}}</p>
-                    <button class="view-gallery-button lightweight-button--transparent-with-border mdl-button mdl-js-button mdl-js-ripple-effect" style="min-width: 150px; margin: 8px auto 8px auto;" click-go="/portfolio/{{item.url_param}}">View</button>
+                    <button class="view-gallery-button mdl-button mdl-js-button mdl-js-ripple-effect" style="min-width: 150px; margin: 8px auto 8px auto;" click-go="/portfolio/{{item.url_param}}">View Gallery</button>
                 </div>
 
             </div>
