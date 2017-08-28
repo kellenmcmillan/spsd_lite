@@ -93,7 +93,7 @@
     <!--_head--> 
     
     
-    <body ng-controller="colorController" style="background-color: #e0e0e0;">
+    <body ng-controller="colorController" scroll-position="scroll" style="background-color: #e0e0e0;">
 <!--     <style>
         body {font-family: 'Oswald', sans-serif;}
     </style> -->
@@ -133,7 +133,7 @@
         <div ng-include src="'frontend/dynamic_styles/global-dynamic-styles.html'"></div>
         <!-- Dynamic Global Styles -->
 
-        <div class="mdl-layout mdl-js-layout" scroll-position="scroll" style="position: relative;">
+        <div class="mdl-layout mdl-js-layout" id="lightweight_content" du-scroll-container>
 
             <div class="mdl-layout__drawer">
 
@@ -146,7 +146,6 @@
                     <a 
                     class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect"
                     href="{{item.href}}"
-                    du-spy-context
                     du-scrollspy
                     du-smooth-scroll
                     menu-close
@@ -188,8 +187,8 @@
                 </nav>
             </div>
 
-            <main class="mdl-layout__content {{base_hue_lighter.name}}">
-                <div ng-view id="lightweight_content" du-scroll-container></div>
+            <main class="mdl-layout__content {{base_hue_lighter.name}}" >
+                <div ng-view></div>
 
                 <!-- Footer -->
                 <footer class="company-color--border-top mdl-mini-footer" color="b" hue="hdst" property="bg" opaqueness="" lw-color>
