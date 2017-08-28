@@ -51,7 +51,7 @@
 .back-to-top:hover {
     background-color: {{primary_hue_lighter.value}};
 }
-.lightweight-navigation-item:after {
+.lightweight-navigation-link:after {
     content: ''; position: absolute; width: 0; 
     height: 2px; background-color: #1b5e20; 
     left: 50%; bottom: 0;
@@ -59,7 +59,7 @@
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-property: width, left;
 }
-.lightweight-navigation-item.active:after {
+.lightweight-navigation-link.active:after {
     width: 100%; left: 0;
 }
 </style>
