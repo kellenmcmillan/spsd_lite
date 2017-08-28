@@ -9,6 +9,18 @@
         color: {{base_hue_text__darker.value}};
         background-color: {{primary_hue_lighter.value}};
     }
+    .contact-us-button {position: relative;}
+    .contact-us-button:after {
+        content: ''; position: absolute; width: 0; 
+        height: 2px; background-color: #1b5e20; 
+        left: 50%; bottom: 0;
+        transition-duration: .3s;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-property: width, left;
+    }
+    .contact-us-button:hover:after {
+        width: 100%; left: 0%;
+    }
 </style>
 <div
  minfull-screen
@@ -94,7 +106,7 @@
                             <textarea class="lightweight-input" rows="3" type="text" id="SIT_mail_body" name="SIT_mail_body" spellcheck="false"></textarea>
                         </l1>
                     </ul>
-                    <button class="contact-us-submit-button mdl-button mdl-js-button mdl-js-ripple-effect {{base_hue_text__lightest.name}}" style="width: 150px;" value="submit" ng-click="">Send</button>
+                    <button class="contact-us-button mdl-button mdl-js-button mdl-js-ripple-effect {{base_hue_text__lightest.name}}" style="width: 150px;" value="submit" ng-click="">Send</button>
                 </form>
             </div>
         </div>

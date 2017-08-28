@@ -1,3 +1,18 @@
+<style>
+    .directions-button {position: relative;}
+    .directions-button:after {
+        content: ''; position: absolute; width: 0; 
+        height: 2px; background-color: #1b5e20; 
+        left: 50%; bottom: 0;
+        transition-duration: .3s;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-property: width, left;
+    }
+    .directions-button:hover:after {
+        width: 100%; left: 0%;
+    }
+</style>
+
 <!-- Locate Us -->
 <div
  minfull-screen
@@ -52,7 +67,7 @@
 		                {{app_data.app_configs.address.info.street}}<br>
 		                {{app_data.app_configs.address.info.city}}, {{app_data.app_configs.address.info.state}} {{app_data.app_configs.address.info.zipcode}}
 	                	</p>
-	                	<a href="{{google_address_link}}"><button class="lightweight-button--transparent-with-border mdl-button mdl-js-button mdl-js-ripple-effect" color="primary,primary" hue="hn,hn" property="txt,bdr" opaqueness lw-color>GET DIRECTIONS</button></a>
+	                	<a href="{{google_address_link}}"><button class="directions-button mdl-button mdl-js-button mdl-js-ripple-effect" style="color: {{base_hue_darker.value}}">GET DIRECTIONS</button></a>
 	                </div>
                 </div>
 
