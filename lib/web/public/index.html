@@ -140,7 +140,7 @@
 
                 <!-- frontend navigation -->
 
-                <nav class="navigation mdl-navigation" du-scroll-container="scroll-container">
+                <nav class="navigation mdl-navigation">
                     <img ng-show="app_data.app_configs.use_graphic_logo" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" style="margin: 0 auto;" ng-cloak="true">
                     <br>
                     <br>
@@ -188,7 +188,7 @@
                 </nav>
             </div>
 
-            <main class="mdl-layout__content {{base_hue_lighter.name}}">
+            <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content" du-scroll-container>
                 <div ng-view></div>
 
                 <!-- Footer -->
