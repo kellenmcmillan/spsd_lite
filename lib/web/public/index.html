@@ -133,90 +133,91 @@
         <div ng-include src="'frontend/dynamic_styles/global-dynamic-styles.html'"></div>
         <!-- Dynamic Global Styles -->
 
-        <div class="mdl-layout mdl-js-layout" scroll-position="scroll">
+        <div class="mdl-layout mdl-js-layout" id="lightweight_content" du-scroll-container>
+            <div scroll-position="scroll">
 
-            <div class="mdl-layout__drawer">
+                <div class="mdl-layout__drawer">
 
-                <!-- frontend navigation -->
+                    <!-- frontend navigation -->
 
-                <nav class="navigation mdl-navigation" du-scroll-container="scroll-container">
-                    <img ng-show="app_data.app_configs.use_graphic_logo" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" style="margin: 0 auto;" ng-cloak="true">
-                    <br>
-                    <br>
-                    <a 
-                    class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect"
-                    href="{{item.href}}"
-                    du-scrollspy
-                    du-smooth-scroll
-                    menu-close
-                    ng-repeat="item in app_data.app_configs.primary_navigation">
-                        <i 
-                        class="{{item.class}} primary-hn--text" 
-                        role="presentation" 
-                        color="primary" 
-                        hue="hue normal" 
-                        property="text" 
-                        opaqueness="" 
-                        lw-color>
-                        {{item.icon}}
-                        </i>
-                        {{item.name}}
-                    </a>
-                </nav>
-                
-                <!-- backend navigation -->
-                <nav class="navigation mdl-navigation" ng-show="user" style="padding-top: 0px">
-                    <a 
-                    class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" 
-                    menu-close 
-                    href="{{item.href}}" 
-                    ng-repeat="item in app_data.app_configs.backend_navigation">
-                        <i 
-                        class="{{item.class}} primary-hn--text" 
-                        role="presentation" 
-                        color="primary" 
-                        hue="hue normal" 
-                        property="text" 
-                        opaqueness="" 
-                        lw-color>
-                        {{item.icon}}
-                        </i>
-                        {{item.name}}
-                    </a>
+                    <nav class="navigation mdl-navigation" du-scroll-container="scroll-container">
+                        <img ng-show="app_data.app_configs.use_graphic_logo" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" style="margin: 0 auto;" ng-cloak="true">
+                        <br>
+                        <br>
+                        <a 
+                        class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect"
+                        href="{{item.href}}"
+                        du-scrollspy
+                        du-smooth-scroll
+                        menu-close
+                        ng-repeat="item in app_data.app_configs.primary_navigation">
+                            <i 
+                            class="{{item.class}} primary-hn--text" 
+                            role="presentation" 
+                            color="primary" 
+                            hue="hue normal" 
+                            property="text" 
+                            opaqueness="" 
+                            lw-color>
+                            {{item.icon}}
+                            </i>
+                            {{item.name}}
+                        </a>
+                    </nav>
+                    
                     <!-- backend navigation -->
-                </nav>
+                    <nav class="navigation mdl-navigation" ng-show="user" style="padding-top: 0px">
+                        <a 
+                        class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" 
+                        menu-close 
+                        href="{{item.href}}" 
+                        ng-repeat="item in app_data.app_configs.backend_navigation">
+                            <i 
+                            class="{{item.class}} primary-hn--text" 
+                            role="presentation" 
+                            color="primary" 
+                            hue="hue normal" 
+                            property="text" 
+                            opaqueness="" 
+                            lw-color>
+                            {{item.icon}}
+                            </i>
+                            {{item.name}}
+                        </a>
+                        <!-- backend navigation -->
+                    </nav>
+                </div>
+
+                <main class="mdl-layout__content {{base_hue_lighter.name}}">
+                    <div ng-view></div>
+
+                    <!-- Footer -->
+                    <footer class="company-color--border-top mdl-mini-footer" color="b" hue="hdst" property="bg" opaqueness="" lw-color>
+                        <div class="mdl-mini-footer__left-section">
+                            <div class="mdl-logo">{{app_data.app_configs.site_name}} &#169; {{year}}</div>
+                            <ul class="mdl-mini-footer__link-list">
+                                <li ng-repeat="link in app_data.app_configs.navigation.footer_navigation">
+                                    <a href="{{link.url}}">{{link.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mdl-mini-footer__right-section">
+                            <div class="mdl-logo mdl-color-text--grey-600 lightweight-signature" style="letter-spacing: 1px!important;">
+                                <span ng-init="hover = false">
+                                    <span ng-mouseenter="hover = true" ng-mouseleave="hover = false">
+                                        <span ng-hide="hover == true">SUPERPOWERED BY</span>
+                                        <span ng-show="hover == true">LEARN MORE ABOUT</span> LIGHTWEIGHT
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- Footer -->
+
+                </main>   
             </div>
 
-            <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content" du-scroll-container>
-                <div ng-view></div>
-
-                <!-- Footer -->
-                <footer class="company-color--border-top mdl-mini-footer" color="b" hue="hdst" property="bg" opaqueness="" lw-color>
-                    <div class="mdl-mini-footer__left-section">
-                        <div class="mdl-logo">{{app_data.app_configs.site_name}} &#169; {{year}}</div>
-                        <ul class="mdl-mini-footer__link-list">
-                            <li ng-repeat="link in app_data.app_configs.navigation.footer_navigation">
-                                <a href="{{link.url}}">{{link.name}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="mdl-mini-footer__right-section">
-                        <div class="mdl-logo mdl-color-text--grey-600 lightweight-signature" style="letter-spacing: 1px!important;">
-                            <span ng-init="hover = false">
-                                <span ng-mouseenter="hover = true" ng-mouseleave="hover = false">
-                                    <span ng-hide="hover == true">SUPERPOWERED BY</span>
-                                    <span ng-show="hover == true">LEARN MORE ABOUT</span> LIGHTWEIGHT
-                                </span>
-                            </span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- Footer -->
-
-            </main>   
         </div>
-
-        <div style="height: 100px; width: 100%; background-color: #f3f3f3; position: fixed"></div>
 
         <div id="lightweight--message" class="mdl-js-snackbar mdl-snackbar" ng-class="{'mdl-color--green-700': messageStatus == true, 'mdl-color--red-500': messageStatus == false}">
             <div class="mdl-snackbar__text"></div>
