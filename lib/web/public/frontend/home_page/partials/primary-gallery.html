@@ -1,12 +1,16 @@
 <style>
-    .view-gallery-button {
-        color: {{primary_hue_normal.value}};
-        border: {{primary_hue_normal.value}} 2px solid;
-        transition: all .3s ease-in-out;
+
+    .view-gallery-button {position: relative;}
+    .view-gallery-button:after {
+        content: ''; position: absolute; width: 0; 
+        height: 2px; background-color: #1b5e20; 
+        left: 50%; bottom: 0;
+        transition-duration: .3s;
+        transition-timing-function: cubic-bezier(.4,0,.2,1);
+        transition-property: width, left;
     }
-    .view-gallery-button:hover {
-        color: {{primary_hue_normal.value}};
-        border: {{primary_hue_normal.value}} 2px solid;
+    .view-gallery-button::hover:after {
+        width: 70%; left: 15%;
     }
 </style>
 
