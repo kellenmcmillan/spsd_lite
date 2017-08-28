@@ -93,7 +93,7 @@
     <!--_head--> 
     
     
-    <body ng-controller="colorController" scroll-position="scroll" style="background-color: #e0e0e0;">
+    <body ng-controller="colorController" style="background-color: #e0e0e0;">
 <!--     <style>
         body {font-family: 'Oswald', sans-serif;}
     </style> -->
@@ -187,9 +187,10 @@
                 </nav>
             </div>
 
-            <main class="mdl-layout__content {{base_hue_lighter.name}}" >
-                <div ng-view></div>
-
+            <main class="mdl-layout__content {{base_hue_lighter.name}}">
+                <div scroll-position="scroll" class="no-padding no-margin">
+                    <div ng-view></div>
+                </div>
                 <!-- Footer -->
                 <footer class="company-color--border-top mdl-mini-footer" color="b" hue="hdst" property="bg" opaqueness="" lw-color>
                     <div class="mdl-mini-footer__left-section">
