@@ -133,7 +133,7 @@
         <div ng-include src="'frontend/dynamic_styles/global-dynamic-styles.html'"></div>
         <!-- Dynamic Global Styles -->
 
-        <div class="mdl-layout mdl-js-layout" id="lightweight_content" du-scroll-container>
+        <div class="mdl-layout mdl-js-layout" scroll-position="scroll">
 
             <div class="mdl-layout__drawer">
 
@@ -187,10 +187,9 @@
                 </nav>
             </div>
 
-            <main class="mdl-layout__content {{base_hue_lighter.name}}">
-                <div scroll-position="scroll" class="no-padding no-margin">
-                    <div ng-view></div>
-                </div>
+            <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content" du-scroll-container>
+                <div ng-view></div>
+
                 <!-- Footer -->
                 <footer class="company-color--border-top mdl-mini-footer" color="b" hue="hdst" property="bg" opaqueness="" lw-color>
                     <div class="mdl-mini-footer__left-section">
