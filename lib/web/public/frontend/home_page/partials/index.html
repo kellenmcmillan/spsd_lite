@@ -98,13 +98,13 @@
         <div class="mdl-layout-spacer"></div>
 
         <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="#lightweight_content">
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
             href="{{item.href}}" 
             hash="{{item.hash}}"
-            du-scrollspy="{{item.hash}}"
+            du-scrollspy
             du-smooth-scroll
             ng-repeat="item in app_data.app_configs.primary_navigation">
                 {{item.name}}
@@ -147,7 +147,7 @@
         <div class="mdl-layout-spacer"></div>
 
         <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="#lightweight_content">
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
