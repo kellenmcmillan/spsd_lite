@@ -81,7 +81,7 @@
 	<!-- Lightbox Close -->
 	<!-- Lightbox Image -->
 	<div ng-repeat="image in lightbox_images">
-		<img class="lightbox-image" ng-if="lightbox_active" src="{{lightbox_images[visible_slide].landscape}}" lightbox-image>
+		<img class="lightbox-image" ng-src="{{image.landscape}}" ng-show="$index == visible_slide && slide.type == 'image'" lightbox-image>
 	</div>
 	<!-- Lightbox Image -->
 	<!-- Hero Slideshow -->
