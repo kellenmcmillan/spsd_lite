@@ -80,8 +80,10 @@
 	<i class="material-icons" style="cursor: pointer; position: absolute; top: 32px; right: 32px;" ng-click="clearLightboxImage()" color="b" hue="hlst" property="txt" opaqueness="" lw-color>close</i>
 	<!-- Lightbox Close -->
 	<!-- Lightbox Image -->
-	<div ng-repeat="image in portfolio_item.images" lightbox-image>
-		<img class="lightbox-image" ng-src="{{image.landscape}}" ng-show="$index == startValue">
+	<div ng-repeat="image in portfolio_item.images">
+		<span class="lightbox-image-size">
+		<img class="lightbox-image" ng-src="{{image.landscape}}" ng-show="$index == startValue" lightbox-image>
+		</span>
 	</div>
 	<!-- Lightbox Image -->
 </div>
