@@ -21,7 +21,7 @@
 	will-change: scale;
 }
 
-.portfolio_item img.expand.active {transform: scale(1.15);}
+.portfolio_item img.expand.active {transform: scale(1.05);}
 
 @media screen and (max-width: 1400px) and (min-width: 840px){
     .portfolio_item.description, .lightweight-portfolio--content {height: 275px!important;}
