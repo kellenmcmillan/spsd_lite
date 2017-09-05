@@ -56,7 +56,7 @@
 		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
 		ng-repeat="item in portfolio_item.images" 
         >
-			<img src="{{item.thumbnail}}">
+			<img src="{{item.landscape}}" style="height: 100%; width: auto; min-height: 100%; min-width: 100%;">
 			<div 
 			class="lightweight-portfolio--closer-view-overlay overlay-active"
 			ng-click="fillLightboxImage($index)"  
