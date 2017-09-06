@@ -17,21 +17,23 @@
             </a>
         </span>
         <span class="mdl-layout-title">
-			<p 
-            class="portfolio-nav-title base-hdst--text"
-            style="font-size: 24px;">
-                Back Home
-            </p>
+        	<a class="back-home" href="/">
+				<p 
+	            class="portfolio-nav-title base-hdst--text"
+	            style="font-size: 24px;">
+	                Back Home
+	            </p>
+            </a>
         </span>
         <div class="mdl-layout-spacer"></div>
         <span class="mdl-layout-title">
             <p 
             class="portfolio-nav-title base-hdst--text"
             style="font-size: 24px;">
-                Galleries
+                All Galleries
             </p>
         </span>
-        <span class="mdl-layout-title">
+        <span class="mdl-layout-title hide">
             <i class="material-icons base-hdst--text" style="font-weight: normal; cursor: pointer" ng-click="mobile_menu = !mobile_menu;">share</i>
     	</span>
 	</div>
@@ -47,15 +49,17 @@
 		ng-repeat="item in galleries" 
         >
 			<img src="{{item.landscape}}" style="height: 100%; width: auto; min-height: 100%; min-width: 100%;">
-			<div 
-			class="lightweight-portfolio--closer-view-overlay overlay-active" 
-			color="primary" hue="hn" property="bg" opaqueness="lst" lw-color
-			>
-                <div class="lightweight-portfolio--closer-look-overlay-container" portfolio-closer-look-overlay-content thumb="{{$index}}">
-                    <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlr" property="txt" opaqueness lw-color>search</i>
-                    <p color="base" hue="hlr" property="txt" opaqueness lw-color>View {{item.title}}</p>
-                </div>
-            </div>
+			<a href="/gallery/{{item.param_url}}">
+				<div 
+				class="lightweight-portfolio--closer-view-overlay overlay-active" 
+				color="primary" hue="hn" property="bg" opaqueness="lst" lw-color
+				>
+	                <div class="lightweight-portfolio--closer-look-overlay-container" portfolio-closer-look-overlay-content thumb="{{$index}}">
+	                    <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlr" property="txt" opaqueness lw-color>search</i>
+	                    <p color="base" hue="hlr" property="txt" opaqueness lw-color>View {{item.title}}</p>
+	                </div>
+	            </div>
+            </a>
 		</div>
 	</div>
 	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
