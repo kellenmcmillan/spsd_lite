@@ -30,7 +30,7 @@
 	<div class="portfolio-nav--row">
 		<span class="mdl-layout-title">
 			<a class="back-home" href="/gallery" >
-            	<i class="material-icons" style="font-weight: normal; cursor: pointer;">burst_mode</i>
+            	<i class="material-icons" style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>
             </a>
         </span>
         <span class="mdl-layout-title">
@@ -47,7 +47,7 @@
             <p 
             class="portfolio-nav-title base-hdst--text"
             style="font-size: 24px;">
-                {{folder.title}}
+                {{folder.title}} {{folder.description}}
             </p>
         </span>
         <span class="mdl-layout-title hide">
@@ -69,7 +69,7 @@
 			<div 
 			class="lightweight-portfolio--closer-view-overlay overlay-active"
 			ng-click="fillLightboxImage($index)"  
-			color="primary" hue="hn" property="bg" opaqueness="lst" lw-color
+			color="primary" hue="hn" property="bg" opaqueness="darkest" lw-color
 			>
                 <div class="lightweight-portfolio--closer-look-overlay-container" portfolio-closer-look-overlay-content thumb="{{$index}}">
                     <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlr" property="txt" opaqueness lw-color>search</i>
