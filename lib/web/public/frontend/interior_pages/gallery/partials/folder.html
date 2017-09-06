@@ -1,0 +1,91 @@
+<style>
+	.back-home {
+		color: {{base_hue_darker.value}};
+		transition: all .2s ease-in-out;
+	}
+	.back-home:hover {
+		color: {{base_hue_darkest.value}};
+		transition: all .2s ease-in-out;
+	}
+	.lightbox_curtain {
+		position: fixed; top: 0; 
+		right: 0; bottom: 0; left: 0; 
+		background-color: rgba(0,0,0,.9); z-index: 2;
+		opacity: 0;
+		display: none;
+		transition-duration: .5s;
+	    transition-timing-function: cubic-bezier(.4,0,.2,1);
+	    transition-property: opacity;
+	}
+	.lightbox-image {
+		transition-duration: .5s;
+		opacity: 0;
+	    transition-timing-function: cubic-bezier(.4,0,.2,1);
+	    transition-property: opacity;
+	}
+	.lightbox_curtain.active-lightbox {opacity: 1; display: block;}
+</style>
+<!-- Navbar -->
+<div class="portfolio-nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15);">
+	<div class="portfolio-nav--row">
+		<span class="mdl-layout-title">
+			<a class="back-home" href="/gallery">
+            	<i class="material-icons" style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>Back To Galleries
+            </a>
+        </span>
+        <span class="mdl-layout-title">
+            <p 
+            class="portfolio-nav-title base-hdst--text"
+            style="font-size: 24px;">
+                {{folder.title}}
+            </p>
+        </span>
+        <div class="mdl-layout-spacer"></div>
+        <span class="mdl-layout-title">
+            <i class="material-icons base-hdst--text" style="font-weight: normal; cursor: pointer" ng-click="mobile_menu = !mobile_menu;">share</i>
+    	</span>
+	</div>
+</div>
+<!-- Navbar -->
+<!-- Photo Grid -->
+<div style="display: relative;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
+	
+	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" style="display: block;">
+
+		<div 
+		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
+		ng-repeat="item in folder.images" 
+        >
+			<img src="{{item.landscape}}" style="height: 100%; width: auto; min-height: 100%; min-width: 100%;">
+			<div 
+			class="lightweight-portfolio--closer-view-overlay overlay-active"
+			ng-click="fillLightboxImage($index)"  
+			color="primary" hue="hn" property="bg" opaqueness="lst" lw-color
+			>
+                <div class="lightweight-portfolio--closer-look-overlay-container" portfolio-closer-look-overlay-content thumb="{{$index}}">
+                    <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlr" property="txt" opaqueness lw-color>search</i>
+                    <p color="base" hue="hlr" property="txt" opaqueness lw-color>View</p>
+                </div>
+            </div>
+		</div>
+	</div>
+	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
+</div>
+<!-- Photo Grid -->
+
+<!-- Lightbox -->
+<!-- curtain -->
+<div class="lightbox_curtain" style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
+	<!-- Lightbox Close -->
+	<i class="material-icons" style="cursor: pointer; position: absolute; top: 32px; right: 32px;" ng-click="clearLightboxImage()" color="b" hue="hlst" property="txt" opaqueness="" lw-color>close</i>
+	<!-- Lightbox Close -->
+	<!-- Lightbox Image -->
+	<div ng-repeat="image in folder.images">
+		<img class="lightbox-image" ng-src="{{image.hi_res || image.landscape}}" ng-if="$index == startValue" lightbox-image>
+	</div>
+	<!-- Lightbox Image -->
+</div>
+<!-- curtain -->
+<!-- Lightbox -->
+
+

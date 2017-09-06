@@ -7,37 +7,20 @@
 		color: {{base_hue_darkest.value}};
 		transition: all .2s ease-in-out;
 	}
-	.lightbox_curtain {
-		position: fixed; top: 0; 
-		right: 0; bottom: 0; left: 0; 
-		background-color: rgba(0,0,0,.9); z-index: 2;
-		opacity: 0;
-		display: none;
-		transition-duration: .5s;
-	    transition-timing-function: cubic-bezier(.4,0,.2,1);
-	    transition-property: opacity;
-	}
-	.lightbox-image {
-		transition-duration: .5s;
-		opacity: 0;
-	    transition-timing-function: cubic-bezier(.4,0,.2,1);
-	    transition-property: opacity;
-	}
-	.lightbox_curtain.active-lightbox {opacity: 1; display: block;}
 </style>
 <!-- Navbar -->
 <div class="portfolio-nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15);">
 	<div class="portfolio-nav--row">
 		<span class="mdl-layout-title">
 			<a class="back-home" href="/">
-            	<i class="material-icons" style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>
+            	<i class="material-icons" style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>Back Home
             </a>
         </span>
         <span class="mdl-layout-title">
             <p 
             class="portfolio-nav-title base-hdst--text"
             style="font-size: 24px;">
-                {{portfolio_item.title}}
+                Galleries
             </p>
         </span>
         <div class="mdl-layout-spacer"></div>
@@ -54,17 +37,16 @@
 
 		<div 
 		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
-		ng-repeat="item in portfolio_item.images" 
+		ng-repeat="item in galleries" 
         >
 			<img src="{{item.landscape}}" style="height: 100%; width: auto; min-height: 100%; min-width: 100%;">
 			<div 
-			class="lightweight-portfolio--closer-view-overlay overlay-active"
-			ng-click="fillLightboxImage($index)"  
+			class="lightweight-portfolio--closer-view-overlay overlay-active" 
 			color="primary" hue="hn" property="bg" opaqueness="lst" lw-color
 			>
                 <div class="lightweight-portfolio--closer-look-overlay-container" portfolio-closer-look-overlay-content thumb="{{$index}}">
                     <i class="material-icons mdl-typography--font-bold lightweight-hero--content-overlay-view-more-button" color="b" hue="hlr" property="txt" opaqueness lw-color>search</i>
-                    <p color="base" hue="hlr" property="txt" opaqueness lw-color>View</p>
+                    <p color="base" hue="hlr" property="txt" opaqueness lw-color>View {{item.title}}</p>
                 </div>
             </div>
 		</div>
@@ -73,19 +55,5 @@
 </div>
 <!-- Photo Grid -->
 
-<!-- Lightbox -->
-<!-- curtain -->
-<div class="lightbox_curtain" style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
-	<!-- Lightbox Close -->
-	<i class="material-icons" style="cursor: pointer; position: absolute; top: 32px; right: 32px;" ng-click="clearLightboxImage()" color="b" hue="hlst" property="txt" opaqueness="" lw-color>close</i>
-	<!-- Lightbox Close -->
-	<!-- Lightbox Image -->
-	<div ng-repeat="image in portfolio_item.images">
-		<img class="lightbox-image" ng-src="{{image.hi_res || image.landscape}}" ng-if="$index == startValue" lightbox-image>
-	</div>
-	<!-- Lightbox Image -->
-</div>
-<!-- curtain -->
-<!-- Lightbox -->
 
 
