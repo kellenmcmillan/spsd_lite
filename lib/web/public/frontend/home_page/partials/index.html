@@ -72,7 +72,7 @@
 
 <a 
  class="back-to-top mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp" 
- ng-attr-style="position: fixed; bottom: 32px; right: 32px; z-index: 100"
+ style="position: fixed; bottom: 32px; right: 32px; z-index: 100"
  href="/#/#top"
  hash="/#/#top"
  ng-click="clearActiveLinks()"
@@ -105,7 +105,7 @@
         <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-attr-style="font-size: 16px; font-weight: bold"
+            style="font-size: 16px; font-weight: bold"
             href="{{item.href}}" 
             hash="{{item.hash}}"
             du-scrollspy
@@ -126,7 +126,7 @@
             
             <!-- Right aligned menu below button -->
             
-                <i class="material-icons base-hdr--text" ng-attr-style="font-weight: normal;" ng-click="$parent.mobile_menu = !$parent.mobile_menu;">menu</i>
+                <i class="material-icons base-hdr--text" style="font-weight: normal;" ng-click="$parent.mobile_menu = !$parent.mobile_menu;">menu</i>
 
             <!-- Right aligned menu below button -->
         </span>
@@ -154,7 +154,7 @@
         <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-attr-style="font-size: 16px; font-weight: bold"
+            style="font-size: 16px; font-weight: bold"
             href="{{item.href}}" 
             du-scrollspy
             du-smooth-scroll
@@ -174,7 +174,7 @@
             
             <!-- Right aligned menu below button -->
             
-                <i class="material-icons base-hdr--text" ng-attr-style="font-weight: normal;" ng-click="mobile_menu = !mobile_menu;">menu</i>
+                <i class="material-icons base-hdr--text" style="font-weight: normal;" ng-click="mobile_menu = !mobile_menu;">menu</i>
 
             <!-- Right aligned menu below button -->
         </span>
@@ -195,7 +195,7 @@
 <!-- Menu Card Component -->
 <div ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="mobile_menu" ng-click="mobile_menu = false;">
 
-    <div class="menu-card mdl-card" ng-show="mobile_menu" ng-attr-style="z-index: 10001;">
+    <div class="menu-card mdl-card" ng-show="mobile_menu" style="z-index: 10001;">
 
         <!-- Card Titles -->
 
@@ -203,7 +203,7 @@
 
             <h2 class="mdl-card__title-text mdl-color-text--grey-800">Main Menu</h2>
             <div class="mdl-layout-spacer"></div>
-            <i class="material-icons" ng-attr-style="cursor: pointer;" ng-click="mobile_menu = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
+            <i class="material-icons" style="cursor: pointer;" ng-click="mobile_menu = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
             
         </div>
         <!-- Card Titles -->
@@ -212,12 +212,12 @@
         <div class="mdl-card__supporting-text center--block">
 
             <!-- Menus -->
-            <div ng-attr-style="margin: 0 auto; width: inherit;" ng-click="mobile_menu = false">
+            <div style="margin: 0 auto; width: inherit;" ng-click="mobile_menu = false">
                 <ul class="mdl-list" du-scroll-container="lightweight_content">
                     <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.primary_navigation">
                         <a 
                         class="base-hdr--text"
-                        ng-attr-style="font-size: 16px; text-decoration: none;"
+                        style="font-size: 16px; text-decoration: none;"
                         href="{{item.href}}" 
                         du-scrollspy
                         du-smooth-scroll>
@@ -276,7 +276,7 @@
 <!-- Login Card Component -->
 <div ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="user_button">
 
-    <div ng-controller="authentication_controller" class="login-card mdl-card mdl-shadow--4dp base-hlst" ng-show="user_button" ng-attr-style="z-index: 10001;">
+    <div ng-controller="authentication_controller" class="login-card mdl-card mdl-shadow--4dp base-hlst" ng-show="user_button" style="z-index: 10001;">
         <!-- Card Titles -->
 
         <div class="mdl-card__title">
@@ -285,7 +285,7 @@
             <h2 ng-if="user" class="mdl-card__title-text mdl-color-text--grey-800">{{user.data.personal_info.firstname}} {{user.data.personal_info.lastname}}</h2>
 
             <div class="mdl-layout-spacer"></div>
-            <i class="material-icons" ng-attr-style="cursor: pointer;" ng-click="$parent.user_button = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
+            <i class="material-icons" style="cursor: pointer;" ng-click="$parent.user_button = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
             
         </div>
         <!-- Card Titles -->
@@ -295,14 +295,14 @@
 
             <!-- #1 Login Intro Screen -->
             <div ng-show="login_screen_state == 0 && !user" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
-                <p ng-attr-style="font-size: 16px;">Welcome to {{app_data.app_configs.name}}'s online web app! For the best experience sign in or sign up to track jobs, subscribe to our news feed and more.</p>
+                <p style="font-size: 16px;">Welcome to {{app_data.app_configs.name}}'s online web app! For the best experience sign in or sign up to track jobs, subscribe to our news feed and more.</p>
             </div>
             <!-- #1 Login Intro Screen -->
             
             <!-- #2 Login Screen -->
             <div ng-show="login_screen_state == 1 && !user" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
-                <p ng-attr-style="font-size: 16px;">Sign in below to get started with {{app_data.app_configs.name}}.</p>
-                <ul ng-attr-style="-webkit-padding-start: 0px;">
+                <p style="font-size: 16px;">Sign in below to get started with {{app_data.app_configs.name}}.</p>
+                <ul style="-webkit-padding-start: 0px;">
                     <li>
                         <div class="mdl-textfield mdl-js-textfield">
                             <input class="mdl-textfield__input" type="email" id="email" ng-model="signinData.email">
@@ -321,8 +321,8 @@
 
             <!-- #3 Signup Intro Screen -->
             <div ng-show="login_screen_state == 2 && !user" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
-                <p ng-attr-style="font-size: 16px;">Let us know a little more about you.</p>
-                <ul ng-attr-style="-webkit-padding-start: 0px;">
+                <p style="font-size: 16px;">Let us know a little more about you.</p>
+                <ul style="-webkit-padding-start: 0px;">
                     <li>
                         <div class="mdl-textfield mdl-js-textfield">
                             <input class="mdl-textfield__input" id="firstname" ng-model="signupData.firstname">
@@ -342,8 +342,8 @@
 
             <!-- #4 Signup Finish Screen -->
             <div ng-show="login_screen_state == 3 && !user" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
-                <p ng-attr-style="font-size: 16px;">Almost Done!</p>
-                <ul ng-attr-style="-webkit-padding-start: 0px;">
+                <p style="font-size: 16px;">Almost Done!</p>
+                <ul style="-webkit-padding-start: 0px;">
                     <li>
                         <div class="mdl-textfield mdl-js-textfield">
                             <input class="mdl-textfield__input" type="email" id="email" ng-model="signupData.email">
@@ -391,9 +391,9 @@
 
                 <div class="mdl-cell mdl-cell--9-col">
                     
-                    <p ng-show="user" ng-attr-style="word-wrap: break-word; font-weight: bold;">
+                    <p ng-show="user" style="word-wrap: break-word; font-weight: bold;">
                         {{user.data.personal_info.firstname}} {{user.data.personal_info.lastname}}<br>
-                        <span ng-attr-style="word-wrap: break-word; font-size: 11px">{{user.data.personal_info.email}}</span>
+                        <span style="word-wrap: break-word; font-size: 11px">{{user.data.personal_info.email}}</span>
                     </p>
 
                 </div>
@@ -423,7 +423,7 @@
 
             <!-- #7 Logged In Screen Button 1 -->
             <button ng-show="user" class="mdl-button mdl-js-button mdl-js-ripple-effect full-width {{primary_hue_normal.name}}" ng-click="">
-                <a href="" class="{{base_hue_text__lighter.name}}" ng-attr-style="text-decoration: none;">
+                <a href="" class="{{base_hue_text__lighter.name}}" style="text-decoration: none;">
                     <i class="material-icons {{base_hue_text__lighter.name}}" role="presentation">https</i>&nbsp;&nbsp;My Vault
                 </a>
             </button>
@@ -431,7 +431,7 @@
 
             <!-- #7 Logged In Screen Button 2 -->
             <button ng-show="user" class="mdl-button mdl-js-button mdl-js-ripple-effect full-width mdl-color-text--grey-800" ng-click="logout()">
-                <a class="mdl-color-text--grey-800" ng-attr-style="text-decoration: none;">
+                <a class="mdl-color-text--grey-800" style="text-decoration: none;">
                     <i class="material-icons primary-hn--text" role="presentation">clear</i>&nbsp;&nbsp;Sign Out
                 </a>
             </button>

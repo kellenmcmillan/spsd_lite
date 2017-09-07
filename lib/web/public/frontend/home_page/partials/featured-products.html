@@ -1,5 +1,8 @@
 <style>
-.featured-products {position: relative;}
+.featured-products {
+  position: relative;
+  background-color:{{base_hue_lighter.value}}
+}
 .featured-product-card.mdl-card {
   width: 85%; margin-left: auto; margin-right: auto; margin-top: 64px; margin-bottom: 64px; overflow: visible; text-align: center; background-color: {{base_hue_lightest.value}};
 }
@@ -68,14 +71,13 @@
 <div 
  minfull-screen
  class="mdl-grid featured-products"
- ng-attr-style="background-color:{{base_hue_lighter.value}}" 
  data-size>
-  <span id="capabilities" ng-attr-style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
+  <span id="capabilities" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
   <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone center--text">
    <!-- Title -->
   <div class="center--text">
   <br><br><br>
-      <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" ng-attr-style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">North Texas' Best</h2>
+      <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">North Texas' Best</h2>
       <h2 
       class="mdl-typography--font-bold" 
       ng-bind-html="featured_products.title">
@@ -87,7 +89,7 @@
       xmlns="http://www.w3.org/2000/svg" 
       xmlns:xlink="http://www.w3.org/1999/xlink" 
       x="0px" y="0px" viewBox="0 0 300 20" 
-      ng-attr-style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+      style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
       width="288" height = "13" 
       path fill="{{base_hue_darker.value}}" 
       xml:space="preserve">
@@ -104,11 +106,11 @@
           <img class="product-icon" src="{{featured_products.component_data[$index].icon}}">
         </span>
       </span>
-      <div class="mdl-card__supporting-text" ng-attr-style="text-align: left;">
-        <h4 ng-bind-html="product.title" ng-attr-style="font-weight: bold;">{{product.title}}</h4>
+      <div class="mdl-card__supporting-text" style="text-align: left;">
+        <h4 ng-bind-html="product.title" style="font-weight: bold;">{{product.title}}</h4>
         <p ng-bind-html="product.text"></p>
       </div>
-      <div class="mdl-card__actions" ng-attr-style="text-align: left;">
+      <div class="mdl-card__actions" style="text-align: left;">
         <a href="/capabilities/{{product.param}}" class="services mdl-button mdl-js-button mdl-js-ripple-effect" ng-attr-style="color: {{primary_hue_normal.value}}; background-color: {{base_hue_lighter.value}}; position: relative;">
           Learn More
         </a>
