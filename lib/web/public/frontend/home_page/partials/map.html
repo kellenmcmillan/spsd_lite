@@ -28,7 +28,7 @@
             <!-- Title -->
             <div class="map-column-center--1" map-column-one-center>
                 <div class="center--text">
-                    <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" ng-style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">Locate Us</h2>
+                    <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" ng-attr-style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">Locate Us</h2>
                     <h2 
                     class="mdl-typography--font-bold" 
                     color="{{quaternary_standard_container.component_colors.text_color.color}}" 
@@ -45,7 +45,7 @@
                     xmlns="http://www.w3.org/2000/svg" 
                     xmlns:xlink="http://www.w3.org/1999/xlink" 
                     x="0px" y="0px" viewBox="0 0 300 20" 
-                    ng-style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+                    ng-attr-style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
                     width="288" height = "13" 
                     path fill="{{base_hue_darker.value}}" 
                     xml:space="preserve">
@@ -67,7 +67,7 @@
 		                {{app_data.app_configs.address.info.street}}<br>
 		                {{app_data.app_configs.address.info.city}}, {{app_data.app_configs.address.info.state}} {{app_data.app_configs.address.info.zipcode}}
 	                	</p>
-	                	<a href="{{google_address_link}}"><button class="directions-button mdl-button mdl-js-button mdl-js-ripple-effect" ng-style="color: {{primary_hue_normal.value}}; background-color: {{base_hue_lighter.value}};">GET DIRECTIONS</button></a>
+	                	<a href="{{google_address_link}}"><button class="directions-button mdl-button mdl-js-button mdl-js-ripple-effect" ng-attr-style="color: {{primary_hue_normal.value}}; background-color: {{base_hue_lighter.value}};">GET DIRECTIONS</button></a>
 	                </div>
                 </div>
 
@@ -75,9 +75,9 @@
         </div>
     </div>
     <div class="mdl-layout-spacer"></div>
-    <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid map--2" ng-style="overflow: hidden; position: relative;">
-        <span class="map-column-center--2" map-column-two-center ng-style="height: 70%; width: 100%; overflow: hidden">
-            <iframe src="{{trusted_google_address_widget_map}}" width="100%" height="100%" frameborder="0" ng-style="border:0; opacity: 0.8" allowfullscreen></iframe>
+    <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid map--2" ng-attr-style="overflow: hidden; position: relative;">
+        <span class="map-column-center--2" map-column-two-center ng-attr-style="height: 70%; min-height: 300px; width: 100%; overflow: hidden">
+            <iframe src="{{trusted_google_address_widget_map}}" width="100%" height="100%" frameborder="0" ng-attr-style="border:0; opacity: 0.8" allowfullscreen></iframe>
         </span>
     </div>
     <div class="mdl-layout-spacer"></div>
