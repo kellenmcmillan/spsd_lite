@@ -2,12 +2,16 @@
 
 /* ========== Lighweight Hero Slideshow ========== */
 
+@media screen and (orientation: landscape) {
+  .lightweight-hero--slideshow .slide--display img {width: 100%; height: auto;}
+}
+
 @media screen and (min-width: 1501px) {
-  .lightweight-hero--slideshow .slide--display img {transform: scale(1.2)!important;}
+  /*.lightweight-hero--slideshow .slide--display img {transform: scale(1.2)!important;}*/
 }
 
 @media screen and (orientation: landscape) and (max-width: 1500px) and (min-width: 1140px)  {
-  .lightweight-hero--slideshow .slide--display img {transform: scale(1.1)!important;}
+  /*.lightweight-hero--slideshow .slide--display img {transform: scale(1.1)!important;}*/
 }
 
 @media screen and (orientation: landscape) and (max-width: 1139px) {
@@ -16,10 +20,6 @@
 
 @media screen and (orientation: portrait) and (max-width: 659px) {
   .lightweight-hero--slideshow .slide--display img {transform:scale(1.2)!important;}
-}
-
-@media screen and (orientation: landscape) {
-  .lightweight-hero--slideshow .slide--display img {width: 100%; height: auto;}
 }
 
 @media screen and (orientation: portrait) {
