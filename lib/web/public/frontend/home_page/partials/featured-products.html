@@ -68,14 +68,14 @@
 <div 
  minfull-screen
  class="mdl-grid featured-products"
- style="background-color:{{base_hue_lighter.value}}" 
+ ng-style="background-color:{{base_hue_lighter.value}}" 
  data-size>
-  <span id="capabilities" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
+  <span id="capabilities" ng-style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
   <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone center--text">
    <!-- Title -->
   <div class="center--text">
   <br><br><br>
-      <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">North Texas' Best</h2>
+      <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" ng-style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">North Texas' Best</h2>
       <h2 
       class="mdl-typography--font-bold" 
       ng-bind-html="featured_products.title">
@@ -87,7 +87,7 @@
       xmlns="http://www.w3.org/2000/svg" 
       xmlns:xlink="http://www.w3.org/1999/xlink" 
       x="0px" y="0px" viewBox="0 0 300 20" 
-      style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+      ng-style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
       width="288" height = "13" 
       path fill="{{base_hue_darker.value}}" 
       xml:space="preserve">
@@ -99,17 +99,17 @@
   <!-- Title -->
   <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="product in featured_products.component_data">
     <div class="featured-product-card mdl-card border--radius-2" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'mdl-shadow--6dp': $index == 1, 'featured-last': $index == 2}">
-      <span class="overflow-image border--radius-2" ng-class="{'mdl-shadow--6dp': $index == 1}" style="background: url('{{featured_products.component_background_media[$index].image.landscape}}') center/cover no-repeat; position: relative;">
-        <span style="background-color: {{base_hue_darker_lightest_opacity.value}}; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
+      <span class="overflow-image border--radius-2" ng-class="{'mdl-shadow--6dp': $index == 1}" ng-style="background: url('{{featured_products.component_background_media[$index].image.landscape}}') center/cover no-repeat; position: relative;">
+        <span ng-style="background-color: {{base_hue_darker_lightest_opacity.value}}; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
           <img class="product-icon" src="{{featured_products.component_data[$index].icon}}">
         </span>
       </span>
-      <div class="mdl-card__supporting-text" style="text-align: left;">
-        <h4 ng-bind-html="product.title" style="font-weight: bold;">{{product.title}}</h4>
+      <div class="mdl-card__supporting-text" ng-style="text-align: left;">
+        <h4 ng-bind-html="product.title" ng-style="font-weight: bold;">{{product.title}}</h4>
         <p ng-bind-html="product.text"></p>
       </div>
-      <div class="mdl-card__actions" style="text-align: left;">
-        <a href="/capabilities/{{product.param}}" class="services mdl-button mdl-js-button mdl-js-ripple-effect" style="color: {{primary_hue_normal.value}}; background-color: {{base_hue_lighter.value}}; position: relative;">
+      <div class="mdl-card__actions" ng-style="text-align: left;">
+        <a href="/capabilities/{{product.param}}" class="services mdl-button mdl-js-button mdl-js-ripple-effect" ng-style="color: {{primary_hue_normal.value}}; background-color: {{base_hue_lighter.value}}; position: relative;">
           Learn More
         </a>
       </div>

@@ -9,18 +9,18 @@
 	}
 </style>
 <!-- Navbar -->
-<div class="portfolio-nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15);">
+<div class="portfolio-nav--container base-hlst full-width" ng-style="border-bottom: 1px solid rgba(0,0,0,.15);">
 	<div class="portfolio-nav--row">
 		<span class="mdl-layout-title">
 			<a class="back-home" href="/">
-            	<i class="material-icons" style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>
+            	<i class="material-icons" ng-style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>
             </a>
         </span>
         <span class="mdl-layout-title">
-        	<a class="back-home" href="/" style="text-decoration: none;">
+        	<a class="back-home" href="/" ng-style="text-decoration: none;">
 				<p 
 	            class="portfolio-nav-title base-hdst--text"
-	            style="font-size: 24px;">
+	            ng-style="font-size: 24px;">
 	                Back Home
 	            </p>
             </a>
@@ -29,26 +29,26 @@
         <span class="mdl-layout-title">
             <p 
             class="portfolio-nav-title base-hdst--text"
-            style="font-size: 24px;">
+            ng-style="font-size: 24px;">
                 SPSD Galleries
             </p>
         </span>
         <span class="mdl-layout-title hide">
-            <i class="material-icons base-hdst--text" style="font-weight: normal; cursor: pointer" ng-click="mobile_menu = !mobile_menu;">share</i>
+            <i class="material-icons base-hdst--text" ng-style="font-weight: normal; cursor: pointer" ng-click="mobile_menu = !mobile_menu;">share</i>
     	</span>
 	</div>
 </div>
 <!-- Navbar -->
 <!-- Photo Grid -->
-<div style="display: relative;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
+<div ng-style="display: relative;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
 	
-	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" style="display: block;">
+	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" ng-style="display: block;">
 
 		<div 
 		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
 		ng-repeat="item in galleries" 
         >
-			<img src="{{item.landscape}}" style="height: 100%; width: auto; min-height: 100%; min-width: 100%;">
+			<img src="{{item.landscape}}" ng-style="height: 100%; width: auto; min-height: 100%; min-width: 100%;">
 			<a href="/gallery/{{item.url_param}}">
 				<div 
 				class="lightweight-portfolio--closer-view-overlay overlay-active" 
@@ -62,7 +62,7 @@
             </a>
 		</div>
 	</div>
-	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
+	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" ng-style="width: 0px; height: 0px;">
 </div>
 <!-- Photo Grid -->
 

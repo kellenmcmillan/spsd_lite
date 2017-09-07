@@ -26,18 +26,18 @@
 	.lightbox_curtain.active-lightbox {opacity: 1; display: block;}
 </style>
 <!-- Navbar -->
-<div class="portfolio-nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15);">
+<div class="portfolio-nav--container base-hlst full-width" ng-style="border-bottom: 1px solid rgba(0,0,0,.15);">
 	<div class="portfolio-nav--row">
 		<span class="mdl-layout-title">
 			<a class="back-home" href="/gallery" >
-            	<i class="material-icons" style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>
+            	<i class="material-icons" ng-style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>
             </a>
         </span>
         <span class="mdl-layout-title">
-        	<a class="back-home" href="/gallery" style="text-decoration: none;">
+        	<a class="back-home" href="/gallery" ng-style="text-decoration: none;">
 				<p 
 	            class="portfolio-nav-title base-hdst--text"
-	            style="font-size: 24px;">
+	            ng-style="font-size: 24px;">
 	                Back To Galleries
 	            </p>
             </a>
@@ -46,26 +46,26 @@
         <span class="mdl-layout-title">
             <p 
             class="portfolio-nav-title base-hdst--text"
-            style="font-size: 24px;">
+            ng-style="font-size: 24px;">
                 {{folder.title}} | {{folder.description}}
             </p>
         </span>
         <span class="mdl-layout-title hide">
-            <i class="material-icons base-hdst--text" style="font-weight: normal; cursor: pointer" ng-click="mobile_menu = !mobile_menu;">share</i>
+            <i class="material-icons base-hdst--text" ng-style="font-weight: normal; cursor: pointer" ng-click="mobile_menu = !mobile_menu;">share</i>
     	</span>
 	</div>
 </div>
 <!-- Navbar -->
 <!-- Photo Grid -->
-<div style="display: relative;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
+<div ng-style="display: relative;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
 	
-	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" style="display: block;">
+	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" ng-style="display: block;">
 
 		<div 
 		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
 		ng-repeat="item in folder.images" 
         >
-			<img src="{{item.landscape}}" style="height: 100%; width: auto; min-height: 100%; min-width: 100%;">
+			<img src="{{item.landscape}}" ng-style="height: 100%; width: auto; min-height: 100%; min-width: 100%;">
 			<div 
 			class="lightweight-portfolio--closer-view-overlay overlay-active"
 			ng-click="fillLightboxImage($index)"  
@@ -77,15 +77,15 @@
             </div>
 		</div>
 	</div>
-	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
+	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" ng-style="width: 0px; height: 0px;">
 </div>
 <!-- Photo Grid -->
 
 <!-- Lightbox -->
 <!-- curtain -->
-<div class="lightbox_curtain" style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
+<div class="lightbox_curtain" ng-style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
 	<!-- Lightbox Close -->
-	<i class="material-icons" style="cursor: pointer; position: absolute; top: 32px; right: 32px;" ng-click="clearLightboxImage()" color="b" hue="hlst" property="txt" opaqueness="" lw-color>close</i>
+	<i class="material-icons" ng-style="cursor: pointer; position: absolute; top: 32px; right: 32px;" ng-click="clearLightboxImage()" color="b" hue="hlst" property="txt" opaqueness="" lw-color>close</i>
 	<!-- Lightbox Close -->
 	<!-- Lightbox Image -->
 	<div ng-repeat="image in folder.images">

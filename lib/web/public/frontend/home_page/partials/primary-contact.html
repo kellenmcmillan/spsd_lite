@@ -24,21 +24,21 @@
 </style>
 <div
  minfull-screen
- style="position: relative;"
+ ng-style="position: relative;"
  class="component primary-contact mdl-grid no-padding no-margin"
  color="{{primary_contact.component_colors.background_color.color}}"
  hue="{{primary_contact.component_colors.background_color.hue}}"
  property="{{primary_contact.component_colors.background_color.property}}" 
  opaqueness="{{primary_contact.component_colors.background_color.opaqueness}}" 
  lw-color>
-    <span id="contact" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
+    <span id="contact" ng-style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
         <div class="mdl-cell mdl-cell--12-col contact--1">
             <!-- Title -->
             <div class="contact-center--1" primary-contact-one-center>
                 <div class="center--text">
-                    <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">Reach Out</h2>
+                    <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" ng-style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">Reach Out</h2>
                     <h2 
                     class="mdl-typography--font-bold" 
                     color="{{primary_contact.component_colors.text_color.color}}" 
@@ -54,7 +54,7 @@
                     xmlns="http://www.w3.org/2000/svg" 
                     xmlns:xlink="http://www.w3.org/1999/xlink" 
                     x="0px" y="0px" viewBox="0 0 300 20" 
-                    style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+                    ng-style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
                     width="288" height = "13" 
                     path fill="{{base_hue_darker.value}}" 
                     xml:space="preserve">
@@ -71,42 +71,42 @@
                 opaqueness="{{primary_contact.component_colors.text_color.opaqueness}}" 
                 lw-color ng-bind-html="primary_contact.component_data.text[0]">
                 </p>
-                <p class="base-hdr--text form-instructions" style="font-size: 10px">*We are the sole owners of the information collected on this site. We only have access to/collect information that you voluntarily give us via email or other direct contact from you. We will not sell or rent this information to anyone.<br>We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to ship an order.<br>Unless you ask us not to, we may contact you via email in the future to tell you about specials, new products or services, or changes to this privacy policy.</p>
+                <p class="base-hdr--text form-instructions" ng-style="font-size: 10px">*We are the sole owners of the information collected on this site. We only have access to/collect information that you voluntarily give us via email or other direct contact from you. We will not sell or rent this information to anyone.<br>We will use your information to respond to you, regarding the reason you contacted us. We will not share your information with any third party outside of our organization, other than as necessary to fulfill your request, e.g. to ship an order.<br>Unless you ask us not to, we may contact you via email in the future to tell you about specials, new products or services, or changes to this privacy policy.</p>
             </div>
         </div>
     </div>
     <div class="mdl-layout-spacer"></div>
-    <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid contact--2" style="position: relative; height: inherit; padding:16px; margin: 16px;">
-        <div style="width: 100%;">
-            <div class="contact-center--2" style="position: relative; height: inherit; background-color: {{base_hue_text__lightest.value}}; padding: 24px 16px;" primary-contact-two-center>
+    <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid contact--2" ng-style="position: relative; height: inherit; padding:16px; margin: 16px;">
+        <div ng-style="width: 100%;">
+            <div class="contact-center--2" ng-style="position: relative; height: inherit; background-color: {{base_hue_text__lightest.value}}; padding: 24px 16px;" primary-contact-two-center>
                 <h1 class="h1 mdl-typography--font-bold">Contact {{app_data.app_configs.name}}</h1>
                 <p class="base-hdr--text form-instructions">*Complete The Form Below. Our team will respond to your request as soon as possible.</p>
                 <form autocomplete="off" class="forms" name="subscribe_form" class="full-width">
                     <ul class="no-padding">
                         <li>
-                            <div class="lightweight-textfield" style="width: 100%;">
+                            <div class="lightweight-textfield" ng-style="width: 100%;">
                                 <label class="lightweight-texfield--label" for="firstname">First Name...</label>
                                 <input class="lightweight-input" type="text" id="firstname" name="Firstname" ng-model="person.info.firstname" ng-value="user.info.firstname" spellcheck="false">
                             </div>
                         </li>
                         <li>
-                            <div class="lightweight-textfield" style="width: 100%;">
+                            <div class="lightweight-textfield" ng-style="width: 100%;">
                                 <label class="lightweight-texfield--label" for="lastname">Last Name...</label>
                                 <input class="lightweight-input" type="text" id="lastname" name="lastname" ng-model="person.info.lastname" ng-value="user.info.lastname" spellcheck="false">
                             </div>
                         </li>
                         <li>
-                            <div class="lightweight-textfield" style="width: 100%;">
+                            <div class="lightweight-textfield" ng-style="width: 100%;">
                                 <label class="lightweight-texfield--label" for="email">Email...</label>
                                 <input class="lightweight-input" type="text" id="email" name="Email" ng-model="person.info.email" ng-value="user.email" spellcheck="false">
                             </div>
                         </li>
-                        <l1 class="lightweight-textfield" style="width: 100%; padding-bottom: 8px;">
+                        <l1 class="lightweight-textfield" ng-style="width: 100%; padding-bottom: 8px;">
                             <label class="lightweight-texfield--label" for="SIT_mail_body">Message...</label>
                             <textarea class="lightweight-input" rows="3" type="text" id="SIT_mail_body" name="SIT_mail_body" spellcheck="false"></textarea>
                         </l1>
                     </ul>
-                    <button class="contact-us-button mdl-button mdl-js-button mdl-js-ripple-effect" style="width: 150px; background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}}" value="submit" ng-click="">Send</button>
+                    <button class="contact-us-button mdl-button mdl-js-button mdl-js-ripple-effect" ng-style="width: 150px; background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}}" value="submit" ng-click="">Send</button>
                 </form>
             </div>
         </div>
