@@ -3,6 +3,7 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-flow: column nowrap;
     -webkit-flex-direction: column;
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
