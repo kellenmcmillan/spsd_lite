@@ -5,6 +5,7 @@
 	height: inherit; width: 50%!important; 
 	overflow: hidden; position: 
 	relative; cursor: pointer;
+	margin-left: -40%;
 }
 
 .portfolio_item.description, 
@@ -27,14 +28,14 @@
 
 @media screen and (max-width: 839px) and (min-width: 480px){
 	.gallery-container {width:100%!important;}
-	.portfolio_item {width: 100%!important;}
+	.portfolio_item {width: 100%!important; margin-left: 0px;}
 	.lightweight-portfolio--content,
 	.portfolio_item.description {height:250px; width:100%!important;}
 }
 
 @media screen and (max-width: 479px){
 	.gallery-container {width:100%!important;}
-    .portfolio_item {width: 100%!important;}
+    .portfolio_item {width: 100%!important; margin-left: 0px;}
     .lightweight-portfolio--content,
 	.portfolio_item.description {height:200px; width:100%!important;}
 }
