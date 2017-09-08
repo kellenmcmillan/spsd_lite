@@ -48,6 +48,7 @@
 		-webkit-flex-direction: row; -ms-flex-direction: row;flex-direction: row; -webkit-box-align: center; 
 		-webkit-align-items: center; -ms-flex-align: center; align-items: center; font-weight: 500;
 	}
+	footer {position: relative;}
 	.mdl-mini-footer__link-list .is-active {color: rgb(250,250,250); background-color: transparent!important;}
 
 	@media (max-width: 840px) {.mdl-layout-title {font-size: 14px!important;}}
