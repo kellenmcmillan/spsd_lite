@@ -53,8 +53,12 @@
         </span>
 
         <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
-            <img ng-if="scroll > 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
-            <img ng-if="scroll == 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src_white}}" ng-cloak="true">
+            <a href="/">
+                <img ng-if="scroll > 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+            </a>
+            <a href="/">
+                <img ng-if="scroll == 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src_white}}" ng-cloak="true">
+            </a>
         </span>
 
         <div class="mdl-layout-spacer"></div>
@@ -102,7 +106,10 @@
 
         <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
             <a href="/">
-                <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+                <img ng-if="scroll > 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+            </a>
+            <a href="/">
+                <img ng-if="scroll == 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src_white}}" ng-cloak="true">
             </a>
         </span>
 
