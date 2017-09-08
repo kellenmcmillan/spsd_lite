@@ -5,7 +5,6 @@
 	height: inherit; width: 50%!important; 
 	overflow: hidden; position: 
 	relative; cursor: pointer;
-	margin-left: -40%;
 }
 
 .portfolio_item.description, 
@@ -19,7 +18,7 @@
 	transition: all .5s ease-in-out; 
 	min-height: 100%; height: auto; 
 	min-width: 100%; width: auto; 
-	will-change: scale;
+	margin-left: -40%;
 }
 
 @media screen and (max-width: 1400px) and (min-width: 840px){
@@ -28,14 +27,16 @@
 
 @media screen and (max-width: 839px) and (min-width: 480px){
 	.gallery-container {width:100%!important;}
-	.portfolio_item {width: 100%!important; margin-left: 0px;}
+	.portfolio_item {width: 100%!important;}
+	.portfolio_item img {margin-left: 0px;}
 	.lightweight-portfolio--content,
 	.portfolio_item.description {height:250px; width:100%!important;}
 }
 
 @media screen and (max-width: 479px){
 	.gallery-container {width:100%!important;}
-    .portfolio_item {width: 100%!important; margin-left: 0px;}
+    .portfolio_item {width: 100%!important;}
+    .portfolio_item img {margin-left: 0px;}
     .lightweight-portfolio--content,
 	.portfolio_item.description {height:200px; width:100%!important;}
 }
