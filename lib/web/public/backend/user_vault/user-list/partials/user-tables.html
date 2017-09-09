@@ -56,27 +56,14 @@
           <!--User is iterated-->
 
           <tr ng-repeat="user in users | filter:query | filter:q as results" ng-class="{'action--row': toggle.item == $index}" style="border: none;" ng-click="toggle.item = $index;" ng-dblclick="toggle.item = null" class="lightweight-animate-repeat">
-
-            <!--User Actions-->
-            <td style="z-index: 2; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: {{base_hue_text__lighter.value}}" ng-hide="toggle.item != $index">
-              <div class="mdl-cell mdl-cell--12-col action--container left--text">
-                <a ng-href="/backend/#/feedback/person/{{user._id}}" class="mdl-button mdl-js-button mdl-js-ripple-effect feedback-table--action mdl-typography--font-bold" color="b" hue="hdst" property="txt" opaqueness lw-color>
-                  <i class="material-icons user_vault--table-data" role="presentation">create</i><span class="user_vault--table-data">Edit</span>
-                </a>
-
-                <button class="mdl-button mdl-js-button mdl-js-ripple-effect feedback-table--action mdl-typography--font-bold" ng-click="initiateUserDelete(user)" color="b" hue="hdst" property="txt" opaqueness lw-color>
-                  <i class="material-icons user_vault--table-data" role="presentation">delete_forever</i>Delete
-                </button>
-              </div>
-            </td>
-            <!--User Actions-->
-
             <!--User Data-->
-            <td style="z-index: 1" class="user_vault--table-data mdl-data-table__cell--non-numeric">{{user.personal_info.firstname}}</td>
-            <td style="z-index: 1" class="user_vault--table-data mdl-data-table__cell--non-numeric">{{user.personal_info.lastname}}</td>
-            <td style="z-index: 1" class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.personal_info.phone}}</td>
-            <td style="z-index: 1" class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.personal_info.email}}</td>
-            <td style="z-index: 1" class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.role.position}}</td>
+            <a ng-href="/backend/#/feedback/person/{{user._id}}">
+              <td class="user_vault--table-data mdl-data-table__cell--non-numeric">{{user.personal_info.firstname}}</td>
+              <td class="user_vault--table-data mdl-data-table__cell--non-numeric">{{user.personal_info.lastname}}</td>
+              <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.personal_info.phone}}</td>
+              <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.personal_info.email}}</td>
+              <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.role.alias}}</td>
+            </a>
             <!--User Data-->
           </tr>
 
