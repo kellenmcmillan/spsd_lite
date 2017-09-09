@@ -34,14 +34,14 @@
   <!-- <div class="lightweight-tabs__tab-bar mdl-color--grey-800">
     <a ng-repeat="filterBtn in filterBtns" ng-click="setSelectedFilter();active = !active" class="mdl-tabs__tab mdl-color-text--grey-50 mdl-typography--font-bold" ng-class="{'is-active': active}">{{filterBtn.name}}</a>
   </div> -->
-  <div class="backend-app__menu no-padding no-margin" backend-menu color="b" hue="hue lighter" property="bg" opaqueness lw-color>
+  <!-- <div class="backend-app__menu no-padding no-margin" backend-menu color="b" hue="hue lighter" property="bg" opaqueness lw-color>
     <a class="backend_app__menu-item mdl-button mdl-js-button" ng-repeat="item in filterBtns">
       <i class="material-icons" role="presentation" color="primary" hue="hue normal" property="text" opaqueness="" lw-color>label</i>{{item.name}}
     </a>
-  </div>
-  <div class="backend-app__content mdl-grid no-padding no-margin" style="min-height: 100%; border: 1px solid rgba(0,0,0,.12); border-collapse: collapse;">
-    <div class="mdl-card mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width no-margin" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
-      <table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+  </div> -->
+  <div class="backend-app__content mdl-grid mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone no-padding no-margin" style="border: 1px solid rgba(0,0,0,.12); border-collapse: collapse;">
+    <div class="mdl-card mdl-cell mdl-cell--12-col full-width no-margin" style="min-height: 48px;" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+      <table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card mdl-data-table--selectable lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
         <thead ng-if="results.length !== 0" class="lightweight-animate-repeat">
           <tr>
             <th class="user_vault--table-data mdl-data-table__cell--non-numeric">Firstname</th>
@@ -57,13 +57,11 @@
 
           <tr ng-repeat="user in users | filter:query | filter:q as results" ng-class="{'action--row': toggle.item == $index}" style="border: none;" ng-click="toggle.item = $index;" ng-dblclick="toggle.item = null" class="lightweight-animate-repeat">
             <!--User Data-->
-            <a ng-href="/backend/#/feedback/person/{{user._id}}">
-              <td class="user_vault--table-data mdl-data-table__cell--non-numeric">{{user.personal_info.firstname}}</td>
-              <td class="user_vault--table-data mdl-data-table__cell--non-numeric">{{user.personal_info.lastname}}</td>
-              <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.personal_info.phone}}</td>
-              <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.personal_info.email}}</td>
-              <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.role.alias}}</td>
-            </a>
+            <td class="user_vault--table-data mdl-data-table__cell--non-numeric">{{user.personal_info.firstname}}</td>
+            <td class="user_vault--table-data mdl-data-table__cell--non-numeric">{{user.personal_info.lastname}}</td>
+            <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.personal_info.phone}}</td>
+            <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.personal_info.email}}</td>
+            <td class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">{{user.role.alias}}</td>
             <!--User Data-->
           </tr>
 
