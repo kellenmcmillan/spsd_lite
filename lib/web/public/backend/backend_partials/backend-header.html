@@ -16,25 +16,25 @@
 
 <header class="lightweight-header">
 
-    <div class="lightweight-backend-header-row">
+    <div class="lightweight-backend-header-row" color="p" hue="hn" property="bg" opaqueness lw-color>
 
-        <span class="mdl-layout-title base-hlst--text">
+        <span class="mdl-layout-title base-hlr--text">
             <h1 class="h1 mdl-typography--font-bold">{{pageTitle}}</h1>                    
         </span>
 
         <div class="mdl-layout-spacer"></div>
 
         <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone">
             <a 
-            class="lightweight-navigation-link header-navigation base-hdr--text" 
+            class="lightweight-navigation-link header-navigation base-hlr--text" 
             href="/"
             style="font-size: 16px; font-weight: bold">
                 BACK TO APP
             </a>
             <a 
             ng-repeat="item in app_data.app_configs.backend_navigation"
-            class="lightweight-navigation-link header-navigation base-hdr--text" 
+            class="lightweight-navigation-link header-navigation base-hlr--text" 
             href="{{item.href}}"
             style="font-size: 16px; font-weight: bold">
                 {{item.name}}
@@ -42,7 +42,7 @@
         </nav>
         <!-- Header Navigation -->
 
-        <span class="mdl-layout-title" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button">
+        <span class="mdl-layout-title base-hlr--text" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" style="font-size: 16px; font-weight: bold">
             Sign Out
         </span>
         &nbsp;&nbsp;
@@ -89,8 +89,8 @@
 
             <!-- Menus -->
             <div style="margin: 0 auto; width: inherit;" ng-click="mobile_menu = false">
-                <ul class="mdl-list" du-scroll-container="lightweight_content">
-                    <li class="mdl-list__item"" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">
+                <ul class="mdl-list">
+                    <li class="mdl-list__item">
                         <a 
                         class="lightweight-navigation-link header-navigation base-hdr--text" 
                         href="/"
@@ -109,6 +109,8 @@
                                 Back To App
                             </span>
                         </a>
+                    </li>
+                    <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">
                         <a 
                         class="base-hdr--text" 
                         href="{{item.href}}"
