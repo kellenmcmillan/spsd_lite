@@ -55,21 +55,13 @@
 		"role_id": 14,
 		"alias": "Vendor"
 	},
-	"government_agent1": {
+	"government_agent": {
 		"role_id": 15,
 		"alias": "Government Agent 1"
 	},
-	"government_agent2": {
+	"regulatory_agent": {
 		"role_id": 16,
-		"alias": "Government Agent 2"
-	},
-	"regulatory_agent1": {
-		"role_id": 17,
 		"alias": "Regulatory Agent 1"
-	},
-	"regulatory_agent2": {
-		"role_id": 18,
-		"alias": "Regulatory Agent 2"
 	}
 }
 
