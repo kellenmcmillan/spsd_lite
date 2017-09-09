@@ -1,14 +1,4 @@
 <style>
- .back-to-top {
-    background-color: {{primary_hue_normal.value}};
-    opacity: 0;
-    transition-duration: .3s;
-    transition-timing-function: cubic-bezier(.4,0,.2,1);
-    transition-property: background-color, opacity;
-}
-.back-to-top:hover {
-    background-color: {{primary_hue_lighter.value}};
-}
 .lightweight-navigation-link {position: relative;}
 .lightweight-navigation-link:after {
     content: ''; position: absolute; width: 0; 
@@ -22,27 +12,6 @@
     width: 70%; left: 15%;
 }
 </style>
-<style ng-if="scroll > 300">
-    .back-to-top {
-        opacity: 1;
-    }
-</style>
-
-<a 
- class="back-to-top mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp" 
- style="position: fixed; bottom: 32px; right: 32px; z-index: 100"
- href="/#/#top"
- hash="/#/#top"
- ng-click="clearActiveLinks()"
- du-scrollspy
- du-smooth-scroll
- du-scroll-container="lightweight_content">
-    <i 
-    class="material-icons base-hlst--text" 
-    role="presentation">
-    keyboard_arrow_up
-    </i>                 
-</a>
 
 <header class="lightweight-header" ng-if="scrollable">
 
@@ -54,10 +23,7 @@
 
         <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
             <a href="/">
-                <img ng-if="scroll > 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
-            </a>
-            <a href="/">
-                <img ng-if="scroll == 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src_white}}" ng-cloak="true">
+                <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
             </a>
         </span>
 
