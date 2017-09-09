@@ -1,19 +1,4 @@
 <!-- Directions Widget -->
-
-<style>
-    .directions-button {position: relative;}
-    .directions-button:after {
-        content: ''; position: absolute; width: 0; 
-        height: 2px; background-color: {{primary_hue_normal.value}}; 
-        left: 50%; bottom: 0;
-        transition-duration: .3s;
-        transition-timing-function: cubic-bezier(.4,0,.2,1);
-        transition-property: width, left;
-    }
-    .directions-button:hover:after {
-        width: 100%; left: 0%;
-    }
-</style>
 <h1 class="h1 padded--top16 lightweight-sidebar--heading" color="b" hue="hdst" property="txt" opaqueness lw-color><i class="material-icons" role="presentation" color="p" hue="hn" property="txt" opaqueness lw-color>room</i>&nbsp;DIRECTIONS</h1>
 
 <div class="mdl-card mdl-shadow--2dp" style="margin-top: 48px; width: 100%">
