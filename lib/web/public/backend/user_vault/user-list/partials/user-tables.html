@@ -40,6 +40,14 @@
     </a>
   </div> -->
   <div class="backend-app__content mdl-grid mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--2-offset-desktop no-padding" style="border: none;">
+    <ul class="no-padding">
+      <li>
+          <div class="lightweight-textfield" style="width: 100%;">
+              <label class="lightweight-texfield--label" for="query_users">Search For A User...</label>
+              <input class="lightweight-input" type="text" id="query_users" ng-model="query" spellcheck="false">
+          </div>
+      </li>
+    </ul>
     <div class="mdl-card mdl-cell mdl-cell--12-col full-width no-margin mdl-shadow--4dp" style="min-height: 48px;" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
       <table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
         <thead ng-if="results.length !== 0" class="lightweight-animate-repeat">
