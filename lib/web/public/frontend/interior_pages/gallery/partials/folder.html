@@ -26,6 +26,9 @@
 	    transition-property: opacity;
 	    max-height: calc(100% - 50px);
 	}
+	.lightbox-image.active {
+		opacity: 1;
+	}
 	.lightbox_curtain.active-lightbox {opacity: 1; display: block;}
 	footer {display: none!important;}
 </style>
@@ -90,7 +93,7 @@
 <div class="lightbox_curtain" style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
 	<!-- Lightbox Image -->
 	<div ng-repeat="image in folder.images">
-		<img class="lightbox-image" ng-src="{{image.hi_res || image.landscape}}" ng-show="$index == startValue" lightbox-image>
+		<img class="lightbox-image" ng-src="{{image.hi_res || image.landscape}}" ng-class="'active': $index == startValue" lightbox-image>
 	</div>
 	<!-- Lightbox Image -->
 	<!-- Slideshow Control -->
