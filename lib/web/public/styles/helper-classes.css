@@ -15,6 +15,7 @@
 	border-radius: 10px 10px 10px 10px; 
 	border: 0px solid #000000;
 }
+.border--radius-circle {border-radius: 50%!important;}
 .inset-shadow {
 	box-shadow: inset 0px 0px 11px -2px #ABABAB;
 	-webkit-box-shadow: inset 0px 0px 11px -2px #ABABAB;
