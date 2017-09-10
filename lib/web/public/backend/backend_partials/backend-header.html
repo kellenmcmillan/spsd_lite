@@ -30,7 +30,7 @@
             class="lightweight-navigation-link header-navigation base-hlr--text" 
             href="/"
             style="font-size: 16px; font-weight: bold">
-                BACK TO APP
+                WEB APP
             </a>
             <a 
             ng-repeat="item in app_data.app_configs.backend_navigation"
@@ -40,10 +40,10 @@
                 {{item.name}}
             </a>
             <span class="lightweight-navigation-link header-navigation base-hlr--text" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" style="font-size: 16px; font-weight: bold">
-                <i class="material-icons base-hlr--text" style="font-weight: normal; font-size: 24px; line-height: inherit;">person</i>
+                <i class="material-icons base-hlr--text" style="font-weight: normal; font-size: 24px; line-height: inherit; cursor: pointer;">person</i>
             </span>
             <span class="lightweight-navigation-link header-navigation base-hlr--text">
-                <i class="material-icons base-hlr--text" style="font-weight: normal; font-size: 24px; line-height: inherit;" ng-click="mobile_menu = !mobile_menu;">settings</i>
+                <i class="material-icons base-hlr--text" style="font-weight: normal; font-size: 24px; line-height: inherit; cursor: pointer;" ng-click="mobile_menu = !mobile_menu;">settings</i>
             </span>
         </nav>
         <!-- Header Navigation -->
