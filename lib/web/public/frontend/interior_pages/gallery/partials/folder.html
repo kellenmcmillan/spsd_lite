@@ -8,7 +8,7 @@
 		transition: all .2s ease-in-out;
 	}
 	.lightbox_curtain {
-		position: fixed; top: 0; 
+		position: fixed; top: 50px; 
 		right: 0; bottom: 0; left: 0; 
 		background-color: rgba(0,0,0,.9); z-index: 2;
 		opacity: 0;
@@ -24,6 +24,7 @@
 	    transition-property: opacity;
 	}
 	.lightbox_curtain.active-lightbox {opacity: 1; display: block;}
+	footer {display: none;}
 </style>
 <!-- Navbar -->
 <div class="portfolio-nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15);">
@@ -59,7 +60,7 @@
 <!-- Photo Grid -->
 <div style="display: relative;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
 	
-	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" style="display: block;">
+	<!-- <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" style="display: block;">
 
 		<div 
 		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
@@ -76,7 +77,7 @@
                 </div>
             </div>
 		</div>
-	</div>
+	</div> -->
 	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
 </div>
 <!-- Photo Grid -->
