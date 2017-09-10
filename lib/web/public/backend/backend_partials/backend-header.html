@@ -95,12 +95,12 @@
                 <ul class="mdl-list">
                     <li class="mdl-list__item">
                         <a 
-                        class="lightweight-navigation-link header-navigation base-hdr--text" 
+                        class="lightweight-navigation-link base-hdr--text" 
                         href="/"
                         style="font-size: 16px; font-weight: bold">
                             <span>
                                 <i 
-                                class="{{item.class}} primary-hn--text mdl-list__item-icon" 
+                                class="material-icons primary-hn--text mdl-list__item-icon" 
                                 role="presentation" 
                                 color="primary" 
                                 hue="hue normal" 
@@ -115,7 +115,7 @@
                     </li>
                     <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">
                         <a 
-                        class="base-hdr--text" 
+                        class="lightweight-navigation-link base-hdr--text" 
                         href="{{item.href}}"
                         ng-click="mobile_menu = false;"
                         >
