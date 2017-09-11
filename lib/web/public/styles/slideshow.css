@@ -62,11 +62,12 @@
 
 /* Slideshow Text Content */
 .slideshow-verbiage {
-    -webkit-animation: fadeinout 6s linear forwards;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, .8);
+    -webkit-animation: fadeinout 6s ease-in-out forwards;
     transform: translate(0,0px);
-    animation: fadeinout 6s linear forwards;
-    animation-timing-function: linear; 
-    -webkit-animation-timing-function: linear;
+    animation: fadeinout 6s ease-in-out forwards;
+    animation-timing-function: ease-in-out; 
+    -webkit-animation-timing-function: ease-in-out;
 }
 
 @-webkit-keyframes fadeinout {
