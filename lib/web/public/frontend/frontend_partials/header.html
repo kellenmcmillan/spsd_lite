@@ -67,13 +67,63 @@
         <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
+            ng-class="{'active': scroll >= slideshow_bottom && scroll < mission_bottom}"
             style="font-size: 16px; font-weight: bold"
-            href="{{item.href}}" 
-            hash="{{item.hash}}"
+            href="{{app_data.app_configs.primary_navigation[0].href}}" 
+            hash="{{app_data.app_configs.primary_navigation[0].hash}}"
             du-scrollspy
-            du-smooth-scroll
-            ng-repeat="item in app_data.app_configs.primary_navigation">
-                {{item.name}}
+            du-smooth-scroll>
+                {{app_data.app_configs.primary_navigation[0].name}}
+            </a>
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            ng-class="{'active': scroll >= secondary_parallax_bottom && scroll < products_bottom}"
+            style="font-size: 16px; font-weight: bold"
+            href="{{app_data.app_configs.primary_navigation[1].href}}" 
+            hash="{{app_data.app_configs.primary_navigation[1].hash}}"
+            du-scrollspy
+            du-smooth-scroll>
+                {{app_data.app_configs.primary_navigation[1].name}}
+            </a>
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            ng-class="{'active': scroll >= primary_parallax_top && scroll < featured_gallery_bottom}"
+            style="font-size: 16px; font-weight: bold"
+            href="{{app_data.app_configs.primary_navigation[2].href}}" 
+            hash="{{app_data.app_configs.primary_navigation[2].hash}}"
+            du-scrollspy
+            du-smooth-scroll>
+                {{app_data.app_configs.primary_navigation[2].name}}
+            </a>
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            ng-class="{'active': scroll >= tertiary_parallax_top && scroll < map_container_bottom}"
+            style="font-size: 16px; font-weight: bold"
+            href="{{app_data.app_configs.primary_navigation[3].href}}" 
+            hash="{{app_data.app_configs.primary_navigation[3].hash}}"
+            du-scrollspy
+            du-smooth-scroll>
+                {{app_data.app_configs.primary_navigation[3].name}}
+            </a>
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            ng-class="{'active': scroll >= staff_container_top && scroll < staff_container_bottom}"
+            style="font-size: 16px; font-weight: bold"
+            href="{{app_data.app_configs.primary_navigation[4].href}}" 
+            hash="{{app_data.app_configs.primary_navigation[4].hash}}"
+            du-scrollspy
+            du-smooth-scroll>
+                {{app_data.app_configs.primary_navigation[4].name}}
+            </a>
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            ng-class="{'active': scroll > contact_container_top && scroll < end_of_page_beginning}"
+            style="font-size: 16px; font-weight: bold"
+            href="{{app_data.app_configs.primary_navigation[5].href}}" 
+            hash="{{app_data.app_configs.primary_navigation[5].hash}}"
+            du-scrollspy
+            du-smooth-scroll>
+                {{app_data.app_configs.primary_navigation[5].name}}
             </a>
         </nav>
         <!-- Header Navigation -->
