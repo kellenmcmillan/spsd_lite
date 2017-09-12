@@ -1,5 +1,6 @@
 <!-- Locate Us -->
 <div
+ ng-if="scrollable"
  minfull-screen
  class="component map mdl-grid no-padding no-margin"
  color="b"
@@ -49,6 +50,73 @@
 	                	</p>
 	                	<a href="{{google_address_link}}"><button class="directions-button mdl-button mdl-js-button mdl-js-ripple-effect" ng-attr-style="color: {{primary_hue_normal.value}}; background-color: {{base_hue_lighter.value}};">GET DIRECTIONS</button></a>
 	                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid map--2" style="overflow: hidden; position: relative;">
+        <span class="map-column-center--2" map-column-two-center style="height: 70%; width: 100%; overflow: hidden">
+            <iframe src="{{trusted_google_address_widget_map}}" width="100%" height="100%" frameborder="0" style="border:0; opacity: 0.8" allowfullscreen></iframe>
+        </span>
+    </div>
+    <div class="mdl-layout-spacer"></div>
+</div>
+<!-- Locate Us -->
+
+<!-- Locate Us -->
+<div
+ ng-if="!scrollable"
+ full-screen
+ class="component map mdl-grid no-padding no-margin"
+ color="b"
+ hue="hlst"
+ property="bg" 
+ opaqueness="" 
+ lw-color>
+    <div class="mdl-layout-spacer"></div>
+    <div class="mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <div class="mdl-cell mdl-cell--12-col map--1">
+            <!-- Title -->
+            <div class="map-column-center--1" map-column-one-center>
+                <div class="center--text">
+                    <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">Locate Us</h2>
+                    <h2 
+                    class="mdl-typography--font-bold {{base_hue_text__darkest.name}}">
+                    Company Address
+                    </h2>
+                    <!-- SVG Title Border Asset -->
+                    <svg 
+                    version="1.1" 
+                    id="Layer_1" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    x="0px" y="0px" viewBox="0 0 300 20" 
+                    style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+                    width="288" height = "13" 
+                    path fill="{{base_hue_darker.value}}" 
+                    xml:space="preserve">
+                        <polygon points="165.8,5.9 151.8,17.4 137.8,5.9 141.3,5.9 151.8,14.5 162.3,5.9 "/><g><circle cx="10" cy="9.5" r="4.5"/></g><g><circle cx="38" cy="9.5" r="4.5"/></g><g><circle cx="66" cy="9.5" r="4.5"/></g><g><circle cx="94" cy="9.5" r="4.5"/></g><g><circle cx="122" cy="9.5" r="4.5"/></g><g><circle cx="178" cy="9.5" r="4.5"/></g><g><circle cx="206" cy="9.5" r="4.5"/></g><g><circle cx="234" cy="9.5" r="4.5"/></g><g><circle cx="262" cy="9.5" r="4.5"/></g><g><circle cx="290" cy="9.5" r="4.5"/></g>
+                    </svg>
+                </div>
+                <!-- SVG Title Border Asset -->
+                <!-- Title -->
+                <div class="center--text no-margin no-padding">
+                    <div class="no-margin no-padding">
+                        <i class="material-icons padded--top16" role="presentation" color="p" hue="hn" property="txt" opaqueness lw-color>room</i>
+                        <p 
+                        class="padded--top16"
+                        color="b" 
+                        hue="hdst" 
+                        property="txt" 
+                        opaqueness="" 
+                        lw-color>
+                        {{app_data.app_configs.address.info.street}}<br>
+                        {{app_data.app_configs.address.info.city}}, {{app_data.app_configs.address.info.state}} {{app_data.app_configs.address.info.zipcode}}
+                        </p>
+                        <a href="{{google_address_link}}"><button class="directions-button mdl-button mdl-js-button mdl-js-ripple-effect" ng-attr-style="color: {{primary_hue_normal.value}}; background-color: {{base_hue_lighter.value}};">GET DIRECTIONS</button></a>
+                    </div>
                 </div>
 
             </div>
