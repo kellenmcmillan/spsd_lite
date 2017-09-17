@@ -1,0 +1,442 @@
+{
+	"configs": {
+		"name": "Staff List",
+		"type": "list",
+		"layout": null,
+		"columns": {
+			"has": false,
+			"number": null
+		},
+		"rows": {
+			"has": false,
+			"number": null
+		},
+		"tabs": {
+			"has": false,
+			"number": null
+		},
+		"panels": {
+			"has": false,
+			"number": null
+		},
+		"lists": {
+			"has": true,
+			"number": 1
+		},
+		"editable_features": ["lists", "color", "settings"]
+	},
+	"data": [
+		{
+			"name": null,
+			"banner": null,
+			"content": {
+				"columns": [
+					{
+						"name": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"content_order": [],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"rows": [
+					{
+						"name": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"content_order": [],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"tabs": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"content_order": [],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"panels": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"content_order": [],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"default": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"content_order": [],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"lists": [
+	            	{
+	            		"settings":{
+	            			"name": null,
+	            			"param": null,
+	            			"transition_speed": null,
+		            		"controls": false,
+			            	"featured": null,
+		            		"description": null
+		            	},	            		
+	            		"content": [
+	            			{
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/stewart-garrison.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Lewisville, TX",
+				                "name": "Wayne Ferguson Plaza",
+				                "alt": "Wayne Ferguson Plaza",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				       
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/lisa-nye.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Dallas, TX",
+				                "name": "Hilton Hotel",
+				                "alt": "Maintenance work at the Hilton",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/larson-statham.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Dallas, TX",
+				                "name": "R + D Kitchen",
+				                "alt": "An image of R + D Kitchen",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/jimmy-stewart.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Farmers Branch, TX",
+				                "name": "Brickyard",
+				                "alt": "An image of landscaping at Brickyard Apartments in Farmers Branch",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/chris-cobb.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Dallas, TX",
+				                "name": "Routh Street Flats",
+				                "alt": "An image of landscaping at Routh Street Flats in Dallas",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/tracy-winkles.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Lewisville, TX",
+				                "name": "Discovery At The Realm",
+				                "alt": "An image of landscaping at Discovery At The Realm in Lewisville",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/robin-mercer.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Fort Worth, TX",
+				                "name": "Sundance Square",
+				                "alt": "An image of landscaping at Sundance Square in Fort Worth",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/rachel-foster.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Lewisville, TX",
+				                "name": "Wayne Ferguson Plaza",
+				                "alt": "Wayne Ferguson Plaza",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				       
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/jean-taylor.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Dallas, TX",
+				                "name": "Hilton Hotel",
+				                "alt": "Maintenance work at the Hilton",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/chris-fischer.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Dallas, TX",
+				                "name": "R + D Kitchen",
+				                "alt": "An image of R + D Kitchen",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/ashley-daniel.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Farmers Branch, TX",
+				                "name": "Brickyard",
+				                "alt": "An image of landscaping at Brickyard Apartments in Farmers Branch",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/blake-gore.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Dallas, TX",
+				                "name": "Routh Street Flats",
+				                "alt": "An image of landscaping at Routh Street Flats in Dallas",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/deven-robbins.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Lewisville, TX",
+				                "name": "Discovery At The Realm",
+				                "alt": "An image of landscaping at Discovery At The Realm in Lewisville",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/reid-lynn.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Fort Worth, TX",
+				                "name": "Sundance Square",
+				                "alt": "An image of landscaping at Sundance Square in Fort Worth",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            },
+				            {				                
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/jarred-word.jpg",
+	            				"icon": null,
+	            				"name": null,
+	            				"work_title": null,
+	            				"is_cover": null,
+	            				"has_description": false,
+				                "description": null,				                
+				                "location": "Fort Worth, TX",
+				                "name": "Sundance Square",
+				                "alt": "An image of landscaping at Sundance Square in Fort Worth",
+				                "type": "image",
+				                "hi_res": null,
+				                "thumbnail": null,
+	            				"landscape": null,
+				                "call_to_action": null
+				            }
+	            		]
+	            	}
+	            ],
+	            "background_media": {
+	                "video": {
+	                    "ogg": null,
+	                    "mp4": null
+	                },
+	                "image": {
+	                    "thumbnail": null,
+	                    "portrait": null,
+	                    "landscape": null
+	                },
+	                "media_type": null
+	            }
+			},
+			"paint": {
+				"background": {
+					"opaqueness": null,
+                    "property": "bg",
+                    "hue": "hlr",
+                    "color": "b"
+				},
+				"icon": {
+					"color": null,
+					"hue": null,
+					"property": null,
+					"opaqueness": null
+				},
+				"text": {
+					"opaqueness": null,
+                    "property": "text",
+                    "hue": "hdst",
+                    "color": "b"
+				},
+				"overlay": {
+					"color": null,
+					"hue": null,
+					"property": null,
+					"opaqueness": null
+				},
+                "border": {
+                    "opaqueness": null,
+                    "property": null,
+                    "hue": null,
+                    "color": null
+                }			                
+			}
+		}
+	]
+}
