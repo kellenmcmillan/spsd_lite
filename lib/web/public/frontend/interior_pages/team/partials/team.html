@@ -8,7 +8,7 @@ footer {display: none!important;}
     transition-property: width, left;
 }
 .description-button.closed {
-	background: #f00;
+	background: {{base_hue_darkest_opacity_lightest.value}};
     border-radius: 50%;
     width: 100px;
     height: 100px;
@@ -40,17 +40,19 @@ footer {display: none!important;}
 			ng-attr-style="background: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
-				<md-button class="description-button" 
-				ng-click="!active = active"
-				md-ink-ripple="#FF0000" 
-				ng-class="{'open': active, 'closed': !active}">
-					<i class="material-icons" ng-show="!active" style="position: absolute; right: 56px; top: 16px;">info_outline</i>
-					<div ng-show="active">
-						<h1 class="h1"></h1>
-						<p>Position/Title</p>
-						<p></p>
-					</div>
-				</md-button>
+				<md-grid-tile-footer> 
+					<md-button class="description-button" 
+					ng-click="!active = active"
+					md-ink-ripple="#FF0000" 
+					ng-class="{'open': active, 'closed': !active}">
+						<i class="material-icons" ng-show="!active" style="position: absolute; right: 56px; top: 24px;">info_outline</i>
+						<div ng-show="active">
+							<h1 class="h1"></h1>
+							<p>Position/Title</p>
+							<p></p>
+						</div>
+					</md-button>
+				</md-grid-tile-footer> 
 			</md-grid-tile>
 		</md-grid-list>
 	</md-content>
