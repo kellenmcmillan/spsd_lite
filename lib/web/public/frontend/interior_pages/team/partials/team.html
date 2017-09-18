@@ -2,30 +2,7 @@
 footer {display: none!important;}
 .push-from-top {top: 100px;}
 .staff-tile {background-position: 50% -20px!important; background-repeat: no-repeat!important;}
-.description-button {
-	transition-duration: .3s;
-    transition-timing-function: cubic-bezier(.4,0,.2,1);
-    transition-property: width, left;
-}
-.description-button.closed {
-	background: {{base_hue_darkest_opacity_lightest.value}};
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    bottom: -50px;
-    right: -50px;
-    transition: all .5s;
-}
-.description-button.opened {
-	width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border-radius: 0;
-    background: #0f0;
-}
-.descrition
+
 </style>
 <div>
 	<md-content layout-padding class="push-from-top">
@@ -41,17 +18,16 @@ footer {display: none!important;}
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				<md-grid-tile-footer> 
-					<md-button class="description-button" 
-					ng-click="!active = active"
-					md-ink-ripple="#FF0000" 
-					ng-class="{'open': active, 'closed': !active}">
+					<md-button md-ink-ripple="{{primary_hue_normal_hue_darkest.value}}" ng-mouseenter="$mdMenu.open()">
 						<i class="material-icons" ng-show="!active" style="position: absolute; right: 56px; top: 24px;">info_outline</i>
-						<div ng-show="active">
-							<h1 class="h1"></h1>
-							<p>Position/Title</p>
-							<p></p>
-						</div>
 					</md-button>
+					<md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+				        <md-menu-item ng-repeat="item in [1, 2, 3]">
+				         	<md-button>
+				            	Option {{item}}
+				          	</md-button>
+				        </md-menu-item>
+				    </md-menu-content>
 				</md-grid-tile-footer> 
 			</md-grid-tile>
 		</md-grid-list>
