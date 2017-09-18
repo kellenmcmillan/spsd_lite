@@ -19,10 +19,10 @@ footer {display: none!important;}
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				
 				<md-menu>
-					<md-button md-ink-ripple="{{primary_hue_normal_hue_darkest.value}}" ng-click="openMenu($mdMenu, $event)">
+					<button md-ink-ripple="{{primary_hue_normal_hue_darkest.value}}" ng-click="$mdOpenMenu($event)">
 						<i class="material-icons" ng-show="!active" style="position: absolute; right: 56px; top: 24px;">info_outline</i>
-					</md-button>
-					<md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
+					</button>
+					<md-menu-content width="4">
 				        <md-menu-item>
 				          <md-button ng-click="redial($event)">
 				            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
