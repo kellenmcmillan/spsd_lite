@@ -12,6 +12,7 @@ footer {display: none!important;}
 		md-gutter-gt-md="16px" md-gutter-gt-sm="8px" md-gutter="4px">
 			<md-grid-tile
 			ng-repeat="tile in staffTiles"
+			ng-click="setMemberGlobally(tile)"
 			class="staff-tile md-whiteframe-2dp"
 			style="background-image: url('{{tile.avatar}}'); overflow: hidden;"
 			ng-attr-style="background: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
@@ -19,7 +20,7 @@ footer {display: none!important;}
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				
 				<md-menu>
-					<button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="setMemberGlobally(tile); $mdOpenMenu($event)" style="position: absolute; right: 48px; bottom: 24px;">
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="$mdOpenMenu($event)" style="position: absolute; right: 24px; bottom: 24px; background: {{base_hue_darker_darkest_opacity.value}}" ng-attr-style="position: absolute; right: 24px; bottom: 24px; background: {{base_hue_darker_darkest_opacity.value}}">
 						<i class="material-icons" ng-show="!active">info_outline</i>
 					</button>
 					<md-menu-content width="4">
