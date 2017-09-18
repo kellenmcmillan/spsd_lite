@@ -20,14 +20,14 @@ footer {display: none!important;}
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				
 				<md-menu>
-					<button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="$mdOpenMenu($event)" style="position: absolute; right: 24px; bottom: 24px; background: {{base_hue_darker_lightest_opacity.value}}" ng-attr-style="position: absolute; right: 24px; bottom: 24px; background: {{base_hue_darker_darkest_opacity.value}}">
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="$mdOpenMenu($event)" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}" ng-attr-style="position: absolute; right: 24px; bottom: 24px; background: {{base_hue_darker_darkest_opacity.value}}">
 						<i class="material-icons {{base_hue_text__lighter.name}}" ng-show="!active">info_outline</i>
 					</button>
 					<md-menu-content width="4">
 				        <md-menu-item>
 				          <md-button ng-click="showTeamMember($event)">
-				            <md-icon md-svg-icon="face" md-menu-align-target></md-icon>
-				            About {{team_member.name}}
+				            <md-icon md-svg-icon="info_outline" md-menu-align-target></md-icon>
+				            More About Staff Person's Name
 				          </md-button>
 				        </md-menu-item>
 				        <!-- <md-menu-item>
