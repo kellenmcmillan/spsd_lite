@@ -15,9 +15,6 @@
 	border-radius: 10px 10px 10px 10px; 
 	border: 0px solid #000000;
 }
-.border-radius-normal-circle {
-	border-radius: 50%!important;
-}
 .border--radius-circle {
 	border-radius: 50%!important;
 	transform: rotate(360deg);
