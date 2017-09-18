@@ -19,14 +19,28 @@ footer {display: none!important;}
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				<md-grid-tile-footer>
 					<md-menu>
-						<md-button md-ink-ripple="{{primary_hue_normal_hue_darkest.value}}" ng-mouseenter="$mdMenu.open()">
+						<md-button md-ink-ripple="{{primary_hue_normal_hue_darkest.value}}" ng-click="openMenu($mdMenu, $event)">
 							<i class="material-icons" ng-show="!active" style="position: absolute; right: 56px; top: 24px;">info_outline</i>
 						</md-button>
 						<md-menu-content width="4" ng-mouseleave="$mdMenu.close()">
-					        <md-menu-item ng-repeat="item in [1, 2, 3]">
-					         	<md-button>
-					            	Option {{item}}
-					          	</md-button>
+					        <md-menu-item>
+					          <md-button ng-click="redial($event)">
+					            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+					            Redial
+					          </md-button>
+					        </md-menu-item>
+					        <md-menu-item>
+					          <md-button disabled="disabled" ng-click="checkVoicemail()">
+					            <md-icon md-svg-icon="call:voicemail"></md-icon>
+					            Check voicemail
+					          </md-button>
+					        </md-menu-item>
+					        <md-menu-divider></md-menu-divider>
+					        <md-menu-item>
+					          <md-button ng-click="toggleNotifications()">
+					            <md-icon md-svg-icon="social:notifications-{{notificationsEnabled ? 'off' : 'on'}}"></md-icon>
+					            {{notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+					          </md-button>
 					        </md-menu-item>
 					    </md-menu-content>
 				    </md-menu>
