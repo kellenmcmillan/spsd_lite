@@ -19,12 +19,12 @@ footer {display: none!important;}
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				
 				<md-menu>
-					<button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="$mdOpenMenu($event)" style="position: absolute; right: 48px; bottom: 24px;">
-						<i class="material-icons" ng-show="!active">info_outline</i>
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="$mdOpenMenu($event)" style="position: absolute; right: 16px; bottom: 16px;">
+						<i class="material-icons {{base_hue_text__lighter.name}}" ng-show="!active">info_outline</i>
 					</button>
 					<md-menu-content width="4">
 				        <md-menu-item>
-				          <md-card>
+				          <md-card style="max-width: 300px;">
 					        <md-card-header>
 					          <md-card-avatar>
 					            <img ng-src="{{app_data.app_configs.graphic_logo_src}}"/>
@@ -34,7 +34,7 @@ footer {display: none!important;}
 					            <span class="md-subhead">North Texas' Best Team</span>
 					          </md-card-header-text>
 					        </md-card-header>
-					        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+					        <img ng-src="{{tile.avatar}}" class="md-card-image" alt="SPSD's Team Member">
 					        <md-card-title>
 					          <md-card-title-text>
 					            <span class="md-headline">{{tile.name}}</span>
