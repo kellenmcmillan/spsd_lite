@@ -15,17 +15,15 @@ footer {display: none!important;}
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -50px;
-    margin-top: -50px;
+    bottom: -50px;
+    right: -50px;
     transition: all .5s;
 }
 .description-button.opened {
 	width: 100%;
     height: 100%;
     top: 0;
-    margin-top: 0;
     left: 0;
-    margin-left: 0;
     border-radius: 0;
     background: #0f0;
 }
@@ -41,12 +39,12 @@ footer {display: none!important;}
 			ng-repeat="tile in staffTiles"
 			ng-click="!active = active"
 			class="staff-tile md-whiteframe-2dp"
-			style="background-image: url('{{tile.avatar}}');"
-			ng-attr-style="background: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none;"
+			style="background-image: url('{{tile.avatar}}'); overflow: hidden;"
+			ng-attr-style="background: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				<div class="description-button" ng-class="{'open': active, 'closed': !active}">
-					<i class="material-icons" ng-show="!active">info_outline</i>
+					<i class="material-icons" ng-show="!active" style="position: absolute; right: 24px; bottom: 24px;">info_outline</i>
 					<div ng-show="active">
 						<h1 class="h1"></h1>
 						<p>Position/Title</p>
