@@ -37,21 +37,19 @@ footer {display: none!important;}
 		md-gutter-gt-md="16px" md-gutter-gt-sm="8px" md-gutter="4px">
 			<md-grid-tile
 			ng-repeat="tile in staffTiles"
-			ng-click="setMemberGlobally(tile)"
 			class="staff-tile md-whiteframe-2dp"
 			style="background-image: url('{{tile.avatar}}'); overflow: hidden;"
 			ng-attr-style="background: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
-				
 				<md-menu>
-					<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="showTeamMember($event)" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="showTeamMember($event); setMemberGlobally(tile)" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
 						<i class="material-icons {{base_hue_text__lighter.name}}" ng-show="!active">info_outline</i>
 					</button>
 					<md-menu-content width="4">
 				        <md-menu-item>
 				          <md-button ng-click="showTeamMember($event)">
-				            <md-icon md-svg-icon="person" md-menu-align-target></md-icon>
+				            <md-icon md-font-icon="person" md-menu-align-target></md-icon>
 				            More About Name
 				          </md-button>
 				        </md-menu-item>
