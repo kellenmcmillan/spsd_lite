@@ -42,14 +42,14 @@ footer {display: none!important;}
 			ng-attr-style="background: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
-				<div class="description-button" ng-class="{'open': active, 'closed': !active}">
+				<md-button class="description-button" ng-class="{'open': active, 'closed': !active}">
 					<i class="material-icons" ng-show="!active" style="position: absolute; right: 56px; top: 16px;">info_outline</i>
 					<div ng-show="active">
 						<h1 class="h1"></h1>
 						<p>Position/Title</p>
 						<p></p>
 					</div>
-				</div>
+				</md-button>
 			</md-grid-tile>
 		</md-grid-list>
 	</md-content>
