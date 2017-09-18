@@ -13,8 +13,6 @@ footer {display: none!important;}
     width: 100px;
     height: 100px;
     position: absolute;
-    top: 50%;
-    left: 50%;
     bottom: -50px;
     right: -50px;
     transition: all .5s;
@@ -43,7 +41,7 @@ footer {display: none!important;}
 			ng-attr-style="background: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
-				<div class="description-button" ng-class="{'open': active, 'closed': !active}">
+				<div class="description-button" ng-class="{'open': $parent.active, 'closed': !$parent.active}">
 					<i class="material-icons" ng-show="!active" style="position: absolute; right: 24px; bottom: 24px;">info_outline</i>
 					<div ng-show="active">
 						<h1 class="h1"></h1>
