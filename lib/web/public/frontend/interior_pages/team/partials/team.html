@@ -1,16 +1,18 @@
 <style>
 footer {display: none!important;}
 .push-from-top {top: 100px;}
+.staff-tile {background-position: center; background-repeat: none;}
 </style>
 <div>
 	<md-content layout-padding class="push-from-top">
 		<md-grid-list
-		md-cols-gt-md="6" md-cols-sm="4" md-cols-md="8"
+		md-cols-gt-md="12" md-cols-sm="4" md-cols-md="8"
 		md-row-height-gt-md="1:1" md-row-height="4:3"
 		md-gutter-gt-md="16px" md-gutter-gt-sm="8px" md-gutter="4px">
 			<md-grid-tile
 			ng-repeat="tile in staffTiles"
-			style="background: url('{{tile.avatar}}'); background-position: center; background-repeat: none;"
+			class="staff-tile"
+			style="background: url('{{tile.avatar}}');"
 			ng-attr-style="background: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none;"
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
