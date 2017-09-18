@@ -42,9 +42,9 @@ footer {display: none!important;}
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				<md-grid-tile-footer> 
 					<md-button class="description-button" 
-					(click)="!active = active"
+					ng-click="!active = active"
 					md-ink-ripple="#FF0000" 
-					[ng-class]="{'open': active, 'closed': !active}">
+					ng-class="{'open': active, 'closed': !active}">
 						<i class="material-icons" ng-show="!active" style="position: absolute; right: 56px; top: 24px;">info_outline</i>
 						<div ng-show="active">
 							<h1 class="h1"></h1>
