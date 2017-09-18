@@ -24,23 +24,28 @@ footer {display: none!important;}
 					</button>
 					<md-menu-content width="4">
 				        <md-menu-item>
-				          <md-button ng-click="redial($event)">
-				            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
-				            Redial
-				          </md-button>
-				        </md-menu-item>
-				        <md-menu-item>
-				          <md-button disabled="disabled" ng-click="checkVoicemail()">
-				            <md-icon md-svg-icon="call:voicemail"></md-icon>
-				            Check voicemail
-				          </md-button>
-				        </md-menu-item>
-				        <md-menu-divider></md-menu-divider>
-				        <md-menu-item>
-				          <md-button ng-click="toggleNotifications()">
-				            <md-icon md-svg-icon="social:notifications-{{notificationsEnabled ? 'off' : 'on'}}"></md-icon>
-				            {{notificationsEnabled ? 'Disable' : 'Enable' }} notifications
-				          </md-button>
+				          <md-card>
+					        <md-card-header>
+					          <md-card-avatar>
+					            <img ng-src="{{app_data.app_configs.graphic_logo_src}}"/>
+					          </md-card-avatar>
+					          <md-card-header-text>
+					            <span class="md-title">Site Planning Site Development</span>
+					            <span class="md-subhead">North Texas' Best Team</span>
+					          </md-card-header-text>
+					        </md-card-header>
+					        <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+					        <md-card-title>
+					          <md-card-title-text>
+					            <span class="md-headline">{{tile.name}}</span>
+					          </md-card-title-text>
+					        </md-card-title>
+					        <md-card-content>
+					          <p>
+					            This is where our blurb about each team member will go. We cant, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					          </p>
+					        </md-card-content>
+					      </md-card>
 				        </md-menu-item>
 				    </md-menu-content>
 			    </md-menu>
