@@ -5,9 +5,12 @@ footer {display: none!important;}
 
 </style>
 <div>
-	<div class="mdl-grid push-from-top" style="min-height: 48px;">
+	<div 
+	class="mdl-grid push-from-top" 
+	style="min-height: 48px; background: {{base_hue_lightest.value}}"
+	ng-attr-style="min-height: 48px; background: {{base_hue_lightest.value}}">
 		<div class="mdl-cell mdl-cell--12-col">
-			<div class="center--text">
+			<div class="center--text" style="margin-top: 16px;">
 				<h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;">Meet</h2>
 		        <h2 class="mdl-typography--font-bold">Our Team</h2>
 		        <!-- SVG Title Border Asset -->
