@@ -19,34 +19,29 @@ footer {display: none!important;}
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				
 				<md-menu>
-					<button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="$mdOpenMenu($event)" style="position: absolute; right: 16px; bottom: 16px;">
-						<i class="material-icons {{base_hue_text__lighter.name}}" ng-show="!active">info_outline</i>
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect" ng-click="$mdOpenMenu($event)" style="position: absolute; right: 48px; bottom: 24px;">
+						<i class="material-icons" ng-show="!active">info_outline</i>
 					</button>
 					<md-menu-content width="4">
-				        <md-menu-item style="max-height:400px!important">
-				          <md-card style="max-width: 300px; min-height: 300px;">
-					        <md-card-header>
-					          <md-card-avatar>
-					            <img ng-src="{{app_data.app_configs.graphic_logo_src}}"/>
-					          </md-card-avatar>
-					          <md-card-header-text>
-					            <span class="md-title">Site Planning Site Development</span>
-					            <span class="md-subhead">North Texas' Best Team</span>
-					          </md-card-header-text>
-					          </md-card-header>
-					        <img ng-src="{{tile.avatar}}" class="md-card-image" alt="SPSD's Team Member">
-					        <md-card-title>
-					          <md-card-title-text>
-					            <span class="md-headline">{{tile.name}}</span>
-					          </md-card-title-text>
-					        </md-card-title>
-					        <md-card-content>
-					          <p>
-					            This is where our blurb about each team member will go. We cant, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-					          </p>
-					        </md-card-content>
-					      </md-card>
+				        <md-menu-item>
+				          <md-button ng-click="redial($event, tile)">
+				            <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+				            About {{tile.name}}
+				          </md-button>
 				        </md-menu-item>
+				        <!-- <md-menu-item>
+				          <md-button disabled="disabled" ng-click="checkVoicemail()">
+				            <md-icon md-svg-icon="call:voicemail"></md-icon>
+				            Check voicemail
+				          </md-button>
+				        </md-menu-item>
+				        <md-menu-divider></md-menu-divider>
+				        <md-menu-item>
+				          <md-button ng-click="toggleNotifications()">
+				            <md-icon md-svg-icon="social:notifications-{{notificationsEnabled ? 'off' : 'on'}}"></md-icon>
+				            {{notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+				          </md-button>
+				        </md-menu-item> -->
 				    </md-menu-content>
 			    </md-menu>
 				
