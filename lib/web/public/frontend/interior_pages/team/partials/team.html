@@ -35,6 +35,7 @@ footer {display: none!important;}
 		md-gutter-gt-md="16px" md-gutter-gt-sm="8px" md-gutter="4px">
 			<md-grid-tile
 			ng-repeat="tile in staffTiles"
+			md-ink-ripple="#FF0000"
 			ng-click="!active = active"
 			class="staff-tile md-whiteframe-2dp"
 			style="background-image: url('{{tile.avatar}}'); overflow: hidden;"
@@ -42,7 +43,7 @@ footer {display: none!important;}
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				<div class="description-button" ng-class="{'open': active, 'closed': !active}">
-					<i class="material-icons" ng-show="!active" style="position: absolute; right: 8px; top: 8px;">info_outline</i>
+					<i class="material-icons" ng-show="!active" style="position: absolute; right: 56px; top: 16px;">info_outline</i>
 					<div ng-show="active">
 						<h1 class="h1"></h1>
 						<p>Position/Title</p>
