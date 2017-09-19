@@ -42,7 +42,7 @@ footer {display: none!important;}
 			ng-attr-style="background: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
-				<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="selected_member(tile); showTeamMember($event)" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
+				<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="selected_member({{tile}}); showTeamMember($event)" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
 					<i class="material-icons {{base_hue_text__lighter.name}}" ng-show="!active">info_outline</i>
 				</button>
 			</md-grid-tile>
