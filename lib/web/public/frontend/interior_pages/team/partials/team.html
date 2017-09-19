@@ -37,6 +37,7 @@ footer {display: none!important;}
 		md-gutter-gt-md="16px" md-gutter-gt-sm="8px" md-gutter="4px">
 			<md-grid-tile
 			ng-repeat="tile in staffTiles"
+			ng-click="selected_member(tile); showTeamMember($event)"
 			class="staff-tile md-whiteframe-2dp"
 			style="background-image: url('{{tile.avatar}}'); overflow: hidden;"
 			ng-attr-style="background: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
