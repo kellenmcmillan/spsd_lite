@@ -6,7 +6,7 @@ footer {display: none!important;}
 </style>
 <div>
 	<div 
-	class="mdl-grid push-from-top" 
+	class="mdl-grid push-from-top staff-page" 
 	style="min-height: 48px; background: {{base_hue_lightest.value}}"
 	ng-attr-style="min-height: 48px; background: {{base_hue_lightest.value}}">
 		<div class="mdl-cell mdl-cell--12-col">
@@ -38,17 +38,39 @@ footer {display: none!important;}
 			<md-grid-tile
 			ng-repeat="tile in staffTiles"
 			class="staff-tile md-whiteframe-2dp"
-			ng-click="selected_member(tile); showTeamMember($event)" 
+			ng-click="selected_member(tile); showPrerenderedDialog($event)" 
 			ng-attr-style="background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			style="background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
-				<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="selected_member(tile); showTeamMember($event)" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
+				<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="selected_member(tile); showPrerenderedDialog($event)" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
 					<i class="material-icons {{base_hue_text__lighter.name}}" ng-show="!active">info_outline</i>
 				</button>
 			</md-grid-tile>
 		</md-grid-list>
 	</md-content>
+</div>
+
+<style>
+	.dialog-prerendered md-checkbox {margin-bottom: 0; }
+</style>
+<div class="dialog-prerendered">
+    <!-- <md-checkbox ng-model="listPrerenderedButton">Show Pre-Rendered Dialog</md-checkbox> -->
+    <p class="md-caption">Site Planning Site Development</p>
+</div>
+
+<div style="visibility: hidden">
+<div class="md-dialog-container" id="myDialog">
+  <md-dialog layout-padding>
+    <h2>{{staff_member.name}}</h2>
+    <p>
+      This is where Position Would Go.
+    </p>
+    <p>
+      ...and a cool description.
+    </p>
+  </md-dialog>
+</div>
 </div>
 
 
