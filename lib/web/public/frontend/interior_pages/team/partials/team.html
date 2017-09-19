@@ -38,7 +38,6 @@ footer {display: none!important;}
 			<md-grid-tile
 			ng-repeat="tile in staffTiles"
 			class="staff-tile md-whiteframe-2dp"
-			ng-click="select_member(tile); showPrerenderedDialog($event)" 
 			ng-attr-style="background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			style="background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
