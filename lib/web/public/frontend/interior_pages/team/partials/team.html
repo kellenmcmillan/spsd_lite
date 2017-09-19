@@ -43,30 +43,9 @@ footer {display: none!important;}
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				<md-menu>
-					<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="showTeamMember($event); setMemberGlobally(tile)" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="showTeamMember($event, tile); setMemberGlobally(tile)" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
 						<i class="material-icons {{base_hue_text__lighter.name}}" ng-show="!active">info_outline</i>
 					</button>
-					<md-menu-content width="4">
-				        <md-menu-item>
-				          <md-button ng-click="showTeamMember(tile)">
-				            <md-icon md-font-icon="person" md-menu-align-target></md-icon>
-				            More About Name
-				          </md-button>
-				        </md-menu-item>
-				        <!-- <md-menu-item>
-				          <md-button disabled="disabled" ng-click="checkVoicemail()">
-				            <md-icon md-svg-icon="call:voicemail"></md-icon>
-				            Check voicemail
-				          </md-button>
-				        </md-menu-item>
-				        <md-menu-divider></md-menu-divider>
-				        <md-menu-item>
-				          <md-button ng-click="toggleNotifications()">
-				            <md-icon md-svg-icon="social:notifications-{{notificationsEnabled ? 'off' : 'on'}}"></md-icon>
-				            {{notificationsEnabled ? 'Disable' : 'Enable' }} notifications
-				          </md-button>
-				        </md-menu-item> -->
-				    </md-menu-content>
 			    </md-menu>
 				
 			</md-grid-tile>
