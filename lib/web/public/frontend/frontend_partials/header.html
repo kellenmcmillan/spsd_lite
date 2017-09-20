@@ -67,7 +67,7 @@
         <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= slideshow_bottom && scroll < mission_bottom}, 'active': navigation_hovered == true"
+            ng-class="{'active': scroll >= slideshow_bottom && scroll < mission_bottom, 'active': navigation_hovered == true}"
             ng-mouseenter="navigation_hovered = true"
             ng-mouseleave="navigation_hovered = false"
             style="font-size: 16px; font-weight: bold"
@@ -79,7 +79,7 @@
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= secondary_parallax_bottom && scroll < products_bottom}, 'active': navigation_hovered == true"
+            ng-class="{'active': scroll >= secondary_parallax_bottom && scroll < products_bottom, 'active': navigation_hovered == true}"
             ng-mouseenter="navigation_hovered = true"
             ng-mouseleave="navigation_hovered = false"
             style="font-size: 16px; font-weight: bold"
@@ -91,7 +91,7 @@
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= primary_parallax_top && scroll < featured_gallery_bottom}, 'active': navigation_hovered == true"
+            ng-class="{'active': scroll >= primary_parallax_top && scroll < featured_gallery_bottom, 'active': navigation_hovered == true}"
             ng-mouseenter="navigation_hovered = true"
             ng-mouseleave="navigation_hovered = false"
             style="font-size: 16px; font-weight: bold"
@@ -103,7 +103,7 @@
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= tertiary_parallax_top && scroll < map_container_bottom}, 'active': navigation_hovered == true"
+            ng-class="{'active': scroll >= tertiary_parallax_top && scroll < map_container_bottom, 'active': navigation_hovered == true}"
             ng-mouseenter="navigation_hovered = true"
             ng-mouseleave="navigation_hovered = false"
             style="font-size: 16px; font-weight: bold"
@@ -115,7 +115,7 @@
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll > contact_container_top && scroll < end_of_page_beginning}, 'active': navigation_hovered == true"
+            ng-class="{'active': scroll > contact_container_top && scroll < end_of_page_beginning, 'active': navigation_hovered == true}"
             ng-mouseenter="navigation_hovered = true"
             ng-mouseleave="navigation_hovered = false"
             style="font-size: 16px; font-weight: bold"
@@ -127,6 +127,7 @@
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
+            ng-class="{'active': navigation_hovered == true}"
             style="font-size: 16px; font-weight: bold"
             href="{{app_data.app_configs.primary_navigation[5].href}}" 
             hash="{{app_data.app_configs.primary_navigation[5].hash}}"
