@@ -8,7 +8,7 @@ footer {display: none!important;}
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-property: display;
 }
-.staff_overlay.active {display: block;}
+.staff_overlay.active {display: flex;}
 </style>
 <div>
 	<div 
@@ -49,10 +49,10 @@ footer {display: none!important;}
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
 				<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="active = !active" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
-					<i class="material-icons {{base_hue_text__lighter.name}}" ng-show="!active">info_outline</i>
+					<i class="material-icons {{base_hue_text__lighter.name}}">info_outline</i>
 				</button>
-				<div class="staff_overlay" ng-class="{'active': active}" ng-click="active = false" style="position: absolute; top: 0; right: 0; left: 0; right: 0; background-color: rgba(255,255,255,0.4);">
-					
+				<div class="staff_overlay" ng-class="{'active': active}" ng-click="active = false" style="position: absolute; width: 100%; height:100%; background-color: rgba(0,0,0,0.4); top: 0; left: 0;">
+					<h2 ng-attr-style="color:{{base_hue_text__lighter.name}}" style="color:{{base_hue_text__lighter.name}}">{{tile.name}}</h2>
 				</div>
 			</md-grid-tile>
 		</md-grid-list>
