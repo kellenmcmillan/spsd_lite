@@ -1,7 +1,7 @@
 .login-card {
  max-height: inherit;
  position: relative;
- margin: 48px auto 0 auto;
+ margin: 96px auto 96px auto;
  width: 300px;
  z-index: 999;
 }
