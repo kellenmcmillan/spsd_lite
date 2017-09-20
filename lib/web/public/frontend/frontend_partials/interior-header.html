@@ -30,25 +30,23 @@
         <div class="mdl-layout-spacer"></div>
 
         <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
-            href="{{item.href}}" 
-            hash="{{item.hash}}"
-            du-scrollspy
-            du-smooth-scroll
-            ng-repeat="item in app_data.app_configs.primary_navigation">
+            href="{{item.href}}"
+            ng-class="{'active', location == item.href}"
+            ng-repeat="item in app_data.app_configs.secondary_navigation">
                 {{item.name}}
             </a>
         </nav>
         <!-- Header Navigation -->
 
-        <span class="mdl-layout-title">
+        <!-- <span class="mdl-layout-title">
 
             <i class="material-icons auth-circle" ng-click="$parent.login_attempt_active = !$parent.login_attempt_active; $parent.user_button = !$parent.user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
             
-        </span>
+        </span> -->
         &nbsp;&nbsp;
         <span class="mdl-layout-title mdl-cell--hide-desktop">
             
@@ -82,24 +80,23 @@
         <div class="mdl-layout-spacer"></div>
 
         <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
+            ng-class="{'active', location == item.href}"
             style="font-size: 16px; font-weight: bold"
             href="{{item.href}}" 
-            du-scrollspy
-            du-smooth-scroll
-            ng-repeat="item in app_data.app_configs.primary_navigation">
+            ng-repeat="item in app_data.app_configs.secondary_navigation">
                 {{item.name}}
             </a>
         </nav>
         <!-- Header Navigation -->
 
-        <span class="mdl-layout-title">
+        <!-- <span class="mdl-layout-title">
 
             <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
             
-        </span>
+        </span> -->
         &nbsp;&nbsp;
         <span class="mdl-layout-title mdl-cell--hide-desktop">
             
@@ -144,35 +141,12 @@
 
             <!-- Menus -->
             <div style="margin: 0 auto; width: inherit;" ng-click="mobile_menu = false">
-                <ul class="mdl-list" du-scroll-container="lightweight_content">
-                    <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.primary_navigation">
+                <ul class="mdl-list">
+                    <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.secondary_navigation">
                         <a 
                         class="base-hdr--text"
                         style="font-size: 16px; text-decoration: none;"
-                        href="{{item.href}}" 
-                        du-scrollspy
-                        du-smooth-scroll>
-                            <span class="mdl-list__item-primary-content">
-                                <i 
-                                class="{{item.class}} primary-hn--text mdl-list__item-icon" 
-                                role="presentation" 
-                                color="primary" 
-                                hue="hue normal" 
-                                property="text" 
-                                opaqueness="" 
-                                lw-color>
-                                {{item.icon}}
-                                </i>
-                                {{item.name}}
-                            </span>
-                        </a>
-                    </li>
-                    <li class="mdl-list" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">
-                        <a 
-                        class="base-hdr--text" 
-                        href="{{item.href}}"
-                        ng-click="mobile_menu = false;"
-                        >
+                        href="{{item.href}}">
                             <span class="mdl-list__item-primary-content">
                                 <i 
                                 class="{{item.class}} primary-hn--text mdl-list__item-icon" 

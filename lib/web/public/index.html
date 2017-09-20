@@ -188,28 +188,6 @@
                         {{item.name}}
                     </a>
                 </nav>
-                
-                <!-- backend navigation -->
-                <nav class="navigation mdl-navigation" ng-show="user" style="padding-top: 0px">
-                    <a 
-                    class="mdl-navigation__link mdl-button mdl-js-button mdl-js-ripple-effect" 
-                    menu-close 
-                    href="{{item.href}}" 
-                    ng-repeat="item in app_data.app_configs.backend_navigation">
-                        <i 
-                        class="{{item.class}} primary-hn--text" 
-                        role="presentation" 
-                        color="primary" 
-                        hue="hue normal" 
-                        property="text" 
-                        opaqueness="" 
-                        lw-color>
-                        {{item.icon}}
-                        </i>
-                        {{item.name}}
-                    </a>
-                    <!-- backend navigation -->
-                </nav>
             </div>
 
             <main class="mdl-layout__content {{base_hue_lighter.name}}" id="lightweight_content">
@@ -218,12 +196,13 @@
                 <!-- Footer -->
                 <style>
                  #custom-footer {
-                        right: 0px!important;
+                        right: -60px!important;
+                        width: 2180px;
                     }
                 @media screen and (max-width: 839px) {
                     #custom-footer {
-                        right: -10px!important;
-                        width: 2500px;
+                        right: -180px!important;
+                        width: 2180px;
                     }
                 }
                 </style>
@@ -238,15 +217,14 @@
                     </div>
                     <div class="mdl-mini-footer__right-section" style="z-index:2">
                         <div class="mdl-logo mdl-color-text--grey-600 lightweight-signature" style="letter-spacing: 1px!important;">
-                            <span ng-init="hover = false">
-                                <span ng-mouseenter="hover = true" ng-mouseleave="hover = false">
-                                    <span ng-hide="hover == true">SUPERPOWERED BY</span>
-                                    <span ng-show="hover == true">LEARN MORE ABOUT</span> LIGHTWEIGHT
+                            <span>
+                                <span>
+                                    <span>SUPERPOWERED BY LIGHTWEIGHT</span>
                                 </span>
                             </span>
                         </div>
                     </div>
-                    <img id="custom-footer" style="position: absolute; bottom: 0; left: 0; width: 102%; height: auto;" src="assets/design/custom-footer.png">
+                    <img id="custom-footer" style="position: absolute; bottom: 0; height: auto;" src="assets/design/custom-footer.png">
                 </footer>
                 <!-- Footer -->
 
