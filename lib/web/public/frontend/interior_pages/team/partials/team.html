@@ -48,7 +48,7 @@ footer {display: none!important;}
 			style="position: relative; background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
-				<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="show_dialog = true" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
+				<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="$parent.show_dialog = true" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
 					<i class="material-icons {{base_hue_text__lighter.name}}">info_outline</i>
 				</button>
 			</md-grid-tile>
@@ -76,7 +76,7 @@ footer {display: none!important;}
             <h2 class="mdl-card__title-text mdl-color-text--grey-800">{{member.name}}</h2>
 
             <div class="mdl-layout-spacer"></div>
-            <i class="material-icons" style="cursor: pointer;" ng-click="$parent.show_dialog = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
+            <i class="material-icons" style="cursor: pointer;" ng-click="show_dialog = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
             
         </div>
         <!-- Card Titles -->
@@ -92,9 +92,9 @@ footer {display: none!important;}
         <!-- Actions -->
         <div class="mdl-card__actions">
 
-            <button ng-show="!user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="login_screens[login_screen_state].screen[0].action();">{{login_screens[login_screen_state].screen[0].button_text}}</button>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="login_screens[login_screen_state].screen[0].action();">Button 1</button>
 
-            <button ng-show="!user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="login_screens[login_screen_state].screen[1].action()">{{login_screens[login_screen_state].screen[1].button_text}}</button>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="login_screens[login_screen_state].screen[1].action()">Button 2</button>
 
         </div>
         <!-- Actions -->
