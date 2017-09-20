@@ -2,7 +2,13 @@
 footer {display: none!important;}
 .push-from-top {margin-top: 100px;}
 .staff-tile {background-position: 50% -20px!important; background-repeat: no-repeat!important;}
-
+.staff_overlay {
+	display: none;
+	transition-duration: .5s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: display;
+}
+.staff_overlay.active {display: block;}
 </style>
 <div>
 	<div 
@@ -39,30 +45,21 @@ footer {display: none!important;}
 			ng-repeat="tile in staffTiles"
 			class="staff-tile md-whiteframe-2dp"
 			ng-attr-style="background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
-			style="background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
+			style="position: relative; background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
 			md-rowspan-gt-sm="{{tile.rowspan}}">
-				<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="member(tile); showMember($event)" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
+				<button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="!active = active" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
 					<i class="material-icons {{base_hue_text__lighter.name}}" ng-show="!active">info_outline</i>
 				</button>
+				<div class="staff_overlay" ng-class="{'active': active}" ng-click="active = false" style="position: absolute; top: 0; right: 0; left: 0; right: 0; background-color: rgba(255,255,255,0.4);">
+					
+				</div>
 			</md-grid-tile>
 		</md-grid-list>
 	</md-content>
 </div>
 
-<!-- <div style="visibility: hidden">
-<div class="md-dialog-container" id="myDialog">
-  <md-dialog layout-padding>
-    <h2>{{staff_member.name}}</h2>
-    <p>
-      This is where Position Would Go.
-    </p>
-    <p>
-      ...and a cool description.
-    </p>
-  </md-dialog>
-</div>
-</div> -->
+
 
 
 <img src="assets/brand/spsd-logo.png" style="display: none;" content-available>
