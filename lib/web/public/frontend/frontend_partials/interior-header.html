@@ -35,7 +35,7 @@
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
             href="{{item.href}}"
-            ng-class="{'active', location == item.href, 'active': navigation_hovered == true}"
+            ng-class="{'active': location == item.href, 'active': navigation_hovered == true}"
             ng-mouseenter="navigation_hovered = true"
             ng-mouseleave="navigation_hovered = false"
             ng-repeat="item in app_data.app_configs.secondary_navigation">
@@ -85,7 +85,7 @@
         <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone">
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active', location == item.href, 'active': navigation_hovered == true}"
+            ng-class="{'active': location == item.href, 'active': navigation_hovered == true}"
             ng-mouseenter="navigation_hovered = true"
             ng-mouseleave="navigation_hovered = false"
             style="font-size: 16px; font-weight: bold"
