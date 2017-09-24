@@ -12,6 +12,9 @@
 	.lightweight-md-dropdown md-select:not([disabled]):focus .md-select-value {border-bottom-color: {{primary_hue_border__normal_no_opacity.value}};}
 	.lightweight-md-dropdown.md-input-container:not(.md-input-invalid).md-input-focused label,
 	.lightweight-md-dropdown md-select-menu md-content md-option[selected] {color: {{primary_hue_text__normal.value}};}
+	.lightweight-switch .mdl-switch.is-checked .mdl-switch__track, 
+	.lightweight-switch .mdl-switch.is-checked .mdl-switch__thumb,
+	.lightweight-switch .mdl-switch__ripple-container .mdl-ripple {background-color: {{primary_hue_normal_lightest_opacity}};}
 </style>
 <div class="mdl-grid">
 	<div class="mdl-grid mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--3-offset-desktop no-padding" style="border: none; min-height: 100%;">
@@ -90,7 +93,7 @@
 							</div>
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 64px; padding-right: 0; border-bottom: none;">
-							<div>
+							<div class="lightweight-switch">
 								<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
 									<input type="checkbox" id="switch-1" class="mdl-switch__input">
 									<span class="mdl-switch__label"></span>
