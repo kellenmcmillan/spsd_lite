@@ -10,11 +10,11 @@
 	}
 	.lightweight-action {cursor: pointer;}
 	.lightweight-md-dropdown md-select:not([disabled]):focus .md-select-value {border-bottom-color: {{primary_hue_border__normal_no_opacity.value}};}
-	.lightweight-md-dropdown.md-input-container:not(.md-input-invalid).md-input-focused label,
-	.lightweight-md-dropdown md-select-menu md-content md-option[selected] {color: {{primary_hue_text__normal.value}};}
+	md-input-container:not(.md-input-invalid).md-input-focused label.lightweight-md-option-label,
+	md-select-menu md-content md-option.lightweight-md-option[selected] {color: {{primary_hue_text__normal.value}};}
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__track, 
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__thumb,
-	.lightweight-switch .mdl-switch__ripple-container .mdl-ripple {background-color: {{primary_hue_normal_lightest_opacity}};}
+	.lightweight-switch .mdl-switch__ripple-container .mdl-ripple {background-color: {{primary_hue_normal_lightest_opacity.value}};}
 </style>
 <div class="mdl-grid">
 	<div class="mdl-grid mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--3-offset-desktop no-padding" style="border: none; min-height: 100%;">
@@ -148,9 +148,9 @@
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 272px; padding-right: 0; border-bottom: none;">
 							<div>
 								<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
-									<label>State</label>
+									<label class="lightweight-md-option-label">State</label>
 									<md-select ng-model="user.state">
-										<md-option ng-repeat="state in states" value="{{state.abbrev}}">
+										<md-option class="lightweight-md-option" ng-repeat="state in states" value="{{state.abbrev}}">
 											{{state.abbrev}}
 										</md-option>
 									</md-select>
