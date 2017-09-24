@@ -10,7 +10,8 @@
 	}
 	.lightweight-action {cursor: pointer;}
 	.lightweight-md-dropdown md-select:not([disabled]):focus .md-select-value {border-bottom-color: {{primary_hue_border__normal_no_opacity.value}};}
-	.lightweight-md-dropdown md-input-container:not(.md-input-invalid).md-input-focused label {color: {{primary_hue_text__normal.value}};}
+	.lightweight-md-dropdown.md-input-container:not(.md-input-invalid).md-input-focused label,
+	.lightweight-md-dropdown md-select-menu md-content md-option[selected] {color: {{primary_hue_text__normal.value}};}
 </style>
 <div class="mdl-grid">
 	<div class="mdl-grid mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--3-offset-desktop no-padding" style="border: none; min-height: 100%;">
