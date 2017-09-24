@@ -110,9 +110,13 @@
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 256px; padding-right: 0; border-bottom: none;">
 							<div>
-								<md-input-container>
-									<label>Enter date</label>
-									<md-datepicker ng-model="user.submissionDate"></md-datepicker>
+								<md-input-container class="md-block" flex-gt-sm>
+									<label>State</label>
+									<md-select ng-model="user.state">
+										<md-option ng-repeat="state in states" value="{{state.abbrev}}">
+											{{state.abbrev}}
+										</md-option>
+									</md-select>
 								</md-input-container>
 							</div>
 						</td>
