@@ -1,98 +1,73 @@
 <style>
 	footer {display: none!important;}
 </style>
-<div layout="column" ng-cloak class="md-inline-form">
-
-  <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
-    <div>
-      <md-input-container>
-        <label>Title</label>
-        <input ng-model="user.title">
-      </md-input-container>
-
-      <md-input-container>
-        <label>Email</label>
-        <input ng-model="user.email" type="email">
-      </md-input-container>
+<div class="mdl-grid mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--2-offset-desktop no-padding" style="border: none; min-height: 100%;">
+    <form autocomplete="off" class="forms full-width">
+      <ul class="no-padding">
+        <li>
+          <div class="lightweight-textfield" style="width: 100%;">
+              <!-- <label class="mdl-button mdl-js-button mdl-button--icon" for="query_users">
+                <i class="material-icons">search</i>
+              </label> -->
+              <label style="display:flex;" class="lightweight-texfield--label" for="query_users"><i class="material-icons">search</i>&nbsp;&nbsp;Search For A User...</label>
+              <input class="lightweight-input" type="text" id="query_users" ng-model="query" spellcheck="false">
+          </div>
+        </li>
+      </ul>
+    </form>
+    <div class="mdl-card mdl-cell mdl-cell--12-col full-width no-margin mdl-shadow--2dp" style="min-height: 0px;" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+		<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+			<!-- <thead ng-if="results.length !== 0" class="lightweight-animate-repeat">
+			<tr>
+			<th class="user_vault--table-data mdl-data-table__cell--non-numeric">Firstname</th>
+			<th class="user_vault--table-data mdl-data-table__cell--non-numeric">Lastname</th>
+			<th class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">Phone</th>
+			<th class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">Email</th>
+			<th class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">Role</th>
+			</tr>
+			</thead> -->
+			<tbody class="lightweight-animate-repeat">
+				<tr style="border: none;" class="lightweight-animate-repeat">
+					<td class="user_vault--table-data mdl-data-table__cell--non-numeric">
+						<div>
+							<span>
+								element
+							</span>
+							<div class="mdl-spacer"></div>
+							<button class="mdl-button mdl-js-button mdl-js-ripple-effect" style="border-left: 2px solid #333;">
+								edit
+							</button>
+						</div>
+					</td>
+				</tr>
+				<tr style="border: none;" class="lightweight-animate-repeat">
+					<td class="user_vault--table-data mdl-data-table__cell--non-numeric">
+						<div>
+							<span>
+								element
+							</span>
+							<div class="mdl-spacer"></div>
+							<button class="mdl-button mdl-js-button mdl-js-ripple-effect" style="border-left: 2px solid #333;">
+								edit
+							</button>
+						</div>
+					</td>
+				</tr>
+				<tr style="border: none;" class="lightweight-animate-repeat">
+					<td class="user_vault--table-data mdl-data-table__cell--non-numeric">
+						<div>
+							<span>
+								element
+							</span>
+							<div class="mdl-spacer"></div>
+							<button class="mdl-button mdl-js-button mdl-js-ripple-effect" style="border-left: 2px solid #333;">
+								edit
+							</button>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
     </div>
-  </md-content>
-
-  <md-content layout-padding>
-    <div>
-      <form name="userForm">
-
-        <div layout-gt-xs="row">
-          <md-input-container class="md-block" flex-gt-xs>
-            <label>Company (Disabled)</label>
-            <input ng-model="user.company" disabled>
-          </md-input-container>
-
-          <md-input-container>
-            <label>Enter date</label>
-            <md-datepicker ng-model="user.submissionDate"></md-datepicker>
-          </md-input-container>
-        </div>
-
-        <div layout-gt-sm="row">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>First name</label>
-            <input ng-model="user.firstName">
-          </md-input-container>
-
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Long Last Name That Will Be Truncated And 3 Dots (Ellipsis) Will Appear At The End</label>
-            <input ng-model="theMax">
-          </md-input-container>
-        </div>
-
-        <md-input-container class="md-block">
-          <label>Address</label>
-          <input ng-model="user.address">
-        </md-input-container>
-
-        <md-input-container md-no-float class="md-block">
-          <input ng-model="user.address2" placeholder="Address 2">
-        </md-input-container>
-
-        <div layout-gt-sm="row">
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>City</label>
-            <input ng-model="user.city">
-          </md-input-container>
-
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>State</label>
-            <md-select ng-model="user.state">
-              <md-option ng-repeat="state in states" value="{{state.abbrev}}">
-                {{state.abbrev}}
-              </md-option>
-            </md-select>
-          </md-input-container>
-
-          <md-input-container class="md-block" flex-gt-sm>
-            <label>Postal Code</label>
-            <input name="postalCode" ng-model="user.postalCode" placeholder="12345"
-                   required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
-
-            <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-              <div ng-message="required" class="my-message">You must supply a postal code.</div>
-              <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
-                code.
-              </div>
-              <div ng-message="md-maxlength" class="my-message">
-                Don't use the long version silly...we don't need to be that specific...
-              </div>
-            </div>
-          </md-input-container>
-        </div>
-
-        <md-input-container class="md-block">
-          <label>Biography</label>
-          <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
-        </md-input-container>
-
-      </form>
-    </div>
-  </md-content>
-	<img src="assets/brand/spsd-logo.png" style="display: none;" content-available>
+    <img src="assets/brand/spsd-logo.png" style="display: none;" content-available>
 </div>
