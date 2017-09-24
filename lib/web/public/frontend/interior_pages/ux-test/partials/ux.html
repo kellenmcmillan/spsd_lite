@@ -1,5 +1,13 @@
 <style>
 	footer {display: none!important;}
+	.border-right:before {
+		content: "";
+		height: 80%;
+		width: 1px;
+		position: absolute;
+		top: 10%;
+		background-color: rgba(0,0,0,.12);
+	}
 </style>
 <div class="mdl-grid mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--2-offset-desktop no-padding" style="border: none; min-height: 100%;">
     <form autocomplete="off" class="forms full-width">
@@ -35,7 +43,7 @@
 							</span>
 						</div>
 					</td>
-					<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-left: 2px solid rgba(0,0,0,0.12); width: 64px; padding-right: 0;">
+					<td class="user_vault--table-data mdl-data-table__cell--non-numeric right-border" style="width: 64px; padding-right: 0;">
 						<div>
 							<button class="mdl-button mdl-js-button mdl-js-ripple-effect">
 								edit
