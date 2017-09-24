@@ -1,6 +1,6 @@
 <style>
 	footer {display: none!important;}
-	.border-right:before {
+	.right-border:before {
 		content: "";
 		height: 80%;
 		width: 1px;
@@ -14,9 +14,6 @@
       <ul class="no-padding">
         <li>
           <div class="lightweight-textfield" style="width: 100%;">
-              <!-- <label class="mdl-button mdl-js-button mdl-button--icon" for="query_users">
-                <i class="material-icons">search</i>
-              </label> -->
               <label style="display:flex;" class="lightweight-texfield--label" for="query_users"><i class="material-icons">search</i>&nbsp;&nbsp;Search For A User...</label>
               <input class="lightweight-input" type="text" id="query_users" ng-model="query" spellcheck="false">
           </div>
@@ -25,15 +22,6 @@
     </form>
     <div class="mdl-card mdl-cell mdl-cell--12-col full-width no-margin mdl-shadow--2dp" style="min-height: 0px;" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
 		<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
-			<!-- <thead ng-if="results.length !== 0" class="lightweight-animate-repeat">
-			<tr>
-			<th class="user_vault--table-data mdl-data-table__cell--non-numeric">Firstname</th>
-			<th class="user_vault--table-data mdl-data-table__cell--non-numeric">Lastname</th>
-			<th class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">Phone</th>
-			<th class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">Email</th>
-			<th class="user_vault--table-data mdl-data-table__cell--non-numeric mdl-cell--hide-tablet mdl-cell--hide-phone">Role</th>
-			</tr>
-			</thead> -->
 			<tbody class="lightweight-animate-repeat">
 				<tr style="border: none;" class="lightweight-animate-repeat">
 					<td class="user_vault--table-data mdl-data-table__cell--non-numeric">
