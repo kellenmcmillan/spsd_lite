@@ -9,11 +9,13 @@
 		background-color: rgba(0,0,0,.12);
 	}
 	.lightweight-action {cursor: pointer;}
-	.lightweight-md-dropdown md-select:not([disabled]):focus .md-select-value {border-bottom-color: {{primary_hue_border__normal_no_opacity.value}};}
+	.lightweight-md-dropdown md-select:not([disabled]):focus .md-select-value,
+	md-input-container.lightweight-md-input:not(.md-input-invalid).md-input-focused {border-bottom-color: {{primary_hue_border__normal_no_opacity.value}};}
 
 	md-input-container:not(.md-input-invalid).md-input-focused label.lightweight-md-option-label,
 	md-select-menu md-content md-option.lightweight-md-option[selected],
-	md-select-menu md-content md-option.md-ripple-container[selected] {color: {{primary_hue_text__normal.value}};}
+	md-select-menu md-content md-option.md-ripple-container[selected],
+	md-input-container.lightweight-md-input:not(.md-input-invalid).md-input-focused label {color: {{primary_hue_text__normal.value}};}
 
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__thumb {background-color: {{primary_hue_normal.value}};}
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__track,
@@ -171,7 +173,7 @@
 					<tr style="border: none;" class="lightweight-animate-repeat">
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="padding-right: 16px; border-bottom: none;">
 							<div>
-								<md-input-container class="md-block" flex-gt-sm>
+								<md-input-container class="md-block lightweight-md-input" flex-gt-sm>
 									<label>First name</label>
 									<input ng-model="user.firstName">
 								</md-input-container>
@@ -179,7 +181,7 @@
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="padding-right: 16px; border-bottom: none;">
 							<div>
-								<md-input-container class="md-block" flex-gt-sm>
+								<md-input-container class="md-block lightweight-md-input" flex-gt-sm>
 									<label>Address</label>
 									<input ng-model="user.address">
 								</md-input-container>
@@ -187,7 +189,7 @@
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="padding-right: 16px; border-bottom: none;">
 							<div>
-								<md-input-container class="md-block" flex-gt-sm>
+								<md-input-container class="md-block lightweight-md-input" flex-gt-sm>
 									<label>Address Line 2</label>
 									<input ng-model="user.address2">
 								</md-input-container>
