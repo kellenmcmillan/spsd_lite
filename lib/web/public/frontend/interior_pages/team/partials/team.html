@@ -9,7 +9,26 @@ footer {display: none!important;}
     transition-property: display;
 }
 .staff_overlay.active {display: flex;}
+
+.demo-card-image.mdl-card {
+  width: 256px;
+  height: 256px;
+  background: url('../assets/demos/image_card.jpg') center / cover;
+}
+.demo-card-image > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.card-image__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
 </style>
+
+
+
 <div>
 	<div 
 	class="mdl-grid push-from-top staff-page" 
@@ -35,8 +54,20 @@ footer {display: none!important;}
 		    </div>
 	    </div>
     </div>
+    <div class="mdl-grid">
+	    <div ng-click="select_member(tile); $parent.show_dialog = true" ng-repeat="tile in staffTiles" class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone"">
+	    	
+	    	<div class="lightweight-card-image mdl-card mdl-shadow--2dp" ng-attr-style="background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<span class="lightweight-card-image__filename" ng-click="select_member(tile); $parent.show_dialog = true">Get To Know Me</span>
+				</div>
+			</div>
+
+	    </div>
+    </div>
     <!-- SVG Title Border Asset -->
-	<md-content layout-padding>
+	<!-- <md-content layout-padding>
 		<md-grid-list
 		md-cols-gt-md="12" md-cols-sm="1" md-cols-md="4"
 		md-row-height-gt-md="1:1" md-row-height="4:3"
@@ -48,13 +79,13 @@ footer {display: none!important;}
 			ng-attr-style="background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			style="position: relative; background-image: url('{{tile.avatar}}'); background-position: center/cover; background-repeat: none; overflow: hidden;"
 			md-colspan-gt-sm="{{tile.colspan}}"
-			md-rowspan-gt-sm="{{tile.rowspan}}">
+			md-rowspan-gt-sm="{{tile.rowspan}}"> -->
 				<!-- <button class="mdl-button mdl-js-button mdl-js-ripple-effect border--radius-5" ng-click="$parent.show_dialog = true" style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;" ng-attr-style="position: absolute; right: 8px; bottom: 8px; background: {{base_hue_darker_lightest_opacity.value}}; padding: 0;">
 					<i class="material-icons {{base_hue_text__lighter.name}}">info_outline</i>
 				</button> -->
-			</md-grid-tile>
+			<!-- </md-grid-tile>
 		</md-grid-list>
-	</md-content>
+	</md-content> -->
 </div>
 
 
