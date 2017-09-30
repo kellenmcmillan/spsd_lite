@@ -47,106 +47,32 @@
     </i>                 
 </a>
 
-<header class="lightweight-header" ng-if="scrollable">
 
-    <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
-
-        <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
-            <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
-        </span>
-
-        <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
-            <a href="/">
-                <img ng-if="scroll > 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
-            </a>
-            <a href="/">
-                <img ng-if="scroll == 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src_white}}" ng-cloak="true">
-            </a>
-        </span>
-
-        <div class="mdl-layout-spacer"></div>
-
-        <!-- Header Navigation -->
-        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
-            <a 
-            class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= slideshow_bottom && scroll < mission_bottom}"
-            style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[0].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[0].hash}}"
-            du-scrollspy
-            du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[0].name}}
-            </a>
-            <a 
-            class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= secondary_parallax_bottom && scroll < products_bottom}"
-            style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[1].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[1].hash}}"
-            du-scrollspy
-            du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[1].name}}
-            </a>
-            <a 
-            class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= primary_parallax_top && scroll < featured_gallery_bottom}"
-            style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[2].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[2].hash}}"
-            du-scrollspy
-            du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[2].name}}
-            </a>
-            <a 
-            class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= tertiary_parallax_top && scroll < map_container_bottom}"
-            style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[3].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[3].hash}}"
-            du-scrollspy
-            du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[3].name}}
-            </a>
-            <a 
-            class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll > contact_container_top && scroll < end_of_page_beginning}"
-            style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[4].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[4].hash}}"
-            du-scrollspy
-            du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[4].name}}
-            </a>
-            <a 
-            class="lightweight-navigation-link header-navigation base-hdr--text"
-            style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[5].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[5].hash}}"
-            du-scrollspy
-            du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[5].name}}
-            </a>
-        </nav>
-        <!-- Header Navigation -->
-
-        <!-- <span class="mdl-layout-title">
-
-            <i class="material-icons auth-circle" ng-click="$parent.login_attempt_active = !$parent.login_attempt_active; $parent.user_button = !$parent.user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
-            
-        </span> -->
-        &nbsp;&nbsp;
-        <span class="mdl-layout-title mdl-cell--hide-desktop">
-            
-            <!-- Right aligned menu below button -->
-            
-                <i class="material-icons base-hdr--text" style="font-weight: normal;" ng-click="$parent.mobile_menu = !$parent.mobile_menu;">menu</i>
-
-            <!-- Right aligned menu below button -->
-        </span>
-
-    </div>
-
+<header ng-if="scrollable">
+    <md-content class="md-padding">
+        <md-nav-bar
+        md-selected-nav-item="currentNavItem"
+        nav-bar-aria-label="navigation links">
+            <md-nav-item md-nav-click="goto('page1')" name="page1">
+            Page One
+            </md-nav-item>
+            <md-nav-item md-nav-click="goto('page2')" name="page2">
+            Page Two
+            </md-nav-item>
+            <md-nav-item md-nav-click="goto('page3')" name="page3">
+            Page Three
+            </md-nav-item>
+            <!-- these require actual routing with ui-router or ng-route, so they
+            won't work in the demo
+            <md-nav-item md-nav-href="#page4" name="page5">Page Four</md-nav-item>
+            <md-nav-item md-nav-sref="app.page5" name="page4">Page Five</md-nav-item>
+            You can also add options for the <code>ui-sref-opts</code> attribute.
+            <md-nav-item md-nav-sref="page6" sref-opts="{reload:true, notify:true}">
+            Page Six
+            </md-nav-item>
+        -->
+        </md-nav-bar>
+    </md-content>
 </header>
 <header class="lightweight-header" ng-if="!scrollable">
 
