@@ -11,9 +11,12 @@
 .lightweight-navigation-link.active:after {
     width: 70%; left: 15%;
 }
+.lightweight-navigation-link:hover:after {
+    width: 70%; left: 15%;
+}
 </style>
 
-<header class="lightweight-header" ng-if="scrollable">
+<header class="lightweight-header" ng-if="scrollable" respect-scrollbar>
 
     <div class="lightweight-header-row">
 
@@ -61,7 +64,7 @@
     </div>
 
 </header>
-<header class="lightweight-header" ng-if="!scrollable">
+<header class="lightweight-header" ng-if="!scrollable" respect-scrollbar>
 
     <div class="lightweight-header-row">
 
