@@ -1,19 +1,8 @@
 /* CSS Document */
 
 /* ========== Lighweight Hero Slideshow ========== */
-@media screen and (orientation: landscape) and (max-width: 1400px) and (min-height: 750px) {
-  .lightweight-hero--slideshow .slide--display img {width: auto; height: 100%;}
-}
 
-@media screen and (orientation: landscape) {
-  .lightweight-hero--slideshow .slide--display img {width: 100%; height: auto;}
-}
-
-@media screen and (orientation: portrait) {
-  .lightweight-hero--slideshow .slide--display img {width: auto; height: 100%; margin-left: -12.5%;}
-}
-
-/* Structural */
+/* Structure */
 .lightweight-hero--slideshow {width: 100%; margin: 0!important; padding: 0!important; position: relative; cursor: default; background-color: #757575; overflow:hidden;}
 .slideshow--slide-container {position: absolute; height: 100%; left: 0; box-sizing: border-box; margin: 0!important; padding: 0!important; overflow: hidden;}
 .slide--display {position: absolute; height: 100%!important; margin: 0!important; box-sizing: border-box; padding: 0!important; left: 0; top: 0;}
@@ -26,8 +15,7 @@
     background: linear-gradient(rgba(66,66,66, 0.7), transparent); /* Standard syntax */
     position: absolute; top: 0; left: 0; width: 100%; height: 64px; z-index: 2;
 }
-
-/* Structural */
+/* Structure */
 
 /* Media */
 .slideshow_slide_image {opacity: 1; width: 100%; height: auto; will-change: opacity;}
@@ -38,16 +26,12 @@
 .slideshow_slide_image.ng-hide {opacity: 0; display: inline-block!important;}
 /* Media */
 
-/* Slideshow Control */
+/* Control */
 .slideshow-control-left {position: absolute; font-size: 64px!important; top: calc(50% - 32px); cursor: pointer!important;}
 .slideshow-control-right {position: absolute; font-size: 64px!important; top: calc(50% - 32px); cursor: pointer!important;}
-@media (max-width: 640px) {
-    .slideshow-control-left {font-weight: 300!important;}
-    .slideshow-control-right {font-weight: 300!important;}
-}
-/* Slideshow Control */
+/* Control */
 
-/* Slideshow Text Content */
+/* Text */
 .slideshow-verbiage {
     text-shadow: 1px 1px 8px rgba(0, 0, 0, .8);
     -webkit-animation: fadeinout 6s ease-in-out forwards;
@@ -68,17 +52,27 @@
   50% {opacity: 1; transform: translate(0,-32px);}
   100% {opacity: 0; transform: translate(0,-64px);}
 }
-/*.start-horizontal-slide-title-animate,
-.start-horizontal-slide-tagline-animate {transform: translate(0,0); opacity: 1!important;}
-.vertical-animate-up {opacity: 0; transform: translate(0,-32px); transition: all 1s ease-in-out;}
-.start-vertical-animate {transform: translate(0,16px); opacity: 1!important;}
-.horizontal-animate-right-title {opacity: 0; transform: translate(-16px,0); transition: all .5s ease-in-out; transition-delay: .8s}
-.horizontal-animate-right-tagline {opacity: 0; transform: translate(-16px,0); transition: all .5s ease-in-out; transition-delay: 1.5s}
-.horizontal-animate-right-text {opacity: 0; transform: translate(-16px,0); transition: all .5s ease-in-out; transition-delay: 1.5s}*/
+
 .lightweight-slideshow--title-container {position: absolute; bottom: 54px; left: 48px; padding: 8px; max-width: 350px;}
 .lightweight-slideshow--title-container p {font-size: 32px;}
 .lightweight-slideshow--tagline-container {position: absolute; bottom: 18px; left: 48px; padding: 8px; max-width: 350px;}
 .lightweight-slideshow--tagline-container p {font-size: 24px;}
+.lightweight-slideshow--text-container {position: absolute; bottom: 48px; right: 16px; padding: 16px; max-width: 250px;}
+/* Text */
+
+/* Media Query */
+
+@media screen and (orientation: landscape) {
+  .lightweight-hero--slideshow .slide--display img {width: 100%; height: auto;}
+}
+
+@media screen and (orientation: landscape) and (max-width: 1400px) and (min-height: 750px) {
+  .lightweight-hero--slideshow .slide--display img {width: auto; height: 100%;}
+}
+
+@media screen and (orientation: portrait) {
+  .lightweight-hero--slideshow .slide--display img {width: auto; height: 100%; margin-left: -12.5%;}
+}
 
 @media screen and (max-width: 840px) {
   .lightweight-slideshow--title-container {bottom: 48px; left: 16px; padding: 8px; max-width: 350px;}
@@ -86,8 +80,13 @@
   .lightweight-slideshow--tagline-container {bottom: 16px; left: 16px; padding: 8px; max-width: 350px;}
   .lightweight-slideshow--tagline-container p {font-size: 16px;}
 }
-.lightweight-slideshow--text-container {position: absolute; bottom: 48px; right: 16px; padding: 16px; max-width: 250px;}
-/* Slideshow Text Content */
+
+@media (max-width: 640px) {
+    .slideshow-control-left {font-weight: 300!important;}
+    .slideshow-control-right {font-weight: 300!important;}
+}
+
+/* Media Query */
 
 /* ========== Lighweight Hero Slideshow ========== */
 
