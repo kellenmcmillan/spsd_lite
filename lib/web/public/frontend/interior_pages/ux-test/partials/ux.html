@@ -248,9 +248,83 @@
 			</table>
 			<!-- #7 edit complex element w/ secondary icon button -->
 
+			<!-- #8 expandable and deleteable complex element editor -->
+			<style>
+				#expandable_8 {
+					height: 0;
+					transition-duration: .3s;
+			        transition-timing-function: cubic-bezier(.4,0,.2,1);
+			        transition-property: height;
+				}
+				#expandable_8.active {
+					height: {{window_height}}px;
+				}
+				.animated-action-button {
+					transition-duration: .3s;
+			        transition-timing-function: cubic-bezier(.4,0,.2,1);
+			        transition-property: transform;
+				}
+				.rotate {
+					transform: rotate(180);
+				}
+			</style>
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none; vertical-align: middle!important;">
+							<div>
+								<span>
+									element
+								</span>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 64px; padding-right: 0; border-bottom: none;">
+							<div class="lightweight-action" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
+								<i 
+	                            class="material-icons" 
+	                            role="presentation" 
+	                            color="primary" 
+	                            hue="hue normal" 
+	                            property="text" 
+	                            opaqueness="" 
+	                            lw-color>
+	                            	delete
+	                            </i>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 64px; padding-right: 0; border-bottom: none;">
+							<div class="lightweight-action animated-action-button" ng-init="expandable_8 = false" ng-click="!expandable_8 = expandable_8" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
+								<i 
+	                            class="material-icons"
+	                            ng-attr-class="{'rotate': expandable_8 = true}" 
+	                            role="presentation" 
+	                            color="primary" 
+	                            hue="hue normal" 
+	                            property="text" 
+	                            opaqueness="" 
+	                            lw-color>
+	                            	keyboard_arrow_down
+	                            </i>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+				<tbody>
+					<tr>
+						<td>
+							<div id="expandable_8" ng-class="{'active': expandable_8 == true}">
+
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #8 expandable and deleteable complex element editor -->
+
 
 	    </div>
 	    <!-- Dialogs -->
+
 		<style>
 		.edit-card {
 		     max-height: inherit;
@@ -262,6 +336,7 @@
 		     padding:0!important;
 		}
 		</style>
+
 		<!-- Dialog #4 Card Component -->
 		<div class="mdl-grid" ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="dialog4" ng-click="dialog4 = false;">
 
