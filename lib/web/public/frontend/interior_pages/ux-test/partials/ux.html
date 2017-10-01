@@ -229,7 +229,7 @@
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 64px; border-bottom: none; vertical-align: inherit!important;">
 							<div class="center--text">
 								<!-- Right aligned menu below button -->
-								<button id="lower-right7"
+								<!-- <button id="lower-right7"
 								class="mdl-button mdl-js-button mdl-button--icon">
 									<i class="material-icons">more_vert</i>
 								</button>
@@ -240,7 +240,33 @@
 									<li class="mdl-menu__item">Another Action</li>
 									<li disabled class="mdl-menu__item">Disabled Action</li>
 									<li class="mdl-menu__item">Yet Another Action</li>
-								</ul>
+								</ul> -->
+								<md-menu>
+									<md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
+										<md-icon class="material-icons" md-menu-origin md-svg-icon="navigation:more_vert"></md-icon>
+									</md-button>
+									<md-menu-content width="4">
+										<md-menu-item>
+											<md-button ng-click="redial($event)">
+												<md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+												Redial
+											</md-button>
+										</md-menu-item>
+										<md-menu-item>
+											<md-button disabled="disabled" ng-click="checkVoicemail()">
+												<md-icon md-svg-icon="call:voicemail"></md-icon>
+												Check voicemail
+											</md-button>
+										</md-menu-item>
+										<md-menu-divider></md-menu-divider>
+										<md-menu-item>
+											<md-button ng-click="toggleNotifications()">
+												<md-icon md-svg-icon="social:notifications-{{notificationsEnabled ? 'off' : 'on'}}"></md-icon>
+												{{notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+											</md-button>
+										</md-menu-item>
+									</md-menu-content>
+								</md-menu>
 							</div>
 						</td>
 					</tr>
