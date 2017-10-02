@@ -305,7 +305,7 @@
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 42px; padding-right: 0; border-bottom: none;">
 							<div class="lightweight-action" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
-								<i 
+								<!-- <i 
 	                            class="material-icons" 
 	                            role="presentation" 
 	                            color="primary" 
@@ -314,12 +314,37 @@
 	                            opaqueness="" 
 	                            lw-color>
 	                            	delete
-	                            </i>
+	                            </i> -->
+	                            <md-button aria-label="Delete Action" class="md-icon-button">
+									<md-icon 
+									md-menu-origin 
+									md-font-library="material-icons" 
+									color="primary" 
+		                            hue="hue normal" 
+		                            property="text" 
+		                            opaqueness="" 
+		                            lw-color>
+		                            	delete
+		                            </md-icon>
+								</md-button>
 							</div>
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 64px; padding-right: 0; border-bottom: none;">
-							<div class="lightweight-action animated-action-button" ng-click="expandable_8 = !expandable_8" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
-								<i 
+							<div class="lightweight-action animated-action-button" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
+								<md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="expandable_8 = !expandable_8">
+									<md-icon 
+									md-menu-origin 
+									md-font-library="material-icons" 
+									ng-class="{'rotate': expandable_8 == true}"
+									color="primary" 
+		                            hue="hue normal" 
+		                            property="text" 
+		                            opaqueness="" 
+		                            lw-color>
+		                            	keyboard_arrow_down
+		                            </md-icon>
+								</md-button>
+								<!-- <i 
 	                            class="material-icons"
 	                            ng-class="{'rotate': expandable_8 == true}" 
 	                            role="presentation" 
@@ -329,7 +354,7 @@
 	                            opaqueness="" 
 	                            lw-color>
 	                            	keyboard_arrow_down
-	                            </i>
+	                            </i> -->
 							</div>
 						</td>
 					</tr>
