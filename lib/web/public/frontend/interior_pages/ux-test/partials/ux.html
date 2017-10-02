@@ -228,18 +228,6 @@
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric no-padding" style="width: 64px; border-bottom: none; vertical-align: inherit!important;">
 							<div class="center--text">
-								<!-- Right aligned menu below button -->
-								<!-- <button id="lower-right7" class="mdl-button mdl-js-button mdl-button--icon">
-									<md-icon md-menu-origin md-font-library="material-icons">more_vert</md-icon>
-								</button>
-
-								<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-								for="lower-right7">
-									<li class="mdl-menu__item">Some Action</li>
-									<li class="mdl-menu__item">Another Action</li>
-									<li disabled class="mdl-menu__item">Disabled Action</li>
-									<li class="mdl-menu__item">Yet Another Action</li>
-								</ul> -->
 								<md-menu>
 									<md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
 										<md-icon md-menu-origin md-font-library="material-icons">more_vert</md-icon>
@@ -305,16 +293,6 @@
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric no-padding" style="width: 42px; padding-right: 0; border-bottom: none;">
 							<div class="lightweight-action" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
-								<!-- <i 
-	                            class="material-icons" 
-	                            role="presentation" 
-	                            color="primary" 
-	                            hue="hue normal" 
-	                            property="text" 
-	                            opaqueness="" 
-	                            lw-color>
-	                            	delete
-	                            </i> -->
 	                            <md-button aria-label="Delete Action" class="md-icon-button">
 									<md-icon 
 									md-menu-origin 
@@ -344,17 +322,6 @@
 		                            	keyboard_arrow_down
 		                            </md-icon>
 								</md-button>
-								<!-- <i 
-	                            class="material-icons"
-	                            ng-class="{'rotate': expandable_8 == true}" 
-	                            role="presentation" 
-	                            color="primary" 
-	                            hue="hue normal" 
-	                            property="text" 
-	                            opaqueness="" 
-	                            lw-color>
-	                            	keyboard_arrow_down
-	                            </i> -->
 							</div>
 						</td>
 					</tr>
@@ -371,7 +338,7 @@
 			</table>
 			<!-- #8 expandable and deleteable complex element editor -->
 
-			<!-- #9 Single or Multiple Inputs -->
+			<!-- #9 Slider Input -->
 			<style>
 				md-slider.md-default-theme .md-thumb:after, md-slider .md-thumb:after {background: {{primary_hue_normal.value}}; border-color: {{primary_hue_normal.value}};}
 				md-slider.md-default-theme .md-track.md-track-fill, md-slider .md-track.md-track-fill {background: {{primary_hue_normal.value}};}
@@ -392,7 +359,59 @@
 					</tr>
 				</tbody>
 			</table>
-			<!-- #9 Single or Multiple Inputs -->
+			<!-- #9 Slider Input -->
+
+			<!-- #10 Multiple Drop Down Select Input -->
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none;">
+							<div>
+								<span>
+									Setting
+								</span>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 272px; padding-right: 0; border-bottom: none; display: inline-block;">
+							<div>
+								<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
+									<label class="lightweight-md-option-label">State</label>
+									<md-select ng-model="user.state">
+										<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_1" value="{{option}}">
+											{{option}}
+										</md-option>
+									</md-select>
+								</md-input-container>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 272px; padding-right: 0; border-bottom: none; display: inline-block;">
+							<div>
+								<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
+									<label class="lightweight-md-option-label">State</label>
+									<md-select ng-model="user.state">
+										<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_2" value="{{option}}">
+											{{option}}
+										</md-option>
+									</md-select>
+								</md-input-container>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 272px; padding-right: 0; border-bottom: none; display: inline-block;">
+							<div>
+								<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
+									<label class="lightweight-md-option-label">State</label>
+									<md-select ng-model="user.state">
+										<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_3" value="{{option}}">
+											{{option}}
+										</md-option>
+									</md-select>
+								</md-input-container>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #10 Multiple Drop Down Select Input -->
 
 
 	    </div>
