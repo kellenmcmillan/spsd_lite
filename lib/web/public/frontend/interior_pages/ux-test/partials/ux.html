@@ -181,24 +181,16 @@
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="padding-right: 16px; border-bottom: none;">
 							<div>
 								<md-input-container class="md-block lightweight-md-input" flex-gt-sm>
-									<label>First name</label>
-									<input ng-model="user.firstName">
+									<label>Input</label>
+									<input ng-model="element.textfield_6_1">
 								</md-input-container>
 							</div>
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="padding-right: 16px; border-bottom: none;">
 							<div>
 								<md-input-container class="md-block lightweight-md-input" flex-gt-sm>
-									<label>Address</label>
-									<input ng-model="user.address">
-								</md-input-container>
-							</div>
-						</td>
-						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="padding-right: 16px; border-bottom: none;">
-							<div>
-								<md-input-container class="md-block lightweight-md-input" flex-gt-sm>
-									<label>Address Line 2</label>
-									<input ng-model="user.address2">
+									<label>Input</label>
+									<input ng-model="element.textfield_6_2">
 								</md-input-container>
 							</div>
 						</td>
@@ -388,18 +380,6 @@
 									<label class="lightweight-md-option-label">Property</label>
 									<md-select ng-model="element.option_10_2">
 										<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_2" value="{{option}}">
-											{{option}}
-										</md-option>
-									</md-select>
-								</md-input-container>
-							</div>
-						</td>
-						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 272px; padding-right: 0; border-bottom: none;">
-							<div>
-								<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
-									<label class="lightweight-md-option-label">Property</label>
-									<md-select ng-model="element.option_10_3">
-										<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_3" value="{{option}}">
 											{{option}}
 										</md-option>
 									</md-select>
