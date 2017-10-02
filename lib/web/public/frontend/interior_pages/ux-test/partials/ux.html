@@ -364,19 +364,15 @@
 			<!-- #10 Multiple Drop Down Select Input -->
 			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
 				<tbody class="lightweight-animate-repeat">
-					<tr style="border: none;" class="lightweight-animate-repeat">
-						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" colspan="3" style="border-bottom: none;">
-							<div style="text-align: left;">
+					<tr style="border: none; position: relative" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 272px; padding-right: 0; border-bottom: none;">
+							<div style="position: absolute; top: 8px; left: 32px;">
 								<span>
 									Properties
 								</span>
 							</div>
-						</td>
-					</tr>
-					<tr style="border: none;" class="lightweight-animate-repeat">
-						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 272px; padding-right: 0; border-bottom: none;">
 							<div>
-								<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
+								<md-input-container style="margin-right: 16px;" class="md-block lightweight-md-dropdown" flex-gt-sm>
 									<label class="lightweight-md-option-label">Property</label>
 									<md-select ng-model="element.option_10_1">
 										<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_1" value="{{option}}">
