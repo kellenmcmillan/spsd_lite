@@ -17,6 +17,11 @@
 	md-select-menu md-content md-option.md-ripple-container[selected],
 	md-input-container.lightweight-md-input:not(.md-input-invalid).md-input-focused label {color: {{primary_hue_text__normal.value}};}
 	md-input-container.lightweight-md-input input:focus {border-bottom: 2px solid {{primary_hue_border__normal_no_opacity.value}}!important;}
+	md-radio-group.md-default-theme .md-checked .md-ink-ripple, md-radio-group .md-checked .md-ink-ripple,
+	md-radio-button.md-default-theme.md-checked .md-ink-ripple, md-radio-button.md-checked .md-ink-ripple {color: {{primary_hue_text__normal.value}};}
+	md-radio-group.md-default-theme .md-checked .md-ink-ripple, md-radio-group .md-checked .md-ink-ripple {color:{{primary_hue_normal_darkest_opacity.value}};}
+	md-radio-button.md-default-theme.md-checked .md-off, md-radio-button.md-checked .md-off {border-color: {{primary_hue_text__normal.value}};}
+	md-radio-button.md-default-theme .md-on, md-radio-button .md-on {background-color: {{primary_hue_text__normal.value}};}
 
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__thumb {background-color: {{primary_hue_normal.value}};}
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__track,
@@ -395,16 +400,16 @@
 			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
 				<tbody class="lightweight-animate-repeat">
 					<tr style="border: none;" class="lightweight-animate-repeat">
-						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none;">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none; vertical-align: middle!important">
 							<div>
 								<md-radio-group ng-model="data.group11">
-							    	<md-radio-button value="Conditional">Conditional</md-radio-button>
+							    	<md-radio-button style="margin-bottom: 0px" value="Conditional">Conditional</md-radio-button>
 							    </md-radio-group>
 							</div>
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric no-padding" style="width: 64px; border-bottom: none; vertical-align: inherit!important;">
 							<div>
-								<img src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/thumbs/wayneFerguson6-thumb.jpg" style="height: 128px; width: auto;">
+								<img src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/thumbs/wayneFerguson6-thumb.jpg" style="height: 128px; width: auto; padding: 24px 24px 24px 24px;">
 							</div>
 						</td>
 					</tr>
