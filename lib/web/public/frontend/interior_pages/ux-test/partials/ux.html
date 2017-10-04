@@ -199,8 +199,7 @@
 				<md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
 
 				<md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)">
-					<md-radio-group ng-model="person.selected" class="md-primary">
-					<md-radio-button ng-value="person.name" style="padding-left: 8px;">Is Cover</md-radio-button>
+					<md-radio-button ng-model="person.selected" ng-value="person.name" style="padding-left: 8px;">Is Cover</md-radio-button>
 					<img style="border-radius: 0; height: auto;" alt="{{ person.name }}" ng-src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/thumbs/wayneFerguson6-thumb.jpg" class="md-avatar" />
 					<p>{{ person.name }}</p>
 					<md-icon
@@ -227,7 +226,6 @@
 				    lw-color>
 				    	message
 				    </md-icon>
-				    </md-radio-group>
 				</md-list-item>
 			</md-list>
 
