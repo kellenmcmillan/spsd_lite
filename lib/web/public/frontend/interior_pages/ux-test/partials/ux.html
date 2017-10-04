@@ -209,11 +209,11 @@
 				<md-divider></md-divider>
 
 				<md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
-
-				<md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)">
-					<md-checkbox ng-model="person.selected" style="padding-left: 8px;"> Is Cover</md-checkbox>
-					<img style="border-radius: 0; height: auto;" alt="{{ person.name }}" ng-src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/thumbs/wayneFerguson6-thumb.jpg" class="md-avatar" />
-					<p>{{ person.name }}</p>
+				<md-radio-group ng-model="data.group1">
+				<md-list-item ng-repeat="image in image_gallery" ng-click="goToPerson(image.name, $event)">
+					<md-radio-button value="{{image.img}}" style="padding-left: 8px;"> Is Cover</md-radio-button>
+					<img style="border-radius: 0; height: auto; width: 80px;" alt="{{ image.name }}" ng-src="{{ image.img }}" class="md-avatar" />
+					<p>{{ image.name }}</p>
 					<md-icon
 					style="padding: 8px;" 
 					ng-click="doSecondaryAction($event)"
@@ -239,6 +239,7 @@
 				    	message
 				    </md-icon>
 				</md-list-item>
+				</md-radio-group>
 			</md-list>
 
 	    </div>
