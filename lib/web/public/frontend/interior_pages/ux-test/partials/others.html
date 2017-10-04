@@ -1,0 +1,404 @@
+<!-- #1 edit complex element -->
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none; vertical-align: middle!important;">
+							<div>
+								<span>
+									element
+								</span>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric right-border" style="width: 64px; padding-right: 0; border-bottom: none;">
+							<div class="center--text">
+								<button class="mdl-button">
+									edit
+								</button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #1 edit complex element -->
+
+			<!-- #2 edit complex element w/ secondary icon button -->
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none;">
+							<div style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
+								<i 
+	                            class="material-icons" 
+	                            role="presentation" 
+	                            color="primary" 
+	                            hue="hue normal" 
+	                            property="text" 
+	                            opaqueness="" 
+	                            lw-color>
+	                            	info_outline
+	                            </i>
+								&nbsp;&nbsp;&nbsp;element
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric right-border" style="width: 64px; padding-right: 0; border-bottom: none; vertical-align: inherit!important;">
+							<div class="center--text">
+								<button class="mdl-button">
+	                                edit
+								</button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #2 edit complex element w/ secondary icon button -->
+
+			<!-- #3 switch input -->
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none;">
+							<div>
+								<span>
+									conditional
+								</span>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 64px; padding-right: 0; border-bottom: none;">
+							<div class="lightweight-switch">
+								<label class="lightweight-switch mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
+									<input type="checkbox" id="switch-1" class="mdl-switch__input">
+									<span class="mdl-switch__label"></span>
+								</label>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #3 switch input -->
+
+			<!-- #4 Open Dialog -->
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none; vertical-align: middle!important;">
+							<div>
+								<span>
+									element
+								</span>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 64px; padding-right: 0; border-bottom: none;">
+							<div class="lightweight-action" ng-init="dialog4 = false" ng-click="dialog4 = true" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
+								<i 
+	                            class="material-icons" 
+	                            role="presentation" 
+	                            color="primary" 
+	                            hue="hue normal" 
+	                            property="text" 
+	                            opaqueness="" 
+	                            lw-color>
+	                            	keyboard_arrow_right
+	                            </i>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #4 Open Dialog -->
+
+			<!-- #5 Drop Down Select Input -->
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none;">
+							<div>
+								<span>
+									Setting
+								</span>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 272px; padding-right: 0; border-bottom: none;">
+							<div>
+								<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
+									<label class="lightweight-md-option-label">State</label>
+									<md-select ng-model="user.state">
+										<md-option class="lightweight-md-option" ng-repeat="state in states" value="{{state.abbrev}}">
+											{{state.abbrev}}
+										</md-option>
+									</md-select>
+								</md-input-container>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #5 Drop Down Select Input -->
+
+			<!-- #6 Single or Multiple Inputs -->
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="padding-right: 16px; border-bottom: none;">
+							<div>
+								<md-input-container class="md-block lightweight-md-input" flex-gt-sm>
+									<label>Input</label>
+									<input ng-model="element.textfield_6_1">
+								</md-input-container>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="padding-right: 16px; border-bottom: none;">
+							<div>
+								<md-input-container class="md-block lightweight-md-input" flex-gt-sm>
+									<label>Input</label>
+									<input ng-model="element.textfield_6_2">
+								</md-input-container>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #6 Single or Multiple Inputs -->
+
+			<!-- #7 dropdown menu w/ secondary icon button -->
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none;">
+							<div style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
+								<i 
+	                            class="material-icons" 
+	                            role="presentation" 
+	                            color="primary" 
+	                            hue="hue normal" 
+	                            property="text" 
+	                            opaqueness="" 
+	                            lw-color>
+	                            	info_outline
+	                            </i>
+								&nbsp;&nbsp;&nbsp;element
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric no-padding" style="width: 64px; border-bottom: none; vertical-align: inherit!important;">
+							<div class="center--text">
+								<md-menu>
+									<md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
+										<md-icon md-menu-origin md-font-library="material-icons">more_vert</md-icon>
+									</md-button>
+									<md-menu-content width="4">
+										<md-menu-item>
+											<md-button ng-click="redial($event)">
+											<md-icon md-font-library="material-icons" md-menu-align-target>dialpad</md-icon>
+											Redial
+											</md-button>
+										</md-menu-item>
+										<md-menu-item>
+											<md-button disabled="disabled" ng-click="checkVoicemail()">
+											<md-icon md-font-library="material-icons">voicemail</md-icon>
+											Check voicemail
+											</md-button>
+										</md-menu-item>
+										<md-menu-divider></md-menu-divider>
+										<md-menu-item>
+											<md-button ng-click="toggleNotifications()">
+												<md-icon md-font-library="material-icons">notifications_{{notificationsEnabled ? 'off' : 'on'}}</md-icon>
+											{{notificationsEnabled ? 'Disable' : 'Enable' }} notifications
+											</md-button>
+										</md-menu-item>
+									</md-menu-content>
+								</md-menu>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #7 edit complex element w/ secondary icon button -->
+
+			<!-- #8 expandable and deleteable complex element editor -->
+			<style>
+				#expandable_8 {
+					height: 0;
+					transition-duration: .3s;
+			        transition-timing-function: cubic-bezier(.4,0,.2,1);
+			        transition-property: height;
+				}
+				#expandable_8.active {
+					height: 300px;
+				}
+				.animated-action-button {
+					transition-duration: .3s;
+			        transition-timing-function: cubic-bezier(.4,0,.2,1);
+			        transition-property: transform;
+				}
+				.rotate {
+					transform: rotate(180deg);
+				}
+			</style>
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none; vertical-align: middle!important;">
+							<div>
+								<span>
+									element
+								</span>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric no-padding" style="width: 42px; padding-right: 0; border-bottom: none;">
+							<div class="lightweight-action" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
+	                            <md-button aria-label="Delete Action" class="md-icon-button">
+									<md-icon 
+									md-menu-origin 
+									md-font-library="material-icons" 
+									color="primary" 
+		                            hue="hue normal" 
+		                            property="text" 
+		                            opaqueness="" 
+		                            lw-color>
+		                            	delete
+		                            </md-icon>
+								</md-button>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric no-padding" style="width: 64px; padding-right: 0; border-bottom: none;">
+							<div class="lightweight-action animated-action-button" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
+								<md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="expandable_8 = !expandable_8">
+									<md-icon 
+									md-menu-origin 
+									md-font-library="material-icons" 
+									ng-class="{'rotate': expandable_8 == true}"
+									color="primary" 
+		                            hue="hue normal" 
+		                            property="text" 
+		                            opaqueness="" 
+		                            lw-color>
+		                            	keyboard_arrow_down
+		                            </md-icon>
+								</md-button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+				<tbody ng-show="expandable_8 == true">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td colspan="3" class="user_vault--table-data mdl-data-table__cell--non-numeric">
+							<div id="expandable_8" ng-class="{'active': expandable_8 == true}">
+
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #8 expandable and deleteable complex element editor -->
+
+			<!-- #9 Slider Input -->
+			<style>
+				md-slider.md-default-theme .md-thumb:after, md-slider .md-thumb:after {background: {{primary_hue_normal.value}}; border-color: {{primary_hue_normal.value}};}
+				md-slider.md-default-theme .md-track.md-track-fill, md-slider .md-track.md-track-fill {background: {{primary_hue_normal.value}};}
+			</style>
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="padding-right: 16px; border-bottom: none;">
+							<md-slider-container>
+								<span>Property</span>
+								<md-slider flex min="0" max="10" ng-model="slider.nine" aria-label="nine" id="nine-slider">
+								</md-slider>
+								<md-input-container>
+									<input flex type="number" ng-model="slider.nine" aria-label="nine" aria-controls="nine-slider">
+								</md-input-container>
+							</md-slider-container>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #9 Slider Input -->
+
+			<!-- #10 Multiple Drop Down Select Input -->
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none; position: relative" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 272px; padding-right: 0; border-bottom: none; padding: 24px 18px;">
+							<div style="position: absolute; top: 8px; left: 24px;">
+								<span>
+									Properties
+								</span>
+							</div>
+							<div>
+								<md-input-container style="margin-right: 16px;" class="md-block lightweight-md-dropdown" flex-gt-sm>
+									<label class="lightweight-md-option-label" ng-attr-style="color: {{primary_hue_text__normal.value}};">Property</label>
+									<md-select ng-model="element.option_10_1">
+										<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_1" value="{{option}}">
+											{{option}}
+										</md-option>
+									</md-select>
+								</md-input-container>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="width: 272px; padding-right: 0; border-bottom: none;">
+							<div>
+								<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
+									<label class="lightweight-md-option-label">Property</label>
+									<md-select ng-model="element.option_10_2">
+										<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_2" value="{{option}}">
+											{{option}}
+										</md-option>
+									</md-select>
+								</md-input-container>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #10 Multiple Drop Down Select Input -->
+
+			<!-- #11 radio select input with media preview, deleteable & draggable -->
+			<table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+				<tbody class="lightweight-animate-repeat">
+					<tr style="border: none;" class="lightweight-animate-repeat">
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none; vertical-align: middle!important">
+							<div>
+								<md-radio-group ng-model="data.group11">
+							    	<md-radio-button style="margin-bottom: 0px" value="Conditional">Conditional</md-radio-button>
+							    </md-radio-group>
+							</div>
+						</td>
+						<td class="user_vault--table-data no-padding" style="width: 60%; border-bottom: none; vertical-align: inherit!important;">
+							<div class="left--text data-image">
+								<img src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/thumbs/wayneFerguson6-thumb.jpg" style="padding: 16px 0 16px 0;">
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric no-padding" style="width: 42px; padding-right: 0; border-bottom: none;">
+							<div class="lightweight-action" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
+	                            <md-button aria-label="Delete Action" class="md-icon-button">
+									<md-icon 
+									md-menu-origin 
+									md-font-library="material-icons" 
+									color="primary" 
+		                            hue="hue normal" 
+		                            property="text" 
+		                            opaqueness="" 
+		                            lw-color>
+		                            	delete
+		                            </md-icon>
+								</md-button>
+							</div>
+						</td>
+						<td class="user_vault--table-data mdl-data-table__cell--non-numeric no-padding" style="width: 64px; padding-right: 0; border-bottom: none;">
+							<div class="lightweight-action animated-action-button" style="display:flex; height: 100%; -webkit-align-items: center; align-items: center;">
+								<md-button aria-label="Drag Conditional #11" class="md-icon-button" ng-click="">
+									<md-icon 
+									md-font-library="material-icons" 
+									color="primary" 
+		                            hue="hue normal" 
+		                            property="text" 
+		                            opaqueness="" 
+		                            lw-color>
+		                            	drag_handle
+		                            </md-icon>
+								</md-button>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<!-- #11 radio select input with media preview, deleteable & draggable -->

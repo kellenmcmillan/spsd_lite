@@ -66,158 +66,168 @@
 <div class="mdl-grid">
 	<div class="mdl-grid mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--3-offset-desktop no-padding" style="border: none; min-height: 100%;">
 
-	    
+	    <form autocomplete="off" class="forms full-width">
+	      <ul class="no-padding">
+	        <li>
+	          <div class="lightweight-textfield" style="width: 100%;">
+	              <label style="display:flex;" class="lightweight-texfield--label" for="query_users"><i class="material-icons">search</i>&nbsp;&nbsp;Search For A User...</label>
+	              <input class="lightweight-input" type="text" id="query_users" ng-model="query" spellcheck="false">
+	          </div>
+	        </li>
+	      </ul>
+	    </form>
 
+	    <div class="mdl-card mdl-cell mdl-cell--12-col full-width no-margin mdl-shadow--2dp" style="min-height: 0px; overflow: initial;" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
 
-<md-list ng-cloak>
+			<md-list ng-cloak color="b" hue="hue lightest" property="bg" opaqueness lw-color>
 
-	<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
-	
-	<md-list-item ng-repeat="topping in toppings">
-		<p> {{ topping.name }} </p>
-		<md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
-	</md-list-item>
+				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
+				
+				<md-list-item ng-repeat="topping in toppings">
+					<p> {{ topping.name }} </p>
+					<md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
+				</md-list-item>
 
-	<md-divider></md-divider>
+				<md-divider></md-divider>
 
-	<md-subheader class="md-no-sticky">Secondary Buttons</md-subheader>
+				<md-subheader class="md-no-sticky">Secondary Buttons</md-subheader>
 
-	<md-list-item class="secondary-button-padding">
-		<p>Clicking the button to the right will fire the secondary action</p>
-		<md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>
-	</md-list-item>
+				<md-list-item class="secondary-button-padding">
+					<p>Clicking the button to the right will fire the secondary action</p>
+					<md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>
+				</md-list-item>
 
-	<md-list-item class="secondary-button-padding" ng-click="doPrimaryAction($event)">
-		<p>Click anywhere to fire the primary action, or the button to fire the secondary</p>
-		<md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>
-	</md-list-item>
+				<md-list-item class="secondary-button-padding" ng-click="doPrimaryAction($event)">
+					<p>Click anywhere to fire the primary action, or the button to fire the secondary</p>
+					<md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>
+				</md-list-item>
 
-	<md-divider></md-divider>
+				<md-divider></md-divider>
 
-	<md-subheader class="md-no-sticky">Secondary Menus</md-subheader>
+				<md-subheader class="md-no-sticky">Secondary Menus</md-subheader>
 
-	<md-list-item>
-	<p>Click anywhere to fire the secondary action</p>
-		<md-menu class="md-secondary">
-			<md-button class="md-icon-button">
-				<md-icon 
-				md-font-library="material-icons" 
-				color="primary" 
-                hue="hue normal" 
-                property="text" 
-                opaqueness="" 
-                lw-color>
-                	message
-                </md-icon>
-			</md-button>
-			<md-menu-content width="4">
-				<md-menu-item>
-					<md-button>
-						Redial
-					</md-button>
-				</md-menu-item>
-				<md-menu-item>
-					<md-button>
-						Check voicemail
-					</md-button>
-				</md-menu-item>
+				<md-list-item>
+				<p>Click anywhere to fire the secondary action</p>
+					<md-menu class="md-secondary">
+						<md-button class="md-icon-button">
+							<md-icon 
+							md-font-library="material-icons" 
+							color="primary" 
+			                hue="hue normal" 
+			                property="text" 
+			                opaqueness="" 
+			                lw-color>
+			                	message
+			                </md-icon>
+						</md-button>
+						<md-menu-content width="4">
+							<md-menu-item>
+								<md-button>
+									Redial
+								</md-button>
+							</md-menu-item>
+							<md-menu-item>
+								<md-button>
+									Check voicemail
+								</md-button>
+							</md-menu-item>
 
-				<md-menu-divider></md-menu-divider>
+							<md-menu-divider></md-menu-divider>
 
-				<md-menu-item>
-					<md-button>
-						Notifications
-					</md-button>
-				</md-menu-item>
-			</md-menu-content>
-		</md-menu>
-	</md-list-item>
+							<md-menu-item>
+								<md-button>
+									Notifications
+								</md-button>
+							</md-menu-item>
+						</md-menu-content>
+					</md-menu>
+				</md-list-item>
 
-	<md-divider></md-divider>
+				<md-divider></md-divider>
 
-	<md-subheader class="md-no-sticky">Clickable Items with Secondary Controls</md-subheader>
+				<md-subheader class="md-no-sticky">Clickable Items with Secondary Controls</md-subheader>
 
-	<md-list-item ng-click="navigateTo(setting.extraScreen, $event)" ng-repeat="setting in settings">
-		<md-icon 
-		md-font-library="material-icons" 
-		color="primary" 
-	    hue="hue normal" 
-	    property="text" 
-	    opaqueness="" 
-	    lw-color>
-	    	{{setting.icon}}
-	    </md-icon>
-		<md-icon md-svg-icon="{{setting.icon}}"></md-icon>
-		<p> {{ setting.name }} </p>
-		<md-switch class="md-secondary" ng-model="setting.enabled"></md-switch>
-	</md-list-item>
-	<md-list-item ng-click="navigateTo('data usage', $event)">
-		<md-icon 
-		md-font-library="material-icons" 
-		color="primary" 
-	    hue="hue normal" 
-	    property="text" 
-	    opaqueness="" 
-	    lw-color>
-	    	cached
-	    </md-icon>
-		<p>Data Usage</p>
-	</md-list-item>
+				<md-list-item ng-click="navigateTo(setting.extraScreen, $event)" ng-repeat="setting in settings">
+					<md-icon 
+					md-font-library="material-icons" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	{{setting.icon}}
+				    </md-icon>
+					<md-icon md-svg-icon="{{setting.icon}}"></md-icon>
+					<p> {{ setting.name }} </p>
+					<md-switch class="md-secondary" ng-model="setting.enabled"></md-switch>
+				</md-list-item>
+				<md-list-item ng-click="navigateTo('data usage', $event)">
+					<md-icon 
+					md-font-library="material-icons" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	cached
+				    </md-icon>
+					<p>Data Usage</p>
+				</md-list-item>
 
-	<md-divider></md-divider>
+				<md-divider></md-divider>
 
-	<md-subheader class="md-no-sticky">Checkbox with Secondary Action</md-subheader>
+				<md-subheader class="md-no-sticky">Checkbox with Secondary Action</md-subheader>
 
-	<md-list-item ng-repeat="message in messages">
-		<md-checkbox ng-model="message.selected"></md-checkbox>
-		<p>{{message.title}}</p>
-		<md-icon 
-		ng-click="doSecondaryAction($event)"
-		aria-label="Chat"
-		md-font-library="material-icons" 
-		color="primary" 
-	    hue="hue normal" 
-	    property="text" 
-	    opaqueness="" 
-	    lw-color>
-	    	message
-	    </md-icon>
-	</md-list-item>
+				<md-list-item ng-repeat="message in messages">
+					<md-checkbox ng-model="message.selected"></md-checkbox>
+					<p>{{message.title}}</p>
+					<md-icon 
+					ng-click="doSecondaryAction($event)"
+					aria-label="Chat"
+					md-font-library="material-icons" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	message
+				    </md-icon>
+				</md-list-item>
 
-	<md-divider></md-divider>
+				<md-divider></md-divider>
 
-	<md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
+				<md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
 
-	<md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)" class="noright">
-		<img alt="{{ person.name }}" ng-src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/thumbs/wayneFerguson6-thumb.jpg" class="md-avatar" />
-		<p>{{ person.name }}</p>
-		<md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
-		<md-icon
-		style="padding: 8px;" 
-		ng-click="doSecondaryAction($event)"
-		aria-label="Send Email"
-		md-font-library="material-icons" 
-		color="primary" 
-	    hue="hue normal" 
-	    property="text" 
-	    opaqueness="" 
-	    lw-color>
-	    	email
-	    </md-icon>
-	    <md-icon 
-	    style="padding: 8px;" 
-		ng-click="doSecondaryAction($event)"
-		aria-label="Chat"
-		md-font-library="material-icons" 
-		color="primary" 
-	    hue="hue normal" 
-	    property="text" 
-	    opaqueness="" 
-	    lw-color>
-	    	message
-	    </md-icon>
-	</md-list-item>
-</md-list>
+				<md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)" class="noright">
+					<md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
+					<img alt="{{ person.name }}" ng-src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/thumbs/wayneFerguson6-thumb.jpg" class="md-avatar" />
+					<p>{{ person.name }}</p>
+					<md-icon
+					style="padding: 8px;" 
+					ng-click="doSecondaryAction($event)"
+					aria-label="Send Email"
+					md-font-library="material-icons" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	email
+				    </md-icon>
+				    <md-icon 
+				    style="padding: 8px;" 
+					ng-click="doSecondaryAction($event)"
+					aria-label="Chat"
+					md-font-library="material-icons" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	message
+				    </md-icon>
+				</md-list-item>
+			</md-list>
 
 	    </div>
 	    <!-- Dialogs -->
