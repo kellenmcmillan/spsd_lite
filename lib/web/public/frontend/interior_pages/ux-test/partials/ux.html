@@ -209,11 +209,11 @@
 				<md-divider></md-divider>
 
 				<md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
-				<md-radio-group ng-model="data.group1">
-				<md-list-item ng-repeat="image in image_gallery" ng-click="goToPerson(image.name, $event)">
+				<md-radio-group ng-model="data.group1" class="lightweight-list-control">
+				<md-list-item ng-repeat="image in image_gallery" ng-click="goToPerson(image.name, $event)" ng-attr-sortable>
 					<md-radio-button value="{{image.img}}" style="padding-left: 8px;"></md-radio-button>
 					<img style="border-radius: 0; height: auto; width: 80px;" alt="{{ image.name }}" ng-src="{{ image.img }}" class="md-avatar" />
-					<p>{{ image.name }}</p>
+					<p md-truncate>{{ image.name }}</p>
 					<md-icon
 					style="padding: 8px;" 
 					ng-click="doSecondaryAction($event)"
