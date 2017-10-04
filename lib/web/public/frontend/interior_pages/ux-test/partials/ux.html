@@ -83,16 +83,16 @@
 
 			<md-list ng-cloak color="b" hue="hue lightest" property="bg" opaqueness lw-color>
 
-				<md-subheader class="md-no-sticky">Edit Complex Elements</md-subheader>
+				<md-subheader class="md-no-sticky">#1 Edit Complex Elements</md-subheader>
 
 				<md-list-item class="secondary-button-padding">
-					<p>Clicking the button to the right will fire the secondary action</p>
+					<p>Element</p>
 					<md-button class="md-secondary" ng-click="doSecondaryAction($event)">Edit</md-button>
 				</md-list-item>
 
 				<md-divider></md-divider>
 
-				<md-subheader class="md-no-sticky">Edit Complex Elements W/ Secondary Icon Button</md-subheader>
+				<md-subheader class="md-no-sticky">#2 Edit Complex Elements W/ Secondary Icon Button</md-subheader>
 
 				<md-list-item class="secondary-button-padding">
 					<md-icon 
@@ -106,8 +106,17 @@
 				    lw-color>
 				    	info_outline
 				    </md-icon>
-					<p>Click anywhere to fire the primary action, or the button to fire the secondary</p>
+					<p>Element</p>
 					<md-button class="md-secondary" ng-click="doSecondaryAction($event)">Edit</md-button>
+				</md-list-item>
+
+				<md-divider></md-divider>
+
+				<md-subheader class="md-no-sticky">#3 Switch Input</md-subheader>
+
+				<md-list-item ng-click="navigateTo(setting.extraScreen, $event)" ng-repeat="setting in settings">
+					<p> {{ setting.name }} </p>
+					<md-switch class="md-secondary" ng-model="setting.enabled"></md-switch>
 				</md-list-item>
 
 				<md-divider></md-divider>
@@ -164,20 +173,6 @@
 
 				<md-subheader class="md-no-sticky">Clickable Items with Secondary Controls</md-subheader>
 
-				<md-list-item ng-click="navigateTo(setting.extraScreen, $event)" ng-repeat="setting in settings">
-					<md-icon 
-					md-font-library="material-icons" 
-					color="primary" 
-				    hue="hue normal" 
-				    property="text" 
-				    opaqueness="" 
-				    lw-color>
-				    	{{setting.icon}}
-				    </md-icon>
-					<md-icon md-svg-icon="{{setting.icon}}"></md-icon>
-					<p> {{ setting.name }} </p>
-					<md-switch class="md-secondary" ng-model="setting.enabled"></md-switch>
-				</md-list-item>
 				<md-list-item ng-click="navigateTo('data usage', $event)">
 					<md-icon 
 					md-font-library="material-icons" 
