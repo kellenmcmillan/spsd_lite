@@ -211,7 +211,7 @@
 				<md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
 				<md-radio-group ng-model="data.group1">
 				<md-list-item ng-repeat="image in image_gallery" ng-click="goToPerson(image.name, $event)">
-					<md-radio-button value="{{image.img}}" style="padding-left: 8px;"> Is Cover</md-radio-button>
+					<md-radio-button value="{{image.img}}" style="padding-left: 8px;"></md-radio-button>
 					<img style="border-radius: 0; height: auto; width: 80px;" alt="{{ image.name }}" ng-src="{{ image.img }}" class="md-avatar" />
 					<p>{{ image.name }}</p>
 					<md-icon
@@ -224,7 +224,7 @@
 				    property="text" 
 				    opaqueness="" 
 				    lw-color>
-				    	email
+				    	delete
 				    </md-icon>
 				    <md-icon 
 				    style="padding: 8px;" 
@@ -236,7 +236,7 @@
 				    property="text" 
 				    opaqueness="" 
 				    lw-color>
-				    	message
+				    	drag_handle
 				    </md-icon>
 				</md-list-item>
 				</md-radio-group>
