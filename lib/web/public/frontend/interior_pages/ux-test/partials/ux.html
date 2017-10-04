@@ -9,6 +9,13 @@
 		background-color: rgba(0,0,0,.12);
 	}
 	.lightweight-action {cursor: pointer;}
+	@media screen and (max-width: 480px){
+		.data-image img {height: auto; width: 80px;}
+	}
+	@media screen and (max-width: 839px){
+		.data-image img {width: 100px; height: auto;}
+	}
+	.data-image img {width: 120px; height: auto;}
 	
 	.lightweight-md-dropdown md-select:not([disabled]):focus .md-select-value,
 	md-input-container.lightweight-md-input:not(.md-input-invalid).md-input-focused {border-bottom-color: {{primary_hue_border__normal_no_opacity.value}};}
@@ -410,8 +417,8 @@
 							</div>
 						</td>
 						<td class="user_vault--table-data no-padding" style="width: 60%; border-bottom: none; vertical-align: inherit!important;">
-							<div class="left--text">
-								<img src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/thumbs/wayneFerguson6-thumb.jpg" style="height: auto; width: 80px; padding: 16px 0 16px 0;">
+							<div class="left--text data-image">
+								<img src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/thumbs/wayneFerguson6-thumb.jpg" style="padding: 16px 0 16px 0;">
 							</div>
 						</td>
 						<td class="user_vault--table-data mdl-data-table__cell--non-numeric no-padding" style="width: 42px; padding-right: 0; border-bottom: none;">
