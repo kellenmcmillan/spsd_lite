@@ -81,7 +81,8 @@
 
 	    <div class="mdl-card mdl-cell mdl-cell--12-col full-width no-margin mdl-shadow--2dp" style="min-height: 0px; overflow: initial;" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
 
-			<md-list class="lightweight-list-control" ng-cloak color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+			<md-list ng-cloak color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+			<ul class="lightweight-list-control">
 
 				<md-subheader class="md-no-sticky">#1 Edit Complex Elements</md-subheader>
 
@@ -210,7 +211,8 @@
 
 				<md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
 				<md-radio-group ng-model="data.group1">
-				<md-list-item ng-repeat="image in image_gallery" ng-click="goToPerson(image.name, $event)" sortable>
+				<li ng-repeat="image in image_gallery" sortable>
+				<md-list-item ng-click="goToPerson(image.name, $event)">
 					<md-radio-button value="{{image.img}}" style="padding-left: 8px;"></md-radio-button>
 					<img style="border-radius: 0; height: auto; width: 80px;" alt="{{ image.name }}" ng-src="{{ image.img }}" class="md-avatar" />
 					<p md-truncate>{{ image.name }}</p>
@@ -239,7 +241,9 @@
 				    	drag_handle
 				    </md-icon>
 				</md-list-item>
+				</li>
 				</md-radio-group>
+				</ul>
 			</md-list>
 
 	    </div>
