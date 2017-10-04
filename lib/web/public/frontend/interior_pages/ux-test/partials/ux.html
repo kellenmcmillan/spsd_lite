@@ -608,7 +608,8 @@
 		<img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar" />
 		<p>{{ person.name }}</p>
 		<md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
-		<md-icon 
+		<md-icon
+		style="padding: 8px;" 
 		ng-click="doSecondaryAction($event)"
 		aria-label="Send Email"
 		md-font-library="material-icons" 
@@ -620,6 +621,7 @@
 	    	email
 	    </md-icon>
 	    <md-icon 
+	    style="padding: 8px;" 
 		ng-click="doSecondaryAction($event)"
 		aria-label="Chat"
 		md-font-library="material-icons" 
