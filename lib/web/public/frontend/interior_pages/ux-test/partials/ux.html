@@ -198,7 +198,7 @@
 
 				<md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
 
-				<md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)" class="noright">
+				<md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)">
 					<md-checkbox class="md-secondary" ng-model="person.selected"></md-checkbox>
 					<img style="border-radius: 0; height: auto;" alt="{{ person.name }}" ng-src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/thumbs/wayneFerguson6-thumb.jpg" class="md-avatar" />
 					<p>{{ person.name }}</p>
