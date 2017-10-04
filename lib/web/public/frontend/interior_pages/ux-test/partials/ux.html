@@ -63,6 +63,8 @@
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__track,
 	.lightweight-switch .mdl-switch__ripple-container .mdl-ripple {background-color: {{primary_hue_normal_lightest_opacity.value}};}
 </style>
+
+
 <div class="mdl-grid">
 	<div class="mdl-grid mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-cell--3-offset-desktop no-padding" style="border: none; min-height: 100%;">
 
@@ -81,25 +83,40 @@
 
 			<md-list ng-cloak color="b" hue="hue lightest" property="bg" opaqueness lw-color>
 
+				<md-subheader class="md-no-sticky">Edit Complex Elements</md-subheader>
+
+				<md-list-item class="secondary-button-padding">
+					<p>Clicking the button to the right will fire the secondary action</p>
+					<md-button class="md-secondary" ng-click="doSecondaryAction($event)">Edit</md-button>
+				</md-list-item>
+
+				<md-divider></md-divider>
+
+				<md-subheader class="md-no-sticky">Edit Complex Elements W/ Secondary Icon Button</md-subheader>
+
+				<md-list-item class="secondary-button-padding">
+					<md-icon 
+					ng-click="doPrimaryAction($event)"
+					aria-label="Chat"
+					md-font-library="material-icons" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	info_outline
+				    </md-icon>
+					<p>Click anywhere to fire the primary action, or the button to fire the secondary</p>
+					<md-button class="md-secondary" ng-click="doSecondaryAction($event)">Edit</md-button>
+				</md-list-item>
+
+				<md-divider></md-divider>
+
 				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
 				
 				<md-list-item ng-repeat="topping in toppings">
 					<p> {{ topping.name }} </p>
 					<md-checkbox class="md-secondary" ng-model="topping.wanted"></md-checkbox>
-				</md-list-item>
-
-				<md-divider></md-divider>
-
-				<md-subheader class="md-no-sticky">Secondary Buttons</md-subheader>
-
-				<md-list-item class="secondary-button-padding">
-					<p>Clicking the button to the right will fire the secondary action</p>
-					<md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>
-				</md-list-item>
-
-				<md-list-item class="secondary-button-padding" ng-click="doPrimaryAction($event)">
-					<p>Click anywhere to fire the primary action, or the button to fire the secondary</p>
-					<md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>
 				</md-list-item>
 
 				<md-divider></md-divider>
