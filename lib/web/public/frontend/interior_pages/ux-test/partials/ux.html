@@ -58,6 +58,8 @@
 	md-radio-group.md-default-theme .md-checked .md-ink-ripple, md-radio-group .md-checked .md-ink-ripple {color:{{primary_hue_normal_darkest_opacity.value}};}
 	md-radio-button.md-default-theme.md-checked .md-off, md-radio-button.md-checked .md-off {border-color: {{primary_hue_text__normal.value}};}
 	md-radio-button.md-default-theme .md-on, md-radio-button .md-on {background-color: {{primary_hue_text__normal.value}};}
+	md-slider.md-default-theme .md-thumb:after, md-slider .md-thumb:after {background: {{primary_hue_normal.value}}; border-color: {{primary_hue_normal.value}};}
+	md-slider.md-default-theme .md-track.md-track-fill, md-slider .md-track.md-track-fill {background: {{primary_hue_normal.value}};}
 
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__thumb {background-color: {{primary_hue_normal.value}};}
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__track,
@@ -210,6 +212,20 @@
 							</md-menu-item>
 						</md-menu-content>
 					</md-menu>
+				</md-list-item>
+
+				<md-divider></md-divider>
+
+				<md-subheader class="md-no-sticky">#9 Slider Input</md-subheader>
+				<md-list-item>
+					<md-slider-container>
+						<p>Property</p>
+						<md-slider flex min="0" max="10" ng-model="slider.nine" aria-label="nine" id="nine-slider">
+						</md-slider>
+						<md-input-container>
+							<input flex type="number" ng-model="slider.nine" aria-label="nine" aria-controls="nine-slider">
+						</md-input-container>
+					</md-slider-container>
 				</md-list-item>
 
 				<md-divider></md-divider>
