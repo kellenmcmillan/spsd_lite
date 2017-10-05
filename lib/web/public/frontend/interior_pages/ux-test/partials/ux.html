@@ -159,6 +159,61 @@
 					</md-input-container>
 				</md-list-item>
 
+				<md-divider></md-divider>
+
+				<md-divider></md-divider>
+
+				<md-subheader class="md-no-sticky">#7 Dropdown Menu w/ Secondary Icon Button</md-subheader>
+
+				<md-list-item>
+				<md-button class="md-icon-button" ng-click="doPrimaryAction($event)">
+					<md-icon 
+					aria-label="Chat"
+					md-font-library="material-icons" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	info_outline
+				    </md-icon>
+			    </md-button>
+				<p>Element</p>
+					<md-menu class="md-secondary">
+						<md-button class="md-icon-button">
+							<md-icon 
+							md-font-library="material-icons" 
+							color="primary" 
+			                hue="hue normal" 
+			                property="text" 
+			                opaqueness="" 
+			                lw-color>
+			                	more_vert
+			                </md-icon>
+						</md-button>
+						<md-menu-content width="4">
+							<md-menu-item>
+								<md-button>
+									Redial
+								</md-button>
+							</md-menu-item>
+							<md-menu-item>
+								<md-button>
+									Check voicemail
+								</md-button>
+							</md-menu-item>
+
+							<md-menu-divider></md-menu-divider>
+
+							<md-menu-item>
+								<md-button>
+									Notifications
+								</md-button>
+							</md-menu-item>
+						</md-menu-content>
+					</md-menu>
+				</md-list-item>
+
 				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
 				
 				<md-list-item ng-repeat="topping in toppings">
