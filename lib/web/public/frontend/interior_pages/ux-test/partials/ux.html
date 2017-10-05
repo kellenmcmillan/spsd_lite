@@ -210,14 +210,14 @@
 
 				<md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
 				<md-radio-group ng-model="data.group1">
-				<md-list-item ng-repeat="image in image_gallery">
+				<md-list-item ng-repeat="image in image_gallery" ng-click="goToPerson(image.name, $event)">
 					<md-radio-button value="{{image.img}}" style="padding-left: 8px;"></md-radio-button>
 					<img style="border-radius: 0; height: auto; width: 80px;" alt="{{ image.name }}" ng-src="{{ image.img }}" class="md-avatar" />
 					<p md-truncate>{{ image.name }}</p>
 					<md-icon
 					style="padding: 8px;" 
 					ng-click="doSecondaryAction($event)"
-					aria-label="Send Email"
+					aria-label="Delete"
 					md-font-library="material-icons" 
 					color="primary" 
 				    hue="hue normal" 
@@ -228,26 +228,28 @@
 				    </md-icon>
 				    <md-icon 
 				    style="padding: 8px;" 
-					ng-click="reorder_gallery($index, 1)"
+					ng-click="reorder_gallery($index, $index + 1)"
 					aria-label="Chat"
 					md-font-library="material-icons" 
 					color="primary" 
 				    hue="hue normal" 
 				    property="text" 
 				    opaqueness="" 
-				    lw-color>
+				    lw-color
+				    disabled="{{$index == image_gallery.length - 1}}">
 				    	arrow_downward
 				    </md-icon>
 				    <md-icon 
 				    style="padding: 8px;" 
-					ng-click="reorder_gallery($index, -1)"
+					ng-click="reorder_gallery($index, $index - 1)"
 					aria-label="Chat"
 					md-font-library="material-icons" 
 					color="primary" 
 				    hue="hue normal" 
 				    property="text" 
 				    opaqueness="" 
-				    lw-color>
+				    lw-color
+				    disabled="{{$index == 0}}">
 				    	arrow_upward
 				    </md-icon>
 				</md-list-item>
