@@ -68,12 +68,11 @@
 	.sortable-list md-list-item.ng-move {
 		transition-duration: .5s;
   		transition-timing-function: cubic-bezier(.4,0,.2,1);
-  		transition-property: height, max-height;
+  		transition-property: all;
 	}
 	.sortable-list md-list-item.ng-move.ng-move-active {
-		height: 0!important;
-		max-height: 0!important;
-		overflow: hidden;
+		display: none;
+		opacity: 0;
 	}
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__thumb {background-color: {{primary_hue_normal.value}};}
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__track,
