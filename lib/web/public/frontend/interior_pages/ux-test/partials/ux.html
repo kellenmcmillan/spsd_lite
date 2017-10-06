@@ -321,21 +321,26 @@
 				<md-subheader class="md-no-sticky">#12 Complex</md-subheader>
 
 				<md-list-item>
+					<md-button class="md-raised" style="background-color: {{base_hue_lighter.value}};">
 					<md-icon 
-					aria-label="Bullet Point"
+					aria-label="Add A List Item"
 					md-font-library="material-icons" 
 					color="primary" 
 				    hue="hue normal" 
 				    property="text" 
 				    opaqueness="" 
 				    lw-color>
-				    	lens
+				    	add
 				    </md-icon>
-					<md-input-container class="md-block lightweight-md-input" flex="50">
+				    Add A New List Item
+				    </md-button>
+					<md-input-container class="md-block lightweight-md-input md-secondary" flex="50">
 						<label>Input</label>
 						<input>
 					</md-input-container>
 				</md-list-item>
+
+				<md-divider></md-divider>
 
 				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
 				
