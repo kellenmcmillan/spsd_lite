@@ -66,12 +66,12 @@
 	md-checkbox.md-default-theme.md-checked .md-ink-ripple, md-checkbox.md-checked .md-ink-ripple {color:{{primary_hue_normal_darkest_opacity.value}};}
 	md-checkbox.md-default-theme.md-checked .md-icon, md-checkbox.md-checked .md-icon {background-color: {{primary_hue_normal.value}};}
 	.sortable-list md-list-item.ng-move {
-		transition-duration: 1s;
+		transition-duration: .5s;
   		transition-timing-function: cubic-bezier(.4,0,.2,1);
-  		transition-property: all;
+  		transition-property: height;
 	}
 	.sortable-list md-list-item.ng-move.ng-move-active {
-		opacity: .8;
+		height: 0!important;
 	}
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__thumb {background-color: {{primary_hue_normal.value}};}
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__track,
