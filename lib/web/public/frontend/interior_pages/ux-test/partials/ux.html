@@ -235,6 +235,30 @@
 
 				<md-divider></md-divider>
 
+				<md-subheader class="md-no-sticky">#10 Multiple Dropdown Select Inputs</md-subheader>
+
+				<md-list-item>
+				<p>Properties</p>
+					<md-input-container style="margin-right: 16px;" class="md-block lightweight-md-dropdown" flex-gt-sm>
+						<label class="lightweight-md-option-label" ng-attr-style="color: {{primary_hue_text__normal.value}};">Property</label>
+						<md-select ng-model="element.option_10_1">
+							<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_1" value="{{option}}">
+								{{option}}
+							</md-option>
+						</md-select>
+					</md-input-container>				
+					<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
+						<label class="lightweight-md-option-label">Property</label>
+						<md-select ng-model="element.option_10_2">
+							<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_2" value="{{option}}">
+								{{option}}
+							</md-option>
+						</md-select>
+					</md-input-container>
+				</md-list-item>
+
+				<md-divider></md-divider>
+
 				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
 				
 				<md-list-item ng-repeat="topping in toppings">
