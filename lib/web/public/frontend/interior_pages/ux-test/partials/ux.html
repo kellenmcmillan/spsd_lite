@@ -277,9 +277,9 @@
 						<md-radio-button value="{{image.img}}" style="padding-left: 8px;"></md-radio-button>
 						<img style="border-radius: 0; height: auto; width: 80px;" alt="{{ image.name }}" ng-src="{{ image.img }}" class="md-avatar" />
 						<p md-truncate>{{ image.name }}</p>
-						<md-button class="md-icon-button" ng-click="doSecondaryAction($event)">
 						<md-icon
-						style="padding: 8px;" 
+						style="padding: 8px; cursor: pointer;" 
+						ng-click="doSecondaryAction($event)"
 						aria-label="Delete"
 						md-font-library="material-icons" 
 						color="primary" 
@@ -289,10 +289,9 @@
 					    lw-color>
 					    	delete
 					    </md-icon>
-					    </md-button>
-					    <md-button class="md-icon-button" ng-click="image_move($index, $index + 1)">
 					    <md-icon 
-					    style="padding: 8px;" 
+					    style="padding: 8px; cursor: pointer;" 
+					    ng-click="image_move($index, $index + 1)"
 						aria-label="Chat"
 						md-font-library="material-icons" 
 						color="primary" 
@@ -302,10 +301,9 @@
 					    lw-color>
 					    	arrow_downward
 					    </md-icon>
-					    </md-button>
-					    <md-button class="md-icon-button" ng-click="image_move($index, $index - 1)">
 					    <md-icon 
-					    style="padding: 8px;" 
+					    style="padding: 8px; cursor: pointer;"
+					    ng-click="image_move($index, $index - 1)" 
 						aria-label="Chat"
 						md-font-library="material-icons" 
 						color="primary" 
@@ -315,7 +313,6 @@
 					    lw-color>
 					    	arrow_upward
 					    </md-icon>
-					    </md-button>
 					</md-list-item>
 				</md-radio-group>
 
