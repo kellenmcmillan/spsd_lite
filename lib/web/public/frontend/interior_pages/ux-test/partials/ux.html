@@ -258,6 +258,72 @@
 
 				<md-divider></md-divider>
 
+				<md-subheader class="md-no-sticky">#11 Radio Select Input With Media Preview, Deleteable and Sortable</md-subheader>
+
+				<md-radio-group ng-model="data.group1">
+					<md-list-item ng-repeat="image in image_gallery">
+						<md-radio-button value="{{image.img}}" style="padding-left: 8px;"></md-radio-button>
+						<img style="border-radius: 0; height: auto; width: 80px;" alt="{{ image.name }}" ng-src="{{ image.img }}" class="md-avatar" />
+						<p md-truncate>{{ image.name }}</p>
+						<md-icon
+						style="padding: 8px;" 
+						ng-click="doSecondaryAction($event)"
+						aria-label="Delete"
+						md-font-library="material-icons" 
+						color="primary" 
+					    hue="hue normal" 
+					    property="text" 
+					    opaqueness="" 
+					    lw-color>
+					    	delete
+					    </md-icon>
+					    <md-icon 
+					    style="padding: 8px;" 
+						ng-click="image_move($index, $index + 1)"
+						aria-label="Chat"
+						md-font-library="material-icons" 
+						color="primary" 
+					    hue="hue normal" 
+					    property="text" 
+					    opaqueness="" 
+					    lw-color>
+					    	arrow_downward
+					    </md-icon>
+					    <md-icon 
+					    style="padding: 8px;" 
+						ng-click="image_move($index, $index - 1)"
+						aria-label="Chat"
+						md-font-library="material-icons" 
+						color="primary" 
+					    hue="hue normal" 
+					    property="text" 
+					    opaqueness="" 
+					    lw-color>
+					    	arrow_upward
+					    </md-icon>
+					</md-list-item>
+				</md-radio-group>
+
+				<md-divider ></md-divider>
+
+				<!-- <md-subheader class="md-no-sticky">#12 Complex</md-subheader>
+
+				<md-list-item class="md-2-line" ng-repeat="phone in phones">
+					<md-icon 
+					aria-label="Bullet Point"
+					md-font-library="material-icons" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	lens
+				    </md-icon>
+					<div class="md-list-item-text">
+						<h3> {{ phone.number }} </h3>
+					</div>
+				</md-list-item> -->
+
 				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
 				
 				<md-list-item ng-repeat="topping in toppings">
@@ -302,52 +368,6 @@
 				    </md-icon>
 				</md-list-item>
 
-				<md-divider></md-divider>
-
-				<md-subheader class="md-no-sticky">Avatar with Secondary Action Icon</md-subheader>
-				<md-radio-group ng-model="data.group1">
-				<md-list-item ng-repeat="image in image_gallery">
-					<md-radio-button value="{{image.img}}" style="padding-left: 8px;"></md-radio-button>
-					<img style="border-radius: 0; height: auto; width: 80px;" alt="{{ image.name }}" ng-src="{{ image.img }}" class="md-avatar" />
-					<p md-truncate>{{ image.name }}</p>
-					<md-icon
-					style="padding: 8px;" 
-					ng-click="doSecondaryAction($event)"
-					aria-label="Delete"
-					md-font-library="material-icons" 
-					color="primary" 
-				    hue="hue normal" 
-				    property="text" 
-				    opaqueness="" 
-				    lw-color>
-				    	delete
-				    </md-icon>
-				    <md-icon 
-				    style="padding: 8px;" 
-					ng-click="image_move($index, $index + 1)"
-					aria-label="Chat"
-					md-font-library="material-icons" 
-					color="primary" 
-				    hue="hue normal" 
-				    property="text" 
-				    opaqueness="" 
-				    lw-color>
-				    	arrow_downward
-				    </md-icon>
-				    <md-icon 
-				    style="padding: 8px;" 
-					ng-click="image_move($index, $index - 1)"
-					aria-label="Chat"
-					md-font-library="material-icons" 
-					color="primary" 
-				    hue="hue normal" 
-				    property="text" 
-				    opaqueness="" 
-				    lw-color>
-				    	arrow_upward
-				    </md-icon>
-				</md-list-item>
-				</md-radio-group>
 			</md-list>
 
 	    </div>
