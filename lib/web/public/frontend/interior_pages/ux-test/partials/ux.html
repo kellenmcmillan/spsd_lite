@@ -65,14 +65,17 @@
 	md-switch.md-default-theme.md-checked .md-ink-ripple, md-switch.md-checked .md-ink-ripple {color: {{primary_hue_text__normal.value}};}
 	md-checkbox.md-default-theme.md-checked .md-ink-ripple, md-checkbox.md-checked .md-ink-ripple {color:{{primary_hue_normal_darkest_opacity.value}};}
 	md-checkbox.md-default-theme.md-checked .md-icon, md-checkbox.md-checked .md-icon {background-color: {{primary_hue_normal.value}};}
-	.sortable-list md-list-item {
-		transition-duration: .5s;
-  		transition-timing-function: cubic-bezier(.4,0,.2,1);
-  		transition-property: all;
-	}
-	.sortable-list md-list-item.ng-move.ng-move-active {
-		display: none;
+	.sortable-list md-list-item.move-to-activated {
 		opacity: 0;
+		-webkit-animation: listMove .5s ease-in-out forwards;
+	    animation: listMove .5s ease-in-out forwards;
+	    animation-timing-function: ease-in-out; 
+	    -webkit-animation-timing-function: ease-in-out;
+	}
+	@-webkit-keyframes listMove {
+	  0% {opacity: 0;}
+	  50% {opacity: .5;}
+	  100% {opacity: 1;}
 	}
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__thumb {background-color: {{primary_hue_normal.value}};}
 	.lightweight-switch.mdl-switch.is-checked .mdl-switch__track,
@@ -270,7 +273,7 @@
 				<md-subheader class="md-no-sticky">#11 Radio Select Input With Media Preview, Deleteable and Sortable</md-subheader>
 
 				<md-radio-group class="sortable-list" ng-model="data.group1">
-					<md-list-item ng-repeat="image in image_gallery">
+					<md-list-item ng-repeat="image in image_gallery" ng-class="{'move-to-activated': $parent.moveTo == $index}">
 						<md-radio-button value="{{image.img}}" style="padding-left: 8px;"></md-radio-button>
 						<img style="border-radius: 0; height: auto; width: 80px;" alt="{{ image.name }}" ng-src="{{ image.img }}" class="md-avatar" />
 						<p md-truncate>{{ image.name }}</p>
@@ -287,7 +290,7 @@
 					    	delete
 					    </md-icon>
 					    </md-button>
-					    <md-button class="md-icon-button" ng-click="image_move($index, $index + 1)">
+					    <md-button class="md-icon-button" ng-click="image_move($index, $index + 1); $parent.moveTo = $index + 1">
 					    <md-icon 
 					    style="padding: 8px;" 
 						aria-label="Chat"
@@ -300,7 +303,7 @@
 					    	arrow_downward
 					    </md-icon>
 					    </md-button>
-					    <md-button class="md-icon-button" ng-click="image_move($index, $index - 1)">
+					    <md-button class="md-icon-button" ng-click="image_move($index, $index - 1); $parent.moveTo = $index -1 1">
 					    <md-icon 
 					    style="padding: 8px;" 
 						aria-label="Chat"
