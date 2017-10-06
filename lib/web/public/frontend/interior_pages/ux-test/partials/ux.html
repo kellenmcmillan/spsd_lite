@@ -65,7 +65,7 @@
 	md-switch.md-default-theme.md-checked .md-ink-ripple, md-switch.md-checked .md-ink-ripple {color: {{primary_hue_text__normal.value}};}
 	md-checkbox.md-default-theme.md-checked .md-ink-ripple, md-checkbox.md-checked .md-ink-ripple {color:{{primary_hue_normal_darkest_opacity.value}};}
 	md-checkbox.md-default-theme.md-checked .md-icon, md-checkbox.md-checked .md-icon {background-color: {{primary_hue_normal.value}};}
-	.sortable-list md-list-item.ng-move {
+	.sortable-list md-list-item {
 		transition-duration: .5s;
   		transition-timing-function: cubic-bezier(.4,0,.2,1);
   		transition-property: all;
@@ -247,7 +247,7 @@
 				<md-subheader class="md-no-sticky">#10 Multiple Dropdown Select Inputs</md-subheader>
 
 				<md-list-item>
-					<md-input-container style="margin-right: 16px;" class="md-block lightweight-md-dropdown" flex-gt-sm>
+					<md-input-container style="margin-right: 16px;" class="md-block lightweight-md-dropdown" flex="50">
 						<label class="lightweight-md-option-label" ng-attr-style="color: {{primary_hue_text__normal.value}};">Property</label>
 						<md-select ng-model="element.option_10_1">
 							<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_1" value="{{option}}">
@@ -255,7 +255,7 @@
 							</md-option>
 						</md-select>
 					</md-input-container>				
-					<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
+					<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex="50">
 						<label class="lightweight-md-option-label">Property</label>
 						<md-select ng-model="element.option_10_2">
 							<md-option class="lightweight-md-option" ng-repeat="option in dropdown_10_2" value="{{option}}">
