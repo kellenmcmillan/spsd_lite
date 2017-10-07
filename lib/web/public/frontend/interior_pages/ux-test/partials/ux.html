@@ -338,8 +338,18 @@
 				    	<form name="number12" flex style="max-width: 80%">
 						    <div layout="column" flex>
 						    	
-								<md-input-container ng-repeat="item in list_items" class="md-block lightweight-md-input" style="margin: 0" flex="50">
+								<md-input-container ng-repeat="item in list_items" class="md-icon-float md-block lightweight-md-input" style="margin: 0" flex="50">
 									<label>List Item</label>
+									<md-icon 
+									aria-label="Remove List Item {{list[$index]}}"
+									md-font-library="material-icons" 
+									color="primary" 
+								    hue="hue normal" 
+								    property="text" 
+								    opaqueness="" 
+								    lw-color>
+								    	delete
+								    </md-icon>
 									<input ng-model="list[$index]" required>
 								</md-input-container>
 						
