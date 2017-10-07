@@ -324,6 +324,7 @@
 					<md-button ng-click="add_item()" class="md-raised" style="background-color: {{base_hue_lighter.value}};">
 					<md-icon 
 					aria-label="Add A List Item"
+					ng-disabled="number12.$invalid"
 					md-font-library="material-icons" 
 					color="primary" 
 				    hue="hue normal" 
@@ -336,10 +337,12 @@
 				    </md-button>
 				    <div layout="row" layout-align="end center" flex>
 					    <div layout="column" flex style="max-width: 80%">
+					    	<form name="number12">
 							<md-input-container ng-repeat="item in list_items" class="md-block lightweight-md-input" style="margin: 0" flex="50">
 								<label>List Item</label>
-								<input ng-model="list[$index]">
+								<input ng-model="list[$index]" required>
 							</md-input-container>
+							</form>
 						</div>
 					</div>
 				</md-list-item>
