@@ -350,6 +350,21 @@
 
 				<md-divider></md-divider>
 
+				<md-subheader class="md-no-sticky">#13 Multiple Textarea Input</md-subheader>
+
+				<md-list-item>
+					<md-input-container class="md-block lightweight-md-input" flex="50">
+						<label>Text Area Input</label>
+    					<textarea name="bio" ng-model="textarea13_1" rows="3" md-maxlength="200"></textarea>
+					</md-input-container>
+					<md-input-container class="md-block lightweight-md-input" flex="50">
+						<label>Text Area Input</label>
+    					<textarea name="bio" ng-model="textarea13_2" rows="3" md-maxlength="200"></textarea>
+					</md-input-container>
+				</md-list-item>
+
+				<md-divider></md-divider>
+
 				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
 				
 				<md-list-item ng-repeat="topping in toppings">
