@@ -338,7 +338,7 @@
 				    	<form name="number12" flex style="max-width: 80%">
 						    <div layout="column" flex>
 						    	
-								<md-input-container ng-repeat="item in list_items track by $index" class="md-icon-float md-block lightweight-md-input" style="margin: 0" flex="50">
+								<md-input-container ng-repeat="item in list_items" class="md-icon-float md-block lightweight-md-input" style="margin: 0" flex="50">
 									<label>List Item</label>
 									<md-icon 
 									ng-if="$index > 0"
@@ -352,7 +352,7 @@
 								    lw-color>
 								    	delete
 								    </md-icon>
-									<input ng-model="element.random" required>
+									<input ng-model="random" required>
 								</md-input-container>
 
 								<p ng-show="list_length == 0" flex="50">Add A List Item...</p>
