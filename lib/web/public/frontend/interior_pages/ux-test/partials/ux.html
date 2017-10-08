@@ -321,7 +321,7 @@
 				<md-subheader class="md-no-sticky">#12 Complex</md-subheader>
 
 				<md-list-item>
-					<md-button ng-disabled="number12.$invalid && list_length != 0" ng-click="add_item()" class="md-raised" style="background-color: {{base_hue_lighter.value}};">
+					<md-button ng-disabled="number12.$invalid && list_length != 0 || list_length == 12" ng-click="add_item()" class="md-raised" style="background-color: {{base_hue_lighter.value}};">
 					<md-icon 
 					aria-label="Add A List Item"
 					md-font-library="material-icons" 
@@ -352,7 +352,7 @@
 								    lw-color>
 								    	delete
 								    </md-icon>
-									<input ng-model="list[$index]" required>
+									<input ng-model="element.random" required>
 								</md-input-container>
 
 								<p ng-show="list_length == 0" flex="50">Add A List Item...</p>
