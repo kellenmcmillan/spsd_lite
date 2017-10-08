@@ -381,9 +381,9 @@
 
 				<md-subheader class="md-no-sticky">#14 Edit Complex Element With Secondary Checkbox</md-subheader>
 
-				<md-list-item ng-repeat="message in messages">
-					<md-checkbox ng-model="message.selected"></md-checkbox>
-					<p md-truncate>Featured&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{message.title}}</p>
+				<md-list-item ng-repeat="gallery in galleries">
+					<md-checkbox ng-model="gallery.selected"></md-checkbox>
+					<p md-truncate>{{gallery.title}}</p>
 					<md-button
 					ng-click="doSecondaryAction($event)"
 					aria-label="Edit">
@@ -394,6 +394,17 @@
 				<md-divider></md-divider>
 
 				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
+
+				<md-divider></md-divider>
+
+				<md-subheader class="md-no-sticky">#15 Radio Select Input</md-subheader>
+
+				<md-radio-group ng-model="data.group2">
+					<md-list-item ng-repeat="conditional in radio_select15">
+						<md-radio-button value="{{conditional.value}}" style="padding-left: 8px;"></md-radio-button>
+						<p md-truncate>{{conditional.name}}</p>
+					</md-list-item>
+				</md-radio-group>
 				
 				<md-list-item ng-repeat="topping in toppings">
 					<p> {{ topping.name }} </p>
