@@ -379,6 +379,26 @@
 
 				<md-divider></md-divider>
 
+				<md-subheader class="md-no-sticky">#14 Edit Complex Element With Secondary Checkbox</md-subheader>
+
+				<md-list-item ng-repeat="message in messages">
+					<md-checkbox ng-model="message.selected">Featured</md-checkbox>
+					<p>{{message.title}}</p>
+					<md-button
+					class="md-raised"
+					ng-click="doSecondaryAction($event)"
+					aria-label="Edit" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="bg" 
+				    opaqueness="" 
+				    lw-color>
+				    	Edit
+				    </md-button>
+				</md-list-item>
+
+				<md-divider></md-divider>
+
 				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
 				
 				<md-list-item ng-repeat="topping in toppings">
@@ -403,81 +423,10 @@
 					<p>Data Usage</p>
 				</md-list-item>
 
-				<md-divider></md-divider>
-
-				<md-subheader class="md-no-sticky">Checkbox with Secondary Action</md-subheader>
-
-				<md-list-item ng-repeat="message in messages">
-					<md-checkbox ng-model="message.selected"></md-checkbox>
-					<p>{{message.title}}</p>
-					<md-icon 
-					ng-click="doSecondaryAction($event)"
-					aria-label="Chat"
-					md-font-library="material-icons" 
-					color="primary" 
-				    hue="hue normal" 
-				    property="text" 
-				    opaqueness="" 
-				    lw-color>
-				    	message
-				    </md-icon>
-				</md-list-item>
-
 			</md-list>
 
 	    </div>
-	    <!-- Dialogs -->
-
-		<style>
-		.edit-card {
-		     max-height: inherit;
-		     min-height: inherit;
-		     position: relative;
-		     margin: 96px auto 96px auto;
-		     z-index: 999;
-		     background: transparent!important;
-		     padding:0!important;
-		}
-		</style>
-
-		<!-- Dialog #4 Card Component -->
-		<div class="mdl-grid" ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="dialog4" ng-click="dialog4 = false;">
-
-		    <div class="edit-card mdl-card mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-show="dialog4">
-
-		        <!-- Supporting Text (Instructions & Inputs) -->
-		        <div class="mdl-card__supporting-text center--block">
-
-		            <!-- options -->
-		            <table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
-						<tbody class="lightweight-animate-repeat">
-							<tr style="border: none;" class="lightweight-animate-repeat">
-								<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none; vertical-align: middle!important;">
-									<div>
-										<span>
-											element
-										</span>
-									</div>
-								</td>
-								<td class="user_vault--table-data mdl-data-table__cell--non-numeric right-border" style="width: 64px; padding-right: 0; border-bottom: none;">
-									<div class="center--text">
-										<button class="mdl-button" ng-click="dialog4 = false">
-											edit
-										</button>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
-		            <!-- options -->
-
-		        </div>
-		        <!-- Supporting Text (Instructions & Inputs) -->
-		    </div>
-		</div>
-		<!-- Dialog #4 Card Component -->
-
-		<!-- Dialogs -->
+	    
 
 	    <img src="assets/brand/spsd-logo.png" style="display: none;" content-available>
 

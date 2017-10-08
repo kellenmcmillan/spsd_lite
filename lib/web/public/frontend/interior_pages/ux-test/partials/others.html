@@ -413,3 +413,56 @@
 				</tbody>
 			</table>
 			<!-- #11 radio select input with media preview, deleteable & draggable -->
+
+			<!-- Dialogs -->
+
+		<style>
+		.edit-card {
+		     max-height: inherit;
+		     min-height: inherit;
+		     position: relative;
+		     margin: 96px auto 96px auto;
+		     z-index: 999;
+		     background: transparent!important;
+		     padding:0!important;
+		}
+		</style>
+
+		<!-- Dialog #4 Card Component -->
+		<div class="mdl-grid" ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="dialog4" ng-click="dialog4 = false;">
+
+		    <div class="edit-card mdl-card mdl-cell mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-show="dialog4">
+
+		        <!-- Supporting Text (Instructions & Inputs) -->
+		        <div class="mdl-card__supporting-text center--block">
+
+		            <!-- options -->
+		            <table style="border: none;" class="mdl-data-table mdl-js-data-table table table__card lightweight-animate-repeat" color="b" hue="hue lightest" property="bg" opaqueness lw-color>
+						<tbody class="lightweight-animate-repeat">
+							<tr style="border: none;" class="lightweight-animate-repeat">
+								<td class="user_vault--table-data mdl-data-table__cell--non-numeric" style="border-bottom: none; vertical-align: middle!important;">
+									<div>
+										<span>
+											element
+										</span>
+									</div>
+								</td>
+								<td class="user_vault--table-data mdl-data-table__cell--non-numeric right-border" style="width: 64px; padding-right: 0; border-bottom: none;">
+									<div class="center--text">
+										<button class="mdl-button" ng-click="dialog4 = false">
+											edit
+										</button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+		            <!-- options -->
+
+		        </div>
+		        <!-- Supporting Text (Instructions & Inputs) -->
+		    </div>
+		</div>
+		<!-- Dialog #4 Card Component -->
+
+		<!-- Dialogs -->
