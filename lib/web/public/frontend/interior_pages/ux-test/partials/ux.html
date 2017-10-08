@@ -383,8 +383,7 @@
 
 				<md-list-item ng-repeat="message in messages">
 					<md-checkbox ng-model="message.selected"></md-checkbox>
-					<p>Featured</p>
-					<p md-truncate>{{message.title}}</p>
+					<p>Featured &nbsp;&nbsp;&nbsp;<span md-truncate>{{message.title}}</span></p>
 					<md-button
 					ng-click="doSecondaryAction($event)"
 					aria-label="Edit">
