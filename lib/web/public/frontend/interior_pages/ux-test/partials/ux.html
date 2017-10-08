@@ -341,6 +341,7 @@
 								<md-input-container ng-repeat="item in list_items" class="md-icon-float md-block lightweight-md-input" style="margin: 0" flex="50">
 									<label>List Item</label>
 									<md-icon 
+									ng-if="$index > 0"
 									ng-click="remove_item($index)"
 									aria-label="Remove List Item {{list[$index]}}"
 									md-font-library="material-icons" 
@@ -354,7 +355,7 @@
 									<input ng-model="list[$index]" required>
 								</md-input-container>
 
-								<p style="transition: all .3s ease-in-out" ng-show="list_length == 0" flex="50">Add A List Item...</p>
+								<p ng-show="list_length == 0" flex="50">Add A List Item...</p>
 						
 							</div>
 						</form>
