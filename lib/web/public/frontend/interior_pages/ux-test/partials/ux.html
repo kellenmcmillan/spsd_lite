@@ -382,17 +382,12 @@
 				<md-subheader class="md-no-sticky">#14 Edit Complex Element With Secondary Checkbox</md-subheader>
 
 				<md-list-item ng-repeat="message in messages">
-					<md-checkbox ng-model="message.selected">Featured</md-checkbox>
-					<p>{{message.title}}</p>
+					<md-checkbox ng-model="message.selected"></md-checkbox>
+					<p>Featured</p>
+					<p md-truncate>{{message.title}}</p>
 					<md-button
-					class="md-raised"
 					ng-click="doSecondaryAction($event)"
-					aria-label="Edit" 
-					color="primary" 
-				    hue="hue normal" 
-				    property="bg" 
-				    opaqueness="" 
-				    lw-color>
+					aria-label="Edit">
 				    	Edit
 				    </md-button>
 				</md-list-item>
