@@ -429,9 +429,8 @@
 				<md-list-item>
 					<div layout="row" layout-align="start center" flex="50">
 					    <div layout="column" flex="50">
-							<md-button class="md-raised" style="background-color: {{base_hue_lighter.value}}" flex>
+							<md-button class="md-raised" ng-click="doPrimaryAction($event)" style="background-color: {{base_hue_lighter.value}}" flex>
 								<md-icon 
-								ng-click="doPrimaryAction($event)"
 								aria-label="Add From Media File"
 								md-font-library="material-icons" 
 								color="primary" 
@@ -443,9 +442,8 @@
 							    </md-icon>
 								Add File From Media Vault
 							</md-button>
-							<md-button class="md-raised" style="background-color: {{base_hue_lighter.value}}" flex>
-								<md-icon 
-								ng-click="doSecondaryAction($event)"
+							<md-button class="md-raised" ng-click="doSecondaryAction($event)" style="background-color: {{base_hue_lighter.value}}" flex>
+								<md-icon 								
 								aria-label="Add From Media File"
 								md-font-library="material-icons" 
 								color="primary" 
@@ -460,8 +458,10 @@
 						</div>
 					</div>
 					<div layout="row" layout-align="end center" flex="50">
-						<md-icon 
-						style="font-size: 64px; width: 64px; height: 64px;"
+						<div 
+						flex
+						layout="row" 
+						layout-align="center center"
 						aria-label="Add From Media File"
 						md-font-library="material-icons" 
 						color="base" 
@@ -469,8 +469,8 @@
 					    property="text" 
 					    opaqueness="" 
 					    lw-color>
-					    	image
-					    </md-icon>
+					    	<p>image</p>
+					    </div>
 					</div>
 				</md-list-item>
 
