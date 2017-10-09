@@ -436,7 +436,7 @@
 				<md-list-item>
 					<div layout="row" layout-align="start center" flex="50">
 					    <div layout="column" flex>
-							<md-button flex md-truncate class="md-raised" ng-click="doPrimaryAction($event)" style="background-color: {{base_hue_lighter.value}}" flex>
+							<md-button md-truncate class="md-raised" ng-click="doPrimaryAction($event)" style="background-color: {{base_hue_lighter.value}}" flex="50">
 								<md-icon 
 								aria-label="Add From Media File"
 								md-font-library="material-icons" 
@@ -449,7 +449,7 @@
 							    </md-icon>
 								Add File From Media Vault
 							</md-button>
-							<md-button flex md-truncate class="md-raised" ng-click="doSecondaryAction($event)" style="background-color: {{base_hue_lighter.value}}" flex>
+							<md-button md-truncate class="md-raised" ng-click="doSecondaryAction($event)" style="background-color: {{base_hue_lighter.value}}" flex="50">
 								<md-icon 								
 								aria-label="Add From Media File"
 								md-font-library="material-icons" 
@@ -465,7 +465,7 @@
 						</div>
 					</div>
 					<div layout="row" layout-align="center center" flex="50">
-						<img style="width: 100%; height: auto;" ng-cloak ng-src="{{uploaded_image.src}}">
+						<img style="width: 100%; height: auto; margin-bottom: 16px; padding-left: 8px; box-sizing: border-box;" ng-cloak ng-src="{{uploaded_image.src}}">
 					</div>
 				</md-list-item>
 
