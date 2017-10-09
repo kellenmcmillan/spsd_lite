@@ -408,8 +408,14 @@
 				<md-subheader class="md-no-sticky">#21 Drop Down Select Input With Preview</md-subheader>
 
 				<md-list-item>
-					<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex="50">
+					<md-input-container style="margin-right: 16px" class="md-icon-float md-block lightweight-md-dropdown" flex="50">
 						<label class="lightweight-md-option-label">Property</label>
+						<md-icon 
+						aria-label="Color Picker Icon"
+						md-font-library="material-icons" 
+						style="color: {{color}};">
+					    	format_color_fill
+					    </md-icon>
 						<md-select ng-model="color">
 							<md-option class="lightweight-md-option" ng-repeat="option in dropdown_21_1" value="{{option.value}}">
 								{{option.name}}
