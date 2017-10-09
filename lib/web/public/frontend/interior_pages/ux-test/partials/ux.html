@@ -413,15 +413,16 @@
 
 				<md-list-item>
 					<md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
-						<label class="lightweight-md-option-label">State</label>
-						<md-select ng-model="paint.color">
-							<md-option class="lightweight-md-option" ng-repeat="option in dropdown_21_1" value="{{option.name}}">
+						<label class="lightweight-md-option-label">Property</label>
+						<md-select ng-model="paint">
+							<md-option class="lightweight-md-option" ng-repeat="option in dropdown_21_1" value="{{option.value}}">
 								{{option.name}}
 							</md-option>
 						</md-select>
 					</md-input-container>
 					<div class="md-secondary">
-					<div style="width: 80px; height: 64px; background-color: {{selected_color}}">
+						<div style="width: 80px; height: 64px; background-color: {{selected_color}}">
+						</div>
 					</div>
 				</md-list-item>
 
