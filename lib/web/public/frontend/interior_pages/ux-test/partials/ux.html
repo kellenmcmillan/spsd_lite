@@ -394,10 +394,6 @@
 
 				<md-divider></md-divider>
 
-				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
-
-				<md-divider></md-divider>
-
 				<md-subheader class="md-no-sticky">#15 Radio Select Input</md-subheader>
 
 				<md-radio-group ng-model="data.group2">
@@ -427,6 +423,60 @@
 				</md-list-item>
 
 				<md-divider></md-divider>
+
+				<md-subheader class="md-no-sticky">#22 Media Upload</md-subheader>
+
+				<md-list-item>
+					<div layout="row" layout-align="end center" flex="50">
+					    <div layout="column" flex="50">
+							<md-button class="md-raised" style="margin: 0; background-color: {{base_hue_lighter.value}}" flex>
+								<md-icon 
+								ng-click="doPrimaryAction($event)"
+								aria-label="Add From Media File"
+								md-font-library="material-icons" 
+								color="primary" 
+							    hue="hue normal" 
+							    property="text" 
+							    opaqueness="" 
+							    lw-color>
+							    	image
+							    </md-icon>
+								Add File From Media Vault
+							</md-button>
+							<md-button class="md-raised" style="margin: 0; background-color: {{base_hue_lighter.value}}" flex>
+								<md-icon 
+								ng-click="doSecondaryAction($event)"
+								aria-label="Add From Media File"
+								md-font-library="material-icons" 
+								color="primary" 
+							    hue="hue normal" 
+							    property="text" 
+							    opaqueness="" 
+							    lw-color>
+							    	file_upload
+							    </md-icon>
+								Upload File From Device
+							</md-button>
+						</div>
+					</div>
+					<div layout="row" layout-align="end center" flex="50">
+						<md-icon 
+						style="font-size: 64px"
+						aria-label="Add From Media File"
+						md-font-library="material-icons" 
+						color="base" 
+					    hue="hue normal" 
+					    property="text" 
+					    opaqueness="" 
+					    lw-color>
+					    	image
+					    </md-icon>
+					</div>
+				</md-list-item>
+
+				<md-divider></md-divider>
+
+				<md-subheader class="md-no-sticky">Single Action Checkboxes</md-subheader>
 				
 				<md-list-item ng-repeat="topping in toppings">
 					<p> {{ topping.name }} </p>
