@@ -427,9 +427,9 @@
 				<md-subheader class="md-no-sticky">#22 Media Upload</md-subheader>
 
 				<md-list-item>
-					<div layout="row" layout-align="end center" flex="50">
+					<div layout="row" layout-align="start center" flex="50">
 					    <div layout="column" flex="50">
-							<md-button class="md-raised" style="margin: 0; background-color: {{base_hue_lighter.value}}" flex>
+							<md-button class="md-raised" style="background-color: {{base_hue_lighter.value}}" flex>
 								<md-icon 
 								ng-click="doPrimaryAction($event)"
 								aria-label="Add From Media File"
@@ -443,7 +443,7 @@
 							    </md-icon>
 								Add File From Media Vault
 							</md-button>
-							<md-button class="md-raised" style="margin: 0; background-color: {{base_hue_lighter.value}}" flex>
+							<md-button class="md-raised" style="background-color: {{base_hue_lighter.value}}" flex>
 								<md-icon 
 								ng-click="doSecondaryAction($event)"
 								aria-label="Add From Media File"
@@ -461,7 +461,7 @@
 					</div>
 					<div layout="row" layout-align="end center" flex="50">
 						<md-icon 
-						style="font-size: 64px"
+						style="font-size: 64px; width: 64px; height: 64px;"
 						aria-label="Add From Media File"
 						md-font-library="material-icons" 
 						color="base" 
