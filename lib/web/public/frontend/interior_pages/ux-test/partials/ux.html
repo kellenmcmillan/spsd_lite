@@ -450,7 +450,7 @@
 								Add File From Media Vault
 							</md-button>
 							<md-button md-truncate class="md-raised" type="file" ngf-select="uploadFiles($file, $invalidFiles)"
-          accept="image/*" ng-click="uploadAction = true" style="background-color: {{base_hue_lighter.value}}" flex="50">
+          accept="image/*" style="background-color: {{base_hue_lighter.value}}" flex="50">
 								<md-icon								
 								aria-label="Add From Media File"
 								md-font-library="material-icons" 
@@ -465,9 +465,10 @@
 						</div>
 					</div>
 					<div layout="row" layout-align="center center" flex="50">
-						<img ng-if="uploadAction == false" style="width: 100%; height: auto; margin-bottom: 16px; padding-left: 8px; box-sizing: border-box;" ng-cloak ng-src="{{'assets/upload' + filename || preview_image.src}}">
-						<img ng-if="uploadAction == true" style="width: 100%; height: auto; margin-bottom: 16px; padding-left: 8px; box-sizing: border-box;" ngf-src="file">
+						<img style="width: 100%; height: auto; margin-bottom: 16px; padding-left: 8px; box-sizing: border-box;" ng-cloak ng-src="{{'assets/upload' + filename || preview_image.src}}">
 					</div>
+				</md-list-item>
+				<md-list-item>
 					<div layout="row" layout-align="center center" flex="100">
 						<md-progress-linear md-mode="determinate" value="{{f.progress}}"></md-progress-linear>
 					</div>
