@@ -460,12 +460,13 @@
 							    lw-color>
 							    	file_upload
 							    </md-icon>
-								Upload File From Device
+								<input type="file" class="input" id="myfile" file-model="myFile" style="opacity: 0;"><a href="">Upload File From Device</a>
 							</md-button>
+							<input type="file" class="input" id="myfile" file-model="myFile" style="opacity: 0;"><a href="">Upload Me</a>
 						</div>
 					</div>
 					<div layout="row" layout-align="center center" flex="50">
-						<img style="width: 100%; height: auto; margin-bottom: 16px; padding-left: 8px; box-sizing: border-box;" ng-cloak ng-src="{{preview_image.src}}">
+						<img style="width: 100%; height: auto; margin-bottom: 16px; padding-left: 8px; box-sizing: border-box;" ng-cloak ng-src="{{'assets/upload' + filename || preview_image.src}}">
 					</div>
 				</md-list-item>
 
