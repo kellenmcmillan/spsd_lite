@@ -452,7 +452,8 @@
 							<md-button 
 							md-truncate class="md-raised"
 							file-change 
-							handler="fileSelect(files)" 
+							ngf-max-size="12MB" 
+							ngf-select="fileSelect($file)"  
 							type="file"
           					style="background-color: {{base_hue_lighter.value}}" flex="50">
 								<md-icon								
