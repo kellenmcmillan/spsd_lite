@@ -55,8 +55,7 @@
     "node-uuid": "1.4.x",
     "mongoose-cache": "0.1.x",
     "serve-static": "1.12.x",
-    "finalhandler": "1.0.x",
-    "connect-multiparty": "2.0.0"
+    "finalhandler": "1.0.x"
   },
   "devDependencies": {},
   "engines": {

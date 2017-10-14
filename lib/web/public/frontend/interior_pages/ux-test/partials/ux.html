@@ -434,7 +434,7 @@
 				<md-subheader class="md-no-sticky">#22 Media Upload</md-subheader>
 
 				<md-list-item>
-					<div layout="row" layout-align="start center" flex="50">
+					<div layout="row" layout-align="start center" flex="100">
 					    <div layout="column" flex>
 							<md-button md-truncate class="md-raised" ng-click="doPrimaryAction($event); uploadAction = true" style="background-color: {{base_hue_lighter.value}}" flex="50">
 								<md-icon 
@@ -467,9 +467,6 @@
 							    Upload File From Device
 							</md-button>
 						</div>
-					</div>
-					<div layout="row" layout-align="center center" flex="50">
-						<img style="width: 100%; height: auto; margin-bottom: 16px; padding-left: 8px; box-sizing: border-box;" ng-cloak ng-src="{{'assets/upload' + filename || preview_image.src}}">
 					</div>
 				</md-list-item>
 				<md-list-item>
