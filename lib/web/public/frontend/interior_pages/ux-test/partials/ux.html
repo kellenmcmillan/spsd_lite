@@ -468,7 +468,7 @@
 							    Upload File From Device
 							</md-button>
 						</div>
-						<input id="image_upload" name="uploaded_image" style="display: none;" type="file">
+						<input id="image_upload" name="uploaded_image" ng-model="file.image" style="display: none;" type="file" onchange="angular.element(this).scope().uploadFile(this.files)"/>
 					</div>
 				</md-list-item>
 				<md-list-item>
