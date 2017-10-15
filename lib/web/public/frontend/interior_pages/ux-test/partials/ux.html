@@ -435,7 +435,7 @@
 
 				<md-list-item>
 					<div layout="row" layout-align="start center" flex="100">
-					    <div layout="column" flex="50">
+					    <div layout="row" flex="50">
 							<md-button md-truncate class="md-raised" ng-click="doPrimaryAction($event)" style="background-color: {{base_hue_lighter.value}}" flex>
 								<md-icon 
 								aria-label="Add From Media File"
@@ -450,7 +450,7 @@
 								Add File From Media Vault
 							</md-button>
 						</div>
-						<div layout="column" flex="50">
+						<div layout="row" flex="50">
 							<md-button 
 							md-truncate class="md-raised" 
 							onclick="document.getElementById('image_upload').click()" 
@@ -468,7 +468,7 @@
 							    Upload File From Device
 							</md-button>
 						</div>
-						<input id="image_upload" name="uploaded_image" style="display: none;" type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc" onchage="angular.element(this).scope().uploadFile()">
+						<input id="image_upload" name="uploaded_image" style="display: none;" type="file" ng-file-select="onFileSelect($files)" ng-model="imageSrc">
 					</div>
 				</md-list-item>
 				<md-list-item>
