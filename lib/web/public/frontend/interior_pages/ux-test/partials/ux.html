@@ -435,7 +435,7 @@
 
 				<md-list-item>
 					<div layout="row" layout-align="start center" flex="100">
-					    <div flex="50">
+					    <div layout="column" flex="50">
 							<md-button md-truncate class="md-raised" ng-click="doPrimaryAction($event)" style="background-color: {{base_hue_lighter.value}}" flex>
 								<md-icon 
 								aria-label="Add From Media File"
@@ -450,12 +450,11 @@
 								Add File From Media Vault
 							</md-button>
 						</div>
-						<div flex>
+						<div layout="column" flex="50">
 							<md-button 
 							md-truncate class="md-raised" 
-							type="file" ngf-select="onFileSelect($files)" 
-							accept="image/*"
-          					style="background-color: {{base_hue_lighter.value}}" flex="50">
+							onclick="document.getElementById('image_upload').click()" 
+          					style="background-color: {{base_hue_lighter.value}}" flex>
 								<md-icon								
 								aria-label="Add From Media File"
 								md-font-library="material-icons" 
@@ -469,6 +468,7 @@
 							    Upload File From Device
 							</md-button>
 						</div>
+						<input id="image_upload" name="uploaded_image" enctype="multipart/form-data" style="display: none;" type="file" files-input ng-model="fileArray" ng-onchange="upload()" multiple>
 					</div>
 				</md-list-item>
 				<md-list-item>
