@@ -46,7 +46,7 @@ footer {display: none!important;}
     <div class="mdl-grid" ng-attr-style="min-height: 48px; background: {{base_hue_lighter.value}}">
 	    <div ng-click="select_member(tile); $parent.show_dialog = true" ng-repeat="tile in staffTiles" class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone"">
 	    	
-	    	<div class="lightweight-card-image staff mdl-card mdl-shadow--2dp" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.avatar || https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/design/missing-person-image.gif}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+	    	<div class="lightweight-card-image staff mdl-card mdl-shadow--2dp" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.avatar || 'https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/design/missing-person-image.gif'}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 				<div class="mdl-card__title mdl-card--expand"></div>
 				<!-- <div class="mdl-card__actions">
 					<span class="lightweight-card-image__filename" ng-click="select_member(tile); $parent.show_dialog = true">Get To Know Me</span>
@@ -103,7 +103,7 @@ footer {display: none!important;}
         <!-- Card Titles -->
         <!-- Staff Picture -->
         <div class="mdl-card__media" style="background-repeat: no-repeat;">
-        	<img ng-src="{{tile.avatar || https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/design/missing-person-image.gif}}" alt="{{member.name}}'s Picture">
+        	<img ng-src="{{tile.avatar || 'https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/design/missing-person-image.gif'}}" alt="{{member.name}}'s Picture">
         </div>
         <!-- Staff Picture -->
         <!-- Supporting Text (Instructions & Inputs) -->
