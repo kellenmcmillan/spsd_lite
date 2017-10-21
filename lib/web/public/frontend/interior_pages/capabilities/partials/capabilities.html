@@ -24,7 +24,7 @@
 			<!-- Side Bar Tab Widget -->
 			<div class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone">
 				<div style="margin: 0; padding: 0;">
-					<h1 class="h1 padded--top16 lightweight-sidebar--heading" color="{{page.component_colors.text_color.color}}" hue="{{page.component_colors.text_color.hue}}" property="{{page.component_colors.text_color.property}}" opaqueness="{{page.component_colors.text_color.opaqueness}}" lw-color><i class="material-icons" role="presentation" color="p" hue="hn" property="text" opaqueness lw-color>{{page_navigation_icon}}</i>&nbsp;{{page_navigation_title}}</h1>
+					<h1 class="h1 padded--top16 lightweight-sidebar--heading" color="{{page.data[0].paint.text.color}}" hue="{{page.data[0].paint.text.hue}}" property="{{page.data[0].paint.text.property}}" opaqueness="{{page.data[0].paint.text.opaqueness}}" lw-color><i class="material-icons" role="presentation" color="p" hue="hn" property="text" opaqueness lw-color>view_list</i>&nbsp;SECTION</h1>
 					
 					<a class="lightweight-sidebar-tabs mdl-button mdl-js-button mdl-js-ripple-effect" ng-repeat="tab in tab_data" ng-class="{'lightweight-active-tab': tab_visible == '{{tab.name}}'}" ng-click="$parent.tab_visible = tab.name; $parent.current_tab = $index">{{tab.name}}</a>
 					<!-- <p compile="test_data"></p> -->
@@ -40,13 +40,13 @@
 
 		    		<!-- panel title -->
 			    	<div class="padded--top16">
-				        <h1 class="small-border-background-no-align h1" style="margin-top: 8px;" color="{{page.component_colors.text_color.color}}" hue="{{page.component_colors.text_color.hue}}" property="{{page.component_colors.text_color.property}}" opaqueness="{{page.component_colors.text_color.opaqueness}}" lw-color>{{tab_data[current_tab].title ? tab_data[current_tab].title : tab_data[current_tab].name}}</h1>
+				        <h1 class="small-border-background-no-align h1" style="margin-top: 8px;" color="{{page.data[0].paint.text.color}}" hue="{{page.data[0].paint.text.hue}}" property="{{page.data[0].paint.text.property}}" opaqueness="{{page.data[0].paint.text.opaqueness}}" lw-color>{{tab_data[current_tab].title ? tab_data[current_tab].title : tab_data[current_tab].name}}</h1>
 				    </div>
 				    <!-- panel title -->
 
 				    <div class="mdl-grid full-width no-padding">
 						<!-- panel images -->
-						<div class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp {{tab_data[current_tab].className}}_{{index}}" ng-repeat="image in tab_data[current_tab].images" ng-attr-style="background: url('{{image.src}}') center/cover;">
+						<div class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp {{tab_data[current_tab].class}}_{{index}}" ng-repeat="image in tab_data[current_tab].images" ng-attr-style="background: url('{{image.src}}') center/cover;">
 							<div class="mdl-card__title mdl-card--expand"></div>
 							<div class="mdl-card__actions">
 								<span class="lightweight-card-image__filename">{{image.name}}</span>
@@ -57,12 +57,13 @@
 
 			    	<br>
 			    	<br>
+			    	<div ng-bind-html="{{tab_data[current_tab].compiled_content}}"></div>
 			    	<!-- text -->
-			        <p class="emphasize" ng-bind-html="tab_data[current_tab].text[0]" color="{{page.component_colors.text_color.color}}" hue="{{page.component_colors.text_color.hue}}" property="{{page.component_colors.text_color.property}}" opaqueness="{{page.component_colors.text_color.background}}" lw-color></p>
+			        <!-- <p class="emphasize" ng-bind-html="tab_data[current_tab].text[0]" color="{{page.data[0].paint.text.color}}" hue="{{page.data[0].paint.text.hue}}" property="{{page.data[0].paint.text.property}}" opaqueness="{{page.data[0].paint.text.background}}" lw-color></p> -->
 			        <!-- text -->
 
 			        <!-- list -->
-			        <ul class="lightweight-list-icon mdl-list" ng-bind-html="tab_data[current_tab].lists[0]"></ul>
+			        <!-- <ul class="lightweight-list-icon mdl-list" ng-bind-html="tab_data[current_tab].lists[0]"></ul> -->
 			        <!-- list -->
 		    	</div>
 		    	<!-- tab Panel -->

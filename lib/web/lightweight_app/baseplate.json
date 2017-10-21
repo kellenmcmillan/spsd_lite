@@ -1,0 +1,182 @@
+{
+	"configs": {
+		"name": null,
+		"type": null,
+		"url": null,
+		"layout": null,
+		"columns": {
+			"has": false,
+			"number": null
+		},
+		"rows": {
+			"has": false,
+			"number": null
+		},
+		"tabs": {
+			"has": false,
+			"number": null
+		},
+		"panels": {
+			"has": false,
+			"number": null
+		},
+		"lists": {
+			"has": false,
+			"number": null
+		},
+		"editable_features": []
+	},
+	"data": [
+		{
+			"name": null,
+			"banner": null,
+			"content": {
+				"columns": [
+					{
+						"name": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"rows": [
+					{
+						"name": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"tabs": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"panels": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"default": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"lists": [
+	            	{
+	            		"settings":{
+	            			"name": null,
+	            			"param": null,
+	            			"transition_speed": null,
+		            		"controls": null,
+			            	"featured": null,
+		            		"description": null
+		            	},	            		
+	            		"content": []
+	            	}
+	            ],
+	            "background_media": {
+	                "video": {
+	                    "ogg": null,
+	                    "mp4": null
+	                },
+	                "image": {
+	                    "thumbnail": null,
+	                    "portrait": null,
+	                    "landscape": null
+	                },
+	                "media_type": null
+	            }
+			},
+			"paint": {
+				"background": {
+					"opaqueness": null,
+                    "property": null,
+                    "hue": null,
+                    "color": null
+				},
+				"icon": {
+					"color": null,
+					"hue": null,
+					"property": null,
+					"opaqueness": null
+				},
+				"text": {
+					"opaqueness": null,
+                    "property": null,
+                    "hue": null,
+                    "color": null
+				},
+				"overlay": {
+					"color": null,
+					"hue": null,
+					"property": null,
+					"opaqueness": null
+				},
+                "border": {
+                    "opaqueness": null,
+                    "property": null,
+                    "hue": null,
+                    "color": null
+                }			                
+			}
+		}
+	]
+}
