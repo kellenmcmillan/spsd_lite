@@ -1,0 +1,182 @@
+{
+	"configs": {
+		"name": "3rd Parallax Container",
+		"type": "standard_container",
+		"url": null,
+		"layout": null,
+		"columns": {
+			"has": false,
+			"number": null
+		},
+		"rows": {
+			"has": false,
+			"number": null
+		},
+		"tabs": {
+			"has": false,
+			"number": null
+		},
+		"panels": {
+			"has": false,
+			"number": null
+		},
+		"lists": {
+			"has": false,
+			"number": null
+		},
+		"editable_features": ["default", "background_media", "color"]
+	},
+	"data": [
+		{
+			"name": null,
+			"banner": null,
+			"content": {
+				"columns": [
+					{
+						"name": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"rows": [
+					{
+						"name": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"tabs": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"panels": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"default": [
+					{
+						"name": "Locate Us",
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"lists": [
+	            	{
+	            		"settings":{
+	            			"name": null,
+	            			"param": null,
+	            			"transition_speed": null,
+		            		"controls": null,
+			            	"featured": null,
+		            		"description": null
+		            	},	            		
+	            		"content": []
+	            	}
+	            ],
+	            "background_media": {
+	                "video": {
+	                    "ogg": null,
+	                    "mp4": null
+	                },
+	                "image": {
+	                    "thumbnail": null,
+	                    "portrait": null,
+	                    "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/brand/truck2.jpg"
+	                },
+	                "media_type": "image"
+	            }
+			},
+			"paint": {
+				"background": {
+					"opaqueness": null,
+                    "property": null,
+                    "hue": null,
+                    "color": null
+				},
+				"icon": {
+					"opaqueness": null,
+		            "property": null,
+		            "hue": null,
+		            "color": null
+				},
+				"text": {
+					"opaqueness": "",
+		            "property": "txt",
+		            "hue": "hlst",
+		            "color": "b"
+				},
+				"overlay": {
+					"opaqueness": "dst",
+		            "property": "bg",
+		            "hue": "hdst",
+		            "color": "b"
+				},
+                "border": {
+                    "opaqueness": null,
+                    "property": null,
+                    "hue": null,
+                    "color": null
+                }			                
+			}
+		}
+	]
+}

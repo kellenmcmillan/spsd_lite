@@ -1,7 +1,7 @@
 {
 	"configs": {
 		"name": "Services Page",
-		"type": "tab based interior page",
+		"type": "page_tabbed",
 		"url": "/#/capabilities",
 		"layout": null,
 		"columns": {
@@ -24,7 +24,7 @@
 			"has": false,
 			"number": null
 		},
-		"editable_features": ["tabs", "color"]
+		"editable_features": ["tabs", "background_media", "color"]
 	},
 	"data": [
 		{
