@@ -1,0 +1,214 @@
+{
+	"configs": {
+		"name": "Services",
+		"type": "standard_container",
+		"url": "/#/#capabilities",
+		"layout": null,
+		"columns": {
+			"has": true,
+			"number": 3
+		},
+		"rows": {
+			"has": false,
+			"number": null
+		},
+		"tabs": {
+			"has": false,
+			"number": null
+		},
+		"panels": {
+			"has": false,
+			"number": null
+		},
+		"lists": {
+			"has": false,
+			"number": null
+		},
+		"editable_features": ["default", "color"]
+	},
+	"data": [
+		{
+			"name": "CAPABILITIES",
+			"banner": null,
+			"content": {
+				"columns": [
+					{
+						"name": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"rows": [
+					{
+						"name": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"tabs": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"panels": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"default": [
+					{
+						"name": "Landscape Management",
+						"param": "landscape-management",
+						"images": [
+							{
+								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/capabilities/landscapeConstruction2-landscape.jpg",
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": ["<b>Some Of Our Services:<\/b><br>&bull;&nbsp;&nbsp;Customized Landscape Management Programs<br>&bull;&nbsp;&nbsp;Irrigation management and solutions"],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					},
+					{
+						"name": "Landscape Construction",
+						"param": "landscape-construction",
+						"images": [
+							{
+								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/capabilities/landscapeConstruction1-landscape.jpg",
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": ["<b>Some Of Our Services:<\/b><br>&bull;&nbsp;&nbsp;Landscape Installation<br>&bull;&nbsp;&nbsp;Landscape Drainage"],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					},
+					{
+						"name": "Natural Stone Work",
+						"param": "natural-stone-work",
+						"images": [
+							{
+								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/capabilities/landscapeConstruction3-landscape.jpg",
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": ["<b>Some Of Our Services:<\/b><br>&bull;&nbsp;&nbsp;Masonry Structures<br>&bull;&nbsp;&nbsp;Natural Stone Paving"],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"lists": [
+	            	{
+	            		"settings":{
+	            			"name": null,
+	            			"param": null,
+	            			"transition_speed": null,
+		            		"controls": null,
+			            	"featured": null,
+		            		"description": null
+		            	},	            		
+	            		"content": []
+	            	}
+	            ],
+	            "background_media": {
+	                "video": {
+	                    "ogg": null,
+	                    "mp4": null
+	                },
+	                "image": {
+	                    "thumbnail": null,
+	                    "portrait": null,
+	                    "landscape": null
+	                },
+	                "media_type": null
+	            }
+			},
+			"paint": {
+				"background": {
+					"opaqueness": null,
+                    "property": null,
+                    "hue": null,
+                    "color": null
+				},
+				"icon": {
+					"color": null,
+					"hue": null,
+					"property": null,
+					"opaqueness": null
+				},
+				"text": {
+					"opaqueness": "",
+		            "property": "txt",
+		            "hue": "hlst",
+		            "color": "b"
+				},
+				"overlay": {
+					"opaqueness": "lst",
+		            "property": "bg",
+		            "hue": "hlr",
+		            "color": "b"
+				},
+                "border": {
+                    "opaqueness": "",
+		            "property": "bdr",
+		            "hue": "hlst",
+		            "color": "b"
+                }			                
+			}
+		}
+	]
+}
