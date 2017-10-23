@@ -1,0 +1,182 @@
+{
+	"configs": {
+		"name": "1st Parallax Container",
+		"type": null,
+		"url": "/#/#capabilities",
+		"layout": null,
+		"columns": {
+			"has": false,
+			"number": null
+		},
+		"rows": {
+			"has": false,
+			"number": null
+		},
+		"tabs": {
+			"has": false,
+			"number": null
+		},
+		"panels": {
+			"has": false,
+			"number": null
+		},
+		"lists": {
+			"has": false,
+			"number": null
+		},
+		"editable_features": ["default", "background_media", "color"]
+	},
+	"data": [
+		{
+			"name": null,
+			"banner": null,
+			"content": {
+				"columns": [
+					{
+						"name": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"rows": [
+					{
+						"name": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"tabs": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"panels": [
+					{
+						"name": null,
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"default": [
+					{
+						"name": "Serving North Texas for Over 35 Years",
+						"param": null,
+						"images": [
+							{
+								"src": null,
+								"name": null,
+								"alt": null
+							}
+						],
+						"text": [],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					}
+				],
+				"lists": [
+	            	{
+	            		"settings":{
+	            			"name": null,
+	            			"param": null,
+	            			"transition_speed": null,
+		            		"controls": null,
+			            	"featured": null,
+		            		"description": null
+		            	},	            		
+	            		"content": []
+	            	}
+	            ],
+	            "background_media": {
+	                "video": {
+	                    "ogg": null,
+	                    "mp4": null
+	                },
+	                "image": {
+	                    "thumbnail": null,
+	                    "portrait": null,
+	                    "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/hi-res/wayneFerguson4-hi-res.jpg"
+	                },
+	                "media_type": null
+	            }
+			},
+			"paint": {
+				"background": {
+					"opaqueness": null,
+                    "property": null,
+                    "hue": null,
+                    "color": null
+				},
+				"icon": {
+					"color": null,
+					"hue": null,
+					"property": null,
+					"opaqueness": null
+				},
+				"text": {
+					"opaqueness": "",
+            		"property": "txt",
+		            "hue": "hlst",
+		            "color": "b"
+				},
+				"overlay": {
+					"opaqueness": "dst",
+		            "property": "bg",
+		            "hue": "hdst",
+		            "color": "b"
+				},
+                "border": {
+                    "opaqueness": null,
+                    "property": null,
+                    "hue": null,
+                    "color": null
+                }			                
+			}
+		}
+	]
+}

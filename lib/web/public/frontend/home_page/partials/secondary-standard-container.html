@@ -29,25 +29,25 @@
  style="position: relative; overflow: hidden;"
  full-screen
  data-size
- color="{{secondary_standard_container.component_colors.background_color.color}}"
- hue="{{secondary_standard_container.component_colors.background_color.hue}}"
- property="{{secondary_standard_container.component_colors.background_color.property}}" 
- opaqueness="{{secondary_standard_container.component_colors.background_color.opaqueness}}" 
+ color="{{secondary_standard_container.paint.overlay.color}}"
+ hue="{{secondary_standard_container.paint.overlay.hue}}"
+ property="{{secondary_standard_container.paint.overlay.property}}" 
+ opaqueness="{{secondary_standard_container.paint.overlay.opaqueness}}" 
  lw-color>
     <div 
     class="secondary-standard-container-background">
-        <img src="{{secondary_standard_container.component_background_media.image.hi_res || secondary_standard_container.component_background_media.image.landscape}}" style="display: block; margin: 0 auto;">
+        <img src="{{secondary_standard_container.content.background_media.image.hi_res || secondary_standard_container.content.background_media.image.landscape}}" style="display: block; margin: 0 auto;">
     </div>
 
     <!-- Title -->
     <div vertical-center class="center--text mdl-cell mdl-cell--12-col">
         <h1 
-        class="primary-heading-text mdl-typography--font-bold vertical-element" 
-        color="{{secondary_standard_container.component_colors.text_color.color}}" 
-        hue="{{secondary_standard_container.component_colors.text_color.hue}}" 
-        property="{{secondary_standard_container.component_colors.text_color.property}}" 
-        opaqueness="{{secondary_standard_container.component_colors.text_color.opaqueness}}" 
-        lw-color ng-bind-html="secondary_standard_container.component_data.title[0]">
+        class="primary-heading-text mdl-typography--font-bold center-element" 
+        color="{{secondary_standard_container.paint.text.color}}" 
+        hue="{{secondary_standard_container.paint.text.hue}}" 
+        property="{{secondary_standard_container.paint.text.property}}" 
+        opaqueness="{{secondary_standard_container.paint.text.opaqueness}}" 
+        lw-color ng-bind-html="secondary_standard_container.content.default[0].name">
         </h1>
 
     </div>
