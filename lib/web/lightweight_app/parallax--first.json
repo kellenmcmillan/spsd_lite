@@ -1,7 +1,7 @@
 {
 	"configs": {
 		"name": "1st Parallax Container",
-		"type": null,
+		"type": "standard_container",
 		"url": "/#/#capabilities",
 		"layout": null,
 		"columns": {
@@ -127,6 +127,14 @@
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": null,
+		            		"description": null
+		            	},
+		            	"details":{
+	            			"name": null,
+	            			"param": null,
+	            			"transition_speed": null,
+		            		"controls": null,
+			            	"featured": false,
 		            		"description": null
 		            	},	            		
 	            		"content": []
