@@ -61,7 +61,7 @@
             <p 
             class="portfolio-nav-title base-hdst--text"
             style="font-size: 24px;">
-            	{{folder.title}} | {{folder.description}} | Image {{slide_count + 1}}/{{slideshow_length}}
+            	<span md-truncate>{{folder.details.name}} | {{folder.details.description}}</span> | Image {{slide_count + 1}}/{{slideshow_length}}
             </p>
         </span>
         <span class="mdl-layout-title hide">
@@ -80,7 +80,7 @@
 <!-- curtain -->
 <div class="lightbox_curtain" style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
 	<!-- Lightbox Image -->
-	<div ng-repeat="image in folder">
+	<div ng-repeat="image in folder.content">
 		<img class="lightbox-image" ng-src="{{image.hi_res || image.landscape}}" ng-class="{'active': $index == slide_count}" lightbox-image>
 	</div>
 	<!-- Lightbox Image -->
