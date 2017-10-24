@@ -281,6 +281,22 @@
 		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands9-landscape.jpg",
 		                        "hi_res": null,
 		                        "call_to_action": null
+		                    },
+		                    {
+		                		"avatar": null,
+		        				"icon": null,
+		        				"work_title": null,
+		        				"has_description": false,
+				                "description": null,				                
+				                "location": null,
+				                "name": null,    
+		                        "alt": "Arlington Highlands Artisan Creek",
+		                        "type": "image",
+		                        "is_cover": false,
+		                        "thumbnail": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/arlington-highlands/thumbs/arlingtonHighlands10-thumb.jpg",
+		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/arlington-highlands/hi-res/arlingtonHighlands10-hi-res.jpg",
+		                        "hi_res": null,
+		                        "call_to_action": null
 		                    }
 	            		]
 	            	},
