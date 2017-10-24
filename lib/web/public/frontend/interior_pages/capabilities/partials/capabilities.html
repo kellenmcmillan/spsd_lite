@@ -57,8 +57,8 @@
 
 			    	<br>
 			    	<br>
-			    	<div ng-repeat="(key, value) in compiled_content[current_tab] | orderObjectBy:'position'">
-			    		<div ng-bind-html="value.data"></div>
+			    	<div ng-repeat="item in compiled_content[current_tab] | orderObjectBy:'position'">
+			    		<div ng-bind-html="item.data"></div>
 			    	</div>
 			    	<!-- text -->
 			        <!-- <p class="emphasize" ng-bind-html="tab_data[current_tab].text[0]" color="{{page.data[0].paint.text.color}}" hue="{{page.data[0].paint.text.hue}}" property="{{page.data[0].paint.text.property}}" opaqueness="{{page.data[0].paint.text.background}}" lw-color></p> -->
