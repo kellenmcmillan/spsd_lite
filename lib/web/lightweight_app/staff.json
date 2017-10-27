@@ -131,6 +131,22 @@
 		            	},	            		
 	            		"content": [
 	            			{
+		                		"avatar": null,
+		        				"icon": null,
+		        				"work_title": null,
+		        				"has_description": false,
+				                "description": null,				                
+				                "location": null,
+				                "name": null,    
+		                        "alt": "2016 Shoot For The Blue Hunting Trip",
+		                        "type": "image",
+		                        "is_cover": false,
+		                        "thumbnail": null,
+		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/never-a-dull-moment/2016-shoot-for-the-blue1.jpg",
+		                        "hi_res": null,
+		                        "call_to_action": "/gallery/never-a-dull-moment"
+		                    },
+	            			{
 				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/stewart-garrison.jpg",
 	            				"icon": null,	            				
 	            				"work_title": null,
