@@ -63,7 +63,7 @@ footer {display: none!important;}
 					<span class="lightweight-card-image__filename" ng-click="select_member(tile); $parent.show_dialog = true">Get To Know Me</span>
 				</div> -->
 			</div>
-			<div ng-if="tile.landscape" class="lightweight-card-image-landscape staff mdl-card mdl-shadow--2dp description" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.landscape}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important; text-align: center;" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+			<div ng-if="tile.landscape" class="lightweight-card-image-landscape staff mdl-card mdl-shadow--2dp description" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.landscape}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important; text-align: center; background-position: 75% 0%;" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 				<div class="description-content" style="z-index: 2;" featured-gallery-content>
 					<a href="{{tile.call_to_action}}">
 						<button class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-attr-style="margin: 8px auto 8px auto; background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}}">
