@@ -2,19 +2,15 @@
 footer {display: none!important;}
 .push-from-top {margin-top: 100px;}
 .staff-tile {background-position: 50% -20px!important; background-repeat: no-repeat!important;}
-.staff_overlay {
-	display: none;
-	transition-duration: .5s;
-    transition-timing-function: cubic-bezier(.4,0,.2,1);
-    transition-property: display;
-}
-.staff_overlay.active {display: flex;}
 .lightweight-card-image.hovered {opacity: .9;}
 .lightweight-card-image {background-position: 50% 10%;}
 .lightweight-card-image-landscape {background-position: 50% 50%;}
+.lightweight-card-image-landscape.hovered {opacity: .9;}
 .lightweight-card-image.mdl-card.staff {height: 450px;}
+.lightweight-card-image-landscape.mdl-card.staff {height: 450px;}
 @media screen and (max-width: 839px) {
 	.lightweight-card-image.mdl-card.staff {height: 350px;}
+	.lightweight-card-image-landscape.mdl-card.staff {height: 350px;}
 }
 </style>
 
@@ -47,17 +43,17 @@ footer {display: none!important;}
     </div>
     <div class="mdl-grid" ng-attr-style="min-height: 48px; background: {{base_hue_lighter.value}}">
 
-	    <div ng-repeat="tile in staffTiles" class="mdl-cell  mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-class="{'mdl-cell--6-col-desktop': tile.landscape != null, 'mdl-cell--3-col-desktop': tile.landscape == null}">
+	    <div ng-repeat="tile in staffTiles" class="mdl-cell mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-class="{'mdl-cell--6-col-desktop': tile.landscape != null, 'mdl-cell--3-col-desktop': tile.landscape == null}" ng-click="select_member(tile); $parent.show_dialog = true">
 	    	
-	    	<div ng-if="!tile.landscape" class="lightweight-card-image staff mdl-card mdl-shadow--2dp" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.avatar || '/assets/design/missing-person-image.gif'}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-click="select_member(tile); $parent.show_dialog = true">
+	    	<div ng-if="!tile.landscape" class="lightweight-card-image staff mdl-card mdl-shadow--2dp" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.avatar || '/assets/design/missing-person-image.gif'}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 				<div class="mdl-card__title mdl-card--expand"></div>
 				<!-- <div class="mdl-card__actions">
 					<span class="lightweight-card-image__filename" ng-click="select_member(tile); $parent.show_dialog = true">Get To Know Me</span>
 				</div> -->
 			</div>
 			<div ng-if="tile.landscape" class="lightweight-card-image-landscape staff mdl-card mdl-shadow--2dp description" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.landscape}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" featured-gallery-content>
-				<div class="mdl-card__title mdl-card--expand" ng-attr-style="background-color: {{primary_hue_normal_darkest_opacity}}"></div>
-				<div class="description-content">
+				<div class="mdl-card__title mdl-card--expand" ng-attr-style="background-color: {{primary_hue_normal_darkest_opacity.value}}"></div>
+				<div class="description-content" style="margin-left: auto; margin-right: auto;">
 					<a href="tile.call_to_action">
 						<button class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-attr-style="margin: 8px auto 8px auto; background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}}">
 	                    Never A Dull Momement
