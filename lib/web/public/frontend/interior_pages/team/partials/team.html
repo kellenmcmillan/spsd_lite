@@ -45,13 +45,24 @@ footer {display: none!important;}
 	    </div>
     </div>
     <div class="mdl-grid" ng-attr-style="min-height: 48px; background: {{base_hue_lighter.value}}">
-	    <div ng-click="select_member(tile); $parent.show_dialog = true" ng-repeat="tile in staffTiles" class="mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone"">
+
+	    <div ng-click="select_member(tile); $parent.show_dialog = true" ng-repeat="tile in staffTiles" class="mdl-cell  mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-class="{'mdl-cell--6-col-desktop': tile.landscape != null, 'mdl-cell--3-col-desktop': tile.landscape == null}">
 	    	
-	    	<div class="lightweight-card-image staff mdl-card mdl-shadow--2dp" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.landscape || tile.avatar || '/assets/design/missing-person-image.gif'}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+	    	<div ng-if="!tile.landscape" class="lightweight-card-image staff mdl-card mdl-shadow--2dp" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.avatar || '/assets/design/missing-person-image.gif'}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 				<div class="mdl-card__title mdl-card--expand"></div>
 				<!-- <div class="mdl-card__actions">
 					<span class="lightweight-card-image__filename" ng-click="select_member(tile); $parent.show_dialog = true">Get To Know Me</span>
 				</div> -->
+			</div>
+			<div ng-if="tile.landscape" class="lightweight-card-image staff mdl-card mdl-shadow--2dp" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.landscape}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+				<div class="mdl-card__title mdl-card--expand"></div>
+				<div class="mdl-card__actions">
+					<a href="tile.call_to_action">
+						<button class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-attr-style="margin: 8px auto 8px auto; background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}}">
+	                    Never A Dull Momement
+	                    </button>
+                    </a>
+				</div>
 			</div>
 
 	    </div>

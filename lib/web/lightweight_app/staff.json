@@ -131,7 +131,7 @@
 		            	},	            		
 	            		"content": [
 	            			{
-		                		"avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/never-a-dull-moment/2016-shoot-for-the-blue1.jpg",
+		                		"avatar": null,
 		        				"icon": null,
 		        				"work_title": null,
 		        				"has_description": false,
@@ -142,7 +142,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": null,
-		                        "landscape": null,
+		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/never-a-dull-moment/2016-shoot-for-the-blue1.jpg",
 		                        "hi_res": null,
 		                        "call_to_action": "/gallery/never-a-dull-moment"
 		                    },
@@ -160,6 +160,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				       
@@ -176,6 +177,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -192,6 +194,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -208,6 +211,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -224,6 +228,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -240,6 +245,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -256,6 +262,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {
@@ -272,6 +279,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				       
@@ -288,6 +296,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -304,6 +313,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -320,6 +330,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -336,6 +347,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -352,6 +364,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -368,6 +381,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -384,6 +398,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -400,6 +415,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -416,6 +432,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -432,6 +449,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -448,6 +466,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -464,6 +483,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -480,6 +500,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -496,6 +517,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -512,6 +534,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -528,6 +551,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -544,6 +568,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            },
 				            {				                
@@ -560,6 +585,7 @@
 				                "hi_res": null,
 				                "thumbnail": null,
 	            				"landscape": null,
+	            				"hi_res": null,
 				                "call_to_action": null
 				            }
 	            		]
