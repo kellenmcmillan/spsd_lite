@@ -131,7 +131,7 @@
 		            	},	            		
 	            		"content": [
 	            			{
-		                		"avatar": null,
+		                		"avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/never-a-dull-moment/2016-shoot-for-the-blue1.jpg",
 		        				"icon": null,
 		        				"work_title": null,
 		        				"has_description": false,
@@ -142,7 +142,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": null,
-		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/never-a-dull-moment/2016-shoot-for-the-blue1.jpg",
+		                        "landscape": null,
 		                        "hi_res": null,
 		                        "call_to_action": "/gallery/never-a-dull-moment"
 		                    },
@@ -153,7 +153,7 @@
 	            				"is_cover": null,
 	            				"has_description": true,
 				                "description": "I like cliff diving!",				                
-				                "location": "Ar;ington, TX",
+				                "location": "Arlington, TX",
 				                "name": "Stewart Garrison",
 				                "alt": "An image of Stewart Garrison",
 				                "type": "image",
@@ -387,7 +387,7 @@
 				                "call_to_action": null
 				            },
 				            {				                
-				                "avatar": null,
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/jean-taylor.jpg",
 	            				"icon": null,	            				
 	            				"work_title": null,
 	            				"is_cover": null,
@@ -419,7 +419,7 @@
 				                "call_to_action": null
 				            },
 				            {				                
-				                "avatar": null,
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/carlos-bonilla.jpg",
 	            				"icon": null,	            				
 	            				"work_title": null,
 	            				"is_cover": null,
@@ -435,7 +435,7 @@
 				                "call_to_action": null
 				            },
 				            {				                
-				                "avatar": null,
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/hunter-garrison.jpg",
 	            				"icon": null,	            				
 	            				"work_title": null,
 	            				"is_cover": null,
@@ -451,7 +451,7 @@
 				                "call_to_action": null
 				            },
 				            {				                
-				                "avatar": null,
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/hannah-middleton.jpg",
 	            				"icon": null,	            				
 	            				"work_title": null,
 	            				"is_cover": null,
@@ -467,7 +467,7 @@
 				                "call_to_action": null
 				            },
 				            {				                
-				                "avatar": null,
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/jack-hill.jpg",
 	            				"icon": null,	            				
 	            				"work_title": null,
 	            				"is_cover": null,
@@ -499,7 +499,7 @@
 				                "call_to_action": null
 				            },
 				            {				                
-				                "avatar": null,
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/matt-hagen.jpg",
 	            				"icon": null,	            				
 	            				"work_title": null,
 	            				"is_cover": null,
@@ -515,7 +515,7 @@
 				                "call_to_action": null
 				            },
 				            {				                
-				                "avatar": null,
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/jim-wigington.jpg",
 	            				"icon": null,	            				
 	            				"work_title": null,
 	            				"is_cover": null,
@@ -547,7 +547,7 @@
 				                "call_to_action": null
 				            },
 				            {				                
-				                "avatar": null,
+				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/staff/terryca-jones.jpg",
 	            				"icon": null,	            				
 	            				"work_title": null,
 	            				"is_cover": null,
