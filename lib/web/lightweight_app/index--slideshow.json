@@ -1,7 +1,7 @@
 {
 	"configs": {
 		"name": "Slideshow Hero",
-		"type": "list",
+		"type": "slideshow",
 		"url": null,
 		"layout": null,
 		"columns": {
