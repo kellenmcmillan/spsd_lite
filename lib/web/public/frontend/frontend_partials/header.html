@@ -4,10 +4,13 @@
     opacity: 0;
     transition-duration: .3s;
     transition-timing-function: cubic-bezier(.4,0,.2,1);
-    transition-property: background-color, opacity;
+    transition-property: opacity;
 }
 .back-to-top:hover {
     background-color: {{primary_hue_lighter.value}};
+}
+.back-to-top:active {
+    background-color: {{primary_hue_normal.value}};
 }
 .lightweight-navigation-link {position: relative;}
 .lightweight-navigation-link:after {
@@ -31,15 +34,7 @@
     }
 </style>
 
-<a 
- class="back-to-top mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp"
- style="position: fixed; bottom: 64px; right: 32px; z-index: 100"
- href="/#/#top"
- hash="/#/#top"
-
- du-scrollspy
- du-smooth-scroll
- du-scroll-container="lightweight_content">
+<a class="back-to-top mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp" style="position: fixed; bottom: 64px; right: 32px; z-index: 100" href="/#/#top" du-scrollspy du-smooth-scroll du-scroll-container="lightweight_content">
     <i 
     class="material-icons base-hlst--text" 
     role="presentation">
