@@ -2,8 +2,13 @@
 footer {display: none!important;}
 .push-from-top {margin-top: 100px;}
 .staff-tile {background-position: 50% -20px!important; background-repeat: no-repeat!important;}
-.lightweight-card-image.hovered {opacity: .9;}
-.lightweight-card-image {background-position: 50% 10%;}
+.lightweight-card-image.hovered {opacity: .9; filter: none;}
+.lightweight-card-image {
+	background-position: 50% 10%; filter: grayscale(100%);
+	transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: filter, opacity;
+}
 .lightweight-card-image-landscape {background-position: 50% 50%;}
 .lightweight-card-image-landscape.hovered {opacity: .9;}
 .lightweight-card-image.mdl-card.staff {height: 450px;}
