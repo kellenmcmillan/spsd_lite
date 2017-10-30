@@ -8,4 +8,8 @@ a, div, .mdl-card__supporting-text, button{letter-spacing: 0em!important; font-f
 * {outline: none!important;}
 @media (max-width: 840px) {h2.mdl-card__title-text {font-size: 16px;}}
 p {font-size: 16px;}
+/* Apple Header Fix */
+.mdl-layout__container > div[style*="height: 100px"] { display: none!important; }
+/* Apple Header Fix */
+
 /*Default fixes*/
