@@ -55,9 +55,9 @@ footer {display: none!important;}
     </div>
     <div class="mdl-grid" ng-attr-style="min-height: 48px; background: {{base_hue_lighter.value}}">
 
-	    <div ng-repeat="tile in staffTiles" class="mdl-cell mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-class="{'mdl-cell--10-col-desktop': tile.landscape != null, 'mdl-cell--2-col-desktop': tile.landscape == null}" ng-click="select_member(tile);">
+	    <div ng-repeat="tile in staffTiles" class="mdl-cell mdl-cell--4-col-tablet mdl-cell--4-col-phone" ng-class="{'mdl-cell--9-col-desktop': tile.landscape != null, 'mdl-cell--3-col-desktop': tile.landscape == null}" ng-click="select_member(tile);">
 	    	
-	    	<div ng-if="!tile.landscape" class="lightweight-card-image staff mdl-card mdl-shadow--2dp" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.avatar || '/assets/design/missing-person-image.gif'}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+	    	<div ng-if="!tile.landscape" class="lightweight-card-image staff mdl-card mdl-shadow--2dp" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.avatar || '/assets/design/missing-person-image.gif'}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important; background-size: cover;" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 				<div class="mdl-card__title mdl-card--expand"></div>
 			</div>
 			<div ng-if="tile.landscape" class="lightweight-card-image-landscape staff mdl-card mdl-shadow--2dp description" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.landscape}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important; text-align: center; background-position: 50% 40%;" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
