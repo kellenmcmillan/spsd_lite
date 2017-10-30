@@ -21,7 +21,7 @@
 		max-width: 120px;
 	}
 	#primaryLogo {max-height: 72px; width: auto; transition: all .5s ease-in-out;}
-	#loadingScreenPrimaryLogo {max-height: 120px; width: auto; transition: all .5s ease-in-out;}
+	#loadingScreenPrimaryLogo {max-height: 200px; width: auto; transition: all .5s ease-in-out;}
 	@media (max-width: 640px) {#primaryLogo {max-height: 64px; width: auto;}}
 	
 	/*Front-End-Critical*/

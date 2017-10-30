@@ -14,7 +14,7 @@
 <style ng-if="is_stretched">
     .mdl-badge[data-badge]:after {background: {{primary_hue_normal.value}}!important; color: {{base_hue_text__lightest.value}}!important}
 </style> -->
-<style ng-if="!apple_device">
+<style>
 	.lightweight-header-row {background-color: {{base_hue_lightest.value}};}
 	.header-navigation {color: {{base_hue_text__darker.value}};}
     /*.mdl-layout__header {background-color: {{base_hue_lightest.value}}!important;}
@@ -28,7 +28,7 @@
     .logged-in .auth-circle {font-size: 50px; cursor: pointer;}
     .mdl-layout__drawer-button i {display:none!important;}
 </style>
-<style ng-if="apple_device">
+<!-- <style ng-if="apple_device">
     .mdl-layout__header {display: none!important;}
     .lightweight-header-row {background-color: {{base_hue_lightest.value}};}
     .header-navigation {color: {{base_hue_text__darker.value}};}
@@ -38,7 +38,7 @@
     .auth-circle {cursor: pointer;}
     .logged-in .auth-circle {font-size: 50px; cursor: pointer;}
     .mdl-layout__drawer-button i {display:none!important;}
-</style>
+</style> -->
 <!-- <style ng-if="location !== '/' && is_stretched">
     .mdl-layout__header {border-bottom: {{primary_hue_normal.value}} 2px solid;}
     .header-navigation {color: {{base_hue_text__lightest.value}}!important;}
