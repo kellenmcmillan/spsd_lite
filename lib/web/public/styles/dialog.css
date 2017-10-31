@@ -34,12 +34,12 @@
  max-height: inherit;
  position: relative;
  margin: 96px auto 96px auto;
- width: 300px;
+ width: 500px;
  z-index: 999;
 }
 @media (max-width: 840px) {
 	.lightweight-dialog-card {
-
+		width: 300px;
 	}
 }
 .lightweight-dialog-card li {height: 48px;}
