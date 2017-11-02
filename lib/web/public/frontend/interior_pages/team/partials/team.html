@@ -89,15 +89,15 @@ footer {display: none!important;}
 <!-- Dialog Component -->
 <div ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="show_dialog">
 
-    <div class="lightweight-dialog-card mdl-card mdl-shadow--4dp base-hlst" ng-show="show_dialog" style="z-index: 10001; margin: 96px auto 96px 0;">
+    <div class="lightweight-dialog-card mdl-card mdl-shadow--4dp base-hlst" ng-show="show_dialog" style="z-index: 10001; margin: 96px auto 96px auto;">
         <!-- Supporting Text (description) -->
-        <div class="mdl-card__supporting-text center--block mdl-grid">
+        <div class="mdl-card__supporting-text center--block mdl-grid no-padding no-margin">
         	<!-- Staff Picture -->
 	        <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone no-padding no-margin" style="background-repeat: no-repeat;">
 	        	<img ng-src="{{member.avatar || '/assets/design/missing-person-image.gif'}}" alt="{{member.name}}'s Picture">
 	        </div>
 	        <!-- Staff Picture -->
-	        <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone no-padding no-margin {{base_hue_lightest.name}}">
+	        <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}">
 		        <h4>{{member.title || 'Position | Title'}}</h4>
 		    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic;">Q: What do you find rewarding?</h5>
 		    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{member.description[0] || "I'm busy doing just that..."}}</p>
