@@ -108,7 +108,7 @@
 	</span> -->
 	<!-- Slideshow Control -->
 	<div style="position: absolute; bottom: 80px; right: 32px;" layout="row" layout-align="center center">
-		<md-fab-speed-dial md-open="open" md-direction="up" ng-class="md-fling" ng-mouseenter="open = true" ng-mouseleave="open = false">
+		<md-fab-speed-dial md-open="$parent.open" md-direction="up" ng-class="md-fling" ng-mouseenter="$parent.open = true" ng-mouseleave="$parent.open = false">
 			<md-fab-trigger>
 				<md-button aria-label="slideshow menu" class="md-fab" ng-attr-style="background-color: {{primary_hue_normal.value}}">
 					<md-icon 
