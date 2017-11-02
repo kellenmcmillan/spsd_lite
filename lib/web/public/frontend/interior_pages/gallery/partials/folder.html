@@ -42,41 +42,12 @@
 <!-- Navbar -->
 <div class="portfolio-nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15); z-index: 10;">
 	<div class="portfolio-nav--row">
-		<span class="mdl-layout-title">
-			<a class="back-home" go-back-angular>
-            	<i class="material-icons" style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>
-            </a>
-        </span>
-        <span class="mdl-layout-title">
-        	<a class="back-home" go-back-angular style="text-decoration: none; cursor: pointer;">
-				<p 
-	            class="portfolio-nav-title base-hdst--text"
-	            style="font-size: 24px;">
-	                Back
-	            </p>
-            </a>
-        </span>
-        <div class="mdl-layout-spacer"></div>
-        <span class="mdl-layout-title">
-			<a class="regular-button-link" href="/gallery">
-            	<i class="material-icons" style="font-weight: normal; cursor: pointer;" color="b" property="txt" hue="hdr" opaqueness lw-color>photo_library</i>
-            </a>
-        </span>
-        <span class="mdl-layout-title">
-        	<a href="/gallery" style="text-decoration: none; cursor: pointer;">
-				<p 
-	            class="portfolio-nav-title base-hdst--text"
-	            style="font-size: 24px;">
-	               View Galleries
-	            </p>
-            </a>
-        </span>
         <div class="mdl-layout-spacer"></div>
         <span class="mdl-layout-title">
             <p 
             class="portfolio-nav-title base-hdst--text"
             style="font-size: 24px;">
-            	<span md-truncate>{{folder.details.name}}</span>
+            	<span>{{folder.details.name}}</span> | <span>Image {{slide_count + 1}}/{{slideshow_length}}</span>
             </p>
         </span>
         <span class="mdl-layout-title hide">
@@ -112,7 +83,7 @@
 			<md-fab-trigger>
 				<md-button aria-label="slideshow menu" class="md-fab" ng-attr-style="background-color: {{primary_hue_normal.value}}">
 					<md-icon 
-					aria-label="Chat"
+					aria-label="Menu"
 					md-font-library="material-icons" 
 					color="base" 
 				    hue="hue lighter" 
@@ -155,7 +126,7 @@
 				    	chevron_right
 				    </md-icon>
 				</md-button>
-				<md-button aria-label="View All Galleries" class="md-fab md-raised md-mini">
+				<md-button aria-label="View All Galleries" class="md-fab md-raised md-mini" go-back-angular>
 					<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
 		              	All Galleries
 		            </md-tooltip>
