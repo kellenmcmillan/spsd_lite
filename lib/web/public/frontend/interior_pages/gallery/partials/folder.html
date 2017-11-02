@@ -128,7 +128,7 @@
 				</md-button>
 				<md-button aria-label="View All Galleries" class="md-fab md-raised md-mini" go-back-angular>
 					<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
-		              	All Galleries
+		              	Previous Page
 		            </md-tooltip>
 					<md-icon 
 					aria-label="Chat"
@@ -138,9 +138,26 @@
 				    property="text" 
 				    opaqueness="" 
 				    lw-color>
-				    	photo_library
+				    	arrow_back
 				    </md-icon>
 				</md-button>
+				<a href="/gallery">
+					<md-button aria-label="View All Galleries" class="md-fab md-raised md-mini">
+						<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
+			              	All Galleries
+			            </md-tooltip>
+						<md-icon 
+						aria-label="Chat"
+						md-font-library="material-icons" 
+						color="primary" 
+					    hue="hue normal" 
+					    property="text" 
+					    opaqueness="" 
+					    lw-color>
+					    	photo_library
+					    </md-icon>
+					</md-button>
+				</a>
 			</md-fab-actions>
 		</md-fab-speed-dial>
     </div>
