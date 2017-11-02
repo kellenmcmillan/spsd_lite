@@ -103,14 +103,14 @@ footer {display: none!important;}
         </div>
         <!-- Staff Picture -->
         <!-- Supporting Text (description) -->
-        <div class="mdl-card__supporting-text center--block">
-        <h4>{{member.title || 'Position | Title'}}</h4>
-    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic;">Q: What do you find rewarding?</h5>
-    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{member.description[0] || "I'm busy doing just that..."}}</p>
-    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic;">Q: What was your first job?</h5>
-    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{member.description[1] || "I'll get back to you!"}}</p>
-    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic;">Q: Provide one fun fact about yourself!</h5>
-    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{member.description[2] || 'This is where things will get interesting...'}}</p>
+        <div class="mdl-card__supporting-text center--block" style="position: relative;">
+	        <h4>{{member.title || 'Position | Title'}}</h4>
+	    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic;">Q: What do you find rewarding?</h5>
+	    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{member.description[0] || "I'm busy doing just that..."}}</p>
+	    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic;">Q: What was your first job?</h5>
+	    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{member.description[1] || "I'll get back to you!"}}</p>
+	    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic;">Q: Provide one fun fact about yourself!</h5>
+	    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{member.description[2] || 'This is where things will get interesting...'}}</p>
         </div>
         <!-- Supporting Text (description) -->
     </div>
@@ -124,6 +124,7 @@ footer {display: none!important;}
 	        </div>
 	        <!-- Staff Picture -->
 	        <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" style="position: relative;">
+	        	<h2 class="mdl-card__title-text mdl-color-text--grey-800">{{member.name}}</h2>
 		        <h4>{{member.title || 'Position | Title'}}</h4>
 		    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic;">Q: What do you find rewarding?</h5>
 		    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{member.description[0] || "I'm busy doing just that..."}}</p>
@@ -131,12 +132,10 @@ footer {display: none!important;}
 		    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{member.description[1] || "I'll get back to you!"}}</p>
 		    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic;">Q: Provide one fun fact about yourself!</h5>
 		    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{member.description[2] || 'This is where things will get interesting...'}}</p>
-		    	<div class="mdl-layout-spacer"></div>
-            	<i class="material-icons" style="cursor: pointer;" ng-click="$parent.show_dialog = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
+		    	<i class="material-icons" style="cursor: pointer; position: absolute; top: 16px; right: 16px;" ng-click="$parent.show_dialog = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
 	    	</div>
         </div>
         <!-- Supporting Text (description) -->
-    	<i class="material-icons" style="cursor: pointer; position: absolute; top: 16px; right: 16px;" ng-click="show_dialog = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
     </div>
 
     
