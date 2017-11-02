@@ -89,7 +89,7 @@ footer {display: none!important;}
 <!-- Dialog Component -->
 <div ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="show_dialog">
 
-    <div ng-if="window_width < 640" class="lightweight-dialog-card mdl-card mdl-shadow--4dp base-hlst" ng-show="$parent.show_dialog" style="z-index: 10001;">
+    <div ng-if="window_width < 640" class="lightweight-dialog-card mdl-card mdl-shadow--4dp base-hlst" ng-show="$parent.show_dialog" style="z-index: 10001; border-radius: 0;">
         <!-- Card header -->
         <div class="mdl-card__title">
             <h2 class="mdl-card__title-text mdl-color-text--grey-800">{{member.name}}</h2>
