@@ -100,14 +100,14 @@
 	</div>
 	<!-- Lightbox Image -->
 	<!-- Slideshow Control -->
-	<span class="border--radius-5 slide-controller" style="padding: 16px; position: absolute; left: 32px; top: calc(50% - 64px); background: rgba(66, 66, 66, 0.7); display: flex; cursor: pointer;" ng-click="left_slideshow_control()" ng-class="{'border--radius-circle': hover_left == true}" ng-mouseenter="hover_left = true" ng-mouseleave="hover_left = false">
+	<!-- <span class="border--radius-5 slide-controller" style="padding: 16px; position: absolute; left: 32px; top: calc(50% - 64px); background: rgba(66, 66, 66, 0.7); display: flex; cursor: pointer;" ng-click="left_slideshow_control()" ng-class="{'border--radius-circle': hover_left == true}" ng-mouseenter="hover_left = true" ng-mouseleave="hover_left = false">
 		<i class="material-icons mdl-typography--font-thin {{base_hue_text__lightest.name}}" role="presentation" ng-click="left_slideshow_control()" style="cursor: pointer;">chevron_left</i>
 	</span>
 	<span class="border--radius-5 slide-controller" style="padding: 16px; position: absolute; right: 32px; top: calc(50% - 64px); background: rgba(66, 66, 66, 0.7); display: flex; cursor: pointer;" ng-click="right_slideshow_control()" ng-class="{'border--radius-circle': hover_right == true}" ng-mouseenter="hover_right = true" ng-mouseleave="hover_right = false">
 		<i class="material-icons mdl-typography--font-thin {{base_hue_text__lightest.name}}" role="presentation" ng-click="right_slideshow_control()" style="cursor: pointer;">chevron_right</i>
-	</span>
+	</span> -->
 	<!-- Slideshow Control -->
-	<div style="position: absolute; bottom: 64px; right: 32px;" layout="row" layout-align="center center">
+	<div style="position: absolute; bottom: 80px; right: 32px;" layout="row" layout-align="center center">
 		<md-fab-speed-dial md-open="fabMenuOpen" md-direction="up" ng-class="md-fling">
 			<md-fab-trigger>
 				<md-button aria-label="slideshow menu" class="md-fab" ng-attr-style="background-color: {{primary_hue_normal.value}}">
@@ -125,9 +125,9 @@
 			</md-fab-trigger>
 
 			<md-fab-actions>
-				<md-button aria-label="Slideshow Forward" class="md-fab md-raised md-mini">
+				<md-button aria-label="Slideshow Backward" class="md-fab md-raised md-mini">
 					<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
-		              	Forward
+		              	Backward
 		            </md-tooltip>
 					<md-icon 
 					aria-label="Chat"
@@ -140,9 +140,9 @@
 				    	chevron_left
 				    </md-icon>
 				</md-button>
-				<md-button aria-label="Slideshow Backward" class="md-fab md-raised md-mini">
+				<md-button aria-label="Slideshow Forward" class="md-fab md-raised md-mini" ng-click="right_slideshow_control()">
 					<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
-		              	Backwards
+		              	Forward
 		            </md-tooltip>
 					<md-icon 
 					aria-label="Chat"
