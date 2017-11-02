@@ -34,7 +34,7 @@
  max-height: inherit;
  position: relative;
  margin: 96px auto 96px auto;
- width: 40%;
+ width: 60%;
  z-index: 999;
 }
 @media (max-width: 840px) {
