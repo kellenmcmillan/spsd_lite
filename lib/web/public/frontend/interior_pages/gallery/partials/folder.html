@@ -108,7 +108,7 @@
 	</span> -->
 	<!-- Slideshow Control -->
 	<div style="position: absolute; bottom: 80px; right: 32px;" layout="row" layout-align="center center">
-		<md-fab-speed-dial md-open="$parent.open" md-direction="up" ng-class="md-fling" ng-mouseenter="$parent.open = true" ng-mouseleave="$parent.open = false">
+		<md-fab-speed-dial md-open="isOpen" md-direction="up" ng-class="md-fling md-hover-full" ng-mouseenter="isOpen = true" ng-mouseleave="isOpen = false">
 			<md-fab-trigger>
 				<md-button aria-label="slideshow menu" class="md-fab" ng-attr-style="background-color: {{primary_hue_normal.value}}">
 					<md-icon 
@@ -125,7 +125,7 @@
 			</md-fab-trigger>
 
 			<md-fab-actions>
-				<md-button aria-label="Slideshow Backward" class="md-fab md-raised md-mini">
+				<md-button aria-label="Slideshow Backward" class="md-fab md-raised md-mini" ng-click="left_slideshow_control()>
 					<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
 		              	Backward
 		            </md-tooltip>
