@@ -12,21 +12,6 @@
 <!-- Navbar -->
 <div class="portfolio-nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15);">
 	<div class="portfolio-nav--row">
-		<span class="mdl-layout-title">
-			<a class="regular-button-link" go-back-angular>
-            	<i class="material-icons" style="font-weight: normal; cursor: pointer;">keyboard_backspace</i>
-            </a>
-        </span>
-        <span class="mdl-layout-title">
-        	<a go-back-angular style="text-decoration: none; cursor: pointer;">
-				<p 
-	            class="portfolio-nav-title base-hdst--text"
-	            style="font-size: 24px;">
-	                Back
-	            </p>
-            </a>
-        </span>
-        <div class="mdl-layout-spacer"></div>
         <span class="mdl-layout-title">
             <p 
             class="portfolio-nav-title base-hdst--text"
@@ -64,6 +49,59 @@
 		</div>
 	</div>
 	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
+	<div style="position: absolute; bottom: 80px; right: 32px;" layout="row" layout-align="center center">
+		<md-fab-speed-dial md-open="isOpen" md-direction="up" class="md-fling md-hover-full" ng-mouseenter="isOpen = true" ng-mouseleave="isOpen = false">
+			<md-fab-trigger>
+				<md-button aria-label="slideshow menu" class="md-fab" ng-attr-style="background-color: {{primary_hue_normal.value}}">
+					<md-icon 
+					aria-label="Menu"
+					md-font-library="material-icons" 
+					color="base" 
+				    hue="hue lighter" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	menu
+				    </md-icon>
+				</md-button>
+			</md-fab-trigger>
+
+			<md-fab-actions>
+				<md-button aria-label="Previous Page" class="md-fab md-raised md-mini" go-back-angular>
+					<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
+		              	Previous Page
+		            </md-tooltip>
+					<md-icon 
+					aria-label="Previous Page"
+					md-font-library="material-icons" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	arrow_back
+				    </md-icon>
+				</md-button>
+				<a href="/">
+					<md-button aria-label="Back Home" class="md-fab md-raised md-mini">
+						<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
+			              	Home
+			            </md-tooltip>
+						<md-icon 
+						aria-label="Back Home"
+						md-font-library="material-icons" 
+						color="primary" 
+					    hue="hue normal" 
+					    property="text" 
+					    opaqueness="" 
+					    lw-color>
+					    	home
+					    </md-icon>
+					</md-button>
+				</a>
+			</md-fab-actions>
+		</md-fab-speed-dial>
+    </div>
 </div>
 <!-- Photo Grid -->
 
