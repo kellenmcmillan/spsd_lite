@@ -3245,9 +3245,9 @@
 	                    "mp4": null
 	                },
 	                "image": {
-	                    "thumbnail": null,
-	                    "portrait": null,
-	                    "landscape": null
+	                    "name": null,
+	                    "alt": null,
+	                    "src": null
 	                },
 	                "media_type": null
 	            }

@@ -1,12 +1,12 @@
 {
 	"configs": {
-		"name": null,
-		"type": null,
-		"url": null,
+		"name": "Mission",
+		"type": "standard_container",
+		"url": "/#/#mission",
 		"layout": null,
 		"columns": {
-			"has": false,
-			"number": null
+			"has": true,
+			"number": 2
 		},
 		"rows": {
 			"has": false,
@@ -24,7 +24,7 @@
 			"has": false,
 			"number": null
 		},
-		"editable_features": []
+		"editable_features": ["default", "color"]
 	},
 	"data": [
 		{
@@ -104,13 +104,31 @@
 				],
 				"default": [
 					{
-						"name": null,
+						"name": "Our Mission",
+						"name_2": "Execute",
 						"param": null,
 						"images": [
 							{
 								"src": null,
 								"name": null,
 								"alt": null
+							}
+						],
+						"text": ["Our Mission is to partner with Fair, Equitable and Enjoyable clients and team members while fostering a culture of extreme ownership of individual and team duties at all levels of the company. Step by Step, we strive to maintain the clients vision, from the building stage to complete landscape management."],
+						"lists": [],
+						"date": null,
+						"icon": null,
+						"class": null
+					},
+					{
+						"name": null,
+						"name_2": null,
+						"param": null,
+						"images": [
+							{
+								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/capabilities/landscapeConstruction4-landscape.jpg",
+								"name": null,
+								"alt": "An image showing one of our maintenance jobs"
 							}
 						],
 						"text": [],
@@ -157,9 +175,9 @@
 			"paint": {
 				"background": {
 					"opaqueness": null,
-                    "property": null,
-                    "hue": null,
-                    "color": null
+                    "property": "bg",
+                    "hue": "hlst",
+                    "color": "b"
 				},
 				"icon": {
 					"color": null,
@@ -169,9 +187,9 @@
 				},
 				"text": {
 					"opaqueness": null,
-                    "property": null,
-                    "hue": null,
-                    "color": null
+                    "property": "txt",
+                    "hue": "hdst",
+                    "color": "b"
 				},
 				"overlay": {
 					"color": null,

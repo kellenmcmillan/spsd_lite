@@ -29,6 +29,7 @@
 	"data": [
 		{
 			"name": "CAPABILITIES",
+			"name_2": null,
 			"banner": null,
 			"content": {
 				"columns": [
@@ -178,9 +179,9 @@
 	                    "mp4": null
 	                },
 	                "image": {
-	                    "thumbnail": null,
-	                    "portrait": null,
-	                    "landscape": null
+	                    "name": null,
+	                    "alt": null,
+	                    "src": null
 	                },
 	                "media_type": null
 	            }

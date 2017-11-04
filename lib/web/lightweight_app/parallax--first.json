@@ -146,9 +146,9 @@
 	                    "mp4": null
 	                },
 	                "image": {
-	                    "thumbnail": null,
-	                    "portrait": null,
-	                    "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/hi-res/wayneFerguson4-hi-res.jpg"
+	                    "name": null,
+	                    "alt": null,
+	                    "src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/hi-res/wayneFerguson4-hi-res.jpg"
 	                },
 	                "media_type": null
 	            }
