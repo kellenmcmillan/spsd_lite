@@ -234,22 +234,22 @@
 	            				"landscape": null,
 				                "call_to_action": null
 				            },
-				            {				                
-				                "avatar": null,
-	            				"icon": null,
-	            				"work_title": null,
-	            				"is_cover": null,
-	            				"has_description": false,
+				            {
+		                		"avatar": null,
+		        				"icon": null,
+		        				"work_title": null,
+		        				"has_description": false,
 				                "description": null,				                
-				                "location": "Fort Worth, TX",
-				                "name": "Sundance Square",
-				                "alt": "An image of landscaping at Sundance Square in Fort Worth",
-				                "type": "image",
-				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/sundance-square/hi-res/sundanceSquare1-hi-res.jpg",
-				                "thumbnail": null,
-	            				"landscape": null,
-				                "call_to_action": null
-				            }
+				                "location": "Fort Worth, Tx",
+				                "name": "HOA",    
+		                        "alt": "An Image of a Home Owners Association Affiliated Development",
+		                        "type": "image",
+		                        "is_cover": true,
+		                        "thumbnail": null,
+		                        "landscape": null,
+		                        "call_to_action": null,
+		                        "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/home-owners-association/hi-res/hoa1-hi-res.jpg"
+		                    }
 	            		]
 	            	}
 	            ],
