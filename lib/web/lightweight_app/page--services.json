@@ -178,9 +178,9 @@
 	                    "mp4": null
 	                },
 	                "image": {
-	                    "thumbnail": null,
-	                    "portrait": null,
-	                    "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/discovery-at-the-realm/landscape/discovery-realm3-landscape.jpg"
+	                	"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/discovery-at-the-realm/landscape/discovery-realm3-landscape.jpg",
+						"name": null,
+						"alt": null
 	                },
 	                "media_type": null
 	            }
