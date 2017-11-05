@@ -4,26 +4,11 @@
 		"type": "standard_container",
 		"url": "/#/#capabilities",
 		"layout": null,
-		"columns": {
-			"has": true,
-			"number": 3
-		},
-		"rows": {
-			"has": false,
-			"number": null
-		},
-		"tabs": {
-			"has": false,
-			"number": null
-		},
-		"panels": {
-			"has": false,
-			"number": null
-		},
-		"lists": {
-			"has": false,
-			"number": null
-		},
+		"columns": true,
+		"rows": false,
+		"tabs": false,
+		"panels": false,
+		"lists": false,
 		"editable_features": ["default", "color"]
 	},
 	"data": [

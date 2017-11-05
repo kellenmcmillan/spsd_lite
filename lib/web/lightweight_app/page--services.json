@@ -4,26 +4,11 @@
 		"type": "page_tabbed",
 		"url": "/#/capabilities",
 		"layout": null,
-		"columns": {
-			"has": false,
-			"number": null
-		},
-		"rows": {
-			"has": false,
-			"number": null
-		},
-		"tabs": {
-			"has": true,
-			"number": 3
-		},
-		"panels": {
-			"has": false,
-			"number": null
-		},
-		"lists": {
-			"has": false,
-			"number": null
-		},
+		"columns": false,
+		"rows": false,
+		"tabs": true,
+		"panels": false,
+		"lists": false,
 		"editable_features": ["tabs", "background_media", "color"]
 	},
 	"data": [

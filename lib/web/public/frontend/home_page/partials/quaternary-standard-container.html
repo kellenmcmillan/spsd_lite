@@ -29,14 +29,14 @@
  style="position: relative; overflow: hidden;" 
  data-size 
  full-screen
- color="{{quaternary_standard_container.component_colors.background_color.color}}"
- hue="{{quaternary_standard_container.component_colors.background_color.hue}}"
- property="{{quaternary_standard_container.component_colors.background_color.property}}" 
- opaqueness="{{quaternary_standard_container.component_colors.background_color.opaqueness}}" 
+ color="{{quaternary_standard_container.paint.overlay.color}}"
+ hue="{{quaternary_standard_container.paint.overlay.hue}}"
+ property="{{quaternary_standard_container.paint.overlay.property}}" 
+ opaqueness="{{quaternary_standard_container.paint.overlay.opaqueness}}" 
  lw-color>
     <span id="galleries" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
     <div class="quaternary-standard-container-background">
-        <img src="{{quaternary_standard_container.component_background_media.image.hi_res || quaternary_standard_container.component_background_media.image.landscape}}" style="display: block; margin: 0 auto;">
+        <img src="{{quaternary_standard_container.content.background_media.image.src}}" style="display: block; margin: 0 auto;">
     </div>
 
     <!-- Title -->
@@ -44,11 +44,11 @@
 
         <h1 
         class="primary-heading-text mdl-typography--font-bold vertical-element" 
-        color="{{quaternary_standard_container.component_colors.text_color.color}}" 
-        hue="{{quaternary_standard_container.component_colors.text_color.hue}}" 
-        property="{{quaternary_standard_container.component_colors.text_color.property}}" 
-        opaqueness="{{quaternary_standard_container.component_colors.text_color.opaqueness}}" 
-        lw-color ng-bind-html="quaternary_standard_container.component_data.title[0]">
+        color="{{quaternary_standard_container.paint.text.color}}" 
+        hue="{{quaternary_standard_container.paint.text.hue}}" 
+        property="{{quaternary_standard_container.paint.text.property}}" 
+        opaqueness="{{quaternary_standard_container.paint.text.opaqueness}}" 
+        lw-color ng-bind-html="quaternary_standard_container.content.default[0].name">
         </h1>
 
     </div>

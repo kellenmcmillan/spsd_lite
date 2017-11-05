@@ -4,26 +4,11 @@
 		"type": "media_directory",
 		"url": null,
 		"layout": null,
-		"columns": {
-			"has": false,
-			"number": null
-		},
-		"rows": {
-			"has": false,
-			"number": null
-		},
-		"tabs": {
-			"has": false,
-			"number": null
-		},
-		"panels": {
-			"has": false,
-			"number": null
-		},
-		"lists": {
-			"has": true,
-			"number": 16
-		},
+		"columns": false,
+		"rows": false,
+		"tabs": false,
+		"panels": false,
+		"lists": true,
 		"editable_features": []
 	},
 	"data": [

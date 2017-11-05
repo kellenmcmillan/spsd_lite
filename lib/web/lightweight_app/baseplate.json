@@ -4,26 +4,11 @@
 		"type": null,
 		"url": null,
 		"layout": null,
-		"columns": {
-			"has": false,
-			"number": null
-		},
-		"rows": {
-			"has": false,
-			"number": null
-		},
-		"tabs": {
-			"has": false,
-			"number": null
-		},
-		"panels": {
-			"has": false,
-			"number": null
-		},
-		"lists": {
-			"has": false,
-			"number": null
-		},
+		"columns": null,
+		"rows": null,
+		"tabs": null,
+		"panels": null,
+		"lists": null,
 		"editable_features": []
 	},
 	"data": [

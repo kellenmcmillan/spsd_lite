@@ -1,14 +1,14 @@
 {
 	"configs": {
-		"name": "1st Parallax Container",
+		"name": "2rd Parallax Container",
 		"type": "standard_container",
-		"url": "/#/#capabilities",
+		"url": "/#/#featured-galleries",
 		"layout": null,
-		"columns": false,
-		"rows": false,
-		"tabs": false,
-		"panels": false,
-		"lists": false,
+		"columns": null,
+		"rows": null,
+		"tabs": null,
+		"panels": null,
+		"lists": null,
 		"editable_features": ["default", "background_media", "color"]
 	},
 	"data": [
@@ -89,7 +89,7 @@
 				],
 				"default": [
 					{
-						"name": "Serving North Texas for Over 35 Years",
+						"name": "Featured Galleries",
 						"name_2": null,
 						"param": null,
 						"images": [
@@ -135,9 +135,9 @@
 	                "image": {
 	                    "name": null,
 	                    "alt": null,
-	                    "src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/hi-res/wayneFerguson4-hi-res.jpg"
+	                    "src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/the-alexan/hi-res/the-alexan7-hi-res.jpg"
 	                },
-	                "media_type": null
+	                "media_type": "image"
 	            }
 			},
 			"paint": {
@@ -154,22 +154,22 @@
 					"opaqueness": null
 				},
 				"text": {
-					"opaqueness": "",
-            		"property": "txt",
-		            "hue": "hlst",
-		            "color": "b"
+					"opaqueness": null,
+                    "property": "txt",
+                    "hue": "hlst",
+                    "color": "b"
 				},
 				"overlay": {
-					"opaqueness": "dst",
-		            "property": "bg",
-		            "hue": "hdst",
-		            "color": "b"
+					"color": "b",
+					"hue": "hdst",
+					"property": "bg",
+					"opaqueness": "dst"
 				},
                 "border": {
                     "opaqueness": null,
-                    "property": null,
-                    "hue": null,
-                    "color": null
+                    "property": "bdr",
+                    "hue": "hlst",
+                    "color": "b"
                 }			                
 			}
 		}
