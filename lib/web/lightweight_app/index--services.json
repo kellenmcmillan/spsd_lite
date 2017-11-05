@@ -29,7 +29,7 @@
 	"data": [
 		{
 			"name": "CAPABILITIES",
-			"name_2": null,
+			"name_2": "North Texas Best",
 			"banner": null,
 			"content": {
 				"columns": [
@@ -105,6 +105,7 @@
 				"default": [
 					{
 						"name": "Landscape Management",
+						"name_2": null,
 						"param": "landscape-management",
 						"images": [
 							{
@@ -121,6 +122,7 @@
 					},
 					{
 						"name": "Landscape Construction",
+						"name_2": null,
 						"param": "landscape-construction",
 						"images": [
 							{
@@ -137,6 +139,7 @@
 					},
 					{
 						"name": "Natural Stone Work",
+						"name_2": null,
 						"param": "natural-stone-work",
 						"images": [
 							{

@@ -29,6 +29,7 @@
 	"data": [
 		{
 			"name": null,
+			"name_2": null,
 			"banner": null,
 			"content": {
 				"columns": [
@@ -104,6 +105,7 @@
 				"default": [
 					{
 						"name": "Serving North Texas for Over 35 Years",
+						"name_2": null,
 						"param": null,
 						"images": [
 							{

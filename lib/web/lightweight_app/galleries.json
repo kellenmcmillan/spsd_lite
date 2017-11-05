@@ -29,6 +29,7 @@
 	"data": [
 		{
 			"name": "SPSD Galleries",
+			"name_2": null,
 			"banner": null,
 			"content": {
 				"columns": [
@@ -104,6 +105,7 @@
 				"default": [
 					{
 						"name": null,
+						"name_2": null,
 						"param": null,
 						"images": [
 							{
