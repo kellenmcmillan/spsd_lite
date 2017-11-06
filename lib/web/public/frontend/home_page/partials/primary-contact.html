@@ -25,7 +25,7 @@
 <style ng-if="scrollable">
     .contact-background-container {
         position: absolute;
-        background-image: url('https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/design/hex.png');
+        background-image: url('{{primary_contact.content.background_media.image.src}}');
         background-position: center;
         width: 120%;
         height: 140%;
@@ -36,7 +36,7 @@
 <style ng-if="!scrollable">
     .contact-background-container {
         position: absolute;
-        background-image: url('assets/design/hex.png');
+        background-image: url('{{primary_contact.content.background_media.image.src}}');
         background-position: center;
         width: 100%;
         height: 100%;
@@ -47,10 +47,10 @@
  minfull-screen
  style="position: relative; overflow: hidden;"
  class="component primary-contact mdl-grid no-padding no-margin"
- color="{{primary_contact.component_colors.background_color.color}}"
- hue="{{primary_contact.component_colors.background_color.hue}}"
- property="{{primary_contact.component_colors.background_color.property}}" 
- opaqueness="{{primary_contact.component_colors.background_color.opaqueness}}" 
+ color="{{primary_contact.paint.background.color}}"
+ hue="{{primary_contact.paint.background.hue}}"
+ property="{{primary_contact.paint.background.property}}" 
+ opaqueness="{{primary_contact.paint.background.opaqueness}}" 
  lw-color>
     <div class="contact-background-container">
     </div>
@@ -60,7 +60,7 @@
         <div class="mdl-cell mdl-cell--12-col contact--1">
             <div class="contact-center--1" primary-contact-one-center>
                 <div class="center--text">
-                    <img src="{{primary_contact.component_data.images[0].src}}">
+                    <img src="{{primary_contact.content.default[0].images[0].src}}">
                 </div>
             </div>
         </div>
