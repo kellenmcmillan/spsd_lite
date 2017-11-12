@@ -3017,7 +3017,7 @@
 				                "name": null,    
 		                        "alt": "2017 Halloween Costumes",
 		                        "type": "image",
-		                        "is_cover": false,
+		                        "is_cover": true,
 		                        "thumbnail": null,
 		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/never-a-dull-moment/2017-halloween-costumes2.jpg",
 		                        "hi-res": null,
