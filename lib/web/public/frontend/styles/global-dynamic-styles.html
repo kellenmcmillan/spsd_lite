@@ -1,10 +1,16 @@
-<style ng-if="user || window_width < 840">
-    .header-text-logo, 
-    .header-graphic-logo {margin-left: 0!important;}
-</style>
 <style>
-    /*.lightweight-hero--slideshow {width: {{window_width}}px;}*/
 
+    /* Header */
+    .lightweight-header-row {background-color: {{base_hue_lightest.value}};}
+    .header-navigation {color: {{base_hue_text__darker.value}};}
+    .at-top .lightweight-navigation-link {color: {{base_hue_text__lightest.value}}!important; text-shadow: 1px 1px 8px rgba(0, 0, 0, .8);}
+    .at-top .auth-circle {text-shadow: 1px 1px 8px rgba(0, 0, 0, .8);}
+    .at-top .mdl-layout-title i {color: {{base_hue_text__lightest.value}}!important;}
+    .at-top .header-logo {max-width: 200px;}
+    .auth-circle {cursor: pointer;}
+    .logged-in .auth-circle {font-size: 50px; cursor: pointer;}
+    .mdl-layout__drawer-button i {display:none!important;}
+    /* Header */
     
     .mdl-layout__drawer .mdl-navigation .mdl-navigation__link:hover {
         background-color: {{primary_hue_normal.value}}; color: {{base_hue_text__lightest.value}};
