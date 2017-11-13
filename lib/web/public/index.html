@@ -15,8 +15,10 @@
         <link href="https://fonts.googleapis.com/css?family=Alex+Brush" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.green-light_green.min.css"/>
-        <link rel="stylesheet" type="text/css" href="/styles/jquery-ui.min.css">
-        <link rel="stylesheet" type="text/css" href="/styles/style.css">
+        <link rel="stylesheet" type="text/css" href="styles/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <link rel="stylesheet" type="text/css" href="styles/footer.css">
+        <link rel="stylesheet" type="text/css" href="styles/home.css">
         <link rel="stylesheet" type="text/css" href="styles/global-backend.css">
         <link rel="stylesheet" type="text/css" href="styles/lightweight-header.css">
         <link rel="stylesheet" type="text/css" href="styles/text-adjustments.css">
@@ -24,7 +26,6 @@
         <link rel="stylesheet" type="text/css" href="styles/loading.css">
         <link rel="stylesheet" type="text/css" href="styles/default-fixes.css">
         <link rel="stylesheet" type="text/css" href="styles/animations.css">
-        <link rel="stylesheet" type="text/css" href="styles/slider.css">
         <link rel="stylesheet" type="text/css" href="styles/buttons.css">
         <link rel="stylesheet" type="text/css" href="styles/lists.css">
         <link rel="stylesheet" type="text/css" href="styles/login.css">
@@ -185,17 +186,6 @@
                 <div ng-view></div>
 
                 <!-- Footer -->
-                <style>
-                 #custom-footer {
-                        right: 0px!important;
-                        width: 2696px;
-                    }
-                @media screen and (max-width: 839px) {
-                    #custom-footer {
-                        right: -1000px!important;
-                    }
-                }
-                </style>
                 <footer class="mdl-mini-footer" style="background: transparent;">
                     <div class="mdl-mini-footer__left-section" style="z-index:2">
                         <div class="mdl-logo">{{app_data.app_configs.site_name}} &#169; {{year}}</div>

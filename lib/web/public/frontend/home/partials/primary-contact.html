@@ -1,27 +1,4 @@
 <!-- contact -->
-<style>
-    .contact-us-submit-button {
-        color: {{base_hue_text__lightest.value}};
-        background-color: {{primary_hue_normal.value}};
-        transition: all .3s ease-in-out;
-    }
-    .contact-us-submit-button:hover {
-        color: {{base_hue_text__darker.value}};
-        background-color: {{primary_hue_lighter.value}};
-    }
-    .contact-us-button {position: relative;}
-    .contact-us-button:after {
-        content: ''; position: absolute; width: 0; 
-        height: 2px; background-color: {{primary_hue_normal.value}}; 
-        left: 50%; bottom: 0;
-        transition-duration: .3s;
-        transition-timing-function: cubic-bezier(.4,0,.2,1);
-        transition-property: width, left;
-    }
-    .contact-us-button:hover:after {
-        width: 100%; left: 0%;
-    }
-</style>
 <style ng-if="scrollable">
     .contact-background-container {
         position: absolute;
@@ -96,7 +73,7 @@
                             <textarea class="lightweight-input" rows="3" type="text" id="SIT_mail_body" name="SIT_mail_body" spellcheck="false"></textarea>
                         </l1>
                     </ul>
-                    <button class="contact-us-button mdl-button mdl-js-button mdl-js-ripple-effect" ng-attr-style="width: 150px; background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}}" value="submit" ng-click="">Send</button>
+                    <button class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" style="width: 150px;" value="submit" ng-click="">Send</button>
                 </form>
             </div>
         </div>

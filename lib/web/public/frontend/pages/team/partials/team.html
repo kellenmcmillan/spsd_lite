@@ -13,18 +13,7 @@ footer {display: none!important;}
 .lightweight-card-image-landscape.hovered {opacity: .9;}
 .lightweight-card-image.mdl-card.staff {height: 450px;}
 .lightweight-card-image-landscape.mdl-card.staff {height: 450px;}
-.button-color-border {position: relative; min-width: 200px;}
-.button-color-border:after {
-    content: ''; position: absolute; width: 0; 
-    height: 2px; background-color: {{primary_hue_normal.value}}; 
-    left: 50%; bottom: 0;
-    transition-duration: .3s;
-    transition-timing-function: cubic-bezier(.4,0,.2,1);
-    transition-property: width, left;
-}
-.button-color-border:hover:after {
-    width: 100%; left: 0%;
-}
+
 @media screen and (max-width: 839px) {
 	.lightweight-card-image.mdl-card.staff {height: 350px;}
 	.lightweight-card-image-landscape.mdl-card.staff {height: 350px;}
@@ -66,7 +55,7 @@ footer {display: none!important;}
 			<div ng-if="tile.landscape" class="lightweight-card-image-landscape staff mdl-card mdl-shadow--2dp description" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-attr-style="background-image: url('{{tile.landscape}}'); background-repeat: no-repeat; overflow: hidden; width: 100%!important; text-align: center; background-position: 50% 40%;" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 				<div class="description-content" style="z-index: 2; width: 100%; text-align: center; position: absolute; right: 32px; bottom: 32px;">
 					<a href="{{tile.call_to_action}}">
-						<button md-truncate class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-attr-style="margin: 8px auto 8px auto; background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}}">
+						<button md-truncate class="button-color-border--min-width mdl-button mdl-js-button mdl-js-ripple-effect" style="margin: 8px auto 8px auto;">
 	                    Discover Never A Dull Momement
 	                    </button>
                     </a>
@@ -75,9 +64,7 @@ footer {display: none!important;}
 			</div>
 	    </div>
     </div>
-    <div class="mdl-grid" ng-attr-style="min-height: 48px; background: {{base_hue_lighter.value}}">
-    	
-    </div>
+    <div class="mdl-grid" ng-attr-style="min-height: 48px; background: {{base_hue_lighter.value}}"></div>
 </div>
 
 <img src="assets/brand/spsd-logo.png" style="display: none;" content-available>

@@ -1,64 +1,3 @@
-<style>
-.featured-products {
-  position: relative;
-  background-color:{{base_hue_lighter.value}}
-}
-.featured-product-card.mdl-card {
-  width: 85%; margin-left: auto; margin-right: auto; margin-top: 64px; margin-bottom: 64px; overflow: visible; text-align: center; background-color: {{base_hue_lightest.value}};
-}
-
-.featured-product-card > .mdl-card__title {
-  color: #fff;
-  height: 400px;
-}
-
-.featured-product-card > .mdl-card__menu {
-  color: #fff;
-}
-
-.services:after {
-  content: ''; position: absolute; width: 0; 
-  height: 2px; background-color: {{primary_hue_normal.value}}; 
-  left: 50%; bottom: 0;
-  transition-duration: .3s;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
-  transition-property: width, left;
-}
-.services:hover:after {width: 100%; left: 0;}
-
-.overflow-image {width: 130%; margin-left: -15%; min-height: 350px; overflow: hidden;}
-.product-icon {margin-top: 139px; width: 72px; height: 72px; opacity: .5;}
-
-@media screen and (min-width: 1028px) {
-  
-  .featured-product-card.featured-first {
-    margin-right: -32px;
-  }
-  .featured-product-card.featured-middle {
-    margin-top: 16px; z-index: 10;
-  }
-  .featured-product-card.featured-last {
-    margin-left: -32px;
-  }
-}
-
-@media screen and (max-width: 840px) and (min-width: 480px){
-  .featured-product-card > .mdl-card__title {
-    height: 300px;
-  }
-  .featured-product-card.mdl-card {width: 100%;}
-}
-
-@media screen and (max-width: 479px){
-  .featured-product-card > .mdl-card__title {
-    height: 200px;
-  }
-  .featured-product-card.mdl-card {
-    margin-top: 8px; margin-bottom: 8px; width: 100%;
-  }
-}
-
-</style>
 <div 
  minfull-screen
  class="mdl-grid featured-products"
@@ -93,16 +32,13 @@
   <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="product in featured_products.content.default">
     <div class="featured-product-card mdl-card border--radius-2" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'mdl-shadow--6dp': $index == 1, 'featured-last': $index == 2}">
       <span class="overflow-image border--radius-2" ng-class="{'mdl-shadow--6dp': $index == 1, 'mdl-shadow--2dp': $index != 1}" ng-attr-style="background: url('{{featured_products.content.default[$index].images[0].src}}') center/cover no-repeat; position: relative; border: 1px solid {{base_hue_lightest.value}};">
-        <span ng-attr-style="background-color: {{base_hue_darker_lightest_opacity.value}}; position: absolute; top: 0; right: 0; bottom: 0; left: 0;">
-          <!-- <img class="product-icon" src="{{featured_products.component_data[$index].icon}}"> -->
-        </span>
       </span>
       <div class="mdl-card__supporting-text" style="text-align: left;">
         <h4 ng-bind-html="product.name" style="font-weight: bold;"></h4>
         <p ng-bind-html="product.text"></p>
       </div>
       <div class="mdl-card__actions" style="text-align: left;">
-        <a href="/capabilities/{{product.param}}" class="services mdl-button mdl-js-button mdl-js-ripple-effect" ng-attr-style="color: {{primary_hue_normal.value}}; background-color: {{base_hue_lighter.value}}; position: relative;">
+        <a href="/capabilities/{{product.param}}" class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect">
           Learn More
         </a>
       </div>
