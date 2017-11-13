@@ -14,7 +14,7 @@
 }
 .overflow-image {width: 130%; margin-left: -15%; min-height: 350px; overflow: hidden;}
 .featured-product-card.mdl-card {
-  	width: 85%; overflow: visible; text-align: center;
+  	width: 85%; overflow: visible; text-align: center; margin-left: auto; margin-right: auto;
 }
 
 @media screen and (min-width: 1028px) {
@@ -34,7 +34,7 @@
 
 @media screen and (orientation: landscape) and (max-width: 840px){
 	.featured-product-card.mdl-card {
-	  	margin-left: auto; margin-right: auto; margin-top: 24px; margin-bottom: 24px; overflow: visible; text-align: center;
+	  	margin-top: 24px; margin-bottom: 24px; overflow: visible; text-align: center;
 	}
 }
 
