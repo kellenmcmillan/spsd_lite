@@ -136,7 +136,7 @@
 				                "name": "Wayne Ferguson Plaza",
 				                "alt": "Wayne Ferguson Plaza",
 				                "type": "image",
-				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/wayne-ferguson-plaza/hi-res/wayneFerguson6-hi-res.jpg",
+				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/wayneFerguson6-hi-res.jpg",
 				                "thumbnail": null,
 	            				"landscape": null,
 				                "call_to_action": null
@@ -152,7 +152,7 @@
 				                "name": "R + D Kitchen",
 				                "alt": "An image of R + D Kitchen",
 				                "type": "image",
-				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/rd-kitchen/hi-res/rdKitchen1-hi-res.jpg",
+				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/rdKitchen1-hi-res.jpg",
 				                "thumbnail": null,
 	            				"landscape": null,
 				                "call_to_action": null
@@ -168,7 +168,7 @@
 				                "name": "Brickyard",
 				                "alt": "An image of landscaping at Brickyard Apartments in Farmers Branch",
 				                "type": "image",
-				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/brickyard/hi-res/brickyard1-hi-res.jpg",
+				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/brickyard1-hi-res.jpg",
 				                "thumbnail": null,
 	            				"landscape": null,
 				                "call_to_action": null
@@ -184,7 +184,7 @@
 				                "name": "Routh Street Flats",
 				                "alt": "An image of landscaping at Routh Street Flats in Dallas",
 				                "type": "image",
-				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/routh-street-flats/hi-res/routhStreetFlats1-hi-res.jpg",
+				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/routhStreetFlats1-hi-res.jpg",
 				                "thumbnail": null,
 	            				"landscape": null,
 				                "call_to_action": null
@@ -200,7 +200,7 @@
 				                "name": "Discovery At The Realm",
 				                "alt": "An image of landscaping at Discovery At The Realm in Lewisville",
 				                "type": "image",
-				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/discovery-at-the-realm/hi-res/discovery-realm5-hi-res.jpg",
+				                "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/discovery-realm5-hi-res.jpg",
 				                "thumbnail": null,
 	            				"landscape": null,
 				                "call_to_action": null
@@ -219,7 +219,7 @@
 		                        "thumbnail": null,
 		                        "landscape": null,
 		                        "call_to_action": null,
-		                        "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/home-owners-association/hi-res/hoa1-hi-res.jpg"
+		                        "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/hoa1-hi-res.jpg"
 		                    },
 		                    {
 		                		"avatar": null,
@@ -232,10 +232,10 @@
 		                        "alt": "An Image of Champions Park",
 		                        "type": "image",
 		                        "is_cover": true,
-		                        "thumbnail": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/champions-park/thumbs/champions-park1-thumb.jpg",
-		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/champions-park/landscape/champions-park1-landscape.jpg",
+		                        "thumbnail": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/champions-park1-thumb.jpg",
+		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/champions-park1-landscape.jpg",
 		                        "call_to_action": null,
-		                        "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/champions-park/hi-res/champions-park1-hi-res.jpg"
+		                        "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/champions-park1-hi-res.jpg"
 		                    }
 	            		]
 	            	}

@@ -94,7 +94,7 @@
 						"param": null,
 						"images": [
 							{
-								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/brand/spsd-logo.png",
+								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/thumbs/spsd-logo.png",
 								"name": null,
 								"alt": null
 							}
@@ -135,7 +135,7 @@
 	                "image": {
 	                    "name": null,
 	                    "alt": null,
-	                    "src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/design/hex.png"
+	                    "src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/thumbs/hex.png"
 	                },
 	                "media_type": "image"
 	            }

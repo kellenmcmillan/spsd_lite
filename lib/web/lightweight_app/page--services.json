@@ -57,7 +57,7 @@
 						"param": "landscape-management",
 						"images": [
 							{
-								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/sundance-square/landscape/sundanceSquare14-landscape.jpg",
+								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/landscape/sundanceSquare14-landscape.jpg",
 								"name": "Landscape Management",
 								"alt": "A picture of landscape management at Sundance Square"
 							}
@@ -73,7 +73,7 @@
 						"param": "landscape-construction",
 						"images": [
 							{
-								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/arlington-highlands/landscape/arlingtonHighlands10-landscape.jpg",
+								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/landscape/arlingtonHighlands10-landscape.jpg",
 								"name": "Landscape Construction",
 								"alt": "Landscape Construction at The Alexan"
 							}
@@ -89,7 +89,7 @@
 						"param": "natural-stone-work",
 						"images": [
 							{
-								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/austin-ranch/landscape/austinRanch1-landscape.jpg",
+								"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/landscape/austinRanch1-landscape.jpg",
 								"name": "Natural Stone Work",
 								"alt": "Natural Stone Work at the Austin Ranch"
 							}
@@ -165,7 +165,7 @@
 	                    "mp4": null
 	                },
 	                "image": {
-	                	"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/portfolios/discovery-at-the-realm/landscape/discovery-realm3-landscape.jpg",
+	                	"src": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/landscape/discovery-realm3-landscape.jpg",
 						"name": null,
 						"alt": null
 	                },
