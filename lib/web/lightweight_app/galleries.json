@@ -150,7 +150,7 @@
 				                "name": null,    
 		                        "alt": "Arlington Highlands Artisan Creek",
 		                        "type": "image",
-		                        "is_cover": false,
+		                        "is_cover": true,
 		                        "thumbnail": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/thumbs/arlingtonHighlands2-thumb.jpg",
 		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/landscape/arlingtonHighlands2-landscape.jpg",
 		                        "call_to_action": null
@@ -165,7 +165,7 @@
 				                "name": null,    
 		                        "alt": "Arlington Highlands Artisan Creek",
 		                        "type": "image",
-		                        "is_cover": true,
+		                        "is_cover": false,
 		                        "thumbnail": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/thumbs/arlingtonHighlands3-thumb.jpg",
 		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/landscape/arlingtonHighlands3-landscape.jpg",
 		                        "call_to_action": null
