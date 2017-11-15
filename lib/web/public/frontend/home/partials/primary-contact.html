@@ -38,14 +38,26 @@
             <div class="contact-center--1" primary-contact-one-center>
                 <div class="center--text">
                     <img src="{{primary_contact.content.default[0].images[0].src}}">
+                    <span class="padded--top16">
+                        <i class="material-icons" role="presentation" color="p" hue="hn" property="txt" opaqueness lw-color>room</i>
+                        <p 
+                        class="padded--top16"
+                        color="b" 
+                        hue="hdst" 
+                        property="txt" 
+                        opaqueness="" 
+                        lw-color>
+                        {{app_data.app_configs.address.info.street}}, {{app_data.app_configs.address.info.city}}, {{app_data.app_configs.address.info.state}} {{app_data.app_configs.address.info.zipcode}}
+                        </p>
+                    </span>
+                    <br>
                     <p 
-                    class="padded--top16"
                     color="b" 
                     hue="hdst" 
                     property="txt" 
                     opaqueness="" 
                     lw-color>
-                    {{app_data.app_configs.address.info.street}} {{app_data.app_configs.address.info.city}}, {{app_data.app_configs.address.info.state}} {{app_data.app_configs.address.info.zipcode}}
+                    {{app_data.app_configs.company_phone}}
                     </p>
                 </div>
             </div>
