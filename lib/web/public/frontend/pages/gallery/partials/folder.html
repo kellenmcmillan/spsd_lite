@@ -78,9 +78,9 @@
 	</span> -->
 	<!-- Slideshow Control -->
 	<div style="position: absolute; bottom: 80px; right: 32px;" layout="row" layout-align="center center">
-		<md-fab-speed-dial md-open="isOpen" md-direction="up" class="md-fling md-hover-full" ng-class="{'keepOpen': isOpen}">
+		<md-fab-speed-dial md-open="isOpen" md-direction="up" class="md-fling md-hover-full">
 			<md-fab-trigger>
-				<md-button aria-label="slideshow menu" class="md-fab md-whiteframe-5dp" ng-attr-style="background-color: {{primary_hue_normal.value}}">
+				<md-button aria-label="slideshow menu" class="md-fab md-whiteframe-5dp" ng-class="{'keepOpen': isOpen}" ng-attr-style="background-color: {{primary_hue_normal.value}}">
 					<md-icon 
 					aria-label="Menu"
 					md-font-library="material-icons" 
