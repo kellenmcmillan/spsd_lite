@@ -77,10 +77,13 @@
 		<i class="material-icons mdl-typography--font-thin {{base_hue_text__lightest.name}}" role="presentation" ng-click="right_slideshow_control()" style="cursor: pointer;">chevron_right</i>
 	</span> -->
 	<!-- Slideshow Control -->
-	<div style="position: absolute; bottom: 80px; right: 32px;" layout="row" layout-align="center center">
-		<md-fab-speed-dial md-open="isOpen" md-direction="up" class="md-fling md-hover-full">
+	<button style="position: absolute; bottom: 80px; right: 32px;" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: {{primary_hue_normal.value}}">
+	  	<i class="material-icons">menu</i>
+	</button>
+	<!-- <div style="position: absolute; bottom: 80px; right: 32px;" layout="row" layout-align="center center">
+		<md-fab-speed-dial md-open="isOpen" md-direction="up" class="md-fling md-hover-full" ng-mouseenter="isOpen = true" ng-mouseleave="isOpen = false">
 			<md-fab-trigger>
-				<md-button aria-label="slideshow menu" class="md-fab md-whiteframe-5dp" ng-class="{'keepOpen': isOpen}" ng-attr-style="background-color: {{primary_hue_normal.value}}">
+				<md-button aria-label="slideshow menu" class="md-fab md-whiteframe-5dp" ng-attr-style="background-color: {{primary_hue_normal.value}}">
 					<md-icon 
 					aria-label="Menu"
 					md-font-library="material-icons" 
@@ -176,7 +179,7 @@
 				</a>
 			</md-fab-actions>
 		</md-fab-speed-dial>
-    </div>
+    </div> -->
 </div>
 <!-- curtain -->
 <!-- Lightbox -->
