@@ -118,22 +118,6 @@
 		            	},	            		
 	            		"content": [
 	            			{
-		                		"avatar": null,
-		        				"icon": null,
-		        				"work_title": null,
-		        				"has_description": false,
-				                "description": null,				                
-				                "location": null,
-				                "name": null,    
-		                        "alt": "2017 Kona Ice Delivery",
-		                        "type": "image",
-		                        "is_cover": true,
-		                        "thumbnail": null,
-		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/2016-shoot-for-the-blue1.jpg",
-		                        "hi_res": null,
-		                        "call_to_action": "/#/gallery/never-a-dull-moment"
-		                    },
-	            			{
 				                "avatar": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/portrait/stewart-garrison.jpg",
 	            				"icon": null,	            				
 	            				"work_title": "President, Owner",
@@ -591,7 +575,23 @@
 	            				"landscape": null,
 	            				"hi_res": null,
 				                "call_to_action": null
-				            }
+				            },
+				            {
+		                		"avatar": null,
+		        				"icon": null,
+		        				"work_title": null,
+		        				"has_description": false,
+				                "description": null,				                
+				                "location": null,
+				                "name": null,    
+		                        "alt": "Our team out hunting!",
+		                        "type": "image",
+		                        "is_cover": true,
+		                        "thumbnail": null,
+		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/2016-shoot-for-the-blue1.jpg",
+		                        "hi_res": null,
+		                        "call_to_action": "/#/gallery/never-a-dull-moment"
+		                    }
 	            		]
 	            	}
 	            ],
