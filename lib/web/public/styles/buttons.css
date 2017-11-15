@@ -1,12 +1,14 @@
-.button-color-border {position: relative; min-width: 200px;}
-.button-color-border:after {
-    content: ''; position: absolute; width: 0; 
-    height: 2px; background-color: {{primary_hue_normal.value}}; 
-    left: 50%; bottom: 0;
-    transition-duration: .3s;
+.fling_button {
     transition-timing-function: cubic-bezier(.4,0,.2,1);
-    transition-property: width, left;
+    transition-property: bottom;
 }
-.button-color-border:hover:after {
-    width: 100%; left: 0%;
-}
+.fling_button_5 {transition-duration: .3s; bottom: 73px;}
+.fling_button_5.isOpen {bottom: 384px;}
+.fling_button_4 {transition-duration: .5s; bottom: 73px;}
+.fling_button_4.isOpen {bottom: 326px;}
+.fling_button_3 {transition-duration: .7s; bottom: 73px;}
+.fling_button_3.isOpen {bottom: 268px;}
+.fling_button_2 {transition-duration: .9s; bottom: 73px;}
+.fling_button_2.isOpen {bottom: 210px;}
+.fling_button_1 {transition-duration: 1.1s; bottom: 73px;}
+.fling_button_1.isOpen {bottom: 152px;}
