@@ -110,7 +110,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": null,
@@ -119,9 +118,6 @@
 		            	"details":{
 	            			"name": null,
 	            			"param": null,
-	            			"transition_speed": null,
-		            		"controls": null,
-			            	"featured": false,
 		            		"description": null
 		            	},	            		
 	            		"content": []

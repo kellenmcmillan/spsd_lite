@@ -54,7 +54,6 @@
 				"tabs": [
 					{
 						"name": null,
-						"param": null,
 						"images": [
 							{
 								"src": null,
@@ -72,7 +71,6 @@
 				"panels": [
 					{
 						"name": null,
-						"param": null,
 						"images": [
 							{
 								"src": null,
@@ -91,7 +89,6 @@
 					{
 						"name": null,
 						"name_2": null,
-						"param": null,
 						"images": [
 							{
 								"src": null,
@@ -110,7 +107,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -267,7 +263,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
@@ -449,7 +444,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -496,7 +490,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
@@ -648,7 +641,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
@@ -830,7 +822,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -907,7 +898,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -969,7 +959,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
@@ -1136,7 +1125,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
@@ -1453,7 +1441,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
@@ -1695,7 +1682,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -1817,7 +1803,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -1939,7 +1924,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -2166,7 +2150,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -2408,7 +2391,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -2500,7 +2482,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -2892,7 +2873,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
@@ -2924,7 +2904,6 @@
 	            	{
 	            		"settings":{
 	            			"name": null,
-	            			"param": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
