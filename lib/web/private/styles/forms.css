@@ -1,0 +1,109 @@
+@charset "UTF-8";
+/* CSS Document */
+/*======= Forms =======*/
+.forms fieldset {
+	padding: .75em 0; 
+	margin: 1em 0;
+}
+.forms legend {
+	padding: 0; 
+	font-weight: bold; 
+	font-size: 1.2em;
+}
+.forms label {display: block;}
+.forms textarea, 
+.forms select, 
+.forms input[type="text"], 
+.forms input[type="email"], 
+.forms input[type="tel"], 
+.forms input[type="password"], 
+.forms input[type="number"], 
+.forms input[type="range"], 
+.forms input[type="datetime"], 
+.forms input[type="datetime-local"] {
+	display: block; 
+	width: 100%;
+}
+.forms .lightweight-input {
+	background: none; 
+	border-top: none!important; 
+	border-right: none!important; 
+	border-left: none!important; 
+	padding: 4px 0; 
+	font-size: 16px; 
+	letter-spacing: 0.2em!important; 
+	font-family: "Helvetica","Arial",sans-serif;
+}
+.forms .lightweight-textfield > i {
+	position: absolute;
+	right:0;
+	top: 10px;
+	cursor: pointer;
+}
+.forms .lightweight-textfield > i:hover {
+	color: rgba(0,0,0,.4)!important;
+}
+
+.lightweight-textfield {
+	position: relative;
+	min-width: 200px;  
+	box-sizing: border-box; 
+	display: inline-block; 
+	max-width: 100%; 
+	margin: 0;
+}
+.lightweight-textfield .lightweight-input {
+	border-bottom-color: rgba(0, 0, 0, 0.25)!important; 
+	border-width: 2px!important; 
+	color: #616161;
+}
+.lightweight-texfield--label {
+	color: rgba(0, 0, 0, .25)!important;
+}
+
+input:focus, textarea:focus {
+	border-bottom: 2px solid #333!important; 
+	border-top: none; 
+	border-right: none; 
+	border-left: none; 
+	outline-offset: 0; 
+	outline: none;
+}
+input::-webkit-input-placeholder, 
+textarea::-webkit-input-placeholder {color: #fafafa;}
+input:-moz-placeholder, 
+input:-moz-placeholder {
+	color: #fafafa; 
+	opacity: 1;
+}
+input::-moz-placeholder, 
+input::-moz-placeholder {
+	color: #fafafa; 
+	opacity: 1;
+}
+input:-ms-input-placeholder, 
+input:-ms-input-placeholder {color: #fafafa;}
+.sub-form{display: none;}
+.hide, .hidden-sub-account {display: none!important;}
+
+/*======= mediaQueries =======*/
+@media (max-width: 700px) {
+	.forms textarea, .forms select, 
+	.forms input[type="text"], .forms input[type="email"], 
+	.forms input[type="tel"], .forms input[type="password"], 
+	.forms input[type="number"], .forms input[type="range"], 
+	.forms input[type="datetime"], 
+	.forms input[type="datetime-local"] {
+		margin: 0 0 .3em 0; 
+		padding: 4px 0!important; 
+		border-bottom: 2px solid #fafafa; 
+		border-top: none; 
+		border-right: none; 
+		border-left: none; 
+		background: none!important;
+	}
+}
+
+
+
+

@@ -1,0 +1,15 @@
+.fling_button {
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: bottom, box-shadow;
+    will-change: box-shadow;
+}
+.mdl-button.fling_button_5 {transition-duration: .3s; bottom: 86px; box-shadow: none;}
+.fling_button_5.opened {bottom: 384px; box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);}
+.mdl-button.fling_button_4 {transition-duration: .31s; bottom: 86px; box-shadow: none;}
+.fling_button_4.opened {bottom: 326px; box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);}
+.mdl-button.fling_button_3 {transition-duration: .32s; bottom: 86px; box-shadow: none;}
+.fling_button_3.opened {bottom: 268px; box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);}
+.mdl-button.fling_button_2 {transition-duration: .33s; bottom: 86px; box-shadow: none;}
+.fling_button_2.opened {bottom: 210px; box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);}
+.mdl-button.fling_button_1 {transition-duration: .34s; bottom: 86px; box-shadow: none;}
+.fling_button_1.opened {bottom: 152px; box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);}

@@ -1,0 +1,10 @@
+/* CSS Document */
+#custom-footer {
+    right: 0px!important;
+    width: 2696px;
+}
+@media screen and (max-width: 839px) {
+    #custom-footer {
+        right: -1000px!important;
+    }
+}

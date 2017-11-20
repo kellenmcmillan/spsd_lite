@@ -1,0 +1,17 @@
+/* ===== Lighweight Lists ===== */
+.lightweight-list-icon {width: 100%;}
+.lightweight-list-icon li {font-size: 16px; letter-spacing: 2px; display: flex;}
+.lightweight-list-icon i {font-size: 8px!important;}
+.lightweight-list-icon .mdl-list__item-icon, 
+.lightweight-list-icon .mdl-list__item-icon.material-icons {height: 8px; width: 8px;}
+@media (max-width: 840px) {
+.lightweight-list-icon {width: 100%;}
+.lightweight-list-icon li {font-size: 16px; letter-spacing: 1.5px;}
+.lightweight-list-icon i {font-size: 8px!important;}
+.lightweight-list-icon .mdl-list__item-icon, 
+.lightweight-list-icon .mdl-list__item-icon.material-icons {height: 8px; width: 8px;}
+}
+@media (max-width: 540px) {
+.lightweight-list-icon li {font-size: 12px; letter-spacing: 1.5px;}
+}
+/* ===== Lighweight Lists ===== */

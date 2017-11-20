@@ -1,0 +1,178 @@
+<style>
+.lightweight-navigation-link {position: relative;}
+.lightweight-navigation-link:after {
+    content: ''; position: absolute; width: 0; 
+    height: 2px; background-color: {{primary_hue_normal.value}}; 
+    left: 50%; bottom: 0;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: width, left;
+}
+.lightweight-navigation-link.active:after {
+    width: 70%; left: 15%;
+}
+.lightweight-navigation-link:hover:after {
+    width: 70%; left: 15%;
+}
+</style>
+
+<header class="lightweight-header" ng-if="scrollable" respect-scrollbar>
+
+    <div class="lightweight-header-row">
+
+        <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
+            <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
+        </span>
+
+        <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
+            <a href="/">
+                <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+            </a>
+        </span>
+
+        <div class="mdl-layout-spacer"></div>
+
+        <!-- Header Navigation -->
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone">
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            style="font-size: 16px; font-weight: bold"
+            href="{{item.href}}"
+            ng-class="{'active': location == item.href, 'active': navigation_hovered == true}"
+            ng-mouseenter="navigation_hovered = true"
+            ng-mouseleave="navigation_hovered = false"
+            ng-repeat="item in app_data.app_configs.secondary_navigation">
+                {{item.name}}
+            </a>
+        </nav>
+        <!-- Header Navigation -->
+
+        <!-- <span class="mdl-layout-title">
+
+            <i class="material-icons auth-circle" ng-click="$parent.login_attempt_active = !$parent.login_attempt_active; $parent.user_button = !$parent.user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
+            
+        </span> -->
+        &nbsp;&nbsp;
+        <span class="mdl-layout-title mdl-cell--hide-desktop">
+            <!-- Right aligned menu below button -->
+            
+                <i class="material-icons base-hdr--text" style="font-weight: normal;" ng-click="$parent.mobile_menu = !$parent.mobile_menu;">menu</i>
+
+            <!-- Right aligned menu below button -->
+        </span>
+
+    </div>
+
+</header>
+<header class="lightweight-header" ng-if="!scrollable" respect-scrollbar>
+
+    <div class="lightweight-header-row">
+
+        <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
+            <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
+        </span>
+
+        <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
+            <a href="/">
+                <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+            </a>
+        </span>
+
+        <div class="mdl-layout-spacer"></div>
+
+        <!-- Header Navigation -->
+        <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone">
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            ng-class="{'active': location == item.href, 'active': navigation_hovered == true}"
+            ng-mouseenter="navigation_hovered = true"
+            ng-mouseleave="navigation_hovered = false"
+            style="font-size: 16px; font-weight: bold"
+            href="{{item.href}}" 
+            ng-repeat="item in app_data.app_configs.secondary_navigation">
+                {{item.name}}
+            </a>
+        </nav>
+        <!-- Header Navigation -->
+
+        <!-- <span class="mdl-layout-title">
+
+            <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
+            
+        </span> -->
+        &nbsp;&nbsp;
+        <span class="mdl-layout-title mdl-cell--hide-desktop">
+            <!-- Right aligned menu below button -->
+            
+                <i class="material-icons base-hdr--text" style="font-weight: normal;" ng-click="$parent.mobile_menu = !$parent.mobile_menu;">menu</i>
+
+            <!-- Right aligned menu below button -->
+        </span>
+
+    </div>
+
+</header>
+<!-- Mobile Nav -->
+<style>
+.menu-card {
+     max-height: inherit;
+     position: relative;
+     margin: 48px auto 48px auto;
+     width: 80%;
+     z-index: 999;
+}
+</style>
+<!-- Menu Card Component -->
+<div ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="mobile_menu" ng-click="mobile_menu = false;">
+
+    <div class="menu-card mdl-card" ng-show="mobile_menu" style="z-index: 10001;">
+
+        <!-- Card Titles -->
+
+        <div class="mdl-card__title">
+
+            <h2 class="mdl-card__title-text mdl-color-text--grey-800">Main Menu</h2>
+            <div class="mdl-layout-spacer"></div>
+            <i class="material-icons" style="cursor: pointer;" ng-click="mobile_menu = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
+            
+        </div>
+        <!-- Card Titles -->
+
+        <!-- Supporting Text (Instructions & Inputs) -->
+        <div class="mdl-card__supporting-text center--block">
+
+            <!-- Menus -->
+            <div style="margin: 0 auto; width: inherit;" ng-click="mobile_menu = false">
+                <ul class="mdl-list">
+                    <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.secondary_navigation">
+                        <a 
+                        class="base-hdr--text"
+                        style="font-size: 16px; text-decoration: none;"
+                        href="{{item.href}}">
+                            <span class="mdl-list__item-primary-content">
+                                <i 
+                                class="{{item.class}} primary-hn--text mdl-list__item-icon" 
+                                role="presentation" 
+                                color="primary" 
+                                hue="hue normal" 
+                                property="text" 
+                                opaqueness="" 
+                                lw-color>
+                                {{item.icon}}
+                                </i>
+                                {{item.name}}
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Menus -->
+
+        </div>
+        <!-- Supporting Text (Instructions & Inputs) -->
+    </div>
+</div>
+<!-- Menu Card Component -->
+
+<!-- Mobile Nav -->
+

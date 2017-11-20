@@ -105,14 +105,14 @@
 				],
 				"lists": [
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Arlington Highlands",
 	            			"param": "arlington-highlands",
 		            		"description": "Arlington, TX"
@@ -261,14 +261,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Brickyard",
 	            			"param": "brickyard",
 		            		"description": "Farmers Branch, TX"
@@ -442,14 +442,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Routh Street Flats",
 	            			"param": "routh-street-flats",
 		            		"description": "Dallas, TX"
@@ -488,14 +488,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Wayne Ferguson Plaza",
 	            			"param": "wayne-ferguson-plaza",
 		            		"description": "Lewisville, TX"
@@ -639,14 +639,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Baylor Fountain",
 	            			"param": "baylor-fountain",
 		            		"description": "Waco, TX"
@@ -820,14 +820,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "R + D Kitchen",
 	            			"param": "rd-kitchen",
 		            		"description": "Dallas, TX"
@@ -896,14 +896,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Stella",
 	            			"param": "stella",
 		            		"description": "Uptown Dallas"
@@ -957,14 +957,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Discovery At The Realm",
 	            			"param": "discover-at-the-realm",
 		            		"description": "Lewisville, TX"
@@ -1123,14 +1123,14 @@
 	            		]
 	            	}					,
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Sundance Square",
 	            			"param": "sundance-square",
 		            		"description": "Fort Worth, TX"
@@ -1439,14 +1439,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": true,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Hilton Garden Inn",
 	            			"param": "hilton-garden-inn",
 		            		"description": "Fort Worth, TX"
@@ -1680,14 +1680,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "The Alexan",
 	            			"param": "the-alexan",
 		            		"description": "Dallas, TX"
@@ -1801,14 +1801,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Casey's Clubhouse",
 	            			"param": "caseys-clubhouse",
 		            		"description": "Grapevine, TX"
@@ -1922,14 +1922,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Oak Grove Park",
 	            			"param": "oak-grove-park",
 		            		"description": "Grapevine, TX"
@@ -2148,14 +2148,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Frisco Bridges",
 	            			"param": "frisco-bridges",
 		            		"description": "Frisco, TX"
@@ -2389,14 +2389,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Austin Ranch",
 	            			"param": "austin-ranch",
 		            		"description": "The Colony, TX"
@@ -2480,14 +2480,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Never A Dull Moment",
 	            			"param": "never-a-dull-moment",
 		            		"description": "North Texas"
@@ -2871,14 +2871,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "HOA",
 	            			"param": "hoa",
 		            		"description": "Fort Worth, TX"
@@ -2902,14 +2902,14 @@
 	            		]
 	            	},
 	            	{
-	            		"settings":{
+	            		"settings": {
 	            			"name": null,
 	            			"transition_speed": null,
 		            		"controls": null,
 			            	"featured": false,
 		            		"description": null
 		            	},
-		            	"details":{
+		            	"details": {
 	            			"name": "Champions Park",
 	            			"param": "champions-park",
 		            		"description": "Arlington, TX"

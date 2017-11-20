@@ -1,0 +1,28 @@
+/* CSS Document */
+
+/* ========== Lightweight Standard Containers ========== */
+.lightweight-content--container-thin {height: 128px!important; overflow: hidden!important; position: relative;}
+.lightweight-content--container-small {height: 312px!important; overflow: hidden!important; position: relative;}
+.lightweight-content--container-normal {min-height: 396px!important; overflow: hidden!important; position: relative;}
+.lightweight-content--container-big {height: 396px!important; overflow: hidden!important; position: relative;}
+.lightweight-content--container-large {min-height: 640px!important; overflow: hidden!important; position: relative;}
+.lightweight-content--container-bigger {height: 720px!important; overflow: hidden!important; position: relative;}
+.lightweight-content--container-biggest {height: 870px!important; overflow: hidden!important; position: relative;}
+.content-box {min-height: 200px;}
+/* ========== Lightweight Standard Containers ========== */
+/* ===== container adjustments ===== */
+.cell-padding {padding: 16px!important;}
+.cell-padding24 {padding: 24px!important;}
+.cell-padding24-left {padding-left:24px!important;}
+.cell-padding24-right {padding-right:24px!important;}
+/* ===== container adjustments ===== */
+/* ===== transition on hover div blocks with animated borders ===== */
+.contact-box {height: 220px; word-wrap: break-word;}
+.contact-box:after {content:''; height: 4px; width: 0; margin-left: auto; margin-right: auto; display: block; transition: all .5s ease-in-out; position:absolute; bottom: 0; left: 0;}
+.contact-box:hover:after {width: 100%; transition: all .5s ease-in-out; transition-delay: .5s;}
+.contact-box:hover {transform: translate(0,-16px); transition: all .5s ease-in-out;}
+/* ===== transition on hover div blocks with animated borders ===== */
+/* ===== Social Grid Container ===== */
+.mdl-grid.social-container {height: 56px; padding: 0;}
+.mdl-grid.social-container .social-icon img {height: 56px; width: auto;}
+/* ===== Social Grid Container ===== */

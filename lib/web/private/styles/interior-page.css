@@ -1,0 +1,61 @@
+/* ===== Interior Page Shrinking Title ===== */
+.lightweight-interior--shrinking-title {height: 200px; line-height: 200px; transition: all .5s ease-in-out; width: 100%; position: relative; top: 0; z-index: 100; overflow: hidden; will-change: transform;}
+.lightweight-interior--shrinking-title h2.h2 {font-size: 36px!important; transition: all .5s ease-in-out; visibility: visible;}
+/*.lightweight-interior--shrinking-title.start-shrink-title-animation h2.h2 {visibility: hidden; transition: all .5s ease-in-out;}*/
+.interior-page-margin {margin-top: 100px;}
+/* ===== Interior Page Shrinking Title ===== */
+
+.interior-page-container {position: relative; width: 100%; z-index: 1; transition: all .5s ease-in-out; padding: 0!important; height: 100%;}
+.lightweight-parallax--background-stationary {z-index: -1!important; position: absolute;}
+
+/* ===== Sidebar Widgets - Panel Navigation ===== */
+.lightweight-sidebar--heading {display: flex;}
+.lightweight-sidebar--heading i {font-size: 24px; display: inline;}
+.lightweight-sidebar-tabs {
+	height: 48px!important; line-height: 48px; 
+	width: 95%; display: block; display: flex; 
+	font-size: 16px; margin: 16px 0; padding: 0 8px; 
+	letter-spacing: 2px; text-transform: none!important;
+}
+@media (max-width: 1140px) {.lightweight-sidebar-tabs {font-size: 12px!important;}}
+.lightweight-sidebar-tabs:after {
+	content:'';
+	height: 4px; width: 0; 
+	margin-left: auto; 
+	margin-right: auto; 
+	display: block; 
+	transition: all .5s ease-in-out; 
+	position:absolute; bottom: 0; left: 0;
+}
+.lightweight-sidebar-tabs:hover:after {width: 100%; transition: all .5s ease-in-out;}
+.lightweight-sidebar-tabs.lightweight-active-tab:after {width: 100%; transition: all .5s ease-in-out;}
+.lightweight-sidebar-tabs.lightweight-active-tab {background-color: rgba(0,0,0,.1)!important;}
+.lightweight-sidebar-tabs {transition: all .5s ease-in-out;}
+.lightweight-sidebar-tabs:hover {background-color: rgba(0,0,0,0);}
+/* ===== Sidebar Widgets - Panel Navigation ===== */
+
+/* ===== Sidebar Widgets - Directions ===== */
+.lightweight-sidebar-directions-widget .mdl-card {width: auto!important;}
+/* ===== Sidebar Widgets - Directions ===== */
+
+/* ===== Lighweight Image Cards ===== */
+.lightweight-card-image.mdl-card {
+ 	height: 300px;
+}
+@media (max-width: 839px) {
+	.lightweight-card-image.mdl-card {
+		height: 200px;
+	}
+}
+.lightweight-card-image > .mdl-card__actions {
+  height: 52px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+}
+.lightweight-card-image__filename {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+}
+/* ===== Lighweight Image Cards ===== */
+

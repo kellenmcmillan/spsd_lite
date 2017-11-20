@@ -1,0 +1,56 @@
+<style ng-if="scrollable">
+    .secondary-standard-container-background {
+        position: absolute;
+        width: 130%;
+        height: 120%;
+        margin-left: -11.5%;
+        top: {{first_offset}}px;
+        z-index: -1;
+        transform: translate3d(0px, {{scroll/2}}px, 0px);
+    }
+    @media screen and (max-width: 839px) and (min-width: 480px){.secondary-standard-container-background img {height:120%!important; width: auto!important;}}
+    @media screen and (max-width: 479px){.secondary-standard-container-background img {height:120%!important; width: auto!important;}}
+    @media screen and (orentation: landscape) {.secondary-standard-container-background img {width:100%!important; height: auto!important;}}
+</style>
+<style ng-if="!scrollable">
+    .secondary-standard-container-background {
+        position: absolute;
+        width: 130%;
+        height: 120%;
+        margin-left: -11.5%;
+        top: 0px;
+        z-index: -1;
+    }
+    @media screen and (max-width: 839px) and (min-width: 480px){.secondary-standard-container-background img {height:120%!important; width: auto!important;}}
+    @media screen and (max-width: 479px){.secondary-standard-container-background img {height:120%!important; width: auto!important;}}
+</style>
+<div
+ class="mdl-grid center--text component full-width no-margin no-padding vertical-center-container secondary-parallax"
+ style="position: relative; overflow: hidden;"
+ full-screen
+ data-size
+ color="{{secondary_standard_container.paint.overlay.color}}"
+ hue="{{secondary_standard_container.paint.overlay.hue}}"
+ property="{{secondary_standard_container.paint.overlay.property}}" 
+ opaqueness="{{secondary_standard_container.paint.overlay.opaqueness}}" 
+ lw-color>
+    <div 
+    class="secondary-standard-container-background">
+        <img src="{{secondary_standard_container.content.background_media.image.src}}" style="display: block; margin: 0 auto;">
+    </div>
+
+    <!-- Title -->
+    <div vertical-center class="center--text mdl-cell mdl-cell--12-col">
+        <h1 
+        class="primary-heading-text mdl-typography--font-bold vertical-element" 
+        color="{{secondary_standard_container.paint.text.color}}" 
+        hue="{{secondary_standard_container.paint.text.hue}}" 
+        property="{{secondary_standard_container.paint.text.property}}" 
+        opaqueness="{{secondary_standard_container.paint.text.opaqueness}}" 
+        lw-color ng-bind-html="secondary_standard_container.content.default[0].name">
+        </h1>
+
+    </div>
+    <!-- Title -->
+    
+</div>
