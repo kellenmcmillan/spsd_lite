@@ -34,7 +34,7 @@
 		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
 		ng-repeat="item in galleries" 
         >
-			<img src="{{item.landscape}}" style="height: 100%; width: auto; min-height: 100%; min-width: 100%;">
+			<img src="{{item.landscape || item.hi-res || item.thumb}}" style="height: 100%; width: auto; min-height: 100%; min-width: 100%;">
 			<a href="/gallery/{{item.url_param}}">
 				<div 
 				class="lightweight-portfolio--closer-view-overlay overlay-active" 
