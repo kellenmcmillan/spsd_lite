@@ -58,7 +58,7 @@
 	.full-width {width: 100%!important;}
 /* ===== widths ===== */
 /* ===== image resizing ===== */
-	img {width: 100%; height: auto;}
+	img {max-width: 100%; height: auto;}
 /* ===== image resizing ===== */
 /* ===== icon resizing ===== */
 	.icon {width: 80px; height: auto; margin: 0 auto 20px auto;}
