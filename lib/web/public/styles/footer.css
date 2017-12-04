@@ -2,6 +2,7 @@
 #custom-footer {
     right: 0px!important;
     width: 2696px;
+    max-width: 2696px!important;
 }
 @media screen and (max-width: 839px) {
     #custom-footer {
