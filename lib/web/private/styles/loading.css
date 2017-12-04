@@ -1,7 +1,0 @@
-/*Loading Screen*/
-.loading_margin {margin-top: 200px;}
-.mdl-spinner {width: 56px!important; height: 56px!important;}
-@media (max-height: 500px) {.loading_margin {margin-top: 25px!important;}}
-@media (max-height: 600px) {.loading_margin {margin-top: 100px!important;}}
-@media (orientation: landscape) and (max-width: 640px) {.loading_margin {margin-top: -10px!important;}}
-/*Loading Screen*/
