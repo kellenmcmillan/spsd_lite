@@ -59,6 +59,7 @@
 /* ===== widths ===== */
 /* ===== image resizing ===== */
 	img {max-width: 100%; height: auto;}
+	div[class*="container-background"] img {width: 100%!important;}
 /* ===== image resizing ===== */
 /* ===== icon resizing ===== */
 	.icon {width: 80px; height: auto; margin: 0 auto 20px auto;}
