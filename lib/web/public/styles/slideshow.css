@@ -4,9 +4,8 @@
 
 /* Structure */
 .lightweight-hero--slideshow {width: 100%; margin: 0!important; padding: 0!important; position: relative; cursor: default; background-color: #757575; overflow:hidden;}
-.slideshow--slide-container {position: absolute; height: 100%; left: 0; box-sizing: border-box; margin: 0!important; padding: 0!important; overflow: hidden;}
+.slideshow--slide-container {position: absolute; height: 100%; left: 0; box-sizing: border-box; margin: 0!important; padding: 0!important; overflow: hidden; transition: all .5s ease-in-out;}
 .slide--display {position: absolute; height: 100%!important; margin: 0!important; box-sizing: border-box; padding: 0!important; left: 0; top: 0;}
-.slideshow--slide-container {left: 0; transition: all .5s ease-in-out;}
 .slide-hide-override {display: none!important;}
 #slideshow-overlay {
     background: -webkit-linear-gradient(rgba(66,66,66, 0.7), transparent); /* For Safari 5.1 to 6.0 */
