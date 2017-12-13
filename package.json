@@ -30,6 +30,7 @@
     "express-jwt": "5.3.x",
     "express-jwt-authz": "1.0.x",
     "express-session": "^1.15.2",
+    "express-sslify": "1.2.x",
     "express-validator": "3.2.x",
     "finalhandler": "1.0.x",
     "foreman": "^2.0.0",
