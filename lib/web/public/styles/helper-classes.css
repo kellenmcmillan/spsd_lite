@@ -59,8 +59,8 @@
 /* ===== widths ===== */
 /* ===== image resizing ===== */
 	img {max-width: 100%; height: auto;}
-	div[class*="container-background"] img, .portfolio_media_thumbs img {width: 100%!important;}
-	.portfolio_item img {max-width:inherit!important;}
+	.portfolio_media_thumbs img {width: 100%!important;}
+	div[class*="container-background"] img, .portfolio_item img {max-width:inherit!important;}
 /* ===== image resizing ===== */
 /* ===== icon resizing ===== */
 	.icon {width: 80px; height: auto; margin: 0 auto 20px auto;}
