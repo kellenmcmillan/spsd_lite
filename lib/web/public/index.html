@@ -213,6 +213,9 @@
                             <a ng-if="!auth.isAuthenticated()" ng-click="auth.login()" class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect">
                                 Log In
                             </a>
+                            <a class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-if="auth.isAuthenticated()" ng-click="auth.logout()">
+                                Log Out
+                            </a>
                         </ul>
                     </div>
                     <div class="mdl-mini-footer__right-section" style="z-index:2">
