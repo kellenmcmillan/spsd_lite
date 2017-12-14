@@ -210,7 +210,7 @@
                             <li ng-repeat="link in app_data.app_configs.navigation.footer_navigation">
                                 <a href="{{link.url}}">{{link.name}}</a>
                             </li>
-                            <a ng-if="!vm.auth.isAuthenticated()" ng-click="vm.auth.login()" class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect">
+                            <a ng-if="!auth.isAuthenticated()" ng-click="auth.login()" class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect">
                                 Log In
                             </a>
                         </ul>
