@@ -9,8 +9,4 @@ a, div, .mdl-card__supporting-text, button{letter-spacing: 0em!important; font-f
 @media (max-width: 840px) {h2.mdl-card__title-text {font-size: 16px;}}
 p {font-size: 16px;}
 .keepOpen {pointer-events: none;}
-/* Apple Header Fix */
-
-/* Apple Header Fix */
-
 /*Default fixes*/

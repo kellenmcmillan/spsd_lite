@@ -1,4 +1,5 @@
 /*Loading Screen*/
+#loadingScreenPrimaryLogo {max-height: 200px; width: auto; transition: all .5s ease-in-out;}
 .loading_margin {margin-top: 200px;}
 .mdl-spinner {width: 56px!important; height: 56px!important;}
 @media (max-height: 500px) {.loading_margin {margin-top: 25px!important;}}

@@ -9,7 +9,7 @@ h1.h1 {font-size: 18px!important;}
 h1.h1-small {font-size: 14px!important; margin: 0!important; text-transform: uppercase;}
 h1.h1.company-name {font-size: 9px!important;}}
 h1.large-h1 {font-size: 36px!important; letter-spacing: 2px!important;}
-h1.small-border-background:after {content: ''; /*background: #388E3C!important;*/ height: 4px; width: 6.25%; margin-top: 16px; margin-left: auto; margin-right: auto; display: block; transition: all .5s ease-in-out;}
+h1.small-border-background:after {content: ''; height: 4px; width: 6.25%; margin-top: 16px; margin-left: auto; margin-right: auto; display: block; transition: all .5s ease-in-out;}
 h1.small-border-background-no-align:after {content: ''; height: 4px; width: 6.25%; margin-top: 16px; display: block; transition: all .5s ease-in-out;}
 .service-panel:hover h1.small-border-background:after {width: 25%; transition: all .5s ease-in-out;}
 h2.h2 {font-size: 16px!important; margin: 0!important; padding: 0!important; display: inline;}

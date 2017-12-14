@@ -28,44 +28,44 @@
 .contrast-div {background-color: rgba(0, 0, 0, 0.4)!important;}
 .contrast-button {color: rgb(117, 117, 117)!important;}
 /* ===== horizontal centering ===== */
-	.center--block {margin: 0 auto;}
-	.center--container {margin-left: auto; margin-right: auto;}
-	.center--block-top-margin {margin: 8px auto 0 auto;}
-	.block {display: block;}
-	.center--text {text-align: center;}
-	.left--text {text-align: left!important;}
-	.right--text {text-align: right!important;}
-	.relative {position:relative;}
-	.hide {display:none;}
-	.float--left {float: left;}
-	.float--right {float: right;}
-	.clear--right {clear: right;}
-	.clear--both {clear: both;}
-	.fixed {position: fixed;}
-	.absolute {position: absolute;}
-	.full-height {height:100%!important;}
-	.no-padding {padding: 0!important;}
-	.no-margin {margin: 0!important;}
-	.standard-padding {padding: 16px!important;}
-	.no-opacity {opacity: 0;}
+.center--block {margin: 0 auto;}
+.center--container {margin-left: auto; margin-right: auto;}
+.center--block-top-margin {margin: 8px auto 0 auto;}
+.block {display: block;}
+.center--text {text-align: center;}
+.left--text {text-align: left!important;}
+.right--text {text-align: right!important;}
+.relative {position:relative;}
+.hide {display:none;}
+.float--left {float: left;}
+.float--right {float: right;}
+.clear--right {clear: right;}
+.clear--both {clear: both;}
+.fixed {position: fixed;}
+.absolute {position: absolute;}
+.full-height {height:100%!important;}
+.no-padding {padding: 0!important;}
+.no-margin {margin: 0!important;}
+.standard-padding {padding: 16px!important;}
+.no-opacity {opacity: 0;}
 /* ===== horizontal centering ===== */
 /* ===== vertical centering ===== */
-	.vert--center {margin:0; vertical-align: middle; line-height: 20px;}
-	.vert--center-large {margin:0; vertical-align: middle; line-height: 40px!important;}
-	.inline-block {display: inline-block;}
+.vert--center {margin:0; vertical-align: middle; line-height: 20px;}
+.vert--center-large {margin:0; vertical-align: middle; line-height: 40px!important;}
+.inline-block {display: inline-block;}
 /* ===== vertical centering ===== */
 /* ===== widths ===== */
-	.full-width {width: 100%!important;}
+.full-width {width: 100%!important;}
 /* ===== widths ===== */
 /* ===== image resizing ===== */
-	img {max-width: 100%; height: auto;}
-	.portfolio_media_thumbs img, div[class*="container-background"] img {width: 100%!important;}
-	div[class*="container-background"] img, .portfolio_item img {max-width:inherit!important;}
+img {max-width: 100%; height: auto;}
+.portfolio_media_thumbs img, div[class*="container-background"] img {width: 100%!important;}
+div[class*="container-background"] img, .portfolio_item img {max-width:inherit!important;}
 /* ===== image resizing ===== */
 /* ===== icon resizing ===== */
-	.icon {width: 80px; height: auto; margin: 0 auto 20px auto;}
-	.mdl-logo .icon {width: 60px; height: 60px;}
-	@media (max-width: 930px) {.icon {width: 60px;}}	
-	@media (max-width: 700px) {.icon {width: 60px;}}
+.icon {width: 80px; height: auto; margin: 0 auto 20px auto;}
+.mdl-logo .icon {width: 60px; height: 60px;}
+@media (max-width: 930px) {.icon {width: 60px;}}	
+@media (max-width: 700px) {.icon {width: 60px;}}
 /* ===== icon resizing ===== */
 /* ==================== lightweight helper classes ==================== */

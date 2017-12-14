@@ -1,66 +1,38 @@
 /* CSS Document */
 /* ==================== MDL framework adjustments ==================== */
-
-    
-	/*lightweight signature*/
-	.lightweight-signature {cursor:pointer; color: #e0e0e0!important;}
-	/*lightweight signature*/
-	html, body { 
-	height:100%; 
-	width:100%; 
-	overflow:auto; 
-	}
-	/*Front-End-Critical*/
-	/*.mdl-layout__container {position: static;}*/
-	.mdl-layout__content {
-		z-index: 2; scroll-behavior: smooth; 
-		width: 100%; position: relative; 
-		overflow-x: hidden;
-	}
-	.header-logo {
-		max-width: 120px;
-	}
-	#primaryLogo {max-height: 72px; width: auto; transition: all .5s ease-in-out;}
-	#loadingScreenPrimaryLogo {max-height: 200px; width: auto; transition: all .5s ease-in-out;}
-	@media (max-width: 640px) {#primaryLogo {max-height: 64px; width: auto;}}
-	
-	/*Front-End-Critical*/
-
-	/*Front-End-Critical*/
-	.mdl-layout-title h1.h1 {letter-spacing: 2px!important; transition: all .5s ease-in-out; text-transform: uppercase;}
-	@media (max-width: 400px) {.mdl-layout__header-row {padding: 0 16px 0 64px;}}
-	.mdl-layout__drawer>.mdl-layout-title {padding-left: 0!important; padding-top: 8px; margin-left: auto; margin-right:auto;}
-	/*Front-End-Critical*/
-	
-	/*Front-End-Critical*/
-/*	.mdl-layout__drawer {border-right: none!important;}
-	.mdl-layout__header .mdl-layout__drawer-button {background: transparent;}
-	.mdl-layout__drawer .mdl-navigation .mdl-navigation__link {padding: 15px 30px;}*/
-	/*Front-End-Critical*/
-
-	/*Front-End-Critical*/
-	.navigation .mdl-navigation__link .material-icons {font-size: 24px; margin-right: 22px;}
-
-	.navigation .mdl-navigation__link {
-		font-size: 12px; display: -webkit-box !important; display: -webkit-flex !important; 
-		display: -ms-flexbox !important; display: flex !important; -webkit-box-orient: horizontal; -webkit-box-direction: normal; 
-		-webkit-flex-direction: row; -ms-flex-direction: row;flex-direction: row; -webkit-box-align: center; 
-		-webkit-align-items: center; -ms-flex-align: center; align-items: center; font-weight: 500;
-	}
-	footer {position: relative;}
-	.mdl-mini-footer__link-list .is-active {color: rgb(250,250,250); background-color: transparent!important;}
-
-	@media (max-width: 840px) {.mdl-layout-title {font-size: 14px!important;}}
-	.mdl-menu__container.is-upgraded.is-visible {box-shadow: 0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12),0 3px 5px -1px rgba(0,0,0,.2); transition-delay: .3s; top: 108px!important; right: 24px!important;}
-	.mdl-layout__header .mdl-badge[data-badge]:after {right: 0px!important; top: -8px!important;}
-	/*Front-End-Critical*/
-
-
-
-
-
-    
-	
+/*lightweight signature*/
+.lightweight-signature {cursor:pointer; color: #e0e0e0!important;}
+/*lightweight signature*/
+html, body { 
+height:100%; 
+width:100%; 
+overflow:auto; 
+}
+/*Front-End-Critical*/
+.mdl-layout__content {
+	z-index: 2; scroll-behavior: smooth; 
+	width: 100%; position: relative; 
+	overflow-x: hidden;
+}
+.header-logo {
+	max-width: 120px;
+}
+#primaryLogo {max-height: 72px; width: auto; transition: all .5s ease-in-out;}
+@media (max-width: 640px) {#primaryLogo {max-height: 64px; width: auto;}}
+.mdl-layout-title h1.h1 {letter-spacing: 2px!important; transition: all .5s ease-in-out; text-transform: uppercase;}
+@media (max-width: 400px) {.mdl-layout__header-row {padding: 0 16px 0 64px;}}
+.mdl-layout__drawer>.mdl-layout-title {padding-left: 0!important; padding-top: 8px; margin-left: auto; margin-right:auto;}
+.navigation .mdl-navigation__link .material-icons {font-size: 24px; margin-right: 22px;}
+.navigation .mdl-navigation__link {
+	font-size: 12px; display: -webkit-box !important; display: -webkit-flex !important; 
+	display: -ms-flexbox !important; display: flex !important; -webkit-box-orient: horizontal; -webkit-box-direction: normal; 
+	-webkit-flex-direction: row; -ms-flex-direction: row;flex-direction: row; -webkit-box-align: center; 
+	-webkit-align-items: center; -ms-flex-align: center; align-items: center; font-weight: 500;
+}
+@media (max-width: 840px) {.mdl-layout-title {font-size: 14px!important;}}
+.mdl-menu__container.is-upgraded.is-visible {box-shadow: 0 6px 10px 0 rgba(0,0,0,.14),0 1px 18px 0 rgba(0,0,0,.12),0 3px 5px -1px rgba(0,0,0,.2); transition-delay: .3s; top: 108px!important; right: 24px!important;}
+.mdl-layout__header .mdl-badge[data-badge]:after {right: 0px!important; top: -8px!important;}
+/*Front-End-Critical*/
 /* ==================== MDL framework adjustments ==================== */
 
 

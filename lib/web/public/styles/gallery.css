@@ -1,30 +1,25 @@
 /* CSS Document */
-
 /* ========== Lightweight Featured Galleries ========== */
 .portfolio_item {
 	height: inherit; width: 50%!important; 
 	overflow: hidden; position: 
 	relative; cursor: pointer;
 }
-
 .portfolio_item.description, 
 .lightweight-portfolio--content {
 	height: 350px; width:50%!important; 
 	overflow: hidden; text-align: center; 
 	position: relative;
 }
-
 .portfolio_item img {
 	transition: all .5s ease-in-out; 
 	min-height: 100%; height: auto; 
 	min-width: 100%; width: auto; 
 	margin-left: -40%;
 }
-
 @media screen and (max-width: 1400px) and (min-width: 840px){
     .portfolio_item.description, .lightweight-portfolio--content {height: 275px!important;}
 }
-
 @media screen and (max-width: 839px) and (min-width: 480px){
 	.gallery-container {width:100%!important;}
 	.portfolio_item {width: 100%!important;}
@@ -32,7 +27,6 @@
 	.lightweight-portfolio--content,
 	.portfolio_item.description {height:250px; width:100%!important;}
 }
-
 @media screen and (max-width: 479px){
 	.gallery-container {width:100%!important;}
     .portfolio_item {width: 100%!important;}
@@ -41,22 +35,13 @@
 	.portfolio_item.description {height:200px; width:100%!important;}
 }
 /* ========== Lightweight Featured Galleries ========== */
-
-
-
-
-
 .portfolio_item_title {position: absolute; bottom: 0; transition: all .2s ease-in-out; background-color: rgba(0,0,0,0.2); width: 100%; opacity: 1; cursor: default;}
 .portfolio-slide-down-hide {transition: all .2s ease-in-out; transform: translateY(16px); opacity: 0;}
 .lightweight-portfolio--content-overlay {height: 100%; width: 100%; position: absolute; top: 0; left: 0; transition: all .3s ease-in-out; opacity: 0;}
 .lightweight-portfolio--content-overlay.overlay-active {opacity: 1; transition: all .3s ease-in-out;}
 .lightweight-portfolio--closer-view_container {position: fixed; left: 0; z-index: 10000!important; overflow-y: scroll; opacity: 1;}
 .portfolio_media {height: 100%; overflow: hidden; width: 100%; float: left; position: relative;}
-
-
 .portfolio_object_media {height:inherit; position: absolute; width: 100%;}
-
-
 .portfolio_object_photo_roll {overflow: hidden;}
 @media (min-width: 840px) and (max-width: 1200px) {
 	.portfolio_media_thumbs img {transform: scale(1.9); width: 120%;}

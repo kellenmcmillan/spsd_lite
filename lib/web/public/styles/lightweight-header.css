@@ -121,37 +121,6 @@
 }
 /* ================== Backend Header ================== */
 
-
-
-.lightweight-header-row.at-top {height: 176px; border-bottom: 0 solid transparent; background-color: transparent!important; box-shadow: none!important;}
-
-.lightweight-header-row > * {
-    -webkit-flex-shrink: 0;
-    -ms-flex-negative: 0;
-    flex-shrink: 0;
-}
-
-.lightweight-navigation-item {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    box-sizing: border-box;
-}
-
-.lightweight-navigation-link {
-    text-decoration: none;
-    margin: 0;
-    font-weight: 400;
-    line-height: 64px;
-    padding: 0 24px;
-
-}
-
-.lightweight-header .material-icons {font-size: 32px;}
-
 .portfolio-nav--container {
     display: -webkit-flex;
     display: -ms-flexbox;
