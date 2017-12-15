@@ -135,12 +135,12 @@
 				<md-list-item>
 					<md-input-container class="md-block lightweight-md-input" flex="50">
 						<label>Nickname</label>
-						<input ng-model="profile.nickname">
+						<input ng-model="vm.profile.nickname">
 					</md-input-container>
-					<md-input-container class="md-block lightweight-md-input" flex="50">
+					<!-- <md-input-container class="md-block lightweight-md-input" flex="50">
 						<label>Input</label>
 						<input ng-model="element.textfield_6_2">
-					</md-input-container>
+					</md-input-container> -->
 				</md-list-item>
 
 				<md-divider></md-divider>
@@ -335,7 +335,7 @@
 				<md-list-item>
 					<md-input-container class="md-block lightweight-md-input" flex="50">
 						<label>Text Area Input</label>
-    					<textarea name="bio" ng-model="profile" rows="3" md-maxlength="200"></textarea>
+    					<textarea name="bio" ng-model="vm.profile" rows="3" md-maxlength="200"></textarea>
 					</md-input-container>
 				</md-list-item>
 
