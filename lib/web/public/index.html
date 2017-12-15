@@ -212,10 +212,10 @@
                             <a ng-if="!authService.isAuthenticated()" ng-click="authService.login()" class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect">
                                 Log In
                             </a>
-                            <a class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-if="authService.isAuthenticated()" ng-click="authService.logout()">
+                            <a class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-if="auth.isAuthenticated()" ng-click="auth.logout()">
                                 Log Out
                             </a>
-                            <a class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-if="authService.isAuthenticated()" href="/myvault">
+                            <a class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-if="auth.isAuthenticated()" href="/myvault">
                                 My Vault
                             </a>
                         </ul>
