@@ -1,31 +1,13 @@
 <style>
 .lightweight-backend-navigation-link {position: relative;}
-/*.lightweight-backend-navigation-link:after {
-    content: ''; position: absolute; width: 0; 
-    height: 2px; background-color: {{primary_hue_normal.value}}; 
-    left: 50%; bottom: 0;
-    transition-duration: .3s;
-    transition-timing-function: cubic-bezier(.4,0,.2,1);
-    transition-property: width, left;
-}
-.lightweight-backend-navigation-link.active:after {
-    width: 70%; left: 15%;
-}
-.lightweight-backend-navigation-link:hover:after {
-    width: 70%; left: 15%;
-}*/
 </style>
 
 <header class="lightweight-backend-header" ng-if="scrollable" respect-scrollbar>
-
     <div class="lightweight-backend-header-row">
-
         <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
             <h1 class="h1 mdl-typography--font-bold">My Vault</h1>                    
         </span>
-
         <div class="mdl-layout-spacer"></div>
-
         <!-- Header Navigation -->
         <nav class="lightweight-backend-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone">
             <a 
@@ -40,16 +22,11 @@
             </a>
         </nav>
         <!-- Header Navigation -->
-
         &nbsp;&nbsp;
         <span class="mdl-layout-title mdl-cell--hide-desktop">
             <!-- Right aligned menu below button -->
-            
                 <i class="material-icons base-hdr--text" style="font-weight: normal;" ng-click="$parent.mobile_menu = !$parent.mobile_menu;">menu</i>
-
             <!-- Right aligned menu below button -->
         </span>
-
     </div>
-
 </header>
