@@ -240,10 +240,10 @@
         <!-- okta configuration -->
         <script type="text/javascript">
         var oktaSignIn = new OktaSignIn({
-            baseUrl: "https://www.spsd.com",
-            clientId: "0oadaebmmwTBs2YQb0h7",
+            baseUrl: "https://{yourOktaDomain}.com",
+            clientId: "{yourClientId}",
             authParams: {
-                issuer: "https://www.spsd.com/oauth2/default",
+                issuer: "https://{yourOktaDomain}.com/oauth2/default",
                 responseType: ['token', 'id_token'],
                 display: 'page'
             }
