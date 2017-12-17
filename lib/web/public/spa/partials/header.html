@@ -122,12 +122,6 @@
             du-smooth-scroll>
                 {{app_data.app_configs.primary_navigation[5].name}}
             </a>
-            <a 
-            class="lightweight-navigation-link header-navigation base-hdr--text"
-            style="font-size: 16px; font-weight: bold"
-            ng-click="login_activated = true">
-                LOG IN
-            </a>
         </nav>
         <!-- Header Navigation -->
 
@@ -229,12 +223,6 @@
             du-smooth-scroll>
                 {{app_data.app_configs.primary_navigation[5].name}}
             </a>
-            <a 
-            class="lightweight-navigation-link header-navigation base-hdr--text"
-            style="font-size: 16px; font-weight: bold; pointer: pointer;" 
-            ng-click="login_activated = true">
-                LOG IN
-            </a>
         </nav>
         <!-- Header Navigation -->
 
@@ -310,7 +298,7 @@
                         <a 
                         class="lightweight-navigation-link header-navigation base-hdr--text"
                         style="font-size: 16px; font-weight: bold; pointer: pointer;" 
-                        ng-click="login_activated = true">
+                        ng-click="$parent.login_activated = true">
                             LOG IN
                         </a>
                     </li>
