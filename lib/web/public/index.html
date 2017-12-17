@@ -166,7 +166,7 @@
         <div class="mdl-layout mdl-js-layout" scroll-position="scroll">
 
             <!-- login form --><!-- login form --><!-- login form -->
-            <div ng-controller="loginController" style="width: {{window_width}}; height: {{window_width}}; background: {{base_hue_darker_lightest_opacity.value}}; z-index: 10000; position: fixed; top: 0; left: 0;" ng-show="login_activated">
+            <div ng-controller="loginController" style="width: {{window_width}}px; height: {{window_height}}px; background: {{base_hue_darker_lightest_opacity.value}}; z-index: 10000; position: fixed; top: 0; left: 0;" ng-show="login_activated">
                 <div style="margin: 16px auto 0 auto;">
                     <!-- User Card --><!-- User Card --><!-- User Card -->
                     <div class="login-card mdl-card base-hlst mdl-shadow--4dp" style="margin: 0 auto;">
@@ -384,7 +384,7 @@
                                 <a href="{{link.url}}">{{link.name}}</a>
                             </li>
                             <li>
-                                <a class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-show="!login_activated" ng-click="login_activated">
+                                <a class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" ng-show="!login_activated" ng-click="login_activated == true">
                                     Log In
                                 </a>
                             </li>
