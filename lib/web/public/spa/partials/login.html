@@ -1,9 +1,9 @@
 <!-- login form --><!-- login form --><!-- login form -->
-<div ng-controller="loginController" style="width: {{window_width}}px; height: {{window_height}}px; background: {{base_hue_darker_darkest_opacity.value}}; z-index: 10000; position: fixed; top: 0; left: 0;" ng-show="$parent.login_activated">
+<div ng-controller="loginController" style="width: {{window_width}}px; height: {{window_height}}px; background: {{base_hue_darker_darkest_opacity.value}}; z-index: 10000; position: fixed; top: 0; left: 0; transition: all .5s ease-in;" ng-show="$parent.login_activated">
     <div style="margin: 32px auto 32px auto;">
         <!-- User Card --><!-- User Card --><!-- User Card -->
         <div class="login-card mdl-card base-hlst mdl-shadow--4dp border--radius-5" style="margin: 48px auto 0 auto;">
-            <button ng-click="$parent.login_activated = false" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab {{base_hue_lightest.name}}" style=" position: absolute; top: 16px; right: 16px;">
+            <button ng-click="toggle_log_in()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab {{base_hue_lightest.name}}" style=" position: absolute; top: 16px; right: 16px;">
                 <i class="material-icons" style="color: {{base_hue_darkest.value}};">close</i>
             </button>
             <div class="mdl-card__title center--text" style="height: 100px; background-color: {{base_hue_lighter.value}}">
