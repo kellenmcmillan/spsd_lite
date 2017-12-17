@@ -125,9 +125,8 @@
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
-            ng-show="!login_activated" 
-            ng-click="login_activated == true">
-                Log In
+            ng-click="login_activated = true">
+                LOG IN
             </a>
         </nav>
         <!-- Header Navigation -->
@@ -160,10 +159,10 @@
 
         <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
             <a href="/">
-                <img ng-if="scroll > 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+                <img ng-if="scroll == 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src_white}}" ng-cloak="true">
             </a>
             <a href="/">
-                <img ng-if="scroll == 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src_white}}" ng-cloak="true">
+                <img ng-if="scroll > 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
             </a>
         </span>
 
@@ -230,6 +229,12 @@
             du-smooth-scroll>
                 {{app_data.app_configs.primary_navigation[5].name}}
             </a>
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            style="font-size: 16px; font-weight: bold; pointer: pointer;" 
+            ng-click="login_activated = true">
+                LOG IN
+            </a>
         </nav>
         <!-- Header Navigation -->
 
@@ -268,11 +273,9 @@
         <!-- Card Titles -->
 
         <div class="mdl-card__title">
-
             <h2 class="mdl-card__title-text mdl-color-text--grey-800">Main Menu</h2>
             <div class="mdl-layout-spacer"></div>
             <i class="material-icons" style="cursor: pointer;" ng-click="mobile_menu = false" color="b" hue="hdst" property="txt" opaqueness="" lw-color>close</i>
-            
         </div>
         <!-- Card Titles -->
 
@@ -302,6 +305,13 @@
                                 </i>
                                 {{item.name}}
                             </span>
+                    </li>
+                    <li class="mdl-list__item">
+                        <a 
+                        class="lightweight-navigation-link header-navigation base-hdr--text"
+                        style="font-size: 16px; font-weight: bold; pointer: pointer;" 
+                        ng-click="login_activated = true">
+                            LOG IN
                         </a>
                     </li>
                     <li class="mdl-list" ng-repeat="item in app_data.app_configs.backend_navigation" ng-show="user">

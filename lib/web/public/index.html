@@ -170,11 +170,11 @@
                 <div style="margin: 32px auto 32px auto;">
                     <!-- User Card --><!-- User Card --><!-- User Card -->
                     <div class="login-card mdl-card base-hlst mdl-shadow--4dp vertical-element" style="margin-left: auto; margin-right: auto;" vertical-center>
-                        <i class="material-icons" style="color: {{base_hue_darkest.value}}; position: absolute; top: 16px; right: -16px;" ng-click="login_activated == false">close</i>
-                        <div class="mdl-card__title center--text" style="height: 72px; background-color: {{base_hue_lighter.value}}">
-                            <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
-                            <br>
-                            <h2 class="mdl-card__title-text">SPSD</h2>
+                        <i class="material-icons" style="color: {{base_hue_darkest.value}}; position: absolute; top: 16px; right: 16px;" ng-click="login_activated = false">close</i>
+                        <div class="mdl-card__title center--text" style="height: 100px; background-color: {{base_hue_lighter.value}}">
+                            <div>
+                                <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+                            </div>
                         </div>
                         <div ng-hide="adminError" class="mdl-card__title">
                             <h2 ng-show="registered == true && !user" class="mdl-card__title-text mdl-color-text--grey-800">Login</h2>
