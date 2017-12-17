@@ -3,7 +3,7 @@
 
     <div>
         <!-- User Card --><!-- User Card --><!-- User Card -->
-        <div class="login-card mdl-card base-hlst mdl-shadow--4dp" style="margin: {{window_height/10}}px auto 0 auto;">
+        <div class="login-card mdl-card base-hlst mdl-shadow--4dp border--radius-5" style="margin: {{window_height/10}}px auto 0 auto;">
             <button ng-click="toggle_log_in()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab {{base_hue_lightest.name}}" style=" position: absolute; top: 16px; right: 16px;">
                 <i class="material-icons login-close" style="color: {{base_hue_darkest.value}};">close</i>
             </button>
@@ -128,7 +128,7 @@
                 <!-- Forgot Password -->
                 <div style="text-align: center">
                     <a ng-show="registered == true" href="#" class="mdl-color-text--grey-800" style="text-decoration: none;">
-                    Can't Remember Your Password?
+                    Don't remember your password?
                     </a>
                 </div>
                 <!-- Forgot Password -->
@@ -137,7 +137,8 @@
                 
             </div>
             <button ng-show="registered == true && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="signin(); login_attempt_active = false;" style="width: 100%; bottom: 0; left: 0; background-color: {{primary_hue_normal.value}}; color: {{base_hue_text__lightest.value}}; height: 64px; line-height: 64px; border-radius: 0!important;">
-                <i class="material-icons {{base_hue_text__lightest.name}}" role="presentation">vpn_key</i>&nbsp;&nbsp;Log In
+                Log In&nbsp;&nbsp;
+                <i class="material-icons {{base_hue_text__lightest.name}}" role="presentation">keyboard_arrow_right</i>
             </button>
         </div>
     </div>
