@@ -106,7 +106,7 @@
                 <!-- Register form -->
 
                 <!-- Login Card Actions -->
-                <button ng-show="registered == true && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="signin(); login_attempt_active = false;" style="width: 48%">Log In</button>
+                
                 <button ng-hide="registered == false || registration_completed == true || user" ng-click='beginRegistration()' class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" style="width: 48%">Sign Up</button>
                 <button ng-show="registered == false && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="previousRegistrationStep()">Back</button>
                 <button ng-show="registered == false && registration_section < 2 && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="nextRegistrationStep()">Next</button>
@@ -131,17 +131,15 @@
                 </a>
                 <!-- Forgot Password -->
                 <!-- Login Card Actions -->
+
+                <button ng-show="registered == true && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="signin(); login_attempt_active = false;" style="width: 100%; position: absolute; bottom: 0; background-color: {{primary_hue_normal.value}}; height: 48px; line-height: 48px;">
+                Log In
+                </button>
             </div>
 
-            <!-- Additional Signin Options -->
-            <!-- <div ng-show="registered == true && !user" class="mdl-card__actions center--text">
-                
-                <br>
-                <br>
-            </div> -->
             
         </div>
     </div>
-    
+
 </div>
 <!-- login form --><!-- login form --><!-- login form
