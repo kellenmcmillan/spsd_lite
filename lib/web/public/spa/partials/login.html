@@ -3,7 +3,9 @@
     <div style="margin: 32px auto 32px auto;">
         <!-- User Card --><!-- User Card --><!-- User Card -->
         <div class="login-card mdl-card base-hlst mdl-shadow--4dp" style="margin: 48px auto 0 auto;">
-            <i class="material-icons" style="color: {{base_hue_darkest.value}}; position: absolute; top: 16px; right: 16px;" ng-click="$parent.login_activated = false">close</i>
+            <button ng-click="$parent.login_activated = false" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" style=" position: absolute; top: 16px; right: 16px;">
+                <i class="material-icons" style="color: {{base_hue_darkest.value}};">close</i>
+            </button>
             <div class="mdl-card__title center--text" style="height: 100px; background-color: {{base_hue_lighter.value}}">
                 <div style="margin: 0 auto;">
                     <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
