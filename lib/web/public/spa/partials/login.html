@@ -1,9 +1,9 @@
 <!-- login form --><!-- login form --><!-- login form -->
-<div ng-controller="loginController" style="width: {{window_width}}px; height: {{window_height}}px; background: {{base_hue_darker_darkest_opacity.value}}; z-index: 10000; position: fixed; top: 0; left: 0;" ng-show="login_activated">
+<div ng-controller="loginController" style="width: {{window_width}}px; height: {{window_height}}px; background: {{base_hue_darker_darkest_opacity.value}}; z-index: 10000; position: fixed; top: 0; left: 0;" ng-show="$parent.login_activated">
     <div style="margin: 32px auto 32px auto;">
         <!-- User Card --><!-- User Card --><!-- User Card -->
-        <div class="login-card mdl-card base-hlst mdl-shadow--4dp" style="margin: 48px auto 0 auto;">
-            <button ng-click="$parent.login_activated = false" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" style=" position: absolute; top: 16px; right: 16px;">
+        <div class="login-card mdl-card base-hlst mdl-shadow--4dp border--radius-5" style="margin: 48px auto 0 auto;">
+            <button ng-click="$parent.login_activated = false" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab {{base_hue_lightest.name}}" style=" position: absolute; top: 16px; right: 16px;">
                 <i class="material-icons" style="color: {{base_hue_darkest.value}};">close</i>
             </button>
             <div class="mdl-card__title center--text" style="height: 100px; background-color: {{base_hue_lighter.value}}">
@@ -19,9 +19,9 @@
 
             <!-- login form --><!-- login form --><!-- login form -->
             <div class="mdl-card__supporting-text center--block" ng-hide="adminError">
-                <div class="center--text">
+                <!-- <div class="center--text">
                     <p ng-show="registered == true && !user">Welcome to {{app_data.app_configs.name}}. Let's get to work!</p>
-                </div>
+                </div> -->
                 <div ng-show="user" class="mdl-grid">
                     <div class="mdl-cell mdl-cell--3-col logged-in">
                         <i ng-show="!user.data.personal_info.avatar" class="material-icons auth-circle" ng-click="">account_circle</i>
@@ -105,8 +105,8 @@
                 <!-- Register form -->
 
                 <!-- Login Card Actions -->
-                <button ng-show="registered == true && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="signin(); login_attempt_active = false;" style="width: 48%">Login</button>
-                <button ng-hide="registered == false || registration_completed == true || user" ng-click='beginRegistration()' class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" style="width: 48%">Register</button>
+                <button ng-show="registered == true && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="signin(); login_attempt_active = false;" style="width: 48%">Log In</button>
+                <button ng-hide="registered == false || registration_completed == true || user" ng-click='beginRegistration()' class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" style="width: 48%">Sign Up</button>
                 <button ng-show="registered == false && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="previousRegistrationStep()">Back</button>
                 <button ng-show="registered == false && registration_section < 2 && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="nextRegistrationStep()">Next</button>
                 <button ng-show="registration_section == 2 && registration_completed == false && !user" ng-click='registered = true; registration_completed = true; signup()' class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800">Finish</button>
@@ -122,12 +122,10 @@
 
             <!-- Additional Signin Options -->
             <div ng-show="registered == true && !user" class="mdl-card__actions center--text">
-                <button ng-show="registered == true" class="mdl-button mdl-js-button mdl-js-ripple-effect full-width mdl-color-text--grey-800">
-                    <a href="#" class="mdl-color-text--grey-800" style="text-decoration: none;">
-                    Forgot Password
-                        <img style="width: 55px; height: auto;" src="assets/brand/google90x40dp.png"> 
-                    </a>
-                </button>
+                <a ng-show="registered == true" href="#" class="mdl-color-text--grey-800" style="text-decoration: none;">
+                Forgot Password
+                    <img style="width: 55px; height: auto;" src="assets/brand/google90x40dp.png"> 
+                </a>
                 <br>
                 <br>
             </div>
