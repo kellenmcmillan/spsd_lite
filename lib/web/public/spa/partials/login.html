@@ -126,18 +126,19 @@
                 </button>
                 <!-- logout -->
                 <!-- Forgot Password -->
-                <a ng-show="registered == true" href="#" class="mdl-color-text--grey-800" style="text-decoration: none;">
-                Forgot Password
-                </a>
+                <div style="text-align: center">
+                    <a ng-show="registered == true" href="#" class="mdl-color-text--grey-800" style="text-decoration: none;">
+                    Can't Remember Your Password?
+                    </a>
+                </div>
                 <!-- Forgot Password -->
                 <!-- Login Card Actions -->
 
                 
             </div>
-            <button ng-show="registered == true && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="signin(); login_attempt_active = false;" style="width: 100%; position: absolute; bottom: 0; left: 0; background-color: {{primary_hue_normal.value}}; height: 48px; line-height: 48px;">
-            Log In
+            <button ng-show="registered == true && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="signin(); login_attempt_active = false;" style="width: 100%; bottom: 0; left: 0; background-color: {{primary_hue_normal.value}}; color: {{base_hue_text__lightest.value}}; height: 64px; line-height: 64px;">
+                <i class="material-icons {{base_hue_text__lightest.name}}" role="presentation">vpn_key</i>&nbsp;&nbsp;Log In
             </button>
-            
         </div>
     </div>
 
