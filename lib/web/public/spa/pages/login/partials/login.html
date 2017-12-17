@@ -13,7 +13,7 @@
 		<div class="mdl-grid full-width">
 			<div style="margin: 16px auto 0 auto;">
 			<!-- User Card --><!-- User Card --><!-- User Card -->
-			<div class="login-card mdl-card base-hlst" style="margin: 0 auto; border: 1px {{base_hue_darker.value}}">
+			<div class="login-card mdl-card base-hlst" style="margin: 0 auto; border: 1px {{base_hue_darker.value}} solid;">
 			    <div ng-hide="adminError" class="mdl-card__title">
 			        <h2 ng-show="registered == true && !user" class="mdl-card__title-text mdl-color-text--grey-800">Login</h2>
 			        <h2 ng-show="user" class="mdl-card__title-text mdl-color-text--grey-800">{{user.data.personal_info.firstname}} {{user.data.personal_info.lastname}}</h2>
