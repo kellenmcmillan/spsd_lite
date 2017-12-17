@@ -12,11 +12,16 @@ login form --><!-- login form --><!-- login form -->
                 </div>
             </div>
             <div ng-show="user" class="mdl-card__title">
+                <!-- <h2 ng-show="registered == true && !user" class="mdl-card__title-text mdl-color-text--grey-800">Login</h2> -->
                 <h2 ng-show="user" class="mdl-card__title-text mdl-color-text--grey-800">{{user.data.personal_info.firstname}} {{user.data.personal_info.lastname}}</h2>
+                <!-- <h2 ng-show="registered == false" class="mdl-card__title-text mdl-color-text--grey-800">Register</h2> -->
             </div>
 
             <!-- login form --><!-- login form --><!-- login form -->
             <div class="mdl-card__supporting-text center--block" ng-hide="adminError">
+                <!-- <div class="center--text">
+                    <p ng-show="registered == true && !user">Welcome to {{app_data.app_configs.name}}. Let's get to work!</p>
+                </div> -->
                 <div ng-show="user" class="mdl-grid">
                     <div class="mdl-cell mdl-cell--3-col logged-in">
                         <i ng-show="!user.data.personal_info.avatar" class="material-icons auth-circle" ng-click="">account_circle</i>
@@ -27,7 +32,7 @@ login form --><!-- login form --><!-- login form -->
                         </p>
                     </div>
                 </div>
-                <div ng-show="!user" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+                <div ng-show="registered == true && !user" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
                     <ul style="-webkit-padding-start: 0px;">
                         <li>
                             <div class="mdl-textfield mdl-js-textfield">
@@ -46,8 +51,8 @@ login form --><!-- login form --><!-- login form -->
 
                 <!-- Register form -->
                 <!-- Registration Screen 1 -->
-                <div ng-show="registration_section == 1" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
-                    <p>Let {{app_data.app_configs.name}} know a little more about you.</p>
+                <div ng-show="registered == false && registration_section == 1" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+                    <p ng-show="registered == false">Let {{app_data.app_configs.name}} know a little more about you.</p>
                     <ul style="-webkit-padding-start: 0px;">
                         <li>
                             <div class="mdl-textfield mdl-js-textfield">
@@ -67,8 +72,8 @@ login form --><!-- login form --><!-- login form -->
                 <!-- Registration Screen 1 -->
 
                 <!-- Registration Screen 2 -->
-                <div ng-show="registration_section == 2" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
-                    <p>We're Almost Done!</p>
+                <div ng-show="registered == false && registration_section == 2" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+                    <p ng-show="registered == false">We're Almost Done!</p>
                     <ul style="-webkit-padding-start: 0px;">
                         <li>
                             <div class="mdl-textfield mdl-js-textfield">
@@ -100,10 +105,10 @@ login form --><!-- login form --><!-- login form -->
                 <!-- Register form -->
 
                 <!-- Login Card Actions -->
-                <button ng-show="!user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="signin(); login_attempt_active = false;" style="width: 48%">Log In</button>
-                <button ng-hide="user" ng-click='beginRegistration()' class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" style="width: 48%">Sign Up</button>
-                <button ng-show="!user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="previousRegistrationStep()">Back</button>
-                <button ng-show="registration_section < 2 && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="nextRegistrationStep()">Next</button>
+                <button ng-show="registered == true && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="signin(); login_attempt_active = false;" style="width: 48%">Log In</button>
+                <button ng-hide="registered == false || registration_completed == true || user" ng-click='beginRegistration()' class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" style="width: 48%">Sign Up</button>
+                <button ng-show="registered == false && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="previousRegistrationStep()">Back</button>
+                <button ng-show="registered == false && registration_section < 2 && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="nextRegistrationStep()">Next</button>
                 <button ng-show="registration_section == 2 && registration_completed == false && !user" ng-click='registered = true; registration_completed = true; signup()' class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800">Finish</button>
                 <br><br>
 
@@ -120,12 +125,20 @@ login form --><!-- login form --><!-- login form -->
                 </button>
                 <!-- logout -->
                 <!-- Forgot Password -->
-                <a ng-show="!user" href="#" class="mdl-color-text--grey-800" style="text-decoration: none;">
+                <a ng-show="registered == true" href="#" class="mdl-color-text--grey-800" style="text-decoration: none;">
                 Forgot Password
                 </a>
                 <!-- Forgot Password -->
                 <!-- Login Card Actions -->
-            </div> 
+            </div>
+
+            <!-- Additional Signin Options -->
+            <!-- <div ng-show="registered == true && !user" class="mdl-card__actions center--text">
+                
+                <br>
+                <br>
+            </div> -->
+            
         </div>
     </div>
 </div>
