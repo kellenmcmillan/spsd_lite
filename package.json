@@ -57,8 +57,7 @@
     "throng": "4.0.x",
     "time": "0.12.x",
     "underscore": "^1.6.0",
-    "uuid": "^3.0.1",
-    "@okta/jwt-verifier": "^0.0.11"
+    "uuid": "^3.0.1"
   },
   "devDependencies": {},
   "engines": {

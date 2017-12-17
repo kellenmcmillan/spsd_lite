@@ -1,26 +1,278 @@
-<!-- Shrinking Page Title Background Image -->
-<style>
-.interior-page-background {
-    width: 100%!important; height: 100%; 
-    right: 0; padding:0; margin: 0!important; 
-    opacity: 0.1; transition: all .5s ease-in-out;
-}
-</style>
-<!-- Shrinking Page Title Background Image -->
+<!-- User Card --><!-- User Card --><!-- User Card -->
+<div class="login-card mdl-card mdl-shadow--4dp base-hlst" ng-show="user_button">
 
-<div class="mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width interior-page-remove-margin">
+    <div ng-hide="adminError" class="mdl-card__title">
 
-	<!-- Login Screen -->
-	<div class="center--text" ng-attr-style="width: {{window_width}}px; height: {{window_height}}px;">
-		
-		<!-- <div id="okta-login-container"></div> -->
-		
-	</div>
-	<!-- Login Screen -->
+        <h2 ng-show="registered == true && !user" class="mdl-card__title-text mdl-color-text--grey-800">Login</h2>
+        <h2 ng-show="user" class="mdl-card__title-text mdl-color-text--grey-800">{{user.data.personal_info.firstname}} {{user.data.personal_info.lastname}}</h2>
+        <h2 ng-show="registered == false" class="mdl-card__title-text mdl-color-text--grey-800">Register</h2>
 
-	<img src="assets/uploads/thumbs/spsd-logo.png" style="display: none;" content-available>
+    </div>
+
+    <!-- login form --><!-- login form --><!-- login form -->
+
+    <div class="mdl-card__supporting-text center--block" ng-hide="adminError">
+
+        <p ng-show="registered == true && !user">Welcome to {{app_data.app_configs.name}}. Let's get to work!</p>
+
+        <div ng-show="user" class="mdl-grid">
+
+            <div class="mdl-cell mdl-cell--3-col logged-in">
+                
+                <i ng-show="!user.data.personal_info.avatar" class="material-icons auth-circle" ng-click="">account_circle</i>
+
+            </div>
+
+            <div class="mdl-cell mdl-cell--9-col">
+                
+                <p ng-show="user" style="word-wrap: break-word;">{{user.data.personal_info.firstname}} {{user.data.personal_info.lastname}}<br>
+                <span style="word-wrap: break-word; font-size: 11px">{{user.data.personal_info.email}}</span>
+                </p>
+
+            </div>
+
+        </div>
+        <div ng-show="registered == true && !user" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+            <ul style="-webkit-padding-start: 0px;">
+                <li>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="email" id="email" ng-model="signinData.email">
+                        <label class="mdl-textfield__label" for="username">Email...</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="password" id="password" type="password" ng-model="signinData.password">
+                        <label class="mdl-textfield__label" for="password">Password...</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Register form -->
+
+        <!-- Registration Screen 1 -->
+
+        <div ng-show="registered == false && registration_section == 1" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+            <p ng-show="registered == false">Let {{app_data.app_configs.name}} know a little more about you.</p>
+            <ul style="-webkit-padding-start: 0px;">
+                <li>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" id="firstname" ng-model="signupData.firstname">
+                        <label class="mdl-textfield__label" for="firstname">Firstname...</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="lastname" id="lastname" ng-model="signupData.lastname">
+                        <label class="mdl-textfield__label" for="lastname">Lastname...</label>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+
+        <!-- Registration Screen 1 -->
+
+        <!-- Registration Screen 2 -->
+
+        <div ng-show="registered == false && registration_section == 2" class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
+            <p ng-show="registered == false">We're Almost Done!</p>
+            <ul style="-webkit-padding-start: 0px;">
+                <li>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="email" id="email" ng-model="signupData.email">
+                        <label class="mdl-textfield__label" for="email">Email...</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="password" id="password" ng-model="signupData.password">
+                        <label class="mdl-textfield__label" for="password">Password...</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" type="password" id="password" ng-model="signupData.password_match">
+                        <label class="mdl-textfield__label" for="password">Re-enter Password...</label>
+                    </div>
+                </li>
+                <li>
+                    <div class="mdl-textfield mdl-js-textfield">
+                        <input class="mdl-textfield__input" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" type="phone" id="phone" ng-model="signupData.phone">
+                        <label class="mdl-textfield__label" for="phone">Phone...</label>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Registration Screen 2 -->
+
+        <!-- Register form -->
+
+        <!-- Login Card Actions -->
+
+        <button ng-show="registered == true && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="signin(); login_attempt_active = false;" style="width: 48%">Login</button>
+
+        <button ng-hide="registered == false || registration_completed == true || user" ng-click='beginRegistration()' class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" style="width: 48%">Register</button>
+
+        <button ng-show="registered == false && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="previousRegistrationStep()">Back</button>
+
+        <button ng-show="registered == false && registration_section < 2 && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="nextRegistrationStep()">Next</button>
+
+        <button ng-show="registration_section == 2 && registration_completed == false && !user" ng-click='registered = true; registration_completed = true; signup()' class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800">Finish</button>
+        
+        <br><br>
+
+        <button ng-show="registered == true && !user" class="mdl-button mdl-js-button mdl-js-ripple-effect full-width mdl-color-text--grey-800" ng-click="adminError = true;">
+
+            <a href="/auth/google" class="mdl-color-text--grey-800" style="text-decoration: none;">
+
+                <i class="material-icons primary-hn--text" role="presentation">https</i>&nbsp;&nbsp;Sign In As An Admin
+
+            </a>
+
+        </button>
+        <button ng-show="user" class="mdl-button mdl-js-button mdl-js-ripple-effect full-width {{primary_hue_normal.name}}" ng-click="">
+
+            <a href="" class="{{base_hue_text__lighter.name}}" style="text-decoration: none;">
+
+                <i class="material-icons {{base_hue_text__lighter.name}}" role="presentation">https</i>&nbsp;&nbsp;My Vault
+
+            </a>
+
+        </button>
+
+        <!-- Login Card Actions -->
+
+    </div>
+
+    <!-- Login Form Menu -->
+
+    <div class="mdl-card__menu" ng-show="!user">
+
+        <div id="lightweight-login-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+
+            <i class="material-icons {{base_hue_text__normal.name}}">help</i>
+
+        </div>
+
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect {{base_hue_lighter.name}}" for="lightweight-login-menu-lower-right">
+
+            <li class="mdl-menu__item">Forgot Password</li>
+
+        </ul>
+
+    </div>
+
+    <!-- Login Form Menu -->
+
+    <!-- Additional Signin Options -->
+
+    <div ng-show="registered == true && !user" class="mdl-card__actions center--text">
+
+        <button ng-show="registered == true" class="mdl-button mdl-js-button mdl-js-ripple-effect full-width mdl-color-text--grey-800">
+
+            <a href="/api/router/auth/google" class="mdl-color-text--grey-800" style="text-decoration: none;">
+            or sign in with
+                <img style="width: 55px; height: auto;" src="assets/brand/google90x40dp.png"> 
+            </a>
+
+        </button>
+
+        <br>
+        <br>
+        
+    </div>
+
+    <!-- Additional Signin Options -->
+
+    
+    
+    <!-- Request admin Privelages -->
+
+    <div ng-show="adminError" class="mdl-card__title">
+
+        <h2 class="mdl-card__title-text mdl-color-text--grey-800">Admin Access</h2>
+
+    </div>
+
+    <form autocomplete="off" ng-show="adminError == true">
+
+        <div class="mdl-grid">
+
+            <div class="mdl-cell--12-col center--text">
+
+                <img ng-src="{{app_data.app_configs.graphic_logo_src}}" style="width: 50%">
+
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+
+        <div class="mdl-grid">
+
+            <div class="mdl-cell--12-col">
+
+                <p class="padded-text">Doesn't Look Like You're An Authorized User In {{app_data.app_configs.name}}'s System Yet.</p>
+
+            </div>
+
+        </div>
+
+        <!-- Admin Request -->
+        <div ng-show="adminError == true" class="mdl-card__actions center--text">
+
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect full-width mdl-color-text--grey-800" ng-click="adminError = false;" ng-model="adminAccess.choice" ng-value="false">
+
+                <a class="mdl-color-text--grey-800" style="text-decoration: none;">
+
+                    <i class="material-icons primary-hn--text" role="presentation">clear</i>&nbsp;&nbsp;Cancel Request
+
+                </a>
+
+            </button>
+
+            <br>
+            <br>
+
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect full-width mdl-color-text--grey-800">
+
+                <a href="/auth/google" class="mdl-color-text--grey-800" style="text-decoration: none;" ng-click="adminError = true;" ng-model="adminAccess.choice" ng-value="true">
+
+                    <i class="material-icons primary-hn--text" role="presentation">lock_open</i>&nbsp;&nbsp;Request Access
+
+                </a>
+
+            </button>
+
+        </div>
+        <!-- Admin Request -->
+
+    </form>
+
+    <!-- Request admin Privelages -->
+
+    <!-- logout -->
+    <div class="mdl-card__actions center--text" ng-show="user">
+
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect full-width mdl-color-text--grey-800" ng-click="logout()">
+
+            <a class="mdl-color-text--grey-800" style="text-decoration: none;">
+                <i class="material-icons primary-hn--text" role="presentation">clear</i>&nbsp;&nbsp;logout
+            </a>
+
+        </button>
+
+    </div>
+    <!-- logout -->
+
+    <br>
+
+    <!-- login form --><!-- login form --><!-- login form -->
 
 </div>
-<!-- Header -->
-<div ng-include src="'spa/partials/interior-header.html'"></div>
-<!-- Header -->
+
+<!-- User Card --><!-- User Card --><!-- User Card -->
