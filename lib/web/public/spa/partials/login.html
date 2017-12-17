@@ -1,8 +1,9 @@
-login form --><!-- login form --><!-- login form -->
-<div ng-controller="loginController" class="mdl-grid" style="width: {{window_width}}px; height: {{window_height}}px; background: {{base_hue_darker_darkest_opacity.value}}; z-index: 10000; position: fixed; top: 0; left: 0;" ng-show="$parent.login_activated">
-    <div style="margin: 32px auto 32px auto;">
+<!-- login form --><!-- login form --><!-- login form -->
+<div ng-controller="loginController" style="width: 100%; height: {{window_height}}px; background: {{base_hue_darker_darkest_opacity.value}}; z-index: 10000; position: fixed; top: 0; left: 0;" ng-show="$parent.login_activated">
+
+    <div>
         <!-- User Card --><!-- User Card --><!-- User Card -->
-        <div class="login-card mdl-card base-hlst mdl-shadow--4dp border--radius-5 mdl-cell mdl-cell--4-col" style="margin: {{window_height/10}}px auto 0 auto;">
+        <div class="login-card mdl-card base-hlst mdl-shadow--4dp border--radius-5" style="margin: {{window_height/10}}px auto 0 auto;">
             <button ng-click="toggle_log_in()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab {{base_hue_lightest.name}}" style=" position: absolute; top: 16px; right: 16px;">
                 <i class="material-icons login-close" style="color: {{base_hue_darkest.value}};">close</i>
             </button>
@@ -141,5 +142,6 @@ login form --><!-- login form --><!-- login form -->
             
         </div>
     </div>
+    
 </div>
 <!-- login form --><!-- login form --><!-- login form
