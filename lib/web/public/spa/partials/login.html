@@ -3,10 +3,10 @@
     <div style="margin: 32px auto 32px auto;">
         <!-- User Card --><!-- User Card --><!-- User Card -->
         <div class="login-card mdl-card base-hlst mdl-shadow--4dp" style="margin: 48px auto 0 auto;">
-            <i class="material-icons" style="color: {{base_hue_darkest.value}}; position: absolute; top: 16px; right: 16px;" ng-click="login_activated = false">close</i>
+            <i class="material-icons" style="color: {{base_hue_darkest.value}}; position: absolute; top: 16px; right: 16px;" ng-click="$parent.login_activated = false">close</i>
             <div class="mdl-card__title center--text" style="height: 100px; background-color: {{base_hue_lighter.value}}">
                 <div style="margin: 0 auto;">
-                    <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src_white}}" ng-cloak="true">
+                    <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
                 </div>
             </div>
             <div ng-hide="adminError" class="mdl-card__title">
