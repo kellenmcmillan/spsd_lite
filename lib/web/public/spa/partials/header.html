@@ -122,6 +122,13 @@
             du-smooth-scroll>
                 {{app_data.app_configs.primary_navigation[5].name}}
             </a>
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            style="font-size: 16px; font-weight: bold"
+            ng-show="!login_activated" 
+            ng-click="login_activated == true">
+                Log In
+            </a>
         </nav>
         <!-- Header Navigation -->
 

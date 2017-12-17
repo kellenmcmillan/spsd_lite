@@ -44,6 +44,13 @@
             ng-repeat="item in app_data.app_configs.secondary_navigation">
                 {{item.name}}
             </a>
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            style="font-size: 16px; font-weight: bold"
+            ng-show="!login_activated" 
+            ng-click="login_activated == true">
+                Log In
+            </a>
         </nav>
         <!-- Header Navigation -->
 
@@ -91,6 +98,13 @@
             href="{{item.href}}" 
             ng-repeat="item in app_data.app_configs.secondary_navigation">
                 {{item.name}}
+            </a>
+            <a 
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            style="font-size: 16px; font-weight: bold"
+            ng-show="!login_activated" 
+            ng-click="login_activated == true">
+                Log In
             </a>
         </nav>
         <!-- Header Navigation -->
@@ -162,6 +176,13 @@
                                 </i>
                                 {{item.name}}
                             </span>
+                        </a>
+                        <a 
+                        class="lightweight-navigation-link header-navigation base-hdr--text"
+                        style="font-size: 16px; font-weight: bold"
+                        ng-show="!login_activated" 
+                        ng-click="login_activated == true">
+                            Log In
                         </a>
                     </li>
                 </ul>
