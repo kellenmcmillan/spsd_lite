@@ -28,6 +28,8 @@
 .contrast-div {background-color: rgba(0, 0, 0, 0.4)!important;}
 .contrast-button {color: rgb(117, 117, 117)!important;}
 .login-card .ng-hide {padding: 0!important;}
+.login-card .mdl-button--fab.mdl-button--mini-fab {height: 24px!important; min-width: 24px!important; width: 24px!important;}
+.login-close {font-size: 18px!important}
 /* ===== horizontal centering ===== */
 .center--block {margin: 0 auto;}
 .center--container {margin-left: auto; margin-right: auto;}
