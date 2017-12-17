@@ -13,3 +13,4 @@
 .fling_button_2.opened {bottom: 210px; box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);}
 .mdl-button.fling_button_1 {transition-duration: .34s; bottom: 86px; box-shadow: none;}
 .fling_button_1.opened {bottom: 152px; box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);}
+.login-button {width: 100%; bottom: 0; left: 0; height: 64px; line-height: 64px; border-radius: 0!important;}
