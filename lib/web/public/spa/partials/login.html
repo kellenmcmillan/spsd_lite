@@ -20,10 +20,10 @@
             <!-- Company Logo -->
 
             <!-- Login Component Tabs -->
-            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect" ng-show="login_state == login || login_state == signup">
+            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect" ng-show="login_state == 'Log In' || login_state == 'Sign Up'">
                 <div class="mdl-tabs__tab-bar">
-                    <a href="#login-panel" class="mdl-tabs__tab is-active" ng-click="login_state = login; login_state_change()">Log In</a>
-                    <a href="#signup-panel" class="mdl-tabs__tab" ng-click="login_state = signup; login_state_change()">Sign Up</a>
+                    <a href="#login-panel" class="mdl-tabs__tab is-active" ng-click="login_state = 'Log In'; login_state_change()">Log In</a>
+                    <a href="#signup-panel" class="mdl-tabs__tab" ng-click="login_state = 'Sign Up'; login_state_change()">Sign Up</a>
                 </div>
 
                 <!-- Log In Panel -->
@@ -110,7 +110,7 @@
                 </h2>
             </div>
 
-            <div class="mdl-card__supporting-text center--block" ng-if="login_state == login || user">
+            <div class="mdl-card__supporting-text center--block" ng-if="login_state == 'Log In' || user">
 
                 <!-- Logged In User -->
                 <div ng-show="user" class="mdl-grid">
@@ -127,14 +127,14 @@
 
                 <!-- Login Card Actions -->
                 <!-- My Vault -->
-                <div ng-hide="login_state != signedIn" class="center--text">
+                <div ng-hide="login_state != 'Signed In'" class="center--text">
                     <a href="#" class="{{base_hue_text__darkest.name}}" style="text-decoration: none;">
                         <i class="material-icons {{base_hue_text__lighter.name}}" role="presentation">https</i>&nbsp;&nbsp;My Vault
                     </a>
                 </div>
                 <!-- My Vault -->
                 <!-- Forgot Password -->
-                <div ng-show="login_state == login" class="center--text">
+                <div ng-show="login_state == 'Log In'" class="center--text">
                     <a href="#" class="{{base_hue_text__darkest.name}}" style="text-decoration: none;">
                     Don't remember your password?
                     </a>
@@ -146,7 +146,7 @@
             </div>
 
             <!-- Login Button -->
-            <button ng-show="registered == true && !user" class="login-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="login_button.action">
+            <button ng-hide="login_state == null" class="login-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="login_button.action">
                 {{login_button.text}}&nbsp;&nbsp;
                 <i class="material-icons {{base_hue_text__lightest.name}}" role="presentation">keyboard_arrow_right</i>
             </button>
