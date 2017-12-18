@@ -22,8 +22,8 @@
             <!-- Login Component Tabs -->
             <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect" ng-show="login_state == 'Log In' || login_state == 'Sign Up'">
                 <div class="mdl-tabs__tab-bar">
-                    <a href="#login-panel" style="width: 24%" class="mdl-tabs__tab is-active" ng-click="login_text_change()">Log In</a>
-                    <a href="#signup-panel" style="width: 24%" class="mdl-tabs__tab" ng-click="login_text_change()">Sign Up</a>
+                    <a href="#login-panel" style="width: 24%" class="mdl-tabs__tab is-active" ng-click="login_state_change('Log In')">Log In</a>
+                    <a href="#signup-panel" style="width: 24%" class="mdl-tabs__tab" ng-click="login_state_change('Sign Up')">Sign Up</a>
                 </div>
 
                 <!-- Log In Panel -->
