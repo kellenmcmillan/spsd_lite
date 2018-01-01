@@ -89,10 +89,6 @@
 
         <div class="mdl-layout mdl-js-layout" scroll-position="scroll">
 
-            <!-- Log In Form -->
-            <div ng-include src="'spa/partials/login.html'"></div>
-            <!-- Log In Form -->
-
             <div class="mdl-layout__drawer">
                 <!-- frontend navigation -->
                 <nav class="navigation mdl-navigation">
@@ -136,12 +132,10 @@
                             <li ng-repeat="link in app_data.app_configs.navigation.footer_navigation">
                                 <a href="{{link.url}}">{{link.name}}</a>
                             </li>
-                            <li>
-                                <a ng-click="login_state_change('Log In'); toggle_log_in()" class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect">
-                                    My Vault
-                                </a>
-                            </li>
                         </ul>
+                        <md-button class="md-icon-button" aria-label="Login" ng-click="showLoginDialog($event)">
+                            <md-icon style="color: #BDBDBD">face</md-icon>
+                        </md-button>
                     </div>
                     <div class="mdl-mini-footer__right-section" style="z-index:2">
                         <div class="mdl-logo mdl-color-text--grey-600 lightweight-signature" style="letter-spacing: 1px!important;">
@@ -170,7 +164,7 @@
         
         
     </body>
-    
+
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase-auth.js"></script>
