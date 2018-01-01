@@ -1,0 +1,36 @@
+<md-dialog class="authentication" aria-label="Sign Up">
+	<form ng-submit="createUser()">
+		<md-dialog-content style="max-width: 400px; min-width: 360px; max-height: 810px;">
+			<md-tabs class="signup_dialog" md-dynamic-height md-border-bottom>
+				<md-tab label="Sign Up">
+					<md-content class="md-padding">
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input" flex>
+								<label>Email</label>
+								<input ng-model="newUser.email">
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input" flex>
+								<label>Password</label>
+								<input ng-model="newUser.password">
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input" flex>
+								<label>Re-enter password</label>
+								<input ng-model="newUser.compare_password">
+							</md-input-container>
+						</md-list-item>
+					</md-content>
+				</md-tab>
+			</md-tabs>
+		</md-dialog-content>
+		<md-dialog-actions class="login_actions" layout="row" layout-align="center center">
+			<md-button style="background: transparent;" type="submit" style="margin-right:20px;">
+			Sign up
+				<md-icon>keyboard_arrow_right</md-icon>
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

@@ -1,160 +1,44 @@
-<!-- login form --><!-- login form --><!-- login form -->
-<div ng-controller="loginController" style="width: 100%; height: {{window_height}}px; background: {{base_hue_darker_darkest_opacity.value}}; z-index: 10000; position: fixed; top: 0; left: 0;" ng-show="login_activated">
-
-    <div>
-        <!-- User Card --><!-- User Card --><!-- User Card -->
-        <div class="login-card mdl-card base-hlst mdl-shadow--4dp border--radius-5" style="margin: {{window_height/10}}px auto 0 auto;">
-
-            <!-- Close Login Dialog -->
-            <button ng-click="toggle_log_in()" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab {{base_hue_lightest.name}}" style=" position: absolute; top: 16px; right: 16px;">
-                <i class="material-icons login-close" style="color: {{base_hue_darkest.value}};">close</i>
-            </button>
-            <!-- Close Login Dialog -->
-
-            <!-- Company Logo -->
-            <div class="mdl-card__title center--text" style="height: 100px; background-color: {{base_hue_lighter.value}}">
-                <div style="margin: 0 auto;">
-                    <img class="header-logo" style="max-width: 144px!important" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
-                </div>
-            </div>
-            <!-- Company Logo -->
-
-            <!-- Login Component Tabs -->
-            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect" ng-show="login_state == 'Log In' || login_state == 'Sign Up'">
-                <div class="mdl-tabs__tab-bar">
-                    <a href="#login-panel" style="width: 24%" class="mdl-tabs__tab is-active" ng-click="login_state_change('Log In')">Log In</a>
-                    <a href="#signup-panel" style="width: 24%" class="mdl-tabs__tab" ng-click="login_state_change('Sign Up')">Sign Up</a>
-                </div>
-
-                <!-- Log In Panel -->
-                <div class="mdl-tabs__panel is-active" id="login-panel">
-                    <!-- Sign In Component -->
-                    <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
-                        <ul style="-webkit-padding-start: 0px;">
-                            <li style="width: 100%; position: relative;">
-                                <div class="mdl-textfield mdl-js-textfield" style="width: 90%; display: block; margin: 0 auto;">
-                                    <input class="mdl-textfield__input" type="email" id="email" ng-model="signinData.email">
-                                    <label class="mdl-textfield__label" for="username">Email...</label>
-                                </div>
-                            </li>
-                            <li style="width: 100%; position: relative;">
-                                <div class="mdl-textfield mdl-js-textfield" style="width: 90%; display: block; margin: 0 auto;">
-                                    <input class="mdl-textfield__input" type="password" id="password" type="password" ng-model="signinData.password">
-                                    <label class="mdl-textfield__label" for="password">Password...</label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- Sign In Component -->
-                </div>
-                <!-- Log In Panel -->
-
-                <!-- Sign Up Panel -->
-                <div class="mdl-tabs__panel" id="signup-panel">
-                    <!-- Register form -->
-                    <!-- Registration Screen 1 -->
-                    <div class="mdl-color-text--grey-800 mdl-cell mdl-cell--12-col">
-                        <div class="center--text">
-                            <p>Let {{app_data.app_configs.name}} know a little more about you.</p>
-                        </div>
-                        <ul style="-webkit-padding-start: 0px;">
-                            <li style="width: 100%; position: relative;">
-                                <div class="mdl-textfield mdl-js-textfield" style="width: 90%; display: block; margin: 0 auto;">
-                                    <input class="mdl-textfield__input" id="firstname" ng-model="signupData.firstname">
-                                    <label class="mdl-textfield__label" for="firstname">Firstname...</label>
-                                </div>
-                            </li>
-                            <li style="width: 100%; position: relative;">
-                                <div class="mdl-textfield mdl-js-textfield" style="width: 90%; display: block; margin: 0 auto;">
-                                    <input class="mdl-textfield__input" type="lastname" id="lastname" ng-model="signupData.lastname">
-                                    <label class="mdl-textfield__label" for="lastname">Lastname...</label>
-                                </div>
-                            </li>
-                            <li style="width: 100%; position: relative;">
-                                <div class="mdl-textfield mdl-js-textfield" style="width: 90%; display: block; margin: 0 auto;">
-                                    <input class="mdl-textfield__input" type="email" id="email" ng-model="signupData.email">
-                                    <label class="mdl-textfield__label" for="email">Email...</label>
-                                </div>
-                            </li>
-                            <li style="width: 100%; position: relative;">
-                                <div class="mdl-textfield mdl-js-textfield" style="width: 90%; display: block; margin: 0 auto;">
-                                    <input class="mdl-textfield__input" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$" type="phone" id="phone" ng-model="signupData.phone">
-                                    <label class="mdl-textfield__label" for="phone">Phone...</label>
-                                </div>
-                            </li>
-                            <li style="width: 100%; position: relative;">
-                                <div class="mdl-textfield mdl-js-textfield" style="width: 90%; display: block; margin: 0 auto;">
-                                    <input class="mdl-textfield__input" type="password" id="password" ng-model="signupData.password">
-                                    <label class="mdl-textfield__label" for="password">Password...</label>
-                                </div>
-                            </li>
-                            <li style="width: 100%; position: relative;">
-                                <div class="mdl-textfield mdl-js-textfield" style="width: 90%; display: block; margin: 0 auto;">
-                                    <input class="mdl-textfield__input" type="password" id="password" ng-model="signupData.password_match">
-                                    <label class="mdl-textfield__label" for="password">Re-enter Password...</label>
-                                </div>
-                            </li>
-                            
-                        </ul>
-                    </div>
-                    <!-- Registration Screen 2 -->
-                    <!-- Register form -->
-                </div>
-                <!-- Sign Up Panel -->
-
-            </div>
-            <!-- Login Component Tabs -->
-
-
-            <div ng-show="user" class="mdl-card__title center--text">
-                <h2 ng-show="user" class="mdl-card__title-text mdl-color-text--grey-800">
-                    {{user.data.personal_info.firstname}} {{user.data.personal_info.lastname}}
-                </h2>
-            </div>
-
-            <div class="mdl-card__supporting-text center--block" ng-if="login_state == 'Log In' || user">
-
-                <!-- Logged In User -->
-                <div ng-show="user" class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--3-col logged-in">
-                        <i ng-show="!user.data.personal_info.avatar" class="material-icons auth-circle" ng-click="">account_circle</i>
-                    </div>
-                    <div class="mdl-cell mdl-cell--9-col">
-                        <p style="word-wrap: break-word;">{{user.data.personal_info.firstname}} {{user.data.personal_info.lastname}}<br>
-                        <span style="word-wrap: break-word; font-size: 11px">{{user.data.personal_info.email}}</span>
-                        </p>
-                    </div>
-                </div>
-                <!-- Logged In User -->
-
-                <!-- Login Card Actions -->
-                <!-- My Vault -->
-                <div ng-hide="login_state != 'Signed In'" class="center--text">
-                    <a href="#" class="{{base_hue_text__darkest.name}}" style="text-decoration: none;">
-                        Open My Vault
-                    </a>
-                </div>
-                <!-- My Vault -->
-                <!-- Forgot Password -->
-                <div ng-show="login_state == 'Log In'" class="center--text">
-                    <a href="#" class="{{base_hue_text__darkest.name}}" style="text-decoration: none;">
-                    Don't remember your password?
-                    </a>
-                </div>
-                <!-- Forgot Password -->
-                <!-- Login Card Actions -->
-
-                
-            </div>
-
-            <!-- Login Button -->
-            <button ng-hide="login_state == null" class="login-button mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--grey-800" ng-click="login_action(login_button_text);">
-                {{login_button_text}}&nbsp;&nbsp;
-                <i class="material-icons {{base_hue_text__lightest.name}}" role="presentation">keyboard_arrow_right</i>
-            </button>
-            <!-- Login Button -->
-        </div>
-    </div>
-
-</div>
-<!-- login form --><!-- login form --><!-- login form
+<md-dialog class="authentication" aria-label="Login">
+	<form>
+		<md-dialog-content style="max-width: 400px; min-width: 360px; max-height: 810px;">
+			<md-tabs class="login_dialog" md-dynamic-height md-border-bottom>
+				<md-tab label="Log in">
+					<md-content class="md-padding">
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input" flex>
+								<label>Email</label>
+								<input ng-model="email">
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input" flex>
+								<label>Password</label>
+								<input ng-model="password">
+							</md-input-container>
+						</md-list-item>
+						<div layout="row" layout-align="center center">
+							<div layout-padding layout="row" flex>
+								<div flex="50">
+									<md-button style="background: transparent;">
+									Forgot Password
+									</md-button>
+								</div>
+								<div flex="50">
+									<md-button style="background: transparent;" ng-click="showSignUpDialog($event)">
+									New Account
+									</md-button>
+								</div>
+							</div>
+						</div>
+					</md-content>
+				</md-tab>
+			</md-tabs>
+		</md-dialog-content>
+		<md-dialog-actions class="login_actions" layout="row" layout-align="center center">
+			<md-button style="background: transparent;" ng-click="answer('useful')" style="margin-right:20px;">
+			Log in
+				<md-icon>keyboard_arrow_right</md-icon>
+			</md-button>
+		</md-dialog-actions>
+	</form>
+</md-dialog>

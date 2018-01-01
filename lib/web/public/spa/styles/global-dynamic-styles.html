@@ -90,4 +90,22 @@ h1.small-border-background-no-align:after {background: {{primary_hue_normal.valu
 .login-card .mdl-card__supporting-text .mdl-textfield.is-focused 
 .mdl-textfield__label:after, .mdl-textfield .mdl-textfield__label:after {background-color: {{primary_hue_normal.value}}!important;}
 .backend-app__header {background-color: {{primary_hue_normal.value}}!important;}
+
+
+/* Login Form Color */
+md-toolbar.login_toolbar,
+md-dialog.authentication,
+md-tabs.login_dialog, md-tabs.signup_dialog {background: {{base_hue_lightest.value}}!important;}
+md-tabs.login_dialog md-tabs-wrapper {display: none;}
+md-dialog-actions.login_actions {background: {{primary_hue_normal.value}}!important;}
+md-dialog-actions.login_actions .md-button span, md-dialog-actions.login_actions md-icon {color: {{base_hue_lightest.value}}!important;}
+md-input-container.lightweight-md-input:not(.md-input-invalid).md-input-focused {border-bottom-color: {{primary_hue_border__normal_no_opacity.value}};}
+md-input-container.lightweight-md-input:not(.md-input-invalid).md-input-focused label,
+md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-select-value,
+md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-select-value.md-select-placeholder {color: {{primary_hue_text__normal.value}};}
+md-input-container.lightweight-md-input input:focus {border-bottom: 2px solid {{primary_hue_border__normal_no_opacity.value}}!important;}
+.lightweight-md-dropdown md-select:not([disabled]):focus .md-select-value {border-bottom-color: {{primary_hue_border__normal_no_opacity.value}};}
+/* Login Form Color */
+
+
 </style>
