@@ -1,5 +1,5 @@
 <style>
-	md-list-item * {width: 100%;}
+	md-list-item md-input-container {width: 100%;}
 </style>
 <div class="mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width">
 	<div class="interior-page-container mdl-grid" style="margin-top: 100px;">
@@ -11,6 +11,17 @@
 		<!-- sticky header -->
 		
 		<div class="mdl-grid" style="padding-bottom: 100px">
+
+			<md-list-item class="md-2-line">
+				<img ng-src="user.photoURL" class="md-avatar">
+				<div class="md-list-item-text">
+					<h3 style="color: {{base_hue_lightest.value}}">{{user.firstname}}</h3>
+					<p style="color: {{base_hue_lightest.value}}">{{user.email}}</p>
+				</div>
+				<md-button class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="Delete" style="background-color: {{primary_hue_normal.value}}">
+					<md-icon style="color: {{base_hue_lightest.value}}">Delete</md-icon>
+				</md-button>
+			</md-list-item>
 
 			<div style="margin-bottom: 16px;" class="mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 				<!-- sticky header -->
