@@ -18,9 +18,9 @@
 					<md-icon ng-if="!user.photoURL" style="color: {{base_hue_darkest.value}}">account_circle</md-icon>
 					<div class="md-list-item-text">
 						<h3 style="color: {{base_hue_darkest.value}}">{{user.firstname}}</h3>
-						<p style="color: {{base_hue_darkest.value}}">{{userData.email}}</p>
+						<p style="color: {{base_hue_darkest.value}}">{{user.email}}</p>
 					</div>
-					<md-button class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="Delete" style="background-color: {{primary_hue_normal.value}}">
+					<md-button ng-click="deleteUser()" class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="Delete" style="background-color: {{primary_hue_normal.value}}">
 						<md-icon style="color: {{base_hue_lightest.value}}">delete</md-icon>
 					</md-button>
 				</md-list-item>

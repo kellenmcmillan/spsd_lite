@@ -127,14 +127,19 @@
                 <!-- Footer -->
                 <footer class="mdl-mini-footer" style="background: transparent;">
                     <div class="mdl-mini-footer__left-section" style="z-index:2">
-                        <div class="mdl-logo">{{app_data.app_configs.site_name}} &#169; {{year}}</div>
-                        <div class="mdl-layout-spacer"></div>
-                        <div>
-                            <md-button ng-if="!user" class="md-icon-button" aria-label="Login" ng-click="showLoginDialog($event)">
+                        <div class="mdl-logo" style="float: left;">{{app_data.app_configs.site_name}} &#169; {{year}}</div>
+                        <div style="float: left;">
+                            <md-button ng-if="!user" class="md-icon-button" aria-label="Log In" ng-click="showLoginDialog($event)">
                                 <md-icon style="color: #fafafa">face</md-icon>
                             </md-button>
                             <md-button ng-if="user" class="md-fab md-mini" aria-label="Open My Vault" style="background-color: {{primary_hue_normal.value}}">
                                 <md-icon style="color: #fafafa">face</md-icon>
+                            </md-button>
+                            <md-button ng-if="user" class="md-fab md-mini" aria-label="Open App Tools" style="background-color: {{primary_hue_normal.value}}">
+                                <md-icon style="color: #fafafa">build</md-icon>
+                            </md-button>
+                            <md-button ng-click="auth.$signOut()" ng-if="user" class="md-fab md-mini" aria-label="Log Off" style="background-color: #ff0000">
+                                <md-icon style="color: #fafafa">close</md-icon>
                             </md-button>
                         </div>
                     </div>
