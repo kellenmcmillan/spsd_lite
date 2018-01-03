@@ -15,7 +15,9 @@
 			<div ng-if="user" style="margin-bottom: 16px;" class="mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 				<md-list-item class="md-2-line">
 					<img ng-if="user.photoURL" ng-src="user.photoURL" class="md-avatar">
-					<md-icon ng-if="!user.photoURL" style="color: {{base_hue_darkest.value}}">account_circle</md-icon>
+					<md-button ng-if="!user.photoURL" class="md-fab md-mini" aria-label="Open My Vault" style="background-color: {{primary_hue_normal.value}}">
+                        <md-icon style="color: #fafafa">account_circle</md-icon>
+                    </md-button>
 					<div class="md-list-item-text">
 						<h3 style="color: {{base_hue_darkest.value}}">{{user.firstname}}</h3>
 						<p style="color: {{base_hue_darkest.value}}">{{user.email}}</p>
