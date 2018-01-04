@@ -106,31 +106,26 @@
 							<span class="md-subhead">Sub header</span>
 						</md-card-header-text>
 					</md-card-header>
-					<div style="max-height: 300px; text-align: center; overflow: hidden;">
-						<img ng-src="media/GettyImages-730266311.jpg" class="md-card-image" alt="image caption">
-					</div>
 					<md-card-content>
-						<md-list-item>
-							<md-input-container class="md-block lightweight-md-input">
-								<label>Email</label>
-								<input>
-							</md-input-container>
-						</md-list-item>
-						<md-list-item>
-							<md-input-container class="md-block lightweight-md-input">
-								<label>Password</label>
-								<input>
-							</md-input-container>
-						</md-list-item>
-						<md-list-item>
-							<md-input-container class="md-block lightweight-md-input">
-								<label>Re-enter password</label>
-								<input>
-							</md-input-container>
-						</md-list-item>
+						<md-list flex>
+							<md-list-item class="md-3-line" ng-click="null">
+								<md-icon class="md-avatar-icon" style="color: {{base_hue_darkest.value}}; font-size: 18px;">more_vert</md-icon>
+								<div class="md-list-item-text" layout="column">
+									<h3>New Form Lead</h3>
+									<h4>John Doe</h4>
+									<p>Hi SPSD! I'm interested in contracting your services.</p>
+								</div>
+							</md-list-item>
+							<md-list-item class="md-3-line" ng-click="null">
+								<md-icon class="md-avatar-icon" style="color: {{base_hue_darkest.value}}; font-size: 18px;">more_vert</md-icon>
+								<div class="md-list-item-text" layout="column">
+									<h3>New User</h3>
+									<h4>John Doe</h4>
+									<p>User signed up January 3, 2018.</p>
+								</div>
+							</md-list-item>
 						<md-card-actions layout-align="start center">
-							<md-button>Action 1</md-button>
-							<md-button>Action 2</md-button>
+							<md-button>Dismiss All</md-button>
 						</md-card-actions>
 					</md-card-content>
 				</md-card>
