@@ -127,17 +127,10 @@
                 <!-- Footer -->
                 <footer class="mdl-mini-footer" style="background: transparent;">
                     <div class="mdl-mini-footer__left-section" style="z-index:2">
-                        <div class="mdl-logo" style="float: left;">{{app_data.app_configs.site_name}} &#169; {{year}}</div>
-                        <div style="float: left;">
-                            <md-button ng-click="showLoginDialog($event)" ng-if="!user" class="md-fab md-mini" aria-label="Open My Vault" style="background-color: {{primary_hue_normal.value}}">
-                                <md-icon style="color: #fafafa">face</md-icon>
-                            </md-button>
-                            <md-button ng-click="auth.$signOut()" ng-if="user" class="md-fab md-mini" aria-label="Log Off" style="background-color: #D32F2F">
-                                <md-icon style="color: #fafafa">close</md-icon>
-                            </md-button>
-                            <md-button ng-if="user" class="md-fab md-mini" aria-label="Open App Tools" style="background-color: {{primary_hue_normal.value}}">
-                                <md-icon style="color: #fafafa">build</md-icon>
-                            </md-button>
+                        <div class="mdl-logo">{{app_data.app_configs.site_name}} &#169; {{year}}
+                            &nbsp;&nbsp;<span ng-if="!user" ng-click="showLoginDialog($event)">Log In</span>
+                            &nbsp;&nbsp;<span ng-if="user" ng-click="auth.$signOut()">Log Out</span>
+                            &nbsp;&nbsp;<span ng-if="user" ng-click="showLoginDialog($event)">Admin</span>
                         </div>
                     </div>
                     <div class="mdl-mini-footer__right-section" style="z-index:2">
@@ -241,7 +234,6 @@
     <script src="../spa/pages/ux-test/controllers/uxController.js" type="text/javascript"></script>
     <script src="../spa/pages/gallery/controllers/folderController.js" type="text/javascript"></script>
     <script src="../spa/pages/gallery/controllers/directoryController.js" type="text/javascript"></script>
-    <script src="../spa/pages/login/controllers/loginController.js" type="text/javascript"></script>
     <script src="../spa/pages/capabilities/controllers/capabilitiesController.js" type="text/javascript"></script>
     <script src="../spa/pages/team/controllers/teamController.js" type="text/javascript"></script>
     <script src="../spa/pages/myvault/controllers/myvaultController.js" type="text/javascript"></script>

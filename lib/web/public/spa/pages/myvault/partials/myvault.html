@@ -8,13 +8,10 @@
 
 			<div ng-if="user" style="margin-bottom: 16px;" class="mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 				<md-list-item class="md-2-line">
-					<img ng-if="user.photoURL" ng-src="user.photoURL" class="md-avatar">
-					<md-button ng-if="!user.photoURL" class="md-fab md-mini" aria-label="Open My Vault" style="background-color: {{primary_hue_normal.value}}">
-                        <md-icon style="color: #fafafa">account_circle</md-icon>
-                    </md-button>
+                    <md-icon class="md-avatar-icon" style="color: {{base_hue_darkest.value}}; font-size: 18px;">account_circle</md-icon>
 					<div class="md-list-item-text">
-						<h3 style="color: {{base_hue_darkest.value}}">{{user.firstname}}</h3>
-						<p style="color: {{base_hue_darkest.value}}">{{user.email}}</p>
+						<h3 style="color: {{base_hue_darkest.value}}; font-size: 18px;"><!-- {{user.firstname}} -->User Firstname</h3>
+						<p style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{user.email}}</p>
 					</div>
 					<md-button ng-click="deleteUser()" class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="Delete" style="background-color: {{primary_hue_normal.value}}">
 						<md-icon style="color: {{base_hue_lightest.value}}">delete</md-icon>
