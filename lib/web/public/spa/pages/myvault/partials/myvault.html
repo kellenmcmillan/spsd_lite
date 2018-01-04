@@ -15,7 +15,7 @@
 								<h3 style="color: {{base_hue_darkest.value}}; font-size: 18px;"><!-- {{user.firstname}} -->User Firstname</h3>
 								<p style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{user.email}}</p>
 							</div>
-							<md-icon class="md-secondary" aria-label="Delete" ng-click="deleteUser()" style="color: {{base_hue_darkest.value}}; font-size: 36px;">delete</md-icon>
+							<md-icon class="md-secondary" aria-label="Delete" ng-click="deleteUser()" style="color: {{base_hue_darkest.value}};">delete</md-icon>
 						</md-list-item>
 					</md-card-content>
 				</md-card>
@@ -67,7 +67,7 @@
 							</md-input-container>
 						</md-list-item>
 						<md-list-item>
-							<md-input-container class="md-block lightweight-md-input">
+							<md-input-container class="md-block lightweight-md-dropdown">
 								<label>State</label>
 								<md-select ng-model="ctrl.userState">
 									<md-option><em>None</em></md-option>
@@ -100,16 +100,16 @@
 					</md-card-header>
 					<md-card-content>
 						<md-list flex>
-							<md-list-item class="md-3-line">
-								<md-icon class="md-avatar-icon" ng-click="null" style="cursor: pointer; color: {{base_hue_darkest.value}}; font-size: 18px;">more_vert</md-icon>
+							<md-list-item class="md-3-line" ng-click="null">
+								<md-icon class="md-avatar-icon" style="cursor: pointer; color: {{base_hue_darkest.value}}; font-size: 18px;">more_vert</md-icon>
 								<div class="md-list-item-text" layout="column">
 									<h3>New Form Lead</h3>
 									<h4>John Doe</h4>
 									<p>Hi SPSD! I'm interested in contracting your services.</p>
 								</div>
 							</md-list-item>
-							<md-list-item class="md-3-line">
-								<md-icon class="md-avatar-icon" ng-click="null" style="cursor: pointer; color: {{base_hue_darkest.value}}; font-size: 18px;">more_vert</md-icon>
+							<md-list-item class="md-3-line" ng-click="null">
+								<md-icon class="md-avatar-icon" style="cursor: pointer; color: {{base_hue_darkest.value}}; font-size: 18px;">more_vert</md-icon>
 								<div class="md-list-item-text" layout="column">
 									<h3>New User</h3>
 									<h4>John Doe</h4>
@@ -123,16 +123,12 @@
 				</md-card>
 			</div>
 			<div style="margin-bottom: 16px;" class="mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-				<!-- sticky header -->
-				<div>
-					<md-button>My Files</md-button>
-				</div>
-				<!-- sticky header -->
+
 				<md-card style="background: #fafafa;">
 					<md-card-header>
 						<md-card-header-text>
-							<span class="md-title">Title</span>
-							<span class="md-subhead">Sub header</span>
+							<span class="md-title">My Files</span>
+							<span class="md-subhead">Personal Media Files</span>
 						</md-card-header-text>
 					</md-card-header>
 					<div style="max-height: 300px; text-align: center; overflow: hidden;">
