@@ -8,28 +8,23 @@
 
 			<div ng-if="user" style="margin-bottom: 16px;" class="mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 				<md-list-item class="md-2-line">
-                    <md-icon class="md-avatar-icon" style="color: {{base_hue_darkest.value}}; font-size: 18px;">account_circle</md-icon>
+                    <md-icon class="md-avatar-icon" style="color: {{base_hue_darkest.value}}; font-size: 36px;">account_circle</md-icon>
 					<div class="md-list-item-text">
 						<h3 style="color: {{base_hue_darkest.value}}; font-size: 18px;"><!-- {{user.firstname}} -->User Firstname</h3>
 						<p style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{user.email}}</p>
 					</div>
-					<md-button ng-click="deleteUser()" class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="Delete" style="background-color: {{primary_hue_normal.value}}">
-						<md-icon style="color: {{base_hue_lightest.value}}">delete</md-icon>
-					</md-button>
+					<p ng-click="deleteUser()" class="md-secondary md-icon-button" ng-click="doSecondaryAction($event)" aria-label="Delete" style="color: {{base_hue_darkest.value}}">
+						Delete Account
+					</p>
 				</md-list-item>
 			</div>
 
 			<div style="margin-bottom: 16px;" class="mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-				<!-- sticky header -->
-				<div>
-					<md-button>Identity</md-button>
-				</div>
-				<!-- sticky header -->
 				<md-card style="background: #fafafa;">
 					<md-card-header>
 						<md-card-header-text>
-							<span class="md-title">Title</span>
-							<span class="md-subhead">Sub header</span>
+							<span class="md-title">Identity</span>
+							<span class="md-subhead">Adjust Basic User Settings</span>
 						</md-card-header-text>
 					</md-card-header>
 					<md-card-content>
@@ -94,22 +89,17 @@
 				</md-card>
 			</div>
 			<div style="margin-bottom: 16px;" class="mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-				<!-- sticky header -->
-				<div>
-					<md-button>My Tasks</md-button>
-				</div>
-				<!-- sticky header -->
 				<md-card style="background: #fafafa;">
 					<md-card-header>
 						<md-card-header-text>
-							<span class="md-title">Title</span>
-							<span class="md-subhead">Sub header</span>
+							<span class="md-title">My Tasks</span>
+							<span class="md-subhead">New Task Notifications</span>
 						</md-card-header-text>
 					</md-card-header>
 					<md-card-content>
 						<md-list flex>
-							<md-list-item class="md-3-line" ng-click="null">
-								<md-icon class="md-avatar-icon" style="color: {{base_hue_darkest.value}}; font-size: 18px;">more_vert</md-icon>
+							<md-list-item class="md-3-line">
+								<md-icon class="md-avatar-icon" ng-click="null" style="color: {{base_hue_darkest.value}}; font-size: 18px;">more_vert</md-icon>
 								<div class="md-list-item-text" layout="column">
 									<h3>New Form Lead</h3>
 									<h4>John Doe</h4>
