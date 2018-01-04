@@ -1,3 +1,4 @@
+md-list md-list-item .md-avatar-icon {background-color: none;}
 .fling_button {
     transition-timing-function: cubic-bezier(.4,0,.2,1);
     transition-property: bottom, box-shadow;
