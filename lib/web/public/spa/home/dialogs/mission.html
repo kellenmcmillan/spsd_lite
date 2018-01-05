@@ -1,7 +1,9 @@
-<md-dialog aria-label="editor" layout="row">
+<div class="dialog-curtain" layout="column" ng-show="edit_primary_standard_dialog_visible == true">
+    <md-card class="dialog md-card-base" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
+        <md-card-content>
             <!-- columns -->
-            <div flex="50">
-                <md-card class="content" style="background-color: {{base_hue_lightest.value}}; min-height: {{window_height}}px;">
+            <div flex="90" flex-gt-sm="50">
+                <md-card class="md-card-base">
                     <md-card-content>
                         <div flex>
                             <md-list-item>
@@ -33,14 +35,20 @@
             <!-- columns -->
 
             <!-- columns -->
-            <div flex="50">
-                <md-card class="content" style="background-color: {{base_hue_lightest.value}}; min-height: {{window_height}}px;">
+            <div flex="90" flex-gt-sm="50">
+                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
                     <img ng-src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/landscape/landscapeConstruction4-landscape.jpg" class="md-card-image" alt="Washed Out">
                     <md-card-actions layout="row" layout-align="end center">
                         <md-button>Action 1</md-button>
-                        <md-button ng-click="cancel()">Cancel</md-button>
+                        <md-button>Cancel</md-button>
                     </md-card-actions>
                 </md-card>
             </div>
             <!-- columns -->
-</md-dialog>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="endMissionEdit()">Cancel</md-button>
+            <md-button>Update</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
