@@ -1,4 +1,5 @@
 <!-- mission -->
+<
 <div
  ng-if="scrollable"
  minfull-screen
@@ -9,6 +10,9 @@
  property="{{primary_standard_container.paint.background.property}}" 
  opaqueness="{{primary_standard_container.paint.background.opaqueness}}" 
  lw-color>
+    <md-button ng-if="user" ng-click="showPrimaryContainer($event)" class="md-fab" aria-label="Eat cake" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 32px;";>
+        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+    </md-button>
     <span id="mission" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
@@ -74,6 +78,9 @@
  property="{{primary_standard_container.paint.background.property}}" 
  opaqueness="{{primary_standard_container.paint.background.opaqueness}}" 
  lw-color>
+    <md-button ng-if="user" ng-click="showPrimaryContainer($event)" class="md-fab" aria-label="Eat cake" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 32px;";>
+        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+    </md-button>
     <span id="mission" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">

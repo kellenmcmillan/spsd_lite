@@ -1,0 +1,59 @@
+<md-card class="dialog_editor" style="background-color: {{base_hue_lightest.value}}; min-height: {{window_height}}px;">
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Action buttons</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content>
+
+        <!-- columns -->
+        <div flex>
+            <md-card class="content" style="background-color: {{base_hue_lightest.value}}; min-height: {{window_height}}px;">
+                <md-card-content>
+                    <div flex>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input">
+                                <label>Title</label>
+                                <input>
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input">
+                                <label>Subtitle</label>
+                                <input>
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex="50">
+                            <label>Paragraph</label>
+                            <textarea name="bio" ng-model="To provide quality landscape and construction services long term by collaborating with fair, equitable and enjoyable people while adding value through our longevity, industry knowledge, honesty, integrity and aggressive performance." rows="3" md-maxlength="200"></textarea>
+                        </md-input-container>
+                        </md-list-item>
+                    </div>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+        <!-- columns -->
+
+        <!-- columns -->
+        <div flex>
+            <md-card class="content" style="background-color: {{base_hue_lightest.value}}; min-height: {{window_height}}px;">
+                <img ng-src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/landscape/landscapeConstruction4-landscape.jpg" class="md-card-image" alt="Washed Out">
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button>Action 1</md-button>
+                    <md-button>Action 2</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+        <!-- columns -->
+
+    </md-card-content>
+    <md-card-actions layout="row" layout-align="end center">
+        <md-button>Action 1</md-button>
+        <md-button ng-click="cancel()">Cancel</md-button>
+    </md-card-actions>
+</md-card>
