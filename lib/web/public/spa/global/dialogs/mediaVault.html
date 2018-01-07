@@ -1,0 +1,131 @@
+<div class="upload-dialog-curtain" ng-show="upload_dialog_visible == true">
+    <md-card class="upload-dialog md-card-base">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Media Vault</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
+
+                <md-content class="md-padding mediaVault">
+                    <md-tabs md-stretch-tabs="always">
+                        <md-tab id="MediaFiles">
+                            <md-tab-label>View All Media</md-tab-label>
+                            <md-tab-body>
+
+                            </md-tab-body>
+                        </md-tab>
+                        <md-tab id="Galleries">
+                            <md-tab-label>Manage Galleries</md-tab-label>
+                            <md-tab-body>
+
+                            </md-tab-body>
+                        </md-tab>
+                        <md-tab id="Tags">
+                            <md-tab-label>Manage Tags</md-tab-label>
+                            <md-tab-body>
+
+                            </md-tab-body>
+                        </md-tab>
+                        <md-tab id="Uploads">
+                            <md-tab-label>Upload</md-tab-label>
+                            <md-tab-body>
+                                <div layout-margin flex>
+                                    <form name="uploads">
+                                        <md-button ng-click="mediaVaultView = 'new download'" class="button-color-border" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="200" ngf-multiple="true">Upload A New File</md-button>
+                                    </form>
+                                </div>
+                                <!-- view - download preview -->
+                                <div flex flex-gt-sm="40" ng-show="mediaVaultView == 'new download'">
+                                    <div layout="column" flex>
+                                        <md-card style="margin-bottom: 8px;" ng-show="files" class="md-card-base" ng-repeat="file in files">
+                                            <md-card-title>
+                                                <md-card-title-text>
+                                                    <span class="md-headline">Upload Preview</span>
+                                                </md-card-title-text>
+                                            </md-card-title>
+                                            <img ngf-src="file" class="md-card-image">
+                                            <md-card-content>
+                                                <md-list-item>
+                                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                                        <label>Filename</label>
+                                                        <input ng-model="file.name">
+                                                    </md-input-container>
+                                                </md-list-item>
+                                                <md-list-item>
+                                                    <p>Tags</p>
+                                                    <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
+                                                        <label class="lightweight-md-option-label">Choose Tags</label>
+                                                        <md-select ng-model="file.tag" multiple>
+                                                            <md-option class="lightweight-md-option" ng-repeat="tag in tags" value="{{tag.value}}">
+                                                                {{tag.value}}
+                                                            </md-option>
+                                                        </md-select>
+                                                    </md-input-container>
+                                                </md-list-item>
+                                            </md-card-content>
+                                        </md-card>
+                                    </div>
+                                </div>
+                                <!-- view - download preview -->
+
+                                <!-- view - downloading files -->
+                                <div flex flex-gt-sm="40" ng-show="mediaVaultView == 'downloads in progress'">
+                                    <div layout="column" flex>
+                                        <md-card ng-repeat="f in files" class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
+                                            <md-card-title>
+                                                <md-card-title-text>
+                                                    <span class="md-headline">Uploaded File</span>
+                                                </md-card-title-text>
+                                            </md-card-title>
+                                            <md-progress-linear md-mode="determinate" value="{{f.percentage}}"></md-progress-linear>
+                                            <img ng-src="{{f.source}}" class="md-card-image" alt="{{f.filename}}">
+                                            <md-card-content>
+                                                <md-list-item>
+                                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                                        <label>Filename</label>
+                                                        <input ng-model="f.filename">
+                                                    </md-input-container>
+                                                </md-list-item>
+                                                <md-list-item layout="row" layout-align="start center">
+                                                    <md-button>Slideshow</md-button>
+                                                    <md-button>Landscape Management</md-button>
+                                                </md-list-item>
+                                            </md-card-content>
+                                        </md-card>
+                                    </div>
+                                </div>
+                                <!-- view - downloading files -->
+                            </md-tab-body>
+                        </md-tab>
+                    </md-tabs>
+                </md-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            
+
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="endImageUpload()">Cancel</md-button>
+            <md-button class="md-raised" ng-click="sendFiles(files); mediaVaultView = 'downloads in progress'" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
