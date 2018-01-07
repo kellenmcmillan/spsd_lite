@@ -46,14 +46,14 @@
             <div flex flex-gt-sm="40" ng-show="mediaVaultView == 'downloads in progress'">
                 <span class="md-headline">Uploaded Files</span>
                 <div layout="column" flex>
-                    <md-card ng-repeat="uploadedImage in uploadedImages" class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
-                        <md-progress-linear md-mode="determinate" value="{{uploadedImages[$index].percentage}}"></md-progress-linear>
-                        <img ng-src="{{uploadedImages[$index].source}}" class="md-card-image" alt="uploadedImages[$index].name">
+                    <md-card ng-repeat="f in files" class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
+                        <md-progress-linear md-mode="determinate" value="{{f.percentage}}"></md-progress-linear>
+                        <img ng-src="{{f.source}}" class="md-card-image" alt="{{f.name}}">
                         <md-card-content>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Filename</label>
-                                    <input ng-model="uploadedImages[$index].name">
+                                    <input ng-model="f.name">
                                 </md-input-container>
                             </md-list-item>
                             <md-list-item layout="row" layout-align="start center">
