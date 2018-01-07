@@ -48,12 +48,12 @@
                 <div layout="column" flex>
                     <md-card ng-repeat="f in files" class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
                         <md-progress-linear md-mode="determinate" value="{{f.percentage}}"></md-progress-linear>
-                        <img ng-src="{{f.source}}" class="md-card-image" alt="{{f.name}}">
+                        <img ng-src="{{f.source}}" class="md-card-image" alt="{{f.filename}}">
                         <md-card-content>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Filename</label>
-                                    <input ng-model="f.name">
+                                    <input ng-model="f.filename">
                                 </md-input-container>
                             </md-list-item>
                             <md-list-item layout="row" layout-align="start center">
