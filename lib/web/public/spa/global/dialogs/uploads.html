@@ -14,9 +14,13 @@
             
             <!-- view - download preview -->
             <div flex flex-gt-sm="40" ng-show="mediaVaultView == 'new download'">
-                <span class="md-headline">Upload Preview</span>
                 <div layout="column" flex>
                     <md-card style="margin-bottom: 8px;" ng-show="files" class="md-card-base" ng-repeat="file in files">
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Upload Preview</span>
+                            </md-card-title-text>
+                        </md-card-title>
                         <img ngf-src="file" class="md-card-image">
                         <md-card-content>
                             <md-list-item>
@@ -44,9 +48,13 @@
 
             <!-- view - downloading files -->
             <div flex flex-gt-sm="40" ng-show="mediaVaultView == 'downloads in progress'">
-                <span class="md-headline">Uploaded Files</span>
                 <div layout="column" flex>
                     <md-card ng-repeat="f in files" class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Uploaded File</span>
+                            </md-card-title-text>
+                        </md-card-title>
                         <md-progress-linear md-mode="determinate" value="{{f.percentage}}"></md-progress-linear>
                         <img ng-src="{{f.source}}" class="md-card-image" alt="{{f.filename}}">
                         <md-card-content>
