@@ -6,11 +6,11 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-content layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
+            <div layout-margin flex>
+                <md-button class="button-color-border" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="200" ngf-multiple="true">Upload A New File</md-button>
+            </div>
             <!-- columns -->
             <div flex flex-gt-sm="40">
-                <div layout-margin flex>
-                    <md-button class="button-color-border" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="200" ngf-multiple="true">Upload A New File</md-button>
-                </div>
                 <div layout="column" flex>
                     <md-card style="margin-bottom: 8px;" ng-if="previews.length > 0" class="md-card-base" ng-repeat="preview in previews">
                         <img ngf-src="preview" class="md-card-image" alt="Washed Out">
