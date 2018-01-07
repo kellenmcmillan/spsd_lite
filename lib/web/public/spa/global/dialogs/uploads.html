@@ -15,7 +15,7 @@
             <div flex flex-gt-sm="40">
                 <p>File Preview</p>
                 <div layout="column" flex>
-                    <md-card style="margin-bottom: 8px;" ng-show="files && uploadedImages.length <= file[$index]" class="md-card-base" ng-repeat="file in files">
+                    <md-card style="margin-bottom: 8px;" ng-show="files" class="md-card-base" ng-repeat="file in files">
                         <img ngf-src="file" class="md-card-image" alt="Washed Out">
                         <md-card-content>
                             <md-list-item>
