@@ -5,10 +5,10 @@
                 <span class="md-headline">Uploads</span>
             </md-card-title-text>
         </md-card-title>
+        <div layout-margin flex>
+            <md-button class="button-color-border" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="200" ngf-multiple="true">Upload A New File</md-button>
+        </div>
         <md-card-content layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
-            <div layout-margin flex>
-                <md-button class="button-color-border" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="200" ngf-multiple="true">Upload A New File</md-button>
-            </div>
             <!-- columns -->
             <div flex flex-gt-sm="40">
                 <div layout="column" flex>
