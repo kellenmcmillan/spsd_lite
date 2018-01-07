@@ -47,7 +47,7 @@
                 <span class="md-headline">Uploaded Files</span>
                 <div layout="column" flex>
                     <md-card ng-repeat="uploadedImage in uploadedImages" class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
-                        <img ng-src="{{uploadedImages[$index].url}}" class="md-card-image" alt="uploadedImages[$index].name">
+                        <img ng-src="{{uploadedImages[$index].source}}" class="md-card-image" alt="uploadedImages[$index].name">
                         <md-card-content>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
