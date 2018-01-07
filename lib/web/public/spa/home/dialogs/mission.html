@@ -1,5 +1,5 @@
 <div class="dialog-curtain" ng-show="edit_mission_dialog_visible == true">
-    <md-card class="dialog md-card-base">
+    <md-card class="mission-dialog md-card-base">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">Mission Statement</span>
@@ -29,7 +29,7 @@
                             </md-input-container>
                         </md-list-item>
                     </md-card-content>
-                    <md-card-actions layout="row" layout-align="end center">
+                    <!-- <md-card-actions layout="row" layout-align="end center">
                         <md-button class="md-icon-button" aria-label="Favorite">
                             <md-icon style="color: {{primary_hue_normal.value}};">format_align_left</md-icon>
                         </md-button>
@@ -48,7 +48,7 @@
                         <md-button class="md-icon-button" aria-label="Share">
                             <md-icon style="color: {{base_hue_darker.value}};">format_bold</md-icon>
                         </md-button>
-                    </md-card-actions>
+                    </md-card-actions> -->
                 </md-card>
             </div>
             <!-- columns -->
@@ -62,7 +62,7 @@
                             TAGS: Construction, Stone Waterfall
                         </md-button>
                         <span flex></span>
-                        <md-button aria-label="Replace Image">
+                        <md-button ng-click="startImageUpload()" aria-label="Replace Image">
                             Replace
                         </md-button>
                     </md-card-actions>

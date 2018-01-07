@@ -1,12 +1,17 @@
 /* css */
 
 /* ============================== Curtain ============================== */
-.dialog-curtain {z-index: 2000; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 10; overflow-y: scroll; background-color: rgba(255,255,255,0.6)!important;}
+.dialog-curtain {z-index: 2000;}
+.upload-dialog-curtain {z-index: 2002;}
+.dialog-curtain,
+.upload-dialog-curtain {position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 10; overflow-y: scroll; background-color: rgba(255,255,255,0.6)!important;}
 /* ============================== Curtain ============================== */
 
-/* ============================== Container ============================== */
-.dialog {z-index: 2001;}
-/* ============================== Container ============================== */
+/* ============================== dialogs ============================== */
+.mission-dialog {z-index: 2001;}
+.upload-dialog {z-index: 2003;}
+/* ============================== dialogs ============================== */
+
 
 
 
