@@ -2,7 +2,7 @@
     <md-card class="upload-dialog md-card-base">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">Uploads</span>
+                <span class="md-headline">Media Vault</span>
             </md-card-title-text>
         </md-card-title>
         <div layout-margin flex>
@@ -11,12 +11,13 @@
             </form>
         </div>
         <md-card-content layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
-            <!-- columns -->
-            <div flex flex-gt-sm="40" style="max-height: {{window_height - 100}}px; min-height: {{window_height - 100}}px; overflow-y: scroll;">
+            
+            <!-- view - download preview -->
+            <div flex flex-gt-sm="40">
                 <span class="md-headline">Upload Preview</span>
                 <div layout="column" flex>
                     <md-card style="margin-bottom: 8px;" ng-show="files" class="md-card-base" ng-repeat="file in files">
-                        <img ngf-src="file" class="md-card-image" alt="Washed Out">
+                        <img ngf-src="file" class="md-card-image">
                         <md-card-content>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
@@ -39,10 +40,10 @@
                     </md-card>
                 </div>
             </div>
-            <!-- columns -->
+            <!-- view - download preview -->
 
-            <!-- columns -->
-            <div flex flex-gt-sm="40" style="max-height: {{window_height - 100}}px; min-height: {{window_height - 100}}px; overflow-y: scroll;">
+            <!-- view - downloading files -->
+            <div flex flex-gt-sm="40">
                 <span class="md-headline">Uploaded Files</span>
                 <div layout="column" flex>
                     <md-card ng-repeat="uploadedImage in uploadedImages" class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
@@ -62,11 +63,12 @@
                     </md-card>
                 </div>
             </div>
-            <!-- columns -->
+            <!-- view - downloading files -->
+
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
             <md-button ng-click="endImageUpload()">Cancel</md-button>
-            <md-button ng-disabled="!files" ng-class="{'md-raised': files}" ng-click="sendFiles(files)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+            <md-button class="md-raised" ng-click="sendFiles(files)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
         </md-card-actions>
     </md-card>
 </div>
