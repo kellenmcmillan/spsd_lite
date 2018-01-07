@@ -1,13 +1,13 @@
-<div class="upload-dialog-curtain" ng-show="upload_dialog_visible == true">
+<div class="upload-dialog-curtain mediaVault" ng-show="upload_dialog_visible == true">
     <md-card class="upload-dialog md-card-base">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">Media Vault</span>
             </md-card-title-text>
         </md-card-title>
-        <md-card-content>
+        <md-card-content flex>
 
-                <md-content class="md-padding mediaVault" flex>
+                <md-content class="md-padding" flex>
                     <md-tabs>
                         <md-tab id="MediaFiles">
                             <md-tab-label>View All Media</md-tab-label>
@@ -32,13 +32,13 @@
                             <md-tab-body>
                                 <div layout-margin flex>
                                     <form name="uploads">
-                                        <md-button ng-click="mediaVaultView = 'new download'" class="button-color-border" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="200" ngf-multiple="true">Upload A New File</md-button>
+                                        <md-button ng-click="mediaVaultView = 'new download'" class="button-color-border" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-multiple="true">Upload A New File</md-button>
                                     </form>
                                 </div>
                                 <!-- view - download preview -->
-                                <div flex flex-gt-sm="40" ng-show="mediaVaultView == 'new download'">
-                                    <div layout="column" flex>
-                                        <md-card style="margin-bottom: 8px;" ng-show="files" class="md-card-base" ng-repeat="file in files">
+                                <div flex ng-show="mediaVaultView == 'new download'">
+                                    <div layout="column" layout-gt-sm="row" flex layout-margin>
+                                        <md-card ng-show="files" class="md-card-base" ng-repeat="file in files" flex flex-gt-sm="33">
                                             <md-card-title>
                                                 <md-card-title-text>
                                                     <span class="md-headline">Upload Preview</span>
