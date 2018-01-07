@@ -13,8 +13,9 @@
         <md-card-content layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40">
+                <p>File Preview</p>
                 <div layout="column" flex>
-                    <md-card style="margin-bottom: 8px;" ng-show="files" class="md-card-base" ng-repeat="file in files">
+                    <md-card style="margin-bottom: 8px;" ng-show="files && uploadedImages.length <= file[$index]" class="md-card-base" ng-repeat="file in files">
                         <img ngf-src="file" class="md-card-image" alt="Washed Out">
                         <md-card-content>
                             <md-list-item>
@@ -42,21 +43,24 @@
 
             <!-- columns -->
             <div flex flex-gt-sm="40">
-                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
-                    <img ng-src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/landscape/landscapeConstruction4-landscape.jpg" class="md-card-image" alt="Washed Out">
-                    <md-card-content>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Filename</label>
-                                <input ng-model="file.filename">
-                            </md-input-container>
-                        </md-list-item>
-                        <md-list-item layout="row" layout-align="start center">
-                            <md-button>Slideshow</md-button>
-                            <md-button>Landscape Management</md-button>
-                        </md-list-item>
-                    </md-card-content>
-                </md-card>
+                <p>Uploaded Files</p>
+                <div layout="column" flex>
+                    <md-card ng-repeat="uploadedImage in uploadedImages" class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
+                        <img ng-src="uploadedImage" class="md-card-image" alt="Washed Out">
+                        <md-card-content>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Filename</label>
+                                    <input ng-model="uploadedImage.filename">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item layout="row" layout-align="start center">
+                                <md-button>Slideshow</md-button>
+                                <md-button>Landscape Management</md-button>
+                            </md-list-item>
+                        </md-card-content>
+                    </md-card>
+                </div>
             </div>
             <!-- columns -->
         </md-card-content>
