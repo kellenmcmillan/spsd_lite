@@ -14,13 +14,13 @@
             <!-- columns -->
             <div flex flex-gt-sm="40">
                 <div layout="column" flex>
-                    <md-card style="margin-bottom: 8px;" ng-if="previews" class="md-card-base" ng-repeat="preview in previews">
-                        <img ngf-src="preview" class="md-card-image" alt="Washed Out">
+                    <md-card style="margin-bottom: 8px;" ng-show="files" class="md-card-base" ng-repeat="file in files">
+                        <img ngf-src="file" class="md-card-image" alt="Washed Out">
                         <md-card-content>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Filename</label>
-                                    <input ng-model="preview.name">
+                                    <input ng-model="file.name">
                                 </md-input-container>
                             </md-list-item>
                             <md-list-item>
