@@ -11,7 +11,7 @@
                         <md-tab id="MediaFiles">
                             <md-tab-label>Media Files</md-tab-label>
                             <md-tab-body>
-                                <div layout="column" layout-gt-sm="row" layout-wrap flex>
+                                <div layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex>
                                     <md-card ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize" flex flex-gt-sm="25">
                                         <img ng-src="{{image.source}}" class="md-card-image">
                                         <md-card-content>
@@ -26,8 +26,8 @@
                                                 <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
                                                     <label class="lightweight-md-option-label">Choose Tags</label>
                                                     <md-select ng-model="image.tag" multiple>
-                                                        <md-option class="lightweight-md-option" ng-repeat="tag in tags" value="{{tag.value}}">
-                                                            {{tag.value}}
+                                                        <md-option class="lightweight-md-option" ng-repeat="imageTag in imageTags" value="{{imageTag.value}}">
+                                                            value
                                                         </md-option>
                                                     </md-select>
                                                 </md-input-container>
@@ -104,8 +104,8 @@
                                                     <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
                                                         <label class="lightweight-md-option-label">Choose Tags</label>
                                                         <md-select ng-model="file.tag" multiple>
-                                                            <md-option class="lightweight-md-option" ng-repeat="tag in tags" value="{{tag.value}}">
-                                                                {{tag.value}}
+                                                            <md-option class="lightweight-md-option" ng-repeat="imageTag in imageTags" value="{{imageTag.value}}">
+                                                                value
                                                             </md-option>
                                                         </md-select>
                                                     </md-input-container>
