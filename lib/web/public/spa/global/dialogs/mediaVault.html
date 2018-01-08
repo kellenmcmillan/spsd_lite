@@ -10,7 +10,7 @@
                     <md-tabs>
                         <md-tab id="MediaFiles">
                             <md-tab-label>Media Files</md-tab-label>
-                            <md-tab-body layout-margin>
+                            <md-tab-body>
                                 <div layout="column" layout-gt-sm="row" layout-wrap flex>
                                     <md-card ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize" flex flex-gt-sm="33">
                                         <img ng-src="{{image.source}}" class="md-card-image">
