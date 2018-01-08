@@ -68,8 +68,7 @@
                                     <md-button ng-click="updateTags(tags)" class="button-color-border">Add Tags</md-button>
                                 </div>
                                 <div flex layout-align="end center" ng-show="taglist">
-                                    <md-chips>
-                                        <md-chip ng-repeat="tag in taglist">{{tag.tag}}</md-chip>
+                                    <md-chips ng-model="taglist">
                                     </md-chips>
                                 </div>
                             </md-tab-body>
