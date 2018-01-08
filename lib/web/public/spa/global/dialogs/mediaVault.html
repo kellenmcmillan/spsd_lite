@@ -69,6 +69,9 @@
                                 </div>
                                 <div flex layout-align="end center" ng-show="taglist">
                                     <md-chips ng-model="taglist">
+                                        <md-chip-template>
+                                            {{ $chip.tag }}
+                                        </md-chip-template>
                                     </md-chips>
                                 </div>
                             </md-tab-body>
