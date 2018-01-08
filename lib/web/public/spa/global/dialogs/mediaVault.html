@@ -10,9 +10,9 @@
                     <md-tabs>
                         <md-tab id="MediaFiles">
                             <md-tab-label>Media Files</md-tab-label>
-                            <md-tab-body>
-                                <div layout="column" layout-gt-sm="row">
-                                    <md-card ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist" flex flex-gt-sm="33">
+                            <md-tab-body layout-margin>
+                                <div layout="column" layout-gt-sm="row" layout-wrap flex>
+                                    <md-card ng-show="imagelist" class="md-card-base" dir-paginate="image in imagelist | itemsPerPage: 20" flex flex-gt-sm="33">
                                         <img ng-src="{{image.source}}" class="md-card-image">
                                         <md-card-content>
                                             <md-list-item>
@@ -34,6 +34,9 @@
                                             </md-list-item>
                                         </md-card-content>
                                     </md-card>
+                                </div>
+                                <div layout="row" layout-margin flex>
+                                    <dir-pagination-controls template-url="vendors/dirPagination.tpl.html"></dir-pagination-controls>
                                 </div>
                             </md-tab-body>
                         </md-tab>
