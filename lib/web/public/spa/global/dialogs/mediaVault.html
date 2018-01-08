@@ -10,8 +10,9 @@
                     <md-tabs>
                         <md-tab id="MediaFiles">
                             <md-tab-label>Media Files</md-tab-label>
-                            <md-tab-body layout="column" layout-gt-sm="row">
-                                <md-card ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist" flex flex-gt-sm="33">
+                            <md-tab-body>
+                                <div layout="column" layout-gt-sm="row">
+                                    <md-card ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist" flex flex-gt-sm="33">
                                         <img ng-src="{{image.source}}" class="md-card-image">
                                         <md-card-content>
                                             <md-list-item>
@@ -33,6 +34,7 @@
                                             </md-list-item>
                                         </md-card-content>
                                     </md-card>
+                                </div>
                             </md-tab-body>
                         </md-tab>
                         <md-tab id="Galleries">
