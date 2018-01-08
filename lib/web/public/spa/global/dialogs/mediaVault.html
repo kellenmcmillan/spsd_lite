@@ -23,14 +23,24 @@
                         </md-tab>
                         <md-tab id="Tags">
                             <md-tab-label>Manage Tags</md-tab-label>
-                            <md-tab-body>
-                                <md-chips
-                                ng-model="tags"
-                                md-removable="true"
-                                placeholder="Enter a tag"
-                                delete-button-label="Remove Tag"
-                                delete-hint="Press delete to remove tag"
-                                secondary-placeholder="+Tag"></md-chips>
+                            <md-tab-body layout-align="column">
+                                <div flex>
+                                    <md-chips
+                                    ng-model="tags"
+                                    md-removable="true"
+                                    placeholder="Enter a tag"
+                                    delete-button-label="Remove Tag"
+                                    delete-hint="Press delete to remove tag"
+                                    secondary-placeholder="+Tag"></md-chips>
+                                </div>
+                                <div flex layout-align="end center">
+                                    <md-button ng-click="updateTags(tags)" class="button-color-border">Add Tags</md-button>
+                                </div>
+                                <div flex layout-align="end center">
+                                    <md-chips>
+                                        <md-chip ng-repeat="tag in taglist">tag.tag</md-chip>
+                                    </md-chips>
+                                </div>
                             </md-tab-body>
                         </md-tab>
                         <md-tab id="Uploads">
