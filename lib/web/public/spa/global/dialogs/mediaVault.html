@@ -26,7 +26,7 @@
                                                 <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
                                                     <label class="lightweight-md-option-label">Choose Tags</label>
                                                     <md-select ng-model="image.tag" multiple>
-                                                        <md-option class="lightweight-md-option" ng-repeat="imageTag in imageTags" value="{{imageTag.value}}">
+                                                        <md-option class="lightweight-md-option">
                                                             value
                                                         </md-option>
                                                     </md-select>
@@ -68,7 +68,9 @@
                                     <md-button ng-click="updateTags(tags)" class="button-color-border">Add Tags</md-button>
                                 </div>
                                 <div flex layout-align="end center" ng-show="taglist">
-                                    <md-chips ng-model="taglist">
+                                    <md-chips 
+                                    ng-model="taglist"
+                                    md-removable="false">
                                         <md-chip-template>
                                             {{ $chip.tag }}
                                         </md-chip-template>
