@@ -37,7 +37,7 @@
                                 </div>
                                 <div layout="row" layout-margin flex>
                                     <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="button-color-border">Previous</md-button>
-                                    {{currentPage+1}}/{{numberOfPages()}}
+                                    {{currentPage+1}}/{{numberOfPages}}
                                     <md-button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</md-button>
                                 </div>
                             </md-tab-body>
