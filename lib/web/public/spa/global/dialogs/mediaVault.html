@@ -12,7 +12,18 @@
                             <md-tab-label>Media Files</md-tab-label>
                             <md-tab-body>
                                 <div layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex>
-                                    <md-card ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize" flex flex-gt-sm="30">
+                                    <md-list-item layout="row" flex>
+                                        <div flex="30">
+                                            <md-icon class="md-36">youtube_searched_for</md-icon>
+                                        </div>
+                                        <div flex="70">
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Enter search terms</label>
+                                                <input ng-model="queryImages">
+                                            </md-input-container>
+                                        </div>
+                                    </md-list-item>
+                                    <md-card ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize | filter:queryImages" flex flex-gt-sm="30">
                                         <img ng-src="{{image.source}}" class="md-card-image">
                                         <md-card-content>
                                             <md-list-item>
@@ -26,19 +37,29 @@
                                                 <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
                                                     <label class="lightweight-md-option-label">Choose Tags</label>
                                                     <md-select ng-model="image.tag" multiple>
-                                                        <md-option class="lightweight-md-option">
-                                                            value
+                                                        <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
+                                                            {{fileTag.tag}}
                                                         </md-option>
                                                     </md-select>
                                                 </md-input-container>
                                             </md-list-item>
+                                            <md-list-itme>
+                                                <div flex layout-align="end center" ng-show="image.tags">
+                                                    <md-chips 
+                                                    ng-model="image">
+                                                        <md-chip-template>
+                                                            {{ $chip.tags }}
+                                                        </md-chip-template>
+                                                    </md-chips>
+                                                </div>
+                                            </md-list-itme>
                                         </md-card-content>
                                     </md-card>
                                 </div>
-                                <div layout="row" layout-margin flex>
+                                <div layout="row" layout-align="start center" layout-margin flex>
                                     <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="button-color-border">Previous</md-button>
-                                    {{currentPage+1}}/{{numberOfPages}}
-                                    <md-button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</md-button>
+                                    <span>{{currentPage+1}}/{{numberOfPages}}</span>
+                                    <md-button ng-disabled="currentPage == numberOfPages" ng-click="currentPage=currentPage+1">Next</md-button>
                                 </div>
                             </md-tab-body>
                         </md-tab>
@@ -108,8 +129,8 @@
                                                     <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
                                                         <label class="lightweight-md-option-label">Choose Tags</label>
                                                         <md-select ng-model="file.tag" multiple>
-                                                            <md-option class="lightweight-md-option" ng-repeat="imageTag in imageTags" value="{{imageTag.value}}">
-                                                                value
+                                                            <md-option class="lightweight-md-option" ng-repeat="imageTag in taglist" value="{{imageTag.tag}}">
+                                                                {{imageTag.tag}}
                                                             </md-option>
                                                         </md-select>
                                                     </md-input-container>
