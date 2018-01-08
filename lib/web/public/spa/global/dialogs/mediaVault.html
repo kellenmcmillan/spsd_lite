@@ -6,7 +6,6 @@
             </md-card-title-text>
         </md-card-title>
         <md-card-content flex>
-
                 <md-content class="md-padding" flex>
                     <md-tabs>
                         <md-tab id="MediaFiles">
@@ -24,6 +23,7 @@
                         <md-tab id="Tags">
                             <md-tab-label>Manage Tags</md-tab-label>
                             <md-tab-body layout-align="column">
+                                <h1 class="h1">Add Tags</h1>
                                 <div flex>
                                     <md-chips
                                     ng-model="tags"
@@ -33,6 +33,7 @@
                                     delete-hint="Press delete to remove tag"
                                     secondary-placeholder="+Tag"></md-chips>
                                 </div>
+                                <br>
                                 <div flex layout-align="end center">
                                     <md-button ng-click="updateTags(tags)" class="button-color-border">Add Tags</md-button>
                                 </div>
