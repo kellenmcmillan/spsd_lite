@@ -10,29 +10,29 @@
                     <md-tabs>
                         <md-tab id="MediaFiles">
                             <md-tab-label>Media Files</md-tab-label>
-                            <md-tab-body>
-                            <md-card ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist" flex flex-gt-sm="33">
-                                    <img ng-src="image.source" class="md-card-image">
-                                    <md-card-content>
-                                        <md-list-item>
-                                            <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>Filename</label>
-                                                <input ng-model="image.source">
-                                            </md-input-container>
-                                        </md-list-item>
-                                        <md-list-item>
-                                            <p>Tags</p>
-                                            <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
-                                                <label class="lightweight-md-option-label">Choose Tags</label>
-                                                <md-select ng-model="image.tag" multiple>
-                                                    <md-option class="lightweight-md-option" ng-repeat="tag in tags" value="{{tag.value}}">
-                                                        {{tag.value}}
-                                                    </md-option>
-                                                </md-select>
-                                            </md-input-container>
-                                        </md-list-item>
-                                    </md-card-content>
-                                </md-card>
+                            <md-tab-body layout="column" layout-gt-sm="row">
+                                <md-card ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist" flex flex-gt-sm="33">
+                                        <img ng-src="{{image.source}}" class="md-card-image">
+                                        <md-card-content>
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>Filename</label>
+                                                    <input ng-model="image.source">
+                                                </md-input-container>
+                                            </md-list-item>
+                                            <md-list-item>
+                                                <p>Tags</p>
+                                                <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex-gt-sm>
+                                                    <label class="lightweight-md-option-label">Choose Tags</label>
+                                                    <md-select ng-model="image.tag" multiple>
+                                                        <md-option class="lightweight-md-option" ng-repeat="tag in tags" value="{{tag.value}}">
+                                                            {{tag.value}}
+                                                        </md-option>
+                                                    </md-select>
+                                                </md-input-container>
+                                            </md-list-item>
+                                        </md-card-content>
+                                    </md-card>
                             </md-tab-body>
                         </md-tab>
                         <md-tab id="Galleries">
