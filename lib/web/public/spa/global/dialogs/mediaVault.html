@@ -78,7 +78,7 @@
                                         <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries" flex flex-gt-sm="40">
                                             <md-card-title>
                                                 <md-card-title-text layout="row" layout-align="start center">
-                                                    <span class="md-headline">New Gallery</span>
+                                                    <span class="md-headline">{{gallery.id || "New Gallery"}}</span>
                                                     <span flex></span>
                                                     <md-button class="md-fab md-mini" aria-label="Gallery Settings">
                                                         <md-icon>settings</md-icon>
@@ -96,7 +96,7 @@
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
                                                         <label>Description</label>
-                                                        <textarea name="bio" ng-model="gallery.description" rows="3" md-maxlength="300"></textarea>
+                                                        <textarea name="description" ng-model="gallery.description" rows="3" md-maxlength="300"></textarea>
                                                     </md-input-container>
                                                 </md-list-item>
                                                 <md-list-item>
@@ -121,7 +121,7 @@
                                                 </md-list-item>  
                                             </md-card-content>
                                             <md-card-actions layout="row" layout-align="end center">
-                                                <md-button ng-if="gallery.id" ng-click="deleteGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Cancel</md-button>
+                                                <md-button ng-if="gallery.id" ng-click="deleteGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
                                                 <md-button ng-if="!gallery.id" ng-click="removeGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Cancel</md-button>
                                                 <md-button ng-if="gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                                 <md-button ng-if="!gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
