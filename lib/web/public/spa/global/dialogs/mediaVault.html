@@ -10,7 +10,6 @@
                     <md-tabs>
                         <md-tab id="MediaFiles">
                             <md-tab-label>Media Files</md-tab-label>
-                            <md-tab-label ng-if="mediaVaultSelect">File Selected = {{mediaVaultSelect}}</md-tab-label>
                             <md-tab-body>
                                 <div layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex>
                                     <div layout="row" layout-align="start center" layout-margin flex="100">
@@ -50,7 +49,7 @@
                                             </md-card-content>
                                             <md-card-actions layout="row" layout-align="center center">
                                                 <span>
-                                                    <md-radio-button value="{{image.source}}" class="md-primary"></md-radio-button>
+                                                    <md-radio-button value="{{image.source}}" class="md-primary">Select Media</md-radio-button>
                                                 </span>
                                                 <span flex></span>
                                                 <md-button class="md-raised" ng-click="null" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
