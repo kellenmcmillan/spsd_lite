@@ -62,12 +62,13 @@
 /* ===== widths ===== */
 /* ===== image resizing ===== */
 img {max-width: 100%; height: auto;}
-.portfolio_media_thumbs img, div[class*="container-background"] img {width: 100%!important;}
+.portfolio_media_thumbs img {width: 100%!important;}
 div[class*="container-background"] img, .portfolio_item img {max-width:inherit!important;}
 /* ===== image resizing ===== */
 /* ===== icon resizing ===== */
 .icon {width: 80px; height: auto; margin: 0 auto 20px auto;}
 .mdl-logo .icon {width: 60px; height: 60px;}
+@media (min-width: 1020px) {div[class*="container-background"] img {width: 100%!important;}}
 @media (max-width: 930px) {.icon {width: 60px;}}	
 @media (max-width: 700px) {.icon {width: 60px;}}
 /* ===== icon resizing ===== */
