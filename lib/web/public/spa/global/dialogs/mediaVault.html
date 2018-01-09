@@ -41,8 +41,7 @@
                                             </md-list-item>
                                             <md-list-itme>
                                                 <div flex layout-align="end center" ng-show="image.tags">
-                                                    <md-chips 
-                                                    ng-model="image">
+                                                    <md-chips ng-model="image.tag" md-removable="false">
                                                         <md-chip-template>
                                                             {{ $chip.tags }}
                                                         </md-chip-template>
@@ -89,9 +88,7 @@
                                     <md-button ng-click="updateTags(tags)" class="button-color-border">Add Tags</md-button>
                                 </div>
                                 <div flex layout-align="end center" ng-show="taglist">
-                                    <md-chips 
-                                    ng-model="taglist"
-                                    md-removable="false">
+                                    <md-chips ng-model="taglist" md-removable="false">
                                         <md-chip-template>
                                             {{ $chip.tag }}
                                         </md-chip-template>
