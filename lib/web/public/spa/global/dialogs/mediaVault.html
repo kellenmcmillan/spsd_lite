@@ -64,16 +64,17 @@
                             <md-tab-body>
                                 <div layout-margin flex>
                                     <form name="uploads">
-                                        <md-button class="button-color-border" ng-click="addGalleryTemplate()">Add A Gallery</md-button>
+                                        <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery">Add A Gallery</md-button>
                                     </form>
                                 </div>
 
                                 <!-- Add A Gallery -->
                                 <div flex>
-                                    <div layout="column" layout-gt-sm="row" layout-align="start center" flex layout-wrap layout-margin>
+                                    <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
                                         <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries" flex flex-gt-sm="40">
                                             <md-card-title>
-                                                <md-card-title-text>
+                                                <md-card-title-text layout-align="start center">
+                                                    <md-icon>settings</md-icon>
                                                     <span class="md-headline">New Gallery</span>
                                                 </md-card-title-text>
                                             </md-card-title>
