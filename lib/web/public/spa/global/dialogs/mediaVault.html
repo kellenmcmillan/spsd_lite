@@ -123,10 +123,8 @@
                                                 </md-list-item>  
                                             </md-card-content>
                                             <md-card-actions layout="row" layout-align="end center">
-                                                <md-button ng-if="gallery.id" ng-click="deleteGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
-                                                <md-button ng-if="!gallery.id" ng-click="removeGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Cancel</md-button>
-                                                <md-button ng-if="gallery.id" class="md-raised" ng-click="updateGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
-                                                <md-button ng-if="!gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                                <md-button ng-click="deleteGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
+                                                <md-button class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
                                             </md-card-actions>
                                         </md-card>
                                     </div>
