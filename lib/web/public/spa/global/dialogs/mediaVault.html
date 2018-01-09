@@ -71,7 +71,7 @@
                                 <!-- Add A Gallery -->
                                 <div flex>
                                     <div layout="column" layout-gt-sm="row" layout-align="start center" flex layout-wrap layout-margin>
-                                        <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries" flex flex-gt-sm="30">
+                                        <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries" flex flex-gt-sm="40">
                                             <md-card-title>
                                                 <md-card-title-text>
                                                     <span class="md-headline">New Gallery</span>
@@ -97,8 +97,12 @@
                                                         <input ng-model="gallery.url">
                                                     </md-input-container>
                                                 </md-list-item>
+                                                <md-list-item>
+                                                    <p>Featured Gallery</p>
+                                                    <md-switch class="md-secondary" ng-model="gallery.featured"></md-switch>
+                                                </md-list-item>
                                                 <md-list-item flex layout="row">
-                                                    <p flex>Transition Speed</p>
+                                                    <p flex>Speed</p>
                                                     <md-slider-container flex>
                                                         <md-slider flex min="0" max="10" ng-model="gallery.transition" aria-label="slider" id="slider[$index]">
                                                         </md-slider>
