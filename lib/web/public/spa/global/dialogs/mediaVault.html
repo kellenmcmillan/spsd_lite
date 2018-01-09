@@ -76,9 +76,10 @@
                                     <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
                                         <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries" flex flex-gt-sm="40">
                                             <md-card-title>
-                                                <md-card-title-text layout-align="start center">
-                                                    <md-icon>settings</md-icon>
+                                                <md-card-title-text layout="row" layout-align="start center">
                                                     <span class="md-headline">New Gallery</span>
+                                                    <span flex></span>
+                                                    <md-icon>settings</md-icon>
                                                 </md-card-title-text>
                                             </md-card-title>
                                             <img ngf-src="gallery" class="md-card-image">
