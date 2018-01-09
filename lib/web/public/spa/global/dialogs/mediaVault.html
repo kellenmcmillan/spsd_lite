@@ -62,7 +62,63 @@
                         <md-tab id="Galleries">
                             <md-tab-label>Manage Galleries</md-tab-label>
                             <md-tab-body>
+                                <div layout-margin flex>
+                                    <form name="uploads">
+                                        <md-button class="button-color-border" ng-click="addGalleryTemplate()">Add A Gallery</md-button>
+                                    </form>
+                                </div>
 
+                                <!-- Add A Gallery -->
+                                <div flex>
+                                    <div layout="column" layout-gt-sm="row" layout-align="column" layout-gt-sm="row" flex layout-margin>
+                                        <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries" flex flex-gt-sm="60">
+                                            <md-card-title>
+                                                <md-card-title-text>
+                                                    <span class="md-headline">New Gallery</span>
+                                                </md-card-title-text>
+                                            </md-card-title>
+                                            <img ngf-src="gallery" class="md-card-image">
+                                            <md-card-content>
+                                                <md-list-item>
+                                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                                        <label>Name</label>
+                                                        <input ng-model="gallery.name">
+                                                    </md-input-container>
+                                                </md-list-item>
+                                                <md-list-item>
+                                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                                        <label>Description</label>
+                                                        <textarea name="bio" ng-model="gallery.description" rows="3" md-maxlength="300"></textarea>
+                                                    </md-input-container>
+                                                </md-list-item>
+                                                <md-list-item>
+                                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                                        <label>URL</label>
+                                                        <input ng-model="gallery.url">
+                                                    </md-input-container>
+                                                </md-list-item>
+                                                <md-list-item flex layout="column">
+                                                    <p flex>Transition Speed</p>
+                                                    <md-slider-container flex>
+                                                        
+                                                        <md-slider flex min="0" max="10" ng-model="gallery.transition" aria-label="slider" id="slider[$index]">
+                                                        </md-slider>
+                                                        <md-input-container>
+                                                            <input flex type="number" ng-model="gallery.transition" aria-label="slider" aria-controls="slider[$index]">
+                                                        </md-input-container>
+                                                    </md-slider-container>
+                                                </md-list-item>  
+                                            </md-card-content>
+                                            <md-card-actions layout="row" layout-align="end center">
+                                                <md-button ng-if="gallery.id" ng-click="deleteGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Cancel</md-button>
+                                                <md-button ng-if="!gallery.id" ng-click="removeGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Cancel</md-button>
+                                                <md-button ng-if="gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                                <md-button ng-if="!gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                            </md-card-actions>
+                                        </md-card>
+                                    </div>
+                                </div>
+                                <!-- Add A Gallery -->
                             </md-tab-body>
                         </md-tab>
                         <md-tab id="Tags">
