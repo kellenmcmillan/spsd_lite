@@ -1,4 +1,4 @@
-<div class="upload-dialog-curtain mediaVault" ng-show="upload_dialog_visible == true">
+<div class="upload-dialog-curtain mediaVault" ng-show="media_vault_visible == true">
     <md-card class="upload-dialog md-card-base">
         <md-card-title>
             <md-card-title-text>
@@ -197,6 +197,8 @@
                                                     </md-input-container>
                                                 </md-list-item>
                                             </md-card-content>
+                                            <md-button ng-click="endImageUpload()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Cancel</md-button>
+                                            <md-button class="md-raised" ng-click="sendFiles(files); mediaVaultView = 'downloads in progress'" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Upload</md-button>
                                         </md-card>
                                     </div>
                                 </div>
@@ -235,8 +237,7 @@
                 </md-content>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
-            <md-button ng-click="endImageUpload()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Cancel</md-button>
-            <md-button class="md-raised" ng-click="sendFiles(files); mediaVaultView = 'downloads in progress'" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+            <md-button class="md-raised" ng-click="closeMediaVault()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
         </md-card-actions>
     </md-card>
 </div>
