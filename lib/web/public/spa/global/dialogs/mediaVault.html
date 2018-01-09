@@ -12,14 +12,14 @@
                             <md-tab-label>Media Files</md-tab-label>
                             <md-tab-body>
                                 <div layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex>
-                                    <div layout="row" layout-align="center center" flex="100">
+                                    <!-- <div layout="row" layout-align="center center" flex="100">
                                         <div flex="80">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Enter search terms</label>
                                                 <input ng-model="queryImages">
                                             </md-input-container>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <md-card ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize | filter:queryImages" flex flex-gt-sm="30">
                                         <img ng-src="{{image.source}}" class="md-card-image">
                                         <md-card-content>
