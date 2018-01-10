@@ -129,17 +129,17 @@
                                             </md-card-content>
                                             <md-card-actions layout="row" layout-align="end center">
                                                 <md-button ng-if="!gallery.id" ng-click="deleteGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
-                                                <md-button class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
-                                                <md-button ng-if="!gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                                <md-button ng-if="!gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                                <md-button ng-if="gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Add</md-button>
                                             </md-card-actions>
                                         </md-card>
                                     </div>
                                 </div>
                                 <!-- Add A Gallery -->
                                 <div layout="row" layout-align="start center" layout-margin flex>
-                                    <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="button-color-border">Previous</md-button>
-                                    <span>{{currentPage+1}}/{{numberOfPages}}</span>
-                                    <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="button-color-border">Next</md-button>
+                                    <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="button-color-border">Previous</md-button>
+                                    <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
+                                    <md-button ng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="button-color-border">Next</md-button>
                                 </div>
                             </md-tab-body>
                         </md-tab>
