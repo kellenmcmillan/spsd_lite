@@ -87,7 +87,7 @@
                                                 <md-card-title-text layout="row" layout-align="start center">
                                                     <span class="md-headline">{{gallery.name || "New Gallery"}}</span>
                                                     <span flex></span>
-                                                    <md-button ng-show="gallery.id" class="md-fab md-mini" ng-init="edit_gallery = false" ng-click="edit_gallery = true" aria-label="Gallery Settings">
+                                                    <md-button ng-show="gallery.id" class="md-fab md-mini" ng-init="edit_gallery = false" ng-click="edit_gallery = true" ng-dblclick="edit_gallery = false" aria-label="Gallery Settings">
                                                         <md-icon>create</md-icon>
                                                     </md-button>
                                                 </md-card-title-text>
