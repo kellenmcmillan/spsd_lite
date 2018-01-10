@@ -24,7 +24,7 @@
 
                                     </div>
                                     <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex>
-                                        <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize | filter:tagFilter" flex flex-gt-sm="30">
+                                        <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize | byTag:tagFilter" flex flex-gt-sm="30">
                                             <img ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false" ng-click="gallery_detail_view = true" ng-dblclick="gallery_detail_view = false">
                                             <md-card-content ng-show="gallery_detail_view">
                                                 <md-list-item>
