@@ -108,7 +108,8 @@
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
                                                         <label>URL</label>
-                                                        <input ng-model="gallery.url">
+                                                        <input ng-if="gallery.url" ng-model="gallery.url">
+                                                        <input ng-if="!gallery.url" ng-model="gallery_url">
                                                     </md-input-container>
                                                 </md-list-item>
                                                 <md-list-item>
