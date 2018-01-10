@@ -110,10 +110,18 @@ md-input-container.md-input-focused:not(.md-input-has-value) md-select .md-selec
 md-input-container.lightweight-md-input input:focus {border-bottom: 2px solid {{primary_hue_border__normal_no_opacity.value}}!important;}
 md-radio-button {margin-bottom: 0;}
 md-radio-group .md-checked .md-ink-ripple, md-radio-group .md-checked .md-ink-ripple,
-md-radio-button.md-checked .md-ink-ripple, md-radio-button.md-checked .md-ink-ripple {color: {{primary_hue_text__normal.value}};}
+md-radio-button.md-checked .md-ink-ripple, md-radio-button.md-checked .md-ink-ripple {color: {{primary_hue_text__normal.value}}!important;}
 md-radio-group .md-checked .md-ink-ripple, md-radio-group .md-checked .md-ink-ripple {color:{{primary_hue_normal_darkest_opacity.value}};}
 md-radio-button.md-checked .md-off, md-radio-button.md-checked .md-off,
-md-input-container:not(.md-input-invalid).md-input-focused .md-input {border-color: {{primary_hue_text__normal.value}};}
+md-input-container:not(.md-input-invalid).md-input-focused .md-input, md-radio-button.md-default-theme:not([disabled]).md-primary.md-checked .md-off, 
+md-radio-button:not([disabled]).md-primary.md-checked .md-off, md-radio-button.md-default-theme:not([disabled]) .md-primary.md-checked .md-off, 
+md-radio-button:not([disabled]) .md-primary.md-checked .md-off, md-radio-button.md-default-theme:not([disabled]).md-primary .md-checked .md-off, 
+md-radio-button:not([disabled]).md-primary .md-checked .md-off, md-radio-button.md-default-theme:not([disabled]) .md-primary .md-checked .md-off, 
+md-radio-button:not([disabled]) .md-primary .md-checked .md-off, md-radio-group.md-default-theme:not([disabled]).md-primary.md-checked .md-off, 
+md-radio-group:not([disabled]).md-primary.md-checked .md-off, md-radio-group.md-default-theme:not([disabled]) .md-primary.md-checked .md-off, 
+md-radio-group:not([disabled]) .md-primary.md-checked .md-off, md-radio-group.md-default-theme:not([disabled]).md-primary .md-checked .md-off, 
+md-radio-group:not([disabled]).md-primary .md-checked .md-off, md-radio-group.md-default-theme:not([disabled]) .md-primary .md-checked .md-off, 
+md-radio-group:not([disabled]) .md-primary .md-checked .md-off {border-color: {{primary_hue_text__normal.value}};}
 md-radio-button .md-on, md-radio-button .md-on,
 md-progress-linear.md-default-theme .md-bar, md-progress-linear .md-bar {background-color: {{primary_hue_text__normal.value}};}
 md-slider .md-thumb:after, md-slider .md-thumb:after {background: {{primary_hue_normal.value}}; border-color: {{primary_hue_normal.value}};}
