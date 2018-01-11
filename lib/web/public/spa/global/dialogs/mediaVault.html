@@ -18,7 +18,7 @@
                                         <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="button-color-border">Next</md-button>
                                         <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex>
                                             <label class="lightweight-md-option-label">Filter By Tag</label>
-                                            <md-select md-on-close="filterByTag(tagFilter)" ng-model="tagFilter">
+                                            <md-select md-on-close="filterByTag(tagFilter)" ng-model="tagFilter" multiple>
                                                 <md-option md-option-empty ng-value="undefined">Clear Tag</md-option>
                                                 <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
                                                     {{fileTag.tag}}
@@ -40,10 +40,6 @@
                                                         </md-select>
                                                     </md-input-container>
                                                 </md-list-item>
-                                                <md-list-item>
-                                                    <p>Cover</p>
-                                                    <md-switch class="md-secondary" ng-model="image.cover"></md-switch>
-                                                </md-list-item>
                                                 <md-list-itme>
                                                     <div flex layout-align="end center" ng-show="image.tags">
                                                         <md-chips ng-model="image.tags" md-removable="false">
@@ -53,6 +49,10 @@
                                                         </md-chips>
                                                     </div>
                                                 </md-list-itme>
+                                                <md-list-item>
+                                                    <p>Cover</p>
+                                                    <md-switch class="md-secondary" ng-model="image.cover"></md-switch>
+                                                </md-list-item>
                                             </md-card-content>
                                             <md-card-actions layout="row" layout-align="center center">
                                                 <span>
@@ -60,7 +60,7 @@
                                                 </span>
                                                 <span flex></span>
                                                 <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="null" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
-                                                <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="updateMedia(image)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                                <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="updateMedia(image, $index)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                             </md-card-actions>
                                         </md-card>
                                     </md-radio-group>
@@ -94,12 +94,12 @@
                                                 <md-card-title-text layout="row" layout-align="start center">
                                                     <span class="md-headline">{{gallery.name || "New Gallery"}}</span>
                                                     <span flex></span>
-                                                    <md-button ng-show="gallery.id" class="md-fab md-mini" ng-init="edit_gallery = false" ng-click="edit_gallery = true" ng-dblclick="edit_gallery = false" aria-label="Gallery Settings">
+                                                    <md-button ng-show="gallery.id" class="md-fab md-mini" aria-label="Gallery Settings">
                                                         <md-icon>create</md-icon>
                                                     </md-button>
                                                 </md-card-title-text>
                                             </md-card-title>
-                                            <md-card-content ng-show="edit_gallery || !gallery.id">
+                                            <md-card-content>
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
                                                         <label>Name</label>
@@ -109,7 +109,7 @@
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
                                                         <label>Description</label>
-                                                        <textarea name="description" ng-model="gallery.description" rows="3" md-maxlength="300"></textarea>
+                                                        <input ng-model="gallery.description">
                                                     </md-input-container>
                                                 </md-list-item>
                                                 <md-list-item>
@@ -137,7 +137,7 @@
                                             <md-card-actions layout="row" layout-align="end center">
                                                 <md-button ng-if="!gallery.id" ng-click="deleteGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
                                                 <md-button ng-if="!gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
-                                                <md-button ng-show="edit_gallery" ng-if="gallery.id" class="md-raised" ng-click="updateGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                                <md-button ng-if="gallery.id" class="md-raised" ng-click="updateGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                             </md-card-actions>
                                         </md-card>
                                     </div>
