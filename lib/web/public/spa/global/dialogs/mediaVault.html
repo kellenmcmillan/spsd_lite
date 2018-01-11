@@ -20,7 +20,7 @@
                                         <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex="100" flex-gt-sm="30">
                                             <label class="lightweight-md-option-label">Filter By Tag</label>
                                             <md-select md-on-close="filterByTag(tagFilter)" ng-model="tagFilter">
-                                                <md-option class="lightweight-md-option" md-option-empty></md-option>
+                                                <md-option class="lightweight-md-option" ng-click="filterByTag(null)" md-option-empty></md-option>
                                                 <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
                                                     {{fileTag.tag}}
                                                 </md-option>
