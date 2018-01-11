@@ -49,6 +49,13 @@
                                                         </md-chips>
                                                     </div>
                                                 </md-list-itme>
+                                                <div flex layout-align="end center" ng-show="taglist">
+                                                    <md-chips ng-model="image.tags" md-removable="false">
+                                                        <md-chip-template>
+                                                            {{ $chip.image.tags }}
+                                                        </md-chip-template>
+                                                    </md-chips>
+                                                </div>
                                                 <md-list-item>
                                                     <p>Cover</p>
                                                     <md-switch class="md-secondary" ng-model="image.cover"></md-switch>
