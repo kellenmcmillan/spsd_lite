@@ -11,7 +11,7 @@
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-input" flex>
 								<label>Password</label>
-								<input name="password" ng-model="newUser.password" ng-required="true" minlength="7">
+								<input type="password" name="password" ng-model="newUser.password" ng-required="true" minlength="7">
 								<div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
 							    	<div ng-message="required">Password required!</div>
 							    	<div ng-message="minlength">Password too short!</div>
@@ -21,7 +21,7 @@
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-input" flex>
 								<label>Re-enter password</label>
-								<input ng-model="newUser.compare_password" ng-required="true" name="confirm_password" password-verify="{{newUser.password}}">
+								<input type="password" ng-model="newUser.compare_password" ng-required="true" name="confirm_password" password-verify="{{newUser.password}}">
 								<div ng-messages="signup.confirm_password.$error" ng-show="signup.confirm_password.$dirty">
 							    	<div ng-message="passwordVerify">Passwords don't match!</div>
 							    </div>
@@ -30,7 +30,7 @@
 					</md-content>
 		</md-dialog-content>
 		<md-dialog-actions class="login_actions" layout="row" layout-align="center center">
-			<md-button style="background: transparent;" type="submit" style="margin-right:20px;">
+			<md-button ng-disabled="signup.$invalid" style="background: transparent;" type="submit" style="margin-right:20px;">
 			Sign up
 				<md-icon>keyboard_arrow_right</md-icon>
 			</md-button>

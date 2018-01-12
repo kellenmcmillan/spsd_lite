@@ -43,7 +43,7 @@
 			</md-tabs>
 		</md-dialog-content>
 		<md-dialog-actions class="login_actions" layout="row" layout-align="center center">
-			<md-button style="background: transparent;" ng-click="signIn()" style="margin-right:20px;">
+			<md-button ng-disabled="login.$invalid" style="background: transparent;" ng-click="signIn()" style="margin-right:20px;">
 			Log in
 				<md-icon>keyboard_arrow_right</md-icon>
 			</md-button>
