@@ -1,5 +1,5 @@
 <md-dialog class="authentication" aria-label="Sign Up">
-	<form ng-submit="createUser()">
+	<form name="signup" ng-submit="createUser()">
 		<md-dialog-content style="max-width: 400px; max-height: 810px;">
 					<md-content>
 						<md-list-item>
@@ -11,13 +11,20 @@
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-input" flex>
 								<label>Password</label>
-								<input ng-model="newUser.password">
+								<input name="password" ng-model="newUser.password" ng-required="true" minlength="7">
+								<div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
+							    	<div ng-message="required">Password required!</div>
+							    	<div ng-message="minlength">Password too short!</div>
+							    </div>
 							</md-input-container>
 						</md-list-item>
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-input" flex>
 								<label>Re-enter password</label>
-								<input ng-model="newUser.compare_password">
+								<input ng-model="newUser.compare_password" ng-required="true" name="confirm_password" password-verify="{{newUser.password}}">
+								<div ng-messages="signup.confirm_password.$error" ng-show="signup.confirm_password.$dirty">
+							    	<div ng-message="passwordVerify">Passwords don't match!</div>
+							    </div>
 							</md-input-container>
 						</md-list-item>
 					</md-content>
