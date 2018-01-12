@@ -221,7 +221,7 @@
                                             </md-card-content>
                                             <md-card-actions layout="row" layout-align="end center">
                                                 <md-button ng-click="endImageUpload()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Cancel</md-button>
-                                                <md-button class="md-raised" ng-click="mediaVaultView = 'downloads in progress'; sendFiles(files);" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Upload</md-button>
+                                                <md-button class="md-raised" ng-click="$parent.mediaVaultView = 'downloads in progress'; sendFiles(files);" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Upload</md-button>
                                             </md-card-actions>
                                         </md-card>
                                     </div>
