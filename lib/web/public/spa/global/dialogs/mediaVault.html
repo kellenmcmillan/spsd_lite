@@ -18,7 +18,7 @@
                                             <span>{{currentPage+1}}/{{numberOfPages}}</span>
                                             <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="button-color-border">Next</md-button>
                                         </div>
-                                        <form name="filter_query" layout-align="start center" flex="50">
+                                        <form name="form.filter_query" layout="row" layout-align="start center" flex="50">
                                             <md-button flex="50" ng-click="clearFilterByTag()" class="button-color-border">Clear Tag Filter</md-button>
                                             <div flex="50">
                                                 <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown">
