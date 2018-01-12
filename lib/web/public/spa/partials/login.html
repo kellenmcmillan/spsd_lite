@@ -1,5 +1,5 @@
 <md-dialog class="authentication" aria-label="Login">
-	<form>
+	<form name="login">
 		<md-dialog-content style="max-width: 400px; max-height: 810px;">
 			<md-tabs class="login_dialog" md-dynamic-height md-border-bottom>
 				<md-tab label="Log in">
@@ -7,13 +7,21 @@
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-input" flex>
 								<label>Email</label>
-								<input ng-model="email">
+								<input type="email" name="email" ng-required="true" ng-model="email">
+								<div ng-messages="login.email.$error">
+							    	<div ng-message="required">Email required...</div>
+							    	<div ng-message="email">Enter a valid email...</div>
+							    </div>
 							</md-input-container>
 						</md-list-item>
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-input" flex>
 								<label>Password</label>
-								<input ng-model="password">
+								<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
+								<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
+							    	<div ng-message="required">Password required!</div>
+							    	<div ng-message="minlength">Password too short!</div>
+							    </div>
 							</md-input-container>
 						</md-list-item>
 						<div layout="row" layout-align="center center">
