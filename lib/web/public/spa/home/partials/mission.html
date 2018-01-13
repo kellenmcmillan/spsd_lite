@@ -10,9 +10,9 @@
     <span id="mission" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-        <div class="mdl-cell mdl-cell--12-col mission--1">
+        <div class="mdl-cell mdl-cell--12-col mission--1" layout="column" layout-align="space-around center">
             <!-- Title -->
-            <div class="mission-center--1" mission-one-center>
+            <div class="mission-center--1" flex>
                 <div class="center--text">
                     <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;" ng-bind-html="mission.data.title"></h2>
                     <h2 
@@ -54,7 +54,7 @@
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid mission--2" style="overflow: hidden; position: relative;">
         <div class="mission-center--2" mission-two-center style="overflow: hidden; position: relative; height: 70%">
-            <img content-available src="{{mission.data.images.source}}" style="height: 100%; width: 100%; display: block; margin-left:auto; margin-right:auto;">
+            <img content-available ng-src="{{mission.data.images.source}}" style="height: 100%; width: 100%; display: block; margin-left:auto; margin-right:auto;">
         </div>
     </div>
     <div class="mdl-layout-spacer"></div>
