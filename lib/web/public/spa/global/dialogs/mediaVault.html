@@ -12,15 +12,15 @@
                             <md-tab-label>Media Files</md-tab-label>
                             <md-tab-body>
                                 <div layout="column" layout-wrap layout-align="space-around center" flex>
-                                    <div layout="column" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="start center" layout-margin flex="100" style="width: 100%">
-                                        <div layout="row" layout-align="start center" flex="100" flex-gt-sm="30">
+                                    <div layout="row" layout-align="start center" layout-margin flex="100" style="width: 100%">
+                                        <div layout="row" layout-align="start center" flex="100" flex-gt-sm="20">
                                             <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="button-color-border">Previous</md-button>
                                             <span>{{currentPage+1}}/{{numberOfPages}}</span>
                                             <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="button-color-border">Next</md-button>
                                         </div>
                                         <!-- <md-button ng-click="filterByTag(null)" class="button-color-border">Clear Tag Filter</md-button> -->
                                         <div flex="100" flex-gt-sm="30">
-                                            <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown">
+                                            <md-input-container flex style="margin-right: 16px" class="md-block lightweight-md-dropdown">
                                                 <label class="lightweight-md-option-label">Filter By Tag</label>
                                                 <md-select md-on-close="filterByTag(tagFilter)" ng-model="tagFilter">
                                                     <md-option class="lightweight-md-option" ng-click="filterByTag(null)" ng-value="{{null}}" md-option-empty>Clear Tags</md-option>
@@ -104,7 +104,8 @@
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
                                                         <label>Name</label>
-                                                        <input ng-model="gallery.name">
+                                                        <input ng-if="!gallery.key" ng-model="gallery.name">
+                                                        <input ng-disabled="true" ng-if="gallery.key" ng-model="gallery.name">
                                                     </md-input-container>
                                                 </md-list-item>
                                                 <md-list-item>
@@ -116,8 +117,8 @@
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
                                                         <label>URL</label>
-                                                        <input ng-if="gallery.id" ng-model="gallery.url">
-                                                        <input ng-disabled="true" ng-if="!gallery.id" ng-model="gallery.name">
+                                                        <input ng-if="!gallery.key" ng-model="gallery.url">
+                                                        <input ng-disabled="true" ng-if="gallery.key" ng-model="gallery.name">
                                                     </md-input-container>
                                                 </md-list-item>
                                                 <md-list-item>

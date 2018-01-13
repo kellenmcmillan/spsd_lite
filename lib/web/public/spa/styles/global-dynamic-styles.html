@@ -141,7 +141,9 @@ md-radio-group:not([disabled]) .md-primary.md-checked .md-off, md-radio-group.md
 md-radio-group:not([disabled]).md-primary .md-checked .md-off, md-radio-group.md-default-theme:not([disabled]) .md-primary .md-checked .md-off, 
 md-radio-group:not([disabled]) .md-primary .md-checked .md-off,
 .md-checkbox-enabled.md-default-theme[selected] .md-icon, 
-.md-checkbox-enabled[selected] .md-icon {background-color: {{primary_hue_normal_darkest_opacity.value}};}
+.md-checkbox-enabled[selected] .md-icon,
+md-radio-group.md-default-theme.md-focused:not(:empty) .md-checked .md-container:before, 
+md-radio-group.md-focused:not(:empty) .md-checked .md-container:before {background-color: {{primary_hue_normal_darkest_opacity.value}};}
 md-switch.md-checked .md-thumb, md-switch.md-checked .md-thumb {background-color: {{primary_hue_normal.value}};}
 md-tabs.md-default-theme .md-tab.md-active, md-tabs .md-tab.md-active, md-tabs.md-default-theme .md-tab.md-active md-icon, 
 md-tabs .md-tab.md-active md-icon, md-tabs.md-default-theme .md-tab.md-focused, md-tabs .md-tab.md-focused, 
