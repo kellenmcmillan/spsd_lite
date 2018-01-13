@@ -17,6 +17,7 @@
                                             <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="button-color-border">Previous</md-button>
                                             <span>{{currentPage+1}}/{{numberOfPages}}</span>
                                             <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="button-color-border">Next</md-button>
+                                            <md-button ng-click="selectMedia(image)" class="button-color-border">Choose Image</md-button>
                                         </div>
                                         <!-- <md-button ng-click="filterByTag(null)" class="button-color-border">Clear Tag Filter</md-button> -->
                                         <div flex="100" flex-gt-sm="30">
@@ -74,6 +75,7 @@
                                     <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="button-color-border">Previous</md-button>
                                     <span>{{currentPage+1}}/{{numberOfPages}}</span>
                                     <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="button-color-border">Next</md-button>
+                                    <md-button ng-click="selectMedia(image)" class="button-color-border">Choose Image</md-button>
                                 </div>
                             </md-tab-body>
                         </md-tab>
@@ -258,7 +260,6 @@
                 </md-content>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
-        <md-button ng-click="selectMedia(image)"></md-button>
             <md-button class="md-raised" ng-click="closeMediaVault()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
         </md-card-actions>
     </md-card>
