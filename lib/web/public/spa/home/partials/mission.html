@@ -21,7 +21,7 @@
                     hue="{{primary_standard_container.paint.text.hue}}" 
                     property="{{primary_standard_container.paint.text.property}}" 
                     opaqueness="{{primary_standard_container.paint.text.opaqueness}}" 
-                    lw-color ng-bind-html="mission.subtitle">
+                    lw-color ng-bind-html="mission.data.subtitle">
                     </h2>
                     <!-- SVG Title Border Asset -->
                     <svg 
@@ -45,7 +45,7 @@
                 hue="{{primary_standard_container.paint.text.hue}}" 
                 property="{{primary_standard_container.paint.text.property}}" 
                 opaqueness="{{primary_standard_container.paint.text.opaqueness}}" 
-                lw-color ng-bind-html="mission.text">
+                lw-color ng-bind-html="mission.data.text[0]">
                 </p>
 
             </div>
@@ -54,7 +54,7 @@
     <div class="mdl-layout-spacer"></div>
     <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid mission--2" style="overflow: hidden; position: relative;">
         <div class="mission-center--2" mission-two-center style="overflow: hidden; position: relative; height: 70%">
-            <img content-available src="{{mission.source}}" style="height: 100%; width: 100%; display: block; margin-left:auto; margin-right:auto;">
+            <img content-available src="{{mission.data.images.source}}" style="height: 100%; width: 100%; display: block; margin-left:auto; margin-right:auto;">
         </div>
     </div>
     <div class="mdl-layout-spacer"></div>
