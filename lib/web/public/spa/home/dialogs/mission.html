@@ -22,7 +22,7 @@
                                 <input ng-model="editable_mission.data.subtitle">
                             </md-input-container>
                         </md-list-item>
-                        <md-list-item ng-repeat="text in editable_mission.data.text">
+                        <md-list-item ng-model="editable_mission.data.text" ng-repeat="text in editable_mission.data.text">
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Paragraph</label>
                                 <textarea md-detect-hidden="true" name="bio" ng-model="text" rows="3" md-maxlength="250"></textarea>
@@ -56,7 +56,7 @@
             <!-- columns -->
             <div flex flex-gt-sm="40">
                 <md-card class="md-card-base" style="background-color: {{editable_mission.paint.background.class}};">
-                    <img ng-src="{{editable_mission.data.images.source}}" class="md-card-image" alt="Washed Out">
+                    <img ng-model="editable_image.source" ng-value="{{editable_mission.data.images.source}}" ng-src="{{editable_mission.data.images.source}}" class="md-card-image" alt="Washed Out">
                     <md-card-actions layout="row">
                         <md-button aria-label="Replace Image" disable>
                             TAGS: Construction, Stone Waterfall
@@ -72,7 +72,7 @@
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
             <md-button ng-click="endMissionEdit()">Cancel</md-button>
-            <md-button>Update</md-button>
+            <md-button ng-click="updateApp('mission')">Update</md-button>
         </md-card-actions>
     </md-card>
 </div>
