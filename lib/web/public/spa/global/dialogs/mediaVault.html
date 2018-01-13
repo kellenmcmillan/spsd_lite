@@ -61,7 +61,7 @@
                                             </md-card-content>
                                             <md-card-actions layout="row" layout-align="center center">
                                                 <span>
-                                                    <md-radio-button value="{{image.source}}">Select Media</md-radio-button>
+                                                    <md-radio-button value="{{image.avatar ? image.avatar : image.source}}">Select Media</md-radio-button>
                                                 </span>
                                                 <span flex></span>
                                                 <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="null" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
@@ -258,6 +258,7 @@
                 </md-content>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
+        <md-button ng-click="selectMedia(image)"></md-button>
             <md-button class="md-raised" ng-click="closeMediaVault()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
         </md-card-actions>
     </md-card>
