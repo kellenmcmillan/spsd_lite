@@ -13,19 +13,19 @@
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Title</label>
-                                <input ng-model="sample_title">
+                                <input ng-model="editable_mission.data.title">
                             </md-input-container>
                         </md-list-item>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Subtitle</label>
-                                <input ng-model="sample_subtitle">
+                                <input ng-model="editable_mission.data.subtitle">
                             </md-input-container>
                         </md-list-item>
-                        <md-list-item>
+                        <md-list-item ng-repeat="text in editable_mission.data.text">
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Paragraph</label>
-                                <textarea md-detect-hidden="true" name="bio" ng-model="sample_text" rows="3" md-maxlength="250"></textarea>
+                                <textarea md-detect-hidden="true" name="bio" ng-model="text" rows="3" md-maxlength="250"></textarea>
                             </md-input-container>
                         </md-list-item>
                     </md-card-content>
@@ -55,14 +55,14 @@
 
             <!-- columns -->
             <div flex flex-gt-sm="40">
-                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
-                    <img ng-src="{{mission.image.source}}" class="md-card-image" alt="Washed Out">
+                <md-card class="md-card-base" style="background-color: {{editable_mission.paint.background.class}};">
+                    <img ng-src="{{editable_mission.data.images.source}}" class="md-card-image" alt="Washed Out">
                     <md-card-actions layout="row">
                         <md-button aria-label="Replace Image" disable>
                             TAGS: Construction, Stone Waterfall
                         </md-button>
                         <span flex></span>
-                        <md-button ng-click="openMediaVault()" aria-label="Replace Image">
+                        <md-button ng-click="openMediaVault('mission')" aria-label="Replace Image">
                             Replace
                         </md-button>
                     </md-card-actions>
