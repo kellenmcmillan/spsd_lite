@@ -7,6 +7,7 @@
 @media screen and (max-width: 839px) {
     #custom-footer {
         right: -1000px!important;
+        display: none;
     }
 }
 footer {position: relative;}
