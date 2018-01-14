@@ -14,7 +14,6 @@
                                 <div layout="column" layout-wrap layout-align="space-around center" flex>
                                     <div layout="column" layout-gt-sm="row" layout-align="start center" layout-margin flex="100" style="width: 100%">
                                         <div layout="row" layout-align="start center">
-                                            <!-- <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="button-color-border">Previous</md-button> -->
                                             <md-button ng-disabled="currentPage == 0" ng-click="currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
                                                 <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
                                             </md-button>
@@ -22,7 +21,6 @@
                                                 <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
                                             </md-button>
                                             <span>{{currentPage+1}}/{{numberOfPages}}</span>
-                                            <!-- <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="button-color-border">Next</md-button> -->
                                             <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="md-icon-button" aria-label="Clear Media Search">
                                                 <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
                                             </md-button>
@@ -32,9 +30,8 @@
                                             <md-button ng-click="selectMedia(mediaVaultSelect)" class="md-icon-button" aria-label="Clear Media Search">
                                                 <md-icon style="color: {{base_hue_darker.value}};">done_all</md-icon>
                                             </md-button>
-                                            <!-- <md-button ng-click="selectMedia(mediaVaultSelect)" class="button-color-border">Choose Image</md-button> -->
                                         </div>
-                                        <div flex="100" flex-gt-sm="50" layout="row" layout="start center" max-height="max-height: 48px;">
+                                        <div flex="100" flex-gt-sm="50" layout="row" layout="start center" style="max-height: 48px;">
                                             <!-- <md-button ng-click="clearQueryMedia(); queryFilter = null" class="button-color-border">Clear Search</md-button> -->
                                             <md-button ng-click="clearQueryMedia(); queryFilter = null" class="md-icon-button" aria-label="Clear Media Search">
                                                 <md-icon style="color: {{base_hue_darker.value}};">clear</md-icon>
@@ -90,10 +87,22 @@
                                     </md-radio-group>
                                 </div>
                                 <div layout="row" layout-align="start center" layout-margin flex>
-                                    <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="button-color-border">Previous</md-button>
+                                    <md-button ng-disabled="currentPage == 0" ng-click="currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
+                                    </md-button>
+                                    <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                                    </md-button>
                                     <span>{{currentPage+1}}/{{numberOfPages}}</span>
-                                    <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="button-color-border">Next</md-button>
-                                    <md-button ng-click="selectMedia(mediaVaultSelect)" class="button-color-border">Choose Image</md-button>
+                                    <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                                    </md-button>
+                                    <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage = numberOfPages - 1" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
+                                    </md-button>
+                                    <md-button ng-click="selectMedia(mediaVaultSelect)" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{base_hue_darker.value}};">done_all</md-icon>
+                                    </md-button>
                                 </div>
                             </md-tab-body>
                         </md-tab>
