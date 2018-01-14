@@ -22,10 +22,10 @@
                                 <input ng-model="editable_mission.data.subtitle">
                             </md-input-container>
                         </md-list-item>
-                        <md-list-item ng-repeat="text in editable_mission.data.text">
+                        <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Paragraph</label>
-                                <textarea md-detect-hidden="true" name="bio" ng-model="text" rows="3" md-maxlength="250"></textarea>
+                                <textarea md-detect-hidden="true" name="bio" ng-model="editable_mission.data.text" rows="3" md-maxlength="250"></textarea>
                             </md-input-container>
                         </md-list-item>
                     </md-card-content>
