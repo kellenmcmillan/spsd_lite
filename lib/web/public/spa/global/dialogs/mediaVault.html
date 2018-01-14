@@ -26,21 +26,10 @@
                                             <md-button ng-click="queryMedia(queryFilter)" class="md-fab md-mini" style="color: {{base_hue_lighter.value}};" aria-label="Search Media">
                                                 <md-icon style="color: {{base_hue_lighter.value}};">search</md-icon>
                                             </md-button>
-                                            <md-list-item>
-                                                <md-input-container class="md-block lightweight-md-input" flex>
-                                                    <label>Description</label>
-                                                    <input ng-model="queryFilter">
-                                                </md-input-container>
-                                            </md-list-item>
-                                            <!-- <md-input-container flex style="margin-right: 16px" class="md-block lightweight-md-dropdown">
-                                                <label class="lightweight-md-option-label">Filter By Tag</label>
-                                                <md-select md-on-close="filterByTag(tagFilter)" ng-model="tagFilter">
-                                                    <md-option class="lightweight-md-option" ng-click="filterByTag(null)" md-option-empty></md-option>
-                                                    <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
-                                                        {{fileTag.tag}}
-                                                    </md-option>
-                                                </md-select>
-                                            </md-input-container> -->
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Description</label>
+                                                <input ng-model="queryFilter">
+                                            </md-input-container>
                                         </div>
                                     </div>
                                     <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex>
