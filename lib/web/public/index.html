@@ -138,7 +138,6 @@
                         <div class="mdl-logo">{{app_data.app_configs.site_name}} &#169; {{year}}
                             &nbsp;&nbsp;<span style="cursor: pointer;" ng-if="!user" ng-click="showLoginDialog($event)">Log In</span>
                             &nbsp;&nbsp;<span style="cursor: pointer;" ng-if="user" ng-click="auth.$signOut()">Log Out</span>
-                            &nbsp;&nbsp;<span style="cursor: pointer;" ng-if="user" ng-click="showLoginDialog($event)">Admin</span>
                         </div>
                         <md-menu>
                             <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
@@ -147,20 +146,27 @@
                             <md-menu-content width="4">
                                 <md-menu-item>
                                     <md-button ng-click="null">
-                                        <md-icon md-menu-align-target></md-icon>
-                                        dialpad
+                                        <md-icon>recent_actors</md-icon>
+                                        User Vault
                                     </md-button>
                                 </md-menu-item>
                                 <md-menu-item>
-                                    <md-button disabled="disabled" ng-click="null">
-                                        <md-icon>voicemail</md-icon>
-                                        Check voicemail
+                                    <md-button ng-click="openMediaVault(null)">
+                                        <md-icon>photo_library</md-icon>
+                                        Media Vault
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button ng-click="null">
+                                        <md-icon>assignment</md-icon>
+                                        Task Runner
                                     </md-button>
                                 </md-menu-item>
                                 <md-menu-divider></md-menu-divider>
                                 <md-menu-item>
                                     <md-button ng-click="null">
-                                        <md-icon>notifications</md-icon>
+                                        <md-icon>person</md-icon>
+                                        My Vault
                                     </md-button>
                                 </md-menu-item>
                             </md-menu-content>
