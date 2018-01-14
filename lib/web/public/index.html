@@ -95,84 +95,6 @@
         <div ng-if="user" ng-include src="'spa/global/dialogs/mediaVault.html'"></div>
         <!-- upload media -->
 
-        <div style="position: absolute; bottom: 100px; left: 32px; z-index: 1000;">
-            <a href="/">
-                <button id="fling_5" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_5" ng-class="{'opened': isOpen}" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
-                    <i 
-                    class="material-icons"
-                    color="primary" 
-                    hue="hue normal" 
-                    property="text" 
-                    opaqueness="" 
-                    lw-color>
-                        home
-                    </i>
-                </button>
-            </a>
-            <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_5">Home</div>
-            <a href="/gallery">
-                <button id="fling_4" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_4" ng-class="{'opened': isOpen}" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
-                    <i 
-                    class="material-icons"
-                    color="primary" 
-                    hue="hue normal" 
-                    property="text" 
-                    opaqueness="" 
-                    lw-color>
-                        photo_library
-                    </i>
-                </button>
-            </a>
-            <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_4">All Galleries</div>
-            <button id="fling_3" go-back-angular class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_3" ng-class="{'opened': isOpen}" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
-                <i 
-                class="material-icons"
-                color="primary" 
-                hue="hue normal" 
-                property="text" 
-                opaqueness="" 
-                lw-color>
-                    arrow_back
-                </i>
-            </button>
-            <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_3">Previous Page</div>
-            <button id="fling_2" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_2" ng-class="{'opened': isOpen}" ng-click="right_slideshow_control()" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
-                <i 
-                class="material-icons"
-                color="primary" 
-                hue="hue normal" 
-                property="text" 
-                opaqueness="" 
-                lw-color>
-                    chevron_right
-                </i>
-            </button>
-            <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_2">Forwards</div>
-            <button id="fling_1" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_1" ng-class="{'opened': isOpen}" ng-click="left_slideshow_control()" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
-                <i 
-                class="material-icons"
-                color="primary" 
-                hue="hue normal" 
-                property="text" 
-                opaqueness="" 
-                lw-color>
-                    chevron_left
-                </i>
-            </button>
-            <div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_1">Backwards</div>
-            <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp" ng-click="isOpen = !isOpen" ng-attr-style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: 80px; right: 32px;">
-                <i 
-                class="material-icons"
-                color="base" 
-                hue="hue lighter" 
-                property="text" 
-                opaqueness="" 
-                lw-color>
-                    menu
-                </i>
-            </button>
-        </div>
-
         <div class="mdl-layout mdl-js-layout" scroll-position="scroll">
 
             <div class="mdl-layout__drawer">
@@ -218,6 +140,31 @@
                             &nbsp;&nbsp;<span style="cursor: pointer;" ng-if="user" ng-click="auth.$signOut()">Log Out</span>
                             &nbsp;&nbsp;<span style="cursor: pointer;" ng-if="user" ng-click="showLoginDialog($event)">Admin</span>
                         </div>
+                        <md-menu>
+                            <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="ctrl.openMenu($mdMenu, $event)">
+                                <md-icon md-menu-origin>build</md-icon>
+                            </md-button>
+                            <md-menu-content width="4">
+                                <md-menu-item>
+                                    <md-button ng-click="ctrl.redial($event)">
+                                        <md-icon md-menu-align-target></md-icon>
+                                        dialpad
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item>
+                                    <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
+                                        <md-icon>voicemail</md-icon>
+                                        Check voicemail
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-divider></md-menu-divider>
+                                <md-menu-item>
+                                    <md-button ng-click="ctrl.toggleNotifications()">
+                                        <md-icon>notifications</md-icon>
+                                    </md-button>
+                                </md-menu-item>
+                            </md-menu-content>
+                        </md-menu>
                     </div>
                     <div class="mdl-mini-footer__right-section" style="z-index:2">
                         <div class="mdl-logo mdl-color-text--grey-600 lightweight-signature" style="letter-spacing: 1px!important;">
