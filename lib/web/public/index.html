@@ -288,7 +288,20 @@
     <!-- Back End scripts -->
     <script src="vendor/image-processing/ng-file-upload-shim.min.js"></script>
     <script src="vendor/image-processing/ng-file-upload.min.js"></script>
-
     <!-- Back End scripts -->
+
+    <!-- Notification -->
+    <script type="text/ng-template" id="toast-template.html">
+        <md-toast background-color="{{primary_hue_normal.value}};">
+            <span class="md-toast-text" flex>{{toastMessage}}</span>
+            <md-button class="{{base_hue_lightest}}" ng-click="null">
+            More info
+            </md-button>
+            <md-button ng-click="closeToast()">
+            Close
+            </md-button>
+        </md-toast>
+    </script>
+        <!-- Notification -->
 </html>
 <!-- template zero -->
