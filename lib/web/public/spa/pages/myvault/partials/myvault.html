@@ -5,250 +5,242 @@
 	<div class="interior-page-container mdl-grid" style="margin-top: 100px;">
 		
 		<div class="mdl-grid" style="padding-bottom: 100px">
-			<form name="myvault">
-				<div ng-if="user" style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-					<md-card style="background: #fafafa;" class="full-width">
-						<md-card-header>
-							<md-card-header-text>
-								<span class="md-title">MyVault</span>
-								<span class="md-subhead">Personal Account Settings</span>
-							</md-card-header-text>
-						</md-card-header>
-						<md-card-content>
-							<md-list-item class="md-2-line">
-			                    <md-icon class="md-avatar-icon" style="color: {{base_hue_darkest.value}}; font-size: 36px;">account_circle</md-icon>
-								<div class="md-list-item-text">
-									<h3 style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{me.firstname || 'Update your firstname'}} {{me.lastname))</h3>
-									<p style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{me.email}}</p>
+
+			<div ng-if="user" style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+				<md-card style="background: #fafafa;" class="full-width">
+					<md-card-header>
+						<md-card-header-text>
+							<span class="md-title">MyVault</span>
+							<span class="md-subhead">Personal Account Settings</span>
+						</md-card-header-text>
+					</md-card-header>
+					<md-card-content>
+						<md-list-item class="md-2-line">
+		                    <md-icon class="md-avatar-icon" style="color: {{base_hue_darkest.value}}; font-size: 36px;">account_circle</md-icon>
+							<div class="md-list-item-text">
+								<h3 style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{me.firstname || 'Update your firstname'}} {{me.lastname))</h3>
+								<p style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{me.email}}</p>
+							</div>
+							<md-icon class="md-secondary" aria-label="Delete" ng-click="deleteUser()" style="color: {{base_hue_darkest.value}};">delete</md-icon>
+						</md-list-item>
+					</md-card-content>
+				</md-card>
+			</div>
+
+			<div style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+				<md-card style="background: #fafafa;" class="full-width">
+					<md-card-header>
+						<md-card-header-text>
+							<span class="md-title">Identity</span>
+							<span class="md-subhead">Adjust Basic User Settings</span>
+						</md-card-header-text>
+					</md-card-header>
+					<md-card-content>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Firstname</label>
+								<input ng-model="me.firstname">
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Lastname</label>
+								<input ng-model="me.lastname">
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Birthday</label>
+								<!-- <input ng-model="me.birthday"> -->
+								<md-datepicker ng-model="me.birthday" md-placeholder="Enter your birthday"></md-datepicker>
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Phone</label>
+								<input ng-model="me.phone">
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Street Address</label>
+								<input ng-model="me.street">
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>City</label>
+								<input ng-model="me.city">
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-dropdown">
+								<label>State</label>
+								<md-select ng-model="me.state">
+									<md-option><em>None</em></md-option>
+									<md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
+										{{state.abbrev}}
+									</md-option>
+								</md-select>
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Zip Code</label>
+								<input ng-model="me.zipcode">
+							</md-input-container>
+						</md-list-item>
+					</md-card-content>
+					<md-card-actions layout-align="end center" flex>
+						<md-button ng-click="updateMe(me)">Update</md-button>
+					</md-card-actions>
+				</md-card>
+			</div>
+			<div style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+				<md-card style="background: #fafafa;" class="full-width">
+					<md-card-header>
+						<md-card-header-text>
+							<span class="md-title">My Tasks</span>
+							<span class="md-subhead">New Task Notifications</span>
+						</md-card-header-text>
+					</md-card-header>
+					<md-card-content>
+						<md-list flex>
+							<md-list-item class="md-3-line" ng-click="null">
+								<md-icon class="md-avatar-icon" style="cursor: pointer; color: {{base_hue_darkest.value}};">assignment</md-icon>
+								<div class="md-list-item-text" layout="column">
+									<h3>New Form Lead</h3>
+									<h4>John Doe</h4>
+									<p>Hi SPSD! I'm interested in contracting your services.</p>
 								</div>
-								<md-icon class="md-secondary" aria-label="Delete" ng-click="deleteUser()" style="color: {{base_hue_darkest.value}};">delete</md-icon>
 							</md-list-item>
-						</md-card-content>
-					</md-card>
-				</div>
+							<md-list-item class="md-3-line" ng-click="null">
+								<md-icon class="md-avatar-icon" style="cursor: pointer; color: {{base_hue_darkest.value}};">assignment</md-icon>
+								<div class="md-list-item-text" layout="column">
+									<h3>New User</h3>
+									<h4>John Doe</h4>
+									<p>User signed up January 3, 2018.</p>
+								</div>
+							</md-list-item>
+					</md-card-content>
+					<md-card-actions layout-align="start center">
+						<md-button>Dismiss All</md-button>
+					</md-card-actions>
+				</md-card>
+			</div>
+			<div style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
 
-				<div style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-					<md-card style="background: #fafafa;" class="full-width">
-						<md-card-header>
-							<md-card-header-text>
-								<span class="md-title">Identity</span>
-								<span class="md-subhead">Adjust Basic User Settings</span>
-							</md-card-header-text>
-						</md-card-header>
-						<md-card-content>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Firstname</label>
-									<input name="firstname" ng-required ng-model="me.firstname" minlength="3" ng-messages="myvault.firstname.$error">
-									<div ng-message="required">Firstname is required!</div>
-									<div ng-message="minlength">Must be longer than 3 letters</div>
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Lastname</label>
-									<input name="lastname" ng-messages="myvault.lastname.$error" ng-required ng-model="me.lastname" minlength="3">
-									<div ng-message="required">Lastname is required!</div>
-									<div ng-message="minlength">Must be longer than 3 letters</div>
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Birthday</label>
-									<!-- <input ng-model="me.birthday"> -->
-									<md-datepicker ng-model="me.birthday" md-placeholder="Enter your birthday"></md-datepicker>
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Phone</label>
-									<input name="phone" ng-messages="myvault.phone.$error" ng-model="me.phone" ng-required ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
-									<div ng-message="required">Phone number is required!</div>
-									<div ng-message="pattern">Must be a valid 10 digit phone number</div>
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Street Address</label>
-									<input ng-model="me.street">
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>City</label>
-									<input ng-model="me.city">
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-dropdown">
-									<label>State</label>
-									<md-select ng-model="me.state">
-										<md-option><em>None</em></md-option>
-										<md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
-											{{state.abbrev}}
-										</md-option>
-									</md-select>
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Zip Code</label>
-									<input name="zipcode" ng-messages="myvault.zipcode.$error" ng-model="me.zipcode" minlength="5">
-									<div ng-message="minlength">Must be longer than 5 digits</div>
-								</md-input-container>
-							</md-list-item>
-						</md-card-content>
-						<md-card-actions layout-align="end center" flex>
-							<md-button ng-disabled="myvault.$invalid" ng-click="updateMe(me)">Update</md-button>
-						</md-card-actions>
-					</md-card>
+				<md-card style="background: #fafafa;" class="full-width">
+					<md-card-header>
+						<md-card-header-text>
+							<span class="md-title">My Files</span>
+							<span class="md-subhead">Personal Media Files</span>
+						</md-card-header-text>
+					</md-card-header>
+					<md-card-content>
+						<md-list-item>
+							<md-card style="background: #fafafa;" class="full-width">
+								<img ng-src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/wayneFerguson6-hi-res.jpg" class="md-card-image" alt="Washed Out">
+								<md-card-content>
+									<p>
+									Filename
+									</p>
+									<p>
+									File Details
+									</p>
+								</md-card-content>
+								<md-card-actions layout="row" layout-align="end center">
+									<md-button class="md-icon-button" aria-label="menu">
+										<md-icon style="cursor: pointer; color: {{base_hue_darkest.value}};">more_vert</md-icon>
+									</md-button>
+								</md-card-actions>
+							</md-card>
+						</md-list-item>
+					</md-card-content>
+					<md-card-actions layout-align="start center">
+						<md-button>Action 1</md-button>
+						<md-button>Action 2</md-button>
+					</md-card-actions>
+				</md-card>
+			</div>
+			<div style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+				<!-- sticky header -->
+				<div>
+					<md-button>My Services</md-button>
 				</div>
-				<div style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-					<md-card style="background: #fafafa;" class="full-width">
-						<md-card-header>
-							<md-card-header-text>
-								<span class="md-title">My Tasks</span>
-								<span class="md-subhead">New Task Notifications</span>
-							</md-card-header-text>
-						</md-card-header>
-						<md-card-content>
-							<md-list flex>
-								<md-list-item class="md-3-line" ng-click="null">
-									<md-icon class="md-avatar-icon" style="cursor: pointer; color: {{base_hue_darkest.value}};">assignment</md-icon>
-									<div class="md-list-item-text" layout="column">
-										<h3>New Form Lead</h3>
-										<h4>John Doe</h4>
-										<p>Hi SPSD! I'm interested in contracting your services.</p>
-									</div>
-								</md-list-item>
-								<md-list-item class="md-3-line" ng-click="null">
-									<md-icon class="md-avatar-icon" style="cursor: pointer; color: {{base_hue_darkest.value}};">assignment</md-icon>
-									<div class="md-list-item-text" layout="column">
-										<h3>New User</h3>
-										<h4>John Doe</h4>
-										<p>User signed up January 3, 2018.</p>
-									</div>
-								</md-list-item>
-						</md-card-content>
-						<md-card-actions layout-align="start center">
-							<md-button>Dismiss All</md-button>
-						</md-card-actions>
-					</md-card>
+				<!-- sticky header -->
+				<md-card style="background: #fafafa;" class="full-width">
+					<md-card-header>
+						<md-card-header-text>
+							<span class="md-title">Title</span>
+							<span class="md-subhead">Sub header</span>
+						</md-card-header-text>
+					</md-card-header>
+					<md-card-content>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Email</label>
+								<input>
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Password</label>
+								<input>
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Re-enter password</label>
+								<input>
+							</md-input-container>
+						</md-list-item>
+					</md-card-content>
+					<md-card-actions layout-align="start center">
+						<md-button>Action 1</md-button>
+						<md-button>Action 2</md-button>
+					</md-card-actions>
+				</md-card>
+			</div>
+			<div style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+				<!-- sticky header -->
+				<div>
+					<md-button>Billing History</md-button>
 				</div>
-				<div style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-
-					<md-card style="background: #fafafa;" class="full-width">
-						<md-card-header>
-							<md-card-header-text>
-								<span class="md-title">My Files</span>
-								<span class="md-subhead">Personal Media Files</span>
-							</md-card-header-text>
-						</md-card-header>
-						<md-card-content>
-							<md-list-item>
-								<md-card style="background: #fafafa;" class="full-width">
-									<img ng-src="https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/wayneFerguson6-hi-res.jpg" class="md-card-image" alt="Washed Out">
-									<md-card-content>
-										<p>
-										Filename
-										</p>
-										<p>
-										File Details
-										</p>
-									</md-card-content>
-									<md-card-actions layout="row" layout-align="end center">
-										<md-button class="md-icon-button" aria-label="menu">
-											<md-icon style="cursor: pointer; color: {{base_hue_darkest.value}};">more_vert</md-icon>
-										</md-button>
-									</md-card-actions>
-								</md-card>
-							</md-list-item>
-						</md-card-content>
-						<md-card-actions layout-align="start center">
-							<md-button>Action 1</md-button>
-							<md-button>Action 2</md-button>
-						</md-card-actions>
-					</md-card>
-				</div>
-				<div style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-					<!-- sticky header -->
-					<div>
-						<md-button>My Services</md-button>
-					</div>
-					<!-- sticky header -->
-					<md-card style="background: #fafafa;" class="full-width">
-						<md-card-header>
-							<md-card-header-text>
-								<span class="md-title">Title</span>
-								<span class="md-subhead">Sub header</span>
-							</md-card-header-text>
-						</md-card-header>
-						<md-card-content>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Email</label>
-									<input>
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Password</label>
-									<input>
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Re-enter password</label>
-									<input>
-								</md-input-container>
-							</md-list-item>
-						</md-card-content>
-						<md-card-actions layout-align="start center">
-							<md-button>Action 1</md-button>
-							<md-button>Action 2</md-button>
-						</md-card-actions>
-					</md-card>
-				</div>
-				<div style="margin-bottom: 16px;" class="mdl-cell--4-offset-desktop mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-					<!-- sticky header -->
-					<div>
-						<md-button>Billing History</md-button>
-					</div>
-					<!-- sticky header -->
-					<md-card style="background: #fafafa;" class="full-width">
-						<md-card-header>
-							<md-card-header-text>
-								<span class="md-title">Title</span>
-								<span class="md-subhead">Sub header</span>
-							</md-card-header-text>
-						</md-card-header>
-						<md-card-content>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Email</label>
-									<input>
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Password</label>
-									<input>
-								</md-input-container>
-							</md-list-item>
-							<md-list-item>
-								<md-input-container class="md-block lightweight-md-input">
-									<label>Re-enter password</label>
-									<input>
-								</md-input-container>
-							</md-list-item>
-						</md-card-content>
-						<md-card-actions layout-align="start center">
-							<md-button>Action 1</md-button>
-							<md-button>Action 2</md-button>
-						</md-card-actions>
-					</md-card>
-				</div>
-			</form>
+				<!-- sticky header -->
+				<md-card style="background: #fafafa;" class="full-width">
+					<md-card-header>
+						<md-card-header-text>
+							<span class="md-title">Title</span>
+							<span class="md-subhead">Sub header</span>
+						</md-card-header-text>
+					</md-card-header>
+					<md-card-content>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Email</label>
+								<input>
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Password</label>
+								<input>
+							</md-input-container>
+						</md-list-item>
+						<md-list-item>
+							<md-input-container class="md-block lightweight-md-input">
+								<label>Re-enter password</label>
+								<input>
+							</md-input-container>
+						</md-list-item>
+					</md-card-content>
+					<md-card-actions layout-align="start center">
+						<md-button>Action 1</md-button>
+						<md-button>Action 2</md-button>
+					</md-card-actions>
+				</md-card>
+			</div>
 		</div>
     </div>
 </div>
