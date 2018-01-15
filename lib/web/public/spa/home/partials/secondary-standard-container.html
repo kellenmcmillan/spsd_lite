@@ -36,7 +36,7 @@
  lw-color>
     <div 
     class="secondary-standard-container-background">
-        <img src="{{secondary_standard_container.content.background_media.image.src}}" style="display: block; margin: 0 auto;">
+        <img src="{{parallaxOne.background.images.source}}" style="display: block; margin: 0 auto;">
     </div>
     <md-button ng-if="user" ng-click="startParallaxOneEdit()" class="md-fab custom-deep-button" aria-label="Edit Parallax One" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
         <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
@@ -49,7 +49,7 @@
         hue="{{secondary_standard_container.paint.text.hue}}" 
         property="{{secondary_standard_container.paint.text.property}}" 
         opaqueness="{{secondary_standard_container.paint.text.opaqueness}}" 
-        lw-color ng-bind-html="secondary_standard_container.content.default[0].name">
+        lw-color ng-bind-html="parallaxOne.data.text">
         </h1>
 
     </div>
