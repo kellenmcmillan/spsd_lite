@@ -1,0 +1,109 @@
+<div class="upload-dialog-curtain userVault" ng-show="user_vault_visible == true">
+    <md-card class="upload-dialog md-card-base">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">User Vault</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content flex>
+                <md-content class="md-padding" flex>
+                    <div layout="column" layout-wrap layout-align="space-around center" flex>
+                        <div layout="column" layout-gt-sm="row" layout-align="start center" layout-margin flex="100" style="width: 100%">
+                            <div layout="row" layout-align="start center">
+                                <md-button ng-disabled="currentPage == 0" ng-click="currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
+                                </md-button>
+                                <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                                </md-button>
+                                <span>{{currentPage+1}}/{{numberOfPages}}</span>
+                                <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                                </md-button>
+                                <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage = numberOfPages - 1" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
+                                </md-button>
+                                <md-button ng-show="elementToUpdate" ng-click="selectMedia(mediaVaultSelect)" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">done_all</md-icon>
+                                </md-button>
+                            </div>
+                            <div flex="100" flex-gt-sm="50" layout="row" layout="start center" style="max-height: 38px;">
+                                <!-- <md-button ng-click="clearQueryMedia(); queryFilter = null" class="button-color-border">Clear Search</md-button> -->
+                                <md-button ng-click="clearQueryMedia(); queryFilter = null" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">clear</md-icon>
+                                </md-button>
+                                <!-- <md-button ng-click="queryMedia(queryFilter)" class="button-color-border">
+                                Search</md-button> -->
+                                <md-button ng-click="queryMedia(queryFilter)" class="md-icon-button" aria-label="Search Media">
+                                    <md-icon style="color: {{base_hue_darker.value}};">search</md-icon>
+                                </md-button>
+                                <md-input-container class="md-block lightweight-md-input" style="margin: 0;" flex>
+                                    <label>Description</label>
+                                    <input ng-model="queryFilter">
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex>
+                            <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize" flex flex-gt-sm="30">
+                                <img ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false" ng-click="gallery_detail_view = true" ng-dblclick="gallery_detail_view = false">
+                                <md-card-content ng-show="gallery_detail_view">
+                                    <md-list-item>
+                                        <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex>
+                                            <label class="lightweight-md-option-label">Choose Tags</label>
+                                            <md-select ng-model="image.metadata.tags" multiple>
+                                                <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
+                                                    {{fileTag.tag}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-itme>
+                                        <div flex layout-align="end center" ng-show="image.metadata.tags">
+                                            <md-chips ng-model="image.metadata.tags" md-removable="false">
+                                                <md-chip-template>
+                                                    {{ $chip }}
+                                                </md-chip-template>
+                                            </md-chips>
+                                        </div>
+                                    </md-list-itme>
+                                    <md-list-item>
+                                        <p>Cover</p>
+                                        <md-switch class="md-secondary" ng-model="image.metadata.cover"></md-switch>
+                                    </md-list-item>
+                                </md-card-content>
+                                <md-card-actions layout="row" layout-align="center center">
+                                    <span>
+                                        <md-radio-button ng-show="elementToUpdate" value="{{image.avatar ? image.avatar : image.source}}">Select Media</md-radio-button>
+                                    </span>
+                                    <span flex></span>
+                                    <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="null" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
+                                    <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="updateMedia(image)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                </md-card-actions>
+                            </md-card>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-align="start center" layout-margin flex>
+                        <md-button ng-disabled="currentPage == 0" ng-click="currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
+                        </md-button>
+                        <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                        </md-button>
+                        <span>{{currentPage+1}}/{{numberOfPages}}</span>
+                        <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                        </md-button>
+                        <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage = numberOfPages - 1" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
+                        </md-button>
+                        <md-button  ng-show="elementToUpdate" ng-click="selectMedia(mediaVaultSelect)" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">done_all</md-icon>
+                        </md-button>
+                    </div>
+                </md-content>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised" ng-click="closeUserVault()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
