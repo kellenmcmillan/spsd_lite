@@ -39,7 +39,7 @@
 							<md-list-item>
 								<md-input-container class="md-block lightweight-md-input">
 									<label>Firstname</label>
-									<input ng-required ng-model="me.firstname" minlength="3">
+									<input name="firstname" ng-required ng-model="me.firstname" minlength="3" ng-messages="myvault.firstname.$error">
 									<div ng-message="required">Firstname is required!</div>
 									<div ng-message="minlength">Must be longer than 3 letters</div>
 								</md-input-container>
@@ -47,7 +47,7 @@
 							<md-list-item>
 								<md-input-container class="md-block lightweight-md-input">
 									<label>Lastname</label>
-									<input ng-required ng-model="me.lastname" minlength="3">
+									<input name="lastname" ng-messages="myvault.lastname.$error" ng-required ng-model="me.lastname" minlength="3">
 									<div ng-message="required">Lastname is required!</div>
 									<div ng-message="minlength">Must be longer than 3 letters</div>
 								</md-input-container>
@@ -62,7 +62,7 @@
 							<md-list-item>
 								<md-input-container class="md-block lightweight-md-input">
 									<label>Phone</label>
-									<input ng-model="me.phone" ng-required ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
+									<input name="phone" ng-messages="myvault.phone.$error" ng-model="me.phone" ng-required ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/">
 									<div ng-message="required">Phone number is required!</div>
 									<div ng-message="pattern">Must be a valid 10 digit phone number</div>
 								</md-input-container>
@@ -93,7 +93,7 @@
 							<md-list-item>
 								<md-input-container class="md-block lightweight-md-input">
 									<label>Zip Code</label>
-									<input ng-model="me.zipcode" minlength="5">
+									<input name="zipcode" ng-messages="myvault.zipcode.$error" ng-model="me.zipcode" minlength="5">
 									<div ng-message="minlength">Must be longer than 5 digits</div>
 								</md-input-container>
 							</md-list-item>
