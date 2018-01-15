@@ -63,19 +63,19 @@
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-input">
 								<label>Street Address</label>
-								<input ng-model="me.address.street">
+								<input ng-model="me.street">
 							</md-input-container>
 						</md-list-item>
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-input">
 								<label>City</label>
-								<input ng-model="me.address.city">
+								<input ng-model="me.city">
 							</md-input-container>
 						</md-list-item>
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-dropdown">
 								<label>State</label>
-								<md-select ng-model="me.address.state">
+								<md-select ng-model="me.state">
 									<md-option><em>None</em></md-option>
 									<md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
 										{{state.abbrev}}
@@ -86,7 +86,7 @@
 						<md-list-item>
 							<md-input-container class="md-block lightweight-md-input">
 								<label>Zip Code</label>
-								<input ng-model="me.address.zipcode">
+								<input ng-model="me.zipcode">
 							</md-input-container>
 						</md-list-item>
 					</md-card-content>
