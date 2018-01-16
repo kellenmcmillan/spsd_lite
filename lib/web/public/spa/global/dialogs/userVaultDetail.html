@@ -7,8 +7,8 @@
         </md-card-title>
         <md-card-content flex>
             <md-content class="md-padding" flex>
-                <div layout="column" layout-align="center stretch" layout-margin flex>
-                    <md-card style="background: #fafafa;" class="full-width">
+                <div layout="column" layout-align="center center" layout-margin flex>
+                    <md-card style="background: #fafafa;" flex flex-gt-sm="40">
                         <md-card-header>
                             <md-card-header-text>
                                 <span class="md-title">MyVault</span>
@@ -26,7 +26,7 @@
                             </md-list-item>
                         </md-card-content>
                     </md-card>
-                    <form name="myvault">
+                    <form name="myvault" flex flex-gt-sm="40">
                         <md-card style="background: #fafafa;" class="full-width">
                             <md-card-header>
                                 <md-card-header-text>
@@ -96,8 +96,8 @@
                                     <md-input-container class="md-block lightweight-md-dropdown">
                                         <label>User Role</label>
                                         <md-select ng-model="selectedUser.role">
-                                            <md-option ng-repeat="role in rolelist" ng-value="role.role" ng-disabled="$index === 1">
-                                                {{role.role}}
+                                            <md-option ng-repeat="role in rolelist" ng-value="role" ng-disabled="$index === 1">
+                                                {{role}}
                                             </md-option>
                                         </md-select>
                                     </md-input-container>
