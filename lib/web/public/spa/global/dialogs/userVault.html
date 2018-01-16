@@ -46,7 +46,7 @@
                     <md-list-item ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" flex>
                         <md-checkbox ng-model="users.selected"></md-checkbox>
                         <p>{{user.firstname || user.email}} {{user.lastname}}</p>
-                        <md-icon class="md-secondary" ng-click="null" aria-label="View details">message</md-icon>
+                        <md-icon class="md-secondary" ng-click="selectUser(user)" aria-label="View details">subject</md-icon>
                     </md-list-item>
                 </div>
                 <div layout="row" layout-align="start center" layout-margin flex>
