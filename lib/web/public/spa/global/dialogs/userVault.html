@@ -1,4 +1,4 @@
-<div class="upload-dialog-curtain userVault" ng-show="user_vault_visible == true">
+<div class="upload-dialog-curtain userVault" ng-show="user_vault_visible == true" ng-controller="suiteController">
     <md-card class="upload-dialog md-card-base">
         <md-card-title>
             <md-card-title-text>
@@ -40,26 +40,28 @@
                             </md-input-container>
                         </div>
                     </div>
-                    <md-list-item ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" flex>
-                        <md-checkbox ng-model="users.selected"></md-checkbox>
-                        <p>{{user.firstname || user.email}} {{user.lastname}}</p>
-                        <md-icon class="md-secondary" ng-click="null" aria-label="View details">message</md-icon>
-                    </md-list-item>
-                    <div layout="row" layout-align="start center" layout-margin flex>
-                        <md-button ng-disabled="currentUserPage == 0" ng-click="currentUserPage = 0" class="md-icon-button" aria-label="Clear Media Search">
-                            <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
-                        </md-button>
-                        <md-button ng-disabled="currentUserPage == 0" ng-click="currentUserPage=currentUserPage-1" class="md-icon-button" aria-label="Clear Media Search">
-                            <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
-                        </md-button>
-                        <span>{{currentUserPage+1}}/{{numberOfUserPages}}</span>
-                        <md-button ng-disabled="currentUserPage == numberOfUserPages - 1" ng-click="currentUserPage=currentUserPage+1" class="md-icon-button" aria-label="Clear Media Search">
-                            <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
-                        </md-button>
-                        <md-button ng-disabled="currentUserPage == numberOfUserPages - 1" ng-click="currentUserPage = numberOfUserPages - 1" class="md-icon-button" aria-label="Clear Media Search">
-                            <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
-                        </md-button>
-                    </div>
+                    <md-card ng-cloak ng-show="userslist" class="md-card-base" flex flex-gt-sm="30">
+                        <md-list-item ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" flex>
+                            <md-checkbox ng-model="users.selected"></md-checkbox>
+                            <p>{{user.firstname || user.email}} {{user.lastname}}</p>
+                            <md-icon class="md-secondary" ng-click="null" aria-label="View details">message</md-icon>
+                        </md-list-item>
+                    </md-card>
+                </div>
+                <div layout="row" layout-align="start center" layout-margin flex>
+                    <md-button ng-disabled="currentUserPage == 0" ng-click="currentUserPage = 0" class="md-icon-button" aria-label="Clear Media Search">
+                        <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
+                    </md-button>
+                    <md-button ng-disabled="currentUserPage == 0" ng-click="currentUserPage=currentUserPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                        <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                    </md-button>
+                    <span>{{currentUserPage+1}}/{{numberOfUserPages}}</span>
+                    <md-button ng-disabled="currentUserPage == numberOfUserPages - 1" ng-click="currentUserPage=currentUserPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                        <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                    </md-button>
+                    <md-button ng-disabled="currentUserPage == numberOfUserPages - 1" ng-click="currentUserPage = numberOfUserPages - 1" class="md-icon-button" aria-label="Clear Media Search">
+                        <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
+                    </md-button>
                 </div>
             </md-content>
         </md-card-content>
