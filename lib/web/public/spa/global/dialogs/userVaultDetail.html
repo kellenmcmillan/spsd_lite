@@ -1,3 +1,6 @@
+<style>
+    md-list-item md-input-container {width: 100%;}
+</style>
 <div class="secondary-dialog-curtain userVault" ng-show="user_vault_detail_visible == true" ng-controller="suiteController">
     <md-card class="suite-dialog md-card-base">
         <md-card-title>
@@ -12,8 +15,8 @@
                         <md-card style="background: #fafafa;" flex flex-gt-sm="40">
                             <md-card-header>
                                 <md-card-header-text>
-                                    <span class="md-title">MyVault</span>
-                                    <span class="md-subhead">Personal Account Settings</span>
+                                    <span class="md-title">UserVault</span>
+                                    <span class="md-subhead">Account Settings</span>
                                 </md-card-header-text>
                             </md-card-header>
                             <md-card-content>
@@ -99,8 +102,8 @@
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>User Role</label>
                                             <md-select ng-model="selectedUser.role">
-                                                <md-option ng-repeat="role in rolelist" ng-value="role" ng-disabled="$index === 1">
-                                                    {{role}}
+                                                <md-option ng-repeat="role in rolelist" ng-value="role.role" ng-disabled="$index === 1">
+                                                    {{role.role}}
                                                 </md-option>
                                             </md-select>
                                         </md-input-container>
