@@ -109,8 +109,8 @@
                                         </md-input-container>
                                     </md-list-item>
                                 </md-card-content>
-                                <md-card-actions layout-align="end center" flex>
-                                    <md-button ng-click="updateUser(selectedUser)">Update</md-button>
+                                <md-card-actions layout="row" layout-align="end center" flex>
+                                    <md-button class="md-raised" ng-click="updateUser(selectedUser)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                 </md-card-actions>
                             </form>
                         </md-card>
