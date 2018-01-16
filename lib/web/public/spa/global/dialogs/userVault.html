@@ -45,8 +45,12 @@
                 <div layout="column" layout-align="center stretch" layout-margin flex>
                     <md-list-item ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" flex>
                         <md-checkbox ng-model="users.selected"></md-checkbox>
-                        <p>{{user.firstname || user.email}} {{user.lastname}}</p>
+                        
                         <md-icon class="md-secondary" ng-click="selectUser(user)" aria-label="View details">subject</md-icon>
+                    </md-list-item>
+                    <md-list-item ng-click="selectUser(user)">
+                        <md-icon aria-label="View details">subject</md-icon>
+                        <p>{{user.firstname || user.email}} {{user.lastname}}</p>
                     </md-list-item>
                 </div>
                 <div layout="row" layout-align="start center" layout-margin flex>
