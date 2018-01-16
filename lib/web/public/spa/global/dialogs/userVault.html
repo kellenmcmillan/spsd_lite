@@ -35,12 +35,15 @@
                                 <md-icon style="color: {{base_hue_darker.value}};">search</md-icon>
                             </md-button>
                             <md-input-container class="md-block lightweight-md-input" style="margin: 0;" flex>
-                                <label>Description</label>
+                                <label>Search</label>
                                 <input ng-model="queryUserFilter">
                             </md-input-container>
                         </div>
                     </div>
-                    <md-card ng-cloak ng-show="userslist" class="md-card-base" flex flex-gt-sm="30">
+                    
+                </div>
+                <div layout="row" layout-align="center center" layout-margin flex>
+                    <md-card ng-cloak ng-show="userslist" class="md-card-base" layout="column" layout-align="start center" flex>
                         <md-list-item ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" flex>
                             <md-checkbox ng-model="users.selected"></md-checkbox>
                             <p>{{user.firstname || user.email}} {{user.lastname}}</p>
