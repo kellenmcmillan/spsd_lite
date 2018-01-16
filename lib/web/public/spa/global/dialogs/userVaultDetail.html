@@ -8,106 +8,110 @@
         <md-card-content flex>
             <md-content class="md-padding" flex>
                 <div layout="column" layout-align="center center" layout-margin flex>
-                    <md-card style="background: #fafafa;" flex flex-gt-sm="40">
-                        <md-card-header>
-                            <md-card-header-text>
-                                <span class="md-title">MyVault</span>
-                                <span class="md-subhead">Personal Account Settings</span>
-                            </md-card-header-text>
-                        </md-card-header>
-                        <md-card-content>
-                            <md-list-item class="md-2-line">
-                                <md-icon class="md-avatar-icon" style="color: {{base_hue_darkest.value}}; font-size: 36px;">account_circle</md-icon>
-                                <div class="md-list-item-text">
-                                    <h3 style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{selectedUser.firstname || 'Update your firstname'}} {{selectedUser.lastname}}</h3>
-                                    <p style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{selectedUser.email}}</p>
-                                </div>
-                                <md-icon class="md-secondary" aria-label="Delete" ng-click="deleteUser()" style="color: {{base_hue_darkest.value}};">delete</md-icon>
-                            </md-list-item>
-                        </md-card-content>
-                    </md-card>
-                    <form name="myvault" flex flex-gt-sm="40">
-                        <md-card style="background: #fafafa;" class="full-width">
+                    <div layout="row" layout-align="center center" flex>
+                        <md-card style="background: #fafafa;" flex flex-gt-sm="40">
                             <md-card-header>
                                 <md-card-header-text>
-                                    <span class="md-title">Identity</span>
-                                    <span class="md-subhead">Adjust Basic User Settings</span>
+                                    <span class="md-title">MyVault</span>
+                                    <span class="md-subhead">Personal Account Settings</span>
                                 </md-card-header-text>
                             </md-card-header>
                             <md-card-content>
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-input">
-                                        <label>Firstname</label>
-                                        <input name="firstname" ng-model="selectedUser.firstname" minlength="3" required>
-                                        <div ng-messages="myvault.firstname.$error" ng-show="myvault.firstname.$dirty">
-                                            <div ng-message="required">Firstname required!</div>
-                                            <div ng-message="minlength">Name too short!</div>
-                                        </div>
-                                    </md-input-container>
-                                </md-list-item>
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-input">
-                                        <label>Lastname</label>
-                                        <input ng-model="selectedUser.lastname">
-                                    </md-input-container>
-                                </md-list-item>
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-input">
-                                        <label>Birthday</label>
-                                        <md-datepicker flex ng-model="selectedUser.birthday" md-placeholder="Enter your birthday"></md-datepicker>
-                                    </md-input-container>
-                                </md-list-item>
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-input">
-                                        <label>Phone</label>
-                                        <input ng-model="selectedUser.phone">
-                                    </md-input-container>
-                                </md-list-item>
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-input">
-                                        <label>Street Address</label>
-                                        <input ng-model="selectedUser.street">
-                                    </md-input-container>
-                                </md-list-item>
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-input">
-                                        <label>City</label>
-                                        <input ng-model="selectedUser.city">
-                                    </md-input-container>
-                                </md-list-item>
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-dropdown">
-                                        <label>State</label>
-                                        <md-select ng-model="selectedUser.state">
-                                            <md-option><em>None</em></md-option>
-                                            <md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
-                                                {{state.abbrev}}
-                                            </md-option>
-                                        </md-select>
-                                    </md-input-container>
-                                </md-list-item>
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-input">
-                                        <label>Zip Code</label>
-                                        <input ng-model="selectedUser.zipcode">
-                                    </md-input-container>
-                                </md-list-item>
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-dropdown">
-                                        <label>User Role</label>
-                                        <md-select ng-model="selectedUser.role">
-                                            <md-option ng-repeat="role in rolelist" ng-value="role" ng-disabled="$index === 1">
-                                                {{role}}
-                                            </md-option>
-                                        </md-select>
-                                    </md-input-container>
+                                <md-list-item class="md-2-line">
+                                    <md-icon class="md-avatar-icon" style="color: {{base_hue_darkest.value}}; font-size: 36px;">account_circle</md-icon>
+                                    <div class="md-list-item-text">
+                                        <h3 style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{selectedUser.firstname || 'Update your firstname'}} {{selectedUser.lastname}}</h3>
+                                        <p style="color: {{base_hue_darkest.value}}; font-size: 18px;">{{selectedUser.email}}</p>
+                                    </div>
+                                    <md-icon class="md-secondary" aria-label="Delete" ng-click="deleteUser()" style="color: {{base_hue_darkest.value}};">delete</md-icon>
                                 </md-list-item>
                             </md-card-content>
-                            <md-card-actions layout-align="end center" flex>
-                                <md-button ng-click="updateUser(selectedUser)">Update</md-button>
-                            </md-card-actions>
                         </md-card>
-                    </form>
+                    </div>
+                    <div layout="row" layout-align="center center" flex>
+                        <form name="myvault" flex flex-gt-sm="40">
+                            <md-card style="background: #fafafa;" class="full-width">
+                                <md-card-header>
+                                    <md-card-header-text>
+                                        <span class="md-title">Identity</span>
+                                        <span class="md-subhead">Adjust Basic User Settings</span>
+                                    </md-card-header-text>
+                                </md-card-header>
+                                <md-card-content>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Firstname</label>
+                                            <input name="firstname" ng-model="selectedUser.firstname" minlength="3" required>
+                                            <div ng-messages="myvault.firstname.$error" ng-show="myvault.firstname.$dirty">
+                                                <div ng-message="required">Firstname required!</div>
+                                                <div ng-message="minlength">Name too short!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Lastname</label>
+                                            <input ng-model="selectedUser.lastname">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Birthday</label>
+                                            <md-datepicker flex ng-model="selectedUser.birthday" md-placeholder="Enter your birthday"></md-datepicker>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Phone</label>
+                                            <input ng-model="selectedUser.phone">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Street Address</label>
+                                            <input ng-model="selectedUser.street">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>City</label>
+                                            <input ng-model="selectedUser.city">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-dropdown">
+                                            <label>State</label>
+                                            <md-select ng-model="selectedUser.state">
+                                                <md-option><em>None</em></md-option>
+                                                <md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
+                                                    {{state.abbrev}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Zip Code</label>
+                                            <input ng-model="selectedUser.zipcode">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-dropdown">
+                                            <label>User Role</label>
+                                            <md-select ng-model="selectedUser.role">
+                                                <md-option ng-repeat="role in rolelist" ng-value="role" ng-disabled="$index === 1">
+                                                    {{role}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </md-list-item>
+                                </md-card-content>
+                                <md-card-actions layout-align="end center" flex>
+                                    <md-button ng-click="updateUser(selectedUser)">Update</md-button>
+                                </md-card-actions>
+                            </md-card>
+                        </form>
+                    </div>
                 </div>
             </md-content>
         </md-card-content>
