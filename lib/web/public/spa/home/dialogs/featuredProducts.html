@@ -97,7 +97,13 @@
                             TAGS: Construction, Stone Waterfall
                         </md-button>
                         <span flex></span>
-                        <md-button ng-click="openMediaVault('featuredProducts0')" aria-label="Replace Image">
+                        <md-button ng-if="column == 0" ng-click="openMediaVault('featuredProducts0')" aria-label="Replace Image">
+                            Replace
+                        </md-button>
+                        <md-button ng-if="column == 1" ng-click="openMediaVault('featuredProducts1')" aria-label="Replace Image">
+                            Replace
+                        </md-button>
+                        <md-button ng-if="column == 2" ng-click="openMediaVault('featuredProducts2')" aria-label="Replace Image">
                             Replace
                         </md-button>
                     </md-card-actions>
