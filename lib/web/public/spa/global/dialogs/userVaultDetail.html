@@ -88,7 +88,7 @@
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>User Role</label>
                                             <md-select ng-model="selectedUser.role">
-                                                <md-option ng-repeat="role in rolelist" ng-value="role.role" ng-disabled="$index === 1">
+                                                <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
                                             </md-select>
@@ -96,7 +96,7 @@
                                     </md-list-item>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button class="md-raised" ng-click="deleteUser()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Delete</md-button>
+                                    <md-button ng-click="deleteUser()">Delete</md-button>
                                     <md-button class="md-raised" ng-click="updateUser(selectedUser)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                 </md-card-actions>
                             </form>

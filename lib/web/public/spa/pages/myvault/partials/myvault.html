@@ -67,7 +67,7 @@
 									<label>State</label>
 									<md-select ng-model="me.state">
 										<md-option><em>None</em></md-option>
-										<md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
+										<md-option ng-repeat="state in states" ng-value="state.abbrev">
 											{{state.abbrev}}
 										</md-option>
 									</md-select>
@@ -81,7 +81,7 @@
 							</md-list-item>
 						</md-card-content>
 						<md-card-actions layout="row" layout-align="end center" flex>
-                            <md-button class="md-raised" ng-click="deleteUser()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Delete</md-button>
+                            <md-button ng-click="deleteUser()">Delete</md-button>
                             <md-button class="md-raised" ng-click="updateMe(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                         </md-card-actions>
 					</md-card>

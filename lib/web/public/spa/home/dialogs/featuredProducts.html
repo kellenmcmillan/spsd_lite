@@ -1,0 +1,103 @@
+<div class="dialog-curtain" ng-show="edit_featured_products_dialog_visible == true">
+    <md-card class="suite-dialog md-card-base">
+        <md-card-title layout-gt-sm="row" layout-align-gt-sm="start center">
+            <md-card-title-text>
+                <span class="md-headline">Featured Products</span>
+            </md-card-title-text>
+            <md-list-item>
+                <md-input-container class="md-block lightweight-md-dropdown">
+                    <label>Column</label>
+                    <md-select ng-model="column">
+                        <md-option ng-value="Title">
+                            Title &amp; Subtitle
+                        </md-option>
+                        <md-option ng-repeat="option in editable_featured_products.data.list" ng-value="{{$index}}">
+                            Column {{$index}}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </md-list-item>
+        </md-card-title>
+        <md-card-content ng-show="column == 'title'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
+            <!-- columns -->
+            <div flex flex-gt-sm="40">
+                <md-card class="md-card-base">
+                    <md-card-content>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Title</label>
+                                <input ng-model="editable_featured_products.data.title">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Subtitle</label>
+                                <input ng-model="editable_featured_products.data.subtitle">
+                            </md-input-container>
+                        </md-list-item>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <!-- columns -->
+        </md-card-content>
+        <md-card-content ng-show="column != 'title'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
+            <!-- columns -->
+            <div flex flex-gt-sm="40">
+                <md-card class="md-card-base">
+                    <md-card-content>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Title</label>
+                                <input ng-model="editable_featured_products.data.list[column].title">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
+                            <md-input-container ng-if="content.type == 'text'" class="md-block lightweight-md-input" flex>
+                                <label>Paragraph</label>
+                                <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
+                            </md-input-container>
+                            <md-input-container ng-if="content.type == 'list'" ng-repeat="listItem in content.data" class="md-block lightweight-md-input" flex>
+                                <label>List</label>
+                                <input ng-model="listItem.item">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Link</label>
+                                <input disabled>
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Button Text</label>
+                                <input disabled>
+                            </md-input-container>
+                        </md-list-item>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <!-- columns -->
+
+            <!-- columns -->
+            <div flex flex-gt-sm="40" ng-show="column != 'title'">
+                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
+                    <img ng-value="'{{editable_featured_products.data.list[column].images.source}}'" ng-src="{{editable_featured_products.data.list[colum].images.source}}" class="md-card-image" alt="Washed Out">
+                    <md-card-actions layout="row">
+                        <md-button aria-label="Replace Image" disable>
+                            TAGS: Construction, Stone Waterfall
+                        </md-button>
+                        <span flex></span>
+                        <md-button ng-click="openMediaVault('featuredProducts{{column}}')" aria-label="Replace Image">
+                            Replace
+                        </md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+            <!-- columns -->
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="endFeaturedProductsEdit()">Cancel</md-button>
+            <md-button ng-click="updateApp('featuredProducts')">Update</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
