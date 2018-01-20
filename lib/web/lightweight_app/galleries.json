@@ -129,7 +129,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands1-thumb.jpg",
-		                        "landscape": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands1-landscape.jpg",
+		                        "hi_res": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands1-landscape.jpg",
 		                        "call_to_action": null
 		                    },
 		                    {
@@ -143,7 +143,7 @@
 		                        "type": "image",
 		                        "is_cover": true,
 		                        "thumbnail": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands2-thumb.jpg",
-		                        "landscape": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands2-landscape.jpg",
+		                        "hi_res": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands2-landscape.jpg",
 		                        "call_to_action": null
 		                    },
 		                    {
@@ -157,7 +157,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands3-thumb.jpg",
-		                        "landscape": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands3-landscape.jpg",
+		                        "hi_res": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands3-landscape.jpg",
 		                        "call_to_action": null
 		                    },
 		                    {
@@ -171,7 +171,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands4-thumb.jpg",
-		                        "landscape": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands4-landscape.jpg",
+		                        "hi_res": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands4-landscape.jpg",
 		                        "call_to_action": null
 		                    },
 		                    {
@@ -185,7 +185,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands5-thumb.jpg",
-		                        "landscape": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands5-landscape.jpg",
+		                        "hi_res": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands5-landscape.jpg",
 		                        "call_to_action": null
 		                    },
 		                    {
@@ -199,7 +199,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands6-thumb.jpg",
-		                        "landscape": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands6-landscape.jpg",
+		                        "hi_res": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands6-landscape.jpg",
 		                        "call_to_action": null
 		                    },
 		                    {
@@ -213,7 +213,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands7-thumb.jpg",
-		                        "landscape": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands7-landscape.jpg",
+		                        "hi_res": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands7-landscape.jpg",
 		                        "call_to_action": null
 		                    },
 		                    {
@@ -227,7 +227,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands8-thumb.jpg",
-		                        "landscape": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands8-landscape.jpg",
+		                        "hi_res": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands8-landscape.jpg",
 		                        "call_to_action": null
 		                    },
 		                    {
@@ -241,7 +241,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands9-thumb.jpg",
-		                        "landscape": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands9-landscape.jpg",
+		                        "hi_res": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands9-landscape.jpg",
 		                        "call_to_action": null
 		                    },
 		                    {
@@ -255,7 +255,7 @@
 		                        "type": "image",
 		                        "is_cover": false,
 		                        "thumbnail": "https://storage.googleapis.com/spsd-189118.appspot.com/arlingtonHighlands10-thumb.jpg",
-		                        "landscape": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/arlingtonHighlands10-hi-res.jpg",
+		                        "hi_res": "https://spsd-jc7noh2ropyhzv28kaix.stackpathdns.com/assets/uploads/hi-res/arlingtonHighlands10-hi-res.jpg",
 		                        "call_to_action": null
 		                    }
 	            		]
