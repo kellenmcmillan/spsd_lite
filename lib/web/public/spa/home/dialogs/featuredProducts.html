@@ -64,7 +64,7 @@
                                     <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item ng-repeat="listItem in content.data" ng-if="content.type == 'list'">
+                            <md-list-item ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Item</label>
                                     <input ng-model="listItem.item">
