@@ -24,7 +24,7 @@
                 </md-input-container>
             </md-list-item>
         </md-card-title>
-        <md-card-content ng-show="column == 'title'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
+        <md-card-content ng-show="column == title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40">
                 <md-card class="md-card-base">
@@ -46,7 +46,7 @@
             </div>
             <!-- columns -->
         </md-card-content>
-        <md-card-content ng-show="column != 'title'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
+        <md-card-content ng-show="column != title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40" style="width: 100%">
                 <md-card class="md-card-base">
@@ -89,7 +89,7 @@
             <!-- columns -->
 
             <!-- columns -->
-            <div flex flex-gt-sm="40" ng-show="column != 'title'">
+            <div flex flex-gt-sm="40" ng-show="column != title">
                 <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
                     <img ng-value="'{{editable_featured_products.data.list[column].images.source}}'" ng-src="{{editable_featured_products.data.list[column].images.source}}" class="md-card-image" alt="Washed Out">
                     <md-card-actions layout="row">
