@@ -64,11 +64,19 @@
                                     <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">
-                                <md-input-container class="md-block lightweight-md-input" flex>
-                                    <label>Item</label>
-                                    <input ng-model="listItem.item">
-                                </md-input-container>
+                            <md-list-item ng-if="content.type == 'list'">
+                                <md-button ng-disabled="featuredProductEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-click="add_featured_product_item(content.data)" class="md-raised" style="background-color: {{base_hue_lighter.value}};"><md-icon aria-label="Add A List Item" md-font-library="material-icons" style="color: {{primary_hue_normal.value}}">add</md-icon>
+                                Add Item
+                                </md-button>
+                                <form name="featuredProductEdit" flex style="max-width: 80%">
+                                    <div layout="column" flex>
+                                        <md-input-container ng-repeat="listItem in content.data track by $index" class="md-block lightweight-md-input" flex="100">
+                                            <label>Item</label>
+                                            <md-icon style="color: {{primary_hue_normal.value}}" ng-if="$index > 0" ng-click="remove_featured_product_item(content.data, $index)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                            <input ng-model="listItem.item">
+                                        </md-input-container>
+                                    </div>
+                                </form>
                             </md-list-item>
                         </div>
                         <md-list-item>
