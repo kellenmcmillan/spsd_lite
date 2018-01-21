@@ -34,10 +34,10 @@
   <!-- Title -->
   <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="product in featuredProducts.data.list">
     <div class="featured-product-card mdl-card border--radius-2" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'mdl-shadow--6dp': $index == 1, 'featured-last': $index == 2}">
-      <span class="overflow-image border--radius-2" ng-class="{'mdl-shadow--6dp': $index == 1, 'mdl-shadow--2dp': $index != 1}" ng-attr-style="background: url('{{productimages.source}}') center/cover no-repeat; position: relative; border: 1px solid {{base_hue_lightest.value}};">
+      <span class="overflow-image border--radius-2" ng-class="{'mdl-shadow--6dp': $index == 1, 'mdl-shadow--2dp': $index != 1}" ng-attr-style="background: url('{{product.images.source}}') center/cover no-repeat; position: relative; border: 1px solid {{base_hue_lightest.value}};">
       </span>
       <div class="mdl-card__supporting-text" style="text-align: left;">
-        <div ng-repeat="content in product[$index].contents | orderBy:'position'">
+        <div ng-repeat="content in product.contents | orderBy:'position'">
           <h4 ng-if="content.type == 'text'" ng-bind-html="content.data" style="font-weight: bold;"></h4>
           <p ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'" ng-bind-html="content.data"></p>
         </div>
