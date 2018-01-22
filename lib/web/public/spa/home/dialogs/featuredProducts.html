@@ -67,7 +67,7 @@
                             <md-list-item ng-if="content.type == 'list'">
                                 <form name="featuredProductEdit" flex>
                                     <div layout="column" flex>
-                                        <md-button ng-disabled="featuredProductEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-click="content.data.push(obj.item = 'car')" class="md-raised" style="background-color: {{base_hue_lighter.value}};" flex="50"><md-icon aria-label="Add A List Item" md-font-library="material-icons" style="color: {{primary_hue_normal.value}}">add</md-icon>
+                                        <md-button ng-disabled="featuredProductEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-click="content.data.push({item: ''})" class="md-raised" style="background-color: {{base_hue_lighter.value}}; max-width: 50%;"><md-icon aria-label="Add A List Item" md-font-library="material-icons" style="color: {{primary_hue_normal.value}}">add</md-icon>
                                         Add Item
                                         </md-button>
                                         <md-input-container ng-repeat="listItem in content.data track by $index" class="md-block lightweight-md-input" flex="100">
