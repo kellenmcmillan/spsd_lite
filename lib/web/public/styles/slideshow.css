@@ -33,11 +33,11 @@
     }
 }
 @-webkit-keyframes slideleft {
-  50% {transform: translate(-32px,0);}
+
   100% {transform: translate(-64px,0);}
 }
 @keyframes slideleft {
-  50% {transform: translate(-32px,0);}
+
   100% {transform: translate(-64px,0);}
 }
 /* Media */
