@@ -24,7 +24,8 @@
 }
 .slideshow_slide_image.ng-hide {opacity: 0; display: inline-block!important;}
 @media (max-width: 640px) {
-    .slideshow_slide_image {
+    .slideshow_slide_image,
+    .slideshow_slide_image.ng-hide-remove {
         -webkit-animation: slideleft 6s ease-in-out forwards;
         transform: translate(0,0px);
         animation: slideleft 6s ease-in-out forwards;
