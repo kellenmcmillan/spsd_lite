@@ -25,20 +25,20 @@
 .slideshow_slide_image.ng-hide {opacity: 0; display: inline-block!important;}
 @media (max-width: 640px) {
     .slideshow_slide_image.ng-hide-remove {
-        -webkit-animation: slideleft 6s ease-in-out forwards;
+        -webkit-animation: slideleft 8s ease-in-out forwards;
         transform: translate(0,0px);
-        animation: slideleft 6s ease-in-out forwards;
+        animation: slideleft 8s ease-in-out forwards;
         animation-timing-function: ease-in-out; 
         -webkit-animation-timing-function: ease-in-out;
     }
 }
 @-webkit-keyframes slideleft {
 
-  100% {transform: translate(-128px,0);}
+  100% {transform: translate(-192px,0);}
 }
 @keyframes slideleft {
 
-  100% {transform: translate(-128px,0);}
+  100% {transform: translate(-192px,0);}
 }
 /* Media */
 
