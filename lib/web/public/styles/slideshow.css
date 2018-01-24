@@ -27,12 +27,13 @@
     .slide-transition {
         -webkit-animation: slideleft 6s ease-in-out forwards;
         transform: translate(0,0px);
-        animation: slideleft 68s ease-in-out forwards;
+        animation: slideleft 6s ease-in-out forwards;
         animation-timing-function: ease-in-out; 
         -webkit-animation-timing-function: ease-in-out;
     }
 }
 @-webkit-keyframes slideleft {
+
   100% {transform: translate(-224px,0);}
 }
 @keyframes slideleft {
