@@ -23,6 +23,23 @@
   transition: all linear 0.5s;
 }
 .slideshow_slide_image.ng-hide {opacity: 0; display: inline-block!important;}
+@media (max-width: 640px) {
+    .slideshow_slide_image {
+        -webkit-animation: slideleft 6s ease-in-out forwards;
+        transform: translate(0,0px);
+        animation: slideleft 6s ease-in-out forwards;
+        animation-timing-function: ease-in-out; 
+        -webkit-animation-timing-function: ease-in-out;
+    }
+}
+@-webkit-keyframes slideleft {
+  50% {transform: translate(-32px,0);}
+  100% {transform: translate(-64px,0);}
+}
+@keyframes slideleft {
+  50% {transform: translate(-32px,0);}
+  100% {transform: translate(-64px,0);}
+}
 /* Media */
 
 /* Control */
