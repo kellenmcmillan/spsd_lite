@@ -26,7 +26,7 @@
 @media (max-width: 480px) {
     .slide-transition {
         -webkit-animation: slideleft 6s ease-in-out forwards;
-        transform: translate(0,0px);
+        transform: translate(-64px,0);
         animation: slideleft 6s ease-in-out forwards;
         animation-timing-function: ease-in-out; 
         -webkit-animation-timing-function: ease-in-out;
