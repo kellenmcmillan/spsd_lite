@@ -21,7 +21,7 @@
 	<span id="top" hash="top" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
 
 	<div class="slide--display" hero-slider-content-container ng-repeat="slide in primary_slideshow_hero.content.lists[0].content" orientation-aware>
-		<img class="slideshow_slide_image" alt="{{slide.alt}}" ng-src="{{slide.hi_res || slide.landscape}}" ng-show="$index == visible_slide && slide.type == 'image'" style="display: block; margin: 0 auto;">
+		<img class="slideshow_slide_image" alt="{{slide.alt}}" ng-src="{{slide.hi_res || slide.landscape}}" ng-class="{'slide-transition': $index == visible_slide" ng-show="$index == visible_slide && slide.type == 'image'" style="display: block; margin: 0 auto;">
 
 		<div class="lightweight-slideshow--title-container" ng-class="{'slideshow-verbiage': $index == visible_slide, 'slide-hide-override': slide.no_textual_content == true}" ng-show="$index == visible_slide">
 		    <p class="mdl-color-text--grey-300 mdl-typography--font-bold">{{slide.name}}</p>
