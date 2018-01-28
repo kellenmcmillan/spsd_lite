@@ -1,7 +1,7 @@
 <style>
     md-list-item md-input-container {width: 100%;}
 </style>
-<div class="secondary-dialog-curtain userVault" ng-show="user_vault_detail_visible == true" ng-controller="suiteController">
+<div class="secondary-dialog-curtain userVault" ng-show="user_vault_detail_visible == true" ng-controller="usersController">
     <md-card class="suite-dialog md-card-base">
         <md-card-title>
             <md-card-title-text>
@@ -40,7 +40,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>Email</label>
-                                            <input disabled ng-model="selectedUser.email">
+                                            <input disabled ng-model="selectedUser.security.email">
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
@@ -58,19 +58,19 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>Street Address</label>
-                                            <input ng-model="selectedUser.street">
+                                            <input ng-model="selectedUser.address.street">
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>City</label>
-                                            <input ng-model="selectedUser.city">
+                                            <input ng-model="selectedUser.address.city">
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>State</label>
-                                            <md-select ng-model="selectedUser.state">
+                                            <md-select ng-model="selectedUser.address.state">
                                                 <md-option><em>None</em></md-option>
                                                 <md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
                                                     {{state.abbrev}}
@@ -81,13 +81,13 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>Zip Code</label>
-                                            <input ng-model="selectedUser.zipcode">
+                                            <input ng-model="selectedUser.address.zipcode">
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>User Role</label>
-                                            <md-select ng-model="selectedUser.role">
+                                            <md-select ng-model="selectedUser.security.role">
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
