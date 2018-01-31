@@ -1,0 +1,123 @@
+<style>
+	.regular-button-link {
+		color: {{base_hue_darker.value}};
+		transition: all .2s ease-in-out;
+	}
+	.regular-button-link:hover {
+		color: {{base_hue_darkest.value}};
+		transition: all .2s ease-in-out;
+	}
+	footer {display: none!important;}
+</style>
+<!-- Navbar -->
+<div class="nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15);">
+	<div class="nav--row">
+        <span class="mdl-layout-title">
+            <p 
+            class="nav-title base-hdst--text"
+            style="font-size: 24px;">
+                SPSD Login
+            </p>
+        </span>
+	</div>
+</div>
+<!-- Navbar -->
+<!-- Photo Grid -->
+<div style="display: relative;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
+	
+	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" style="display: block;">
+		<form name="login">
+			<md-content>
+				<md-list-item>
+					<md-input-container class="md-block lightweight-md-input" flex>
+						<label>Email</label>
+						<input type="email" name="email" ng-required="true" ng-model="email">
+						<div ng-messages="login.email.$error">
+					    	<div ng-message="required">Email required...</div>
+					    	<div ng-message="email">Enter a valid email...</div>
+					    </div>
+					</md-input-container>
+				</md-list-item>
+				<md-list-item>
+					<md-input-container class="md-block lightweight-md-input" flex>
+						<label>Password</label>
+						<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
+						<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
+					    	<div ng-message="required">Password required!</div>
+					    	<div ng-message="minlength">Password too short!</div>
+					    </div>
+					</md-input-container>
+				</md-list-item>
+				<div layout="row" layout-align="center center">
+					<div layout-padding layout="row" flex>
+						<div flex="50">
+							<md-button style="background: transparent;">
+							Forgot Password
+							</md-button>
+						</div>
+						<div flex="50">
+							<md-button style="background: transparent;" ng-click="showSignUpDialog($event)">
+							New Account
+							</md-button>
+						</div>
+					</div>
+				</div>
+			</md-content>
+		</form>
+	</div>
+	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
+	<div style="position: fixed; bottom: 48px; right: 32px;" layout="row" layout-align="center center">
+		<md-fab-speed-dial md-open="isOpen" md-direction="up" class="md-fling md-hover-full" ng-mouseenter="isOpen = true" ng-mouseleave="isOpen = false">
+			<md-fab-trigger>
+				<md-button aria-label="slideshow menu" class="md-fab md-whiteframe-5dp" ng-attr-style="background-color: {{primary_hue_normal.value}}">
+					<md-icon 
+					aria-label="Menu"
+					md-font-library="material-icons" 
+					color="base" 
+				    hue="hue lighter" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	menu
+				    </md-icon>
+				</md-button>
+			</md-fab-trigger>
+
+			<md-fab-actions>
+				<md-button aria-label="Previous Page" class="md-fab md-raised md-mini" go-back-angular>
+					<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
+		              	Previous Page
+		            </md-tooltip>
+					<md-icon 
+					aria-label="Previous Page"
+					md-font-library="material-icons" 
+					color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	arrow_back
+				    </md-icon>
+				</md-button>
+				<a href="/">
+					<md-button aria-label="Back Home" class="md-fab md-raised md-mini">
+						<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
+			              	Home
+			            </md-tooltip>
+						<md-icon 
+						aria-label="Back Home"
+						md-font-library="material-icons" 
+						color="primary" 
+					    hue="hue normal" 
+					    property="text" 
+					    opaqueness="" 
+					    lw-color>
+					    	home
+					    </md-icon>
+					</md-button>
+				</a>
+			</md-fab-actions>
+		</md-fab-speed-dial>
+    </div>
+</div>
+<!-- Photo Grid -->
