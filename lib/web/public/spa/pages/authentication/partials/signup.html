@@ -1,0 +1,80 @@
+<style>
+	footer {display: none!important;}
+</style>
+<!-- Navbar -->
+<div class="nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15);">
+	<div class="nav--row">
+        <span class="mdl-layout-title">
+            <p 
+            class="nav-title base-hdst--text"
+            style="font-size: 24px;">
+                SPSD Signup
+            </p>
+        </span>
+        <div class="mdl-layout-spacer"></div>
+        <span>
+        	<a href="/">
+        		<button go-back-angular class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: transparent; width: 42px; min-width: 42px; height: 42px;">
+				  	<i class="material-icons" style="color: {{base_hue_darkest.value}}">
+				    	arrow_back
+				    </i>
+				</button>
+				&nbsp;
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: transparent; width: 42px; min-width: 42px; height: 42px;">
+				  	<i class="material-icons" style="color: {{base_hue_darkest.value}}">
+				    	home
+				    </i>
+				</button>
+			</a>
+        </span>
+	</div>
+</div>
+<!-- Navbar -->
+<div style="min-height: {{window_height - 50}}px;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}">
+	
+	<div class="mdl-cell mdl-cell--4-offset-desktop mdl-cell--2-offset-tablet mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid" layout="row" layout-align="center center">
+		<div>
+			<div style="text-align: center;">
+				<img src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+			</div>
+			<form name="signup" ng-submit="createUser()">
+				<md-content>
+					<md-list-item>
+						<md-input-container class="md-block lightweight-md-input" flex>
+							<label>Email</label>
+							<input ng-model="newUser.email">
+						</md-input-container>
+					</md-list-item>
+					<md-list-item>
+						<md-input-container class="md-block lightweight-md-input" flex>
+							<label>Password</label>
+							<input type="password" name="password" ng-model="newUser.password" ng-required="true" minlength="7">
+							<div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
+						    	<div ng-message="required">Password required!</div>
+						    	<div ng-message="minlength">Password too short!</div>
+						    </div>
+						</md-input-container>
+					</md-list-item>
+					<md-list-item>
+						<md-input-container class="md-block lightweight-md-input" flex>
+							<label>Re-enter password</label>
+							<input type="password" ng-model="newUser.compare_password" ng-required="true" name="confirm_password" password-verify="{{newUser.password}}">
+							<div ng-messages="signup.confirm_password.$error" ng-show="signup.confirm_password.$dirty">
+						    	<div ng-message="passwordVerify">Passwords don't match!</div>
+						    </div>
+						</md-input-container>
+					</md-list-item>
+					<div layout-padding layout="row" layout-align="end center">
+						<div>
+							<md-button ng-disabled="signup.$invalid" style="background: transparent;" type="submit" style="margin-right:20px;">
+								Sign up
+								<md-icon>keyboard_arrow_right</md-icon>
+							</md-button>
+						</div>
+					</div>
+				</md-content>
+			</form>
+		</div>
+	</div>
+	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
+</div>

@@ -14,14 +14,14 @@
         <div class="mdl-layout-spacer"></div>
         <span>
         	<a href="/">
-        		<button go-back-angular class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: {{primary_hue_normal.value}}; width: 42px; min-width: 42px; height: 42px;">
-				  	<i class="material-icons" style="color: {{base_hue_lightest.value}}">
+        		<button go-back-angular class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: transparent; width: 42px; min-width: 42px; height: 42px;">
+				  	<i class="material-icons" style="color: {{base_hue_darkest.value}}">
 				    	arrow_back
 				    </i>
 				</button>
 				&nbsp;
-				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: {{primary_hue_normal.value}}; width: 42px; min-width: 42px; height: 42px;">
-				  	<i class="material-icons" style="color: {{base_hue_lightest.value}}">
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: transparent; width: 42px; min-width: 42px; height: 42px;">
+				  	<i class="material-icons" style="color: {{base_hue_darkest.value}}">
 				    	home
 				    </i>
 				</button>
@@ -64,7 +64,7 @@
 							<md-button style="background: transparent;">
 							Forgot Password
 							</md-button>
-							<md-button class="md-raised" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="showSignUpDialog($event)">
+							<md-button class="md-raised" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="signIn()">
 							Login
 							</md-button>
 						</div>
