@@ -25,45 +25,47 @@
 <!-- Photo Grid -->
 <div style="display: relative; min-height: {{window_height}}px;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}">
 	
-	<div class="mdl-cell mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding" layout="row" layout-align="center center" style="display: block;">
-		<form name="login">
-			<md-content>
-				<md-list-item>
-					<md-input-container class="md-block lightweight-md-input" flex>
-						<label>Email</label>
-						<input type="email" name="email" ng-required="true" ng-model="email">
-						<div ng-messages="login.email.$error">
-					    	<div ng-message="required">Email required...</div>
-					    	<div ng-message="email">Enter a valid email...</div>
-					    </div>
-					</md-input-container>
-				</md-list-item>
-				<md-list-item>
-					<md-input-container class="md-block lightweight-md-input" flex>
-						<label>Password</label>
-						<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
-						<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
-					    	<div ng-message="required">Password required!</div>
-					    	<div ng-message="minlength">Password too short!</div>
-					    </div>
-					</md-input-container>
-				</md-list-item>
-				<div layout="row" layout-align="center center">
-					<div layout-padding layout="row" flex>
-						<div flex="50">
-							<md-button style="background: transparent;">
-							Forgot Password
-							</md-button>
-						</div>
-						<div flex="50">
-							<md-button style="background: transparent;" ng-click="showSignUpDialog($event)">
-							New Account
-							</md-button>
+	<div class="mdl-cell mdl-cell--4-offset-desktop mdl-cell--2-offset-tablet mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid" layout="row" layout-align="center center" style="display: block;">
+		<div>
+			<form name="login">
+				<md-content>
+					<md-list-item>
+						<md-input-container class="md-block lightweight-md-input" flex>
+							<label>Email</label>
+							<input type="email" name="email" ng-required="true" ng-model="email">
+							<div ng-messages="login.email.$error">
+						    	<div ng-message="required">Email required...</div>
+						    	<div ng-message="email">Enter a valid email...</div>
+						    </div>
+						</md-input-container>
+					</md-list-item>
+					<md-list-item>
+						<md-input-container class="md-block lightweight-md-input" flex>
+							<label>Password</label>
+							<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
+							<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
+						    	<div ng-message="required">Password required!</div>
+						    	<div ng-message="minlength">Password too short!</div>
+						    </div>
+						</md-input-container>
+					</md-list-item>
+					<div layout="row" layout-align="center center">
+						<div layout-padding layout="row" flex>
+							<div flex="50">
+								<md-button style="background: transparent;">
+								Forgot Password
+								</md-button>
+							</div>
+							<div flex="50">
+								<md-button style="background: transparent;" ng-click="showSignUpDialog($event)">
+								New Account
+								</md-button>
+							</div>
 						</div>
 					</div>
-				</div>
-			</md-content>
-		</form>
+				</md-content>
+			</form>
+		</div>
 	</div>
 	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
 	<div style="position: fixed; bottom: 0; right: 24px;">
