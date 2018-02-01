@@ -48,7 +48,7 @@
                 <div layout="column" layout-align="center stretch" layout-margin flex>
                     <md-list-item ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" ng-click="selectUser(user)" flex>                        
                         <md-icon aria-label="View details">subject</md-icon>
-                        <p>{{user.firstname || user.security.email}} {{user.lastname}}</p>
+                        <p>{{user.firstname || user.email}} {{user.lastname}}</p>
                     </md-list-item>
                 </div>
                 <div layout="row" layout-align="start center" layout-margin flex>
