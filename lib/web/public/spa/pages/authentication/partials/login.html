@@ -11,16 +11,42 @@
                 SPSD Login
             </p>
         </span>
+        <div class="mdl-layout-spacer"></div>
+        <span>
+        	<a href="/">
+        		<button go-back-angular class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: {{base_hue_lightest.value}}; width: 42px; min-width: 42px; height: 42px;">
+				  	<i 
+				  	class="material-icons"
+				  	color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	arrow_back
+				    </i>
+				</button>
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: {{base_hue_lightest.value}}; width: 42px; min-width: 42px; height: 42px;">
+				  	<i 
+				  	class="material-icons"
+				  	color="primary" 
+				    hue="hue normal" 
+				    property="text" 
+				    opaqueness="" 
+				    lw-color>
+				    	home
+				    </i>
+				</button>
+			</a>
+        </span>
 	</div>
 </div>
 <!-- Navbar -->
-<!-- Photo Grid -->
 <div style="min-height: {{window_height - 50}}px;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}">
 	
 	<div class="mdl-cell mdl-cell--4-offset-desktop mdl-cell--2-offset-tablet mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid" layout="row" layout-align="center center">
 		<div>
-			<div>
-				<img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+			<div style="text-align: center;">
+				<img src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
 			</div>
 			<form name="login">
 				<md-content>
@@ -44,18 +70,14 @@
 						    </div>
 						</md-input-container>
 					</md-list-item>
-					<div layout="row" layout-align="center center">
-						<div layout-padding layout="row" flex>
-							<div flex="50">
-								<md-button style="background: transparent;">
-								Forgot Password
-								</md-button>
-							</div>
-							<div flex="50">
-								<md-button class="md-raised" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="showSignUpDialog($event)">
-								Login
-								</md-button>
-							</div>
+					<div layout-padding layout="row" layout-align="end center">
+						<div>
+							<md-button style="background: transparent;">
+							Forgot Password
+							</md-button>
+							<md-button class="md-raised" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="showSignUpDialog($event)">
+							Login
+							</md-button>
 						</div>
 					</div>
 				</md-content>
@@ -63,44 +85,4 @@
 		</div>
 	</div>
 	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
-	<div style="position: fixed; bottom: 0; right: 24px;">
-		<a href="/">
-			<button id="fling_2" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_5" ng-class="{'opened': isOpen}" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
-			  	<i 
-			  	class="material-icons"
-			  	color="primary" 
-			    hue="hue normal" 
-			    property="text" 
-			    opaqueness="" 
-			    lw-color>
-			    	home
-			    </i>
-			</button>
-		</a>
-		<div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_5">Home</div>
-		<button id="fling_1" go-back-angular class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_3" ng-class="{'opened': isOpen}" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
-		  	<i 
-		  	class="material-icons"
-		  	color="primary" 
-		    hue="hue normal" 
-		    property="text" 
-		    opaqueness="" 
-		    lw-color>
-		    	arrow_back
-		    </i>
-		</button>
-		<div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_3">Previous Page</div>
-		<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp" ng-click="isOpen = !isOpen" ng-attr-style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: 80px; right: 32px;">
-		  	<i 
-		  	class="material-icons"
-		  	color="base" 
-		    hue="hue lighter" 
-		    property="text" 
-		    opaqueness="" 
-		    lw-color>
-		    	menu
-		    </i>
-		</button>
-	</div>
 </div>
-<!-- Photo Grid -->
