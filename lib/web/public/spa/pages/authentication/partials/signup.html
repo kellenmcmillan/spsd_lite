@@ -78,12 +78,19 @@
                         <md-input-container class="md-block lightweight-md-input">
                             <label>Lastname</label>
                             <input ng-model="newUser.lastname">
+                            <div ng-messages="signup.lastname.$error" ng-show="signup.lastname.$dirty">
+                                <div ng-message="required">Lastname required!</div>
+                                <div ng-message="minlength">Name too short!</div>
+                            </div>
                         </md-input-container>
                     </md-list-item>
                     <md-list-item>
                         <md-input-container class="md-block lightweight-md-input">
                             <label>Birthday</label>
                             <md-datepicker flex ng-model="newUser.birthday" md-placeholder="Enter your birthday"></md-datepicker>
+                            <div ng-messages="signup.birthday.$error" ng-show="signup.birthday.$dirty">
+                                <div ng-message="required">Birthday required!</div>
+                            </div>
                         </md-input-container>
                     </md-list-item>
                     <md-list-item>

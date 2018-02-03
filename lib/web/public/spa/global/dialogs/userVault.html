@@ -3,10 +3,6 @@
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">User Vault</span>
-                <md-button ng-click="null" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" aria-label="Clear Media Search">
-                    <md-icon style="color: {{base_hue_lightest.value}};">add</md-icon>
-                    Add User
-                </md-button>
             </md-card-title-text>
         </md-card-title>
         <md-card-content flex>
@@ -72,5 +68,8 @@
         <md-card-actions layout="row" layout-align="end center">
             <md-button class="md-raised" ng-click="closeUserVault()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
         </md-card-actions>
+        <md-button class="md-fab" aria-label="Add A User" style="background-color: {{primary_hue_normal.value}}; position: fixed; right: 24px; bottom: 48px;">
+            <md-icon style="color: {{base_hue_lightest.value}}">add</md-icon>
+        </md-button>
     </md-card>
 </div>
