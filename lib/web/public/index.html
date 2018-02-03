@@ -155,9 +155,8 @@
                 <!-- Footer -->
                 <footer class="mdl-mini-footer">
                     <div class="mdl-mini-footer__left-section" style="z-index:2">
-                        <div class="mdl-logo">{{app_data.app_configs.site_name}} &#169; {{year}}
-                            &nbsp;&nbsp;<span style="cursor: pointer;" ng-if="!user" ng-click="showLoginDialog($event)">Log In</span>
-                            &nbsp;&nbsp;<span style="cursor: pointer;" ng-if="user" ng-click="auth.$signOut()">Log Out</span>
+                        <div class="mdl-logo">
+                            {{app_data.app_configs.site_name}} &#169; {{year}}
                         </div>
                         <md-menu>
                             <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="openMenu($mdMenu, $event)">
@@ -182,7 +181,7 @@
                                         Task Runner
                                     </md-button>
                                 </md-menu-item>
-                                <md-menu-divider></md-menu-divider>
+                                <md-menu-divider ng-show="user"></md-menu-divider>
                                 <a href="/login">
                                     <md-menu-item ng-show="!user">
                                         <md-button>
@@ -314,6 +313,7 @@
     <script src="../spa/pages/capabilities/controllers/capabilitiesController.js" type="text/javascript"></script>
     <script src="../spa/pages/team/controllers/teamController.js" type="text/javascript"></script>
     <script src="../spa/pages/authentication/controllers/loginController.js" type="text/javascript"></script>
+    <script src="../spa/pages/authentication/controllers/signupController.js" type="text/javascript"></script>
     <script src="../spa/pages/authentication/controllers/userManagement.js" type="text/javascript"></script>
     <!-- Client Facing Scripts -->
 

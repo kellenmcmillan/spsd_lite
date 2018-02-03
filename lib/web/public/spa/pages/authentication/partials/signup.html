@@ -64,6 +64,63 @@
 						    </div>
 						</md-input-container>
 					</md-list-item>
+					<md-list-item>
+                        <md-input-container class="md-block lightweight-md-input">
+                            <label>Firstname</label>
+                            <input name="firstname" ng-model="newUser.firstname" minlength="3" required>
+                            <div ng-messages="signup.firstname.$error" ng-show="signup.firstname.$dirty">
+                                <div ng-message="required">Firstname required!</div>
+                                <div ng-message="minlength">Name too short!</div>
+                            </div>
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-input-container class="md-block lightweight-md-input">
+                            <label>Lastname</label>
+                            <input ng-model="newUser.lastname">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-input-container class="md-block lightweight-md-input">
+                            <label>Birthday</label>
+                            <md-datepicker flex ng-model="newUser.birthday" md-placeholder="Enter your birthday"></md-datepicker>
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-input-container class="md-block lightweight-md-input">
+                            <label>Phone</label>
+                            <input ng-model="newUser.phone">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-input-container class="md-block lightweight-md-input">
+                            <label>Street Address</label>
+                            <input ng-model="newUser.address.street">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-input-container class="md-block lightweight-md-input">
+                            <label>City</label>
+                            <input ng-model="newUser.address.city">
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-input-container class="md-block lightweight-md-dropdown">
+                            <label>State</label>
+                            <md-select ng-model="newUser.address.state">
+                                <md-option><em>None</em></md-option>
+                                <md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
+                                    {{state.abbrev}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-input-container class="md-block lightweight-md-input">
+                            <label>Zip Code</label>
+                            <input ng-model="newUser.address.zipcode">
+                        </md-input-container>
+                    </md-list-item>
 					<div layout-padding layout="row" layout-align="end center">
 						<div>
 							<md-button ng-disabled="signup.$invalid" style="background: transparent;" type="submit" style="margin-right:20px;">
