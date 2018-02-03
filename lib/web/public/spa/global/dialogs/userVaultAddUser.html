@@ -18,7 +18,11 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Email</label>
-                                            <input type="email" ng-model="newUser.email">
+                                            <input type="email" name="email" ng-model="newUser.email" required>
+                                            <div ng-messages="signup.email.$error">
+                                                <div ng-message="required">Email required...</div>
+                                                <div ng-message="email">Enter a valid email...</div>
+                                            </div>
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
@@ -53,7 +57,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>Lastname</label>
-                                            <input ng-model="newUser.lastname" minlength="3" required>
+                                            <input name="lastname" ng-model="newUser.lastname" minlength="3" required>
                                             <div ng-messages="signup.lastname.$error" ng-show="signup.lastname.$dirty">
                                                 <div ng-message="required">Lastname required!</div>
                                                 <div ng-message="minlength">Lastname too short!</div>
@@ -63,7 +67,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex="100">
                                             <label>Birthday</label>
-                                            <md-datepicker flex ng-model="newUser.birthday" md-placeholder="Enter your birthday" required></md-datepicker>
+                                            <md-datepicker flex ng-model="newUser.birthday" md-placeholder="Enter your birthday" name="birthday" required></md-datepicker>
                                             <div ng-messages="signup.birthday.$error" ng-show="signup.birthday.$dirty">
                                                 <div ng-message="required">Birthday required!</div>
                                             </div>
@@ -72,7 +76,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>Phone</label>
-                                            <input ng-model="newUser.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" minlength="10" required>
+                                            <input ng-model="newUser.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
                                             <div ng-messages="signup.phone.$error" ng-show="signup.phone.$dirty">
                                                 <div ng-message="required">Phone number required!</div>
                                                 <div ng-message="minlength">Phone number too short!</div>
@@ -83,7 +87,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>Street Address</label>
-                                            <input ng-model="newUser.address.street" required minlength="5" required>
+                                            <input ng-model="newUser.address.street" name="address.street" required minlength="5" required>
                                             <div ng-messages="signup.address.street.$error" ng-show="signup.address.street.$dirty">
                                                 <div ng-message="required">Street address required!</div>
                                                 <div ng-message="minlength">Street address too short!</div>
@@ -93,7 +97,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>City</label>
-                                            <input ng-model="newUser.address.city" required minlength="4">
+                                            <input ng-model="newUser.address.city" name="address.city" required minlength="4">
                                             <div ng-messages="signup.address.city.$error" ng-show="signup.address.city.$dirty">
                                                 <div ng-message="required">City required!</div>
                                                 <div ng-message="minlength">City name too short!</div>
@@ -103,13 +107,13 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>State</label>
-                                            <md-select ng-model="newUser.address.state" required>
+                                            <md-select ng-model="newUser.address.state" name="address.state" required>
                                                 <md-option><em>None</em></md-option>
                                                 <md-option ng-repeat="state in states" ng-value="state.abbrev">
                                                     {{state.abbrev}}
                                                 </md-option>
                                             </md-select>
-                                            <div ng-messages="signup.address.state.$error" ng-show="signup.address.state.$dirty">
+                                            <div ng-messages="signup.address.state.$error" name="address.state" ng-show="signup.address.state.$dirty">
                                                 <div ng-message="required">State required!</div>
                                             </div>
                                         </md-input-container>
@@ -117,7 +121,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input">
                                             <label>Zip Code</label>
-                                            <input type="number" ng-model="newUser.address.zipcode" minlength="5" required>
+                                            <input type="number" ng-model="newUser.address.zipcode" name="address.zipcode" minlength="5" required>
                                             <div ng-messages="signup.address.zipcode.$error" ng-show="signup.address.zipcode.$dirty">
                                                 <div ng-message="required">Zipcode required!</div>
                                                 <div ng-message="minlength">Zipcode too short!</div>
@@ -127,7 +131,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>User Role</label>
-                                            <md-select ng-model="newUser.security.roles" required>
+                                            <md-select ng-model="newUser.security.roles" name="security.roles" required>
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
