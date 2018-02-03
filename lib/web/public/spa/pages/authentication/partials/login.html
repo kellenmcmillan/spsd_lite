@@ -13,18 +13,14 @@
         </span>
         <div class="mdl-layout-spacer"></div>
         <span>
-        	<a href="/">
-        		<button go-back-angular class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: transparent; width: 42px; min-width: 42px; height: 42px;">
-				  	<i class="material-icons" style="color: {{base_hue_darkest.value}}">
-				    	arrow_back
-				    </i>
-				</button>
-				&nbsp;
-				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-attr-style="background-color: transparent; width: 42px; min-width: 42px; height: 42px;">
-				  	<i class="material-icons" style="color: {{base_hue_darkest.value}}">
-				    	home
-				    </i>
-				</button>
+			<md-button go-back-angular class="md-icon-button" aria-label="Go Back">
+				<md-icon style="color: {{base_hue_darkest.value}}">arrow_back</md-icon>
+			</md-button>
+			&nbsp;
+			<a href="/">
+				<md-button go-back-angular class="md-icon-button" aria-label="Go Back">
+					<md-icon style="color: {{base_hue_darkest.value}}">home</md-icon>
+				</md-button>
 			</a>
         </span>
 	</div>
