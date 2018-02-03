@@ -139,7 +139,7 @@
                                     </md-list-item>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button ng-click="user_vault_add_user_visible = false">Cancel</md-button>
+                                    <md-button ng-click="closeAddUser()">Cancel</md-button>
                                     <md-button class="md-raised" ng-disabled="signup.$invalid" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" type="submit" style="margin-right:20px;">
                                         Sign up
                                     </md-button>
@@ -151,7 +151,7 @@
             </md-content>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-raised" ng-click="user_vault_add_user_visible = false" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Cancel</md-button>
+            <md-button class="md-raised" ng-click="closeAddUser()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Cancel</md-button>
         </md-card-actions>
     </md-card>
 </div>
