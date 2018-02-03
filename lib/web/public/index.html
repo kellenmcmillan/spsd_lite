@@ -183,14 +183,14 @@
                                     </md-button>
                                 </md-menu-item>
                                 <md-menu-divider></md-menu-divider>
-                                <md-menu-item ng-show="!user">
-                                    <a href="/login">
+                                <a href="/login">
+                                    <md-menu-item ng-show="!user">
                                         <md-button>
                                             <md-icon>lock</md-icon>
                                             Log In
                                         </md-button>
-                                    </a>
-                                </md-menu-item>
+                                    </md-menu-item>
+                                </a>
                                 <md-menu-item ng-show="user">
                                     <md-button ng-click="auth.$signOut()">
                                         <md-icon>lock_open</md-icon>
