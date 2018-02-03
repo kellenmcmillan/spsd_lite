@@ -1,0 +1,157 @@
+<style>
+    md-list-item md-input-container {width: 100%;}
+</style>
+<div class="secondary-dialog-curtain" ng-show="user_vault_add_user_visible == true" ng-controller="usersController">
+    <md-card class="suite-dialog md-card-base">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Add A New User</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content flex>
+            <md-content class="md-padding" flex>
+                <div layout="column" layout-align="center center" layout-margin flex>
+                    <div class="full-width" layout="row" layout-align="center center" flex>
+                        <md-card style="background: #fafafa;" flex flex-gt-sm="40">
+                            <form name="signup" ng-submit="createUser(newUser)">
+                                <md-content>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Email</label>
+                                            <input type="email" ng-model="newUser.email">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Password</label>
+                                            <input type="password" name="password" ng-model="newUser.password" ng-required="true" minlength="7">
+                                            <div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
+                                                <div ng-message="required">Password required!</div>
+                                                <div ng-message="minlength">Password too short!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Re-enter password</label>
+                                            <input type="password" ng-model="newUser.compare_password" ng-required="true" name="confirm_password" password-verify="{{newUser.password}}">
+                                            <div ng-messages="signup.confirm_password.$error" ng-show="signup.confirm_password.$dirty">
+                                                <div ng-message="passwordVerify">Passwords don't match!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Firstname</label>
+                                            <input name="firstname" ng-model="newUser.firstname" minlength="3" required>
+                                            <div ng-messages="signup.firstname.$error" ng-show="signup.firstname.$dirty">
+                                                <div ng-message="required">Firstname required!</div>
+                                                <div ng-message="minlength">Firstname too short!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Lastname</label>
+                                            <input ng-model="newUser.lastname" minlength="3" required>
+                                            <div ng-messages="signup.lastname.$error" ng-show="signup.lastname.$dirty">
+                                                <div ng-message="required">Lastname required!</div>
+                                                <div ng-message="minlength">Lastname too short!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex="100">
+                                            <label>Birthday</label>
+                                            <md-datepicker flex ng-model="newUser.birthday" md-placeholder="Enter your birthday" required></md-datepicker>
+                                            <div ng-messages="signup.birthday.$error" ng-show="signup.birthday.$dirty">
+                                                <div ng-message="required">Birthday required!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Phone</label>
+                                            <input ng-model="newUser.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" minlength="10" required>
+                                            <div ng-messages="signup.phone.$error" ng-show="signup.phone.$dirty">
+                                                <div ng-message="required">Phone number required!</div>
+                                                <div ng-message="minlength">Phone number too short!</div>
+                                                <div ng-message="ng-pattern">Not a valid phone number</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Street Address</label>
+                                            <input ng-model="newUser.address.street" required minlength="5" required>
+                                            <div ng-messages="signup.address.street.$error" ng-show="signup.address.street.$dirty">
+                                                <div ng-message="required">Street address required!</div>
+                                                <div ng-message="minlength">Street address too short!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>City</label>
+                                            <input ng-model="newUser.address.city" required minlength="4">
+                                            <div ng-messages="signup.address.city.$error" ng-show="signup.address.city.$dirty">
+                                                <div ng-message="required">City required!</div>
+                                                <div ng-message="minlength">City name too short!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-dropdown">
+                                            <label>State</label>
+                                            <md-select ng-model="newUser.address.state" required>
+                                                <md-option><em>None</em></md-option>
+                                                <md-option ng-repeat="state in states" ng-value="state.abbrev">
+                                                    {{state.abbrev}}
+                                                </md-option>
+                                            </md-select>
+                                            <div ng-messages="signup.address.state.$error" ng-show="signup.address.state.$dirty">
+                                                <div ng-message="required">State required!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input">
+                                            <label>Zip Code</label>
+                                            <input type="number" ng-model="newUser.address.zipcode" minlength="5" required>
+                                            <div ng-messages="signup.address.zipcode.$error" ng-show="signup.address.zipcode.$dirty">
+                                                <div ng-message="required">Zipcode required!</div>
+                                                <div ng-message="minlength">Zipcode too short!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-dropdown">
+                                            <label>User Role</label>
+                                            <md-select ng-model="newUser.security.roles" required>
+                                                <md-option ng-repeat="role in rolelist" ng-value="role.role">
+                                                    {{role.role}}
+                                                </md-option>
+                                            </md-select>
+                                            <div ng-messages="signup.security.roles.$error" ng-show="signup.security.roles.$dirty">
+                                                <div ng-message="required">Role required!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                </md-card-content>
+                                <md-card-actions layout="row" layout-align="end center" flex>
+                                    <md-button ng-click="user_vault_add_user_visible = false">Cancel</md-button>
+                                    <md-button class="md-raised" ng-disabled="signup.$invalid" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" type="submit" style="margin-right:20px;">
+                                        Sign up
+                                    </md-button>
+                                </md-card-actions>
+                            </form>
+                        </md-card>
+                    </div>
+                </div>
+            </md-content>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button class="md-raised" ng-click="user_vault_add_user_visible = false" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Cancel</md-button>
+        </md-card-actions>
+    </md-card>
+</div>
