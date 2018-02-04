@@ -13,7 +13,7 @@
                 <div layout="column" layout-align="center center" layout-margin flex>
                     <div class="full-width" layout="row" layout-align="center center" flex>
                         <md-card style="background: #fafafa;" flex flex-gt-sm="40">
-                            <form name="signup" ng-submit="createUser(newUser)">
+                            <form name="signup" ng-submit="addUser(newUser)">
                                 <md-card-content>
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
@@ -22,25 +22,6 @@
                                             <div ng-messages="signup.email.$error">
                                                 <div ng-message="required">Email required...</div>
                                                 <div ng-message="email">Enter a valid email...</div>
-                                            </div>
-                                        </md-input-container>
-                                    </md-list-item>
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Password</label>
-                                            <input type="password" name="password" ng-model="newUser.password" ng-required="true" minlength="7">
-                                            <div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
-                                                <div ng-message="required">Password required!</div>
-                                                <div ng-message="minlength">Password too short!</div>
-                                            </div>
-                                        </md-input-container>
-                                    </md-list-item>
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Re-enter password</label>
-                                            <input type="password" ng-model="newUser.compare_password" ng-required="true" name="confirm_password" password-verify="{{newUser.password}}">
-                                            <div ng-messages="signup.confirm_password.$error" ng-show="signup.confirm_password.$dirty">
-                                                <div ng-message="passwordVerify">Passwords don't match!</div>
                                             </div>
                                         </md-input-container>
                                     </md-list-item>
