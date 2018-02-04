@@ -118,7 +118,7 @@
                                 <!-- Add A Gallery -->
                                 <div flex>
                                     <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
-                                        <div ng-show="galleries.length > 20" layout="row" layout-align="start center" layout-margin flex="100">
+                                        <div ng-show="galleries.length > 9" layout="row" layout-align="start center" layout-margin flex="100">
                                             <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="button-color-border">Previous</md-button>
                                             <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
                                             <md-button ng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="button-color-border">Next</md-button>
