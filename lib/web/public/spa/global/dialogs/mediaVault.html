@@ -155,8 +155,8 @@
                                                     <md-switch class="md-secondary" ng-model="gallery.featured"></md-switch>
                                                 </md-list-item>
                                                 <md-list-item flex layout="row">
-                                                    <p flex="20">Speed</p>
-                                                    <md-slider-container flex="70">
+                                                    <p flex="20" hide-xs>Speed</p>
+                                                    <md-slider-container flex="100" flex-gt-sm="80">
                                                         <md-slider min="0" max="10" ng-model="gallery.transition" aria-label="slider" id="slider[$index]">
                                                         </md-slider>
                                                         <md-input-container flex>
