@@ -146,7 +146,7 @@
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
                                                         <label>URL</label>
-                                                        <!-- <input ng-disabled="true" ng-if="!gallery.key" ng-model="gallery.url"> -->
+                                                        <input ng-if="!gallery.key" ng-model="gallery.url">
                                                         <input ng-disabled="true" ng-if="gallery.key" ng-model="gallery.url">
                                                     </md-input-container>
                                                 </md-list-item>
@@ -157,10 +157,10 @@
                                                 <md-list-item flex layout="row">
                                                     <p flex="20" hide-xs>Speed</p>
                                                     <md-slider-container flex="100" flex-gt-sm="80">
-                                                        <md-slider min="0" max="10" ng-model="gallery.transition" aria-label="slider" id="slider[$index]">
+                                                        <md-slider flex min="0" max="10" ng-model="gallery.transition" aria-label="slider" id="slider[$index]">
                                                         </md-slider>
                                                         <md-input-container flex>
-                                                            <input flex type="number" ng-model="gallery.transition" aria-label="slider" aria-controls="slider[$index]">
+                                                            <input type="number" ng-model="gallery.transition" aria-label="slider" aria-controls="slider[$index]">
                                                         </md-input-container>
                                                     </md-slider-container>
                                                 </md-list-item>  
