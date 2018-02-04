@@ -50,57 +50,43 @@
 	</div>
 	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
 	<div style="position: fixed; bottom: 48px; right: 32px;" layout="row" layout-align="center center">
-		<md-fab-speed-dial md-open="isOpen" md-direction="up" class="md-fling md-hover-full" ng-mouseenter="isOpen = true" ng-mouseleave="isOpen = false">
-			<md-fab-trigger>
-				<md-button aria-label="slideshow menu" class="md-fab md-whiteframe-5dp" ng-attr-style="background-color: {{primary_hue_normal.value}}">
-					<md-icon 
-					aria-label="Menu"
-					md-font-library="material-icons" 
-					color="base" 
-				    hue="hue lighter" 
-				    property="text" 
-				    opaqueness="" 
-				    lw-color>
-				    	menu
-				    </md-icon>
-				</md-button>
-			</md-fab-trigger>
-
-			<md-fab-actions>
-				<md-button aria-label="Previous Page" class="md-fab md-raised md-mini" go-back-angular>
-					<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
-		              	Previous Page
-		            </md-tooltip>
-					<md-icon 
-					aria-label="Previous Page"
-					md-font-library="material-icons" 
-					color="primary" 
-				    hue="hue normal" 
-				    property="text" 
-				    opaqueness="" 
-				    lw-color>
-				    	arrow_back
-				    </md-icon>
-				</md-button>
-				<a href="/">
-					<md-button aria-label="Back Home" class="md-fab md-raised md-mini">
-						<md-tooltip md-direction="left" md-visible="tooltipVisible" md-autohide="false">
-			              	Home
-			            </md-tooltip>
-						<md-icon 
-						aria-label="Back Home"
-						md-font-library="material-icons" 
-						color="primary" 
-					    hue="hue normal" 
-					    property="text" 
-					    opaqueness="" 
-					    lw-color>
-					    	home
-					    </md-icon>
-					</md-button>
-				</a>
-			</md-fab-actions>
-		</md-fab-speed-dial>
+		<a href="/">
+			<button id="fling_2" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_2" ng-class="{'opened': isOpen}" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
+			  	<i 
+			  	class="material-icons"
+			  	color="primary" 
+			    hue="hue normal" 
+			    property="text" 
+			    opaqueness="" 
+			    lw-color>
+			    	home
+			    </i>
+			</button>
+		</a>
+		<div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_2">Home</div>
+		<button id="fling_1" go-back-angular class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_1" ng-class="{'opened': isOpen}" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
+		  	<i 
+		  	class="material-icons"
+		  	color="primary" 
+		    hue="hue normal" 
+		    property="text" 
+		    opaqueness="" 
+		    lw-color>
+		    	arrow_back
+		    </i>
+		</button>
+		<div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_1">Previous Page</div>
+		<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp" ng-click="isOpen = !isOpen" ng-attr-style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: 80px; right: 32px;">
+		  	<i 
+		  	class="material-icons"
+		  	color="base" 
+		    hue="hue lighter" 
+		    property="text" 
+		    opaqueness="" 
+		    lw-color>
+		    	menu
+		    </i>
+		</button>
     </div>
 </div>
 <!-- Photo Grid -->
