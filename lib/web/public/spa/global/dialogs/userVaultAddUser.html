@@ -80,7 +80,7 @@
                                             <div ng-messages="signup.phone.$error" ng-show="signup.phone.$dirty">
                                                 <div ng-message="required">Phone number required!</div>
                                                 <div ng-message="minlength">Phone number too short!</div>
-                                                <div ng-message="pattern">Not a valid phone number</div>
+                                                <div ng-message="pattern">Not a valid phone number!</div>
                                             </div>
                                         </md-input-container>
                                     </md-list-item>
@@ -131,7 +131,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>User Role</label>
-                                            <md-select ng-model="newUser.security.roles" name="roles" required>
+                                            <md-select ng-model="newUser.security.roles" name="roles" ng-required="true">
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
