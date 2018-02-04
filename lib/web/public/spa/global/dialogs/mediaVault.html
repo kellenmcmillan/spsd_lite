@@ -75,7 +75,7 @@
                                                     <md-switch class="md-secondary" ng-model="image.metadata.cover"></md-switch>
                                                 </md-list-item>
                                             </md-card-content>
-                                            <md-card-actions layout="row" layout-align="center center">
+                                            <md-card-actions ng-show="gallery_detail_view" layout="row" layout-align="center center">
                                                 <span>
                                                     <md-radio-button ng-show="elementToUpdate" value="{{image.avatar ? image.avatar : image.source}}">Select Media</md-radio-button>
                                                 </span>
