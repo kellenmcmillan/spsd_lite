@@ -80,7 +80,7 @@
                                                     <md-radio-button ng-show="elementToUpdate" value="{{image.avatar ? image.avatar : image.source}}">Select Media</md-radio-button>
                                                 </span>
                                                 <span flex></span>
-                                                <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="null" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
+                                                <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="deleteMedia(image)" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
                                                 <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="updateMedia(image)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                             </md-card-actions>
                                         </md-card>
