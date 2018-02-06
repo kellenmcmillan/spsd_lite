@@ -24,11 +24,11 @@
 		<img class="slideshow_slide_image" alt="{{slide.alt}}" ng-src="{{slide.source}}" ng-class="{'slide-transition': $index == visible_slide}" ng-show="$index == visible_slide" style="display: block; margin: 0 auto;">
 
 		<div class="lightweight-slideshow--title-container" ng-class="{'slideshow-verbiage': $index == visible_slide, 'slide-hide-override': slide.no_textual_content == true}" ng-show="$index == visible_slide">
-		    <p class="mdl-color-text--grey-300 mdl-typography--font-bold">{{slide.name}}</p>
+		    <p class="mdl-color-text--grey-300 mdl-typography--font-bold">{{slide.metadata.name}}</p>
 		</div>
 
 		<div class="lightweight-slideshow--tagline-container" ng-class="{'slideshow-verbiage': $index == visible_slide, 'slide-hide-override': slide.no_textual_content == true}" ng-show="$index == visible_slide">
-		    <p class="mdl-color-text--grey-300 mdl-typography--font-bold">{{slide.description}}</p>
+		    <p class="mdl-color-text--grey-300 mdl-typography--font-bold">{{slide.metadata.description}}</p>
 		</div>
 	</div>
 </div>
