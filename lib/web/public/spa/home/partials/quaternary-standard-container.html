@@ -36,7 +36,7 @@
  lw-color>
     <span id="galleries" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
     <div class="quaternary-standard-container-background">
-        <img src="{{quaternary_standard_container.content.background_media.image.src}}" style="display: block; margin: 0 auto;">
+        <img src="{{parallaxTwo.background.images.source}}" style="display: block; margin: 0 auto;">
     </div>
 
     <!-- Title -->
@@ -48,7 +48,7 @@
         hue="{{quaternary_standard_container.paint.text.hue}}" 
         property="{{quaternary_standard_container.paint.text.property}}" 
         opaqueness="{{quaternary_standard_container.paint.text.opaqueness}}" 
-        lw-color ng-bind-html="quaternary_standard_container.content.default[0].name">
+        lw-color ng-bind-html="parallaxTwo.data.text">
         </h1>
 
     </div>
