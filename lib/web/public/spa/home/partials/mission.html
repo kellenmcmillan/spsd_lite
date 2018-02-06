@@ -16,12 +16,7 @@
                 <div class="center--text">
                     <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;" ng-bind-html="mission.data.title"></h2>
                     <h2 
-                    class="mdl-typography--font-bold" 
-                    color="{{primary_standard_container.paint.text.color}}" 
-                    hue="{{primary_standard_container.paint.text.hue}}" 
-                    property="{{primary_standard_container.paint.text.property}}" 
-                    opaqueness="{{primary_standard_container.paint.text.opaqueness}}" 
-                    lw-color ng-bind-html="mission.data.subtitle">
+                    class="mdl-typography--font-bold" style="color: {{base_hue_darkest.value}};" ng-bind-html="mission.data.subtitle">
                     </h2>
                     <!-- SVG Title Border Asset -->
                     <svg 
@@ -40,12 +35,8 @@
                 <!-- SVG Title Border Asset -->
                 <!-- Title -->
                 <p 
-                class="padded--top16"
-                color="{{primary_standard_container.paint.text.color}}" 
-                hue="{{primary_standard_container.paint.text.hue}}" 
-                property="{{primary_standard_container.paint.text.property}}" 
-                opaqueness="{{primary_standard_container.paint.text.opaqueness}}" 
-                lw-color ng-bind-html="mission.data.text">
+                class="padded--top16 {{mission.paint.text.class}}"
+                ng-bind-html="mission.data.text">
                 </p>
 
             </div>
@@ -66,12 +57,7 @@
  ng-if="!scrollable"
  minfull-screen
  style="border-bottom: 1px rgba(0,0,0,0.13) solid; position: relative;"
- class="component mission mdl-grid no-padding no-margin"
- color="{{primary_standard_container.paint.background.color}}"
- hue="{{primary_standard_container.paint.background.hue}}"
- property="{{primary_standard_container.paint.background.property}}" 
- opaqueness="{{primary_standard_container.paint.background.opaqueness}}" 
- lw-color>
+ class="component mission mdl-grid no-padding no-margin {{mission.paint.background.class}}">
     <md-button ng-if="user" ng-click="startMissionEdit()" class="md-fab" aria-label="Eat cake" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 32px;";>
         <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
     </md-button>
@@ -84,12 +70,8 @@
                 <div class="center--text">
                     <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;" ng-bind-html="primary_standard_container.content.default[0].name_2"></h2>
                     <h2 
-                    class="mdl-typography--font-bold" 
-                    color="{{primary_standard_container.paint.text.color}}" 
-                    hue="{{primary_standard_container.paint.text.hue}}" 
-                    property="{{primary_standard_container.paint.text.property}}" 
-                    opaqueness="{{primary_standard_container.paint.text.opaqueness}}" 
-                    lw-color ng-bind-html="primary_standard_container.content.default[0].name">
+                    class="mdl-typography--font-bold {{mission.paint.text.class}}" 
+                    ng-bind-html="primary_standard_container.content.default[0].name">
                     </h2>
                     <!-- SVG Title Border Asset -->
                     <svg 
@@ -108,12 +90,8 @@
                 <!-- SVG Title Border Asset -->
                 <!-- Title -->
                 <p 
-                class="padded--top16"
-                color="{{primary_standard_container.paint.text.color}}" 
-                hue="{{primary_standard_container.paint.text.hue}}" 
-                property="{{primary_standard_container.paint.text.property}}" 
-                opaqueness="{{primary_standard_container.paint.text.opaqueness}}" 
-                lw-color ng-bind-html="primary_standard_container.content.default[0].text[0]">
+                class="padded--top16 {{mission.paint.text.class}}"
+                ng-bind-html="primary_standard_container.content.default[0].text[0]">
                 </p>
 
             </div>
