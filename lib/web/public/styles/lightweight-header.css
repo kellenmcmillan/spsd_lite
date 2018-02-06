@@ -249,6 +249,9 @@
     .lightweight-header-row,
     .nav--row {
         padding: 0 16px 0 16px;
+    }
+    .portfolio-nav--row {
+        padding: 0;
     }  
 }
 
