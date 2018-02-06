@@ -6,7 +6,9 @@
 }
 </style>
 <div class="mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width interior-page-margin {{base_hue_lightest.name}}">
-	
+	<md-button ng-if="user" ng-click="startServicesPageEdit()" class="md-fab custom-deep-button" aria-label="Edit Mission" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
+        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+    </md-button>
 	<!-- Shrinking Page Title -->
 	<div class="lightweight-interior--shrinking-title center--text" ng-attr-style="background-color: {{primary_hue_normal.value}}; opacity: .9">
 		<div class="lightweight-parallax--background-stationary" style="width: 100%; height: 100%">
@@ -40,16 +42,16 @@
 
 		    		<!-- panel title -->
 			    	<div class="padded--top16">
-				        <h1 class="small-border-background-no-align h1" style="margin-top: 8px;" color="{{page.data[0].paint.text.color}}" hue="{{page.data[0].paint.text.hue}}" property="{{page.data[0].paint.text.property}}" opaqueness="{{page.data[0].paint.text.opaqueness}}" lw-color>{{tab_data[current_tab].title ? tab_data[current_tab].title : tab_data[current_tab].name}}</h1>
+				        <h1 class="small-border-background-no-align h1" style="margin-top: 8px;" color="{{page.data[0].paint.text.color}}" hue="{{page.data[0].paint.text.hue}}" property="{{page.data[0].paint.text.property}}" opaqueness="{{page.data[0].paint.text.opaqueness}}" lw-color>{{servicesPage.data.list[current_tab].title}}</h1>
 				    </div>
 				    <!-- panel title -->
 
 				    <div class="mdl-grid full-width no-padding">
 						<!-- panel images -->
-						<div class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp {{tab_data[current_tab].class}}_{{index}}" ng-repeat="image in tab_data[current_tab].images" ng-attr-style="background: url('{{image.src}}') center/cover;">
+						<div class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp" ng-attr-style="background: url('{{servicesPage.data.list[current_tab].images.source}}') center/cover;">
 							<div class="mdl-card__title mdl-card--expand"></div>
 							<div class="mdl-card__actions">
-								<span class="lightweight-card-image__filename">{{image.name}}</span>
+								<span class="lightweight-card-image__filename">{{servicesPage.data.list[current_tab].title}}</span>
 							</div>
 						</div>
 						<!-- panel images -->
@@ -57,9 +59,10 @@
 
 			    	<br>
 			    	<br>
-			    	<div ng-repeat="item in compiled_content[current_tab]">
-			    		<div ng-bind-html="item.data"></div>
-			    	</div>
+			    	<div ng-repeat="content in servicesPage.data.list[current_tab].contents | orderBy:'position'">
+			          <h4 ng-if="content.type == 'text'" ng-bind-html="content.data" style="font-weight: bold;"></h4>
+			          <p ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+			        </div>
 		    	</div>
 		    	<!-- tab Panel -->
 
