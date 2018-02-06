@@ -52,6 +52,18 @@
                                             <img ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false" ng-click="gallery_detail_view = true" ng-dblclick="gallery_detail_view = false">
                                             <md-card-content ng-show="gallery_detail_view">
                                                 <md-list-item>
+                                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                                        <label>Name</label>
+                                                        <input ng-model="image.metadata.name">
+                                                    </md-input-container>
+                                                </md-list-item>
+                                                <md-list-item>
+                                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                                        <label>Description</label>
+                                                        <input ng-model="image.metadata.description">
+                                                    </md-input-container>
+                                                </md-list-item>
+                                                <md-list-item>
                                                     <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex>
                                                         <label class="lightweight-md-option-label">Choose Tags</label>
                                                         <md-select ng-model="image.metadata.tags" multiple>
