@@ -28,7 +28,7 @@
 				<div style="margin: 0; padding: 0;">
 					<h1 class="h1 padded--top16 lightweight-sidebar--heading" color="{{page.data[0].paint.text.color}}" hue="{{page.data[0].paint.text.hue}}" property="{{page.data[0].paint.text.property}}" opaqueness="{{page.data[0].paint.text.opaqueness}}" lw-color><i class="material-icons" role="presentation" color="p" hue="hn" property="text" opaqueness lw-color>view_list</i>&nbsp;SECTION</h1>
 					
-					<a md-truncate class="lightweight-sidebar-tabs mdl-button mdl-js-button mdl-js-ripple-effect" ng-repeat="tab in servicesPage.data.list" ng-class="{'lightweight-active-tab': tab_visible == '{{tab.title}}'}" ng-click="$parent.tab_visible = tab.title; $parent.current_tab = $index">{{tab.title}}</a>
+					<a md-truncate class="lightweight-sidebar-tabs mdl-button mdl-js-button mdl-js-ripple-effect" ng-repeat="tab in servicesPage.data.list" ng-class="{'lightweight-active-tab': tab_visible == '{{servicesPage.data.list[current_tab].parameter}}'}" ng-click="$parent.tab_visible = tab.title; $parent.current_tab = $index">{{tab.title}}</a>
 					<!-- <p compile="test_data"></p> -->
 				</div>
 			</div> 
