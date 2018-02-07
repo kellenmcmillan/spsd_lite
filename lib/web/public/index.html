@@ -176,6 +176,12 @@
                             </md-button>
                             <md-menu-content width="4">
                                 <md-menu-item ng-show="user">
+                                    <md-button disabled ng-click="openUserVault()">
+                                        <md-icon>recent_actors</md-icon>
+                                        App Settings
+                                    </md-button>
+                                </md-menu-item>
+                                <md-menu-item ng-show="user">
                                     <md-button ng-click="openUserVault()">
                                         <md-icon>recent_actors</md-icon>
                                         User Vault
@@ -187,7 +193,7 @@
                                         Media Vault
                                     </md-button>
                                 </md-menu-item>
-                                <md-menu-item ng-show="user">
+                                <md-menu-item disabled ng-show="user">
                                     <md-button ng-click="null">
                                         <md-icon>assignment</md-icon>
                                         Task Runner
