@@ -1,54 +1,56 @@
 <!-- mission -->
 <div
- full-screen
+ mission-screen
  style="border-bottom: 1px rgba(0,0,0,0.13) solid; position: relative;"
  class="component mission mdl-grid no-padding no-margin {{mission.paint.background.class}}" layout="column" layout-gt-sm="row" layout-align="center center">
-    <md-button ng-if="user" ng-click="startMissionEdit()" class="md-fab custom-deep-button" aria-label="Edit Mission" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
-        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
-    </md-button>
-    <span id="mission" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
-        <div class="mdl-cell mdl-cell--12-col mission--1" layout="column" layout-align="center center">
-            <!-- Title -->
-            <div class="mission-center--1" layout="column" layout-align="center center" flex>
-                <div class="center--text">
-                    <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;" ng-bind-html="mission.data.title"></h2>
-                    <h2 
-                    class="mdl-typography--font-bold" style="color: {{base_hue_darkest.value}};" ng-bind-html="mission.data.subtitle">
-                    </h2>
-                    <!-- SVG Title Border Asset -->
-                    <svg 
-                    version="1.1" 
-                    id="Layer_1" 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    xmlns:xlink="http://www.w3.org/1999/xlink" 
-                    x="0px" y="0px" viewBox="0 0 300 20" 
-                    style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
-                    width="288" height = "13" 
-                    path fill="{{base_hue_darker.value}}" 
-                    xml:space="preserve">
-                        <polygon points="165.8,5.9 151.8,17.4 137.8,5.9 141.3,5.9 151.8,14.5 162.3,5.9 "/><g><circle cx="10" cy="9.5" r="4.5"/></g><g><circle cx="38" cy="9.5" r="4.5"/></g><g><circle cx="66" cy="9.5" r="4.5"/></g><g><circle cx="94" cy="9.5" r="4.5"/></g><g><circle cx="122" cy="9.5" r="4.5"/></g><g><circle cx="178" cy="9.5" r="4.5"/></g><g><circle cx="206" cy="9.5" r="4.5"/></g><g><circle cx="234" cy="9.5" r="4.5"/></g><g><circle cx="262" cy="9.5" r="4.5"/></g><g><circle cx="290" cy="9.5" r="4.5"/></g>
-                    </svg>
-                </div>
-                <!-- SVG Title Border Asset -->
+    <div class="mission-height">
+        <md-button ng-if="user" ng-click="startMissionEdit()" class="md-fab custom-deep-button" aria-label="Edit Mission" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
+            <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+        </md-button>
+        <span id="mission" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-grid mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+            <div class="mdl-cell mdl-cell--12-col mission--1" layout="column" layout-align="center center">
                 <!-- Title -->
-                <p 
-                class="padded--top16"
-                style="color: {{base_hue_darkest.value}};"
-                ng-bind-html="mission.data.text">
-                </p>
+                <div class="mission-center--1" layout="column" layout-align="center center" flex>
+                    <div class="center--text">
+                        <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;" ng-bind-html="mission.data.title"></h2>
+                        <h2 
+                        class="mdl-typography--font-bold" style="color: {{base_hue_darkest.value}};" ng-bind-html="mission.data.subtitle">
+                        </h2>
+                        <!-- SVG Title Border Asset -->
+                        <svg 
+                        version="1.1" 
+                        id="Layer_1" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        xmlns:xlink="http://www.w3.org/1999/xlink" 
+                        x="0px" y="0px" viewBox="0 0 300 20" 
+                        style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+                        width="288" height = "13" 
+                        path fill="{{base_hue_darker.value}}" 
+                        xml:space="preserve">
+                            <polygon points="165.8,5.9 151.8,17.4 137.8,5.9 141.3,5.9 151.8,14.5 162.3,5.9 "/><g><circle cx="10" cy="9.5" r="4.5"/></g><g><circle cx="38" cy="9.5" r="4.5"/></g><g><circle cx="66" cy="9.5" r="4.5"/></g><g><circle cx="94" cy="9.5" r="4.5"/></g><g><circle cx="122" cy="9.5" r="4.5"/></g><g><circle cx="178" cy="9.5" r="4.5"/></g><g><circle cx="206" cy="9.5" r="4.5"/></g><g><circle cx="234" cy="9.5" r="4.5"/></g><g><circle cx="262" cy="9.5" r="4.5"/></g><g><circle cx="290" cy="9.5" r="4.5"/></g>
+                        </svg>
+                    </div>
+                    <!-- SVG Title Border Asset -->
+                    <!-- Title -->
+                    <p 
+                    class="padded--top16"
+                    style="color: {{base_hue_darkest.value}};"
+                    ng-bind-html="mission.data.text">
+                    </p>
 
+                </div>
             </div>
         </div>
-    </div>
-    <div class="mdl-layout-spacer"></div>
-    <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid mission--2" style="overflow: hidden; position: relative;">
-        <div class="mission-center--2" layout="column" layout-align="center center" style="overflow: hidden; position: relative;">
-            <img content-available ng-src="{{mission.data.images.source}}" style="width: 100%; min-height: 1px; display: block; margin-left:auto; margin-right:auto;">
+        <div class="mdl-layout-spacer"></div>
+        <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid mission--2" style="overflow: hidden; position: relative;">
+            <div class="mission-center--2" layout="column" layout-align="center center" style="overflow: hidden; position: relative;">
+                <img content-available ng-src="{{mission.data.images.source}}" style="width: 100%; min-height: 1px; display: block; margin-left:auto; margin-right:auto;">
+            </div>
         </div>
+        <div class="mdl-layout-spacer"></div>
     </div>
-    <div class="mdl-layout-spacer"></div>
 </div>
 <!-- mission -->
 
