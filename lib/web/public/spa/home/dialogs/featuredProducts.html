@@ -64,8 +64,8 @@
                                     <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item ng-if="content.type == 'list'" class="lightweight-list-control">
-                                <form name="featuredProductEdit" flex>
+                            <md-list-item ng-if="content.type == 'list'">
+                                <form name="featuredProductEdit" class="lightweight-list-control" flex>
                                     <md-button ng-disabled="featuredProductEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-click="content.data.push({item: ''})" class="md-raised" style="background-color: {{base_hue_lighter.value}}; max-width: 50%;"><md-icon aria-label="Add A List Item"md-font-library="material-icons" style="color: {{primary_hue_normal.value}}">add</md-icon> 
                                         Add Item
                                     </md-button>
@@ -74,7 +74,7 @@
                                             <label>Item</label>
                                             <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
                                             <input ng-model="listItem.item" required>
-                                            <md-icon style="color: {{primary_hue_normal.value}}" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                         </md-input-container>
                                     </div>
                                 </form>
