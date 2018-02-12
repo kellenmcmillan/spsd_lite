@@ -64,15 +64,15 @@
                                     <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item ng-if="content.type == 'list'">
+                            <md-list-item ng-if="content.type == 'list'" class="lightweight-list-control">
                                 <form name="featuredProductEdit" flex>
                                     <md-button ng-disabled="featuredProductEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-click="content.data.push({item: ''})" class="md-raised" style="background-color: {{base_hue_lighter.value}}; max-width: 50%;"><md-icon aria-label="Add A List Item"md-font-library="material-icons" style="color: {{primary_hue_normal.value}}">add</md-icon> 
                                         Add Item
                                     </md-button>
-                                    <div layout="column" class="lightweight-list-control" flex>
-                                        <md-input-container ng-repeat="listItem in content.data track by $index" class="md-icon-float md-icon-right lightweight-md-input" ng-attr-sortable>
+                                    <div layout="column" flex>
+                                        <md-input-container style="box-sizing: border-box;" ng-repeat="listItem in content.data track by $index" class="md-icon-float md-icon-right lightweight-md-input" ng-attr-sortable>
                                             <label>Item</label>
-                                            <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                            <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
                                             <input ng-model="listItem.item" required>
                                             <md-icon style="color: {{primary_hue_normal.value}}" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                         </md-input-container>
