@@ -57,7 +57,7 @@
                                 <input ng-model="editable_featured_products.data.list[column].title">
                             </md-input-container>
                         </md-list-item>
-                        <div class="lightweight-list-control" style="display:inline-block;">
+                        <div class="lightweight-list-control">
                         <div ng-attr-sortable ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
                             <md-list-item ng-show="content.type == 'text'">
                                 <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
