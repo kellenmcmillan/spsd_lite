@@ -57,14 +57,14 @@
                                 <input ng-model="editable_featured_products.data.list[column].title">
                             </md-input-container>
                         </md-list-item>
-                        <div ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
-                            <md-list-item ng-if="content.type == 'text'">
+                        <div class="lightweight-list-control" ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
+                            <md-list-item ng-attr-sortable ng-if="content.type == 'text'">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Paragraph</label>
                                     <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item ng-if="content.type == 'list'">
+                            <md-list-item ng-attr-sortable ng-if="content.type == 'list'">
                                 <form name="featuredProductEdit" flex>
                                     <div layout="column" flex>
                                         <md-button ng-disabled="featuredProductEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-click="content.data.push({item: ''})" class="md-raised" style="background-color: {{base_hue_lighter.value}}; max-width: 50%;"><md-icon aria-label="Add A List Item" md-font-library="material-icons" style="color: {{primary_hue_normal.value}}">add</md-icon>
