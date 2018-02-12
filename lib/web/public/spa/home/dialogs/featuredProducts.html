@@ -60,7 +60,7 @@
                         <div class="lightweight-list-control">
                         <div ng-attr-sortable ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
                             <md-list-item ng-if="content.type == 'text'">
-                                <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Paragraph</label>
                                     <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
@@ -82,7 +82,7 @@
                                 </form>
                             </md-list-item>
                         </div>
-                        <
+                        </div>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Link</label>
