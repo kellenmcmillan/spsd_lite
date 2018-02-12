@@ -49,7 +49,7 @@
         <md-card-content ng-show="column != title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40" style="width: 100%">
-                <md-card class="md-card-base lightweight-list-control">
+                <md-card class="md-card-base">
                     <md-card-content>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
@@ -57,7 +57,7 @@
                                 <input ng-model="editable_featured_products.data.list[column].title">
                             </md-input-container>
                         </md-list-item>
-                        <div ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
+                        <div class="lightweight-list-control" ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
                             <md-list-item ng-attr-sortable ng-if="content.type == 'text'">
                                 <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
                                 <md-input-container class="md-block lightweight-md-input" flex>
@@ -71,13 +71,13 @@
                                     <md-button ng-disabled="featuredProductEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-click="content.data.push({item: ''})" class="md-raised" style="background-color: {{base_hue_lighter.value}}; max-width: 50%;"><md-icon aria-label="Add A List Item"md-font-library="material-icons" style="color: {{primary_hue_normal.value}}">add</md-icon> 
                                         Add Item
                                     </md-button>
-                                    <div ng-attr-sortable layout="column" flex>
+                                    <div layout="column" flex>
                                         <md-input-container ng-repeat="listItem in content.data track by $index" class="md-block lightweight-md-input lightweight-list-control">
                                             <div flex="100" layout="row" layout-align="center center" ng-attr-sortable>
                                                 <label>Item</label>
                                                 <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
-                                                <md-icon style="color: {{primary_hue_normal.value}}" ng-if="$index > 0" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                                 <input ng-model="listItem.item" required>
+                                                <md-icon style="color: {{primary_hue_normal.value}}" ng-if="$index > 0" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                             </div>
                                         </md-input-container>
                                     </div>
