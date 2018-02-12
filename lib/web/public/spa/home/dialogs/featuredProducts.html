@@ -70,13 +70,11 @@
                                         Add Item
                                     </md-button>
                                     <div layout="column" class="lightweight-list-control" flex>
-                                        <md-input-container ng-repeat="listItem in content.data track by $index" class="md-icon-float md-icon-right lightweight-md-input" ng-attr-sortable style="padding: 0">
-                                            <div flex="100" layout="row" layout-align="center center">
-                                                <label>Item</label>
-                                                <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
-                                                <input ng-model="listItem.item" required>
-                                                <md-icon style="color: {{primary_hue_normal.value}}" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
-                                            </div>
+                                        <md-input-container ng-repeat="listItem in content.data track by $index" class="md-icon-float md-icon-right lightweight-md-input" ng-attr-sortable>
+                                            <label>Item</label>
+                                            <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                            <input ng-model="listItem.item" required>
+                                            <md-icon style="color: {{primary_hue_normal.value}}" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                         </md-input-container>
                                     </div>
                                 </form>
