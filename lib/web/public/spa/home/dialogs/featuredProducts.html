@@ -74,9 +74,9 @@
                                             <div flex="100" layout="row" layout-align="center center">
                                                 <label>Item</label>
                                                 <input ng-model="listItem.item" required>
+                                                <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                                <md-icon style="color: {{primary_hue_normal.value}}" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                             </div>
-                                            <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
-                                            <md-icon style="color: {{primary_hue_normal.value}}" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                         </md-input-container>
                                     </div>
                                 </form>
