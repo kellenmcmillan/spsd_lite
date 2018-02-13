@@ -50,14 +50,14 @@
             <!-- columns -->
             <div flex flex-gt-sm="40" style="width: 100%">
                 <md-card class="md-card-base">
-                    <md-card-content>
+                    <md-card-content class="lightweight-list-control">
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Title</label>
                                 <input ng-model="editable_featured_products.data.list[column].title">
                             </md-input-container>
                         </md-list-item>
-                        <div class="lightweight-list-control" ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
+                        <div ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
                             <md-list-item ng-attr-sortable>
                                 <div ng-if="content.type == 'text'" style="width:100%;">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
