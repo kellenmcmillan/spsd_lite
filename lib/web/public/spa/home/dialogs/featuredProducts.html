@@ -58,9 +58,9 @@
                             </md-input-container>
                         </md-list-item>
                         <div class="lightweight-list-control">
-                        <div ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
+                        <div ng-attr-sortable ng-repeat="content in editable_featured_products.data.list[column].contents | orderBy:'position'">
                             <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
-                            <md-list-item ng-attr-sortable>
+                            <md-list-item>
                                 <div ng-if="content.type == 'text'" style="width:100%;">
                                     <md-input-container class="md-block lightweight-md-input" flex>
                                         <label>Paragraph</label>
