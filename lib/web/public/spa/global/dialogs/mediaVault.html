@@ -125,7 +125,7 @@
                                     <form name="uploads">
                                         <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || gridview == false">Add A Gallery</md-button>
                                         <md-button class="button-color-border" ng-click="switchView()" ng-disabled="new_gallery">
-                                        {{gridview == false ? "Grid View" : "Lit View"}}
+                                        {{gridview == false ? "Grid View" : "List View"}}
                                         <md-icon ng-show="gridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
                                         <md-icon ng-show="gridview == false" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
                                         </md-button>
@@ -134,8 +134,8 @@
 
                                 <!-- Add A Gallery -->
                                 <div flex>
-                                    <div ng-show="gridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
-                                        <div ui-sortable="sortableOptions" ng-model="gallerySort" ng-repeat="gallery in gallerySortObj" style="width: 100%;">
+                                    <div ng-show="gridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin ui-sortable="sortableOptions" ng-model="gallerySort" >
+                                        <div ng-repeat="gallery in gallerySortObj" style="width: 100%;">
                                             <md-list-item class="noright">
                                                 <p>{{ gallery.name }}</p>
                                                 <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
