@@ -126,19 +126,23 @@
                                         <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || gridview == false">Add A Gallery</md-button>
                                         <md-button class="button-color-border" ng-click="switchView()" ng-disabled="new_gallery">
                                         {{gridview == false ? "List View" : "Grid View"}}
-                                        <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
-                                        <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
+                                        <md-icon ng-show="gridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
+                                        <md-icon ng-show="gridview == false" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
                                         </md-button>
                                     </form>
                                 </div>
 
                                 <!-- Add A Gallery -->
                                 <div flex>
-                                    <div ng-show="gridview == false" layout="row" layout-align="center center" flex layout-wrap layout-margin>
+                                    <div ng-show="gridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
+                                        <md-divider></md-divider>
+                                        <div ng-repeat="gallery in gallerySortObj">
                                         <md-list-item ng-repeat="gallery in gallerySortObj" class="noright">
                                             <p>{{ gallery.name }}</p>
                                             <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
                                         </md-list-item>
+                                        <md-divider></md-divider>
+                                        </div>
                                     </div>
                                     <div ng-show="gridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
                                         <div ng-show="galleries.length > 9" layout="row" layout-align="start center" layout-margin flex="100">
