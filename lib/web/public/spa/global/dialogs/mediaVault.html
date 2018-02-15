@@ -123,17 +123,32 @@
                             <md-tab-body>
                                 <div layout-margin flex>
                                     <form name="uploads">
-                                        <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery">Add A Gallery</md-button>
+                                        <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || gridview == false">Add A Gallery</md-button>
+                                        <md-button class="button-color-border" ng-click="switchView()" ng-disabled="new_gallery">
+                                        {{gridview == false ? "List View" : "Grid View"}}
+                                        <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
+                                        <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
+                                        </md-button>
                                     </form>
                                 </div>
 
                                 <!-- Add A Gallery -->
                                 <div flex>
-                                    <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
+                                    <div ng-show="gridview == false" layout="row" layout-align="center center" flex layout-wrap layout-margin>
+                                        <md-list-item ng-repeat="gallery in gallerySortObj" class="noright">
+                                            <p>{{ gallery.name }}</p>
+                                            <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                        </md-list-item>
+                                    </div>
+                                    <div ng-show="gridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
                                         <div ng-show="galleries.length > 9" layout="row" layout-align="start center" layout-margin flex="100">
-                                            <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="button-color-border">Previous</md-button>
+                                            <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" aria-label="previous gallery">
+                                                <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                                            </md-button>
                                             <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
-                                            <md-button ng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="button-color-border">Next</md-button>
+                                            <md-button ng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                                                <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                                            </md-button>
                                         </div>
                                         <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries | startFrom:currentGalleryPage*gallerySize | limitTo:gallerySize" flex flex-gt-sm="30">
                                             <md-card-title>
@@ -186,7 +201,7 @@
                                     </div>
                                 </div>
                                 <!-- Add A Gallery -->
-                                <div ng-show="galleries.length > 20" layout="row" layout-align="start center" layout-margin flex>
+                                <div ng-show="galleries.length > 20 && gridview == true" layout="row" layout-align="start center" layout-margin flex>
                                     <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="button-color-border">Previous</md-button>
                                     <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
                                     <md-button ng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="button-color-border">Next</md-button>
