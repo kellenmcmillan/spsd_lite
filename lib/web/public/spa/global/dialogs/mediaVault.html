@@ -134,8 +134,8 @@
 
                                 <!-- Add A Gallery -->
                                 <div flex>
-                                    <div ng-show="gridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin ui-sortable="sortableOptions" ng-model="gallerySort" >
-                                        <div ng-repeat="gallery in gallerySort" style="width: 100%;">
+                                    <div ng-show="gridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin ui-sortable="sortableOptions" ng-model="gallerySortObj" >
+                                        <div ng-repeat="gallery in gallerySortObj" style="width: 100%;">
                                             <md-list-item class="noright">
                                                 <p>{{ gallery.name }}</p>
                                                 <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
