@@ -134,20 +134,20 @@
 
                                 <!-- Add A Gallery -->
                                 <div flex>
-                                    <div class="lightweight-list-control" ng-show="gridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin ui-sortable="sortableGalleries" ng-model="gallerySortObj">
+                                    <div ng-show="gridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin ui-sortable="sortableGalleries" ng-model="gallerySortObj">
                                         <md-card class="md-card-base" style="width: 100%">
-                                        <md-card-content>
-                                        <div ng-repeat="gallery in gallerySortObj" style="width: 100%;">
-                                            <md-list-item class="noright">
-                                                <p>{{ gallery.name }}</p>
-                                                <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
-                                            </md-list-item>
-                                            <md-divider></md-divider>
-                                        </div>
-                                        </md-card-content>
-                                        <md-card-actions layout="row" layout-align="end center">
-                                            <md-button class="md-raised" ng-click="updateGalleries(gallerySortObj)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
-                                        </md-card-actions>
+                                            <md-card-content class="lightweight-list-control">
+                                                <div ng-repeat="gallery in gallerySortObj" style="width: 100%;">
+                                                    <md-list-item class="noright">
+                                                        <p>{{ gallery.name }}</p>
+                                                        <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                                    </md-list-item>
+                                                    <md-divider></md-divider>
+                                                </div>
+                                            </md-card-content>
+                                            <md-card-actions layout="row" layout-align="end center">
+                                                <md-button class="md-raised" ng-click="updateGalleries(gallerySortObj)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                            </md-card-actions>
                                         </md-card>
                                     </div>
                                     <div ng-show="gridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
