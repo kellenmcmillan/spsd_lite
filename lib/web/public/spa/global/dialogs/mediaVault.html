@@ -134,9 +134,9 @@
 
                                 <!-- Add A Gallery -->
                                 <div flex>
-                                    <div ng-show="gridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin ui-sortable="sortableGalleries" ng-model="gallerySortObj">
+                                    <div ng-show="gridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
                                         <md-card class="md-card-base" style="width: 100%">
-                                            <md-card-content class="lightweight-list-control">
+                                            <md-card-content class="lightweight-list-control" ui-sortable="sortableGalleries" ng-model="gallerySortObj">
                                                 <div ng-repeat="gallery in gallerySortObj" style="width: 100%;">
                                                     <md-list-item class="noright">
                                                         <p>{{ gallery.name }}</p>
