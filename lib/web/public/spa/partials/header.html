@@ -46,16 +46,12 @@
 
     <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
 
-        <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
-            <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
-        </span>
-
-        <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
+        <span ng-show="settings.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
             <a href="/">
-                <img ng-if="scroll > 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+                <img ng-if="scroll > 0" class="header-logo" src="{{settings.logo}}" ng-cloak="true">
             </a>
             <a href="/">
-                <img ng-if="scroll == 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src_white}}" ng-cloak="true">
+                <img ng-if="scroll == 0" class="header-logo" src="{{settings.logo_white}}" ng-cloak="true">
             </a>
         </span>
 
@@ -67,60 +63,60 @@
             class="lightweight-navigation-link header-navigation base-hdr--text"
             ng-class="{'active': scroll >= slideshow_bottom && scroll < mission_bottom}"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[0].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[0].hash}}"
+            href="{{settings.primary_navigation[0].href}}" 
+            hash="{{settings.primary_navigation[0].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[0].name}}
+                {{settings.primary_navigation[0].name}}
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             ng-class="{'active': scroll >= secondary_parallax_bottom && scroll < products_bottom}"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[1].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[1].hash}}"
+            href="{{settings.primary_navigation[1].href}}" 
+            hash="{{settings.primary_navigation[1].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[1].name}}
+                {{settings.primary_navigation[1].name}}
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             ng-class="{'active': scroll >= primary_parallax_top && scroll < featured_gallery_bottom}"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[2].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[2].hash}}"
+            href="{{settings.primary_navigation[2].href}}" 
+            hash="{{settings.primary_navigation[2].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[2].name}}
+                {{settings.primary_navigation[2].name}}
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             ng-class="{'active': scroll >= tertiary_parallax_top && scroll < map_container_bottom}"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[3].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[3].hash}}"
+            href="{{settings.primary_navigation[3].href}}" 
+            hash="{{settings.primary_navigation[3].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[3].name}}
+                {{settings.primary_navigation[3].name}}
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             ng-class="{'active': scroll > contact_container_top && scroll < end_of_page_beginning}"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[4].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[4].hash}}"
+            href="{{settings.primary_navigation[4].href}}" 
+            hash="{{settings.primary_navigation[4].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[4].name}}
+                {{settings.primary_navigation[4].name}}
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[5].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[5].hash}}"
+            href="{{settings.primary_navigation[5].href}}" 
+            hash="{{settings.primary_navigation[5].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[5].name}}
+                {{settings.primary_navigation[5].name}}
             </a>
         </nav>
         <!-- Header Navigation -->
@@ -141,16 +137,16 @@
 
     <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
 
-        <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
-            <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
+        <span ng-show="!settings.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
+            <h1 class="h1 mdl-typography--font-bold">{{settings.name}}</h1>                    
         </span>
 
-        <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
+        <span ng-show="settings.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
             <a href="/">
-                <img ng-if="scroll == 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src_white}}" ng-cloak="true">
+                <img ng-if="scroll == 0" class="header-logo" src="{{settings.logo_white}}" ng-cloak="true">
             </a>
             <a href="/">
-                <img ng-if="scroll > 0" class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+                <img ng-if="scroll > 0" class="header-logo" src="{{settings.logo}}" ng-cloak="true">
             </a>
         </span>
 
@@ -162,69 +158,63 @@
             class="lightweight-navigation-link header-navigation base-hdr--text"
             ng-class="{'active': scroll >= slideshow_bottom && scroll < mission_bottom}"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[0].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[0].hash}}"
+            href="{{settings.primary_navigation[0].href}}" 
+            hash="{{settings.primary_navigation[0].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[0].name}}
+                {{settings.primary_navigation[0].name}}
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             ng-class="{'active': scroll >= secondary_parallax_bottom && scroll < products_bottom}"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[1].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[1].hash}}"
+            href="{{settings.primary_navigation[1].href}}" 
+            hash="{{settings.primary_navigation[1].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[1].name}}
+                {{settings.primary_navigation[1].name}}
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             ng-class="{'active': scroll >= primary_parallax_top && scroll < featured_gallery_bottom}"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[2].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[2].hash}}"
+            href="{{settings.primary_navigation[2].href}}" 
+            hash="{{settings.primary_navigation[2].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[2].name}}
+                {{settings.primary_navigation[2].name}}
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             ng-class="{'active': scroll >= tertiary_parallax_top && scroll < map_container_bottom}"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[3].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[3].hash}}"
+            href="{{settings.primary_navigation[3].href}}" 
+            hash="{{settings.primary_navigation[3].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[3].name}}
+                {{settings.primary_navigation[3].name}}
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             ng-class="{'active': scroll > contact_container_top && scroll < end_of_page_beginning}"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[4].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[4].hash}}"
+            href="{{settings.primary_navigation[4].href}}" 
+            hash="{{settings.primary_navigation[4].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[4].name}}
+                {{settings.primary_navigation[4].name}}
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
-            href="{{app_data.app_configs.primary_navigation[5].href}}" 
-            hash="{{app_data.app_configs.primary_navigation[5].hash}}"
+            href="{{settings.primary_navigation[5].href}}" 
+            hash="{{settings.primary_navigation[5].hash}}"
             du-scrollspy
             du-smooth-scroll>
-                {{app_data.app_configs.primary_navigation[5].name}}
+                {{settings.primary_navigation[5].name}}
             </a>
         </nav>
         <!-- Header Navigation -->
-
-        <!-- <span class="mdl-layout-title">
-
-            <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
-            
-        </span> -->
         &nbsp;&nbsp;
         <span class="mdl-layout-title mdl-cell--hide-desktop">
             <!-- Right aligned menu below button -->
@@ -267,7 +257,7 @@
             <!-- Menus -->
             <div style="margin: 0 auto; width: inherit;" ng-click="mobile_menu = false">
                 <ul class="mdl-list" du-scroll-container="lightweight_content">
-                    <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.primary_navigation">
+                    <li class="mdl-list__item" ng-repeat="item in settings.primary_navigation">
                         <a 
                         class="base-hdr--text"
                         style="font-size: 16px; text-decoration: none;"

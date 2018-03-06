@@ -20,13 +20,9 @@
 
     <div class="lightweight-header-row">
 
-        <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
-            <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
-        </span>
-
-        <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
+        <span class="mdl-layout-title header-graphic-logo">
             <a href="/">
-                <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+                <img class="header-logo" src="{{settings.logo}}" ng-cloak="true">
             </a>
         </span>
 
@@ -41,17 +37,12 @@
             ng-class="{'active': location == item.href, 'active': navigation_hovered == true}"
             ng-mouseenter="navigation_hovered = true"
             ng-mouseleave="navigation_hovered = false"
-            ng-repeat="item in app_data.app_configs.secondary_navigation">
+            ng-repeat="item in settings.secondary_navigation">
                 {{item.name}}
             </a>
         </nav>
         <!-- Header Navigation -->
 
-        <!-- <span class="mdl-layout-title">
-
-            <i class="material-icons auth-circle" ng-click="$parent.login_attempt_active = !$parent.login_attempt_active; $parent.user_button = !$parent.user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
-            
-        </span> -->
         &nbsp;&nbsp;
         <span class="mdl-layout-title mdl-cell--hide-desktop">
             <!-- Right aligned menu below button -->
@@ -68,13 +59,9 @@
 
     <div class="lightweight-header-row">
 
-        <span ng-show="!app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
-            <h1 class="h1 mdl-typography--font-bold">{{app_data.app_configs.name}}</h1>                    
-        </span>
-
-        <span ng-show="app_data.app_configs.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
+        <span class="mdl-layout-title header-graphic-logo">
             <a href="/">
-                <img class="header-logo" src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+                <img class="header-logo" src="{{settings.logo}}" ng-cloak="true">
             </a>
         </span>
 
@@ -89,17 +76,12 @@
             ng-mouseleave="navigation_hovered = false"
             style="font-size: 16px; font-weight: bold"
             href="{{item.href}}" 
-            ng-repeat="item in app_data.app_configs.secondary_navigation">
+            ng-repeat="item in settings.secondary_navigation">
                 {{item.name}}
             </a>
         </nav>
         <!-- Header Navigation -->
 
-        <!-- <span class="mdl-layout-title">
-
-            <i class="material-icons auth-circle" ng-click="login_attempt_active = !login_attempt_active; user_button = !user_button" ng-class="{'base-hdr--text': !user, 'primary-hn--text': user}">account_circle</i>
-            
-        </span> -->
         &nbsp;&nbsp;
         <span class="mdl-layout-title mdl-cell--hide-desktop">
             <!-- Right aligned menu below button -->
@@ -144,7 +126,7 @@
             <!-- Menus -->
             <div style="margin: 0 auto; width: inherit;" ng-click="mobile_menu = false">
                 <ul class="mdl-list">
-                    <li class="mdl-list__item" ng-repeat="item in app_data.app_configs.secondary_navigation">
+                    <li class="mdl-list__item" ng-repeat="item in settings.secondary_navigation">
                         <a 
                         class="base-hdr--text"
                         style="font-size: 16px; text-decoration: none;"

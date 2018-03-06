@@ -56,9 +56,6 @@
 	</div>
 </div>
 <!-- Navbar -->
-<!-- <div style="display: relative;" ng-attr-class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
-	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
-</div> -->
 <div class="lightbox_curtain" style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
 	<div ng-repeat="image in folder.images">
 		<img class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" lightbox-image>

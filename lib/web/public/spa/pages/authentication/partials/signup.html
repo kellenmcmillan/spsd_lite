@@ -35,7 +35,7 @@
 	<div class="mdl-cell mdl-cell--4-offset-desktop mdl-cell--2-offset-tablet mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid" layout="row" layout-align="center center">
 		<div>
 			<div style="text-align: center;">
-				<img src="{{app_data.app_configs.graphic_logo_src}}" ng-cloak="true">
+				<img src="{{settings.logo}}" ng-cloak="true">
 			</div>
 			<form name="signup" ng-submit="createUser()" autocomplete="nope">
 				<md-content>
@@ -145,5 +145,5 @@
 			</form>
 		</div>
 	</div>
-	<img content-available src="{{app_data.app_configs.graphic_logo_src}}" style="width: 0px; height: 0px;">
+	<img content-available src="{{settings.logo}}" style="width: 0px; height: 0px;">
 </div>
