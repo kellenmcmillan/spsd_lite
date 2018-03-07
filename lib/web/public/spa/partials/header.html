@@ -46,7 +46,7 @@
 
     <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
 
-        <span ng-show="settings.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
+        <span class="mdl-layout-title header-graphic-logo">
             <a href="/">
                 <img ng-if="scroll > 0" class="header-logo" src="{{settings.logo}}" ng-cloak="true">
             </a>
@@ -137,11 +137,7 @@
 
     <div class="lightweight-header-row" ng-class="{'at-top': scroll == 0}">
 
-        <span ng-show="!settings.use_graphic_logo" class="mdl-layout-title header-text-logo base-hlst--text">
-            <h1 class="h1 mdl-typography--font-bold">{{settings.name}}</h1>                    
-        </span>
-
-        <span ng-show="settings.use_graphic_logo" class="mdl-layout-title header-graphic-logo">
+        <span class="mdl-layout-title header-graphic-logo">
             <a href="/">
                 <img ng-if="scroll == 0" class="header-logo" src="{{settings.logo_white}}" ng-cloak="true">
             </a>
