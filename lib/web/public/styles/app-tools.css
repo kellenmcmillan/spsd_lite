@@ -4,10 +4,11 @@
 .dialog-curtain {z-index: 20;}
 .secondary-dialog-curtain {z-index: 21;}
 .dialog-curtain,
-.secondary-dialog-curtain {position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow-y: scroll; background-color: rgba(255,255,255,0.6)!important;}
+.suite-dialog, .secondary-dialog-curtain {position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow-y: scroll; margin:0!important;}
 /* ============================== Curtain ============================== */
 
 /* ============================== dialogs ============================== */
+.suite-dialog {margin:0!important;}
 .mission-dialog {z-index: 2001;}
 .upload-dialog {z-index: 2003;}
 /* ============================== dialogs ============================== */
