@@ -4,7 +4,7 @@
 .dialog-curtain {z-index: 20;}
 .secondary-dialog-curtain {z-index: 21;}
 .dialog-curtain,
-.suite-dialog, .secondary-dialog-curtain {position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow-y: scroll; margin:0!important;}
+.suite-dialog, .secondary-dialog-curtain {position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; margin:0!important;}
 /* ============================== Curtain ============================== */
 
 /* ============================== dialogs ============================== */
