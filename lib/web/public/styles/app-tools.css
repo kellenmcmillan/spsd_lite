@@ -10,7 +10,8 @@
 }
 .suite-dialog > md-card-content {overflow-y: scroll;}
 .suite-dialog > md-card-title {max-height: 150px;}
-.mediaVault .suite-dialog > md-card-title {max-height: 100px;}
+.mediaVault .suite-dialog > md-card-title {max-height: 64px;}
+.userVault .suite-dialog > md-card-title {max-height: 64px;}
 .dialog-curtain,
 .suite-dialog, .secondary-dialog-curtain {position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; margin:0!important;}
 /* ============================== Curtain ============================== */
