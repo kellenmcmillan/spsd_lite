@@ -7,9 +7,10 @@
 .suite-dialog {position: relative!important; width: 100%; margin:0!important;}
 .dialog-curtain, .secondary-dialog-curtain {overflow-y: scroll!important;}
 .suite-dialog > md-card-content {overflow: hidden!important;}
+.suite-dialog > md-card-title {max-height: 150px;}
 }
 .suite-dialog > md-card-content {overflow-y: scroll;}
-.suite-dialog > md-card-title {max-height: 150px;}
+.suite-dialog > md-card-title {max-height: 100px;}
 .mediaVault .suite-dialog > md-card-title {max-height: 64px;}
 .userVault .suite-dialog > md-card-title {max-height: 64px;}
 .dialog-curtain,
