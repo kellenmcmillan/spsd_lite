@@ -5,7 +5,7 @@
 .secondary-dialog-curtain {z-index: 21;}
 @media screen and (max-width: 839px) {
 .suite-dialog {position: relative!important; width: 100%; margin:0!important;}
-.dialog-curtain, .secondary-dialog-curtain {oveflow-y: scroll!important;}
+.dialog-curtain, .secondary-dialog-curtain {overflow-y: scroll!important;}
 }
 .suite-dialog > md-card-title {max-height: 150px;}
 .dialog-curtain,
