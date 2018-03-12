@@ -3,6 +3,9 @@
 /* ============================== Curtain ============================== */
 .dialog-curtain {z-index: 20;}
 .secondary-dialog-curtain {z-index: 21;}
+@media screen and (max-width: 839px) {
+.suite-dialog {position: relative; width: 100%; margin:0!important;}
+}
 .dialog-curtain,
 .suite-dialog, .secondary-dialog-curtain {position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; margin:0!important;}
 /* ============================== Curtain ============================== */
