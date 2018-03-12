@@ -8,6 +8,7 @@
 .dialog-curtain, .secondary-dialog-curtain {overflow-y: scroll!important;}
 }
 .suite-dialog > md-card-title {max-height: 150px;}
+.mediaVault .suite-dialog > md-card-title {max-height: 100px;}
 .dialog-curtain,
 .suite-dialog, .secondary-dialog-curtain {position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; margin:0!important;}
 /* ============================== Curtain ============================== */
