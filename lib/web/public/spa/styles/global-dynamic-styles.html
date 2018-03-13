@@ -182,14 +182,14 @@ md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-di
 .suite-dialog > md-card-title md-select.md-default-theme .md-select-value, .suite-dialog > md-card-title md-select .md-select-value, .suite-dialog .lightweight-md-dropdown md-select:not([disabled]):focus .md-select-value {border-bottom-color: {{base_hue_lightest.value}}; min-width: 150px;}
 @media screen and (min-width: 840px) {
     .suite-dialog > md-card-content {
-        height: {{window_height - 136}}px!important; overflow-y: scroll;
+        min-height: {{window_height - 136}}px!important; overflow-y: scroll;
         width: 100%; background-color: {{base_hue_lightest.value}}; margin: 0; z-index: 1;
     }
 }
 @media screen and (max-width: 839px) {
     .suite-dialog > md-card-content {
         overflow-y: scroll;
-        height: {{window_height - 100}}px!important;
+        min-height: {{window_height - 100}}px!important;
         width: 100%; background-color: {{base_hue_lightest.value}}; margin: 0; z-index: 1;
     }
 }
