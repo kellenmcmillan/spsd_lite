@@ -174,7 +174,6 @@ md-chips.md-default-theme .md-chips.md-focused, md-chips .md-chips.md-focused {b
 /* Login Form Color */
 
 /* md-cards */
-.suite-dialog > md-card-content {width: 100%; background-color: {{base_hue_lightest.value}}; margin: 0; z-index: 1;}
 .suite-dialog > md-card-title {background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12); z-index: 2;}
 .suite-dialog > md-card-title md-input-container md-select:not([disabled]):focus .md-select-value,
 md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-dialog md-card-title md-input-container.md-default-theme:not(.md-input-invalid).md-input-has-value label, .suite-dialog md-card-title md-input-container:not(.md-input-invalid).md-input-has-value label {color: {{base_hue_lightest.value}};}
@@ -182,8 +181,15 @@ md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-di
 .mediaVault md-tabs {min-height: {{window_height + 100}}px!important;}
 .suite-dialog > md-card-title md-select.md-default-theme .md-select-value, .suite-dialog > md-card-title md-select .md-select-value, .suite-dialog .lightweight-md-dropdown md-select:not([disabled]):focus .md-select-value {border-bottom-color: {{base_hue_lightest.value}};}
 @media screen and (min-width: 839px) {
-    .suite-dialog > md-card-content {height: {{window_height - 136}}px; overflow: hidden!important;}
+    .suite-dialog > md-card-content {
+        height: {{window_height - 136}}px!important; overflow: hidden!important;
+        width: 100%; background-color: {{base_hue_lightest.value}}; margin: 0; z-index: 1;
+    }
 @media screen and (max-width: 840px) {
-    .suite-dialog > md-card-content {height: {{window_height - 130}}px;}
+    .suite-dialog > md-card-content {
+        height: {{window_height - 130}}px!important;
+        width: 100%; background-color: {{base_hue_lightest.value}}; margin: 0; z-index: 1;
+    }
+}
 /* md-cards */
 </style>
