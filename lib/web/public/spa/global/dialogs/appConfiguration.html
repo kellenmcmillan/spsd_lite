@@ -1,4 +1,4 @@
-<div class="dialog-curtain" ng-show="edit_configuration == true">
+<div class="dialog-curtain" ng-show="edit_configuration_dialog_visible == true">
     <md-card class="suite-dialog md-card-base">
         <md-card-title layout="column" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center">
             <md-card-title-text>
@@ -24,21 +24,50 @@
                 </md-input-container>
             </md-list-item>
         </md-card-title>
-        <md-card-content ng-show="setting == title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
+        <md-card-content ng-show="setting == 0" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40">
                 <md-card class="md-card-base">
                     <md-card-content>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Title</label>
-                                <input ng-model="editable_featured_products.data.title">
+                                <label>Site Name</label>
+                                <input ng-model="editable_app_settings.data.site_name">
                             </md-input-container>
                         </md-list-item>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Subtitle</label>
-                                <input ng-model="editable_featured_products.data.subtitle">
+                                <label>Legal Name</label>
+                                <input ng-model="editable_app_settings.data.legal_name">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Street</label>
+                                <input ng-model="editable_app_settings.data.address.street">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>City</label>
+                                <input ng-model="editable_app_settings.data.address.city">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-dropdown">
+                                <label>State</label>
+                                <md-select ng-model="editable_app_settings.data.address.state">
+                                    <md-option><em>None</em></md-option>
+                                    <md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
+                                        {{state.abbrev}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Description</label>
+                                <textarea md-detect-hidden="true" ng-model="editable_app_settings.data.description" rows="3" md-maxlength="250"></textarea>
                             </md-input-container>
                         </md-list-item>
                     </md-card-content>
@@ -49,8 +78,8 @@
         <md-card-actions layout="row" layout-align="end center">
             <md-button disabled>Superpowered by Lightweight</md-button>
             <div flex></div>
-            <md-button ng-click="endFeaturedProductsEdit()">Cancel</md-button>
-            <md-button ng-click="updateApp('featuredProducts')">Update</md-button>
+            <md-button ng-click="close_edit_configuration()">Cancel</md-button>
+            <md-button ng-click="updateApp('appConfiguration')">Update</md-button>
         </md-card-actions>
     </md-card>
 </div>

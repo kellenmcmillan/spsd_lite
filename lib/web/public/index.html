@@ -119,6 +119,10 @@
         <div ng-if="user" ng-include src="'spa/global/dialogs/myVault.html'"></div>
         <!-- myVault -->
 
+        <!-- appConfiguration -->
+        <div ng-if="user" ng-include src="'spa/global/dialogs/appConfiguration.html'"></div>
+        <!-- appConfiguration -->
+
         <!-- userVault detail -->
         <div ng-if="user" ng-include src="'spa/global/dialogs/userVaultDetail.html'"></div>
         <!-- userVault detail -->
@@ -180,7 +184,7 @@
                             </md-button>
                             <md-menu-content width="4">
                                 <md-menu-item ng-show="user">
-                                    <md-button disabled ng-click="openUserVault()">
+                                    <md-button ng-click="open_edit_configuration()">
                                         <md-icon>settings</md-icon>
                                         App Settings
                                     </md-button>
