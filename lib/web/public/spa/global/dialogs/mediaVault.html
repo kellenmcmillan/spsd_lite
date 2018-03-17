@@ -36,8 +36,6 @@
                                             <md-button ng-click="clearQueryMedia(); queryFilter = null" class="md-icon-button" aria-label="Clear Media Search">
                                                 <md-icon style="color: {{base_hue_darker.value}};">clear</md-icon>
                                             </md-button>
-                                            <!-- <md-button ng-click="queryMedia(queryFilter)" class="button-color-border">
-                                            Search</md-button> -->
                                             <md-button ng-click="queryMedia(queryFilter)" class="md-icon-button" aria-label="Search Media">
                                                 <md-icon style="color: {{base_hue_darker.value}};">search</md-icon>
                                             </md-button>
@@ -49,7 +47,7 @@
                                     </div>
                                     <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex>
                                         <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize" flex flex-gt-sm="30">
-                                            <img ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false" ng-click="gallery_detail_view = true" ng-dblclick="gallery_detail_view = false">
+                                            <img ng-show="!gallery_detail_view" ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false" ng-click="gallery_detail_view = true" ng-dblclick="gallery_detail_view = false">
                                             <md-card-content ng-show="gallery_detail_view">
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
