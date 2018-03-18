@@ -25,15 +25,10 @@
     @media screen and (max-width: 479px){.secondary-standard-container-background img {height:120%!important; width: auto!important;}}
 </style>
 <div
- class="mdl-grid center--text component full-width no-margin no-padding vertical-center-container secondary-parallax"
+ class="mdl-grid center--text component full-width no-margin no-padding vertical-center-container secondary-parallax {{parallaxOne.paint.overlay.class}}"
  style="position: relative; overflow: hidden;"
  full-screen
- data-size
- color="{{secondary_standard_container.paint.overlay.color}}"
- hue="{{secondary_standard_container.paint.overlay.hue}}"
- property="{{secondary_standard_container.paint.overlay.property}}" 
- opaqueness="{{secondary_standard_container.paint.overlay.opaqueness}}" 
- lw-color>
+ data-size>
     <div 
     class="secondary-standard-container-background">
         <img src="{{parallaxOne.background.images.source}}" style="display: block; margin: 0 auto;">
@@ -44,12 +39,8 @@
     <!-- Title -->
     <div vertical-center class="center--text mdl-cell mdl-cell--12-col">
         <h1 
-        class="primary-heading-text mdl-typography--font-bold vertical-element" 
-        color="{{secondary_standard_container.paint.text.color}}" 
-        hue="{{secondary_standard_container.paint.text.hue}}" 
-        property="{{secondary_standard_container.paint.text.property}}" 
-        opaqueness="{{secondary_standard_container.paint.text.opaqueness}}" 
-        lw-color ng-bind-html="parallaxOne.data.text">
+        class="primary-heading-text mdl-typography--font-bold vertical-element {{parallaxOne.paint.text.class}}" 
+        ng-bind-html="parallaxOne.data.text">
         </h1>
 
     </div>

@@ -1,0 +1,48 @@
+<div class="dialog-curtain" ng-show="edit_parallax_three_dialog_visible == true">
+    <md-card class="suite-dialog md-card-base">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Parallax #3</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="column" layout-gt-sm="row" layout-align="start center" layout-align-gt-sm="center start" layout-margin>
+            <!-- columns -->
+            <div flex flex-gt-sm="40">
+                <md-card class="md-card-base">
+                    <md-card-content>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Paragraph</label>
+                                <textarea md-detect-hidden="true" ng-model="editable_parallax_three.data.text" rows="3" md-maxlength="250"></textarea>
+                            </md-input-container>
+                        </md-list-item>
+                    </md-card-content>
+                </md-card>
+            </div>
+            <!-- columns -->
+
+            <!-- columns -->
+            <div flex flex-gt-sm="40">
+                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
+                    <img ng-value="'{{editable_parallax_three.background.images.source}}'" ng-src="{{editable_parallax_three.background.images.source}}" class="md-card-image" alt="Washed Out">
+                    <md-card-actions layout="row">
+                        <md-button aria-label="Replace Image" disable>
+                            TAGS: Construction, Stone Waterfall
+                        </md-button>
+                        <span flex></span>
+                        <md-button ng-click="openMediaVault('parallaxThree')" aria-label="Replace Image">
+                            Replace
+                        </md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+            <!-- columns -->
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button disabled>Superpowered by Lightweight</md-button>
+            <div flex></div>
+            <md-button ng-click="endParallaxThreeEdit()">Cancel</md-button>
+            <md-button ng-click="updateApp('parallaxThree')">Update</md-button>
+        </md-card-actions>
+    </md-card>
+</div>

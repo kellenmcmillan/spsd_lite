@@ -1,18 +1,14 @@
 <style ng-if="scrollable">
     .tertiary-standard-container-background {
         position: absolute;
-        width: 120%;
-        height: 120%;
+        min-width: 100%;
+        min-height: 100%;
         margin-left: -9.5%;
-        top: {{third_offset}}px;
+        top: 0;
         z-index: -1;
-        transform: translate3d(0px, {{scroll/2}}px, 0px);
     }
-    @media screen and (max-width: 839px) and (min-width: 480px){.tertiary-standard-container-background img {height:120%!important; width: auto!important;}}
-    @media screen and (max-width: 479px){.tertiary-standard-container-background img {height:120%!important; width: auto!important;}}
-    @media screen and (orentation: landscape) {.tertiary-standard-container-background img {width:100%!important; height: auto!important;}}
 </style>
-<style ng-if="!scrollable">
+<!-- <style ng-if="!scrollable">
     .tertiary-standard-container-background {
         position: absolute;
         width: 120%;
@@ -24,16 +20,11 @@
     @media screen and (max-width: 839px) and (min-width: 480px){.tertiary-standard-container-background img {height:120%!important; width: auto!important;}}
     @media screen and (max-width: 479px){.tertiary-standard-container-background img {height:120%!important; width: auto!important;}}
 
-</style>
+</style> -->
 <div
  class="mdl-grid center--text component full-width no-margin no-padding vertical-center-container tertiary-parallax"
  style="position: relative; overflow: hidden;"  
- full-screen
- color="{{tertiary_standard_container.paint.overlay.color}}"
- hue="{{tertiary_standard_container.paint.overlay.hue}}"
- property="{{tertiary_standard_container.paint.overlay.property}}" 
- opaqueness="{{tertiary_standard_container.paint.overlay.opaqueness}}" 
- lw-color>
+ full-screen>
     <span id="locate-us" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
     <div class="tertiary-standard-container-background">
         <img src="{{tertiary_standard_container.content.background_media.image.src}}" style="display: block;">
