@@ -7,6 +7,7 @@
     top: 0;
     z-index: -1;
 }
+.index-image-background img {min-width: 100%!important; min-height: 100%!important;}
 .primary-gallery {
     background: transparent; margin-top: -48px; margin-bottom: -48px;
 }
