@@ -17,7 +17,7 @@
 /* Structure */
 
 /* Media */
-.slideshow_slide_image {opacity: 1; width: 100%; height: auto; will-change: opacity; max-width: inherit!important;}
+.slideshow_slide_image {opacity: 1; min-width: 100%; min-height: 100%; height: auto; will-change: opacity;}
 .slideshow_slide_image.ng-hide-add,
 .slideshow_slide_image.ng-hide-remove {
   transition: all linear 0.5s;
@@ -74,10 +74,10 @@
 
 /* Media Query */
 @media screen and (orientation: landscape) {
-  .lightweight-hero--slideshow .slide--display img {width: 100%; height: auto;}
+  .lightweight-hero--slideshow .slide--display img {min-width: 100%; min-height: 100%; height: auto;}
 }
 @media screen and (orientation: landscape) and (max-width: 1400px) and (min-height: 750px) {
-  .lightweight-hero--slideshow .slide--display img {width: auto; height: 100%;}
+  .lightweight-hero--slideshow .slide--display img {min-width: 100%; min-height: 100%;}
 }
 @media screen and (orientation: portrait) {
   .lightweight-hero--slideshow .slide--display img {width: auto; height: 100%; margin-left: -12.5%;}
