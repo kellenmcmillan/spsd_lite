@@ -1,4 +1,12 @@
 /* CSS Document */
+.index-image-background {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    margin-left: -10.5%;
+    top: 0;
+    z-index: -1;
+}
 .primary-gallery {
     background: transparent; margin-top: -48px; margin-bottom: -48px;
 }

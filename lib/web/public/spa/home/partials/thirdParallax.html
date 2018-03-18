@@ -1,44 +1,18 @@
-<style ng-if="scrollable">
-    .tertiary-standard-container-background {
-        position: absolute;
-        min-width: 100%;
-        min-height: 100%;
-        margin-left: -9.5%;
-        top: 0;
-        z-index: -1;
-    }
-</style>
-<!-- <style ng-if="!scrollable">
-    .tertiary-standard-container-background {
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        margin-left: -9.5%;
-        top: -20%;
-        z-index: -1;
-    }
-    @media screen and (max-width: 839px) and (min-width: 480px){.tertiary-standard-container-background img {height:120%!important; width: auto!important;}}
-    @media screen and (max-width: 479px){.tertiary-standard-container-background img {height:120%!important; width: auto!important;}}
-
-</style> -->
 <div
- class="mdl-grid center--text component full-width no-margin no-padding vertical-center-container tertiary-parallax"
+ class="mdl-grid center--text component full-width no-margin no-padding vertical-center-container parallax-three {{parallaxThree.paint.overlay.class}}"
  style="position: relative; overflow: hidden;"  
  full-screen>
     <span id="locate-us" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
-    <div class="tertiary-standard-container-background">
-        <img src="{{tertiary_standard_container.content.background_media.image.src}}" style="display: block;">
+    <div class="index-image-background">
+        <img src="{{parallaxThree.background.images.source}}" style="display: block;">
     </div>
-    <!-- Title -->
+    <md-button ng-if="user" ng-click="startParallaxThreeEdit()" class="md-fab custom-deep-button" aria-label="Edit Parallax Three" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
+        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+    </md-button>
     <div vertical-center class="center--text mdl-cell mdl-cell--12-col">
         <h1 
-        class="primary-heading-text mdl-typography--font-bold center-element" 
-        color="{{tertiary_standard_container.paint.text.color}}" 
-        hue="{{tertiary_standard_container.paint.text.hue}}" 
-        property="{{tertiary_standard_container.paint.text.property}}" 
-        opaqueness="{{tertiary_standard_container.paint.text.opaqueness}}" 
-        lw-color ng-bind-html="tertiary_standard_container.content.default[0].name">
+        class="primary-heading-text mdl-typography--font-bold center-element {{parallaxThree.paint.text.class}}" 
+        ng-bind-html="parallaxThree.data.text">
         </h1>
     </div>
-    <!-- Title -->
 </div>

@@ -1,59 +1,18 @@
-<style ng-if="scrollable">
-    .quaternary-standard-container-background {
-        position: absolute;
-        width: 120%;
-        height: 120%;
-        margin-left: -10.5%;
-        top: {{second_offset}}px;
-        z-index: -1;
-        transform: translate3d(0px, {{scroll/2}}px, 0px);
-    }
-    @media screen and (max-width: 839px) and (min-width: 480px){.quaternary-standard-container-background img {height:100%!important; width: auto!important;}}
-    @media screen and (max-width: 479px){.quaternary-standard-container-background img {height:100%!important; width: auto!important;}}
-    @media screen and (orentation: landscape) {.quaternary-standard-container-background img {width:100%!important; height: auto!important;}}
-</style>
-<style ng-if="!scrollable">
-    .quaternary-standard-container-background {
-        position: absolute;
-        width: 120%;
-        margin-left: -10.5%;
-        height: 120%;
-        top: 0px;
-        z-index: -1;
-    }
-    @media screen and (max-width: 839px) and (min-width: 480px){.quaternary-standard-container-background img {height:100%!important; width: auto!important;}}
-    @media screen and (max-width: 479px){.quaternary-standard-container-background img {height:100%!important; width: auto!important;}}
-</style>
 <div
- class="mdl-grid center--text component full-width no-margin no-padding vertical-center-container primary-parallax"
+ class="mdl-grid center--text component full-width no-margin no-padding vertical-center-container parallax-two {{parallaxTwo.paint.overlay.class}}"
  style="position: relative; overflow: hidden;" 
- data-size 
- full-screen
- color="{{quaternary_standard_container.paint.overlay.color}}"
- hue="{{quaternary_standard_container.paint.overlay.hue}}"
- property="{{quaternary_standard_container.paint.overlay.property}}" 
- opaqueness="{{quaternary_standard_container.paint.overlay.opaqueness}}" 
- lw-color>
+ full-screen>
     <span id="galleries" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
-    <div class="quaternary-standard-container-background">
+    <div class="index-image-background">
         <img src="{{parallaxTwo.background.images.source}}" style="display: block; margin: 0 auto;">
     </div>
-    <md-button ng-if="user" ng-click="startParallaxTwoEdit()" class="md-fab custom-deep-button" aria-label="Edit Parallax One" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
+    <md-button ng-if="user" ng-click="startParallaxTwoEdit()" class="md-fab custom-deep-button" aria-label="Edit Parallax Two" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
         <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
     </md-button>
-    <!-- Title -->
     <div vertical-center class="center--text mdl-cell mdl-cell--12-col">
-
         <h1 
-        class="primary-heading-text mdl-typography--font-bold vertical-element" 
-        color="{{quaternary_standard_container.paint.text.color}}" 
-        hue="{{quaternary_standard_container.paint.text.hue}}" 
-        property="{{quaternary_standard_container.paint.text.property}}" 
-        opaqueness="{{quaternary_standard_container.paint.text.opaqueness}}" 
-        lw-color ng-bind-html="parallaxTwo.data.text">
+        class="primary-heading-text mdl-typography--font-bold vertical-element {{parallaxTwo.paint.text.class}}" 
+        ng-bind-html="parallaxTwo.data.text">
         </h1>
-
     </div>
-    <!-- Title -->
-
 </div>
