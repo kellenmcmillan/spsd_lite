@@ -49,41 +49,59 @@
                                         <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize" flex flex-gt-sm="30">
                                             <img ng-show="!gallery_detail_view" ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false" ng-click="gallery_detail_view = true">
                                             <md-card-content ng-show="gallery_detail_view" ng-dblclick="gallery_detail_view = false">
-                                                <md-list-item>
-                                                    <md-input-container class="md-block lightweight-md-input" flex>
-                                                        <label>Name</label>
-                                                        <input ng-model="image.metadata.name">
-                                                    </md-input-container>
-                                                </md-list-item>
-                                                <md-list-item>
-                                                    <md-input-container class="md-block lightweight-md-input" flex>
-                                                        <label>Description</label>
-                                                        <input ng-model="image.metadata.description">
-                                                    </md-input-container>
-                                                </md-list-item>
-                                                <md-list-item>
-                                                    <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex>
-                                                        <label class="lightweight-md-option-label">Choose Tags</label>
-                                                        <md-select ng-model="image.metadata.tags" multiple>
-                                                            <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
-                                                                {{fileTag.tag}}
-                                                            </md-option>
-                                                        </md-select>
-                                                    </md-input-container>
-                                                </md-list-item>
-                                                <md-list-itme>
-                                                    <div flex layout-align="end center" ng-show="image.metadata.tags">
-                                                        <md-chips ng-model="image.metadata.tags" md-removable="false">
-                                                            <md-chip-template>
-                                                                {{ $chip }}
-                                                            </md-chip-template>
-                                                        </md-chips>
-                                                    </div>
-                                                </md-list-itme>
-                                                <md-list-item>
-                                                    <p>Cover</p>
-                                                    <md-switch class="md-secondary" ng-model="image.metadata.cover"></md-switch>
-                                                </md-list-item>
+
+                                                <md-tabs md-dynamic-height md-border-bottom>
+                                                    <md-tab label="one">
+                                                        <md-content class="md-padding">
+                                                            <h1 class="md-display-2">Details</h1>
+                                                            <md-list-item>
+                                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                                    <label>Name</label>
+                                                                    <input ng-model="image.metadata.name">
+                                                                </md-input-container>
+                                                            </md-list-item>
+                                                            <md-list-item>
+                                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                                    <label>Description</label>
+                                                                    <input ng-model="image.metadata.description">
+                                                                </md-input-container>
+                                                            </md-list-item>
+                                                        </md-content>
+                                                    </md-tab>
+                                                    <md-tab label="two">
+                                                        <md-content class="md-padding">
+                                                            <h1 class="md-display-2">Settings</h1>
+                                                            <md-list-item>
+                                                                <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex>
+                                                                    <label class="lightweight-md-option-label">Choose Tags</label>
+                                                                    <md-select ng-model="image.metadata.tags" multiple>
+                                                                        <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
+                                                                            {{fileTag.tag}}
+                                                                        </md-option>
+                                                                    </md-select>
+                                                                </md-input-container>
+                                                            </md-list-item>
+                                                            <md-list-itme>
+                                                                <div flex layout-align="end center" ng-show="image.metadata.tags">
+                                                                    <md-chips ng-model="image.metadata.tags" md-removable="false">
+                                                                        <md-chip-template>
+                                                                            {{ $chip }}
+                                                                        </md-chip-template>
+                                                                    </md-chips>
+                                                                </div>
+                                                            </md-list-itme>
+                                                            <md-list-item>
+                                                                <p>Cover</p>
+                                                                <md-switch class="md-secondary" ng-model="image.metadata.cover"></md-switch>
+                                                            </md-list-item>
+                                                        </md-content>
+                                                    </md-tab>
+                                                </md-tabs>
+
+                                                
+                                                
+
+
                                             </md-card-content>
                                             <md-card-actions ng-show="gallery_detail_view" layout="row" layout-align="center center">
                                                 <span>
