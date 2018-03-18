@@ -31,6 +31,12 @@
                     <md-card-content>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Company Name</label>
+                                <input ng-model="editable_app_settings.data.company_name">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Site Name</label>
                                 <input ng-model="editable_app_settings.data.site_name">
                             </md-input-container>
@@ -39,6 +45,12 @@
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Legal Name</label>
                                 <input ng-model="editable_app_settings.data.legal_name">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Phone #1</label>
+                                <input ng-model="editable_app_settings.data.phone_1">
                             </md-input-container>
                         </md-list-item>
                         <md-list-item>
@@ -66,8 +78,8 @@
                         </md-list-item>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Description</label>
-                                <textarea md-detect-hidden="true" ng-model="editable_app_settings.data.description" rows="3" md-maxlength="250"></textarea>
+                                <label>Zip Code</label>
+                                <input ng-model="editable_app_settings.data.address.zipcode">
                             </md-input-container>
                         </md-list-item>
                     </md-card-content>
