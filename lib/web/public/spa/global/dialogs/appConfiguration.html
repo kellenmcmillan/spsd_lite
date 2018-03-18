@@ -8,8 +8,8 @@
                 <md-input-container class="md-block lightweight-md-dropdown">
                     <label>Column</label>
                     <md-select ng-model="setting">
-                        <md-option ng-value="'App Settings'">
-                            App Settings
+                        <md-option ng-value="'Company Info'">
+                            Company Info
                         </md-option>
                         <md-option ng-value="'Manage Pages'">
                             Manage Pages
@@ -27,7 +27,7 @@
         <md-card-content ng-show="setting == 'App Settings'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40">
-                <md-card class="md-card-base">
+                <md-card class="md-card-base md-whiteframe-4dp">
                     <md-card-content>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
@@ -82,7 +82,23 @@
                                 <input ng-model="editable_app_settings.data.address.zipcode">
                             </md-input-container>
                         </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Google Address Link</label>
+                                <input ng-model="editable_app_settings.data.address.google_address_link">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Google Map Wiget</label>
+                                <input ng-model="editable_app_settings.data.address.google_map">
+                            </md-input-container>
+                        </md-list-item>
                     </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <div flex></div>
+                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateApp('appConfiguration')">Update</md-button>
+                    </md-card-actions>
                 </md-card>
             </div>
             <!-- columns -->
@@ -90,8 +106,7 @@
         <md-card-actions layout="row" layout-align="end center">
             <md-button disabled>Superpowered by Lightweight</md-button>
             <div flex></div>
-            <md-button ng-click="close_edit_configuration()">Cancel</md-button>
-            <md-button ng-click="updateApp('appConfiguration')">Update</md-button>
+            <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="close_edit_configuration()">Close</md-button>
         </md-card-actions>
     </md-card>
 </div>
