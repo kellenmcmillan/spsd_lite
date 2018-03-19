@@ -71,7 +71,7 @@
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= secondary_parallax_bottom && scroll < products_bottom}"
+            ng-class="{'active': scroll >= parallaxOneBottom && scroll < products_bottom}"
             style="font-size: 16px; font-weight: bold"
             href="{{settings.primary_navigation[1].href}}" 
             hash="{{settings.primary_navigation[1].hash}}"
@@ -81,7 +81,7 @@
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= primary_parallax_top && scroll < featured_gallery_bottom}"
+            ng-class="{'active': scroll >= parallaxTwoTop && scroll < featured_gallery_bottom}"
             style="font-size: 16px; font-weight: bold"
             href="{{settings.primary_navigation[2].href}}" 
             hash="{{settings.primary_navigation[2].hash}}"
@@ -91,7 +91,7 @@
             </a>
             <a 
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            ng-class="{'active': scroll >= tertiary_parallax_top && scroll < map_container_bottom}"
+            ng-class="{'active': scroll >= parallaxThreeTop && scroll < map_container_bottom}"
             style="font-size: 16px; font-weight: bold"
             href="{{settings.primary_navigation[3].href}}" 
             hash="{{settings.primary_navigation[3].hash}}"
