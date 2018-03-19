@@ -46,8 +46,8 @@
                     <md-list-item class="md-2-line" ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" ng-click="selectUser(user)" flex>
                         <md-icon class="md-avatar-icon" aria-label="View details">subject</md-icon>
                         <div class="md-list-item-text">
-                            <h3> {{user.firstname || user.email}} {{user.lastname}} </h3>
-                            <p> {{ user.security.roles }} </p>
+                            <h3> {{user.firstname}} {{user.lastname}} </h3>
+                            <p> {{ user.email }} </p>
                         </div>
                     </md-list-item>
                 </div>
