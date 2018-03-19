@@ -43,9 +43,12 @@
                     
                 </div>
                 <div layout="column" layout-align="center stretch" layout-margin flex>
-                    <md-list-item ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" ng-click="selectUser(user)" flex>                        
-                        <md-icon aria-label="View details">subject</md-icon>
-                        <p>{{user.firstname || user.email}} {{user.lastname}}</p>
+                    <md-list-item class="md-2-line" ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" ng-click="selectUser(user)" flex>
+                        <md-icon class="md-avatar-icon" aria-label="View details">subject</md-icon>
+                        <div class="md-list-item-text">
+                            <h3> {{user.firstname || user.email}} {{user.lastname}} </h3>
+                            <p> {{ user.security.roles }} </p>
+                        </div>
                     </md-list-item>
                 </div>
                 <div layout="row" layout-align="start center" layout-margin flex>
