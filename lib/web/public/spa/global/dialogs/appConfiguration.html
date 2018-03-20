@@ -108,43 +108,45 @@
         </md-card-content>
         <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="space-around start" layout-margin>
             <!-- columns -->
-            <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.data.staff" flex flex-gt-sm="30">
-                <img ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
-                <md-card-content ng-show="staff_detail_view" ng-dblclick="staff_detail_view = false">
-                    <md-tabs md-dynamic-height md-border-bottom>
-                        <md-tab label="User Info">
-                            <md-content class="md-padding">
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-input" flex>
-                                        <label>Name</label>
-                                        <input ng-model="staff.name">
-                                    </md-input-container>
-                                </md-list-item>
-                                <md-list-item>
-                                    <md-input-container class="md-block lightweight-md-input" flex>
-                                        <label>Work Title</label>
-                                        <input ng-model="staff.title">
-                                    </md-input-container>
-                                </md-list-item>
-                            </md-content>
-                        </md-tab>
-                        <md-tab label="Q&A">
-                            <md-content class="md-padding">
-                                <md-list-item ng-repeat="answer in staff.QA">
-                                    <md-input-container class="md-block lightweight-md-input" flex>
-                                        <label>Question #{{$index}}</label>
-                                        <input ng-model="answer">
-                                    </md-input-container>
-                                </md-list-item>
-                            </md-content>
-                        </md-tab>
-                    </md-tabs>
-                </md-card-content>
-                <md-card-actions layout="row" layout-align="end center">
-                    <div flex></div>
-                    <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateApp('staff')">Update</md-button>
-                </md-card-actions>
-            </md-card>
+            <div flex="100">
+                <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.data.staff" flex flex-gt-sm="30">
+                    <img ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
+                    <md-card-content ng-show="staff_detail_view" ng-dblclick="staff_detail_view = false">
+                        <md-tabs md-dynamic-height md-border-bottom>
+                            <md-tab label="User Info">
+                                <md-content class="md-padding">
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Name</label>
+                                            <input ng-model="staff.name">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Work Title</label>
+                                            <input ng-model="staff.title">
+                                        </md-input-container>
+                                    </md-list-item>
+                                </md-content>
+                            </md-tab>
+                            <md-tab label="Q&A">
+                                <md-content class="md-padding">
+                                    <md-list-item ng-repeat="answer in staff.QA">
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Question #{{$index}}</label>
+                                            <input ng-model="answer">
+                                        </md-input-container>
+                                    </md-list-item>
+                                </md-content>
+                            </md-tab>
+                        </md-tabs>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <div flex></div>
+                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateApp('staff')">Update</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
             <!-- columns -->
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
