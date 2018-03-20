@@ -108,8 +108,32 @@
         </md-card-content>
         <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="space-around start" layout-margin layout-wrap flex>
             <!-- columns -->
-            
-                <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.data.staff" flex flex-gt-sm="30" style="margin-bottom: 16px;">
+                <div layout-margin flex="100">
+                    <form name="uploads">
+                        <md-button class="button-color-border" ng-click="switchViewStaff()" ng-disabled="new_gallery">
+                        {{staffgridview == false ? "Grid View" : "List View"}}
+                        <md-icon ng-show="staffgridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
+                        <md-icon ng-show="staffgridview == false" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
+                        </md-button>
+                    </form>
+                </div>
+                <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
+                    <md-card class="md-card-base" style="width: 90%">
+                        <md-card-content class="lightweight-list-control" ui-sortable="sortableGalleries" ng-model="staffSortObj">
+                            <div ng-repeat="staff in staffSortObj" style="width: 100%;">
+                                <md-list-item class="noright">
+                                    <p>{{ staff.name }}</p>
+                                    <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                </md-list-item>
+                                <md-divider></md-divider>
+                            </div>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button class="md-raised" ng-click="updateStaff(staffSortObj)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>
+                <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.data.staff" flex flex-gt-sm="25" style="margin-bottom: 16px;">
                     <img ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
                     <md-card-content ng-show="staff_detail_view" ng-dblclick="staff_detail_view = false">
                         <md-tabs md-dynamic-height md-border-bottom>                            
@@ -135,7 +159,7 @@
                                     </md-list-item>
                                     <div layout="row" layout-align="end center">
                                         <div flex></div>
-                                        <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="openMediaVault('staff'); setStaffToUpdate($index)">Change Image</md-button>
+                                        <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="setStaffToUpdate($index); openMediaVault('staff')">Change Image</md-button>
                                     </div>
                                 </md-content>
                             </md-tab>
