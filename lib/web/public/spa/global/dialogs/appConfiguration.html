@@ -129,13 +129,13 @@
                                     </md-list-item>
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Image Source</label>
+                                            <label>Image Source {{$index}}</label>
                                             <input disabled="" ng-model="staff.image">
                                         </md-input-container>
                                     </md-list-item>
                                     <div layout="row" layout-align="end center">
                                         <div flex></div>
-                                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="openMediaVault('staff'); setStaffToUpdate($index)">Update</md-button>
+                                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="openMediaVault('staff'); setStaffToUpdate($index)">Change Image</md-button>
                                     </div>
                                 </md-content>
                             </md-tab>
