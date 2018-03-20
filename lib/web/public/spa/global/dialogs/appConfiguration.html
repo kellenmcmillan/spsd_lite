@@ -108,7 +108,7 @@
         </md-card-content>
         <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="space-around start" layout-margin>
             <!-- columns -->
-            <div flex="100">
+            <div flex="100" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="space-around start">
                 <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.data.staff" flex flex-gt-sm="30">
                     <img ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
                     <md-card-content ng-show="staff_detail_view" ng-dblclick="staff_detail_view = false">
