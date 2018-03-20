@@ -1,9 +1,12 @@
 <div class="dialog-curtain" ng-show="edit_configuration_dialog_visible == true">
     <md-card class="suite-dialog md-card-base">
         <md-card-title style="position: relative;" layout="column" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center">
-            <md-button ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Switch between grid and list view" style="position: absolute; bottom: -20px; left: 75px; background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="switchViewStaff()">
-                <md-icon ng-show="staffgridview == true" class="list-handle" style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
-                <md-icon ng-show="staffgridview == false" class="list-handle" style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
+            <md-button ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Switch between grid and list view" style="position: absolute; bottom: -26px; left: 32px; background-color: {{base_hue_lightest.value}};" ng-click="switchViewStaff()">
+                <md-icon ng-show="staffgridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
+                <md-icon ng-show="staffgridview == false" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
+            </md-button>
+            <md-button ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 104px; background-color: {{base_hue_lightest.value}};" ng-click="addStaffMember()">
+                <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
             <md-card-title-text>
                 <span class="md-headline">{{setting}}</span>
@@ -128,7 +131,7 @@
                         </md-card-actions>
                     </md-card>
                 </div>
-                <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.data.staff" flex flex-gt-sm="20" style="margin-bottom: 16px;">
+                <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.data.staff" flex="100" flex-gt-sm="20" style="margin-bottom: 16px;">
                     <img ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
                     <md-card-content ng-show="staff_detail_view" ng-dblclick="staff_detail_view = false">
                         <md-tabs md-dynamic-height md-border-bottom>                            
@@ -162,6 +165,12 @@
                                 <md-content class="md-padding">
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Email</label>
+                                            <input ng-model="staff.email">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Facebook</label>
                                             <input ng-model="staff.social.facebook">
                                         </md-input-container>
@@ -190,7 +199,7 @@
                                 <md-content class="md-padding">
                                     <md-list-item ng-repeat="answer in staff.QA">
                                         <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Question #{{$index}}</label>
+                                            <label>Question #{{$index + 1}}</label>
                                             <textarea md-detect-hidden="true" ng-model="answer" rows="3" md-maxlength="140"></textarea>
                                         </md-input-container>
                                     </md-list-item>
@@ -211,6 +220,7 @@
                     <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
                         <div flex></div>
                         <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="updateApp('staff')">View Image</md-button>
+                        <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff('staff')">Remove Staff</md-button>
                         <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateApp('staff')">Update</md-button>
                     </md-card-actions>
                 </md-card>
