@@ -131,9 +131,9 @@
                         </md-card-actions>
                     </md-card>
                 </div>
-                <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.data.staff" flex="100" flex-gt-sm="20" style="margin-bottom: 16px;">
+                <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.staff" flex="100" flex-gt-sm="20" style="margin-bottom: 16px;">
                     <img ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
-                    <md-card-content ng-show="staff_detail_view" ng-dblclick="staff_detail_view = false">
+                    <md-card-content ng-show="staff_detail_view">
                         <md-tabs md-dynamic-height md-border-bottom>                            
                             <md-tab label="User Info">
                                 <md-content class="md-padding">
@@ -225,9 +225,9 @@
                     </md-card-content>
                     <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
                         <div flex></div>
-                        <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="updateApp('staff')">View Image</md-button>
+                        <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="staff_detail_view = false">View Image</md-button>
                         <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff('staff')">Remove</md-button>
-                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateApp('staff')">Update</md-button>
+                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff.id)">Update</md-button>
                     </md-card-actions>
                 </md-card>
             
