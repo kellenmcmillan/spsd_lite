@@ -132,8 +132,8 @@
                     </md-card>
                 </div>
                 <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.staff" flex="100" flex-sm="50" flex-gt-sm="25" style="margin-bottom: 16px;">
-                    <img ng-show="!staff_detail_view && !new_staff_member" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
-                    <md-card-content ng-show="staff_detail_view || new_staff_member">
+                    <img ng-if="staff.image" ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
+                    <md-card-content ng-show="staff_detail_view || !staff.image">
                         <md-tabs md-dynamic-height md-border-bottom>                            
                             <md-tab label="User Info">
                                 <md-content class="md-padding">
@@ -195,11 +195,19 @@
                                 </md-content>
                             </md-tab>
                             <md-tab label="Q&A">
-                                <md-content class="md-padding">
+                                <md-content class="md-padding" ng-if="staff.id">
                                     <md-list-item ng-repeat="answer in staff.QA">
                                         <md-input-container class="md-block lightweight-md-input" flex>
                                             <label>Question #{{$index + 1}}</label>
                                             <textarea md-detect-hidden="true" ng-model="answer" rows="3" md-maxlength="140"></textarea>
+                                        </md-input-container>
+                                    </md-list-item>
+                                </md-content>
+                                <md-content class="md-padding" ng-if="!staff.id">
+                                    <md-list-item ng-repeat="[1,2,3]">
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Question #{{$index + 1}}</label>
+                                            <textarea md-detect-hidden="true" ng-model="answer" ng-model="staff.QA.answer[$index]" rows="3" md-maxlength="140"></textarea>
                                         </md-input-container>
                                     </md-list-item>
                                 </md-content>
@@ -219,10 +227,10 @@
                     <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
                         <div flex></div>
                         <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="staff_detail_view = false">View Image</md-button>
-                        <md-button ng-if="!new_staff_member" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>
-                        <md-button ng-if="new_staff_member && $index == 0" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
-                        <md-button ng-if="new_staff_member && $index == 0" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="addupdateStaffMember(staff)">Save</md-button>
-                        <md-button ng-if="!new_staff_member" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
+                        <md-button ng-if="staff.id" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>
+                        <md-button ng-if="!staff.id" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
+                        <md-button ng-if="!staff.id" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="addupdateStaffMember(staff)">Save</md-button>
+                        <md-button ng-if="staff.id" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
                     </md-card-actions>
                 </md-card>
             
