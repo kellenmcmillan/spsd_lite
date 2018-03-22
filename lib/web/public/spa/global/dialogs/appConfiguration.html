@@ -5,7 +5,7 @@
                 <md-icon ng-show="staffgridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
                 <md-icon ng-show="staffgridview == false" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
             </md-button>
-            <md-button ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="addStaffMember()">
+            <md-button ng-show="setting == 'Manage Staff'" ng-disabled="new_staff_member || staffgridview == false" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="addStaffTemplate()">
                 <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
             <md-card-title-text>
@@ -113,7 +113,7 @@
             </div>
             <!-- columns -->
         </md-card-content>
-        <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin layout-wrap flex>
+        <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-wrap flex>
             <!-- columns -->
                 <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
                     <md-card class="md-card-base" style="width: 90%">
@@ -131,9 +131,9 @@
                         </md-card-actions>
                     </md-card>
                 </div>
-                <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.staff" flex="100" flex-gt-sm="20" style="margin-bottom: 16px;">
-                    <img ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
-                    <md-card-content ng-show="staff_detail_view">
+                <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.staff" flex="100" flex-sm="50" flex-gt-sm="25" style="margin-bottom: 16px;">
+                    <img ng-show="!staff_detail_view && !new_staff_member" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
+                    <md-card-content ng-show="staff_detail_view || new_staff_member">
                         <md-tabs md-dynamic-height md-border-bottom>                            
                             <md-tab label="User Info">
                                 <md-content class="md-padding">
@@ -219,8 +219,10 @@
                     <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
                         <div flex></div>
                         <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="staff_detail_view = false">View Image</md-button>
-                        <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>
-                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
+                        <md-button ng-if="!new_staff_member" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>
+                        <md-button ng-if="new_staff_member && $index == 0" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
+                        <md-button ng-if="new_staff_member && $index == 0" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="addupdateStaffMember(staff)">Save</md-button>
+                        <md-button ng-if="!new_staff_member" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
                     </md-card-actions>
                 </md-card>
             
