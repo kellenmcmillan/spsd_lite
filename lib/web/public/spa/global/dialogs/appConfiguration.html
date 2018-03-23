@@ -133,7 +133,7 @@
                     </md-card>
                 </div>
                 <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
-                    <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.staff" flex="100" flex-gt-sm="30" style="margin-bottom: 16px;">
+                    <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.staff.members" flex="100" flex-gt-sm="30" style="margin-bottom: 16px;">
                         <img ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
                         <md-card-content ng-show="staff_detail_view">
                             <md-tabs md-dynamic-height md-border-bottom>                            
@@ -198,10 +198,10 @@
                                 </md-tab>
                                 <md-tab label="Q&A">
                                     <md-content class="md-padding">
-                                        <md-list-item ng-repeat="answer in staff.QA">
+                                        <md-list-item ng-repeat="question in editable_app_settings.staff.metadata.QA">
                                             <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>Question #{{$index + 1}}</label>
-                                                <textarea md-detect-hidden="true" ng-model="answer" rows="3" md-maxlength="140"></textarea>
+                                                <label>{{question}}</label>
+                                                <textarea md-detect-hidden="true" ng-model="$parent.staff.QA[$index]" rows="3" md-maxlength="140"></textarea>
                                             </md-input-container>
                                         </md-list-item>
                                     </md-content>
