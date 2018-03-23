@@ -113,7 +113,7 @@
             </div>
             <!-- columns -->
         </md-card-content>
-        <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin layout-wrap flex>
+        <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="space-around center" layout-margin layout-wrap flex>
             <!-- columns -->
                 <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
                     <md-card class="md-card-base" style="width: 90%">
@@ -217,7 +217,6 @@
                         </md-tabs>
                     </md-card-content>
                     <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
-                        <div flex></div>
                         <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="staff_detail_view = false">View Image</md-button>
                         <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>
                         <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
