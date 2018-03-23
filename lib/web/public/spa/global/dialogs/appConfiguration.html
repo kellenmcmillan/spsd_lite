@@ -117,7 +117,7 @@
             
             <!-- columns -->
                 <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
-                    <md-card class="md-card-base" style="width: 90%">
+                    <md-card class="md-card-base" style="width: 90%" flex>
                         <md-card-content class="lightweight-list-control" ui-sortable="sortableGalleries" ng-model="staffSortObj">
                             <div ng-repeat="staff in staffSortObj" style="width: 100%;">
                                 <md-list-item class="noright">
@@ -223,9 +223,9 @@
                         </md-card-content>
                         <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
                             <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="staff_detail_view = false">View Image</md-button>
-                            <md-button ng-if="!staff.id" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
-                            <md-button ng-if="staff.id" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>
-                            <md-button md-raised ng-if="staff.id" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
+                            <md-button ng-if="staff.id == undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
+                            <md-button ng-if="staff.id != undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>
+                            <md-button md-raised ng-if="staff.id != undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
                         </md-card-actions>
                     </md-card>
                 </div>
