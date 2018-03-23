@@ -113,7 +113,8 @@
             </div>
             <!-- columns -->
         </md-card-content>
-        <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="space-around center" layout-margin layout-wrap flex>
+        <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex>
+            
             <!-- columns -->
                 <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
                     <md-card class="md-card-base" style="width: 90%">
@@ -131,98 +132,99 @@
                         </md-card-actions>
                     </md-card>
                 </div>
-                <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.staff" flex="100" flex-gt-sm="25">
-                    <img ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
-                    <md-card-content ng-show="staff_detail_view">
-                        <md-tabs md-dynamic-height md-border-bottom>                            
-                            <md-tab label="User Info">
-                                <md-content class="md-padding">
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Name</label>
-                                            <input ng-model="staff.name">
-                                        </md-input-container>
-                                    </md-list-item>
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Work Title</label>
-                                            <input ng-model="staff.title">
-                                        </md-input-container>
-                                    </md-list-item>
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Email</label>
-                                            <input ng-model="staff.email">
-                                        </md-input-container>
-                                    </md-list-item>
-                                    <div layout="row" layout-align="center center">
-                                        <md-button class="md-whiteframe-2dp" style="width: 100%; background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="setStaffToUpdate($index); openMediaVault('staff')">Change Image</md-button>
-                                    </div>
-                                </md-content>
-                            </md-tab>
-                            <md-tab label="Social">
-                                <md-content class="md-padding">
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Phone</label>
-                                            <input ng-model="staff.phone">
-                                        </md-input-container>
-                                    </md-list-item>
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Facebook</label>
-                                            <input ng-model="staff.social.facebook">
-                                        </md-input-container>
-                                    </md-list-item>
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Instagram</label>
-                                            <input ng-model="staff.social.instagram">
-                                        </md-input-container>
-                                    </md-list-item>
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Pinterest</label>
-                                            <input disabled="" ng-model="staff.social.pinterest">
-                                        </md-input-container>
-                                    </md-list-item>
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>LinkedIn</label>
-                                            <input disabled="" ng-model="staff.social.linkedin">
-                                        </md-input-container>
-                                    </md-list-item>
-                                </md-content>
-                            </md-tab>
-                            <md-tab label="Q&A">
-                                <md-content class="md-padding">
-                                    <md-list-item ng-repeat="answer in staff.QA">
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Question #{{$index + 1}}</label>
-                                            <textarea md-detect-hidden="true" ng-model="answer" rows="3" md-maxlength="140"></textarea>
-                                        </md-input-container>
-                                    </md-list-item>
-                                </md-content>
-                            </md-tab>
-                            <md-tab label="Bio">
-                                <md-content class="md-padding">
-                                    <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-input" flex>
-                                            <label>Bio</label>
-                                            <textarea md-detect-hidden="true" ng-model="staff.bio" rows="3" md-maxlength="280"></textarea>
-                                        </md-input-container>
-                                    </md-list-item>
-                                </md-content>
-                            </md-tab>
-                        </md-tabs>
-                    </md-card-content>
-                    <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
-                        <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="staff_detail_view = false">View Image</md-button>
-                        <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>
-                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
-                    </md-card-actions>
-                </md-card>
-            
+                <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
+                    <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.staff" flex="100" flex-gt-sm="20" style="margin-bottom: 16px;">
+                        <img ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.image}}" class="md-card-image" ng-init="staff_detail_view = false" ng-click="staff_detail_view = true">
+                        <md-card-content ng-show="staff_detail_view">
+                            <md-tabs md-dynamic-height md-border-bottom>                            
+                                <md-tab label="User Info">
+                                    <md-content class="md-padding">
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Name</label>
+                                                <input ng-model="staff.name">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Work Title</label>
+                                                <input ng-model="staff.title">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Email</label>
+                                                <input ng-model="staff.email">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <div layout="row" layout-align="center center">
+                                            <md-button class="md-whiteframe-2dp" style="width: 100%; background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="setStaffToUpdate($index); openMediaVault('staff')">Change Image</md-button>
+                                        </div>
+                                    </md-content>
+                                </md-tab>
+                                <md-tab label="Social">
+                                    <md-content class="md-padding">
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Phone</label>
+                                                <input ng-model="staff.phone">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Facebook</label>
+                                                <input ng-model="staff.social.facebook">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Instagram</label>
+                                                <input ng-model="staff.social.instagram">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Pinterest</label>
+                                                <input disabled="" ng-model="staff.social.pinterest">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>LinkedIn</label>
+                                                <input disabled="" ng-model="staff.social.linkedin">
+                                            </md-input-container>
+                                        </md-list-item>
+                                    </md-content>
+                                </md-tab>
+                                <md-tab label="Q&A">
+                                    <md-content class="md-padding">
+                                        <md-list-item ng-repeat="answer in staff.QA">
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Question #{{$index + 1}}</label>
+                                                <textarea md-detect-hidden="true" ng-model="answer" rows="3" md-maxlength="140"></textarea>
+                                            </md-input-container>
+                                        </md-list-item>
+                                    </md-content>
+                                </md-tab>
+                                <md-tab label="Bio">
+                                    <md-content class="md-padding">
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Bio</label>
+                                                <textarea md-detect-hidden="true" ng-model="staff.bio" rows="3" md-maxlength="280"></textarea>
+                                            </md-input-container>
+                                        </md-list-item>
+                                    </md-content>
+                                </md-tab>
+                            </md-tabs>
+                        </md-card-content>
+                        <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
+                            <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="staff_detail_view = false">View Image</md-button>
+                            <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>
+                            <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>
             <!-- columns -->
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
