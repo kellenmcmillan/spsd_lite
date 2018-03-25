@@ -1,12 +1,12 @@
 <style>
 .interior-page-background {
-    background: url('{{page.data.page.images.source}}') no-repeat;
+    background: url('{{infoPage.data.page.images.source}}') no-repeat;
     background-size: cover; width: 100%!important; height: 100%; 
     right: 0; top: 400px; padding:0; margin: 0!important; opacity: 0.1;
 }
 </style>
 <div class="mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width interior-page-margin {{base_hue_lightest.name}}">
-	<md-button ng-if="user" ng-click="infoPageEdit(page.data.title)" class="md-fab custom-deep-button" aria-label="Edit Mission" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
+	<md-button ng-if="user" ng-click="startInfoPageEdit()" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
         <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
     </md-button>
 	<!-- Shrinking Page Title -->
@@ -14,7 +14,7 @@
 		<div class="lightweight-parallax--background-stationary" style="width: 100%; height: 100%">
 		    <div class="interior-page-background"></div>
 		</div>
-		<h2 class="h2 {{base_hue_text__lightest.name}}">{{page.data.title}}</h2>
+		<h2 class="h2 {{base_hue_text__lightest.name}}">{{infoPage.data.title}}</h2>
 	</div>
 	<!-- Shrinking Page Title -->
 	
@@ -31,16 +31,16 @@
 
 		    		<!-- panel title -->
 			    	<div class="padded--top16">
-				        <h1 class="small-border-background-no-align h1" style="margin-top: 8px;" color="{{page.paint.text.color}}" hue="{{page.paint.text.hue}}" property="{{page.paint.text.property}}" opaqueness="{{page.paint.text.opaqueness}}" lw-color>{{page.data.title}}</h1>
+				        <h1 class="small-border-background-no-align h1" style="margin-top: 8px;" color="{{infoPage.paint.text.color}}" hue="{{infoPage.paint.text.hue}}" property="{{infoPage.paint.text.property}}" opaqueness="{{infoPage.paint.text.opaqueness}}" lw-color>{{infoPage.data.title}}</h1>
 				    </div>
 				    <!-- panel title -->
 
 				    <div class="mdl-grid full-width no-padding">
 						<!-- panel images -->
-						<div class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp" ng-attr-style="background: url('{{page.data.page.images.source}}') center/cover;">
+						<div class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp" ng-attr-style="background: url('{{infoPage.data.page.images.source}}') center/cover;">
 							<div class="mdl-card__title mdl-card--expand"></div>
 							<div class="mdl-card__actions">
-								<span class="lightweight-card-image__filename">{{page.data.title}}</span>
+								<span class="lightweight-card-image__filename">{{infoPage.data.title}}</span>
 							</div>
 						</div>
 						<!-- panel images -->
@@ -48,7 +48,7 @@
 
 			    	<br>
 			    	<br>
-			    	<div ng-repeat="content in page.data.page.contents">
+			    	<div ng-repeat="content in infoPage.data.page.contents">
 			          <p id="emphasize" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
 			          <p ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
 			        </div>
