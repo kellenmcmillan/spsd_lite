@@ -45,16 +45,16 @@
                                 <input ng-model="infoPage.data.title">
                             </md-input-container>
                         </md-list-item>
-                        <div class="lightweight-list-control">
+                        <div class="lightweight-list-control" ui-sortable="infoPage.data.page.contents" ng-model="infoPage.data.page.contents">
                             <div ng-repeat="content in infoPage.data.page.contents">
-                                <md-list-item ng-attr-sortable ng-if="content.type == 'text'">
+                                <md-list-item ng-if="content.type == 'text'">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <md-input-container class="md-block lightweight-md-input" flex>
                                         <label>Paragraph</label>
                                         <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
                                     </md-input-container>
                                 </md-list-item>
-                                <md-list-item ng-attr-sortable ng-if="content.type == 'list'">
+                                <md-list-item ng-if="content.type == 'list'">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <form name="featuredProductEdit" flex>
                                         <div layout="column" flex>
