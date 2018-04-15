@@ -7,7 +7,7 @@
             <md-list-item>
                 <md-input-container class="md-block lightweight-md-dropdown">
                     <label>Section</label>
-                    <md-select ng-model="tab">
+                    <md-select ng-model="tabs">
                         <md-option ng-value="title">
                             Title &amp; Subtitle
                         </md-option>
@@ -18,7 +18,7 @@
                 </md-input-container>
             </md-list-item>
         </md-card-title>
-        <md-card-content ng-show="tab == title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
+        <md-card-content ng-show="tabs == title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40">
                 <md-card class="md-card-base">
@@ -34,7 +34,7 @@
             </div>
             <!-- columns -->
         </md-card-content>
-        <md-card-content ng-show="tab != title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
+        <md-card-content ng-show="tabs != title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center center" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40" style="width: 100%">
                 <md-card class="md-card-base">
@@ -71,25 +71,13 @@
                                 </md-list-item>
                             </div>
                         </div>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Link</label>
-                                <input ng-model="infoPage.settings.url">
-                            </md-input-container>
-                        </md-list-item>
-                        <!-- <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Button Text</label>
-                                <input>
-                            </md-input-container>
-                        </md-list-item> -->
                     </md-card-content>
                 </md-card>
             </div>
             <!-- columns -->
 
             <!-- columns -->
-            <div flex flex-gt-sm="40" ng-show="tab != title">
+            <div flex flex-gt-sm="40" ng-show="tabs != title">
                 <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
                     <img ng-value="'{{infoPage.data.page.images.source}}'" ng-src="{{infoPage.data.page.images.source}}" class="md-card-image" alt="Washed Out">
                     <md-card-actions layout="row">
