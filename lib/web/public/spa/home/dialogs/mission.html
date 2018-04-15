@@ -38,11 +38,8 @@
                 <md-card class="md-card-base" style="background-color: {{editable_mission.paint.background.class}};">
                     <img ng-value="'{{editable_mission.data.images.source}}'" ng-src="{{editable_mission.data.images.source}}" class="md-card-image" alt="Washed Out">
                     <md-card-actions layout="row">
-                        <md-button aria-label="Replace Image" disable>
-                            TAGS: Construction, Stone Waterfall
-                        </md-button>
                         <span flex></span>
-                        <md-button ng-click="openMediaVault('mission')" aria-label="Replace Image">
+                        <md-button ng-click="mediavault_filepicker(editable_mission.data.images)" aria-label="Replace Image">
                             Replace
                         </md-button>
                     </md-card-actions>
