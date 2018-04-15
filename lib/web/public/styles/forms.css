@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* CSS Document */
 /*======= Forms =======*/
+md-input-container.lightweight-md-input {margin: 12px 0;}
 .forms fieldset {
 	padding: .75em 0; 
 	margin: 1em 0;
