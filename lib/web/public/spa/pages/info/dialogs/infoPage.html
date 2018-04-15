@@ -48,10 +48,10 @@
                                 <input ng-model="infoPage.data.title">
                             </md-input-container>
                         </md-list-item>
-                        <div class="lightweight-list-control" ui-sortable="sortableList" ng-model="infoPageSortableContents">
-                            <div ng-repeat="content in infoPageSortableContents">
+                        <div class="lightweight-list-control" ui-sortable="sortableList" ng-model="infoPage.data.page.contents">
+                            <div ng-repeat="content in infoPage.data.page.contents">
                                 <md-list-item>
-                                    <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                    <md-icon ng-if="items_sortable" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <p ng-show="items_sortable && content.type == 'text'">Paragraph</p>
                                     <p ng-show="items_sortable && content.type == 'list'">List</p>
                                     <md-divider ng-show="items_sortable"></md-divider>
@@ -68,7 +68,7 @@
                                             </md-input-container>
                                             <md-input-container class="md-block lightweight-md-input" flex="100">
                                                 <label>Add an item</label>
-                                                <md-button class="md-icon-button" ng-disabled="elementEdit.$invalid && infoPageSortableContents.length != 0 || infoPageSortableContents.length == 12" ng-if="$index > 0" ng-click="infoPageSortableContents.push({item: ''})"><md-icon style="color: {{primary_hue_normal.value}}" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon></md-button>
+                                                <md-button class="md-icon-button" ng-disabled="elementEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-if="$index > 0" ng-click="content.data.push({item: ''})"><md-icon style="color: {{primary_hue_normal.value}}" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon></md-button>
                                                 <input disabled>
                                             </md-input-container>
                                         </div>
