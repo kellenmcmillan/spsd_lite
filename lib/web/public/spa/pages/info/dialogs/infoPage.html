@@ -45,7 +45,7 @@
                                 <input ng-model="infoPage.data.title">
                             </md-input-container>
                         </md-list-item>
-                        <div class="lightweight-list-control" ui-sortable="infoPage.data.page.contents" ng-model="infoPage.data.page.contents">
+                        <div class="lightweight-list-control" ui-sortable="sortableList" ng-model="infoPage.data.page.contents">
                             <div ng-repeat="content in infoPage.data.page.contents">
                                 <md-list-item ng-if="content.type == 'text'">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>

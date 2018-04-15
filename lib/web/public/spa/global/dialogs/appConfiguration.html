@@ -118,7 +118,7 @@
             <!-- columns -->
                 <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
                     <md-card class="md-card-base" style="width: 90%" flex>
-                        <md-card-content class="lightweight-list-control" ui-sortable="sortableGalleries" ng-model="staffSortObj">
+                        <md-card-content class="lightweight-list-control" ui-sortable="sortableList" ng-model="staffSortObj">
                             <div ng-repeat="staff in staffSortObj" style="width: 100%;">
                                 <md-list-item class="noright">
                                     <p>{{ staff.name }}</p>
