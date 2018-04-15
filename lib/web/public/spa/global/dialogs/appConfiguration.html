@@ -113,13 +113,13 @@
             </div>
             <!-- columns -->
         </md-card-content>
-        <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex>
+        <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="start center" flex>
             
             <!-- columns -->
                 <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
                     <md-card class="md-card-base" style="width: 90%" flex>
                         <md-card-content class="lightweight-list-control" ui-sortable="sortableList" ng-model="staffSortObj">
-                            <div ng-repeat="staff in staffSortObj" style="width: 100%;">
+                            <div ng-repeat="staff in staffSortObj">
                                 <md-list-item class="noright">
                                     <p>{{ staff.name }}</p>
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
