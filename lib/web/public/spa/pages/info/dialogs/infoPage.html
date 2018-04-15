@@ -46,8 +46,7 @@
                             </md-input-container>
                         </md-list-item>
                         <div class="lightweight-list-control" ui-sortable="sortableList" ng-model="infoPageSortableContents">
-                            <div ng-repeat="content in infoPageSortableContents">
-                                <md-list-item>
+                                <md-list-item ng-repeat="content in infoPageSortableContents">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <md-input-container class="md-block lightweight-md-input" ng-if="content.type == 'text'" flex>
                                         <label>Paragraph</label>
@@ -66,7 +65,6 @@
                                         </div>
                                     </form>
                                 </md-list-item>
-                            </div>
                         </div>
                     </md-card-content>
                 </md-card>

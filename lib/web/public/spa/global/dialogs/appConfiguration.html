@@ -116,7 +116,7 @@
         <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex>
             
             <!-- columns -->
-                <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
+                <div ng-if="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
                     <md-card class="md-card-base" style="width: 90%" flex>
                         <md-card-content class="lightweight-list-control" ui-sortable="sortableList" ng-model="staffSortObj">
                             <div ng-repeat="staff in staffSortObj">
@@ -133,7 +133,7 @@
                     </md-card>
                 </div>
                 <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
-                    <md-card ng-show="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.staff.members" ng-init="staff_detail_view = false" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
+                    <md-card ng-if="staffgridview == true" class="md-card-base md-whiteframe-4dp" ng-repeat="staff in editable_app_settings.staff.members" ng-init="staff_detail_view = false" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
                         <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="staff_detail_view = true">
                             <md-icon class="list-handle" style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                         </md-button>
