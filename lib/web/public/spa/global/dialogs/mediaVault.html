@@ -49,7 +49,6 @@
                                         <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize" flex flex-gt-sm="30">
                                             <img ng-show="!gallery_detail_view" ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false" ng-click="gallery_detail_view = true">
                                             <md-card-content ng-show="gallery_detail_view" ng-dblclick="gallery_detail_view = false">
-
                                                 <md-tabs md-dynamic-height md-border-bottom>
                                                     <md-tab label="Details">
                                                         <md-content class="md-padding">

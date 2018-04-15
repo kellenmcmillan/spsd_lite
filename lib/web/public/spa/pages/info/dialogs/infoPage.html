@@ -47,16 +47,13 @@
                         </md-list-item>
                         <div class="lightweight-list-control" ui-sortable="sortableList" ng-model="infoPageSortableContents">
                             <div ng-repeat="content in infoPageSortableContents">
-                                <md-list-item ng-if="content.type == 'text'">
+                                <md-list-item>
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
-                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                    <md-input-container class="md-block lightweight-md-input" ng-if="content.type == 'text'" flex>
                                         <label>Paragraph</label>
                                         <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
                                     </md-input-container>
-                                </md-list-item>
-                                <md-list-item ng-if="content.type == 'list'">
-                                    <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
-                                    <form name="featuredProductEdit" flex>
+                                    <form name="featuredProductEdit" ng-if="content.type == 'list'" flex>
                                         <div layout="column" flex>
                                             <md-button ng-disabled="featuredProductEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-click="content.data.push({item: ''})" class="md-raised" style="background-color: {{base_hue_lighter.value}}; max-width: 50%;"><md-icon aria-label="Add A List Item" md-font-library="material-icons" style="color: {{primary_hue_normal.value}}">add</md-icon>
                                             Add Item
