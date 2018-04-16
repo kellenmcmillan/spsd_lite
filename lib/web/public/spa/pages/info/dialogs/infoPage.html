@@ -97,20 +97,22 @@
                                         <label>Paragraph</label>
                                         <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
                                     </md-input-container>
-                                    <form ng-show="!items_sortable" name="elementEdit" ng-if="content.type == 'list'" flex>
-                                        <div layout="column" flex>
-                                            <md-input-container ng-repeat="listItem in content.data track by $index" class="md-block lightweight-md-input" flex="100">
-                                                <label>Item</label>
-                                                <md-icon style="color: {{primary_hue_normal.value}}" ng-if="$index > 0" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
-                                                <input ng-model="listItem.item" required>
-                                            </md-input-container>
-                                            <md-input-container class="md-block lightweight-md-input" flex="100">
-                                                <md-icon class="md-icon-button" ng-disabled="elementEdit.$invalid || content.data.length == 12" ng-click="content.data.push({item: ''})" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
-                                                <label>Add an item</label>
-                                                <input disabled>
-                                            </md-input-container>
-                                        </div>
-                                    </form>
+                                    <div ng-if="content.type == 'list'" ng-show="!items_sortable">
+                                        <form name="elementEdit" flex>
+                                            <div layout="column" flex>
+                                                <md-input-container ng-repeat="listItem in content.data track by $index" class="md-block lightweight-md-input" flex="100">
+                                                    <label>Item</label>
+                                                    <md-icon style="color: {{primary_hue_normal.value}}" ng-if="$index > 0" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                                    <input ng-model="listItem.item" required>
+                                                </md-input-container>
+                                                <md-input-container class="md-block lightweight-md-input" flex="100">
+                                                    <md-icon class="md-icon-button" ng-disabled="elementEdit.$invalid || content.data.length == 12" ng-click="content.data.push({item: ''})" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
+                                                    <label>Add an item</label>
+                                                    <input disabled>
+                                                </md-input-container>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </md-list-item>
                             </div>
                         </div>
