@@ -90,6 +90,7 @@
                             <div ng-repeat="content in infoPage.data.page.contents">
                                 <md-list-item>
                                     <md-icon ng-if="items_sortable" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" ng-if="items_sortable" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                     <p ng-show="items_sortable && content.type == 'text'">Paragraph</p>
                                     <p ng-show="items_sortable && content.type == 'list'">List</p>
                                     <md-divider ng-if="!$last" ng-show="items_sortable"></md-divider>
@@ -101,7 +102,7 @@
                                         <div layout="column" flex>
                                             <md-input-container ng-repeat="listItem in content.data track by $index" class="md-block lightweight-md-input" flex="100">
                                                 <label>Item</label>
-                                                <md-icon style="color: {{primary_hue_normal.value}}" ng-if="$index > 0" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" ng-if="$index > 0" ng-click="content.data.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                                 <input ng-model="listItem.item" required>
                                             </md-input-container>
                                             <md-input-container class="md-block lightweight-md-input" flex="100">
