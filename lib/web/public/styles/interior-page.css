@@ -40,7 +40,7 @@
 
 /* ===== Lighweight Image Cards ===== */
 .lightweight-card-image.mdl-card {
- 	height: 300px;
+ 	height: 400px;
 }
 @media (max-width: 839px) {
 	.lightweight-card-image.mdl-card {
