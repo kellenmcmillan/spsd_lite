@@ -93,6 +93,8 @@
                                     <p ng-show="items_sortable && content.type == 'text'">Paragraph</p>
                                     <p ng-show="items_sortable && content.type == 'list'">List</p>
                                     <md-divider ng-if="!$last" ng-show="items_sortable"></md-divider>
+                                    <p style="font-weight: bold; font-size: 16px;" ng-show="!items_sortable && content.type = 'text'">Paragraph</p>
+                                    <p style="font-weight: bold; font-size: 16px;" ng-show="!items_sortable && content.type = 'list'">List</p>
                                     <md-input-container ng-show="!items_sortable" class="md-block lightweight-md-input" ng-if="content.type == 'text'" flex>
                                         <label>Paragraph</label>
                                         <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="250"></textarea>
