@@ -4,26 +4,32 @@
             <md-button ng-class="{'md-whiteframe-6dp': items_sortable}" ng-show="tabs != title" class="md-fab md-mini" aria-label="Enable Draggable" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="items_sortable = items_sortable ? false : true">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
             </md-button>
-            <md-menu style="position: absolute;">
+            <md-menu>
                 <md-button md-menu-origin ng-disabled="items_sortable" ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Add Content" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;">
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">add</md-icon>
                 </md-button>
                 <md-menu-content width="4">
                     <md-menu-item>
                         <md-button ng-click="ctrl.redial($event)">
-                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">add</md-icon>
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">format_align_left</md-icon>
                         New Paragraph
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
                         <md-button disabled="disabled" ng-click="ctrl.checkVoicemail()">
-                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">add</md-icon>
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">format_list_bulleted</md-icon>
                         New List
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
                         <md-button ng-click="ctrl.toggleNotifications()">
-                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">add</md-icon>
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">photo</md-icon>
+                        New Media
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ng-click="ctrl.toggleNotifications()">
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
                         New Button
                         </md-button>
                     </md-menu-item>
@@ -99,7 +105,7 @@
                                                 <input ng-model="listItem.item" required>
                                             </md-input-container>
                                             <md-input-container class="md-block lightweight-md-input" flex="100">
-                                                <md-icon class="md-icon-button" ng-disabled="elementEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-if="$index > 0" ng-click="content.data.push({item: ''})" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
+                                                <md-icon class="md-icon-button" ng-disabled="elementEdit.$invalid && content.data.length != 0 || content.data.length == 12" ng-click="content.data.push({item: ''})" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
                                                 <label>Add an item</label>
                                                 <input disabled>
                                             </md-input-container>
@@ -115,7 +121,7 @@
 
             <!-- columns -->
             <div flex flex-gt-sm="40" ng-show="tabs != title">
-                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
+                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                     <md-button ng-click="openMediaVault('infoPage')" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
                         <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                     </md-button>
