@@ -54,7 +54,7 @@
 						<p ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
 						<div class="mdl-grid full-width no-padding">
 						<!-- panel images -->
-						<div class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp" ng-if="content.type == 'image'" ng-attr-style="background: url('{{content.data || https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png}}') center/cover; position: relative;">
+						<div class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp" ng-if="content.type == 'image'" ng-attr-style="background: url('{{content.data || 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}') center/cover; position: relative;">
 							<div class="mdl-card__title mdl-card--expand"></div>
 						</div>
 						<!-- panel images -->
