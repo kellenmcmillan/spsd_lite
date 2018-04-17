@@ -3,10 +3,10 @@
 
 <div class="mdl-card mdl-shadow--2dp" style="margin-top: 48px; width: 100%">
 	<div class="mdl-card__title no-padding">
-		<iframe src="{{trusted_google_address_widget_map}}" width="auto" height="350" frameborder="0" style="border:0" class="full-width" allowfullscreen></iframe>
+		<iframe src="{{$parent.trusted_google_address_widget_map}}" width="auto" height="350" frameborder="0" style="border:0" class="full-width" allowfullscreen></iframe>
 	</div>
 	<div class="mdl-card__actions">
-		<a href="{{settings.address.google_address_link}}"><button class="directions-button mdl-button mdl-js-button mdl-js-ripple-effect" color="primary" hue="hn" property="txt" opaqueness lw-color>GET DIRECTIONS</button></a>
+		<a href="{{$parent.settings.address.google_address_link}}"><button class="directions-button mdl-button mdl-js-button mdl-js-ripple-effect" color="primary" hue="hn" property="txt" opaqueness lw-color>GET DIRECTIONS</button></a>
 	</div>
 	<!-- <div class="mdl-card__menu">
 		<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
