@@ -123,7 +123,7 @@
 
                                     <md-input-container ng-show="!items_sortable" class="md-block lightweight-md-input" ng-if="content.type == 'text'" flex>
                                         <label>Paragraph</label>
-                                        <textarea md-detect-hidden="true" ng-model="content.data" rows="3" md-maxlength="1250"></textarea>
+                                        <textarea ng-model="content.data" rows="3" md-maxlength="1250"></textarea>
                                     </md-input-container>
 
                                     <form name="elementEdit" ng-if="content.type == 'list'" ng-show="!items_sortable" flex>
