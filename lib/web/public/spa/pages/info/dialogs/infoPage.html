@@ -86,9 +86,11 @@
             <div flex flex-gt-sm="40" style="width: 100%">
                 <md-card class="md-card-base">
                     <md-card-content>
-                        <md-card-title-text ng-show="!items_sortable">
-                            <span class="md-headline">Page Title</span>
-                        </md-card-title-text>
+                        <md-card-title ng-show="!items_sortable">
+                            <md-card-title-text ng-show="!items_sortable">
+                                <span class="md-headline">Page Title</span>
+                            </md-card-title-text>
+                        </md-card-title>
                         <md-list-item ng-show="!items_sortable">
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Page Title</label>
@@ -107,7 +109,7 @@
                                 </md-card-title>
                                 <md-list-item>
                                     <md-icon ng-if="items_sortable" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
-                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" ng-if="items_sortable" ng-click="infoPage.data.page.contents[$index].splice(0, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" ng-if="items_sortable" ng-click="infoPage.data.page.contents.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                     <p ng-show="items_sortable && content.type == 'title'">Title</p>
                                     <p ng-show="items_sortable && content.type == 'text'">Paragraph</p>
                                     <p ng-show="items_sortable && content.type == 'list'">List</p>
@@ -139,7 +141,7 @@
                                         </div>
                                     </form>
 
-                                    <md-card ng-if="content.type == 'image'" class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
+                                    <md-card ng-if="content.type == 'image'" ng-show="!items_sortable" class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
                                         <md-button ng-click="mediavault_filepicker(content)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
                                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                                         </md-button>
