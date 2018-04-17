@@ -110,10 +110,10 @@
                                 <md-list-item>
                                     <md-icon ng-if="items_sortable" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" ng-if="items_sortable" ng-click="infoPage.data.page.contents.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
-                                    <p ng-show="items_sortable && content.type == 'title'">Title</p>
-                                    <p ng-show="items_sortable && content.type == 'text'">Paragraph</p>
-                                    <p ng-show="items_sortable && content.type == 'list'">List</p>
-                                    <p ng-show="items_sortable && content.type == 'image'">Image</p>
+                                    <p ng-show="items_sortable && content.type == 'title'">Title {{$index}}</p>
+                                    <p ng-show="items_sortable && content.type == 'text'">Paragraph {{$index}}</p>
+                                    <p ng-show="items_sortable && content.type == 'list'">List {{$index}}</p>
+                                    <p ng-show="items_sortable && content.type == 'image'">Image {{$index}}</p>
                                     <md-divider ng-if="!$last" ng-show="items_sortable"></md-divider>
 
                                     <md-input-container ng-show="!items_sortable" class="md-block lightweight-md-input" ng-if="content.type == 'title'" flex>
