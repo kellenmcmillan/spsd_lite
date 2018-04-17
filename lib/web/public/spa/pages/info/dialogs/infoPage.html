@@ -98,7 +98,7 @@
                             </md-input-container>
                         </md-list-item>
                         <div class="lightweight-list-control" ui-sortable="sortableList" ng-model="infoPage.data.page.contents">
-                            <div ng-repeat="content in infoPage.data.page.contents">
+                            <div ng-repeat="content in infoPage.data.page.contents track by $index">
                                 <md-card-title ng-show="!items_sortable">
                                     <md-card-title-text>
                                         <span class="md-headline" ng-show="content.type == 'title'">Title</span>
