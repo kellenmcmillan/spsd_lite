@@ -28,7 +28,7 @@
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
-                        <md-button ng-click="infoPage.data.page.contents.push({'data': 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png', 'type': 'image'})">
+                        <md-button ng-click="infoPage.data.page.contents.push({'source': 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png', 'type': 'image'})">
                             <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">photo</md-icon>
                         New Media
                         </md-button>
@@ -140,10 +140,10 @@
                                     </form>
 
                                     <md-card ng-if="content.type == 'image'" class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
-                                        <md-button ng-click="mediavault_filepicker(content.data)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
+                                        <md-button ng-click="mediavault_filepicker(content)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
                                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                                         </md-button>
-                                        <img ng-value="'{{content.data}}'" ng-src="{{content.data}}" class="md-card-image">
+                                        <img ng-value="'{{content.source}}'" ng-src="{{content.source}}" class="md-card-image">
                                     </md-card>
 
                                 </md-list-item>
