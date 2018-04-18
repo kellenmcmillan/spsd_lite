@@ -3,6 +3,9 @@
 
 
         <md-card-title style="position: relative;" layout="column" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center">
+
+
+            <!-- Action Buttons -->
             <md-button ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Switch between grid and list view" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="switchViewStaff()">
                 <md-icon ng-show="staffgridview == true" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
                 <md-icon ng-show="staffgridview == false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
@@ -13,6 +16,49 @@
             <md-button ng-show="setting == 'Manage Pages'" class="md-fab md-mini" aria-label="Add a page" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
+            <md-menu ng-show="setting == 'Edit Navigation'">
+                <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Edit navigation" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Navigation Item" md-font-library="material-icons">link</md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <md-button>
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
+                            New Title
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
+                            New Paragraph
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
+                            New List
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
+                            New Media
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
+                            New Button
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+            <md-button ng-show="setting == 'Edit Navigation'" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
+            </md-button>
+            <!-- Action Buttons -->
+
+
             <md-card-title-text>
                 <span class="md-headline">{{setting}}</span>
             </md-card-title-text>
@@ -138,14 +184,14 @@
                         <md-card-content>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
-                                    <label>Page Url</label>
+                                    <label>Page Name</label>
                                     <input disabled>
                                 </md-input-container>
                             </md-list-item>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
-                                    <label>Page Name</label>
-                                    <input>
+                                    <label>Page Url</label>
+                                    <input disabled>
                                 </md-input-container>
                             </md-list-item>
                         </md-card-content>
@@ -157,6 +203,58 @@
             <!-- columns -->
         </md-card-content>
         <!-- Manage Pages Screen -->
+
+
+        <!-- Manage Navigation -->
+        <md-card-content ng-show="setting == 'Edit Navigation'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex>
+            <!-- columns -->
+            <div flex flex-gt-sm="60">
+                <md-card class="md-card-base md-whiteframe-4dp">
+                    <md-card-content>
+                        <div ng-repeat="item in ['1', '2', '3']" flex="100">
+                            <div layout="row" layout-align="center center" flex="100">
+                                <md-list-item flex="50">
+                                    <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                        <label>Navigation Item</label>
+                                        <input>
+                                    </md-input-container>
+                                </md-list-item>
+                                <md-list-item flex="50">
+                                    <md-input-container class="md-block lightweight-md-dropdown">
+                                        <label>Url</label>
+                                        <md-select>
+                                            <md-option ng-value="'Company Info'">
+                                                /sample-link
+                                            </md-option>
+                                            <md-option ng-value="'Manage Pages'">
+                                                /sample-link
+                                            </md-option>
+                                            <md-option ng-value="'Add a Page'">
+                                                /sample-link
+                                            </md-option>
+                                            <md-option ng-value="'Edit Navigation'">
+                                                /sample-link
+                                            </md-option>
+                                            <md-option ng-value="'Manage Staff'">
+                                                /sample-link
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </md-list-item>
+                            </div>
+                        </div>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <div flex></div>
+                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+            <!-- columns -->
+        </md-card-content>
+        <!-- Manage Navigation -->
 
 
         <!-- Manage Staff Screen -->
