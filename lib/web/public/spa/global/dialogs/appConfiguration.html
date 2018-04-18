@@ -1,11 +1,16 @@
 <div class="dialog-curtain" ng-show="edit_configuration_dialog_visible == true">
     <md-card class="suite-dialog md-card-base">
+
+
         <md-card-title style="position: relative;" layout="column" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center">
             <md-button ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Switch between grid and list view" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="switchViewStaff()">
                 <md-icon ng-show="staffgridview == true" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
                 <md-icon ng-show="staffgridview == false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
             </md-button>
             <md-button ng-disabled="new_staff_member" ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
+            </md-button>
+            <md-button ng-show="setting == 'Manage Pages'" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
             <md-card-title-text>
@@ -34,6 +39,8 @@
                 </md-input-container>
             </md-list-item>
         </md-card-title>
+
+        <!-- Company Info Screen -->
         <md-card-content ng-show="setting == 'Company Info'" layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40">
@@ -113,6 +120,40 @@
             </div>
             <!-- columns -->
         </md-card-content>
+        <!-- Company Info Screen -->
+
+
+        <!-- Manage Pages Screen -->
+        <md-card-content ng-show="setting == 'Manage Pages'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex>
+            
+            <!-- columns -->
+                <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
+                    <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="item in ['1', '2', '3']" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative; min-height: 400px">
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline">Page Name</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-icon style="position: absolute; top: 16px; left: 16px; color: {{primary_hue_normal.value}};" aria-label="page locked" md-font-library="material-icons">lock_outline</md-icon>
+                        <md-card-content>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Page Name</label>
+                                    <input>
+                                </md-input-container>
+                            </md-list-item>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <md-button class="md-whiteframe-2dp" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Delete</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>
+            <!-- columns -->
+        </md-card-content>
+        <!-- Manage Pages Screen -->
+
+
+        <!-- Manage Staff Screen -->
         <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex>
             
             <!-- columns -->
@@ -233,6 +274,9 @@
                 </div>
             <!-- columns -->
         </md-card-content>
+        <!-- Manage Staff Screen -->
+
+
         <md-card-actions layout="row" layout-align="end center">
             <md-button disabled>Superpowered by Lightweight</md-button>
             <div flex></div>
