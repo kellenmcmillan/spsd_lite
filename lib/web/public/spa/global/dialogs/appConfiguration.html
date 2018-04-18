@@ -10,7 +10,7 @@
             <md-button ng-disabled="new_staff_member" ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
-            <md-button ng-show="setting == 'Manage Pages'" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
+            <md-button ng-show="setting == 'Manage Pages'" class="md-fab md-mini" aria-label="Add a page" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
             <md-card-title-text>
@@ -128,14 +128,20 @@
             
             <!-- columns -->
                 <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
-                    <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="item in ['1', '2', '3']" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative; min-height: 400px">
+                    <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="item in ['1', '2', '3']" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
                         <md-card-title>
                             <md-card-title-text>
                                 <span class="md-headline">Page Name</span>
                             </md-card-title-text>
                         </md-card-title>
-                        <md-icon style="position: absolute; top: 16px; left: 16px; color: {{primary_hue_normal.value}};" aria-label="page locked" md-font-library="material-icons">lock_outline</md-icon>
+                        <md-icon style="position: absolute; top: 16px; right: 16px; color: {{primary_hue_normal.value}};" aria-label="page locked" md-font-library="material-icons">lock_outline</md-icon>
                         <md-card-content>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Page Url</label>
+                                    <input disabled>
+                                </md-input-container>
+                            </md-list-item>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Page Name</label>
