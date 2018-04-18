@@ -213,15 +213,15 @@
                     <md-card-content>
                         <div ng-repeat="item in ['1', '2', '3']" flex="100">
                             <div layout="row" layout-align="center center" flex="100">
-                                <md-list-item flex="50">
+                                <md-list-item flex="50" style="max-height: 70px;">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
-                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                    <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
                                         <label>Navigation Item</label>
                                         <input>
                                     </md-input-container>
                                 </md-list-item>
-                                <md-list-item flex="50">
+                                <md-list-item flex="50" style="max-height: 70px;">
                                     <md-input-container class="md-block lightweight-md-dropdown">
                                         <label>Url</label>
                                         <md-select ng-model="links">
