@@ -87,7 +87,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>User Role</label>
-                                            <md-select ng-model="selectedUser.security.roles">
+                                            <md-select ng-model="selectedUser.security.roles" ng-disabled="!me.security.roles == 'management'">
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
