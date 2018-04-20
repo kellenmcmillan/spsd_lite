@@ -23,31 +23,26 @@
                 <md-menu-content width="4">
                     <md-menu-item>
                         <md-button>
-                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
                             New Title
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
                         <md-button>
-                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
                             New Paragraph
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
                         <md-button>
-                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
                             New List
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
                         <md-button>
-                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
                             New Media
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
                         <md-button>
-                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
                             New Button
                         </md-button>
                     </md-menu-item>
@@ -234,12 +229,6 @@
                                             <md-option ng-value="'Add a Page'">
                                                 /sample-link
                                             </md-option>
-                                            <md-option ng-value="'Edit Navigation'">
-                                                /sample-link
-                                            </md-option>
-                                            <md-option ng-value="'Manage Staff'">
-                                                /sample-link
-                                            </md-option>
                                         </md-select>
                                     </md-input-container>
                                 </md-list-item>
@@ -282,7 +271,7 @@
                         <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="staff_detail_view = true">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                         </md-button>
-                        <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="change photo" style="position: absolute; top: 64px; right: 16px; background-color: {{primary_hue_normal.value}}!important;"  ng-click="mediavault_filepicker(staff)">
+                        <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="change photo" style="position: absolute; top: 64px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="mediavault_filepicker(staff)">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
                         <img ng-if="staff.source" ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.source}}" class="md-card-image">
@@ -309,16 +298,16 @@
                                                 <input ng-model="staff.email">
                                             </md-input-container>
                                         </md-list-item>
-                                    </md-content>
-                                </md-tab>
-                                <md-tab label="Social">
-                                    <md-content class="md-padding">
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Phone</label>
                                                 <input ng-model="staff.phone">
                                             </md-input-container>
                                         </md-list-item>
+                                    </md-content>
+                                </md-tab>
+                                <md-tab label="Social">
+                                    <md-content class="md-padding">
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Facebook</label>
