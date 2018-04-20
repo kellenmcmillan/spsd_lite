@@ -6,10 +6,10 @@
         <md-card-title>
             <md-card-title-text>
                 <md-list-item class="md-2-line">
-                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="User Face Icon" md-font-library="material-icons">face</md-icon>
+                    <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer; margin-right: 8px;" aria-label="User Face Icon" md-font-library="material-icons">face</md-icon>
                     <div class="md-list-item-text md-offset">
-                        <h3 class="md-headline"> {{me.firstname || me.email}} {{me.lastname}}</h3>
-                        <p>  {{me.role}} </p>
+                        <h3 class="md-headline">{{me.firstname || me.email}} {{me.lastname}}</h3>
+                        <p>{{me.security.roles}}</p>
                     </div>
                 </md-list-item>
             </md-card-title-text>
@@ -17,7 +17,7 @@
         <md-card-content flex>
             <md-content class="md-padding" flex>
                 <div layout="column" layout-align="center center" layout-margin flex>
-                    <div class="full-width" layout="row" layout-align="center center" flex>
+                    <div layout-wrap class="full-width" layout="row" layout-align="center center" flex>
                         <md-card style="background: #fafafa;" flex flex-gt-sm="40">
                             <form name="myvault">
                                 <md-card-header>
@@ -108,12 +108,23 @@
                                 </md-card-actions>
                             </form>
                         </md-card>
-                        <div flex="100" flex-gt-sm="40">
+                        <div flex="100" flex-gt-sm="40" layout-align="row" layout-wrap>
                             <md-card style="background: #fafafa;" flex="100">
                                     <md-card-header>
                                         <md-card-header-text>
                                             <span class="md-title">Files</span>
                                             <span class="md-subhead">Manage Your Files</span>
+                                        </md-card-header-text>
+                                    </md-card-header>
+                                    <md-card-content>
+
+                                    </md-card-content>
+                            </md-card>
+                            <md-card style="background: #fafafa;" flex="100">
+                                    <md-card-header>
+                                        <md-card-header-text>
+                                            <span class="md-title">Notifications</span>
+                                            <span class="md-subhead">Manage Notifications</span>
                                         </md-card-header-text>
                                     </md-card-header>
                                     <md-card-content>
