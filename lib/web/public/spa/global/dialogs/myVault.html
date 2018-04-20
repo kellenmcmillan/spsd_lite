@@ -5,7 +5,13 @@
     <md-card class="suite-dialog md-card-base">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">My Vault | {{me.firstname || me.email}} {{me.lastname}}</span>
+                <md-list-item class="md-2-line">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="User Face Icon" md-font-library="material-icons">face</md-icon>
+                    <div class="md-list-item-text md-offset">
+                        <h3 class="md-headline"> {{me.firstname || me.email}} {{me.lastname}}</h3>
+                        <p>  {{me.role}} </p>
+                    </div>
+                </md-list-item>
             </md-card-title-text>
         </md-card-title>
         <md-card-content flex>
@@ -16,7 +22,7 @@
                             <form name="myvault">
                                 <md-card-header>
                                     <md-card-header-text>
-                                        <span class="md-title">Identity</span>
+                                        <span class="md-title">Personal Info</span>
                                         <span class="md-subhead">Adjust Basic User Settings</span>
                                     </md-card-header-text>
                                 </md-card-header>
@@ -102,6 +108,19 @@
                                 </md-card-actions>
                             </form>
                         </md-card>
+                        <div>
+                            <md-card style="background: #fafafa;" flex flex-gt-sm="40">
+                                    <md-card-header>
+                                        <md-card-header-text>
+                                            <span class="md-title">Files</span>
+                                            <span class="md-subhead">Manage Your Files</span>
+                                        </md-card-header-text>
+                                    </md-card-header>
+                                    <md-card-content>
+
+                                    </md-card-content>
+                            </md-card>
+                        </div>
                     </div>
                 </div>
             </md-content>

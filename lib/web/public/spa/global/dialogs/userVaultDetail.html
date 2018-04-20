@@ -14,12 +14,6 @@
                     <div class="full-width" layout="row" layout-align="center center" flex>
                         <md-card style="background: #fafafa;" flex flex-gt-sm="40">
                             <form name="userVaultDetail">
-                                <md-card-header>
-                                    <md-card-header-text>
-                                        <span class="md-title">Identity</span>
-                                        <span class="md-subhead">Adjust Basic User Settings</span>
-                                    </md-card-header-text>
-                                </md-card-header>
                                 <md-card-content>
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input">
@@ -87,7 +81,7 @@
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-dropdown">
                                             <label>User Role</label>
-                                            <md-select ng-model="selectedUser.security.roles" ng-disabled="!me.security.roles == 'management'">
+                                            <md-select ng-model="selectedUser.security.roles" ng-if="me.security.roles == 'management' && !me.id == selectedUser.id">
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
