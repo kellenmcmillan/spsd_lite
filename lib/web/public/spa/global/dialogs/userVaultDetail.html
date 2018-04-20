@@ -79,9 +79,9 @@
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
-                                        <md-input-container class="md-block lightweight-md-dropdown">
+                                        <md-input-container class="md-block lightweight-md-dropdown" ng-if="me.security.roles == 'management' && me.id != selectedUser.id">
                                             <label>User Role</label>
-                                            <md-select ng-model="selectedUser.security.roles" ng-if="me.security.roles == 'management' && !me.id == selectedUser.id">
+                                            <md-select ng-model="selectedUser.security.roles">
                                                 <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                     {{role.role}}
                                                 </md-option>
