@@ -3,7 +3,13 @@
 </style>
 <div class="dialog-curtain userVault" ng-show="my_vault_detail_visible == true" ng-controller="usersController">
     <md-card class="suite-dialog md-card-base">
-        <md-card-title>
+        <md-card-title style="position: relative;">
+            <md-button class="md-fab md-mini" aria-label="upload media" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">cloud_upload</md-icon>
+            </md-button>   
+            <md-button class="md-fab md-mini" aria-label="share media" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">share</md-icon>
+            </md-button>
             <md-card-title-text>
                 <md-list-item class="md-2-line">
                     <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer; margin-right: 8px; font-size: 36px;" aria-label="User Face Icon" md-font-library="material-icons">face</md-icon>
@@ -123,10 +129,66 @@
                                                     <md-content class="md-padding">
                                                         <div layout="column" layout-align="center stretch" layout-margin flex>
                                                             <md-list-item class="md-2-line" flex>
-                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 24px;" class="md-avatar-icon" md-font-icon="far fa-file-word" aria-label="docx"></md-icon>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-word" aria-label="docx"></md-icon>
                                                                 <div class="md-list-item-text">
-                                                                    <h3 style="font-size: 18px;">MyDocument</h3>
+                                                                    <h3 style="font-size: 18px;">MyDocument.docx</h3>
                                                                     <p>53kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-excel" aria-label="excel"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MySpreadsheet.xls</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-powerpoint" aria-label="powerpoint"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyPowerpoint.ppt</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-pdf" aria-label="pdf"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyPresentation.pdf</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-image" aria-label="image"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyImage.png</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="fas fa-code" aria-label="iframe"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">Embedded Map</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-video" aria-label="video"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">Video.mp4</h3>
+                                                                    <p>55mb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-archive" aria-label="zip"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyGallery.zip</h3>
+                                                                    <p>55mb</p>
                                                                 </div>
                                                             </md-list-item>
                                                         </div>
@@ -134,16 +196,124 @@
                                                 </md-tab>
                                                 <md-tab label="Uploaded">
                                                     <md-content class="md-padding">
-                                                        <h1 class="md-display-2">Tab Two</h1>
-                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>
-                                                        <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>
-                                                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                                                        <div layout="column" layout-align="center stretch" layout-margin flex>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-word" aria-label="docx"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyDocument.docx</h3>
+                                                                    <p>53kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-excel" aria-label="excel"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyDocument.xls</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-pdf" aria-label="pdf"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyDocument.pdf</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-image" aria-label="image"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyDocument.png</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="fas fa-code" aria-label="iframe"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">Embedded Map</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-video" aria-label="video"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyDocument.mp4</h3>
+                                                                    <p>55mb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-archive" aria-label="zip"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyGallery.zip</h3>
+                                                                    <p>55mb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                        </div>
                                                     </md-content>
                                                 </md-tab>
                                                 <md-tab label="Shared">
                                                     <md-content class="md-padding">
-                                                        <h1 class="md-display-2">Tab Three</h1>
-                                                        <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>
+                                                        <div layout="column" layout-align="center stretch" layout-margin flex>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-word" aria-label="docx"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyDocument.docx</h3>
+                                                                    <p>53kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-excel" aria-label="excel"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyDocument.xls</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-pdf" aria-label="pdf"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyDocument.pdf</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-image" aria-label="image"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyDocument.png</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="fas fa-code" aria-label="iframe"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">Embedded Map</h3>
+                                                                    <p>153kb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-video" aria-label="video"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyDocument.mp4</h3>
+                                                                    <p>55mb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                            <md-divider ></md-divider>
+                                                            <md-list-item class="md-2-line" flex>
+                                                                <md-icon style="color: {{primary_hue_normal.value}}; font-size: 36px;" class="md-avatar-icon fa" md-font-icon="far fa-file-archive" aria-label="zip"></md-icon>
+                                                                <div class="md-list-item-text">
+                                                                    <h3 style="font-size: 18px;">MyGallery.zip</h3>
+                                                                    <p>55mb</p>
+                                                                </div>
+                                                            </md-list-item>
+                                                        </div>
                                                     </md-content>
                                                 </md-tab>
                                             </md-tabs>
