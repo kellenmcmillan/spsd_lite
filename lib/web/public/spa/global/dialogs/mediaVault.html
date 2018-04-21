@@ -46,9 +46,15 @@
                                         </div>
                                     </div>
                                     <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex>
-                                        <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize" flex flex-gt-sm="30">
+                                        <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize" flex flex-gt-sm="30" style="position: relative;">
+                                            <md-button ng-show="!gallery_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="gallery_detail_view = true">
+                                                <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
+                                            </md-button>
+                                            <md-button ng-show="gallery_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="gallery_detail_view = false">
+                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
+                                            </md-button>
                                             <img ng-show="!gallery_detail_view" ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false" ng-click="gallery_detail_view = true">
-                                            <md-card-content ng-show="gallery_detail_view" ng-dblclick="gallery_detail_view = false">
+                                            <md-card-content ng-show="gallery_detail_view">
                                                 <md-tabs md-dynamic-height md-border-bottom>
                                                     <md-tab label="Details">
                                                         <md-content class="md-padding">
