@@ -60,7 +60,7 @@
                                                         <md-content class="md-padding">
                                                             <md-list-item>
                                                                 <md-input-container class="md-block lightweight-md-input" flex>
-                                                                    <label>Name</label>
+                                                                    <label>Display Name</label>
                                                                     <input ng-model="image.metadata.name">
                                                                 </md-input-container>
                                                             </md-list-item>
@@ -280,7 +280,7 @@
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
                                                         <label>Filename</label>
-                                                        <input ng-model="file.name">
+                                                        <input disabled ng-model="file.name">
                                                     </md-input-container>
                                                 </md-list-item>
                                                 <md-list-item flex>
@@ -318,12 +318,17 @@
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
                                                         <label>Filename</label>
-                                                        <input ng-model="f.filename">
+                                                        <input disabled ng-model="f.filename">
                                                     </md-input-container>
                                                 </md-list-item>
                                                 <md-list-item layout="row" layout-align="start center">
-                                                    <md-button>Slideshow</md-button>
-                                                    <md-button>Landscape Management</md-button>
+                                                    <div flex layout-align="end center" ng-show="f.tags">
+                                                        <md-chips ng-model="f.tags" md-removable="false">
+                                                            <md-chip-template>
+                                                                {{ $chip.tag }}
+                                                            </md-chip-template>
+                                                        </md-chips>
+                                                    </div>
                                                 </md-list-item>
                                             </md-card-content>
                                         </md-card>
