@@ -201,6 +201,27 @@ md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-di
 }
 /* md-cards */
 
+/* Navigation Container */
+    .navigation .container md-tab-item, 
+    .navigation .container md-tabs.md-default-theme .md-tab .md-ripple-container, 
+    .navigation .container md-tabs .md-tab .md-ripple-container {
+        color: {{primary_hue_normal.value}};
+    }
+    .navigation .container md-tabs md-content {background-color: transparent!important;}
+    .navigation .container md-tabs .md-tab.md-active {color: {{base_hue_lightest.value}};}
+    .navigation .container md-tabs.md-default-theme .md-tab, .navigation .container md-tabs .md-tab {color: {{base_hue_lightest.value}};
+    }
+    .navigation .container md-tabs.md-default-theme md-ink-bar, 
+    .navigation .container md-tabs md-ink-bar {
+        color: {{primary_hue_normal.value}}; background-color: {{primary_hue_normal.value}};
+    }
+    .navigation .navigation.item a {text-decoration: none!important;}
+    .navigation .navigation.item a p {color: {{base_hue_lightest.value}}!important;}
+    /*.navigation .navigation.item a p:hover {color: {{primary_hue_normal.value}}!important; opacity: 1;}*/
+    .navigation .navigation.item {height: 48px;}
+    .navigation.social {background-color: {{base_hue_darkest.value}};}
+    /* Navigation Container */
+
 /* Buttons */
 .raised-button {box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)!important;}
 /* Buttons */

@@ -60,14 +60,14 @@
         <!-- Header Navigation -->
         <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
-            ng-repeat="navigation in settings.navigation.data"
+            ng-repeat="item in settings.navigation.data"
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
-            href="{{navigation.parent.url}}" 
-            hash="{{navigation.parent.url}}"
+            href="{{item.navigation.parent.url}}" 
+            hash="{{item.navigation.parent.url}}"
             du-scrollspy
             du-smooth-scroll>
-                {{navigation.parent.name}}
+                {{item.navigation.parent.name}}
             </a>
         </nav>
         <!-- Header Navigation -->
@@ -85,6 +85,7 @@
 </header>
 
 <!-- Menu Panel -->
+<md-content class="page" style="height: {{window_height}}px">
 <div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
     <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
         <div flex="50" layout="row" layout-align="start center" layout-margin>
@@ -199,4 +200,5 @@
         </div>
     </div>
 </div>
+</md-content>
 <!-- Menu Panel -->
