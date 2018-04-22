@@ -329,9 +329,9 @@
                                                 </md-list-item>
                                                 <md-list-item layout="row" layout-align="start center">
                                                     <div flex layout-align="end center" ng-show="f.tags">
-                                                        <md-chips ng-model="f.tags" md-removable="false">
+                                                        <md-chips ng-model="f.metadata.tags" md-removable="false">
                                                             <md-chip-template>
-                                                                {{ $chip.tags }}
+                                                                {{ $chip.tag }}
                                                             </md-chip-template>
                                                         </md-chips>
                                                     </div>
