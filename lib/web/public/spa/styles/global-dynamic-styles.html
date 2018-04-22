@@ -220,6 +220,38 @@ md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-di
     /*.navigation .navigation.item a p:hover {color: {{primary_hue_normal.value}}!important; opacity: 1;}*/
     .navigation .navigation.item {height: 48px;}
     .navigation.social {background-color: {{base_hue_darkest.value}};}
+    .navigation.panel {
+        width: 33%; height: 100%; max-height: 100%; 
+        overflow-y: auto; position: fixed; top: 0; z-index: 4;
+    }
+    .navigation.social {
+        position: fixed; height: 48px; bottom: 0; width: 33%;
+    } 
+
+    .navigation.panel.open, .navigation.panel.open .navigation.social {
+        /*animation-name: navigation_open;*/
+        animation-duration: .2s;
+        animation-timing-function: ease-in-out;
+        right: 0;
+    }
+
+    .navigation.panel.close, .navigation.panel.close .navigation.social {
+        /*animation-name: navigation_close;*/
+        animation-duration: .2s;
+        animation-timing-function: ease-in;
+        right: -33%;
+    }
+
+    .navigation.icons {width: 36px; height: 36px;}
+
+    @keyframes navigation_open {
+        from {right: -33%;}
+        to {right: 0;}
+    }
+    @keyframes navigation_close {
+        from {right: 0;}
+        to {right: -33%;}
+    }
     /* Navigation Container */
 
 /* Buttons */
