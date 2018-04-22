@@ -100,7 +100,7 @@
                                                                 </div>
                                                             </md-list-itme>
                                                             <md-list-item>
-                                                                <p>Cover</p>
+                                                                <p>Cover of gallery</p>
                                                                 <md-switch class="md-secondary" ng-model="image.metadata.cover"></md-switch>
                                                             </md-list-item>
                                                         </md-content>
@@ -112,7 +112,7 @@
                                                     <md-radio-button ng-show="elementToUpdate" value="{{image.avatar ? image.avatar : image.source}}">Select Media</md-radio-button>
                                                 </span>
                                                 <span flex></span>
-                                                <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="deleteMedia(image)" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
+                                                <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="deleteMedia(image, $index)" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
                                                 <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="updateMedia(image)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                             </md-card-actions>
                                         </md-card>
@@ -331,7 +331,7 @@
                                                     <div flex layout-align="end center" ng-show="f.tags">
                                                         <md-chips ng-model="f.tags" md-removable="false">
                                                             <md-chip-template>
-                                                                {{ $chip.tag }}
+                                                                {{ $chip.tags }}
                                                             </md-chip-template>
                                                         </md-chips>
                                                     </div>
