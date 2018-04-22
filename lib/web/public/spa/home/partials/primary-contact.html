@@ -28,13 +28,13 @@
                             <div class="mdl-cell mdl-cell--8-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" style="position: relative; display: inline-block; line-height: 1;">
                                 <i style="float: left;" class="material-icons" role="presentation" color="p" hue="hn" property="txt" opaqueness lw-color>room</i>
                                 <p style="float: left; margin-left: 8px;">
-                                {{settings.address.street}}, {{settings.address.city}}, {{settings.address.state}} {{settings.address.zipcode}}
+                                {{settings.data.address.street}}, {{settings.data.address.city}}, {{settings.data.address.state}} {{settings.data.address.zipcode}}
                                 </p>
                             </div>
                             <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" style="position: relative; display: inline-block; line-height: 1;">
                                 <i style="float: left;" class="material-icons" role="presentation" color="p" hue="hn" property="txt" opaqueness lw-color>phone</i>
                                 <p style="float: left; margin-left: 8px;">
-                                {{settings.phone_1}}
+                                {{settings.data.phone_1}}
                                 </p>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
     <div class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid contact--2" style="position: relative; height: inherit; padding:16px; margin: 16px; z-index: 2;">
         <div style="width: 100%;">
             <div class="contact-center--2" style="position: relative; height: inherit; padding: 24px 16px;" primary-contact-two-center>
-                <h1 class="h1 mdl-typography--font-bold">Contact {{settings.company_name}}</h1>
+                <h1 class="h1 mdl-typography--font-bold">Contact {{settings.data.company_name}}</h1>
                 <p class="base-hdr--text form-instructions">*Complete The Form Below. Our team will respond to your request as soon as possible.</p>
                 <form autocomplete="off" class="forms full-width" name="index_page_contact">
                     <ul class="no-padding">
