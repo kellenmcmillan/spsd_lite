@@ -55,8 +55,8 @@
                                             </md-button>
                                             <img ng-show="!gallery_detail_view" ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false">
                                             <md-card-content ng-show="gallery_detail_view">
-                                                <md-tabs md-dynamic-height md-border-bottom layout-padding>
-                                                    <md-tab label="Details">
+                                                <md-tabs md-dynamic-height md-border-bottom>
+                                                    <md-tab label="Details" layout-padding>
                                                         <md-content>
                                                             <md-list-item>
                                                                 <md-input-container class="md-block lightweight-md-input" flex>
@@ -78,7 +78,7 @@
                                                             </md-list-item>                                                      
                                                         </md-content>
                                                     </md-tab>
-                                                    <md-tab label="Settings">
+                                                    <md-tab label="Settings" layout-padding>
                                                         <md-content>
                                                             <md-list-item>
                                                                 <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex>
