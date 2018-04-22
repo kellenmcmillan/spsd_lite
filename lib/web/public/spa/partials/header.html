@@ -85,7 +85,7 @@
 </header>
 
 <!-- Menu Panel -->
-<md-content class="page" style="height: {{window_height}}px">
+<md-content class="page">
 <div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
     <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
         <div flex="50" layout="row" layout-align="start center" layout-margin>
@@ -181,21 +181,10 @@
         </div>
     </div>
     <div class="navigation social md-whiteframe-8dp" layout="row" layout-align="start center" flex="100">
-        <div layout="row" layout-align="center center" flex="50" style="margin-left: 24px;">
-            <div flex="33" layout-align="center center">
-            
-            <img class="navigation icons" src="media/facebook.png">
-            
-            </div>
-            <div flex="33" layout-align="center center">
-            
-            <img class="navigation icons" src="media/twitter.png">
-            
-            </div>
-            <div flex="33" layout-align="center center">
-            
-            <img class="navigation icons" src="media/linkedin.png">
-            
+        <div layout="row" layout-align="start center" flex="50" style="margin-left: 24px;">
+            <md-icon style="color: {{primary_hue_normal.value}}; font-size: 24px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="fab fa-facebook" aria-label="docx"></md-icon>
+            <md-icon style="color: {{primary_hue_normal.value}}; font-size: 24px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="fab fa-twitter-square" aria-label="docx"></md-icon>
+            <md-icon style="color: {{primary_hue_normal.value}}; font-size: 24px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="fab fa-linkedin" aria-label="docx"></md-icon>
             </div>
         </div>
     </div>
