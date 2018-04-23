@@ -111,7 +111,7 @@
             <md-divider ng-if="!$last"></md-divider>
         </md-list>
         <br><br>
-        <div class="container" ng-if="menu_title != 'Galleries'" flex="100" layout-margin style="padding-bottom: 48px;" class="navigation widget">
+        <div class="container navigation widget" ng-if="menu_title != 'Galleries'" flex="100" layout-margin style="padding-bottom: 48px;">
             <md-tabs md-dynamic-height md-border-bottom>
                 <md-tab label="Contact Info">
                     <md-content class="md-padding">
@@ -173,14 +173,15 @@
                 </md-tab>
             </md-tabs>
         </div>
-        <div class="container" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap style="padding-bottom: 48px;" class="navigation widget" ng-if="menu_title == 'Galleries'">
+        <div class="container navigation widget galleries" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap style="padding-bottom: 48px;" ng-if="menu_title == 'Galleries'">
             <div flex="100">
                 <p style="color: {{base_hue_lightest.value}}">Featured Galleries</p>
             </div>
-            <div flex="100" style="margin-right: 24px;">
+            <div flex="100">
                 <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="8px" md-gutter-gt-sm="4px" >
-                    <md-grid-tile ng-repeat="tile in featured_galleries" md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1" ng-class="tile.background" style="overflow: hidden;">
-                    <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
+                    <md-grid-tile ng-repeat="tile in featured_galleries" md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1" ng-class="{{'active': hovered || activated}}" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+                    <md-icon style="color: {{base_hue_lightest.value}}">camera</md-icon>
+                    <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%; z-index: 2">
                     <md-grid-tile-footer><h3 md-truncate>{{tile.name}}</h3></md-grid-tile-footer>
                     </md-grid-tile>
                 </md-grid-list>
