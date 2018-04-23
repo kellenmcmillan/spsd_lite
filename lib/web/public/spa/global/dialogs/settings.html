@@ -271,6 +271,9 @@
                         <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="staff_detail_view = true">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                         </md-button>
+                        <md-button ng-show="staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="staff_detail_view = false">
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
+                        </md-button>
                         <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="change photo" style="position: absolute; top: 64px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="mediavault_filepicker(staff)">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
@@ -357,7 +360,6 @@
                             </md-tabs>
                         </md-card-content>
                         <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
-                            <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="staff_detail_view = false">View Image</md-button>
                             <md-button ng-if="staff.id == undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
                             <md-button class="md-whiteframe-2dp" ng-if="staff.id == undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="addStaffMember(staff)">Save</md-button>
                             <md-button ng-if="staff.id != undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>

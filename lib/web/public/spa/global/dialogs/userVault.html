@@ -48,7 +48,7 @@
                 <div layout="column" layout-align="center stretch" layout-margin flex>
                     <md-list class="md-dense" flex>
                         <md-list-item class="md-2-line" ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" ng-click="selectUser(user)" flex>
-                            <md-icon class="md-avatar-icon" aria-label="View details">face</md-icon>
+                            <md-icon class="md-avatar-icon" aria-label="View details" style="color: {{base_hue_darkest.value}};">face</md-icon>
                             <div class="md-list-item-text">
                                 <h3 style="font-size: 24px;">{{user.firstname}} {{user.lastname}} </h3>
                                 <p> {{ user.email }} </p>
