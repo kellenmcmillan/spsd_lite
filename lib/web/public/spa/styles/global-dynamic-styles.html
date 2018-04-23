@@ -215,8 +215,9 @@ md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-di
     .navigation .container md-tabs md-ink-bar {
         color: {{primary_hue_normal.value}}; background-color: {{primary_hue_normal.value}};
     }
-    .navigation a .navigation.item p {text-decoration: none!important;}
+    .navigation a .navigation.item {text-decoration: none!important;}
     .navigation a .navigation.item p {color: {{base_hue_lightest.value}}!important;}
+    a.navigation.link {color: transparent;}
     /*.navigation .navigation.item a p:hover {color: {{primary_hue_normal.value}}!important; opacity: 1;}*/
     .navigation .navigation.item {height: 48px;}
     .navigation.social {background-color: {{base_hue_darkest.value}};}
@@ -242,7 +243,7 @@ md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-di
         right: -33%;
     }
 
-    .navigation.icons {width: 36px; height: 36px; display: block; float: left; margin-right: 8px;}
+    .navigation.icons {width: 36px; height: 36px; display: block; float: left; margin-right: 18px;}
 
     @keyframes navigation_open {
         from {right: -33%;}
