@@ -63,7 +63,7 @@
             ng-repeat="item in settings.navigation.data"
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
-            ng-click="navigation_panel = true; open_menu(item, $index)"
+            ng-click="navigation_panel = true; open_menu(item)"
             hash="{{item.navigation.parent.url}}"
             du-scrollspy
             du-smooth-scroll>
@@ -99,13 +99,15 @@
         </div>
         <div flex="100" layout="row" layout-align="start center" layout-margin>
             <h2 style="color: {{base_hue_lightest.value}};" layout-padding>
-                {{item.navigation.parent.name}}
+                {{menu_title}}
             </h2>
         </div>
         <md-list flex="100">
-            <md-list-item ng-repeat="child in child_items" ng-click="null" class="navigation item" flex="100" layout-padding>
-                <a href="{{child.url}}"><p>{{child.name}}</p></a>
-            </md-list-item>
+            <a href="{{child.url}}" ng-repeat="child in child_items">
+                <md-list-item ng-click="null" class="navigation item" flex="100" layout-padding>
+                    <p>{{child.name}}</p>
+                </md-list-item>
+            </a>
             <md-divider ng-if="!$last"></md-divider>
         </md-list>
         <br><br>
@@ -173,13 +175,11 @@
         </div>
     </div>
     <div class="navigation social md-whiteframe-8dp" layout="row" layout-align="start center" flex="100">
-        <div layout="row" layout-align="center center" flex="50" style="margin-left: 24px;">
+        <div layout="row" layout-align="start center" flex="100" style="margin-left: 24px;">
             <div flex="100" flex-gt-sm="50" layout-align="start center">
-            
             <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/003-facebook.png">
             <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/002-twitter.png">
             <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/001-linkedin.png">
-            
             </div>
         </div>
     </div>
