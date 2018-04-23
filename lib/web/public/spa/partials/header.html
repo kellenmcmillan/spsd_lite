@@ -63,7 +63,7 @@
             ng-repeat="item in settings.navigation.data"
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
-            href="{{item.navigation.parent.url}}" 
+            ng-click="navigation_panel = true; open_menu(item.navigation.parent.name, $index)"
             hash="{{item.navigation.parent.url}}"
             du-scrollspy
             du-smooth-scroll>
@@ -103,18 +103,10 @@
             </h2>
         </div>
         <md-list flex="100">
-            <md-list-item ng-click="null" class="navigation item" flex="100" layout-padding>
-                <a href="/"><p>Navigation Item #1</p></a>
+            <md-list-item ng-repeat="child in settings.navigation.data[parent_index].child.data" ng-click="null" class="navigation item" flex="100" layout-padding>
+                <a href="{{child.url}}"><p>{{child.name}}</p></a>
             </md-list-item>
-            <md-divider></md-divider>
-            <md-list-item ng-click="null" class="navigation item" flex="100" layout-padding>
-                <a href="/"><p>Navigation Item #2</p></a>
-            </md-list-item>
-            <md-divider></md-divider>
-            <md-list-item ng-click="null" class="navigation item" flex="100" layout-padding>
-                <a href="/"><p>Navigation Item #3</p></a>
-            </md-list-item>
-            <md-divider></md-divider>
+            <md-divider ng-if="!$last"></md-divider>
         </md-list>
         <br><br>
         <div class="container" flex="100" layout-margin style="padding-bottom: 48px;" class="navigation widget">
@@ -181,10 +173,21 @@
         </div>
     </div>
     <div class="navigation social md-whiteframe-8dp" layout="row" layout-align="start center" flex="100">
-        <div layout="row" layout-align="start center" flex="50" style="margin-left: 24px;">
-            <md-icon style="color: {{primary_hue_normal.value}}; font-size: 24px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="fab fa-facebook" aria-label="docx"></md-icon>
-            <md-icon style="color: {{primary_hue_normal.value}}; font-size: 24px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="fab fa-twitter-square" aria-label="docx"></md-icon>
-            <md-icon style="color: {{primary_hue_normal.value}}; font-size: 24px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="fab fa-linkedin" aria-label="docx"></md-icon>
+        <div layout="row" layout-align="center center" flex="50" style="margin-left: 24px;">
+            <div flex="33" layout-align="center center">
+            
+            <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/003-facebook.png">
+            
+            </div>
+            <div flex="33" layout-align="center center">
+            
+            <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/002-twitter.png">
+            
+            </div>
+            <div flex="33" layout-align="center center">
+            
+            <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/001-linkedin.png">
+            
             </div>
         </div>
     </div>
