@@ -66,7 +66,7 @@
                 Home
             </a>
             <a 
-            ng-repeat="item in settings.navigation.data"
+            ng-repeat="item in settings.navigation.data track by $index"
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold; cursor: pointer;"
             ng-click="navigation_panel = true; open_menu(item)">
