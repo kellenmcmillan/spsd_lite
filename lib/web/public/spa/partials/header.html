@@ -87,7 +87,7 @@
 <!-- Menu Panel -->
 <md-content class="navigation menu">
 <div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
-    <img src="https://storage.googleapis.com/spsd-189118.appspot.com/navigation-background.jpg" style="position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%; opacity: .1; z-index: 1;">
+    <!-- <img src="https://storage.googleapis.com/spsd-189118.appspot.com/navigation-background.jpg" style="position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%; opacity: .1; z-index: 1;"> -->
     <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
         <div flex="50" layout="row" layout-align="start center" layout-margin>
             <md-button ng-click="null" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}};">
@@ -179,8 +179,8 @@
             <div flex="100">
                 <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="8px" md-gutter-gt-sm="4px" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
                     <md-grid-tile ng-repeat="tile in all_galleries | limitTo: 9" md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1" ng-class="tile.background" style="overflow: hidden;">
-                    <a href="">
-                        <img ng-src="{{tile.url}}" style="width: auto; max-width:300%; min-height: 100%;">
+                    <a href="{{tile.url}}">
+                        <img ng-src="{{tile.cover}}" style="width: auto; max-width:300%; min-height: 100%;">
                         <md-grid-tile-footer ng-class="{'active': hovered}"><h3 md-truncate>{{tile.name}}</h3></md-grid-tile-footer>
                     </a>
                     </md-grid-tile>
