@@ -97,6 +97,9 @@
         <div flex="50">
         <md-icon ng-click="close_menu()" style="color: {{base_hue_lightest.value}}; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
         </div>
+        <div flex="100" layout="row" layout-align="center center" layout-margin>
+            <img ng-src="">
+        </div>
         <div flex="100" layout="row" layout-align="start center" layout-margin>
             <h2 style="color: {{base_hue_lightest.value}};" layout-padding>
                 {{menu_title}}
@@ -179,7 +182,7 @@
             </div>
             <div flex="100">
                 <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="8px" md-gutter-gt-sm="4px" >
-                    <md-grid-tile ng-repeat="tile in featured_galleries" md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1" ng-class="{{'active': hovered, 'active': $index == activated}}" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+                    <md-grid-tile ng-repeat="tile in featured_galleries" md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1" ng-class="{'active': hovered, 'active': $index == activated}" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
                     <md-icon style="color: {{base_hue_lightest.value}}">camera</md-icon>
                     <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%; z-index: 2">
                     <md-grid-tile-footer><h3 md-truncate>{{tile.name}}</h3></md-grid-tile-footer>
