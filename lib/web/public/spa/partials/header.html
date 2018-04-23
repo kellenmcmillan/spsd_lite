@@ -63,7 +63,7 @@
             ng-repeat="item in settings.navigation.data"
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold"
-            ng-click="navigation_panel = true; open_menu(item.navigation.parent.name, $index)"
+            ng-click="navigation_panel = true; open_menu(item, $index)"
             hash="{{item.navigation.parent.url}}"
             du-scrollspy
             du-smooth-scroll>
@@ -95,15 +95,15 @@
             </md-button>
         </div>
         <div flex="50">
-        <md-icon ng-click="navigation_panel = false" style="color: {{base_hue_lightest.value}}; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
+        <md-icon ng-click="close_menu()" style="color: {{base_hue_lightest.value}}; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
         </div>
         <div flex="100" layout="row" layout-align="start center" layout-margin>
             <h2 style="color: {{base_hue_lightest.value}};" layout-padding>
-                {{menu_title}}
+                {{item.navigation.parent.name}}
             </h2>
         </div>
         <md-list flex="100">
-            <md-list-item ng-repeat="child in settings.navigation.data[parent_index].child.data" ng-click="null" class="navigation item" flex="100" layout-padding>
+            <md-list-item ng-repeat="child in child_items" ng-click="null" class="navigation item" flex="100" layout-padding>
                 <a href="{{child.url}}"><p>{{child.name}}</p></a>
             </md-list-item>
             <md-divider ng-if="!$last"></md-divider>
@@ -174,18 +174,10 @@
     </div>
     <div class="navigation social md-whiteframe-8dp" layout="row" layout-align="start center" flex="100">
         <div layout="row" layout-align="center center" flex="50" style="margin-left: 24px;">
-            <div flex="33" layout-align="center center">
+            <div flex="100" flex-gt-sm="50" layout-align="start center">
             
             <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/003-facebook.png">
-            
-            </div>
-            <div flex="33" layout-align="center center">
-            
             <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/002-twitter.png">
-            
-            </div>
-            <div flex="33" layout-align="center center">
-            
             <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/001-linkedin.png">
             
             </div>
