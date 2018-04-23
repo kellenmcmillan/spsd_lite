@@ -173,8 +173,11 @@
                 </md-tab>
             </md-tabs>
         </div>
-        <div class="container" flex="100" layout="row" layout-align="center center" layout-margin layout-wrap style="padding-bottom: 48px;" class="navigation widget" ng-show="menu_title == 'Galleries'">
-            <div ng-repeat="card in featured_galleries" flex="50" flex-gt-sm="33">
+        <div class="container" flex="100" layout="row" layout-align="center center" layout-wrap style="padding-bottom: 48px;" class="navigation widget" ng-show="menu_title == 'Galleries'">
+            <div flex>
+                <h2 style="color: {{base_hue_lightest.value}}">Featured Galleries</h2>
+            </div>
+            <div ng-repeat="card in featured_galleries" flex="100" flex-gt-sm="50">
             <md-card>
                 <img ng-src="{{card.source}}" class="md-card-image" alt="Washed Out">
             </md-card>
