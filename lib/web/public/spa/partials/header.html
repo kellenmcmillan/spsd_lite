@@ -177,9 +177,9 @@
         </div>
         <div class="container" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap style="padding-bottom: 48px;" class="navigation widget" ng-if="menu_title == 'Galleries'">
             <div flex="100">
-                <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="8px" md-gutter-gt-sm="4px" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
-                    <md-grid-tile ng-repeat="tile in all_galleries | limitTo: 9" md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1" ng-class="tile.background" style="overflow: hidden;">
-                    <a href="{{tile.url}}">
+                <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="8px" md-gutter-gt-sm="4px">
+                    <md-grid-tile ng-repeat="tile in all_galleries | limitTo: 9" md-rowspan="2" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1" ng-class="tile.background" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+                    <a href="/gallery/{{tile.url}}">
                         <img ng-src="{{tile.cover}}" style="width: auto; max-width:300%; min-height: 100%;">
                         <md-grid-tile-footer ng-class="{'active': hovered}"><h3 md-truncate>{{tile.name}}</h3></md-grid-tile-footer>
                     </a>
