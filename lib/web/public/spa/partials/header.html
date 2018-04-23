@@ -112,7 +112,7 @@
         </md-list>
         <br><br>
         <div class="container" flex="100" layout-margin style="padding-bottom: 48px;" class="navigation widget">
-            <md-tabs md-dynamic-height md-border-bottom>
+            <md-tabs md-dynamic-height md-border-bottom ng-hide="menu_title == 'Galleries'">
                 <md-tab label="Contact Info">
                     <md-content class="md-padding">
                         <md-list-item class="md-2-line">
@@ -172,6 +172,13 @@
                     </md-content>
                 </md-tab>
             </md-tabs>
+        </div>
+        <div class="container" flex="100" layout="row" layout-align="center center" layout-margin layout-wrap style="padding-bottom: 48px;" class="navigation widget" ng-show="menu_title == 'Galleries'">
+            <div ng-repeat="card in featured_galleries" flex="50" flex-gt-sm="33">
+            <md-card>
+                <img ng-src="{{card.source}}" class="md-card-image" alt="Washed Out">
+            </md-card>
+            </div>
         </div>
     </div>
     <div class="navigation social md-whiteframe-8dp" layout="row" layout-align="start center" flex="100">
