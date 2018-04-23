@@ -62,7 +62,7 @@
             <a 
             ng-repeat="item in settings.navigation.data"
             class="lightweight-navigation-link header-navigation base-hdr--text"
-            style="font-size: 16px; font-weight: bold"
+            style="font-size: 16px; font-weight: bold; cursor: pointer;"
             hash="{{item.navigation.parent.url}}"
             ng-click="navigation_panel = true; open_menu(item)"
             du-scrollspy
