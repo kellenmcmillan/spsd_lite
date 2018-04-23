@@ -179,9 +179,9 @@
             </div>
             <div flex="100">
                 <md-grid-list md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="8px" md-gutter-gt-sm="4px" >
-                    <md-grid-tile ng-repeat="tile in all_galleries | limitTo:10" md-rowspan="1" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1" ng-class="tile.background">
-                    <img ng-src="{{tile.source}}" style="width: 100%; min-width:100%; min-height: 100%;">
-                    <md-grid-tile-footer><h3>{{tile.name}}</h3></md-grid-tile-footer>
+                    <md-grid-tile ng-repeat="tile in all_galleries | limitTo:9" md-rowspan="1" md-colspan="2" md-colspan-sm="1" md-colspan-xs="1" ng-class="tile.background">
+                    <img ng-src="{{tile.images[0]}}" style="width: 100%; min-width:100%; min-height: 100%;">
+                    <md-grid-tile-footer><h3 md-truncate>{{tile.name}}</h3></md-grid-tile-footer>
                     </md-grid-tile>
                 </md-grid-list>
             </div>
