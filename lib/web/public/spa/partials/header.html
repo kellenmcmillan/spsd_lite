@@ -60,13 +60,16 @@
         <!-- Header Navigation -->
         <nav class="lightweight-navigation-item mdl-cell--hide-tablet mdl-cell--hide-phone" du-scroll-container="lightweight_content">
             <a 
+            href="/"
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            style="font-size: 16px; font-weight: bold; cursor: pointer;">
+                Home
+            </a>
+            <a 
             ng-repeat="item in settings.navigation.data"
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold; cursor: pointer;"
-            hash="{{item.navigation.parent.url}}"
-            ng-click="navigation_panel = true; open_menu(item)"
-            du-scrollspy
-            du-smooth-scroll>
+            ng-click="navigation_panel = true; open_menu(item)">
                 {{item.navigation.parent.name}}
             </a>
         </nav>
@@ -105,7 +108,7 @@
         </div>
         <md-list flex="100">
             <a href="{{child.url}}" ng-repeat="child in child_items" class="navigation link" style="cursor: pointer;">
-                <md-list-item ng-click="null" class="navigation item" flex="100" layout-padding>
+                <md-list-item ng-click="close_menu()" class="navigation item" flex="100" layout-padding>
                     <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{child.name}}" md-font-library="material-icons">link</md-icon>
                     <p>{{child.name}}</p>
                 </md-list-item>
@@ -120,23 +123,15 @@
                         <md-list-item class="md-2-line">
                             <md-icon style="color: {{base_hue_lightest.value}};">phone</md-icon>
                             <div class="md-list-item-text md-offset">
-                                <h3 style="color: {{base_hue_lightest.value}};">817-469-1671</h3>
+                                <h3 style="color: {{base_hue_lightest.value}};">{{settings.data.phone_1}}</h3>
                                 <p style="color: {{base_hue_lightest.value}};">Office</p>
-                            </div>
-                        </md-list-item>
-                        <md-divider></md-divider>
-                        <md-list-item class="md-2-line">
-                            <md-icon style="color: {{base_hue_lightest.value}};">phone</md-icon>
-                            <div class="md-list-item-text md-offset">
-                                <h3 style="color: {{base_hue_lightest.value}};">817-274-8757</h3>
-                                <p style="color: {{base_hue_lightest.value}};">Fax</p>
                             </div>
                         </md-list-item>
                         <md-divider></md-divider>
                         <md-list-item class="md-2-line">
                             <md-icon style="color: {{base_hue_lightest.value}};">pin_drop</md-icon>
                             <div class="md-list-item-text md-offset">
-                                <h3 style="color: {{base_hue_lightest.value}};">519 E. Border Street<br>Arlington, TX 76010</h3>
+                                <h3 style="color: {{base_hue_lightest.value}};">{{settings.data.address.street}}<br>{{settings.data.address.city}}, {{settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
                             </div>
                         </md-list-item>
                     </md-content>
