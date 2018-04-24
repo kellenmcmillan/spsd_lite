@@ -21,29 +21,9 @@
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Navigation Item" md-font-library="material-icons">link</md-icon>
                 </md-button>
                 <md-menu-content width="4">
-                    <md-menu-item>
-                        <md-button>
-                            New Title
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button>
-                            New Paragraph
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button>
-                            New List
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button>
-                            New Media
-                        </md-button>
-                    </md-menu-item>
-                    <md-menu-item>
-                        <md-button>
-                            New Button
+                    <md-menu-item ng-repeat="item in settings.navigation.data track by $index">
+                        <md-button ng-click="parentNav(item)">
+                            {{item.parent.navigation.name}}
                         </md-button>
                     </md-menu-item>
                 </md-menu-content>
@@ -206,20 +186,20 @@
             <div flex flex-gt-sm="60">
                 <md-card class="md-card-base md-whiteframe-4dp">
                     <md-card-content>
-                        <div ng-repeat="item in ['1', '2', '3']" flex="100">
+                        <div ng-repeat="item in settings.navigation.data track by $index" flex="100">
                             <div layout="row" layout-align="center center" flex="100">
                                 <md-list-item flex="50" style="max-height: 70px;">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                     <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
                                         <label>Navigation Item</label>
-                                        <input>
+                                        <input ng-model="item.navigation.parent.name">
                                     </md-input-container>
                                 </md-list-item>
                                 <md-list-item flex="50" style="max-height: 70px;">
                                     <md-input-container class="md-block lightweight-md-dropdown">
                                         <label>Url</label>
-                                        <md-select ng-model="links">
+                                        <md-select ng-model="item.navigation.parent.url">
                                             <md-option ng-value="'Company Info'">
                                                 /sample-link
                                             </md-option>
