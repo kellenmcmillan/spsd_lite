@@ -186,11 +186,12 @@
             <div flex flex-gt-sm="60">
                 <md-card class="md-card-base md-whiteframe-4dp">
                     <md-card-content>
+                        <div flex="100">
+                            <h1 class="h1" style="margin-top: 8px; color: {{base_hue_darkest.value}};">{{parentNavName}}</h1>
+                        </div>
                         <div ng-repeat="item in child_nav_items track by $index" flex="100">
                             <div layout="row" layout-align="center center" flex="100">
-                                <div flex="100">
-                                    <h1 class="h1" style="margin-top: 8px; color: {{base_hue_lightest.value}};">{{parentNavName}}</h1>
-                                </div>
+                                
                                 <md-list-item flex="50" style="max-height: 70px;">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
