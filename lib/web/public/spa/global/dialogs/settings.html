@@ -23,7 +23,7 @@
                 <md-menu-content width="4">
                     <md-menu-item ng-repeat="item in settings.navigation.data track by $index">
                         <md-button ng-click="parentNav(item)">
-                            {{item.parent.navigation.name}}
+                            {{item.navigation.parent.name}}
                         </md-button>
                     </md-menu-item>
                 </md-menu-content>
@@ -186,21 +186,21 @@
             <div flex flex-gt-sm="60">
                 <md-card class="md-card-base md-whiteframe-4dp">
                     <md-card-content>
-                        <div ng-repeat="item in settings.navigation.data track by $index" flex="100">
+                        <div ng-repeat="item in child_nav_items track by $index" flex="100">
                             <div layout="row" layout-align="center center" flex="100">
                                 <md-list-item flex="50" style="max-height: 70px;">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                     <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
                                         <label>Navigation Item</label>
-                                        <input ng-model="item.navigation.parent.name">
+                                        <input ng-model="item.name">
                                     </md-input-container>
                                 </md-list-item>
                                 <md-list-item flex="50" style="max-height: 70px;">
-                                    <md-input-container class="md-block lightweight-md-dropdown">
+                                    <md-input-container class="md-block lightweight-md-dropdown normal">
                                         <label>Url</label>
-                                        <md-select ng-model="item.navigation.parent.url">
-                                            <md-option ng-value="'Company Info'">
+                                        <md-select ng-model="item.url">
+                                            <md-option ng-repeat="url in pages">
                                                 /sample-link
                                             </md-option>
                                             <md-option ng-value="'Manage Pages'">
