@@ -199,7 +199,7 @@
                                 <md-list-item flex="50" style="max-height: 70px;">
                                     <md-input-container class="md-block lightweight-md-dropdown normal">
                                         <label>Url</label>
-                                        <md-select ng-model="item.url">
+                                        <md-select ng-value="item.url" ng-model="item.url">
                                             <md-option ng-repeat="url in app_pages track by $index">
                                                 {{url.url}}
                                             </md-option>
