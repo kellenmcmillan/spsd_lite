@@ -185,10 +185,12 @@
             <!-- columns -->
             <div flex flex-gt-sm="60">
                 <md-card class="md-card-base md-whiteframe-4dp">
-                    <md-card-content>
-                        <div flex="100">
-                            <h1 class="h1" style="margin-top: 8px; color: {{base_hue_darkest.value}};">{{parentNavName}}</h1>
-                        </div>
+                    <md-card-title ng-show="!items_sortable">
+                        <md-card-title-text>
+                            <span class="md-headline">{{parentNavName}}</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content layout-wrap layout-gt-sm="row" layout-align="center center">
                         <div ng-repeat="item in child_nav_items track by $index" flex="100">
                             <div layout="row" layout-align="center center" flex="100">
                                 
