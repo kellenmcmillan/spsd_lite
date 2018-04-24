@@ -200,14 +200,8 @@
                                     <md-input-container class="md-block lightweight-md-dropdown normal">
                                         <label>Url</label>
                                         <md-select ng-model="item.url">
-                                            <md-option ng-repeat="url in pages">
-                                                /sample-link
-                                            </md-option>
-                                            <md-option ng-value="'Manage Pages'">
-                                                /sample-link
-                                            </md-option>
-                                            <md-option ng-value="'Add a Page'">
-                                                /sample-link
+                                            <md-option ng-repeat="url in app_pages track by $index">
+                                                {{url.url}}
                                             </md-option>
                                         </md-select>
                                     </md-input-container>
