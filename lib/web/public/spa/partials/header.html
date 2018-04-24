@@ -106,12 +106,11 @@
         </div>
         <md-list flex="100">
             <a href="/" style="text-decoration: none;">
-                <md-list-item ng-repeat="item in settings.navigation.data track by $index" ng-click="null" class="navigation item" flex="100" layout-padding>
+                <md-list-item ng-click="null" class="navigation item" flex="100" layout-padding>
                     <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{item.navigation.parent.name}}" md-font-library="material-icons">link</md-icon>
                     <p>Home</p>
                 </md-list-item>
             </a>
-            <md-divider ng-if="!$last"></md-divider>
             <md-list-item ng-repeat="item in settings.navigation.data track by $index" ng-click="sub_navigation_panel = true; open_menu(item)" class="navigation item" flex="100" layout-padding>
                 <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{item.navigation.parent.name}}" md-font-library="material-icons">link</md-icon>
                 <p style="color: {{base_hue_lightest.value}}; cursor: pointer;">{{item.navigation.parent.name}}</p>
