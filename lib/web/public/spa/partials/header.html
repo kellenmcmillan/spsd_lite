@@ -69,7 +69,7 @@
             ng-repeat="item in settings.navigation.data track by $index"
             class="lightweight-navigation-link header-navigation base-hdr--text"
             style="font-size: 16px; font-weight: bold; cursor: pointer;"
-            ng-click="navigation_panel = true; open_menu(item)">
+            ng-click="sub_navigation_panel = true; open_menu(item)">
                 {{item.navigation.parent.name}}
             </a>
         </nav>
@@ -78,7 +78,7 @@
         <span class="mdl-layout-title mdl-cell--hide-desktop">
             <!-- Right aligned menu below button -->
             
-                <i class="material-icons base-hdr--text" style="font-weight: normal;" ng-click="$parent.mobile_menu = !$parent.mobile_menu;">menu</i>
+                <i class="material-icons base-hdr--text" style="font-weight: normal;" ng-click="open_parent_menu()">menu</i>
 
             <!-- Right aligned menu below button -->
         </span>
@@ -89,7 +89,63 @@
 
 <!-- Menu Panel -->
 <md-content class="navigation menu">
+
+
+
 <div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
+    <!-- <img src="https://storage.googleapis.com/spsd-189118.appspot.com/navigation-background.jpg" style="position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%; opacity: .1; z-index: 1;"> -->
+    <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
+        <div flex="50" layout="row" layout-align="start center" layout-margin>
+            <md-button ng-click="null" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}};">
+                <md-icon style="color: {{base_hue_lightest.value}}">lock_outline</md-icon>
+                Log In
+            </md-button>
+        </div>
+        <div flex="50">
+        <md-icon ng-click="close_parent_menu()" style="color: {{base_hue_lightest.value}}; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
+        </div>
+        <a 
+            href="/"
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            style="font-size: 16px; font-weight: bold; cursor: pointer;">
+                Home
+            </a>
+            <a 
+            ng-repeat="item in settings.navigation.data track by $index"
+            class="lightweight-navigation-link header-navigation base-hdr--text"
+            style="font-size: 16px; font-weight: bold; cursor: pointer;"
+            ng-click="sub_navigation_panel = true; open_menu(item)">
+                {{item.navigation.parent.name}}
+            </a>
+        <md-list flex="100">
+            <a href="/">
+                <md-list-item ng-repeat="item in settings.navigation.data track by $index" ng-click="null" class="navigation item" flex="100" layout-padding>
+                    <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{item.navigation.parent.name}}" md-font-library="material-icons">link</md-icon>
+                    <p>Home</p>
+                </md-list-item>
+            </a>
+            <md-divider ng-if="!$last"></md-divider>
+            <md-list-item ng-repeat="item in settings.navigation.data track by $index" ng-click="sub_navigation_panel = true; open_menu(item)" class="navigation item" flex="100" layout-padding>
+                <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{item.navigation.parent.name}}" md-font-library="material-icons">link</md-icon>
+                <p>{{item.navigation.parent.name}}</p>
+            </md-list-item>
+            <md-divider ng-if="!$last"></md-divider>
+        </md-list>
+    </div>
+    <div class="navigation social md-whiteframe-8dp" layout="row" layout-align="start center" flex="100">
+        <div layout="row" layout-align="start center" flex="100" style="margin-left: 24px;">
+            <div flex="100" flex-gt-sm="50" layout-align="start center">
+            <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/003-facebook.png">
+            <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/002-twitter.png">
+            <img class="navigation icons" src="https://storage.googleapis.com/spsd-189118.appspot.com/001-linkedin.png">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div layout="row" layout-align="start start" class="sub-navigation navigation panel md-whiteframe-4dp" ng-class="{'open': sub_navigation_panel, 'close': !sub_navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
     <!-- <img src="https://storage.googleapis.com/spsd-189118.appspot.com/navigation-background.jpg" style="position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%; opacity: .1; z-index: 1;"> -->
     <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
         <div flex="50" layout="row" layout-align="start center" layout-margin>
