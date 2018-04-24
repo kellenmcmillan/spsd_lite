@@ -226,10 +226,20 @@ md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-di
         overflow-y: auto; position: fixed; top: 0; z-index: 1000;
         overflow-x: hidden;
     }
+    .sub-navigation.panel {
+        width: 33%; height: 100%; max-height: 100%; 
+        overflow-y: auto; position: fixed; top: 0; z-index: 1001;
+        overflow-x: hidden;
+    }
     @media screen and (max-width: 839px) {
         .navigation.panel {
             width: 90%; height: 100%; max-height: 100%; 
             overflow-y: auto; position: fixed; top: 0; z-index: 1000;
+            overflow-x: hidden;
+        }
+        .sub-navigation.panel {
+            width: 90%; height: 100%; max-height: 100%; 
+            overflow-y: auto; position: fixed; top: 0; z-index: 1001;
             overflow-x: hidden;
         }
     }
@@ -246,19 +256,22 @@ md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-di
         }
     } 
 
-    .navigation.panel.open, .navigation.panel.open .navigation.social {
+    .navigation.panel.open, .navigation.panel.open .navigation.social, 
+    .sub-navigation.panel.open, .sub-navigation.panel.open .sub-navigation.social {
         animation-duration: .2s;
         animation-timing-function: ease-in-out;
         right: 0;
     }
 
-    .navigation.panel.close, .navigation.panel.close .navigation.social {
+    .navigation.panel.close, .navigation.panel.close .navigation.social, 
+    .sub-navigation.panel.close, .sub-navigation.panel.close .sub-navigation.social {
         animation-duration: .2s;
         animation-timing-function: ease-in;
         right: -33%;
     }
     @media screen and (max-width: 839px) {
-        .navigation.panel.close, .navigation.panel.close .navigation.social {
+        .navigation.panel.close, .navigation.panel.close .navigation.social, 
+        .sub-navigation.panel.close, .sub-navigation.panel.close .sub-navigation.social {
             animation-duration: .2s;
             animation-timing-function: ease-in;
             right: -90%;
@@ -266,7 +279,7 @@ md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-di
     }
 
     .navigation.icons {width: 36px; height: 36px; display: block; float: left; margin-right: 18px;}
-    
+
     /* Navigation Container */
 
 /* Buttons */
