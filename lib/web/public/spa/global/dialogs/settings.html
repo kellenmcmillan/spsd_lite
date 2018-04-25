@@ -13,7 +13,7 @@
             <md-button ng-disabled="new_staff_member" ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
-            <md-button ng-show="setting == 'Manage Pages'" class="md-fab md-mini" aria-label="Add a page" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+            <md-button ng-show="setting == 'Manage Pages'" ng-click="setting = 'Add Page';" class="md-fab md-mini" aria-label="Add a page" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
             <md-menu ng-show="setting == 'Edit Navigation'">
@@ -46,9 +46,6 @@
                         </md-option>
                         <md-option ng-value="'Manage Pages'">
                             Manage Pages
-                        </md-option>
-                        <md-option ng-value="'Add a Page'">
-                            Add a Page
                         </md-option>
                         <md-option ng-value="'Edit Navigation'">
                             Edit Navigation
@@ -149,7 +146,7 @@
             
             <!-- columns -->
                 <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
-                    <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="item in ['1', '2', '3']" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
+                    <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="page in app_pages track by $index" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
                         <md-card-title>
                             <md-card-title-text>
                                 <span class="md-headline">Page Name</span>
@@ -160,24 +157,71 @@
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Page Name</label>
-                                    <input disabled>
+                                    <input ng-model="page.name" ng-disabled="page.locked == true">
                                 </md-input-container>
                             </md-list-item>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Page Url</label>
-                                    <input disabled>
+                                    <input ng-model="page.url" ng-disabled="page.locked == true">
                                 </md-input-container>
                             </md-list-item>
                         </md-card-content>
                         <md-card-actions layout="row" layout-align="end center">
-                            <md-button class="md-whiteframe-2dp" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Delete</md-button>
+                            <md-button ng-disabled="page.locked == true" class="md-whiteframe-2dp" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Delete</md-button>
                         </md-card-actions>
                     </md-card>
                 </div>
             <!-- columns -->
         </md-card-content>
         <!-- Manage Pages Screen -->
+
+        <!-- Add Page -->
+        <md-card-content ng-show="setting == 'Add Page'" layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin>
+            <!-- columns -->
+            <div flex flex-gt-sm="40">
+                <md-card class="md-card-base md-whiteframe-4dp">
+                    <md-card-content>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Page Name</label>
+                                <input ng-model="editable_app_settings.data.company_name">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Page Title</label>
+                                <input ng-model="editable_app_settings.data.site_name">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Url</label>
+                                <input ng-model="editable_app_settings.data.legal_name">
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-dropdown">
+                                <label>Page Type</label>
+                                <md-select ng-model="editable_app_settings.data.address.state">
+                                    <md-option><em>None</em></md-option>
+                                    <md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
+                                        {{state.abbrev}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                        </md-list-item>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <div flex></div>
+                        <md-button ng-if="staff.id == undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
+                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateApp('addPage')">Update</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+            <!-- columns -->
+        </md-card-content>
+        <!-- Add Page -->
 
 
         <!-- Manage Navigation -->
