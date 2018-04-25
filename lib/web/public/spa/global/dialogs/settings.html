@@ -47,6 +47,9 @@
                         <md-option ng-value="'Manage Pages'">
                             Manage Pages
                         </md-option>
+                        <md-option ng-value="'Add Page'">
+                            Add Page
+                        </md-option>
                         <md-option ng-value="'Edit Navigation'">
                             Edit Navigation
                         </md-option>
@@ -149,7 +152,7 @@
                     <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="page in app_pages track by $index" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
                         <md-card-title>
                             <md-card-title-text>
-                                <span class="md-headline">Page Name</span>
+                                <span class="md-headline">{{page.name}}</span>
                             </md-card-title-text>
                         </md-card-title>
                         <md-icon style="position: absolute; top: 16px; right: 16px; color: {{primary_hue_normal.value}};" aria-label="page locked" md-font-library="material-icons">lock_outline</md-icon>
@@ -214,7 +217,7 @@
                     </md-card-content>
                     <md-card-actions layout="row" layout-align="end center">
                         <div flex></div>
-                        <md-button ng-if="staff.id == undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
+                        <md-button ng-if="staff.id == undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="setting = 'Manage Pages'">Cancel</md-button>
                         <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateApp('addPage')">Update</md-button>
                     </md-card-actions>
                 </md-card>
@@ -229,15 +232,19 @@
             <!-- columns -->
             <div flex flex-gt-sm="60">
                 <md-card class="md-card-base md-whiteframe-4dp">
-                    <md-card-title ng-show="!items_sortable">
+                    <md-card-title ng-if="child_nav_items.length > 0">
                         <md-card-title-text>
                             <span class="md-headline">{{parentNavName}}</span>
                         </md-card-title-text>
                     </md-card-title>
+                    <md-card-title ng-if="child_nav_items.length <= 0">
+                        <md-card-title-text>
+                            <span class="md-headline">Select A Parent Navigation Item</span>
+                        </md-card-title-text>
+                    </md-card-title>
                     <md-card-content layout-wrap layout-gt-sm="row" layout-align="center center">
-                        <div ng-repeat="item in child_nav_items track by $index" flex="100">
+                        <div ng-if="child_nav_items.length > 0" ng-repeat="item in child_nav_items track by $index" flex="100">
                             <div layout="row" layout-align="center center" flex="100">
-                                
                                 <md-list-item flex="50" style="max-height: 70px;">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
@@ -249,8 +256,8 @@
                                 <md-list-item flex="50" style="max-height: 70px;">
                                     <md-input-container class="md-block lightweight-md-dropdown normal">
                                         <label>Url</label>
-                                        <md-select ng-value="item.url" ng-model="item.url">
-                                            <md-option ng-repeat="url in app_pages track by $index">
+                                        <md-select ng-model="item.url">
+                                            <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
                                                 {{url.url}}
                                             </md-option>
                                         </md-select>
@@ -259,7 +266,7 @@
                             </div>
                         </div>
                     </md-card-content>
-                    <md-card-actions layout="row" layout-align="end center">
+                    <md-card-actions ng-if="child_nav_items.length > 0" layout="row" layout-align="end center">
                         <div flex></div>
                         <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                     </md-card-actions>
