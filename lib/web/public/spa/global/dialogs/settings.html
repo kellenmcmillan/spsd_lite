@@ -10,15 +10,15 @@
                 <md-icon ng-show="staffgridview == true" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
                 <md-icon ng-show="staffgridview == false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
             </md-button>
-            <md-button ng-disabled="new_staff_member" ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
+            <md-button ng-show="setting == 'Manage Staff'" ng-disabled="new_staff_member" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
             <md-button ng-show="setting == 'Manage Pages'" ng-click="setting = 'Add Page';" class="md-fab md-mini" aria-label="Add a page" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
-                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add" md-font-library="material-icons">add</md-icon>
             </md-button>
             <md-menu ng-show="setting == 'Edit Navigation'">
                 <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Edit navigation" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
-                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Navigation Item" md-font-library="material-icons">link</md-icon>
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Select Parent Navigation Item" md-font-library="material-icons">link</md-icon>
                 </md-button>
                 <md-menu-content width="4">
                     <md-menu-item ng-repeat="item in settings.navigation.data track by $index">
@@ -28,8 +28,8 @@
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
-            <md-button ng-show="setting == 'Edit Navigation'" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
-                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
+            <md-button ng-show="setting == 'Edit Navigation'" ng-disabled="new_child_nav_item == true" class="md-fab md-mini" aria-label="Add a child navigation item" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="addChildNavItem()">
+                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add" md-font-library="material-icons">add</md-icon>
             </md-button>
             <!-- Action Buttons -->
 
@@ -243,7 +243,7 @@
                             <div layout="row" layout-align="center center" flex="100" layout-wrap>
                                 <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
-                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" ng-if="$index > 0" ng-click="child_nav_items.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                     <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
                                         <label>Navigation Item</label>
                                         <input ng-model="item.name">
