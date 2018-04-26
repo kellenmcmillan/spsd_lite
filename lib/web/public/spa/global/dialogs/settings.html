@@ -28,7 +28,7 @@
                     </md-menu-item>
                 </md-menu-content>
             </md-menu>
-            <md-button ng-show="setting == 'Edit Navigation'" ng-disabled="new_child_nav_item == true" class="md-fab md-mini" aria-label="Add a child navigation item" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="addChildNavItem()">
+            <md-button ng-show="setting == 'Edit Navigation'" class="md-fab md-mini" aria-label="Add a child navigation item" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="addChildNavItem()">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add" md-font-library="material-icons">add</md-icon>
             </md-button>
             <!-- Action Buttons -->
@@ -261,7 +261,7 @@
                                                     {{url.url}}
                                                 </md-option>
                                             </md-select>
-                                            <div ng-messages="manageNavigation.item_url.$error" ng-show="manageNavigation.item_url.$dirty">
+                                            <div ng-messages="manageNavigation.item_url.$error" ng-show="manageNavigation.item_url.$error.required">
                                                 <div ng-message="required">A url is required!</div>
                                             </div>
                                         </md-input-container>
@@ -277,7 +277,7 @@
                         </md-card-content>
                         <md-card-actions ng-if="child_nav_items.length > 0" layout="row" layout-align="end center">
                             <div flex></div>
-                            <md-button ng-confirm-message="Are you sure you want to update the navigation?" ng-confirm-click="updateNavigation()" ng-confirm-condition="manageNavigation.$invalid" ng-disabled="manageNavigation.valid" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                            <md-button ng-confirm-message="Are you sure you want to update the navigation?" ng-confirm-click="updateNavigation()" ng-confirm-condition="manageNavigation.$valid" ng-disabled="manageNavigation.$invalid" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                         </md-card-actions>
                     </form>
                 </md-card>
