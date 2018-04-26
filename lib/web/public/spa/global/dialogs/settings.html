@@ -13,11 +13,11 @@
             <md-button ng-show="setting == 'Manage Staff'" ng-disabled="new_staff_member" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
             </md-button>
-            <md-button ng-show="setting == 'Manage Pages'" ng-click="setting = 'Add Page';" class="md-fab md-mini" aria-label="Add a page" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+            <md-button ng-show="setting == 'Manage Pages'" ng-click="setting = 'Add Page'" class="md-fab md-mini" aria-label="Add a page" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add" md-font-library="material-icons">add</md-icon>
             </md-button>
             <md-menu ng-show="setting == 'Edit Navigation'">
-                <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Edit navigation" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-button ng-disabled="manageNavigation.$invalid" md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Edit navigation" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Select Parent Navigation Item" md-font-library="material-icons">link</md-icon>
                 </md-button>
                 <md-menu-content width="4">
@@ -248,7 +248,7 @@
                                         <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
                                             <label>Navigation Item</label>
                                             <input required name="item_name" ng-model="item.name">
-                                            <div ng-messages="signup.city.$error" ng-show="signup.city.$dirty">
+                                            <div ng-messages="signup.city.$error">
                                                 <div ng-message="required">Navigation item name required!</div>
                                             </div>
                                         </md-input-container>
@@ -261,7 +261,7 @@
                                                     {{url.url}}
                                                 </md-option>
                                             </md-select>
-                                            <div ng-messages="manageNavigation.item_url.$error" ng-show="manageNavigation.item_url.$error.required">
+                                            <div ng-messages="manageNavigation.item_url.$error">
                                                 <div ng-message="required">A url is required!</div>
                                             </div>
                                         </md-input-container>
