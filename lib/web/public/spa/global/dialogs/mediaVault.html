@@ -46,7 +46,7 @@
                                         </div>
                                     </div>
                                     <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex>
-                                        <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize" flex flex-gt-sm="30" style="position: relative;">
+                                        <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize track by $index" flex flex-gt-sm="30" style="position: relative;">
                                             <md-button ng-show="!gallery_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 8px; right: 8px; background-color: {{base_hue_lightest.value}}!important;" ng-click="gallery_detail_view = true">
                                                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                                             </md-button>
