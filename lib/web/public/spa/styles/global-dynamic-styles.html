@@ -203,85 +203,85 @@ md-select.md-default-theme .md-select-icon, md-select .md-select-icon, .suite-di
 /* md-cards */
 
 /* Navigation Container */
-    .navigation .container md-tab-item, 
-    .navigation .container md-tabs.md-default-theme .md-tab .md-ripple-container, 
-    .navigation .container md-tabs .md-tab .md-ripple-container {
-        color: {{primary_hue_normal.value}};
-    }
-    .navigation .container md-tabs md-content {background-color: transparent!important;}
-    .navigation .container md-tabs .md-tab.md-active {color: {{base_hue_lightest.value}}!important;}
-    .navigation .container md-tabs.md-default-theme .md-tab, .navigation .container md-tabs .md-tab {color: {{base_hue_lightest.value}};
-    }
-    .navigation .container md-tabs.md-default-theme md-ink-bar, 
-    .navigation .container md-tabs md-ink-bar {
-        color: {{primary_hue_normal.value}}; background-color: {{primary_hue_normal.value}};
-    }
-    .navigation a .navigation.item {text-decoration: none!important;}
-    .navigation a .navigation.item p {color: {{base_hue_lightest.value}}!important;}
-    a.navigation.link {color: transparent;}
-    /*.navigation .navigation.item a p:hover {color: {{primary_hue_normal.value}}!important; opacity: 1;}*/
-    .navigation .navigation.item {height: 48px;}
-    .navigation.social {background-color: {{base_hue_darkest.value}};}
+.navigation .container md-tab-item, 
+.navigation .container md-tabs.md-default-theme .md-tab .md-ripple-container, 
+.navigation .container md-tabs .md-tab .md-ripple-container {
+    color: {{primary_hue_normal.value}};
+}
+.navigation .container md-tabs md-content {background-color: transparent!important;}
+.navigation .container md-tabs .md-tab.md-active {color: {{base_hue_lightest.value}}!important;}
+.navigation .container md-tabs.md-default-theme .md-tab, .navigation .container md-tabs .md-tab {color: {{base_hue_lightest.value}};
+}
+.navigation .container md-tabs.md-default-theme md-ink-bar, 
+.navigation .container md-tabs md-ink-bar {
+    color: {{primary_hue_normal.value}}; background-color: {{primary_hue_normal.value}};
+}
+.navigation a .navigation.item {text-decoration: none!important;}
+.navigation a .navigation.item p {color: {{base_hue_lightest.value}}!important;}
+a.navigation.link {color: transparent;}
+/*.navigation .navigation.item a p:hover {color: {{primary_hue_normal.value}}!important; opacity: 1;}*/
+.navigation .navigation.item {height: 48px;}
+.navigation.social {background-color: {{base_hue_darkest.value}};}
+.navigation.panel {
+    width: 33%; height: 100%; max-height: 100%; 
+    overflow-y: auto; position: fixed; top: 0; z-index: 1000;
+    overflow-x: hidden;
+}
+.sub-navigation.panel {
+    width: 33%; height: 100%; max-height: 100%; 
+    overflow-y: auto; position: fixed; top: 0; z-index: 1001;
+    overflow-x: hidden;
+}
+@media screen and (max-width: 839px) {
     .navigation.panel {
-        width: 33%; height: 100%; max-height: 100%; 
+        width: 90%; height: 100%; max-height: 100%; 
         overflow-y: auto; position: fixed; top: 0; z-index: 1000;
         overflow-x: hidden;
     }
     .sub-navigation.panel {
-        width: 33%; height: 100%; max-height: 100%; 
+        width: 90%; height: 100%; max-height: 100%; 
         overflow-y: auto; position: fixed; top: 0; z-index: 1001;
         overflow-x: hidden;
     }
-    @media screen and (max-width: 839px) {
-        .navigation.panel {
-            width: 90%; height: 100%; max-height: 100%; 
-            overflow-y: auto; position: fixed; top: 0; z-index: 1000;
-            overflow-x: hidden;
-        }
-        .sub-navigation.panel {
-            width: 90%; height: 100%; max-height: 100%; 
-            overflow-y: auto; position: fixed; top: 0; z-index: 1001;
-            overflow-x: hidden;
-        }
-    }
-    .navigation.widget md-grid-list md-grid-tile md-grid-tile-footer {transition: all .2s ease-in-out;}
-    .navigation.widget md-grid-list md-grid-tile md-grid-tile-footer.active {height: 100%; background: rgba(27, 94, 32, .8);}
-    .navigation.widget md-grid-list md-grid-tile md-grid-tile-footer md-icon {transition: opacity .2s ease-in-out; opacity: 0; transition-delay: .2s;}
-    .navigation.widget md-grid-list md-grid-tile md-grid-tile-footer.active md-icon {opacity: 1;}
+}
+.navigation.widget md-grid-list md-grid-tile md-grid-tile-footer {transition: all .2s ease-in-out;}
+.navigation.widget md-grid-list md-grid-tile md-grid-tile-footer.active {height: 100%; background: rgba(27, 94, 32, .8);}
+.navigation.widget md-grid-list md-grid-tile md-grid-tile-footer md-icon {transition: opacity .2s ease-in-out; opacity: 0; transition-delay: .2s;}
+.navigation.widget md-grid-list md-grid-tile md-grid-tile-footer.active md-icon {opacity: 1;}
+.navigation.social {
+    position: fixed; height: 48px; bottom: 0; width: 33%;
+}
+@media screen and (max-width: 839px) {
     .navigation.social {
-        position: fixed; height: 48px; bottom: 0; width: 33%;
+        position: fixed; height: 48px; bottom: 0; width: 90%;
     }
-    @media screen and (max-width: 839px) {
-        .navigation.social {
-            position: fixed; height: 48px; bottom: 0; width: 90%;
-        }
-    } 
+} 
 
-    .navigation.panel.open, .navigation.panel.open .navigation.social, 
-    .sub-navigation.panel.open, .sub-navigation.panel.open .sub-navigation.social {
-        animation-duration: .2s;
-        animation-timing-function: ease-in-out;
-        right: 0;
-    }
+.navigation.panel.open, .navigation.panel.open .navigation.social, 
+.sub-navigation.panel.open, .sub-navigation.panel.open .sub-navigation.social {
+    animation-duration: .2s;
+    animation-timing-function: ease-in-out;
+    right: 0;
+}
 
+.navigation.panel.close, .navigation.panel.close .navigation.social, 
+.sub-navigation.panel.close, .sub-navigation.panel.close .sub-navigation.social {
+    animation-duration: .2s;
+    animation-timing-function: ease-in;
+    right: -33%;
+}
+@media screen and (max-width: 839px) {
     .navigation.panel.close, .navigation.panel.close .navigation.social, 
     .sub-navigation.panel.close, .sub-navigation.panel.close .sub-navigation.social {
         animation-duration: .2s;
         animation-timing-function: ease-in;
-        right: -33%;
+        right: -90%;
     }
-    @media screen and (max-width: 839px) {
-        .navigation.panel.close, .navigation.panel.close .navigation.social, 
-        .sub-navigation.panel.close, .sub-navigation.panel.close .sub-navigation.social {
-            animation-duration: .2s;
-            animation-timing-function: ease-in;
-            right: -90%;
-        }
-    }
+}
 
-    .navigation.icons {width: 36px; height: 36px; display: block; float: left; margin-right: 18px;}
+.navigation.icons {width: 36px; height: 36px; display: block; float: left; margin-right: 18px;}
 
-    /* Navigation Container */
+/* Navigation Container */
 
 /* Buttons */
 .raised-button {box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12)!important;}

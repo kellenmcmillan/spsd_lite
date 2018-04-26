@@ -38,10 +38,15 @@
 	    transition-timing-function: cubic-bezier(.4,0,.2,1);
 	    transition-property: border-radius, transform;
 	}
-	footer {display: none!important;}
+	/*footer {display: none!important;}*/
 </style>
+
+<!-- Header -->
+<div ng-include src="'spa/partials/header.html'"></div>
+<!-- Header -->
+
 <!-- Navbar -->
-<div class="portfolio-nav--container base-hlst full-width" style="border-bottom: 1px solid rgba(0,0,0,.15); z-index: 10;">
+<div class="portfolio-nav--container base-hlst full-width" style="margin-top: 100%; border-bottom: 1px solid rgba(0,0,0,.15); z-index: 10;">
 	<div class="portfolio-nav--row">
         <span class="mdl-layout-title">
             <p 
