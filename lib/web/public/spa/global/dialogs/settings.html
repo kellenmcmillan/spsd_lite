@@ -232,46 +232,54 @@
             <!-- columns -->
             <div flex flex-gt-sm="60">
                 <md-card class="md-card-base md-whiteframe-4dp">
-                    <md-card-title ng-if="child_nav_items.length > 0">
-                        <md-card-title-text>
-                            <span class="md-headline">{{parentNavName}}</span>
-                        </md-card-title-text>
-                    </md-card-title>
-                    </md-card-title>
-                    <md-card-content layout-wrap layout-gt-sm="row" layout-align="center center" class="lightweight-list-control" ui-sortable="sortableList" ng-model="child_nav_items">
-                        <div ng-show="child_nav_items.length > 0" ng-repeat="item in child_nav_items track by $index" flex="100">
-                            <div layout="row" layout-align="center center" flex="100" layout-wrap>
-                                <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
-                                    <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
-                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" ng-if="$index > 0" ng-click="child_nav_items.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
-                                    <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
-                                        <label>Navigation Item</label>
-                                        <input ng-model="item.name">
-                                    </md-input-container>
-                                </md-list-item>
-                                <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
-                                    <md-input-container class="md-block lightweight-md-dropdown normal">
-                                        <label>Url</label>
-                                        <md-select ng-model="item.url">
-                                            <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
-                                                {{url.url}}
-                                            </md-option>
-                                        </md-select>
-                                    </md-input-container>
+                    <form name="manageNavigation">
+                        <md-card-title ng-if="child_nav_items.length > 0">
+                            <md-card-title-text>
+                                <span class="md-headline">{{parentNavName}}</span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        </md-card-title>
+                        <md-card-content layout-wrap layout-gt-sm="row" layout-align="center center" class="lightweight-list-control" ui-sortable="sortableList" ng-model="child_nav_items">
+                            <div ng-show="child_nav_items.length > 0" ng-repeat="item in child_nav_items track by $index" flex="100">
+                                <div layout="row" layout-align="center center" flex="100" layout-wrap>
+                                    <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
+                                        <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" ng-if="$index > 0" ng-click="child_nav_items.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                        <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
+                                            <label>Navigation Item</label>
+                                            <input required name="item_name" ng-model="item.name">
+                                            <div ng-messages="signup.city.$error" ng-show="signup.city.$dirty">
+                                                <div ng-message="required">Navigation item name required!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
+                                        <md-input-container class="md-block lightweight-md-dropdown normal">
+                                            <label>Url</label>
+                                            <md-select name="item_url" ng-model="item.url" ng-required>
+                                                <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
+                                                    {{url.url}}
+                                                </md-option>
+                                            </md-select>
+                                            <div ng-messages="manageNavigation.item_url.$error" ng-show="manageNavigation.item_url.$dirty">
+                                                <div ng-message="required">A url is required!</div>
+                                            </div>
+                                        </md-input-container>
+                                    </md-list-item>
+                                </div>
+                            </div>
+                            <div ng-show="!child_nav_items.length" layout="row" layout-align="center center" flex="100">
+                                <md-list-item flex="100" style="max-height: 70px;">
+                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Warning. Select a navigation item first" md-font-library="material-icons">priority_high</md-icon>
+                                    <p style="color: {{base_hue_darkest.value}};">Select a parent nav item.</p>
                                 </md-list-item>
                             </div>
-                        </div>
-                        <div ng-show="!child_nav_items.length" layout="row" layout-align="center center" flex="100">
-                            <md-list-item flex="100" style="max-height: 70px;">
-                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Warning. Select a navigation item first" md-font-library="material-icons">priority_high</md-icon>
-                                <p style="color: {{base_hue_darkest.value}};">Select a parent nav item.</p>
-                            </md-list-item>
-                        </div>
-                    </md-card-content>
-                    <md-card-actions ng-if="child_nav_items.length > 0" layout="row" layout-align="end center">
-                        <div flex></div>
-                        <md-button ng-click="updateNavigation()" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
-                    </md-card-actions>
+                        </md-card-content>
+                        <md-card-actions ng-if="child_nav_items.length > 0" layout="row" layout-align="end center">
+                            <div flex></div>
+                            <md-button ng-confirm-message="Are you sure you want to update the navigation?" ng-confirm-click="updateNavigation()" ng-confirm-condition="manageNavigation.$invalid" ng-disabled="manageNavigation.valid" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                        </md-card-actions>
+                    </form>
                 </md-card>
             </div>
             <!-- columns -->
