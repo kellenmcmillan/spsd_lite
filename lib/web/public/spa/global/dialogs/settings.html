@@ -270,7 +270,7 @@
                     </md-card-content>
                     <md-card-actions ng-if="child_nav_items.length > 0" layout="row" layout-align="end center">
                         <div flex></div>
-                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                        <md-button ng-click="updateNavigation()" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                     </md-card-actions>
                 </md-card>
             </div>
