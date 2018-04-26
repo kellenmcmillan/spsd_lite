@@ -31,7 +31,7 @@
 
 		    		<!-- panel title -->
 			    	<div class="padded--top16">
-				        <h1 class="small-border-background-no-align h1" style="margin-top: 8px;" color="{{infoPage.paint.text.color}}" hue="{{infoPage.paint.text.hue}}" property="{{infoPage.paint.text.property}}" opaqueness="{{infoPage.paint.text.opaqueness}}" lw-color>{{infoPage.data.title}}</h1>
+				        <h1 class="small-border-background-no-align h1 base-hdst--text" style="margin-top: 8px;"{{infoPage.data.title}}</h1>
 				    </div>
 				    <!-- panel title -->
 
@@ -40,7 +40,7 @@
 						<div class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp" ng-attr-style="background: url('{{infoPage.data.page.images.source}}') center/cover;">
 							<div class="mdl-card__title mdl-card--expand"></div>
 							<div class="mdl-card__actions">
-								<span class="lightweight-card-image__filename">{{infoPage.data.title}}</span>
+								<span class="lightweight-card-image__filename base-hdst--text">{{infoPage.data.title}}</span>
 							</div>
 						</div>
 						<!-- panel images -->
@@ -49,9 +49,9 @@
 			    	<br>
 			    	<br>
 			    	<div ng-repeat="content in infoPage.data.page.contents">
-			    		<h1 class="h1" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;" color="{{infoPage.paint.text.color}}" hue="{{infoPage.paint.text.hue}}" property="{{infoPage.paint.text.property}}" opaqueness="{{infoPage.paint.text.opaqueness}}" lw-color></h1>
-						<p ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
-						<p ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+			    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
+						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+						<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
 						<div class="mdl-grid full-width no-padding">
 						<!-- panel images -->
 						<div ng-cloak class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp" ng-if="content.type == 'image'" ng-attr-style="background: url('{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}') center/cover; position: relative;">

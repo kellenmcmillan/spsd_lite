@@ -208,8 +208,8 @@
                                 <label>Page Type</label>
                                 <md-select ng-model="editable_app_settings.data.address.state">
                                     <md-option><em>None</em></md-option>
-                                    <md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
-                                        {{state.abbrev}}
+                                    <md-option ng-repeat="type in settings.pageTypes track by $index" ng-value="type">
+                                        {{type}}
                                     </md-option>
                                 </md-select>
                             </md-input-container>

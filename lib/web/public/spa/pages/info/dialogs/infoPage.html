@@ -105,6 +105,7 @@
                                         <span class="md-headline" ng-show="content.type == 'text'">Paragraph</span>
                                         <span class="md-headline" ng-show="content.type == 'list'">List</span>
                                         <span class="md-headline" ng-show="content.type == 'image'">Image</span>
+                                        <span class="md-headline" ng-show="content.type == 'button'">Button</span>
                                     </md-card-title-text>
                                 </md-card-title>
                                 <md-list-item>
@@ -114,6 +115,7 @@
                                     <p ng-show="items_sortable && content.type == 'text'">Paragraph</p>
                                     <p ng-show="items_sortable && content.type == 'list'">List</p>
                                     <p ng-show="items_sortable && content.type == 'image'">Image</p>
+                                    <p ng-show="items_sortable && content.type == 'button'">Button</p>
                                     <md-divider ng-if="!$last" ng-show="items_sortable"></md-divider>
 
                                     <md-input-container ng-show="!items_sortable" class="md-block lightweight-md-input" ng-if="content.type == 'title'" flex>
@@ -134,7 +136,7 @@
                                                 <input ng-model="listItem.item" required>
                                             </md-input-container>
                                             <md-input-container class="md-block lightweight-md-input" flex="100">
-                                                <md-icon class="md-icon-button" ng-disabled="elementEdit.$invalid || content.data.length == 12" ng-click="!elementEdit.$invalid && content.data.push({item: ''})" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
+                                                <md-icon class="md-icon-button" ng-disabled="elementEdit.$invalid || content.data.length == 12" ng-click="!elementEdit.$invalid && content.data.push({item: ''})" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add" md-font-library="material-icons">add</md-icon>
                                                 <label>Add an item</label>
                                                 <input disabled>
                                             </md-input-container>
