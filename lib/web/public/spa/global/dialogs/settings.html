@@ -239,8 +239,8 @@
                     </md-card-title>
                     </md-card-title>
                     <md-card-content layout-wrap layout-gt-sm="row" layout-align="center center" class="lightweight-list-control" ui-sortable="sortableList" ng-model="child_nav_items">
-                        <div ng-repeat="item in child_nav_items track by $index" flex="100">
-                            <div ng-if="child_nav_items.length > 0" layout="row" layout-align="center center" flex="100" layout-wrap>
+                        <div ng-show="child_nav_items.length > 0" ng-repeat="item in child_nav_items track by $index" flex="100">
+                            <div layout="row" layout-align="center center" flex="100" layout-wrap>
                                 <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
                                     <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
@@ -260,12 +260,12 @@
                                     </md-input-container>
                                 </md-list-item>
                             </div>
-                            <div ng-show="child_nav_items.length == 0" layout="row" layout-align="center center" flex="100">
-                                <md-list-item flex="100" style="max-height: 70px;">
-                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Remove List Item" md-font-library="material-icons">priority_high</md-icon>
-                                    <p style="color: {{base_hue_darkest.value}};">Select a parent nav item.</p>
-                                </md-list-item>
-                            </div>
+                        </div>
+                        <div ng-show="!child_nav_items.length" layout="row" layout-align="center center" flex="100">
+                            <md-list-item flex="100" style="max-height: 70px;">
+                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Warning. Select a navigation item first" md-font-library="material-icons">priority_high</md-icon>
+                                <p style="color: {{base_hue_darkest.value}};">Select a parent nav item.</p>
+                            </md-list-item>
                         </div>
                     </md-card-content>
                     <md-card-actions ng-if="child_nav_items.length > 0" layout="row" layout-align="end center">
