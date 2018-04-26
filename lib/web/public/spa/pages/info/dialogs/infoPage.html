@@ -172,7 +172,7 @@
         <md-card-actions layout="row" layout-align="end center">
             <md-button disabled>Superpowered by Lightweight</md-button>
             <div flex></div>
-            <md-button ng-click="endInfoPageEdit()">Cancel</md-button>
+            <md-button ng-confirm-message="Are you sure you want to discard changes?" ng-confirm-click="endInfoPageEdit()" ng-confirm-condition="true">Cancel</md-button>
             <md-button class="md-raised primary-color-button" ng-click="updateApp('infoPage')">Update</md-button>
         </md-card-actions>
     </md-card>
