@@ -184,42 +184,37 @@
             <!-- columns -->
             <div flex flex-gt-sm="40">
                 <md-card class="md-card-base md-whiteframe-4dp">
-                    <md-card-content>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Page Name</label>
-                                <input ng-model="editable_app_settings.data.company_name">
-                            </md-input-container>
-                        </md-list-item>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Page Title</label>
-                                <input ng-model="editable_app_settings.data.site_name">
-                            </md-input-container>
-                        </md-list-item>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Url</label>
-                                <input ng-model="editable_app_settings.data.legal_name">
-                            </md-input-container>
-                        </md-list-item>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-dropdown">
-                                <label>Page Type</label>
-                                <md-select ng-model="editable_app_settings.data.address.state">
-                                    <md-option><em>None</em></md-option>
-                                    <md-option ng-repeat="type in settings.pageTypes track by $index" ng-value="type">
-                                        {{type}}
-                                    </md-option>
-                                </md-select>
-                            </md-input-container>
-                        </md-list-item>
-                    </md-card-content>
-                    <md-card-actions layout="row" layout-align="end center">
-                        <div flex></div>
-                        <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="setting = 'Manage Pages'">Cancel</md-button>
-                        <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateApp('addPage')">Update</md-button>
-                    </md-card-actions>
+                    <form name="addNewPage">
+                        <md-card-content>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Page Title</label>
+                                    <input name="new_page_title" required ng-model="newPageData.title">
+                                    <div ng-messages="addNewPage.new_page_title.$error">
+                                        <div ng-message="required">Navigation item name required!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Page Type</label>
+                                    <md-select name="new_page_type" ng-required="true" ng-model="newPageData.type">
+                                        <md-option ng-repeat="type in settings.pageTypes track by $index" ng-value="type">
+                                            {{type}}
+                                        </md-option>
+                                    </md-select>
+                                    <div ng-messages="addNewPage.new_page_type.$error">
+                                        <div ng-message="required">A page type is required!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <div flex></div>
+                            <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="setting = 'Manage Pages'">Cancel</md-button>
+                            <md-button ng-disabled="addNewPage.$invalid" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="addPage(newPageData.type, newPageData)">Update</md-button>
+                        </md-card-actions>
+                    </form>
                 </md-card>
             </div>
             <!-- columns -->
