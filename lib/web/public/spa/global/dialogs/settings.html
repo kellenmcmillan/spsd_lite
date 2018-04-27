@@ -172,7 +172,7 @@
                             </md-list-item>
                         </md-card-content>
                         <md-card-actions layout="row" layout-align="end center">
-                            <md-button ng-disabled="page.locked == true" class="md-whiteframe-2dp" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Delete</md-button>
+                            <md-button ng-confirm-message="Are you sure you want to remove this page?" ng-confirm-click="deletePage($index)" ng-confirm-condition="!page.locked" ng-disabled="page.locked == true" class="md-whiteframe-2dp" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Delete</md-button>
                         </md-card-actions>
                     </md-card>
                 </div>
