@@ -1,6 +1,6 @@
 <style>
 .interior-page-background {
-    background: url('{{announcementPage.data.page.images.source}}') no-repeat;
+    background: url('{{spotlightPage.data.page.images.source}}') no-repeat;
     background-size: cover; width: 100%!important; height: 100%; 
     right: 0; top: 200px; padding:0; margin: 0!important; opacity: 0.1;
 }
@@ -15,28 +15,21 @@
 		<div class="lightweight-parallax--background-stationary" style="width: 100%; height: 100%">
 		    <div class="interior-page-background"></div>
 		</div>
-		<h2 class="h2 {{base_hue_text__lightest.name}}" style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8)">{{announcement.data.title}}</h2>
+		<h2 class="h2 {{base_hue_text__lightest.name}}" style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8)">{{spotlight.data.title}}</h2>
 	</div>
 	<!-- Shrinking Page Title -->
 	
-	<div class="interior-page-container mdl-grid" color="b" hue="hlr" property="bg" opaqueness="" lw-color>
+	<div class="interior-page-container mdl-grid" color="b" hue="hlst" property="bg" opaqueness="" lw-color>
 
 
-		<div class="mdl-grid" style="margin-top: -104px;" color="b" hue="hlst" property="bg" opaqueness="" lw-color>
+		<div class="mdl-grid mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone" style="margin-top: -104px;" color="b" hue="hlst" property="bg" opaqueness="" lw-color>
 
 			<!-- tab Panel Component -->
 		    <div class="content-box mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone padded-text" style="z-index: 3;">
 
 		    	<!-- tab Panel -->
 		    	<div>
-
-		    		<!-- panel title -->
-			    	<div class="padded--top16">
-				        <h1 class="announcement base-hdst--text" style="margin-top: 8px; font-size: 36px;">{{announcementPage.data.title}}</h1>
-				    </div>
-				    <!-- panel title -->
-
-			    	<div ng-repeat="content in announcementPage.data.page.contents">
+			    	<div ng-repeat="content in spotlightPage.data.page.contents">
 			    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
 						<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
