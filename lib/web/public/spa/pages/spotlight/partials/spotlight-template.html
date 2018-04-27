@@ -2,8 +2,9 @@
 .interior-page-background {
     background: url('{{spotlightPage.data.page.images.source}}') no-repeat;
     background-size: cover; width: 100%!important; height: 100%; 
-    right: 0; top: 200px; padding:0; margin: 0!important; opacity: 0.1;
+    right: 0; top: 200px; padding:0; margin: 0!important;
 }
+footer {z-index: 2;}
 </style>
 <div class="mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone full-width interior-page-margin {{base_hue_lightest.name}}">
 
@@ -22,7 +23,7 @@
 	<div class="interior-page-container mdl-grid" color="b" hue="hlst" property="bg" opaqueness="" lw-color>
 
 
-		<div class="mdl-grid mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone" style="margin-top: -104px;" color="b" hue="hlst" property="bg" opaqueness="" lw-color>
+		<div class="mdl-grid mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone" style="margin-top: -104px; margin-left: auto; margin-right: auto; z-index: 1; min-height: 90vh;" color="b" hue="hlst" property="bg" opaqueness="" lw-color>
 
 			<!-- tab Panel Component -->
 		    <div class="content-box mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone padded-text" style="z-index: 3;">
