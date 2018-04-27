@@ -118,9 +118,8 @@
                                     <form name="buttonEdit" ng-if="content.type == 'button'" ng-show="!items_sortable" flex>
                                         <div layout="row" layout-align="center center" flex="100" layout-wrap>
                                             <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
-                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" ng-click="child_nav_items.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                                 <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
-                                                    <label>Navigation Item</label>
+                                                    <label>Button Text</label>
                                                     <input required name="button_name" ng-model="content.data.button">
                                                     <div ng-messages="buttonEdit.button_name.$error">
                                                         <div ng-message="required">Button text required!</div>
@@ -147,17 +146,6 @@
                             </div>
                         </div>
                     </md-card-content>
-                </md-card>
-            </div>
-            <!-- columns -->
-
-            <!-- columns -->
-            <div flex flex-gt-sm="40">
-                <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative;">
-                    <md-button ng-click="mediavault_filepicker(announcementPage.data.page.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
-                        <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
-                    </md-button>
-                    <img ng-value="'{{announcementPage.data.page.images.source}}'" ng-src="{{announcementPage.data.page.images.source}}" class="md-card-image" alt="Washed Out">
                 </md-card>
             </div>
             <!-- columns -->
