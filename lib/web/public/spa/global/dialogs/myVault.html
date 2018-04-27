@@ -4,9 +4,48 @@
 <div class="dialog-curtain userVault" ng-show="my_vault_detail_visible == true" ng-controller="usersController">
     <md-card class="suite-dialog md-card-base">
         <md-card-title style="position: relative;">
-            <md-button class="md-fab md-mini" aria-label="upload media" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
-                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">cloud_upload</md-icon>
-            </md-button>
+            <md-menu ng-show="setting == 'Edit Navigation'">
+                <md-button class="md-fab md-mini" aria-label="upload media" md-menu-origin ng-click="openMenu($mdMenu, $event)" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">cloud_upload</md-icon>
+                </md-button>
+                <md-menu-content width="4">
+                    <md-menu-item>
+                        <md-button ngf-select ng-model="files" ngf-pattern="'.doc,.docx'" ngf-accept=".doc,.docx" ngf-max-size="20MB">
+                            Word Document
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ngf-select ng-model="files" ngf-pattern="'.xls'" ngf-accept=".xls" ngf-max-size="20MB">
+                            Excel Document
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ngf-select ng-model="files" ngf-pattern="'.ppt'" ngf-accept=".ppt" ngf-max-size="20MB">
+                            Powerpoint Document
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ngf-select ng-model="files" ngf-pattern="'.pdf'" ngf-accept=".pdf" ngf-max-size="20MB">
+                            PDF Document
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="image/*" ngf-max-size="20MB">
+                            Image
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ngf-select ng-model="files" ngf-pattern="'.mp4'" ngf-accept="video/mp4" ngf-max-size="20MB">
+                            MP4 Video
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button ngf-select ng-model="files" ngf-pattern="'.zip'" ngf-accept="application/zip,application/x-zip-compressed" ngf-max-size="50MB">
+                            Zipped File
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
             <md-menu>
                 <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;">
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">menu</md-icon>

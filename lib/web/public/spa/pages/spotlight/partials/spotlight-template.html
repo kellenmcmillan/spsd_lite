@@ -16,20 +16,20 @@ footer {z-index: 2;}
 		<div class="lightweight-parallax--background-stationary" style="width: 100%; height: 100%">
 		    <div class="interior-page-background"></div>
 		</div>
-		<h2 class="h2 {{base_hue_text__lightest.name}}" style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8)">{{spotlightPage.data.title}}</h2>
+		<h1 class="announcement {{base_hue_text__lightest.name}}" style="text-shadow: 1px 1px 8px rgba(0, 0, 0, .8)">{{spotlightPage.data.title}}</h2>
 	</div>
 	<!-- Shrinking Page Title -->
 	
 	<div class="interior-page-container mdl-grid" color="b" hue="hlst" property="bg" opaqueness="" lw-color>
 
 
-		<div class="mdl-grid mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone" style="margin-top: -104px; margin-left: auto; margin-right: auto; z-index: 1; min-height: 90vh;" color="b" hue="hlst" property="bg" opaqueness="" lw-color>
+		<div class="mdl-grid mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone mdl-shadow--4dp" style="margin-top: -104px; margin-left: auto; margin-right: auto; z-index: 1; min-height: 90vh;" color="b" hue="hlst" property="bg" opaqueness="" lw-color>
 
 			<!-- tab Panel Component -->
 		    <div class="content-box mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet mdl-cell--4-col-phone padded-text" style="z-index: 3;">
 
 		    	<!-- tab Panel -->
-		    	<div>
+		    	<div style="margin-bottom: 100px;">
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
 			    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
 						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
