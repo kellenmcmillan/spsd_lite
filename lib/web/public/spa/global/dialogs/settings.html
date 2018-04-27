@@ -155,7 +155,8 @@
                                 <span class="md-headline">{{page.name}}</span>
                             </md-card-title-text>
                         </md-card-title>
-                        <md-icon style="position: absolute; top: 16px; right: 16px; color: {{primary_hue_normal.value}};" aria-label="page locked" md-font-library="material-icons">lock_outline</md-icon>
+                        <md-icon ng-show="page.locked" style="position: absolute; top: 16px; right: 16px; color: {{primary_hue_normal.value}};" aria-label="page locked" md-font-library="material-icons">lock_outline</md-icon>
+                        <md-icon ng-show="!page.locked" style="position: absolute; top: 16px; right: 16px; color: {{base_hue_darker.value}};" aria-label="page unlocked" md-font-library="material-icons">lock_open</md-icon>
                         <md-card-content>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
