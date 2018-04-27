@@ -15,12 +15,12 @@
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
-                        <md-button ngf-select ng-model="files" ngf-pattern="'.xls'" ngf-accept="'.xls'" ngf-max-size="20MB">
+                        <md-button ngf-select ng-model="files" ngf-pattern="'.xls'" ngf-accept="'.xls,.xlsx'" ngf-max-size="20MB">
                             Excel Document
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
-                        <md-button ngf-select ng-model="files" ngf-pattern="'.ppt'" ngf-accept="'.ppt'" ngf-max-size="20MB">
+                        <md-button ngf-select ng-model="files" ngf-pattern="'.ppt'" ngf-accept="'.ppt,.pptx'" ngf-max-size="20MB">
                             Powerpoint Document
                         </md-button>
                     </md-menu-item>
@@ -177,6 +177,9 @@
                                             <span class="md-title">Files</span>
                                             <span class="md-subhead">Manage Your Files</span>
                                         </md-card-header-text>
+                                        <md-button ng-disabled="!files" class="md-icon-button" ng-click="uploadPersonalFiles(files)" aria-label="upload" style="position: absolute; top: 16px; right: 16px;">
+                                             <md-icon style="color: {{primary_hue_normal.value}}; font-size: 16px;" md-font-library="material-icons" aria-label="upload">file_upload</md-icon>
+                                        </md-button>
                                     </md-card-header>
                                     <md-card-content>
                                         <md-content>
@@ -184,6 +187,7 @@
                                                 <md-tab label="All">
                                                     <md-content style="padding: 0;">
                                                         <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                                        <li ng-repeat="file in myFiles">{{file.filename}}</li>
                                                             <md-list class="md-dense" flex>
                                                                 <md-list-item class="md-2-line" flex>
                                                                     <md-icon style="color: {{primary_hue_normal.value}}; font-size: 16px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="far fa-file-word" aria-label="docx"></md-icon>
