@@ -243,8 +243,8 @@
                                         <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" ng-if="$index > 0" ng-click="child_nav_items.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
                                         <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
                                             <label>Navigation Item</label>
-                                            <input required name="item_name" ng-model="item.name">
-                                            <div ng-messages="signup.city.$error">
+                                            <input required name="nav_item_name" ng-model="item.name">
+                                            <div ng-messages="manageNavigation.nav_item_name.$error">
                                                 <div ng-message="required">Navigation item name required!</div>
                                             </div>
                                         </md-input-container>

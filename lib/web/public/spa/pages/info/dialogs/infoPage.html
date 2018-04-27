@@ -34,7 +34,7 @@
                         </md-button>
                     </md-menu-item>
                     <md-menu-item>
-                        <md-button ng-click="ctrl.toggleNotifications()">
+                        <md-button ng-click="infoPage.data.page.contents.push({'data': {'button': 'My Button', 'url': null}, 'type': 'button'})">
                             <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">link</md-icon>
                         New Button
                         </md-button>
@@ -44,43 +44,8 @@
             <md-card-title-text>
                 <span class="md-headline">{{infoPage.data.title}}</span>
             </md-card-title-text>
-            <md-list-item>
-                <md-input-container class="md-block lightweight-md-dropdown">
-                    <label>Section</label>
-                    <!-- Need to determine this programmatically -->
-                    <md-select ng-model="tabs">
-                        <md-option ng-value="title">
-                            Title
-                        </md-option>
-                        <md-option ng-value="0">
-                            Content
-                        </md-option>
-                    </md-select>
-                    <!-- Need to determine this programmatically -->
-                </md-input-container>
-            </md-list-item>
         </md-card-title>
 
-        <!-- Need to determine this programmatically -->
-        <md-card-content ng-show="tabs == title" layout="column" layout-gt-sm="row" layout-align="start center" layout-align-gt-sm="center start" layout-margin>
-            <!-- columns -->
-            <div flex flex-gt-sm="40">
-                <md-card class="md-card-base">
-                    <md-card-content>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Title</label>
-                                <input ng-model="infoPage.data.title">
-                            </md-input-container>
-                        </md-list-item>
-                    </md-card-content>
-                </md-card>
-            </div>
-            <!-- columns -->
-        </md-card-content>
-        <!-- Need to determine this programmatically -->
-
-        <!-- Need to determine this programmatically -->
         <md-card-content ng-show="tabs != title" layout="column" layout-gt-sm="row" layout-align="start center" layout-align-gt-sm="center start" layout-margin>
             <!-- columns -->
             <div flex flex-gt-sm="40" style="width: 100%">
@@ -150,6 +115,34 @@
                                         <img ng-value="'{{content.source}}'" ng-src="{{content.source}}" class="md-card-image">
                                     </md-card>
 
+                                    <form name="buttonEdit" ng-if="content.type == 'button'" ng-show="!items_sortable" flex>
+                                        <div layout="row" layout-align="center center" flex="100" layout-wrap>
+                                            <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
+                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" ng-click="child_nav_items.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                                <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
+                                                    <label>Navigation Item</label>
+                                                    <input required name="button_name" ng-model="content.data.button">
+                                                    <div ng-messages="buttonEdit.button_name.$error">
+                                                        <div ng-message="required">Button text required!</div>
+                                                    </div>
+                                                </md-input-container>
+                                            </md-list-item>
+                                            <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
+                                                <md-input-container class="md-block lightweight-md-dropdown normal">
+                                                    <label>Url</label>
+                                                    <md-select name="button_url" ng-model="content.data.url" ng-required="true">
+                                                        <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
+                                                            {{url.url}}
+                                                        </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="buttonEdit.button_url.$error">
+                                                        <div ng-message="required">A link is required!</div>
+                                                    </div>
+                                                </md-input-container>
+                                            </md-list-item>
+                                        </div>
+                                    </form>
+
                                 </md-list-item>
                             </div>
                         </div>
@@ -169,7 +162,6 @@
             </div>
             <!-- columns -->
         </md-card-content>
-        <!-- Need to determine this programmatically -->
 
         <md-card-actions layout="row" layout-align="end center">
             <md-button disabled>Superpowered by Lightweight</md-button>
