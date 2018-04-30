@@ -149,10 +149,10 @@
             
             <!-- columns -->
                 <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
-                    <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="page in app_pages track by $index" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
+                    <md-card class="md-card-base md-whiteframe-4dp" ng-repeat="page in pages track by $index" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative;">
                         <md-card-title>
                             <md-card-title-text>
-                                <span class="md-headline">{{page.name}}</span>
+                                <span class="md-headline">{{page.settings.name}}</span>
                             </md-card-title-text>
                         </md-card-title>
                         <md-icon ng-show="page.locked" style="position: absolute; top: 16px; right: 16px; color: {{primary_hue_normal.value}};" aria-label="page locked" md-font-library="material-icons">lock_outline</md-icon>
@@ -161,13 +161,13 @@
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Page Name</label>
-                                    <input ng-model="page.name" ng-disabled="page.locked == true">
+                                    <input ng-model="page.settings.name" ng-disabled="page.locked == true">
                                 </md-input-container>
                             </md-list-item>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Page Url</label>
-                                    <input ng-model="page.url" ng-disabled="page.locked == true">
+                                    <input ng-model="page.settings.url" ng-disabled="page.locked == true">
                                 </md-input-container>
                             </md-list-item>
                         </md-card-content>
