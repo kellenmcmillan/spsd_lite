@@ -134,14 +134,14 @@
                 <span class="md-headline">Content Editor</span>
             </md-card-title-text>
 
-            <md-list-item ng-if="editor_element.settings.configs.multiview == true">
+            <md-list-item ng-show="editor_element.settings.configs.multiview == true">
                 <md-input-container class="md-block lightweight-md-dropdown">
                     <label>{{editor_element.settings.configs.multiview_label}}</label>
                     <md-select ng-model="view">
-                        <md-option ng-if="editor_element.settings.configs.title_view == true" ng-value="title">
+                        <md-option ng-value="title">
                             Title &amp; Subtitle
                         </md-option>
-                        <md-option ng-repeat="views in editor_element.data.items" ng-value="$index">
+                        <md-option ng-repeat="views in editor_element.data.items track by $index" ng-value="$index">
                             {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
                         </md-option>
                     </md-select>
@@ -161,13 +161,13 @@
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Title</label>
-                                <input ng-model="editor_element.title">
+                                <input ng-model="editor_element.data.title">
                             </md-input-container>
                         </md-list-item>
                         <md-list-item>
                             <md-input-container class="md-block lightweight-md-input" flex>
                                 <label>Subtitle</label>
-                                <input ng-model="editor_element.subtitle">
+                                <input ng-model="editor_element.data.subtitle">
                             </md-input-container>
                         </md-list-item>
                     </md-card-content>
@@ -176,7 +176,7 @@
         </md-card-content>
 
 
-        <md-card-content ng-show="view != 'title'" layout="column" layout-gt-sm="row" layout-align="start center" layout-align-gt-sm="center start" layout-margin>
+        <md-card-content ng-show="view != title" layout="column" layout-gt-sm="row" layout-align="start center" layout-align-gt-sm="center start" layout-margin>
 
             <!-- Content Editor -->
             <div flex flex-gt-sm="40" style="width: 100%">
