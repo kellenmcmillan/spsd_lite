@@ -54,7 +54,7 @@
                                                 <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                                             </md-button>
                                             <img ng-show="!gallery_detail_view && media.metadata.type != 'video'" ng-cloak ng-src="{{media.source}}" class="md-card-image" ng-init="gallery_detail_view = false">
-                                            <video controls ng-show="!gallery_detail_view && media.metadata.type == 'video'" ng-cloak ng-src="{{media.source}}" class="md-card-image" ng-init="gallery_detail_view = false">
+                                            <video controls ng-show="!gallery_detail_view && media.metadata.type == 'video'" ng-cloak ng-src="{{media.source}}" class="md-card-image" ng-init="gallery_detail_view = false"></video>
                                             <md-card-content ng-show="gallery_detail_view">
                                                 <md-tabs md-dynamic-height md-border-bottom>
                                                     <md-tab label="Details" layout-padding>
