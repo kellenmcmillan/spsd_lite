@@ -14,26 +14,10 @@
 <div ng-include src="'spa/partials/interior-header.html'"></div>
 <!-- Header -->
 
-<!-- Navbar -->
-<div class="portfolio-nav--container base-hlst full-width" style="margin-top: 100px; border-bottom: 1px solid rgba(0,0,0,.15);">
-	<div class="portfolio-nav--row">
-        <span class="mdl-layout-title">
-            <p 
-            class="portfolio-nav-title base-hdst--text"
-            style="font-size: 24px;">
-                {{settings.data.company_name}} Galleries
-            </p>
-        </span>
-        <span class="mdl-layout-title hide">
-            <i class="material-icons base-hdst--text" style="font-weight: normal; cursor: pointer" ng-click="mobile_menu = !mobile_menu;">share</i>
-    	</span>
-	</div>
-</div>
-<!-- Navbar -->
 <!-- Photo Grid -->
-<div style="display: relative;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
+<div style="display: relative; margin-top: 100px;" class="mdl-grid mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone {{base_hue_lightest.name}}" minfull-screen>
 	
-	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" style="display: block; margin-bottom: 224px!important;">
+	<div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone mdl-grid no-margin no-padding full-width photo_roll" style="display: block; margin-bottom: 224px!important; z-index: 2;">
 
 		<div 
 		class="portfolio_media_thumbs mdl-cell mdl-cell--3-col-desktop mdl-cell--4-col-tablet mdl-cell--4-col-phone thumb-{{$index}}" 
@@ -54,45 +38,6 @@
 		</div>
 	</div>
 	<img content-available src="{{settings.data.logo}}" style="width: 0px; height: 0px;">
-	<div style="position: fixed; bottom: 48px; right: 32px;" layout="row" layout-align="center center">
-		<a href="/">
-			<button id="fling_2" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_2" ng-class="{'opened': isOpen}" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
-			  	<i 
-			  	class="material-icons"
-			  	color="primary" 
-			    hue="hue normal" 
-			    property="text" 
-			    opaqueness="" 
-			    lw-color>
-			    	home
-			    </i>
-			</button>
-		</a>
-		<div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_2">Home</div>
-		<button id="fling_1" go-back-angular class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect fling_button fling_button_1" ng-class="{'opened': isOpen}" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 40px; width: 42px; min-width: 42px; height: 42px;">
-		  	<i 
-		  	class="material-icons"
-		  	color="primary" 
-		    hue="hue normal" 
-		    property="text" 
-		    opaqueness="" 
-		    lw-color>
-		    	arrow_back
-		    </i>
-		</button>
-		<div class="mdl-tooltip mdl-tooltip--left" data-mdl-for="fling_1">Previous Page</div>
-		<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-shadow--8dp" ng-click="isOpen = !isOpen" ng-attr-style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: 80px; right: 32px;">
-		  	<i 
-		  	class="material-icons"
-		  	color="base" 
-		    hue="hue lighter" 
-		    property="text" 
-		    opaqueness="" 
-		    lw-color>
-		    	menu
-		    </i>
-		</button>
-    </div>
 </div>
 <!-- Photo Grid -->
 
