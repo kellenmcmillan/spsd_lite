@@ -184,7 +184,7 @@
                                     <md-card-content>
                                         <md-content>
                                             <md-tabs md-dynamic-height md-border-bottom>
-                                                <md-tab label="All">
+                                                <md-tab label="My Files">
                                                     <md-content style="padding: 0;">
                                                         <div layout="column" layout-align="center stretch" style="margin: 0" flex>
                                                         <li ng-repeat="file in myFiles">{{file.filename}}</li>
@@ -320,126 +320,7 @@
                                                         </div>
                                                     </md-content>
                                                 </md-tab>
-                                                <md-tab label="Uploaded">
-                                                    <md-content class="md-padding">
-                                                        <div layout="column" layout-align="center stretch" flex>
-                                                            <md-list class="md-dense" flex>
-                                                                <md-list-item class="md-2-line" flex>
-                                                                    <md-icon style="color: {{primary_hue_normal.value}}; font-size: 16px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="far fa-file-word" aria-label="docx"></md-icon>
-                                                                    <div class="md-list-item-text">
-                                                                        <h3 style="font-size: 16px;">MyDocument.docx</h3>
-                                                                        <p>53kb</p>
-                                                                    </div>
-                                                                    <div class="md-secondary">
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="share file">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="share file" md-font-library="material-icons">share</md-icon>
-                                                                    </md-button>
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="Download">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Download Media" md-font-library="material-icons">cloud_download</md-icon>
-                                                                    </md-button>
-                                                                    </div>
-                                                                </md-list-item>
-                                                                <md-divider ></md-divider>
-                                                                <md-list-item class="md-2-line" flex>
-                                                                    <md-icon style="color: {{primary_hue_normal.value}}; font-size: 16px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="far fa-file-excel" aria-label="excel"></md-icon>
-                                                                    <div class="md-list-item-text">
-                                                                        <h3 style="font-size: 16px;">MyDocument.xls</h3>
-                                                                        <p>153kb</p>
-                                                                    </div>
-                                                                    <div class="md-secondary">
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="share file">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="share file" md-font-library="material-icons">share</md-icon>
-                                                                    </md-button>
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="Download">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Download Media" md-font-library="material-icons">cloud_download</md-icon>
-                                                                    </md-button>
-                                                                    </div>
-                                                                </md-list-item>
-                                                                <md-divider ></md-divider>
-                                                                <md-list-item class="md-2-line" flex>
-                                                                    <md-icon style="color: {{primary_hue_normal.value}}; font-size: 16px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="far fa-file-pdf" aria-label="pdf"></md-icon>
-                                                                    <div class="md-list-item-text">
-                                                                        <h3 style="font-size: 16px;">MyDocument.pdf</h3>
-                                                                        <p>153kb</p>
-                                                                    </div>
-                                                                    <div class="md-secondary">
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="share file">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="share file" md-font-library="material-icons">share</md-icon>
-                                                                    </md-button>
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="Download">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Download Media" md-font-library="material-icons">cloud_download</md-icon>
-                                                                    </md-button>
-                                                                    </div>
-                                                                </md-list-item>
-                                                                <md-divider ></md-divider>
-                                                                <md-list-item class="md-2-line" flex>
-                                                                    <md-icon style="color: {{primary_hue_normal.value}}; font-size: 16px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="far fa-file-image" aria-label="image"></md-icon>
-                                                                    <div class="md-list-item-text">
-                                                                        <h3 style="font-size: 16px;">MyDocument.png</h3>
-                                                                        <p>153kb</p>
-                                                                    </div>
-                                                                    <div class="md-secondary">
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="share file">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="share file" md-font-library="material-icons">share</md-icon>
-                                                                    </md-button>
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="Download">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Download Media" md-font-library="material-icons">cloud_download</md-icon>
-                                                                    </md-button>
-                                                                    </div>
-                                                                </md-list-item>
-                                                                <md-divider ></md-divider>
-                                                                <md-list-item class="md-2-line" flex>
-                                                                    <md-icon style="color: {{primary_hue_normal.value}}; font-size: 16px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="fas fa-code" aria-label="iframe"></md-icon>
-                                                                    <div class="md-list-item-text">
-                                                                        <h3 style="font-size: 16px;">Embedded Map</h3>
-                                                                        <p>153kb</p>
-                                                                    </div>
-                                                                    <div class="md-secondary">
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="share file">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="share file" md-font-library="material-icons">share</md-icon>
-                                                                    </md-button>
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="Download">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Download Media" md-font-library="material-icons">cloud_download</md-icon>
-                                                                    </md-button>
-                                                                    </div>
-                                                                </md-list-item>
-                                                                <md-divider ></md-divider>
-                                                                <md-list-item class="md-2-line" flex>
-                                                                    <md-icon style="color: {{primary_hue_normal.value}}; font-size: 16px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="far fa-file-video" aria-label="video"></md-icon>
-                                                                    <div class="md-list-item-text">
-                                                                        <h3 style="font-size: 16px;">MyDocument.mp4</h3>
-                                                                        <p>55mb</p>
-                                                                    </div>
-                                                                    <div class="md-secondary">
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="share file">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="share file" md-font-library="material-icons">share</md-icon>
-                                                                    </md-button>
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="Download">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Download Media" md-font-library="material-icons">cloud_download</md-icon>
-                                                                    </md-button>
-                                                                    </div>
-                                                                </md-list-item>
-                                                                <md-divider ></md-divider>
-                                                                <md-list-item class="md-2-line" flex>
-                                                                    <md-icon style="color: {{primary_hue_normal.value}}; font-size: 16px;" class="md-avatar-icon fa" md-font-set="fa" md-font-icon="far fa-file-archive" aria-label="zip"></md-icon>
-                                                                    <div class="md-list-item-text">
-                                                                        <h3 style="font-size: 16px;">MyGallery.zip</h3>
-                                                                        <p>55mb</p>
-                                                                    </div>
-                                                                    <div class="md-secondary">
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="share file">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="share file" md-font-library="material-icons">share</md-icon>
-                                                                    </md-button>
-                                                                    <md-button class="md-secondary md-icon-button" style="background-color: {{base_hue_lightest.value}};" aria-label="Download">
-                                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Download Media" md-font-library="material-icons">cloud_download</md-icon>
-                                                                    </md-button>
-                                                                    </div>
-                                                                </md-list-item>
-                                                            </md-list>
-                                                        </div>
-                                                    </md-content>
-                                                </md-tab>
-                                                <md-tab label="Shared">
+                                                <md-tab label="Shared With Me">
                                                     <md-content class="md-padding">
                                                         <div layout="column" layout-align="center stretch" flex>
                                                             <md-list class="md-dense" flex>
