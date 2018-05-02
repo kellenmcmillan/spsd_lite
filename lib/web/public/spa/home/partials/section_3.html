@@ -1,0 +1,56 @@
+<div 
+ minfull-screen
+ class="mdl-grid featured-products"
+ data-size>
+  <md-button ng-if="user" ng-click="edit(section_3.settings.configs" class="md-fab custom-deep-button" aria-label="Edit element" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
+        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+    </md-button>
+  <span id="{{section_3.settings.url}}" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
+  <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone center--text">
+   <!-- Title -->
+  <div class="center--text">
+  <br><br><br>
+      <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;" ng-bind-html="section_3.data.title"></h2>
+      <h2 class="mdl-typography--font-bold" ng-bind-html="section_3.data.subtitle"></h2>
+      <!-- SVG Title Border Asset -->
+      <svg 
+      version="1.1" 
+      id="Layer_1" 
+      xmlns="http://www.w3.org/2000/svg" 
+      xmlns:xlink="http://www.w3.org/1999/xlink" 
+      x="0px" y="0px" viewBox="0 0 300 20" 
+      style="enable-background:new 0 0 300 20; display: block; margin: -8px auto 0 auto;" 
+      width="288" height = "13" 
+      path fill="{{base_hue_darker.value}}" 
+      xml:space="preserve">
+          <polygon points="165.8,5.9 151.8,17.4 137.8,5.9 141.3,5.9 151.8,14.5 162.3,5.9 "/><g><circle cx="10" cy="9.5" r="4.5"/></g><g><circle cx="38" cy="9.5" r="4.5"/></g><g><circle cx="66" cy="9.5" r="4.5"/></g><g><circle cx="94" cy="9.5" r="4.5"/></g><g><circle cx="122" cy="9.5" r="4.5"/></g><g><circle cx="178" cy="9.5" r="4.5"/></g><g><circle cx="206" cy="9.5" r="4.5"/></g><g><circle cx="234" cy="9.5" r="4.5"/></g><g><circle cx="262" cy="9.5" r="4.5"/></g><g><circle cx="290" cy="9.5" r="4.5"/></g>
+      </svg>  
+  </div>
+  <!-- SVG Title Border Asset -->
+  </div>
+  <!-- Title -->
+  <div class="mdl-cell mdl-cell--4-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone" ng-repeat="product in section_3.data.items">
+    <div class="featured-product-card mdl-card border--radius-2" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'mdl-shadow--6dp': $index == 1, 'featured-last': $index == 2}">
+      <span class="overflow-image border--radius-2" ng-class="{'mdl-shadow--6dp': $index == 1, 'mdl-shadow--2dp': $index != 1}" ng-attr-style="background: url('{{product.background.images.source}}') center/cover no-repeat; position: relative; border: 1px solid {{base_hue_lightest.value}};">
+      </span>
+      <div class="mdl-card__supporting-text" style="text-align: left;">
+        <div ng-repeat="content in product.contents">
+            <h4 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; font-weight: bold;"></h4>
+            <p class="base-hdst--text padded--top16" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+            <p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+            <div class="mdl-grid full-width no-padding">
+                <!-- panel images -->
+                <div ng-cloak class="mdl-cell mdl-cell--12-col lightweight-card-image mdl-card mdl-shadow--2dp" ng-if="content.type == 'image'" ng-attr-style="background: url('{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}') center/cover; position: relative;">
+                    <div class="mdl-card__title mdl-card--expand"></div>
+                </div>
+                <!-- panel images -->
+            </div>
+            <a ng-if="content.type == 'button'" href="{{content.data.url}}">
+                <button style="margin-top: 8px; margin-bottom: 16px;" class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect">{{content.data.button}}</button>
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

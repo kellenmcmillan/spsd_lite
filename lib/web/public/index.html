@@ -87,25 +87,7 @@
         <div ng-include src="'spa/styles/global-dynamic-styles.html'"></div>
         <!-- Dynamic Global Styles -->
 
-        <!-- mission edit -->
-        <div ng-if="user" ng-include src="'spa/home/dialogs/mission.html'"></div>
-        <!-- mission edit -->
-
-        <!-- parallax edit -->
-        <div ng-if="user" ng-include src="'spa/home/dialogs/parallaxOne.html'"></div>
-        <!-- parallax edit -->
-
-        <!-- featured products edit -->
-        <div ng-if="user" ng-include src="'spa/home/dialogs/featuredProducts.html'"></div>
-        <!-- featured products edit -->
-
-        <!-- parallax edit -->
-        <div ng-if="user" ng-include src="'spa/home/dialogs/parallaxTwo.html'"></div>
-        <!-- parallax edit -->
-
-        <!-- parallax edit -->
-        <div ng-if="user" ng-include src="'spa/home/dialogs/parallaxThree.html'"></div>
-        <!-- parallax edit -->
+        <div ng-if="user" ng-include src="'spa/global/dialogs/editor.html'"></div>
 
         <!-- pages edit -->
         <div ng-if="user" ng-include src="'spa/pages/info/dialogs/infoPage.html'"></div>
@@ -318,6 +300,10 @@
     <!-- app routing -->
     <script src="../router.js" type="text/javascript"></script>
     <!-- app routing -->
+
+    <!-- lightweight v 0.5.0 -->
+    <script src="../lightweight.js" type="text/javascript"></script>
+    <!-- lightweight v 0.5.0 -->
     
     <!-- Client Facing Scripts -->
     <script src="../mainController.js" type="text/javascript"></script>
@@ -331,7 +317,6 @@
     <script src="../spa/home/controllers/homeController.js" type="text/javascript"></script>
     <script src="../spa/global/controllers/userVault.js" type="text/javascript"></script>
     <script src="../spa/global/controllers/mediaVault.js" type="text/javascript"></script>
-    <script src="../spa/global/controllers/suiteController.js" type="text/javascript"></script>
     <script src="../spa/pages/gallery/controllers/folderController.js" type="text/javascript"></script>
     <script src="../spa/pages/gallery/controllers/directoryController.js" type="text/javascript"></script>
     <script src="../spa/pages/info/controllers/infoController.js" type="text/javascript"></script>
