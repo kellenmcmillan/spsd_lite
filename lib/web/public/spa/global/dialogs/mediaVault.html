@@ -317,7 +317,7 @@
                                                     <span class="md-headline">Video Upload Preview</span>
                                                 </md-card-title-text>
                                             </md-card-title>
-                                            <video controls ngf-src="files" class="md-card-image"></video>
+                                            <video style="width: 100%;" controls ngf-src="files" class="md-card-image"></video>
                                             <md-card-content>
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
@@ -346,7 +346,7 @@
                                 <!-- view - download preview -->
 
                                 <!-- view - downloading files -->
-                                <div flex flex-gt-sm="40" ng-show="mediaVaultView == 'downloads in progress'">
+                                <div flex flex-gt-sm="40" ng-show="mediaVaultView == 'downloads in progress' && files.metadata.type != 'video'">
                                     <div layout="column" flex>
                                         <md-card ng-repeat="f in files" class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
                                             <md-card-title>
@@ -355,7 +355,8 @@
                                                 </md-card-title-text>
                                             </md-card-title>
                                             <md-progress-linear md-mode="determinate" value="{{f.percentage}}"></md-progress-linear>
-                                            <img ng-src="{{f.source}}" class="md-card-image" alt="{{f.filename}}">
+                                            <img ng-if="f.metadata.type != 'video'" ng-src="{{f.source}}" class="md-card-image" alt="{{f.filename}}">
+                                            <video ng-if="f.metadata.type == 'video'" style="width: 100%;" controls ng-src="{{f.source}}" class="md-card-image"></video>
                                             <md-card-content>
                                                 <md-list-item>
                                                     <md-input-container class="md-block lightweight-md-input" flex>
@@ -366,6 +367,38 @@
                                                 <md-list-item layout="row" layout-align="start center">
                                                     <div flex layout-align="end center" ng-show="f.tags">
                                                         <md-chips ng-model="f.tags" md-removable="false">
+                                                            <md-chip-template>
+                                                                {{ $chip }}
+                                                            </md-chip-template>
+                                                        </md-chips>
+                                                    </div>
+                                                </md-list-item>
+                                            </md-card-content>
+                                        </md-card>
+                                    </div>
+                                </div>
+                                <!-- view - downloading files -->
+                                <!-- view - downloading files -->
+                                <div flex flex-gt-sm="40" ng-show="mediaVaultView == 'downloads in progress' && files.metadata.type == 'video'">
+                                    <div layout="column" flex>
+                                        <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
+                                            <md-card-title>
+                                                <md-card-title-text>
+                                                    <span class="md-headline">Uploaded File</span>
+                                                </md-card-title-text>
+                                            </md-card-title>
+                                            <md-progress-linear md-mode="determinate" value="{{files.percentage}}"></md-progress-linear>
+                                            <video ng-if="files.metadata.type == 'video'" style="width: 100%;" controls ng-src="{{f.source}}" class="md-card-image"></video>
+                                            <md-card-content>
+                                                <md-list-item>
+                                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                                        <label>Filename</label>
+                                                        <input disabled ng-model="files.filename">
+                                                    </md-input-container>
+                                                </md-list-item>
+                                                <md-list-item layout="row" layout-align="start center">
+                                                    <div flex layout-align="end center" ng-show="files.tags">
+                                                        <md-chips ng-model="files.tags" md-removable="false">
                                                             <md-chip-template>
                                                                 {{ $chip }}
                                                             </md-chip-template>
