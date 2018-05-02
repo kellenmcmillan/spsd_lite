@@ -4,7 +4,7 @@
  minfull-screen
  style="border-bottom: 1px rgba(0,0,0,0.13) solid; position: relative;"
  class="component mission mdl-grid no-padding no-margin {{base_hue_lightest.name}}">
-        <md-button ng-if="user" ng-click="edit(section_1.settings.configs)" class="md-fab custom-deep-button" aria-label="Edit Mission" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
+        <md-button ng-if="user" ng-click="edit(section_1.settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit Mission" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
             <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
         </md-button>
         <span id="{{section_1.settings.url}}" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>

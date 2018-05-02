@@ -135,7 +135,7 @@
             </md-card-title-text>
 
             <md-list-item ng-if="editor_element.settings.configs.multiview == true">
-                <md-input-container class="md-block lightweight-md-dropdown" ng-init="view = 'title'">
+                <md-input-container class="md-block lightweight-md-dropdown">
                     <label>{{editor_element.settings.configs.multiview_label}}</label>
                     <md-select ng-model="view">
                         <md-option ng-if="editor_element.settings.configs.title_view == true" ng-value="title">
@@ -154,10 +154,7 @@
 
 
         <!-- Dialog Editor | Body -->
-
-
-        <md-card-content ng-if="editor_element.settings.configs.title_view == true" ng-show="view == 'title'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin>
-            <!-- columns -->
+        <md-card-content ng-if="editor_element.settings.configs.title_view == true" ng-show="view == title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin>
             <div flex flex-gt-sm="40">
                 <md-card class="md-card-base">
                     <md-card-content>
@@ -176,7 +173,6 @@
                     </md-card-content>
                 </md-card>
             </div>
-            <!-- columns -->
         </md-card-content>
 
 
@@ -314,7 +310,7 @@
                         <!-- Pages -->
 
                         <!-- multiple views -->
-                        <div ng-if="editor_element.data.items" class="lightweight-list-control" ui-sortable="sortableList" ng-model="editor_element.data.items[view].contents">
+                        <div ng-if="editor_element.data.items" ng-show="view != title" class="lightweight-list-control" ui-sortable="sortableList" ng-model="editor_element.data.items[view].contents">
                             <div ng-show="view == $index" ng-repeat="content in editor_element.data.items[view].contents track by $index">
                                 <md-card-title ng-show="!items_sortable">
                                     <md-card-title-text>
