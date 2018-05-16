@@ -95,14 +95,9 @@
     <div layout="row" layout-align="start start" class="navigation panel md-whiteframe-4dp" ng-class="{'open': navigation_panel, 'close': !navigation_panel}" style="background-color: {{base_hue_darkest.value}};">
         <!-- <img src="https://storage.googleapis.com/spsd-189118.appspot.com/navigation-background.jpg" style="position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%; opacity: .1; z-index: 1;"> -->
         <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
-            <div flex="50" layout="row" layout-align="start center" layout-margin>
-                <md-button ng-click="null" style="color: {{base_hue_lightest.value}}; background-color: {{primary_hue_normal.value}};">
-                    <md-icon style="color: {{base_hue_lightest.value}}">lock_outline</md-icon>
-                    Log In
-                </md-button>
-            </div>
+            <div flex="50"></div>
             <div flex="50">
-            <md-icon ng-click="close_parent_menu()" style="color: {{base_hue_lightest.value}}; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
+                <md-icon ng-click="close_parent_menu()" style="color: {{base_hue_lightest.value}}; position: absolute; top: 16px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
             </div>
             <md-list flex="100" style="padding-bottom: 48px;">
                 <a href="/" style="text-decoration: none;">

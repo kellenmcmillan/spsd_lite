@@ -399,7 +399,7 @@
                         <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
                             <md-button ng-if="staff.id == undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
                             <md-button class="md-whiteframe-2dp" ng-if="staff.id == undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="addStaffMember(staff)">Save</md-button>
-                            <md-button ng-if="staff.id != undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff)">Remove</md-button>
+                            <md-button ng-if="staff.id != undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff.id, editable_app_settings.staff.members)">Remove</md-button>
                             <md-button class="md-whiteframe-2dp" ng-if="staff.id != undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
                         </md-card-actions>
                     </md-card>
