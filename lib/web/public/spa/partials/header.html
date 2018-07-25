@@ -48,12 +48,13 @@
 
         <span class="mdl-layout-title header-graphic-logo">
             <a href="/">
-                <img ng-if="scroll > 0" class="header-logo" src="{{settings.data.logo}}" ng-cloak="true">
+                <!-- <img ng-if="scroll > 0" class="header-logo" src="{{settings.data.logo}}" ng-cloak="true"> -->
+                <img class="header-logo" src="{{settings.data.logo}}" ng-cloak="true">
             </a>
-            <a href="/">
-                <!-- <img ng-if="scroll == 0" class="header-logo" src="{{settings.data.logo_white}}" ng-cloak="true"> -->
+            <!-- <a href="/">
+                <img ng-if="scroll == 0" class="header-logo" src="{{settings.data.logo_white}}" ng-cloak="true">
                 <img ng-if="scroll == 0" class="header-logo" src="{{settings.data.logo}}" ng-cloak="true">
-            </a>
+            </a> -->
         </span>
 
         <div class="mdl-layout-spacer"></div>
