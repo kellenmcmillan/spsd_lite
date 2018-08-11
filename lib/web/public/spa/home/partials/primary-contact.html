@@ -53,7 +53,7 @@
                     <li>
                         <div class="lightweight-textfield" style="width: 100%;">
                             <label class="lightweight-texfield--label" for="name">Full Name</label>
-                            <input class="lightweight-input" type="text" id="name" name="name" ng-model="indexForm.name" ng-value="indexForm.name" spellcheck="false">
+                            <input class="lightweight-input" type="text" id="name" name="name" ng-model="indexForm.name" ng-value="indexForm.name" spellcheck="false" minlength="3" required>
                             <div ng-messages="index.name.$error" ng-show="index.name.$dirty">
                                 <div ng-message="required">Name required!</div>
                                 <div ng-message="minlength">Name too short!</div>
@@ -63,7 +63,7 @@
                     <li>
                         <div class="lightweight-textfield" style="width: 100%;">
                             <label class="lightweight-texfield--label" for="email">Email</label>
-                            <input class="lightweight-input" type="text" id="email" name="Email" ng-model="indexForm.email" ng-value="indexForm.email" spellcheck="false">
+                            <input class="lightweight-input" type="text" id="email" name="Email" ng-model="indexForm.email" ng-value="indexForm.email" spellcheck="false" minlength="4" required>
                             <div ng-messages="index.email.$error" ng-show="index.email.$dirty">
                                 <div ng-message="required">Email required!</div>
                                 <div ng-message="email">Enter a valid email!</div>
