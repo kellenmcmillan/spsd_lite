@@ -72,11 +72,11 @@
                     </li>
                     <l1 class="lightweight-textfield" style="width: 100%; padding-bottom: 8px;">
                         <label class="lightweight-texfield--label" for="message">Message...</label>
-                        <textarea class="lightweight-input" rows="3" minlength="10" md-maxlength="250" required type="text" id="message" name="message" ng-model="indexForm.message" spellcheck="false"></textarea>
+                        <textarea class="lightweight-input" rows="3" minlength="10" maxlength="250" required type="text" name="message" ng-model="indexForm.message" spellcheck="false"></textarea>
                         <div ng-messages="index.message.$error" ng-show="index.message.$dirty">
                             <div ng-message="required">Message required!</div>
                             <div ng-message="minlength">Message too short!</div>
-                            <div ng-message="md-maxlength">Message too long!</div>
+                            <div ng-message="maxlength">Message too long!</div>
                         </div>
                     </l1>
                 </ul>
