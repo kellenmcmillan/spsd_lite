@@ -48,32 +48,39 @@
         <div class="contact-center--2" layout="column" layout-align="center start" flex style="position: relative; height: inherit; padding: 24px 16px;">
             <h1 class="h1 mdl-typography--font-bold">Contact {{settings.data.company_name}}</h1>
             <p class="base-hdr--text form-instructions">*Complete The Form Below. Our team will respond to your request as soon as possible.</p>
-            <form autocomplete="off" class="forms full-width" name="index_page_contact">
+            <form autocomplete="off" class="forms full-width" name="index">
                 <ul class="no-padding">
                     <li>
                         <div class="lightweight-textfield" style="width: 100%;">
-                            <label class="lightweight-texfield--label" for="firstname">First Name...</label>
-                            <input class="lightweight-input" type="text" id="firstname" name="Firstname" ng-model="index.form.lead.info.firstname" ng-value="index.form.lead.info.firstname" spellcheck="false">
+                            <label class="lightweight-texfield--label" for="name">Full Name</label>
+                            <input class="lightweight-input" type="text" id="name" name="name" ng-model="indexForm.name" ng-value="indexForm.name" spellcheck="false">
+                            <div ng-messages="index.name.$error" ng-show="index.name.$dirty">
+                                <div ng-message="required">Name required!</div>
+                                <div ng-message="minlength">Name too short!</div>
+                            </div>
                         </div>
                     </li>
                     <li>
                         <div class="lightweight-textfield" style="width: 100%;">
-                            <label class="lightweight-texfield--label" for="lastname">Last Name...</label>
-                            <input class="lightweight-input" type="text" id="lastname" name="lastname" ng-model="index.form.lead.info.lastname" ng-value="index.form.lead.info.lastname" spellcheck="false">
-                        </div>
-                    </li>
-                    <li>
-                        <div class="lightweight-textfield" style="width: 100%;">
-                            <label class="lightweight-texfield--label" for="email">Email...</label>
-                            <input class="lightweight-input" type="text" id="email" name="Email" ng-model="index.form.lead.info.email" ng-value="index.form.lead.email" spellcheck="false">
+                            <label class="lightweight-texfield--label" for="email">Email</label>
+                            <input class="lightweight-input" type="text" id="email" name="Email" ng-model="indexForm.email" ng-value="indexForm.email" spellcheck="false">
+                            <div ng-messages="index.email.$error" ng-show="index.email.$dirty">
+                                <div ng-message="required">Email required!</div>
+                                <div ng-message="email">Enter a valid email!</div>
+                            </div>
                         </div>
                     </li>
                     <l1 class="lightweight-textfield" style="width: 100%; padding-bottom: 8px;">
                         <label class="lightweight-texfield--label" for="message">Message...</label>
-                        <textarea class="lightweight-input" rows="3" type="text" id="message" name="message" ng-model="index.form.lead.info.message" spellcheck="false"></textarea>
+                        <textarea class="lightweight-input" rows="3" minlength="10" md-maxlength="250" required type="text" id="message" name="message" ng-model="indexForm.message" spellcheck="false"></textarea>
+                        <div ng-messages="index.message.$error" ng-show="index.message.$dirty">
+                            <div ng-message="required">Message required!</div>
+                            <div ng-message="minlength">Message too short!</div>
+                            <div ng-message="md-maxlength">Message too long!</div>
+                        </div>
                     </l1>
                 </ul>
-                <button class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" style="width: 150px;" value="submit" ng-click="">Send</button>
+                <button class="button-color-border mdl-button mdl-js-button mdl-js-ripple-effect" style="width: 150px;" ng-click="sendLead(indexForm, 'Home Page'); clearForm(indexForm)">Send</button>
             </form>
         </div>
     </div>
