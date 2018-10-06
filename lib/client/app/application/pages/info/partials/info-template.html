@@ -1,0 +1,77 @@
+<style>
+	.header-ms-explorer {position: fixed; width: 100%;}
+</style>
+<md-content class="page" style="height: {{window_height}}px">
+	<section style="background: {{base_hue_lighter.value}}">
+		
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 5; border-bottom: 1px solid #e0e0e0" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation-menu.html'"></div>
+
+		<md-button ng-if="me.security.roles == 'Lightweight Internet Coordinator' || me.security.roles == 'Lightweight Support'" ng-click="edit(infoPage.settings.configs, infoPage)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
+	        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+	    </md-button>
+
+
+		
+		
+		<div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
+
+			<!-- Page Title -->
+			<div layout="row" flex="100" flex-sm="100" flex-gt-sm="100" style="height: 600px; position: relative; top: 0; margin: 0; padding: 0; overflow: hidden; text-align: center; background-color: {{base_hue_darker_darkest_opacity.value}};">
+				<div style="width: 100%; height: 100%; position: absolute; margin: 0;">
+				    <img style="min-height: 100%; min-width: 100%; height: auto; width: auto;" ng-src="{{infoPage.data.page.foreground.images.source}}">
+				</div>
+				<h2 style="color: {{base_hue_text__lightest.value}}; position: relative; margin: auto; text-shadow: 1px 1px 8px rgba(0, 0, 0, .8);" class="type simulated">{{infoPage.data.title}}</h2>
+			</div>
+			<!-- =Page Title -->
+
+			<!-- tab Panel Component -->
+		    <md-card class="md-whiteframe-8dp" layout="row" layout-align="center start" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" style="z-index: 3; background-color: {{base_hue_lightest.value}};" layout-padding>
+		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; min-height: 400px;" layout-margin layout-padding>
+			    	<div ng-repeat="content in infoPage.data.page.contents" flex="100">
+			    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" ng-attr-style="color: {{primary_hue_normal.value}}; margin-top: 8px; margin-bottom: 8px;"></h1>
+						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+						<p class="base-hdst--text" ng-repeat="list in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{list.item}}</p>
+						<div class="mdl-grid full-width no-padding">
+							<!-- panel images -->
+								<md-card ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+									<img ng-src="{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" class="md-card-image">
+								</md-card>
+							<!-- panel images -->
+						</div>
+						<a ng-if="content.type == 'button'" href="{{content.data.url}}">
+	                        <md-button class="md-raised" style="margin-top: 8px; margin-bottom: 16px; background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">{{content.data.button}}</md-button>
+	                    </a>
+			        </div>
+		        </div>
+
+		    </md-card>
+		    <!-- tab Panel Component -->
+
+            <!-- Map Widget -->
+            <div class="md-whiteframe-8dp" flex="90" flex-sm="90" flex-gt-sm="25" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 8px 0 40px 0;">
+				<div style="margin: 0;" layout-wrap layout="row" layout-align="start center" flex>
+					<div flex style="margin-bottom: -5px; position: relative;" layout-align="end center">
+						<iframe ng-src="{{trusted_google_address_widget_map}}" width="auto" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
+					</div>
+				</div>
+				
+				<md-button href="{{settings.data.address.google_address_link}}" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+			        <md-icon style="color: {{base_hue_lighter.value}};">directions</md-icon>
+			    </md-button>
+			    
+			</div>
+            <!-- Map Widget -->
+
+		</div>
+	</section>
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+	
+</md-content>

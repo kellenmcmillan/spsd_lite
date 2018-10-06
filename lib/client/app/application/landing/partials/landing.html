@@ -1,0 +1,104 @@
+<style>
+	md-menu-item {min-height: 48px;}
+	.border-left {border-left: 1px solid #e0e0e0;}
+    .header-ms-explorer {position: fixed; width: 100%;}
+</style>
+
+<md-content class="page" style="height: {{window_height}}px">
+	<section ng-cloak>
+
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 5; border-bottom: 1px solid #e0e0e0" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation-menu.html'"></div>
+        <div class="dialog-curtain" ng-show="show_index_form == true" style="overflow-y: auto!important;">
+    		<div class="index-form" layout-padding>
+    			<md-card class="custom-deep-card" style="background: #fafafa; width: 100%; position: relative;">
+    				<md-button ng-show="!progressAnimation" style="position: absolute; top: 24px; right: 8px;" class="md-icon-button" ng-click="show_index_form = false" aria-label="More">
+    					<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">close</md-icon>
+    				</md-button>
+                    <div style="text-align: center">
+                        <div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+                    </div>
+                    <form name="index" ng-show="!progressAnimation">
+                    	<div style="text-align: center">
+                    		<h1>Contact {{settings.data.company_name}} Today!</h1>
+                    	</div>
+                        <md-card-content>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input">
+                                    <label>Full Name</label>
+                                    <input name="name" ng-model="indexForm.name" minlength="4" required>
+                                    <div ng-messages="index.name.$error" ng-show="index.name.$dirty">
+                                        <div ng-message="required">Name required!</div>
+                                        <div ng-message="minlength">Name too short!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input">
+                                    <label>Email</label>
+                                    <input type="email" name="email" ng-model="indexForm.email" required>
+                                    <div ng-messages="index.email.$error" ng-show="index.email.$dirty">
+                                        <div ng-message="required">Email required!</div>
+                                        <div ng-message="email">Enter a valid email!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                            	<md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Message</label>
+                                    <textarea name="message" md-detect-hidden="true" ng-model="indexForm.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+                                    <div ng-messages="index.message.$error" ng-show="index.message.$dirty">
+                                        <div ng-message="required">Message required!</div>
+                                        <div ng-message="minlength">Message too short!</div>
+                                        <div ng-message="md-maxlength">Message too long!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+                        </md-card-content>
+                        <md-button ng-disabled="index.$invalid" ng-click="sendLead(indexForm, 'Home Page'); clearForm(indexForm)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+                            <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
+                        </md-button>
+                    </form>
+                </md-card>
+    		</div>
+        </div>
+		<md-button ng-hide="show_index_form == true" ng-click="show_index_form = true" style="background-color: {{primary_hue_normal.value}}; position: fixed; right: 24px; bottom: 48px;" class="md-fab" aria-label="More">
+			<md-icon style="color: {{base_hue_lightest.value}}">mail</md-icon>
+		</md-button>
+		<!-- messaging notification -->
+
+		<!-- Slideshow -->
+		<div ng-include src="'application/landing/partials/slideshow.html'"></div>
+		<!-- Slideshow -->
+
+		<!-- Services -->
+		<div ng-include src="'application/landing/partials/section_1.html'"></div>
+		<!-- Services -->
+
+		<!-- Item Carousel -->
+		<div ng-include src="'application/landing/partials/section_2.html'"></div>
+		<!-- Item Carousel -->
+
+		<!-- Map With Contact Form Overlay -->
+		<div ng-include src="'application/landing/partials/section_3.html'"></div>
+		<!-- Map With Contact Form Overlay -->
+
+        <!-- Map With Contact Form Overlay -->
+        <div ng-include src="'application/landing/partials/section_4.html'"></div>
+        <!-- Map With Contact Form Overlay -->
+
+        <!-- Map With Contact Form Overlay -->
+        <div ng-include src="'application/landing/partials/section_5.html'"></div>
+        <!-- Map With Contact Form Overlay -->
+
+		<!-- Footer -->
+		<div ng-include src="'application/partials/footer.html'"></div>
+		<!-- Footer -->
+
+    </section>
+</md-content>

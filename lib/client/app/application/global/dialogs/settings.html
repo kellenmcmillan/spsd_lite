@@ -1,0 +1,711 @@
+<div class="dialog-curtain settings" ng-show="edit_configuration_dialog_visible == true">
+
+
+
+
+
+    <md-content class="page suite-dialog" style="height: {{window_height}}px; overflow: auto;">
+
+
+
+
+
+        <!-- =================== header =================== -->
+
+        <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
+
+            <div layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex>
+                <!-- =================== Mini App Title =================== -->
+                <div flex="50" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="start center" layout="row">
+                    <h3 class="md-headline" style="font-size: 24px;">{{setting}}</h3>
+                </div>
+                <!-- =================== Mini App Title =================== -->
+
+                <!-- =================== Start Action Buttons =================== -->
+
+                <!-- Mini App Menu Button -->
+                <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
+                </md-button>
+                <!-- Mini App Menu Button -->
+
+                <!-- =================== Change Setting View =================== -->
+                <md-menu>
+                    <md-button ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;">
+                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">settings</md-icon>
+                    </md-button>
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button ng-click="$parent.setting = 'Company Info'">
+                                Company Info
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="$parent.setting = 'Manage Pages'">
+                                Manage Pages
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="$parent.setting = 'Add Page'">
+                                Add A Page
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="$parent.setting = 'Edit Navigation'">
+                                Edit Navigation
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="$parent.setting = 'Manage Staff'">
+                                Manage Staff
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- =================== Change Setting View =================== -->
+
+                <!-- =================== Toggle View - Staff Settings =================== -->
+                <md-button ng-show="setting == 'Manage Staff'" class="md-fab md-mini" aria-label="Switch between grid and list view" style="position: absolute; bottom: -26px; left: 128px; background-color: {{base_hue_lightest.value}}!important;" ng-click="switchViewStaff()">
+                    <md-icon ng-show="staffgridview == true" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
+                    <md-icon ng-show="staffgridview == false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
+                </md-button>
+                <!-- =================== Toggle View - Staff Settings =================== -->
+
+                <!-- =================== Add Staff - Staff Settings =================== -->
+                <md-button ng-show="setting == 'Manage Staff'" ng-disabled="new_staff_member" class="md-fab md-mini" aria-label="Add a staff member" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;" ng-click="createStaff()">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">add</md-icon>
+                </md-button>
+                <!-- =================== Add Staff - Staff Settings =================== -->
+
+                <!-- =================== Create A Page - Manage Pages Setting =================== -->
+                <md-button ng-show="setting == 'Manage Pages'" ng-click="setting = 'Add Page'" class="md-fab md-mini" aria-label="Add a page" style="position: absolute; bottom: -26px; left: 128px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add" md-font-library="material-icons">add</md-icon>
+                </md-button>
+                <!-- =================== Create A Page - Manage Pages Setting =================== -->
+
+                <!-- =================== Open Manage Navigation Items Menu =================== -->
+                <md-menu ng-show="setting == 'Edit Navigation'">
+                    <md-button ng-disabled="manageNavigation.$invalid" md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Edit navigation" style="position: absolute; bottom: -26px; left: 128px; background-color: {{base_hue_lightest.value}}!important;">
+                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Select Parent Navigation Item" md-font-library="material-icons">link</md-icon>
+                    </md-button>
+                    <md-menu-content width="4">
+                        <md-menu-item ng-repeat="item in settings.navigation.data track by $index">
+                            <md-button ng-click="parentNav(item)">
+                                {{item.navigation.parent.name}}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <!-- =================== Open Manage Navigation Items Menu =================== -->
+
+                <!-- =================== Add Navigation Items To Parent =================== -->
+                <md-button ng-show="setting == 'Edit Navigation'" class="md-fab md-mini" aria-label="Add a child navigation item" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;" ng-click="addChildNavItem()">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add" md-font-library="material-icons">add</md-icon>
+                </md-button>
+                <!-- =================== Add Navigation Items To Parent =================== -->
+                <!-- Mini App Menu Button -->
+
+                <!-- Account Major Action Button -->
+
+                <!-- Account Major Action Button -->
+
+                <!-- =================== End Action Buttons =================== -->
+
+
+
+
+                <!-- =================== Navigation Items =================== -->
+
+                <div flex="50" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
+                    <md-button class="md-icon-button" aria-label="Close My Vault">
+                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you exit settings? Unsaved changes may be discarded" ng-confirm-click="close_edit_configuration()" ng-confirm-condition="true">close</md-icon>
+                    </md-button>
+                </div>
+
+                <!-- =================== Navigation Items =================== -->
+
+            </div>
+
+        </md-subheader>
+
+        <!-- =================== header =================== -->
+
+
+
+
+        <!-- =================== Mini App Side Menu =================== -->
+
+        <div ng-include src="'application/partials/backend-menu.html'"></div>
+
+        <!-- =================== Mini App Side Menu =================== -->
+
+
+
+
+        <!-- ======================== View ======================== -->
+        <md-card class="md-card-base card">
+    
+
+
+            <!-- Company Info Screen -->
+            <md-card-content ng-show="setting == 'Company Info'" layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-wrap style="padding: 0;">
+                <!-- columns -->
+                <div flex="100" flex-gt-sm="40">
+                    <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
+                        <md-card-header>
+                            <md-card-header-text>
+                                <span class="md-title">Company Info</span>
+                                <span class="md-subhead">Adjust Company Details</span>
+                            </md-card-header-text>
+                        </md-card-header>
+                        <md-card-content>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Company Name</label>
+                                    <input ng-model="settings.data.company_name">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Site Name</label>
+                                    <input ng-model="settings.data.site_name">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Legal Name</label>
+                                    <input ng-model="settings.data.legal_name">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Phone #1</label>
+                                    <input ng-model="settings.data.phone_1">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Street</label>
+                                    <input ng-model="settings.data.address.street">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>City</label>
+                                    <input ng-model="settings.data.address.city">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>State</label>
+                                    <md-select ng-model="settings.data.address.state">
+                                        <md-option><em>None</em></md-option>
+                                        <md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
+                                            {{state.abbrev}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Zip Code</label>
+                                    <input ng-model="settings.data.address.zipcode">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Google Address Link</label>
+                                    <input ng-model="settings.data.address.google_address_link">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Google Map Wiget</label>
+                                    <input ng-model="settings.data.address.google_map">
+                                </md-input-container>
+                            </md-list-item>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <div flex></div>
+                            <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-confirm-message="Are you sure you want to update your company settings?" ng-confirm-click="updateSettings()" ng-confirm-condition="true">Update</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>
+                <div flex="100" flex-gt-sm="40">
+                    <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
+                        <md-card-header>
+                            <md-card-header-text>
+                                <span class="md-title">Company Hours</span>
+                                <span class="md-subhead">Adjust Company Hours</span>
+                            </md-card-header-text>
+                        </md-card-header>
+                        <md-card-content layout="row" layout-wrap layout-align="center start">
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Sunday Open</label>
+                                    <md-select ng-model="settings.data.hours.sunday.start">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Sunday Close</label>
+                                    <md-select ng-model="settings.data.hours.sunday.end">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Monday Open</label>
+                                    <md-select ng-model="settings.data.hours.monday.start">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Monday Close</label>
+                                    <md-select ng-model="settings.data.hours.monday.end">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Tuesday Open</label>
+                                    <md-select ng-model="settings.data.hours.tuesday.start">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Tuesday Close</label>
+                                    <md-select ng-model="settings.data.hours.tuesday.end">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Wednesday Open</label>
+                                    <md-select ng-model="settings.data.hours.wednesday.start">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Wednesday Close</label>
+                                    <md-select ng-model="settings.data.hours.wednesday.end">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Thursday Open</label>
+                                    <md-select ng-model="settings.data.hours.thursday.start">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Thursday Close</label>
+                                    <md-select ng-model="settings.data.hours.thursday.end">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Friday Open</label>
+                                    <md-select ng-model="settings.data.hours.friday.start">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Friday Close</label>
+                                    <md-select ng-model="settings.data.hours.friday.end">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Saturday Open</label>
+                                    <md-select ng-model="settings.data.hours.saturday.start">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item flex="100" flex-sm="100" flex-gt-sm="50">
+                                <md-input-container class="md-block lightweight-md-dropdown">
+                                    <label>Saturday Close</label>
+                                    <md-select ng-model="settings.data.hours.saturday.end">
+                                        <md-option ng-repeat="time in times" ng-value="time">
+                                            {{time}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </md-list-item>
+                        </md-card-content>
+                        <md-card-actions layout="row" layout-align="end center">
+                            <div flex></div>
+                            <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-confirm-message="Are you sure you want to update your company settings?" ng-confirm-click="updateSettings()" ng-confirm-condition="true">Update</md-button>
+                        </md-card-actions>
+                    </md-card>
+                </div>
+                <!-- columns -->
+            </md-card-content>
+            <!-- Company Info Screen -->
+
+
+            <!-- Manage Pages Screen -->
+            <md-card-content ng-show="setting == 'Manage Pages'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex style="padding: 0;">
+                
+                <!-- columns -->
+                    <div layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
+                        <md-card class="md-card-base" ng-repeat="page in pages track by $index" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative; background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
+                            <md-card-title>
+                                <md-card-title-text>
+                                    <span class="md-headline">{{page.settings.name}}</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            <md-icon ng-show="page.settings.locked || !page.settings.linked" style="position: absolute; top: 16px; right: 16px; color: {{primary_hue_normal.value}};" aria-label="page locked" md-font-library="material-icons">lock_outline</md-icon>
+                            <md-icon ng-show="!page.settings.locked && !page.settings.linked" style="position: absolute; top: 16px; right: 16px; color: {{base_hue_darker.value}};" aria-label="page unlocked" md-font-library="material-icons">lock_open</md-icon>
+                            <md-card-content>
+                                <md-list-item>
+                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                        <label>Page Name</label>
+                                        <input ng-model="page.settings.name" ng-disabled="page.locked == true">
+                                    </md-input-container>
+                                </md-list-item>
+                                <md-list-item>
+                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                        <label>Page Url</label>
+                                        <input ng-model="page.settings.url" ng-disabled="page.locked == true">
+                                    </md-input-container>
+                                </md-list-item>
+                            </md-card-content>
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button ng-confirm-message="Are you sure you want to remove this page?" ng-confirm-click="deletePage($index)" ng-confirm-condition="!page.settings.locked || !page.settings.linked" ng-disabled="page.settings.locked == true || page.settings.linked == true" class="md-whiteframe-2dp" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Delete</md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </div>
+                <!-- columns -->
+            </md-card-content>
+            <!-- Manage Pages Screen -->
+
+            <!-- Add Page -->
+            <md-card-content ng-show="setting == 'Add Page'" layout="row" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" layout-margin style="padding: 0;">
+                <!-- columns -->
+                <div flex flex-gt-sm="40">
+                    <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
+                        <form name="addNewPage">
+                            <md-card-content>
+                                <md-list-item>
+                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                        <label>Page Title</label>
+                                        <input name="new_page_title" required ng-model="newPageData.title">
+                                        <div ng-messages="addNewPage.new_page_title.$error">
+                                            <div ng-message="required">Page title required!</div>
+                                        </div>
+                                    </md-input-container>
+                                </md-list-item>
+                                <md-list-item ng-if="newPageData.type == 'blog'">
+                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                        <label>Subtitle</label>
+                                        <input name="new_page_subtitle" required ng-model="newPageData.subtitle">
+                                        <div ng-messages="addNewPage.new_page_subtitle.$error">
+                                            <div ng-message="required">Page subtitle required!</div>
+                                        </div>
+                                    </md-input-container>
+                                </md-list-item>
+                                <md-list-item ng-if="newPageData.type == 'blog'">
+                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                        <label>Headline</label>
+                                        <textarea name="new_page_headline" md-detect-hidden="true" ng-model="newPageData.headline" rows="3" md-maxlength="250" required></textarea>
+                                        <div ng-messages="addNewPage.new_page_headline.$error">
+                                            <div ng-message="required">Blog headline required!</div>
+                                        </div>
+                                    </md-input-container>
+                                </md-list-item>
+                                <md-list-item>
+                                    <md-input-container class="md-block lightweight-md-dropdown">
+                                        <label>Page Type</label>
+                                        <md-select name="new_page_type" ng-required="true" ng-model="newPageData.type">
+                                            <md-option ng-repeat="type in settings.pageTypes track by $index" ng-value="type">
+                                                {{type}}
+                                            </md-option>
+                                        </md-select>
+                                        <div ng-messages="addNewPage.new_page_type.$error">
+                                            <div ng-message="required">A page type is required!</div>
+                                        </div>
+                                    </md-input-container>
+                                </md-list-item>
+                                <md-list-item ng-if="newPageData.type == 'project'">
+                                    <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex required>
+                                        <label class="lightweight-md-option-label">Choose Tags</label>
+                                        <md-select ng-model="newPageData.tag" multiple>
+                                            <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
+                                                {{fileTag.tag}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </md-list-item>
+                                <md-list-item ng-if="newPageData.type == 'project'">
+                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                        <label>Project Description</label>
+                                        <textarea name="new_page_description" md-detect-hidden="true" ng-model="newPageData.description" rows="3" md-maxlength="250" required></textarea>
+                                        <div ng-messages="addNewPage.new_page_description.$error">
+                                            <div ng-message="required">Project description required!</div>
+                                        </div>
+                                    </md-input-container>
+                                </md-list-item>
+                                <!-- ///////////////////////// -->
+
+                                <!-- ///////////////////////// -->
+                            </md-card-content>
+                            <md-card-actions layout="row" layout-align="end center">
+                                <div flex></div>
+                                <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="setting = 'Manage Pages'">Cancel</md-button>
+                                <md-button ng-disabled="addNewPage.$invalid" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-confirm-message="Are you sure you want to add this page?" ng-confirm-click="addPage(newPageData.type, newPageData); setting = 'Manage Pages'" ng-confirm-condition="addNewPage.$valid">Add</md-button>
+                            </md-card-actions>
+                        </form>
+                    </md-card>
+                </div>
+                <!-- columns -->
+            </md-card-content>
+            <!-- Add Page -->
+
+
+            <!-- Manage Navigation -->
+            <md-card-content ng-show="setting == 'Edit Navigation'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex style="padding: 0;">
+                <!-- columns -->
+                <div flex flex-gt-sm="60">
+                    <md-card class="md-card-base" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
+                        <form name="manageNavigation">
+                            <md-card-title ng-if="child_nav_items.length > 0">
+                                <md-card-title-text>
+                                    <span class="md-headline">{{parentNavName}}</span>
+                                </md-card-title-text>
+                            </md-card-title>
+                            </md-card-title>
+                            <md-card-content layout-wrap layout-gt-sm="row" layout-align="center center" class="lightweight-list-control" ui-sortable="sortableList" ng-model="child_nav_items">
+                                <div ng-show="child_nav_items.length > 0" ng-repeat="item in child_nav_items track by $index" flex="100">
+                                    <div layout="row" layout-align="center center" flex="100" layout-wrap>
+                                        <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
+                                            <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" ng-if="$index > 0" ng-click="child_nav_items.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                            <md-input-container class="md-block lightweight-md-input" style="max-height: 34px;" flex>
+                                                <label>Navigation Item</label>
+                                                <input required name="nav_item_name" ng-model="item.name">
+                                                <div ng-messages="manageNavigation.nav_item_name.$error">
+                                                    <div ng-message="required">Navigation item name required!</div>
+                                                </div>
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
+                                            <md-input-container class="md-block lightweight-md-dropdown normal">
+                                                <label>Url</label>
+                                                <md-select name="item_url" ng-model="item.url" ng-required="true">
+                                                    <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
+                                                        {{url.url}}
+                                                    </md-option>
+                                                </md-select>
+                                                <div ng-messages="manageNavigation.item_url.$error">
+                                                    <div ng-message="required">A url is required!</div>
+                                                </div>
+                                            </md-input-container>
+                                        </md-list-item>
+                                    </div>
+                                </div>
+                                <div ng-show="!child_nav_items.length" layout="row" layout-align="center center" flex="100">
+                                    <md-list-item flex="100" style="max-height: 70px;">
+                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Warning. Select a navigation item first" md-font-library="material-icons">priority_high</md-icon>
+                                        <p style="color: {{base_hue_darkest.value}};">Select a parent nav item.</p>
+                                    </md-list-item>
+                                </div>
+                            </md-card-content>
+                            <md-card-actions ng-if="child_nav_items.length > 0" layout="row" layout-align="end center">
+                                <div flex></div>
+                                <!-- <md-button ng-confirm-message="Are you sure you want to deselect this navigation item?" ng-confirm-click="clearParentNav()" ng-confirm-condition="true" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Cancel</md-button> -->
+                                <md-button ng-confirm-message="Are you sure you want to update the navigation?" ng-confirm-click="updateNavigation()" ng-confirm-condition="manageNavigation.$valid" ng-disabled="manageNavigation.$invalid" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                            </md-card-actions>
+                        </form>
+                    </md-card>
+                </div>
+                <!-- columns -->
+            </md-card-content>
+            <!-- Manage Navigation -->
+
+
+            <!-- Manage Staff Screen -->
+            <md-card-content ng-show="setting == 'Manage Staff'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" flex style="padding: 0;">
+                
+                <!-- columns -->
+                    <div ng-show="staffgridview == false" layout="column" layout-align="center center" flex layout-wrap layout-margin>
+                        <md-card class="md-card-base" style="width: 90%; background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex>
+                            <md-card-content class="lightweight-list-control" ui-sortable="sortableList" ng-model="staffSortObj">
+                                <div ng-repeat="staff in staffSortObj">
+                                    <md-list-item class="noright">
+                                        <p>{{ staff.name }}</p>
+                                        <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                    </md-list-item>
+                                    <md-divider></md-divider>
+                                </div>
+                            </md-card-content>
+                            <md-card-actions layout="row" layout-align="end center">
+                                <md-button class="md-raised" ng-click="updateStaff(staffSortObj)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </div>
+                    <div ng-show="staffgridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
+                        <md-card class="md-card-base" ng-repeat="staff in settings.staff.members" ng-init="staff_detail_view = false" flex="100" flex-gt-sm="30" style="margin-bottom: 16px; position: relative; background: #fafafa; border: 1px solid rgba(33,33,33,.15);">
+                            <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="staff_detail_view = true">
+                                <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
+                            </md-button>
+                            <md-button ng-show="staff_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 8px; right: 16px; background-color: {{base_hue_lightest.value}}!important;" ng-click="staff_detail_view = false">
+                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
+                            </md-button>
+                            <md-button ng-show="!staff_detail_view" class="md-fab md-mini" aria-label="change photo" style="position: absolute; top: 64px; right: 16px; background-color: {{primary_hue_normal.value}}!important;" ng-click="mediavault_filepicker(staff)">
+                                <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
+                            </md-button>
+                            <img ng-if="staff.source" ng-show="!staff_detail_view" ng-cloak ng-src="{{staff.source}}" class="md-card-image">
+                            <img ng-if="!staff.source" ng-show="!staff_detail_view" ng-cloak ng-src="https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image.png" class="md-card-image">
+                            <md-card-content ng-show="staff_detail_view">
+                                <md-tabs md-dynamic-height md-border-bottom>                            
+                                    <md-tab label="User Info">
+                                        <md-content class="md-padding">
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>Name</label>
+                                                    <input ng-model="staff.name">
+                                                </md-input-container>
+                                            </md-list-item>
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>Work Title</label>
+                                                    <input ng-model="staff.title">
+                                                </md-input-container>
+                                            </md-list-item>
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>Email</label>
+                                                    <input ng-model="staff.email">
+                                                </md-input-container>
+                                            </md-list-item>
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>Phone</label>
+                                                    <input ng-model="staff.phone">
+                                                </md-input-container>
+                                            </md-list-item>
+                                        </md-content>
+                                    </md-tab>
+                                    <md-tab label="Social">
+                                        <md-content class="md-padding">
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>Facebook</label>
+                                                    <input ng-model="staff.social.facebook">
+                                                </md-input-container>
+                                            </md-list-item>
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>Instagram</label>
+                                                    <input ng-model="staff.social.instagram">
+                                                </md-input-container>
+                                            </md-list-item>
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>Pinterest</label>
+                                                    <input ng-model="staff.social.pinterest">
+                                                </md-input-container>
+                                            </md-list-item>
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>LinkedIn</label>
+                                                    <input ng-model="staff.social.linkedin">
+                                                </md-input-container>
+                                            </md-list-item>
+                                        </md-content>
+                                    </md-tab>
+                                    <md-tab label="Q&A">
+                                        <md-content class="md-padding">
+                                            <md-list-item ng-repeat="ask in settings.staff.metadata.QA">
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>{{ask.question}}</label>
+                                                    <textarea md-detect-hidden="true" ng-model="$parent.staff.QA[$index]" rows="3" md-maxlength="580"></textarea>
+                                                </md-input-container>
+                                            </md-list-item>
+                                        </md-content>
+                                    </md-tab>
+                                    <md-tab label="Bio">
+                                        <md-content class="md-padding">
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>Bio</label>
+                                                    <textarea md-detect-hidden="true" ng-model="staff.bio" rows="3" md-maxlength="580"></textarea>
+                                                </md-input-container>
+                                            </md-list-item>
+                                        </md-content>
+                                    </md-tab>
+                                </md-tabs>
+                            </md-card-content>
+                            <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
+                                <md-button ng-if="staff.id == undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
+                                <md-button class="md-whiteframe-2dp" ng-if="staff.id == undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="addStaffMember(staff)">Save</md-button>
+                                <md-button ng-if="staff.id != undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff.id, settings.staff.members)">Remove</md-button>
+                                <md-button class="md-whiteframe-2dp" ng-if="staff.id != undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
+                            </md-card-actions>
+                        </md-card>
+                    </div>
+                <!-- columns -->
+            </md-card-content>
+            <!-- Manage Staff Screen -->
+
+
+        </md-card>
+
+
+
+
+    </md-content>
+
+
+
+
+</div>

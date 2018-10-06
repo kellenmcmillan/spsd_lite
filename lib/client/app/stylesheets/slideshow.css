@@ -1,0 +1,121 @@
+/* CSS Document */
+
+/* ========== Lighweight Hero Slideshow ========== */
+
+/* Structure */
+.lightweight-hero--slideshow {width: 100%; margin: 0!important; padding: 0!important; position: relative; cursor: default; background-color: #757575; overflow:hidden;}
+.slideshow--slide-container {position: absolute; height: 100%; left: 0; box-sizing: border-box; margin: 0!important; padding: 0!important; overflow: hidden; transition: all .5s ease-in-out;}
+.slide--display {position: absolute; top: 0; height: 100%!important; margin: 0!important; box-sizing: border-box; padding: 0!important; left: 0; top: 0;}
+.slide-hide-override {display: none!important;}
+
+#slideshow-overlay {
+    background: -webkit-linear-gradient(rgba(66,66,66, 0.7), transparent); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(66,66,66, 0.7), transparent); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(66,66,66, 0.7), transparent); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(66,66,66, 0.7), transparent); /* Standard syntax */
+    position: absolute; top: 0; left: 0; width: 100%; height: 64px; z-index: 2;
+}
+
+
+.slideshow-content {position: absolute; left: 0; top: 0; margin-top: 9%; margin-left: 20%;}
+@media screen and (max-width: 600px) {
+  .slideshow-content {margin-top: 64px; margin-left: 0;}
+  .bar {display: none;}
+}
+
+.show-content {
+	position: absolute;
+	opacity: 0;
+    -webkit-animation: fadein 6s ease-in-out forwards;
+    transform: translate(0,0);
+    animation: fadein 6s ease-in-out forwards;
+    animation-timing-function: ease-in-out; 
+    -webkit-animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes fadein {
+	0% {opacity: 0;}
+	10% {opacity: 0;}
+	20% {opacity: 1; transform: translate(0,-48px);}
+	30% {opacity: 1; transform: translate(0,-48px);}
+	80% {opacity: 1; transform: translate(0,-48px);}
+	100% {opacity: 0; transform: translate(0,-48px);}
+}
+@keyframes fadein {
+	0% {opacity: 0;}
+	10% {opacity: 0;}
+  	20% {opacity: 1; transform: translate(0,-48px);}
+  	30% {opacity: 1; transform: translate(0,-48px);}
+	80% {opacity: 1; transform: translate(0,-48px);}
+	100% {opacity: 0; transform: translate(0,-48px);}
+}
+/* Structure */
+
+/* Media */
+.slideshow_slide_image {opacity: 1;}
+.slideshow_slide_image.ng-hide-add,
+.slideshow_slide_image.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+.slideshow_slide_image.ng-hide {opacity: 0; display: inline-block!important;}
+/* Media */
+
+/* Control */
+.slideshow-control-left {position: absolute; font-size: 64px!important; top: calc(50% - 32px); cursor: pointer!important;}
+.slideshow-control-right {position: absolute; font-size: 64px!important; top: calc(50% - 32px); cursor: pointer!important;}
+/* Control */
+
+/* Text */
+.show-text {
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, .8);
+    -webkit-animation: fadeinout 6s ease-in-out forwards;
+    transform: translate(0,0px);
+    animation: fadeinout 6s ease-in-out forwards;
+    animation-timing-function: ease-in-out; 
+    -webkit-animation-timing-function: ease-in-out;
+}
+@-webkit-keyframes fadeinout {
+  0% {opacity: 0;}
+  50% {opacity: 1; transform: translate(0,-32px);}
+  100% {opacity: 0; transform: translate(0,-64px);}
+}
+@keyframes fadeinout {
+  0% {opacity: 0;}
+  50% {opacity: 1; transform: translate(0,-32px);}
+  100% {opacity: 0; transform: translate(0,-64px);}
+}
+.slideshow-title {position: absolute; bottom: 54px; left: 48px; padding: 8px; max-width: 350px;}
+.slideshow-title p {font-size: 32px;}
+.slideshow-description {position: absolute; bottom: 18px; left: 48px; padding: 8px; max-width: 350px;}
+.slideshow-description p {font-size: 24px;}
+.lightweight-slideshow--text-container {position: absolute; bottom: 48px; right: 16px; padding: 16px; max-width: 250px;}
+/* Text */
+
+/* Media Query */
+@media screen and (orientation: landscape) {
+  .lightweight-hero--slideshow .slide--display img {width: 100%; height: auto;}
+}
+@media screen and (orientation: landscape) and (max-width: 1400px) and (min-height: 750px) {
+  .lightweight-hero--slideshow .slide--display img {width: auto; height: 100%;}
+}
+@media screen and (orientation: portrait) {
+  .lightweight-hero--slideshow .slide--display img {width: auto; height: 100%; margin-left: -12.5%;}
+}
+@media screen and (max-width: 840px) {
+  .slideshow-title {bottom: 48px; left: 16px; padding: 8px; max-width: 350px;}
+  .slideshow-title p {font-size: 24px;}
+  .slideshow-description {bottom: 16px; left: 16px; padding: 8px; max-width: 350px;}
+  .slideshow-description p {font-size: 16px;}
+}
+@media (max-width: 640px) {
+    .slideshow-control-left {font-weight: 300!important;}
+    .slideshow-control-right {font-weight: 300!important;}
+}
+/* Media Query */
+
+/* ========== Lighweight Hero Slideshow ========== */
+
+
+
+
+/*@media screen and (max-width: 839px) and (min-width: 480px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
+@media screen and (max-width: 479px){.slideshow_slide_image {height:100%!important; width: auto!important;}}*/

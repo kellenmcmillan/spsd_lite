@@ -1,0 +1,30 @@
+<style>
+.grid-one {background-image: url({{featured_galleries[0].source}});}
+.grid-two {background-image: url({{featured_galleries[1].source}});}
+.grid-three {background-image: url({{featured_galleries[2].source}});}
+.grid-four {background-image: url({{featured_galleries[3].source}});}
+.grid-five {background-image: url({{featured_galleries[4].source}});}
+.grid-six {background-image: url({{featured_galleries[5].source}});}
+md-grid-tile img {width: 100%; height: auto;}
+</style>
+
+<md-grid-list md-cols-sm="2" md-cols-md="4" md-cols-lg="8" md-cols-gt-lg="12" md-row-height="6:4" md-gutter="0" style="height: {{window_height}}px;">
+  	<md-grid-tile md-colspan="1" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-row-span="1" class="grid-one">
+  		<!-- <img ng-src="content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/media/images/missing-image.png" class="md-card-image" alt="homepage image" layout-fill> -->
+  	</md-grid-tile>
+  	<md-grid-tile md-colspan="1" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-row-span="1" md-row-span-md="2" md-row-span-lg="2" md-row-span-gt-lg="2" class="grid-two">
+  		
+  	</md-grid-tile>
+  	<md-grid-tile md-colspan="1" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-row-span="1" class="grid-three">
+  		
+  	</md-grid-tile>
+  	<md-grid-tile md-colspan="1" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-row-span="1" md-row-span-md="2" md-row-span-lg="2" md-row-span-gt-lg="2" class="grid-four">
+  		
+  	</md-grid-tile>
+  	<md-grid-tile md-colspan="1" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-row-span="1" class="grid-five">
+  		
+  	</md-grid-tile>
+  	<md-grid-tile md-colspan="1" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-row-span="1" md-row-span-md="2" md-row-span-lg="2" md-row-span-gt-lg="2" class="grid-six">
+  		
+  	</md-grid-tile>
+</md-grid-list>

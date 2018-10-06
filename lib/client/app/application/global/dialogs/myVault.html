@@ -1,0 +1,479 @@
+<style>
+    md-list-item md-input-container {width: 100%;}
+    .md-default-theme .md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator, .md-calendar-date.md-calendar-selected-date .md-calendar-date-selection-indicator, .md-default-theme .md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator, .md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator {background: {{primary_hue_normal.value}}!important;}
+    .md-default-theme .md-datepicker-open .md-datepicker-calendar-icon, .md-datepicker-open .md-datepicker-calendar-icon {color: {{primary_hue_normal.value}}!important;}
+    .md-default-theme .md-calendar-date.md-calendar-date-today .md-calendar-date-selection-indicator, .md-calendar-date.md-calendar-date-today .md-calendar-date-selection-indicator {border: 1px solid {{primary_hue_normal.value}};}
+    md-list-item.hovered {box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);}
+</style>
+
+
+
+
+
+<div class="dialog-curtain userVault" ng-show="my_vault_detail_visible == true" ng-controller="lightweightController">
+
+
+
+
+    
+    <md-content class="page suite-dialog" style="height: {{window_height}}px; overflow: auto;">
+
+
+
+
+
+        <!-- =================== header =================== -->
+
+        <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 21; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
+
+            <div layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex>
+                <!-- =================== Mini App Title =================== -->
+                <div flex="50" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="start center" layout="row">
+                    <h3 class="md-headline" style="font-size: 24px;">MyVault</h3>
+                </div>
+                <!-- =================== Mini App Title =================== -->
+
+                <!-- =================== Start Action Buttons =================== -->
+
+                <!-- Mini App Menu Button -->
+                <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
+                </md-button>
+                <!-- Mini App Menu Button -->
+
+                <!-- Account Major Action Button -->
+                <md-menu>
+                    
+                    <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style="position: absolute; bottom: -26px; left: 73px; background-color: {{base_hue_lightest.value}}!important;">
+                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">settings</md-icon>
+                    </md-button>
+
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button ng-click="openPasswordReset(me)">
+                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">rotate_left</md-icon>
+                                Reset Password
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                <md-icon ng-click="deleteUser()" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
+                                Remove Account
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+
+                </md-menu>
+                <!-- Account Major Action Button -->
+
+                <!-- =================== End Action Buttons =================== -->
+
+
+
+
+                <!-- =================== Navigation Items =================== -->
+
+                <div flex="50" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
+                    <md-button class="md-icon-button" aria-label="Close My Vault">
+                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to leave?" ng-confirm-click="closeMyVault()" ng-confirm-condition="true">close</md-icon>
+                    </md-button>
+                </div>
+
+                <!-- =================== Navigation Items =================== -->
+
+            </div>
+
+        </md-subheader>
+
+        <!-- =================== header =================== -->
+
+
+
+
+        <!-- =================== Mini App Side Menu =================== -->
+
+        <div ng-include src="'application/partials/backend-menu.html'"></div>
+
+        <!-- =================== Mini App Side Menu =================== -->
+
+
+
+
+        <!-- ======================== View ======================== -->
+
+        <md-card class="md-card-base card inputs">
+
+            
+
+            <md-card-content flex ng-init="overview = true; edit_info = false;" style="padding: 0;">
+
+                <!-- =================== Start User Info Summary =================== -->
+                <md-content flex ng-show="overview == true">
+                    <div layout="column" layout-align="center center" flex>
+                        <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
+
+
+
+
+                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100" flex-gt-sm="40">
+                                <md-card-header>
+                                    <md-card-header-text>
+                                        <span class="md-title">Personal Info</span>
+                                        <span class="md-subhead">Your Basic Bio</span>
+                                    </md-card-header-text>
+                                </md-card-header>
+                                <md-card-content>
+                                    <md-list-item>
+                                        <span>Role</span>
+                                        <span class="md-secondary">
+                                        {{me.security.roles}}
+                                        </span>
+                                    </md-list-item>
+                                    <md-divider></md-divider>
+                                    <md-list-item>
+                                        <span>Firstname</span>
+                                        <span class="md-secondary">
+                                        {{me.firstname}}
+                                        </span>
+                                    </md-list-item>
+                                    <md-divider></md-divider>
+                                    <md-list-item>
+                                        <span>Lastname</span>
+                                        <span class="md-secondary">
+                                        {{me.lastname}}
+                                        </span>
+                                    </md-list-item>
+                                    <md-divider></md-divider>
+                                    <md-list-item>
+                                        <span>Email</span>
+                                        <span class="md-secondary">
+                                        {{me.email}}
+                                        </span>
+                                    </md-list-item>
+                                    <md-divider></md-divider>
+                                    <md-list-item>
+                                        <span>Phone</span>
+                                        <span class="md-secondary">
+                                        {{me.phone}}
+                                        </span>
+                                    </md-list-item>
+                                    <md-divider></md-divider>
+                                    <md-list-item>
+                                        <span>Street Address</span>
+                                        <span class="md-secondary">
+                                        {{me.address.street}}
+                                        </span>
+                                    </md-list-item>
+                                    <md-divider></md-divider>
+                                    <md-list-item>
+                                        <span>City</span>
+                                        <span class="md-secondary">
+                                        {{me.address.city}}
+                                        </span>
+                                    </md-list-item>
+                                    <md-divider></md-divider>
+                                    <md-list-item>
+                                        <span>State</span>
+                                        <span class="md-secondary">
+                                        {{me.address.state}}
+                                        </span>
+                                    </md-list-item>
+                                    <md-divider></md-divider>
+                                    <md-list-item>
+                                        <span>Zipcode</span>
+                                        <span class="md-secondary">
+                                        {{me.address.zipcode}}
+                                        </span>
+                                    </md-list-item>
+                                </md-card-content>
+                                <md-card-actions layout="row" layout-align="end center" flex>
+                                    <md-button class="md-raised" ng-click="overview = false; edit_info = true; file_view = false;" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Edit Your Personal Info</md-button>
+                                </md-card-actions>
+                            </md-card>
+
+
+
+
+                            <div flex="100" flex-gt-sm="40" layout-align="row" layout-wrap>
+
+
+
+
+                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100">
+                                    <md-card-header>
+                                        <md-card-header-text>
+                                            <span class="md-title">Files</span>
+                                            <span class="md-subhead">Manage Your Files</span>
+                                        </md-card-header-text>
+                                    </md-card-header>
+                                    <md-card-content>
+                                        <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                            <md-list class="md-dense" flex>
+                                                <md-list-item ng-repeat="file in me.files | limitTo:3" flex>
+                                                    <p md-truncate>{{file.name || file.title}}</p>
+                                                    <md-divider ng-if="!$last"></md-divider>
+                                                </md-list-item>
+                                                <md-list-item class="md-dense" ng-if="!me.files" flex layout="row" layout-align="start center">
+                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
+                                                    <div>
+                                                        <p>No Files</p>
+                                                    </div>
+                                                </md-list-item>
+                                            </md-list>
+                                        </div>
+                                    </md-card-content>
+                                    <md-card-actions layout="row" layout-align="end center" flex>
+                                        <md-button class="md-raised" ng-click="overview = false; edit_info = false; file_view = true;" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">View Your Files</md-button>
+                                    </md-card-actions>
+                                </md-card>
+
+
+
+
+                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100">
+                                        <md-card-header>
+                                            <md-card-header-text>
+                                                <span class="md-title">Chatter</span>
+                                                <span class="md-subhead">Manage Incoming Notifications</span>
+                                            </md-card-header-text>
+                                        </md-card-header>
+                                        <md-card-content>
+                                            <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                                <md-list class="md-dense" flex>
+                                                    <md-list-item ng-repeat="notification in me.chatter | limitTo:3" flex>
+                                                        <p ng-class="{'bold': notification.unread == true}" md-truncate>{{notification.title}} | {{notification.subject}}</p>
+                                                        <md-divider ng-if="!$last"></md-divider>
+                                                    </md-list-item>
+                                                    <md-list-item ng-if="!me.chatter" flex layout="row" layout-align="start center">
+                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
+                                                        <div>
+                                                            <p>No Notifications</p>
+                                                        </div>
+                                                    </md-list-item>
+                                                </md-list>
+                                            </div>
+                                        </md-card-content>
+                                        <md-card-actions layout="row" layout-align="end center" flex>
+                                            <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">View Your Notifications</md-button>
+                                        </md-card-actions>
+                                </md-card>
+
+
+
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                </md-content>
+                <!-- =================== Start User Info Summary =================== -->
+
+
+
+                <md-content flex ng-show="edit_info == true" style="padding: 0;">
+                    <div layout="column" layout-align="center center" flex>
+                        <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
+                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
+                                <form name="myvault">
+                                    <md-card-header>
+                                        <md-card-header-text>
+                                            <span class="md-title">Personal Info</span>
+                                            <span class="md-subhead">Adjust Basic User Settings</span>
+                                        </md-card-header-text>
+                                    </md-card-header>
+                                    <md-card-content>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input">
+                                                <label>Firstname</label>
+                                                <input name="firstname" ng-model="me.firstname" minlength="3" required>
+                                                <div ng-messages="myvault.firstname.$error" ng-show="myvault.firstname.$dirty">
+                                                    <div ng-message="required">Firstname required!</div>
+                                                    <div ng-message="minlength">Name too short!</div>
+                                                </div>
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input">
+                                                <label>Lastname</label>
+                                                <input ng-model="me.lastname">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input">
+                                                <label>Email</label>
+                                                <input disabled ng-model="me.email">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input">
+                                                <label>Birthday</label>
+                                                <md-datepicker flex ng-model="me.birthday" md-placeholder="Enter your birthday"></md-datepicker>
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input">
+                                                <label>Phone</label>
+                                                <input ng-model="me.phone">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input">
+                                                <label>Street Address</label>
+                                                <input ng-model="me.address.street">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input">
+                                                <label>City</label>
+                                                <input ng-model="me.address.city">
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-dropdown">
+                                                <label>State</label>
+                                                <md-select ng-model="me.address.state">
+                                                    <md-option><em>None</em></md-option>
+                                                    <md-option ng-repeat="state in states" ng-value="state.abbrev" ng-disabled="$index === 1">
+                                                        {{state.abbrev}}
+                                                    </md-option>
+                                                </md-select>
+                                            </md-input-container>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input">
+                                                <label>Zip Code</label>
+                                                <input ng-model="me.address.zipcode">
+                                            </md-input-container>
+                                        </md-list-item>
+                                    </md-card-content>
+                                    <md-card-actions layout="row" layout-align="end center" flex>
+                                        <md-button ng-click="edit_info = false; overview = true; file_view = false;" style="color: {{base_hue_darkest.value}};">Cancel</md-button>
+                                        <md-button class="md-raised" ng-click="updateUser(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                    </md-card-actions>
+                                </form>
+                            </md-card>
+                        </div>
+                    </div>
+                </md-content>
+
+                <md-content flex ng-show="file_view == true" style="padding: 0;">
+                    <div layout="column" layout-align="center center" flex>
+                        <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
+                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
+                                <md-card-header>
+                                    <md-card-header-text>
+                                        <span class="md-title">Files</span>
+                                        <span class="md-subhead">Manage Your Files</span>
+                                    </md-card-header-text>
+                                </md-card-header>
+                                <md-card-content>
+                                    <md-content style="padding: 0;">
+                                        <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                            <md-list class="md-dense" flex>
+                                                <md-list-item ng-repeat="file in me.files" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
+                                                    <p md-truncate>{{file.name || file.title}}</p>
+                                                    <span class="md-secondary" ng-show="hovered">
+                                                        <a href="{{file.link}}" target="_blank" style="text-decoration: none;">
+                                                            <md-button class="md-icon-button" aria-label="Close My Vault">
+                                                                <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">launch</md-icon>
+                                                            </md-button>
+                                                        </a>
+                                                        <md-button class="md-icon-button" aria-label="Close My Vault">
+                                                            <md-icon ng-click="openShare(file)" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">share</md-icon>
+                                                        </md-button>
+                                                        <md-button class="md-icon-button" aria-label="Close My Vault">
+                                                            <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_download</md-icon>
+                                                        </md-button>
+                                                        <md-button class="md-icon-button" aria-label="Close My Vault">
+                                                            <md-icon ng-click="deleteMyFile(me, file)" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
+                                                        </md-button>
+                                                    </span>
+                                                    <md-divider ng-if="!$last"></md-divider>
+                                                </md-list-item>
+                                            </md-list>
+                                            <md-list ng-if="!me.files" class="md-dense" flex>
+                                                <md-list-item flex>
+                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
+                                                    <div class="md-list-item-text">
+                                                        <h3 style="font-size: 16px;">No Files</h3>
+                                                    </div>
+                                                </md-list-item>
+                                            </md-list>
+                                        </div>
+                                    </md-content>
+                                </md-card-content>
+                                <md-card-actions layout="row" layout-align="end center" flex>
+                                    <md-button ng-click="edit_info = false; overview = true; file_view = false;" style="color: {{base_hue_darkest.value}};">Close</md-button>&nbsp;
+                                    <!-- =================== Upload Various Resources =================== -->
+                                    <md-menu>
+                                        <md-button class="md-raised" aria-label="upload media" md-menu-origin ng-click="openMenu($mdMenu, $event)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Upload Files</md-button>
+                                        <md-menu-content width="4">
+                                            <md-menu-item>
+                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.doc,.docx'" ngf-accept="'.doc,.docx'" ngf-max-size="20MB">
+                                                    Word Document
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.xls,.xlsx'" ngf-accept="'.xls,.xlsx'" ngf-max-size="20MB">
+                                                    Excel Document
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.ppt,.pptx'" ngf-accept="'.ppt,.pptx'" ngf-max-size="20MB">
+                                                    Powerpoint Document
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.pdf'" ngf-accept="'.pdf'" ngf-max-size="20MB">
+                                                    PDF Document
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">
+                                                    Image
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.mp4'" ngf-accept="'video/mp4'" ngf-max-size="20MB">
+                                                    MP4 Video
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.zip'" ngf-accept="'application/zip,application/x-zip-compressed'" ngf-max-size="50MB">
+                                                    Zipped File
+                                                </md-button>
+                                            </md-menu-item>
+                                            <md-menu-item>
+                                                <md-button ng-click="openIframeUpload()">
+                                                    Iframe
+                                                </md-button>
+                                            </md-menu-item>
+                                        </md-menu-content>
+                                    </md-menu>
+                                    <!-- =================== Upload Various Resources =================== -->
+                                </md-card-actions>
+                            </md-card>
+                        </div>
+                    </div>
+                </md-content>
+
+            </md-card-content>
+
+
+
+
+        </md-card>
+
+        <!-- ======================== View ======================== -->
+
+
+
+    </md-content>
+
+
+
+
+</div>

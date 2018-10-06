@@ -1,0 +1,67 @@
+<style>
+.interior-page-background {
+    background: url('{{spotlightPage.data.page.background.images.source}}') no-repeat;
+    background-size: cover; width: 100%!important; height: 100%; 
+    right: 0; top: 200px; padding:0; margin: 0!important;
+}
+.header-ms-explorer {position: fixed; width: 100%;}
+.team-member-popup-image {height: auto!important; width: 100%!important;}
+.team-member-image-popup-desktop {height: 100%; width: auto;}
+
+.team_member_picture.hovered {opacity: .9; filter: none;}
+.team_member_picture {
+	filter: grayscale(100%);
+	transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.4,0,.2,1);
+    transition-property: filter, opacity;
+}
+</style>
+<md-content class="page spotlight" style="height: {{window_height}}px">
+	<section style="background: {{base_hue_lighter.value}}">
+
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 5; border-bottom: 1px solid #e0e0e0" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation-menu.html'"></div>
+
+	    <div class="interior-page" flex="100" layout="row" layout-wrap layout-align="space-around start" layout-wrap style="width: 100%;">
+	    	<div flex="100" style="text-align: center; margin-top: 64px; z-index: 2">
+				<h1 class="type heading" ng-attr-style="color: {{base_hue_darkest.value}}; line-height: 64px; margin: 0; font-weight: bold;">Our People</h1>
+			</div>
+	    	<md-card class="md-whiteframe-6dp" flex="100" flex-sm="33" flex-gt-sm="30" ng-repeat="member in settings.staff.members" ng-click="select_member(member);">
+	    		<img ng-src="{{member.source || '/assets/design/missing-person-image.gif'}}" class="md-card-image team_member_picture" alt="Team Member {{member.name}}" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+	    	</md-card>
+		</div>
+
+		<!-- Dialog Component -->
+		<div layout="row" layout-align="center center" layout-wrap ng-attr-style="width: {{window_width}}px; height: {{window_height}}px; position: fixed; top: 0; left: 0; overflow-y: auto; background: rgba(0, 0, 0, 0.7); z-index: 10000;" ng-show="show_dialog">
+			<md-card class="md-whiteframe-6dp" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: relative; margin-top: 24px; margin-bottom: 24px;" flex="100" layout="row" layout-wrap>
+				<i class="material-icons" ng-attr-style="cursor: pointer; position: absolute; top: 16px; right: 16px; color: {{base_hue_darkest.value}};" ng-click="show_dialog = false; team_member = null">close</i>
+				<div flex="100" flex-gt-sm="40">
+	    			<img ng-src="{{team_member.source || '/assets/design/missing-person-image.gif'}}" class="md-card-image team-member-image-popup-desktop" ng-class="{'team-member-popup-image': window_width < 960}" alt="Team member {{team_member.name}}" style="height: 100%; width: auto;">
+	    		</div>
+	    		<div flex="100" flex-gt-sm="60" layout="row" layout-align="center center" layout-padding ng-attr-style="background-color: {{base_hue_lightest.value}};">
+	    			<div>
+	    				<h5 ng-attr-style="color: {{base_hue_darkest.value}}; font-size: 24px; margin-top: 16px; margin-bottom: 16px; font-weight: normal;">{{team_member.name || 'Team Member\'s Name'}}</h5>
+			    		<h5 ng-attr-style="color: {{base_hue_darkest.value}}; font-size: 24px; margin-top: 16px; margin-bottom: 16px; font-weight: normal;">{{team_member.title || 'Position | Title'}}</h5>
+				    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic; font-size: 24px; margin-top: 16px; margin-bottom: 16px; font-weight: normal;">Q: What do you find rewarding?</h5>
+				    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{team_member.QA[0] || "I'm busy doing just that..."}}</p>
+				    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic; font-size: 24px; margin-top: 16px; margin-bottom: 16px; font-weight: normal;">Q: What was your first job?</h5>
+				    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{team_member.QA[1] || "I'll get back to you!"}}</p>
+				    	<h5 ng-attr-style="color: {{primary_hue_normal.value}}; font-style: italic; font-size: 24px; margin-top: 16px; margin-bottom: 16px; font-weight: normal;">Q: Provide one fun fact about yourself!</h5>
+				    	<p ng-attr-style="color: {{base_hue_darkest.value}}">A: {{team_member.QA[2] || 'This is where things will get interesting...'}}</p>
+			    	</div>
+	    		</div>
+	    	</md-card>
+		</div>
+		<!-- Dialog Component -->
+
+	</section>
+
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+</md-content>
