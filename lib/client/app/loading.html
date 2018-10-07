@@ -30,13 +30,13 @@
 
         <div layout="row" layout-align="center center">
             <div flex="80" flex-sm="60" flex-gt-sm="40" style="text-align: center;">
-                <img id="loading" style="width: 60px; height: auto;" src="media/logo-box-white.png" ng-cloak="true">
+                <img id="loading" style="width: 60px; height: auto;" ng-src="{{settings.data.logo}}" ng-cloak="true">
             </div>
         </div>
 
     </section>
 
-    <img content-available src="https://storage.googleapis.com/mma-texas.appspot.com/media/images/MMA_Full Name_WhiteBack_BlackL_GreenBar_BlackImage no services.png" style="width: 0; height: 0; display: none;">
+    <img content-available ng-src="{{settings.data.logo}}" style="width: 0; height: 0; display: none;">
 
 </md-content>
 <!-- Page Loading  -->
