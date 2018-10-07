@@ -109,7 +109,7 @@
                         <md-list class="md-dense" flex>
                             <md-list-item ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
                                 <p md-truncate>{{user.firstname}} {{user.lastname}} | {{ user.email }}</p>
-                                <span class="md-secondary" ng-show="hovered">user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize
+                                <span class="md-secondary" ng-show="hovered">
                                     <md-icon ng-confirm-message="Are you sure you want to delete this user?" ng-confirm-click="deleteUser(user)" ng-confirm-condition="true" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
                                     &nbsp;
                                     <md-icon ng-click="selectUser(user)" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">edit</md-icon>
