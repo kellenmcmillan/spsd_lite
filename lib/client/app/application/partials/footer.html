@@ -5,75 +5,59 @@
 
 </style>
 
-<div layout="column" layout-align="center center" class="footer-container" flex ng-attr-style="background-color: {{base_hue_darkest.value}}; overflow: hidden; position: relative;" ng-class="{'footer-ms-explorer': browser == 'ie'}">
+<div layout="column" layout-align="center center" class="footer-container" flex ng-attr-style="background-color: {{base_hue_lightest.value}}; overflow: hidden; position: relative;" ng-class="{'footer-ms-explorer': browser == 'ie'}">
 	<div class="footer-content-top" layout="column" layout-gt-sm="row" layout-padding flex style="z-index: 2">
 		<div layout="column" layout-padding layout-align="center center" flex="100" flex-gt-sm="33">
 			<div>
-				<img class="footer logo" src="media/logo-full-white.png">
+				<img class="footer logo" src="{{settings.data.logo}}">
 			</div>
 		</div>
 		<div layout="column" layout-sm="row" layout-gt-sm="row" flex="100" flex-gt-sm="66" layout-align="center start" layout-align-sm="center center" layout-align-gt-sm="center center" layout-wrap>
-			<div layout-padding flex="100" flex-sm="25" flex-gt-sm="25">
+			<div layout-padding flex="100" flex-sm="33" flex-gt-sm="33">
 				<md-list>
 					<md-list-item>
-						<p ng-attr-style="font-weight: bold; color: {{base_hue_lightest.value}};">Services</p>
+						<p ng-attr-style="font-weight: bold; color: {{base_hue_lightest.value}};">Capabilities</p>
 					</md-list-item>
 					<md-list-item>
-						<a href="/spotlight/gis"><p ng-attr-style="color: {{base_hue_lightest.value}};">GIS</p></a>
+						<a href="/spotlight/landscape-management"><p ng-attr-style="color: {{base_hue_lightest.value}};">Landscape Management</p></a>
 					</md-list-item>
 					<md-list-item>
-						<a href="/spotlight/survey"><p ng-attr-style="color: {{base_hue_lightest.value}};">Surveying</p></a>
+						<a href="/spotlight/natural-stone"><p ng-attr-style="color: {{base_hue_lightest.value}};">Natural Stone</p></a>
 					</md-list-item>
 					<md-list-item>
-						<a href="/spotlight/aerial-mapping"><p ng-attr-style="color: {{base_hue_lightest.value}};">Aerial Mapping</p></a>
+						<a href="/spotlight/landscape-construction"><p ng-attr-style="color: {{base_hue_lightest.value}};">Landscape Construction</p></a>
 					</md-list-item>
 				</md-list>
 			</div>
-			<div layout-padding flex="100" flex-sm="25" flex-gt-sm="25">
-				<md-list>
-<!-- 					<md-list-item>
-						<p ng-attr-style="font-weight: bold; color: {{base_hue_lightest.value}};"></p>
-					</md-list-item> -->
-					<md-list-item>
-						<a href="/spotlight/planning"><p ng-attr-style="color: {{base_hue_lightest.value}};">Planning</p></a>
-					</md-list-item>
-					<md-list-item>
-						<a href="/spotlight/civil-engineering"><p ng-attr-style="color: {{base_hue_lightest.value}};">Civil Engineering</p></a>
-					</md-list-item>
-					<md-list-item>
-						<a href="/spotlight/landscape-architecture"><p ng-attr-style="color: {{base_hue_lightest.value}};">Landscape Architecture</p></a>
-					</md-list-item>
-				</md-list>
-			</div>
-			<div layout-padding flex="100" flex-sm="25" flex-gt-sm="25">
+			<div layout-padding flex="100" flex-sm="33" flex-gt-sm="33">
 				<md-list>
 					<md-list-item>
 						<p ng-attr-style="font-weight: bold; color: {{base_hue_lightest.value}};">Quick Links</p>
 					</md-list-item>
 					<md-list-item>
-						<a href="/info/about-us"><p ng-attr-style="color: {{base_hue_lightest.value}};">About Us</p></a>
+						<a href="/info/about-us"><p ng-attr-style="color: {{base_hue_lightest.value}};">Meet Our Team</p></a>
 					</md-list-item>
 					<md-list-item>
-						<a href="/info/join-team-mma"><p ng-attr-style="color: {{base_hue_lightest.value}};">Careers</p></a>
+						<a href="/info/join-team-mma"><p ng-attr-style="color: {{base_hue_lightest.value}};">Contact Us</p></a>
 					</md-list-item>
 					<md-list-item>
-						<a href="/projects"><p ng-attr-style="color: {{base_hue_lightest.value}};">Projects</p></a>
+						<a href="/gallery"><p ng-attr-style="color: {{base_hue_lightest.value}};">Galleries</p></a>
 					</md-list-item>
 				</md-list>
 			</div>
-			<div layout-padding flex="100" flex-sm="25" flex-gt-sm="25">
+			<div layout-padding flex="100" flex-sm="33" flex-gt-sm="33">
 				<md-list>
 					<md-list-item>
 						<p ng-attr-style="font-weight: bold; color: {{base_hue_lightest.value}};">Stay Connected</p>
 					</md-list-item>
 					<md-list-item>
-						<a style="cursor: pointer;" href="https://facebook.com/mmatexas"><p ng-attr-style="color: {{base_hue_lightest.value}};">Facebook</p></a>
+						<a style="cursor: pointer;" href="/"><p ng-attr-style="color: {{base_hue_lightest.value}};">Facebook</p></a>
 					</md-list-item>
 					<md-list-item>
-						<a style="cursor: pointer;" href="https://twitter.com/mma_texas"><p ng-attr-style="color: {{base_hue_lightest.value}};">Twitter</p></a>
+						<a style="cursor: pointer;" href="/"><p ng-attr-style="color: {{base_hue_lightest.value}};">Twitter</p></a>
 					</md-list-item>
 					<md-list-item>
-						<a style="cursor: pointer;" href="https://linkedin.com/company/mmatexas"><p ng-attr-style="color: {{base_hue_lightest.value}};">LinkedIn</p></a>
+						<a style="cursor: pointer;" href="/"><p ng-attr-style="color: {{base_hue_lightest.value}};">LinkedIn</p></a>
 					</md-list-item>
 				</md-list>
 			</div>
