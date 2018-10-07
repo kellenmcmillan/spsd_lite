@@ -27,10 +27,10 @@
 		<div ng-show="$index == visible_slide" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; z-index: 2;" layout="row" layout-align="center center" layout-wrap>
 		
 			<span flex="100" flex-sm="75" flex-gt-sm="50" style="text-align: center;">
-				<p class="silde-text-one" style="color: {{base_hue_lightest.value}};">{{slide.metadata.name}}</p>
-				<p class="silde-text-two" style="color: {{base_hue_lightest.value}};">{{slide.metadata.description}}</p>
+				<p class="silde-text-one" ng-class="{'active': $index == visible_slide}" style="color: {{base_hue_lightest.value}};">{{slide.metadata.name}}</p>
+				<p class="silde-text-two" ng-class="{'active': $index == visible_slide}" style="color: {{base_hue_lightest.value}};">{{slide.metadata.description}}</p>
 				<br>
-				<md-button class="custom-deep-button lightweight-round slide-button-one" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 250px; height: 48px">View All Galleries</md-button>
+				<md-button class="custom-deep-button lightweight-round slide-button-one" ng-class="{'active': $index == visible_slide}" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 250px; height: 48px">View All Galleries</md-button>
 			</span>
 
 		</div>
