@@ -41,7 +41,7 @@
 
                 <div flex="50" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
                     <md-button class="md-icon-button" aria-label="Close My Vault">
-                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true">close</md-icon>
+                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to exit?" ng-confirm-click="closeUserVault())" ng-confirm-condition="true">close</md-icon>
                     </md-button>
                 </div>
 
@@ -63,29 +63,6 @@
         <!-- =================== Mini App Side Menu =================== -->
     
         <md-card class="md-card-base card inputs">
-
-            <div ng-include src="'application/partials/backend-menu.html'"></div>
-
-            <md-card-title style="position: relative;" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap>
-
-                <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
-                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
-                </md-button>
-                
-                <md-button ng-click="openAddUser()" class="md-fab md-mini" aria-label="Add a user" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;">
-                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">add</md-icon>
-                </md-button>
-
-                <md-card-title-text>
-                    <span class="md-headline">User Vault</span>
-                </md-card-title-text>
-
-                <span flex></span>
-
-                <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to exit?" ng-confirm-click="closeUserVault())" ng-confirm-condition="true">close</md-icon>
-
-
-            </md-card-title>
 
             <md-card-content flex>
 
