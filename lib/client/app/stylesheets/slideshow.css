@@ -3,7 +3,7 @@
 /* ========== Lighweight Hero Slideshow ========== */
 
 /* Structure */
-.lightweight-hero--slideshow {width: 100%; margin: 0!important; padding: 0!important; position: relative; cursor: default; background-color: #757575; overflow:hidden;}
+.lightweight-hero--slideshow {width: 100%; margin: 0!important; padding: 0!important; position: relative; cursor: default; background-color: #000; overflow:hidden;}
 .slideshow--slide-container {position: absolute; height: 100%; left: 0; box-sizing: border-box; margin: 0!important; padding: 0!important; overflow: hidden; transition: all .5s ease-in-out;}
 .slide--display {position: absolute; top: 0; height: 100%!important; margin: 0!important; box-sizing: border-box; padding: 0!important; left: 0; top: 0;}
 .slide-hide-override {display: none!important;}
@@ -51,7 +51,7 @@
 /* Structure */
 
 /* Media */
-.slideshow_slide_image {opacity: .6;}
+.slideshow_slide_image {opacity: .4;}
 .slideshow_slide_image.ng-hide-add,
 .slideshow_slide_image.ng-hide-remove {
   transition: all linear 0.5s;
