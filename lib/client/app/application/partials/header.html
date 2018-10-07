@@ -2,8 +2,8 @@
 <!-- sticky header -->
 <div layout-align="center center" layout="row" layout flex>
 	<!-- Logo -->
-	<div flex="100" flex-gt-sm="25" layout-align="end center" layout-align-gt-sm="end center" layout="row">
-		<span flex="100" style="text-align: right;"><a href="/" style="display: block"><img ng-src="{{settings.data.logo}}" style="max-height: 48px;"></a></span>
+	<div flex="75" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="end center" layout="row">
+		<span flex="50"><a href="/" style="display: block"><img ng-src="{{settings.data.logo}}" style="max-height: 48px;"></a></span>
 	</div>
 	<!-- Logo -->
 	<!-- Navigation Items -->
@@ -11,10 +11,10 @@
 		<md-button class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="open_parent_menu()">
 			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">menu</md-icon>
 		</md-button>
-		<md-button ng-repeat="item in settings.navigation.data track by $index" class="navigation link" ng-click="sub_navigation_panel = true; open_menu(item)" ng-attr-style="color: {{base_hue_darkest.value}};">
-			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+		<span ng-repeat="item in settings.navigation.data track by $index" class="navigation link" ng-click="sub_navigation_panel = true; open_menu(item)" ng-attr-style="color: {{base_hue_darkest.value}};">
+			<!-- <md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon> -->
 			{{item.navigation.parent.name}}
-		</md-button>
+		</span>
 	</div>
 	<!-- Navigation Items -->
 </div>
