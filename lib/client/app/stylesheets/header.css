@@ -1,5 +1,6 @@
 /* css document */
-.header {z-index: 21!important;}
+.header {z-index: 4!important;}
+.suite-dialog .header {z-index: 21!important;} 
 .md-subheader-inner {width: 100%;}
 
 .navigation.menu {display: none;}
