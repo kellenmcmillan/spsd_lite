@@ -24,9 +24,9 @@
 	<div class="slide--display" hero-slider-content-container ng-repeat="slide in primary_slideshow_hero.images" orientation-aware>
 		<img class="slideshow_slide_image" alt="{{slide.alt}}" ng-src="{{slide.source}}" ng-class="{'slide-transition': $index == visible_slide}" ng-show="$index == visible_slide" style="display: block; margin: 0 auto;">
 
-		<div ng-show="$index == visible_slide" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; z-index: 2;" layout="column" layout-align="center center">
+		<div ng-show="$index == visible_slide" style="position: absolute; height: 100%; width: 100%; top: 0; left: 0; z-index: 2;" layout="row" layout-align="center center">
 		
-			<span flex>
+			<span flex="100">
 				<p style="color: {{base_hue_lightest.value}}; font-size: 84px; font-weight: bold;">{{slide.metadata.name}}</p>
 				<p style="color: {{base_hue_lightest.value}}; font-size: 84px;">{{slide.metadata.description}}</p>
 			</span>
