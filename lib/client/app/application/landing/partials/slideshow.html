@@ -4,6 +4,7 @@
         position: absolute;
         top: 0px;
     }
+    .slide--display img:not(.slideshow_slide_image.ng-hide) {opacity: .6;}
     @media screen and (max-width: 839px) and (min-width: 480px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
     @media screen and (max-width: 479px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
 </style>
@@ -12,12 +13,19 @@
         position: absolute;
         top: 0px;
     }
+    .slide--display img:not(.slideshow_slide_image.ng-hide) {opacity: .6;}
     .slideshow_slide_image {transform: scale(1.1);}
     @media screen and (max-width: 839px) and (min-width: 480px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
     @media screen and (max-width: 479px){.slideshow_slide_image {height:100%!important; width: auto!important;}}
 </style>
 <div class="lightweight-hero--slideshow component slideshow" hero-element style="position: relative;">
 	<span id="top" hash="top" style="position: absolute; top:-100px; left: 0; height: 1px; width: 1px;"></span>
+
+	<div style="position: absolute; height: 100%; width: 100%; top: 0; left: 0;" layout="column" layout-align="center center">
+		
+	<span></span>
+
+	</div>
 
 	<div class="slide--display" hero-slider-content-container ng-repeat="slide in primary_slideshow_hero.images" orientation-aware>
 		<img class="slideshow_slide_image" alt="{{slide.alt}}" ng-src="{{slide.source}}" ng-class="{'slide-transition': $index == visible_slide}" ng-show="$index == visible_slide" style="display: block; margin: 0 auto;">
@@ -33,8 +41,8 @@
 </div>
 
 <!-- Slideshow Control -->
-<i ng-if="primary_slideshow_hero.component_data.slideshow_controls == true" class="material-icons mdl-typography--font-thin slideshow-control-left {{$parent.base_hue_text__lightest.name}}" role="presentation" ng-click="left_slideshow_control()" ng-class="{'contrast-button': slideshow[visible_slide].background == 'light'}" hero-slider-left-control>chevron_left</i>
-<i ng-if="primary_slideshow_hero.component_data.slideshow_controls == true" class="material-icons mdl-typography--font-thin slideshow-control-right {{$parent.base_hue_text__lightest.name}}" role="presentation" ng-click="right_slideshow_control()" ng-class="{'contrast-button': slideshow[visible_slide].background == 'light'}" hero-slider-right-control>chevron_right</i>
+<!-- <i ng-if="primary_slideshow_hero.component_data.slideshow_controls == true" class="material-icons mdl-typography--font-thin slideshow-control-left {{$parent.base_hue_text__lightest.name}}" role="presentation" ng-click="left_slideshow_control()" ng-class="{'contrast-button': slideshow[visible_slide].background == 'light'}" hero-slider-left-control>chevron_left</i>
+<i ng-if="primary_slideshow_hero.component_data.slideshow_controls == true" class="material-icons mdl-typography--font-thin slideshow-control-right {{$parent.base_hue_text__lightest.name}}" role="presentation" ng-click="right_slideshow_control()" ng-class="{'contrast-button': slideshow[visible_slide].background == 'light'}" hero-slider-right-control>chevron_right</i> -->
 <!-- Slideshow Control -->
 
 <!-- Hero Slideshow -->
