@@ -34,15 +34,13 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 				<!-- Container Title -->
 
 
-				<div layout-padding flex="100" class="services container">
+				<div flex="100" class="services container" style="margin: 0; padding: 0">
 
-					<div flex layout="row" layout-align="center center">
+					<div flex layout="row" layout-align="center center" style="margin: 0; padding: 0">
 
+						<div flex="100" flex-sm="100" flex-gt-sm="33" ng-repeat="product in section_3.data.items" style="margin: 0; padding: 0">
 
-						<div flex="100" flex-sm="100" flex-gt-sm="33" ng-repeat="product in section_3.data.items">
-
-							<md-card class="featured-product-card border--radius-2" ng-class="{'featured-first': $index == 0, 'featured-middle': $index == 1, 'md-whiteframe-6dp': $index == 1, 'featured-last': $index == 2}">
-								<span class="overflow-image border--radius-2" ng-class="{'md-whiteframe-6dp': $index == 1, 'md-whiteframe-2dp': $index != 1}" ng-attr-style="background: url('{{product.background.images.source}}') center/cover no-repeat; position: relative; border: 1px solid {{base_hue_lightest.value}};">
+							<md-card ng-attr-style="background: url('{{product.background.images.source}}') center/cover no-repeat; position: relative;">
 								</span>
 								<div style="text-align: left;">
 									<div ng-repeat="content in product.contents">
