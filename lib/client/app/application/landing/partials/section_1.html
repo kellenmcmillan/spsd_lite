@@ -10,7 +10,7 @@ md-card.section-1-ms-explorer {min-height: 600px;}
 	<md-button ng-if="user" ng-click="edit(section_1.settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit Mission" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
         <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
     </md-button>
-	<md-card layout="column" layout-align="center center" style="background: {{base_hue_lighter.value}}; width: 100%; z-index: 2; overflow: hidden; position: relative; margin: 0;" ng-class="{'section-1-ms-explorer': browser == 'ie'}">
+	<md-card layout="column" layout-align="center center" style="background: {{primary_hue_normal.value}}; width: 100%; z-index: 2; overflow: hidden; position: relative; margin: 0;" ng-class="{'section-1-ms-explorer': browser == 'ie'}">
 		<!-- <h1 class="type heading" ng-attr-style="color: {{base_hue_darkest.value}}; line-height: 64px; margin: 0; font-weight: bold;">OUR CORE SERVICES</h1> -->
 		<div class="icon-container" flex="100" layout="row" layout-align="center center" style="background-color: {{base_hue_lighter.value}}; z-index: 2;" ng-class="{'section-1-ms-explorer': browser == 'ie'}">
 			<div class="inner-icon-container" layout-wrap layout="row" layout-align="start center" ng-class="{'section-1-ms-explorer': browser == 'ie'}">
@@ -28,15 +28,15 @@ md-card.section-1-ms-explorer {min-height: 600px;}
 	                <div layout="column" layout-align="center center" flex="80">
 
 	                    <div class="center--text">
-	                        <h2 class="complementary-text {{primary_hue_text__normal.name}} no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10;" ng-bind-html="section_1.title"></h2>
-	                        <h2 style="color: {{base_hue_darkest.value}}; font-weight: bold;" ng-bind-html="section_1.subtitle">
+	                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; z-index: 10; color: {{base_hue_lightest.value}}; font-size: 24px;" ng-bind-html="section_1.title"></h2>
+	                        <h2 style="color: {{base_hue_lightest.value}}; font-weight: bold; font-size: 24px;" ng-bind-html="section_1.subtitle">
 	                        </h2>
 	                    </div>
 	 
 	                    <div ng-repeat="content in section_1.data">
 	                        <h1 class="h1" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
-	                        <p ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
-	                        <p ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+	                        <p style="color: {{base_hue_lightest.value}};" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+	                        <p style="color: {{base_hue_lightest.value}};" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
 	                        <div class="full-width no-padding">
 	                            <!-- panel images -->
 	                            <div ng-cloak class="lightweight-card-image md-card md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
@@ -45,7 +45,7 @@ md-card.section-1-ms-explorer {min-height: 600px;}
 	                            <!-- panel images -->
 	                        </div>
 	                        <a ng-if="content.type == 'button'" href="{{content.data.url}}">
-	                            <md-button class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 250px; height: 48px">{{content.data.button}}</md-button>
+	                            <md-button class="custom-deep-button lightweight-round" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; width: 250px; height: 48px">{{content.data.button}}</md-button>
 	                        </a>
 	                    </div>
 
