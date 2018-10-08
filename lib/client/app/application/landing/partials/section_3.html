@@ -6,13 +6,13 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 
 </style>
 
-<div layout="column" layout-gt-sm="row" layout-align="center center" style="min-height: 500px; position: relative; background: {{primary_hue_normal.value}};">
+<div layout="column" layout-gt-sm="row" layout-align="center center" style="min-height: 500px; position: relative; background: {{base_hue_lightest.value}};">
 	<md-button ng-if="user" ng-click="edit(section_3.settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit element" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
         <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
   	</md-button>
-	<md-card flex="100" layout="row" layout-align="center center" ng-attr-style="z-index: 2; overflow: hidden; position: relative;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
+	<md-card flex="100" layout="row" layout-align="center center" ng-attr-style="z-index: 2; overflow: hidden; position: relative; background: transparent;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
 		
-		<div flex="100" layout="row" layout-align="center center" style="z-index: 2;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
+		<div flex="100" layout="row" layout-wrap layout-align="center center" style="z-index: 2;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
 				
 			<!-- Container Title -->
 			<div layout-padding flex="100" class="basic container">
@@ -20,8 +20,8 @@ md-card.section-3-ms-explorer {min-height: 600px;}
                 <div layout="column" layout-align="center center" flex>
 
                     <div class="center--text">
-                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{base_hue_lightest.value}}; z-index: 10;" ng-bind-html="section_3.data.title"></h2>
-                        <h2 style="color: {{base_hue_lightest.value}}; font-weight: bold;" ng-bind-html="section_3.data.subtitle">
+                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10;" ng-bind-html="section_3.data.title"></h2>
+                        <h2 style="color: {{base_hue_darkest.value}}; font-weight: bold;" ng-bind-html="section_3.data.subtitle">
                         </h2>
                     </div>
 
@@ -37,7 +37,7 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 
 				<div flex="100" flex-sm="100" flex-gt-sm="33" ng-repeat="product in section_3.data.items">
 
-					<md-card ng-attr-style="position: relative;">
+					<md-card ng-attr-style="position: relative; background: transparent;">
 						</span>
 						<div style="text-align: center;">
 							<div ng-repeat="content in product.contents">
