@@ -42,8 +42,8 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 						<div style="text-align: center;">
 							<div ng-repeat="content in product.contents">
 								<h4 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px; font-weight: lighter; font-size: 24px;"></h4>
-								<p style="color: {{base_hue_darkest.value}}" class="padded--top16" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
-								<p style="color: {{base_hue_darkest.value}}" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+								<p style="color: {{base_hue_darkest.value}}; font-weight: lighter;" class="padded--top16" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+								<p style="color: {{base_hue_darkest.value}}; font-weight: lighter;" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
 								<div class="full-width no-padding">
 									<!-- panel images -->
 									<div ng-cloak class="lightweight-card-image md-card md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
