@@ -13,3 +13,9 @@ md-list md-list-item .md-avatar-icon {background-color: transparent!important;}
 @media screen and (max-width:599px) {
   	.projects-listing.full-width {width: 100%!important;}
 }
+
+.rounded {
+	-webkit-border-radius: 36px;
+	-moz-border-radius: 36px;
+	border-radius: 36px;
+}
