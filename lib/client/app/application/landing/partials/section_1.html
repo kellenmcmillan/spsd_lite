@@ -10,7 +10,7 @@ md-card.section-1-ms-explorer {min-height: 600px;}
 	<md-button ng-if="user" ng-click="edit(section_1.settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit Mission" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
         <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
     </md-button>
-	<md-card layout="column" layout-align="center center" style="background: {{base_hue_lighter; width: 100%; z-index: 2; overflow: hidden; position: relative; margin: 0;" ng-class="{'section-1-ms-explorer': browser == 'ie'}">
+	<md-card layout="column" layout-align="center center" style="background: {{base_hue_lighter.value}}; width: 100%; z-index: 2; overflow: hidden; position: relative; margin: 0;" ng-class="{'section-1-ms-explorer': browser == 'ie'}">
 		<!-- <h1 class="type heading" ng-attr-style="color: {{base_hue_darkest.value}}; line-height: 64px; margin: 0; font-weight: bold;">OUR CORE SERVICES</h1> -->
 		<div class="icon-container" flex="100" layout="row" layout-align="center center" style="background-color: {{base_hue_lightest.value}}; z-index: 2;" ng-class="{'section-1-ms-explorer': browser == 'ie'}">
 			<div class="inner-icon-container" layout-wrap layout="row" layout-align="start center" ng-class="{'section-1-ms-explorer': browser == 'ie'}">
@@ -23,7 +23,7 @@ md-card.section-1-ms-explorer {min-height: 600px;}
 				</div>
 
 
-				<div layout-padding layout="row" layout-align="center center" flex="100" flex-sm="50" flex-gt-sm="50" class="basic container">
+				<div layout="row" layout-align="center center" flex="100" flex-sm="50" flex-gt-sm="50" class="basic container">
 
 	                <div layout="column" layout-align="center center" flex="80">
 
