@@ -15,7 +15,7 @@ md-list md-list-item .md-avatar-icon {background-color: transparent!important;}
 }
 
 .rounded {
-	-webkit-border-radius: 12px;
-	-moz-border-radius: 12px;
-	border-radius: 12px;
+	-webkit-border-radius: 12px!important;
+	-moz-border-radius: 12px!important;
+	border-radius: 12px!important;
 }
