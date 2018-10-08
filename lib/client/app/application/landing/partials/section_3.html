@@ -6,12 +6,12 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 
 </style>
 
-<div layout="column" layout-gt-sm="row" layout-align="center center" style="padding-top: 64px; padding-bottom: 64px; position: relative; background: {{base_hue_lightest.value}};">
+<div layout="column" layout-gt-sm="row" layout-align="center center" style="min-height: 500px; position: relative; background: {{base_hue_lightest.value}};">
 	<md-button ng-if="user" ng-click="edit(section_3.settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit element" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
         <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
   	</md-button>
-	<md-card layout="row" layout-align="center center" ng-attr-style="width: 100%; z-index: 2; overflow: hidden; position: relative;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
-		<!-- <h1 class="type heading" ng-attr-style="color: {{base_hue_darkest.value}}; line-height: 64px; margin: 0; font-weight: bold;">OUR CORE SERVICES</h1> -->
+	<md-card flex="100" layout="row" layout-align="center center" ng-attr-style="z-index: 2; overflow: hidden; position: relative;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
+		
 		<div flex="100" layout="row" layout-align="center center" style="z-index: 2;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
 				
 			<!-- Container Title -->
@@ -20,8 +20,8 @@ md-card.section-3-ms-explorer {min-height: 600px;}
                 <div layout="column" layout-align="center center" flex>
 
                     <div class="center--text">
-                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{primary_hue_text__normal.value}}; z-index: 10;" ng-bind-html="section_3.title"></h2>
-                        <h2 style="color: {{base_hue_darkest.value}}; font-weight: bold;" ng-bind-html="section_3.subtitle">
+                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{primary_hue_text__normal.value}}; z-index: 10;" ng-bind-html="section_3.data.title"></h2>
+                        <h2 style="color: {{base_hue_darkest.value}}; font-weight: bold;" ng-bind-html="section_3.data.subtitle">
                         </h2>
                     </div>
 
@@ -31,11 +31,11 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 			<!-- Container Title -->
 
 
-			<div flex="100" class="services container" style="margin: 0; padding: 0">
+			<div flex="100" layout="row" class="services container" style="margin: 0; padding: 0">
 
-				<div flex layout="row" layout-align="center start" style="margin: 0; padding: 0">
+				<div flex layout="row" layout-align="center start" layout-wrap style="margin: 0; padding: 0">
 
-					<div flex="100" flex-sm="100" flex-gt-sm="33" ng-repeat="product in section_3.data.items" style="margin: 0; padding: 0">
+					<div flex="100" flex-sm="100" flex-gt-sm="33" ng-repeat="product in section_3.data.items">
 
 						<md-card ng-attr-style="position: relative;">
 							</span>
