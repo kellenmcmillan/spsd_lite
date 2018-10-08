@@ -43,14 +43,14 @@
 }
 .slide-text-two.active {
 	-webkit-animation: slide-in-out 6s ease-in-out forwards;
-    animation-delay: .75s;
+    animation-delay: 1s;
     animation: slide-in-out 6s ease-in-out forwards;
     animation-timing-function: ease-in-out; 
     -webkit-animation-timing-function: ease-in-out;
 }
 .slide-button-one.active {
 	-webkit-animation: slide-in-out 6s ease-in-out forwards;
-    animation-delay: 1.5s;
+    animation-delay: 2s;
     animation: slide-in-out 6s ease-in-out forwards;
     animation-timing-function: ease-in-out; 
     -webkit-animation-timing-function: ease-in-out;
