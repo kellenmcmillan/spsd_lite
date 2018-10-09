@@ -46,7 +46,7 @@ md-card.section-6-ms-explorer {min-height: 600px;}
 								<p ng-attr-style="color: {{base_hue_darkest.value}}">Office</p>
 							</div>
 						</md-list-item>
-						<a ng-href="{{settings.data.address.google_address_link}}" flex>
+						<a ng-href="{{settings.data.address.google_address_link}}" target="_blank" flex>
 							<md-list-item class="md-2-line">
 								<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">location_on</md-icon>
 								<div class="md-list-item-text">
@@ -107,8 +107,8 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                                 </md-input-container>
                             </md-list-item>
                         </md-card-content>
-                        <md-button ng-disabled="index_2.$invalid" ng-click="sendLead(indexForm2, 'Home Page'); clearForm(indexForm2)" aria-label="Edit Info Page" class="custom-deep-button lightweight-round" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; width: 250px; height: 48px">
-                            <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>&nbsp;&nbsp;Send
+                        <md-button ng-disabled="index_2.$invalid" ng-click="sendLead(indexForm2, 'Home Page'); clearForm(indexForm2)" aria-label="Edit Info Page" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">
+                            <md-icon style="color: {{base_hue_lightest.value}};">send</md-icon>&nbsp;&nbsp;Send
                         </md-button>
                     </form>
 
