@@ -1,18 +1,18 @@
 <style>
 	
-md-card.section-3-ms-explorer {min-height: 600px;}
-.icon-container.section-3-ms-explorer {width: {{window_width}}px; margin-top: 250px;}
-.inner-icon-container.section-3-ms-explorer {width: 100%;}
+md-card.section-6-ms-explorer {min-height: 600px;}
+.icon-container.section-6-ms-explorer {width: {{window_width}}px; margin-top: 250px;}
+.inner-icon-container.section-6-ms-explorer {width: 100%;}
 
 </style>
 
 <div layout="column" layout-gt-sm="row" layout-align="center center" style="min-height: 500px; padding-top: 64px; padding-bottom: 64px; position: relative; background: {{base_hue_lightest.value}};">
-	<md-button ng-if="user" ng-click="edit(section_3.settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit element" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
+	<md-button ng-if="user" ng-click="edit(section_6).settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit element" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
         <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
   	</md-button>
-	<md-card flex="100" layout="row" layout-align="center center" style="z-index: 2; overflow: hidden; position: relative; background: transparent;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
+	<md-card flex="100" layout="row" layout-align="center center" style="z-index: 2; overflow: hidden; position: relative; background: transparent;" ng-class="{'section-6-ms-explorer': browser == 'ie'}">
 		
-		<div flex="100" layout="row" layout-wrap layout-align="center center" style="z-index: 2;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
+		<div flex="100" layout="row" layout-wrap layout-align="center center" style="z-index: 2;" ng-class="{'section-6-ms-explorer': browser == 'ie'}">
 				
 			<!-- Container Title -->
 			<div layout-padding flex="100" class="basic container">
@@ -20,8 +20,8 @@ md-card.section-3-ms-explorer {min-height: 600px;}
                 <div layout="column" layout-align="center center" flex>
 
                     <div class="center--text">
-                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10;" ng-bind-html="section_3.data.title"></h2>
-                        <h2 style="color: {{base_hue_darkest.value}}; font-weight: lighter; font-size: 48px;" ng-bind-html="section_3.data.subtitle">
+                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10;" ng-bind-html="section_6).data.title"></h2>
+                        <h2 style="color: {{base_hue_darkest.value}}; font-weight: lighter; font-size: 48px;" ng-bind-html="section_6).data.subtitle">
                         </h2>
                     </div>
 
@@ -35,7 +35,7 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 
 
 
-				<div flex="100" flex-sm="100" flex-gt-sm="33" ng-repeat="product in section_3.data.items">
+				<div flex="100" flex-sm="100" flex-gt-sm="33" ng-repeat="product in section_6).data.items">
 
 					<md-card style="position: relative; border: 1px solid {{base_hue_darker_darkest_opacity.value}};">
 						<img ng-src="{{product.background.images.source}}" class="md-card-image">
