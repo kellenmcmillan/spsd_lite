@@ -17,10 +17,11 @@ md-card.section-6-ms-explorer {min-height: 600px;}
 			<!-- Container Title -->
 			<div layout-padding flex="100" flex-gt-sm="50" class="basic container">
 
-                <div layout="column" layout-align="center center" flex>
+                <div layout="column" layout-align="center start" flex>
 
                     <div flex>
-                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10;" ng-bind-html="section_6.data.title"></h2>
+                        <h2 class="complementary-text no-margin no-padding" style="font-size: 32px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10; font-weight: lighter;" ng-bind-html="section_6.data.title"></h2>
+                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10; font-weight: lighter;" ng-bind-html="section_6.data.subtitle"></h2>
                     </div>
                     <div flex ng-repeat="content in section_6.data">
                         <h1 class="h1" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
@@ -38,18 +39,19 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                         </a>
 	                </div>
 	                <md-list-item class="md-2-line">
-						<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">phone</md-icon>
+						<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">phone</md-icon>
 						<div class="md-list-item-text">
-							<h3> {{ settings.data.phone_1 }} </h3>
-							<p>Office</p>
+							<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.phone_1}}</h3>
+							<p ng-attr-style="color: {{base_hue_darkest.value}}">Office</p>
 						</div>
 					</md-list-item>
 					<a ng-href="{{settings.data.address.google_address_link}}">
 						<md-list-item class="md-2-line">
-							<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">location_on</md-icon>
+							<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">location_on</md-icon>
 							<div class="md-list-item-text">
-								<h3> {{ settings.data.address.street }} </h3>
-								<p>{{ settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</p>
+								<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.street}} </h3>
+								<p ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</p>
+								<p ng-attr-style="color: {{base_hue_darkest.value}}">Address</p>
 							</div>
 						</md-list-item>
 					</a>
@@ -72,7 +74,7 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                     <form name="index" ng-show="!progressAnimation">
                         <md-card-content>
                             <md-list-item>
-                                <md-input-container class="md-block lightweight-md-input">
+                                <md-input-container class="md-block lightweight-md-input" style="width: 100%;">
                                     <label>Full Name</label>
                                     <input name="name" ng-model="indexForm.name" minlength="4" required>
                                     <div ng-messages="index.name.$error" ng-show="index.name.$dirty">
@@ -82,7 +84,7 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                                 </md-input-container>
                             </md-list-item>
                             <md-list-item>
-                                <md-input-container class="md-block lightweight-md-input">
+                                <md-input-container class="md-block lightweight-md-input" style="width: 100%;">
                                     <label>Email</label>
                                     <input type="email" name="email" ng-model="indexForm.email" required>
                                     <div ng-messages="index.email.$error" ng-show="index.email.$dirty">
