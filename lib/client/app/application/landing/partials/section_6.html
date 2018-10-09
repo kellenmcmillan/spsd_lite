@@ -71,13 +71,13 @@ md-card.section-6-ms-explorer {min-height: 600px;}
 					<div style="text-align: center">
                         <div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
                     </div>
-                    <form name="index" ng-show="!progressAnimation">
+                    <form name="index_2" ng-show="!progressAnimation">
                         <md-card-content>
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" style="width: 100%;">
                                     <label>Full Name</label>
-                                    <input name="name" ng-model="indexForm.name" minlength="4" required>
-                                    <div ng-messages="index.name.$error" ng-show="index.name.$dirty">
+                                    <input name="name" ng-model="indexForm2.name" minlength="4" required>
+                                    <div ng-messages="index_2.name.$error" ng-show="index_2.name.$dirty">
                                         <div ng-message="required">Name required!</div>
                                         <div ng-message="minlength">Name too short!</div>
                                     </div>
@@ -86,8 +86,8 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                             <md-list-item>
                                 <md-input-container class="md-block lightweight-md-input" style="width: 100%;">
                                     <label>Email</label>
-                                    <input type="email" name="email" ng-model="indexForm.email" required>
-                                    <div ng-messages="index.email.$error" ng-show="index.email.$dirty">
+                                    <input type="email" name="email" ng-model="indexForm2.email" required>
+                                    <div ng-messages="index_2.email.$error" ng-show="index_2.email.$dirty">
                                         <div ng-message="required">Email required!</div>
                                         <div ng-message="email">Enter a valid email!</div>
                                     </div>
@@ -96,8 +96,8 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                             <md-list-item>
                             	<md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Message</label>
-                                    <textarea name="message" md-detect-hidden="true" ng-model="indexForm.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
-                                    <div ng-messages="index.message.$error" ng-show="index.message.$dirty">
+                                    <textarea name="message" md-detect-hidden="true" ng-model="indexForm2.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+                                    <div ng-messages="index_2.message.$error" ng-show="index_2.message.$dirty">
                                         <div ng-message="required">Message required!</div>
                                         <div ng-message="minlength">Message too short!</div>
                                         <div ng-message="md-maxlength">Message too long!</div>
@@ -105,7 +105,7 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                                 </md-input-container>
                             </md-list-item>
                         </md-card-content>
-                        <md-button ng-disabled="index.$invalid" ng-click="sendLead(indexForm, 'Home Page'); clearForm(indexForm)" class="custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+                        <md-button ng-disabled="index_2.$invalid" ng-click="sendLead(indexForm2, 'Home Page'); clearForm(indexForm2)" aria-label="Edit Info Page" class="custom-deep-button lightweight-round" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; width: 250px; height: 48px">
                             <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>&nbsp;&nbsp;Send
                         </md-button>
                     </form>
