@@ -6,7 +6,7 @@ md-card.section-6-ms-explorer {min-height: 600px;}
 
 </style>
 
-<div layout="column" layout-gt-sm="row" layout-align="center center" style="min-height: 500px; padding-top: 64px; padding-bottom: 64px; position: relative; background: {{base_hue_lightest.value}};">
+<div layout="column" layout-gt-sm="row" layout-align="center center" style="min-height: 500px; padding-top: 64px; padding-bottom: 64px; position: relative; background: {{primary_hue_normal.value}};">
 	<md-button ng-if="user" ng-click="edit(section_6).settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit element" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
         <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
   	</md-button>
@@ -17,18 +17,18 @@ md-card.section-6-ms-explorer {min-height: 600px;}
 			<!-- Container Title -->
 			<div layout-padding flex="100" flex-gt-sm="50" class="basic container">
 
-                <div layout="column" layout-align="center center" flex layout-padding>
+                <div layout="row" layout-align="center center" flex layout-padding>
 
-                    <div flex>
-                        <h2 class="complementary-text no-margin no-padding" style="font-size: 32px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10; font-weight: lighter;" ng-bind-html="section_6.title"></h2>
-                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10; font-weight: lighter;" ng-bind-html="section_6.subtitle"></h2>
+                    <div flex="100">
+                        <h2 class="complementary-text no-margin no-padding" style="font-size: 32px; margin-bottom: -48px!important; color:{{base_hue_lightest.value}}; z-index: 10; font-weight: lighter;" ng-bind-html="section_6.title"></h2>
+                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{base_hue_lightest.value}}; z-index: 10; font-weight: lighter;" ng-bind-html="section_6.subtitle"></h2>
                     </div>
                     <br>
                     <br>
-                    <div flex ng-repeat="content in section_6.data">
+                    <div flex="80" ng-repeat="content in section_6.data">
                         <h1 class="h1" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
-                        <p style="color: {{base_hue_darkest.value}}; font-weight: normal;" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
-                        <p style="color: {{base_hue_darkest.value}}; font-weight: normal;" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+                        <p style="color: {{base_hue_lightest.value}}; font-weight: normal;" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+                        <p style="color: {{base_hue_lightest.value}}; font-weight: normal;" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
                         <div class="full-width no-padding">
                             <!-- panel images -->
                             <div ng-cloak class="lightweight-card-image md-card md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
@@ -40,21 +40,21 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                             <md-button class="custom-deep-button lightweight-round" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; width: 250px; height: 48px">{{content.data.button}}</md-button>
                         </a>
 	                </div>
-	                <div flex="100" layout="column" layout-align="center start">
+	                <div flex="80" layout="column" layout-align="center start">
 		                <md-list-item class="md-2-line">
 							<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">phone</md-icon>
 							<div class="md-list-item-text">
-								<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.phone_1}}</h3>
-								<p ng-attr-style="color: {{base_hue_darkest.value}}">Office</p>
+								<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.phone_1}}</h3>
+								<p ng-attr-style="color: {{base_hue_lightest.value}}">Office</p>
 							</div>
 						</md-list-item>
 						<a ng-href="{{settings.data.address.google_address_link}}" target="_blank">
 							<md-list-item class="md-2-line">
 								<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">location_on</md-icon>
 								<div class="md-list-item-text">
-									<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.street}} </h3>
-									<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
-									<p ng-attr-style="color: {{base_hue_darkest.value}}">Address</p>
+									<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.address.street}} </h3>
+									<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
+									<p ng-attr-style="color: {{base_hue_lightest.value}}">Address</p>
 								</div>
 							</md-list-item>
 						</a>
@@ -109,8 +109,8 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                                 </md-input-container>
                             </md-list-item>
                         </md-card-content>
-                        <md-button ng-disabled="index_2.$invalid" ng-click="sendLead(indexForm2, 'Home Page'); clearForm(indexForm2)" aria-label="Edit Info Page" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">
-                            <md-icon style="color: {{base_hue_lightest.value}};">send</md-icon>&nbsp;&nbsp;Send
+                        <md-button ng-disabled="index_2.$invalid" ng-click="sendLead(indexForm2, 'Home Page'); clearForm(indexForm2)" aria-label="Edit Info Page" class="custom-deep-button lightweight-round" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; width: 150px; height: 48px">
+                            <md-icon style="color: {{primary_hue_normal.value}};">send</md-icon>&nbsp;&nbsp;Send
                         </md-button>
                     </form>
 
