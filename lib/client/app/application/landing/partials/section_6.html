@@ -38,23 +38,25 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                             <md-button class="custom-deep-button lightweight-round" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; width: 250px; height: 48px">{{content.data.button}}</md-button>
                         </a>
 	                </div>
-	                <md-list-item class="md-2-line">
-						<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">phone</md-icon>
-						<div class="md-list-item-text">
-							<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.phone_1}}</h3>
-							<p ng-attr-style="color: {{base_hue_darkest.value}}">Office</p>
-						</div>
-					</md-list-item>
-					<a ng-href="{{settings.data.address.google_address_link}}">
-						<md-list-item class="md-2-line">
-							<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">location_on</md-icon>
+	                <div flex layout="row" layout-align="center center">
+		                <md-list-item class="md-2-line" flex>
+							<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">phone</md-icon>
 							<div class="md-list-item-text">
-								<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.street}} </h3>
-								<p ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</p>
-								<p ng-attr-style="color: {{base_hue_darkest.value}}">Address</p>
+								<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.phone_1}}</h3>
+								<p ng-attr-style="color: {{base_hue_darkest.value}}">Office</p>
 							</div>
 						</md-list-item>
-					</a>
+						<a ng-href="{{settings.data.address.google_address_link}}" flex>
+							<md-list-item class="md-2-line">
+								<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">location_on</md-icon>
+								<div class="md-list-item-text">
+									<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.street}} </h3>
+									<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
+									<p ng-attr-style="color: {{base_hue_darkest.value}}">Address</p>
+								</div>
+							</md-list-item>
+						</a>
+					</div>
 
                 </div>
 
