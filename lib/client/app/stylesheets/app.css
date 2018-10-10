@@ -19,3 +19,5 @@ md-list md-list-item .md-avatar-icon {background-color: transparent!important;}
 	-moz-border-radius: 24px!important;
 	border-radius: 24px!important;
 }
+
+.lightweight-md-input {width: 100%!important;}
