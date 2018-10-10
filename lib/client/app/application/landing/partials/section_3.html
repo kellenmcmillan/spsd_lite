@@ -57,9 +57,13 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 										<p style="color: {{base_hue_darkest.value}}; font-size: 14px; font-weight: normal;">{{content.data.button}}</p>
 									</a>
 								</div>
+								<a ng-if="content.data.url" href="{{content.data.url}}" style="position: absolute; bottom: 32px; right: 32px; color: {{primary_hue_normal.value}};">
+									<md-icon class="md-icon-button" style="color: {{primary_hue_normal.value}};">launch</md-icon>
+								</a>
 							</div>
 						</div>
 
+						
 
 					</md-card>
 
