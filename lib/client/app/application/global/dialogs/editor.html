@@ -218,16 +218,28 @@
                 <div flex="100" flex-gt-sm="40">
                     <md-card class="md-card-base">
                         <md-card-content>
-                            <md-list-item>
+                            <md-list-item ng-if="editor_element.data.title">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Title</label>
                                     <input ng-model="editor_element.data.title">
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item>
+                            <md-list-item ng-if="editor_element.title">
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Title</label>
+                                    <input ng-model="editor_element.title">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item ng-if="editor_element.data.subtitle">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Subtitle</label>
                                     <input ng-model="editor_element.data.subtitle">
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item ng-if="editor_element.subtitle">
+                                <md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Subtitle</label>
+                                    <input ng-model="editor_element.subtitle">
                                 </md-input-container>
                             </md-list-item>
                         </md-card-content>
@@ -267,9 +279,13 @@
                             </md-card-title>
                             <md-list-item ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
                                 <!-- For Element -->
-                                <md-input-container ng-show="!editor_element.settings.page_type == 'blog'" class="md-block lightweight-md-input" flex>
+                                <md-input-container ng-if="editor_element.title" ng-show="!editor_element.settings.page_type == 'blog'" class="md-block lightweight-md-input" flex>
                                     <label>Title</label>
                                     <input ng-model="editor_element.title">
+                                </md-input-container>
+                                <md-input-container ng-if="editor_element.data.title" ng-show="!editor_element.settings.page_type == 'blog'" class="md-block lightweight-md-input" flex>
+                                    <label>Title</label>
+                                    <input ng-model="editor_element.data.title">
                                 </md-input-container>
                                 <!-- For Element -->
                                 <!-- For Blogs -->
@@ -287,9 +303,13 @@
                             </md-card-title>
                             <md-list-item ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
                                 <!-- For Element -->
-                                <md-input-container class="md-block lightweight-md-input" ng-if="!editor_element.settings.page_type == 'blog'" flex>
+                                <md-input-container ng-if="editor_element.subtitle" class="md-block lightweight-md-input" ng-if="!editor_element.settings.page_type == 'blog'" flex>
                                     <label>Sub Title</label>
                                     <input ng-model="editor_element.subtitle">
+                                </md-input-container>
+                                <md-input-container ng-if="editor_element.data.subtitle" class="md-block lightweight-md-input" ng-if="!editor_element.settings.page_type == 'blog'" flex>
+                                    <label>Sub Title</label>
+                                    <input ng-model="editor_element.data.subtitle">
                                 </md-input-container>
                                 <!-- For Element -->
                                 <!-- For Blogs -->
