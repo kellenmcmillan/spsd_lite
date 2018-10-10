@@ -37,17 +37,16 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 
 				<div flex="100" flex-sm="100" flex-gt-sm="25" ng-repeat="product in section_3.data.items">
 
-					<md-card style="position: relative;" class="md-whiteframe-8dp rounded">
+					<md-card ng-attr-style="position: relative; background-color: {{primary_hue_normal.value}};" class="md-whiteframe-8dp rounded">
 
-						<img ng-src="{{product.background.images.source}}" class="md-card-image" style="border-radius: 24px 24px 0 0; -webkit-border-radius: 24px!important; -moz-border-radius: 24px!important;">
+						<img ng-src="{{product.background.images.source}}" class="md-card-image" style="border-radius: 24px 24px 0 0!important; -webkit-border-radius: 24px 24px 0 0!important; -moz-border-radius: 24px 24px 0 0!important;">
 
-						<br>
 						<div style="text-align: left; padding: 24px;">
 
 							<div ng-repeat="content in product.contents">
 								<h4 ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px; font-weight: normal; font-size: 24px;"></h4>
-								<p style="color: {{base_hue_lightest.value}}; font-weight: normal;" class="padded--top16" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
-								<p style="color: {{base_hue_lightest.value}}; font-weight: normal;" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+								<p style="color: {{base_hue_lightest.value}}; font-weight: lighter; font-size: 14px;" class="padded--top16" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+								<p style="color: {{base_hue_lightest.value}}; font-weight: lighter; font-size: 14px;" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
 								<div class="full-width no-padding">
 									<!-- panel images -->
 									<div ng-cloak class="lightweight-card-image md-card md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
@@ -55,7 +54,7 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 									<!-- panel images -->
 									</div>
 									<a ng-if="content.type == 'button'" href="{{content.data.url}}">
-										<p style="color: {{base_hue_lightest.value}};">{{content.data.button}}</p>
+										<p style="color: {{base_hue_lightest.value}}; font-size: 14px; font-weight: lighter;">{{content.data.button}}</p>
 									</a>
 								</div>
 							</div>
