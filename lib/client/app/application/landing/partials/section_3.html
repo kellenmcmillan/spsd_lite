@@ -37,16 +37,16 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 
 				<div flex="100" flex-sm="100" flex-gt-sm="33" ng-repeat="product in section_3.data.items">
 
-					<md-card style="position: relative; background-color: #757575;" class="md-whiteframe-8dp rounded">
+					<md-card style="position: relative; background-color: {{base_hue_lightest.value}};" class="md-whiteframe-8dp rounded">
 
 						<img ng-src="{{product.background.images.source}}" class="md-card-image" style="border-radius: 24px 24px 0 0!important; -webkit-border-radius: 24px 24px 0 0!important; -moz-border-radius: 24px 24px 0 0!important;">
 
 						<div style="text-align: left; padding: 24px;">
 
 							<div ng-repeat="content in product.contents">
-								<h4 ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px; color: {{base_hue_lightest.value}}; font-weight: normal; font-size: 24px;"></h4>
-								<p style="color: {{base_hue_lightest.value}}; font-weight: normal; font-size: 14px;" class="padded--top16" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
-								<p style="color: {{base_hue_lightest.value}}; font-weight: normal; font-size: 14px;" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+								<h4 ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px; color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 24px;"></h4>
+								<p style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 14px;" class="padded--top16" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+								<p style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 14px;" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
 								<div class="full-width no-padding" style="margin-top: 32px;">
 									<!-- panel images -->
 									<div ng-cloak class="lightweight-card-image md-card md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
@@ -54,7 +54,7 @@ md-card.section-3-ms-explorer {min-height: 600px;}
 									<!-- panel images -->
 									</div>
 									<a ng-if="content.type == 'button'" href="{{content.data.url}}" style="margin-top: 16px;">
-										<p style="color: {{base_hue_lightest.value}}; font-size: 14px; font-weight: lighter;">{{content.data.button}}</p>
+										<p style="color: {{base_hue_darkest.value}}; font-size: 14px; font-weight: lighter;">{{content.data.button}}</p>
 									</a>
 								</div>
 							</div>
