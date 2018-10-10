@@ -24,8 +24,8 @@
 	<div flex="100" style="text-align: center;">
         <h2 style="color: {{base_hue_lightest.value}}; font-weight: lighter; font-size: 48px;">SPSD Blog</h2>
     </div>
-	<div flex="100" layout-align="center center" layout-align-sm="start start" layout-align-gt-sm="start start" layout="row" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding>
-		<div ng-repeat="blog in bloglist | limitTo: -3 | orderBy : 'blog.data.date' : true" flex="100" flex-sm="50" flex-gt-sm="33" layout-wrap>
+	<div flex="100" layout-align="center center" layout-align-sm="start start" layout-align-gt-sm="center start" layout="row" layout-wrap layout-sm="row" layout-gt-sm="row" layout-padding>
+		<div ng-repeat="blog in bloglist | limitTo: -3 | orderBy : 'blog.data.date' : true" flex="100" flex-sm="50" flex-gt-sm="25" layout-wrap>
 			<md-card flex="100" class="md-whiteframe-8dp rounded" style="background: {{base_hue_lightest.value}}; position: relative; z-index: 2">
 				<md-card-title style="padding-bottom: 0;">
 					<md-card-title-text style="width: 100%">
