@@ -272,7 +272,7 @@
                             <!-- if it's a page - all pages have titles -->
 
                             <!-- if it's an element or a blog with a title and subtitle -->
-                            <md-card-title ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
+                            <md-card-title ng-if="editor_element.title || editor_element.data.title" ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
                                 <md-card-title-text ng-show="!items_sortable">
                                     <span class="md-headline">Title</span>
                                 </md-card-title-text>
@@ -296,7 +296,7 @@
                                 <!-- For Blogs -->
                             </md-list-item>
 
-                            <md-card-title ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
+                            <md-card-title ng-if="editor_element.subtitle || editor_element.data.subtitle" ng-show="!items_sortable && editor_element.settings.configs.has_title_subtitle">
                                 <md-card-title-text ng-show="!items_sortable">
                                     <span class="md-headline">Subtitle</span>
                                 </md-card-title-text>
