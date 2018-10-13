@@ -22,7 +22,7 @@
 }
 .sub-navigation.dropdown {
     margin-top: 60px;
-    width: 100%; 
+    z-index: 21!important;
 }
 @media screen and (max-width: 839px) {
     .navigation.panel {
