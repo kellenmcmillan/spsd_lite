@@ -4,7 +4,7 @@
     <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
         <div flex="50"></div>
         <div flex="50">
-        <md-icon ng-click="close_parent_menu()" ng-attr-style="color: {{base_hue_lightest.value}}; position: absolute; top: 8px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
+            <md-icon ng-click="close_parent_menu()" ng-attr-style="color: {{base_hue_lightest.value}}; position: absolute; top: 8px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
         </div>
         <br>
         <br>
@@ -36,7 +36,7 @@
 <!-- Menu Panel -->
 
 <!-- Menu Panel - Mobile Only -->
-<div layout="row" layout-align="start start" class="sub-navigation navigation panel md-whiteframe-4dp" ng-class="{'open': sub_navigation_panel, 'close': !sub_navigation_panel}" ng-attr-style="background-color: {{base_hue_darkest.value}};">
+<div layout="row" layout-align="start start" class="sub-navigation navigation panel md-whiteframe-4dp" ng-attr-style="background-color: {{base_hue_darkest.value}};">
     <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
         <div flex="50"></div>
         <div flex="50">
@@ -116,10 +116,10 @@
             <div flex="100" layout-margin>
                 <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="1:1" md-gutter="8px" md-gutter-gt-sm="4px">
                     <md-grid-tile ng-repeat="tile in projectslist | limitTo: 6" md-rowspan="3" md-rowspan-xs="2" md-rowspan-sm="2" md-colspan="3" md-colspan-sm="2" md-colspan-xs="2" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
-                    <a href="{{tile.settings.url}}">
-                        <img ng-src="{{tile.data.page.foreground.images.source}}" style="width: auto; max-width:300%; min-height: 100%;">
-                        <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.settings.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.settings.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
-                    </a>
+                        <a href="{{tile.settings.url}}">
+                            <img ng-src="{{tile.data.page.foreground.images.source}}" style="width: auto; max-width:300%; min-height: 100%;">
+                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.settings.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.settings.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
+                        </a>
                     </md-grid-tile>
                 </md-grid-list>
             </div>
