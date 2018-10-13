@@ -1,18 +1,18 @@
 <md-card flex="100" layout="row" layout-align="center center" class="sub-navigation dropdown md-whiteframe-8dp" ng-attr-style="overflow: hidden; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0;" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': sub_navigation_panel, 'close': !sub_navigation_panel}">
 
-	<md-icon ng-click="close_parent_menu()" ng-attr-style="color: {{base_hue_lightest.value}}; position: absolute; top: 8px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
+	<md-icon ng-click="close_menu()" ng-attr-style="color: {{base_hue_lightest.value}}; position: absolute; top: 8px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
 
 	<div flex="100" flex-gt-sm="50" layout="row" layout-align="start center" layout-margin>
-
-        <h2 ng-attr-style="color: {{base_hue_lightest.value}};">
-            {{menu_title}}
-        </h2>
-        <br><br>
         <md-list flex="100">
+        	<md-list-item flex="100" layout-padding>
+        		<h2 ng-attr-style="color: {{base_hue_lightest.value}};">
+		            {{menu_title}}
+		        </h2>
+        	</md-list-item>
             <a href="{{child.url}}" ng-repeat="child in child_items" class="navigation link mobile" style="cursor: pointer;">
                 <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding>
-                    <md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{child.name}}" md-font-library="material-icons">link</md-icon>
-                    <p>{{child.name}}</p>
+                    <!-- <md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{child.name}}" md-font-library="material-icons">link</md-icon> -->
+                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;">{{child.name}}</p>
                 </md-list-item>
             </a>
             <md-divider ng-if="!$last"></md-divider>
@@ -24,10 +24,10 @@
     	<div class="container navigation widget" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap style="padding-bottom: 48px;" ng-if="menu_title == 'Galleries'">
             <div flex="100" layout-margin>
                 <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="1:1" md-gutter="8px" md-gutter-gt-sm="4px">
-                    <md-grid-tile ng-repeat="tile in projectslist | limitTo: 6" md-rowspan="3" md-rowspan-xs="2" md-rowspan-sm="2" md-colspan="3" md-colspan-sm="2" md-colspan-xs="2" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
-                        <a href="{{tile.settings.url}}">
-                            <img ng-src="{{tile.data.page.foreground.images.source}}" style="width: auto; max-width:300%; min-height: 100%;">
-                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.settings.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.settings.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
+                    <md-grid-tile ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="3" md-rowspan-xs="2" md-rowspan-sm="2" md-colspan="3" md-colspan-sm="2" md-colspan-xs="2" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+                        <a href="{{tile.url}}">
+                            <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
+                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
                         </a>
                     </md-grid-tile>
                 </md-grid-list>
