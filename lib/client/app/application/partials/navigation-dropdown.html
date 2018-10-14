@@ -42,7 +42,7 @@
 
 
         <div class="container" ng-if="menu_title != 'Galleries'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget">
-            <md-tabs md-dynamic-height md-border-bottom style="min-width: 300px;">
+            <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%;">
                 <md-tab label="Contact Info">
                     <md-content class="md-padding" style="background-color: transparent!important;">
                         <md-list-item class="md-2-line">
@@ -61,7 +61,7 @@
                         </md-list-item>
                     </md-content>
                 </md-tab>
-                <md-tab label="Hours">
+                <!-- <md-tab label="Hours">
                     <md-content class="md-padding" style="background-color: transparent!important;">
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
                         Sunday <p class="md-secondary">{{settings.data.hours.sunday.start == 'Closed' ? 'Closed' : settings.data.hours.sunday.start + ' - '}}{{settings.data.hours.sunday.end == 'Closed' ? '' : settings.data.hours.sunday.end}}</p>
@@ -92,7 +92,7 @@
                         </md-list-item>
                         <md-divider></md-divider>
                     </md-content>
-                </md-tab>
+                </md-tab> -->
             </md-tabs>
         </div>
     </div>
