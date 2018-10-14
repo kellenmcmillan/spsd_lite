@@ -40,17 +40,17 @@
 							    </div>
 							</md-input-container>
 						</md-list-item>
-						<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="indexForm2.recaptcha"></div>
+						<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="login.recaptcha"></div>
                         <br>
-						<div layout-padding layout="row" layout-align="end center">
-							<div>
+						<div layout-padding layout="row" layout-align="start center">
+							
 								<!-- <md-button style="background: transparent;">
 								Forgot Password
 								</md-button> -->
-								<md-button class="md-raised" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="signIn()">
-								Login
-								</md-button>
-							</div>
+							<md-button ng-disabled="login.$invalid" ng-click="signIn()" aria-label="Edit Info Page" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">
+	                            <md-icon style="color: {{base_hue_lightest.value}};">send</md-icon>&nbsp;&nbsp;Send
+	                        </md-button>
+							
 						</div>
 					</md-content>
 				</form>
