@@ -1,7 +1,9 @@
 <style>
 	md-tabs.md-default-theme .md-tab, md-tabs .md-tab, md-tabs .md-tab.md-active {color:{{base_hue_lightest.value}}!important;}
-	.dropdown div > a:not(.md-fab)[href*="maps"] {width: 100%!important; display: block!important}
+	.dropdown div.maps > a:not(.md-fab)[href*="maps"] {width: 100%!important; display: block!important}
+    .dropdown div:not(.maps) > a:not(.md-fab)[href*="maps"] {width: 0!important; display: none!important}
 	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
+    md-card > a[href*="maps"] {width: 0; display: none;}
 </style>
 
 <md-card ng-show="sub_navigation_panel" flex="100" layout="row" layout-align="center center" class="sub-navigation dropdown md-whiteframe-8dp" ng-attr-style="overflow: hidden; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0;" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': sub_navigation_panel, 'close': !sub_navigation_panel}">
@@ -26,7 +28,7 @@
     </div>
 
 
-    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center">
+    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-class="{'maps': menu_title == 'Capabilities'}">
     	
 
     	<div class="container navigation widget" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-if="menu_title == 'Galleries'">
