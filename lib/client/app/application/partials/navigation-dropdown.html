@@ -1,3 +1,7 @@
+<style>
+	md-tabs.md-default-theme .md-tab, md-tabs .md-tab, md-tabs .md-tab.md-active {color:{{base_hue_lightest.value}}!important;}
+</style>
+
 <md-card ng-show="sub_navigation_panel" flex="100" layout="row" layout-align="center center" class="sub-navigation dropdown md-whiteframe-8dp" ng-attr-style="overflow: hidden; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0;" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': sub_navigation_panel, 'close': !sub_navigation_panel}">
 
 	<md-icon ng-click="close_menu()" ng-attr-style="color: {{base_hue_lightest.value}}; position: absolute; top: 33px; right: 32px; z-index: 5; cursor: pointer;">close</md-icon>
@@ -38,9 +42,9 @@
 
 
         <div class="container" ng-if="menu_title != 'Galleries'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget">
-            <md-tabs md-dynamic-height md-border-bottom>
+            <md-tabs md-dynamic-height md-border-bottom style="min-width: 300px;">
                 <md-tab label="Contact Info">
-                    <md-content class="md-padding">
+                    <md-content class="md-padding" style="background-color: transparent!important;">
                         <md-list-item class="md-2-line">
                             <md-icon ng-attr-style="color: {{base_hue_lightest.value}};">phone</md-icon>
                             <div class="md-list-item-text md-offset">
@@ -58,7 +62,7 @@
                     </md-content>
                 </md-tab>
                 <md-tab label="Hours">
-                    <md-content class="md-padding">
+                    <md-content class="md-padding" style="background-color: transparent!important;">
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
                         Sunday <p class="md-secondary">{{settings.data.hours.sunday.start == 'Closed' ? 'Closed' : settings.data.hours.sunday.start + ' - '}}{{settings.data.hours.sunday.end == 'Closed' ? '' : settings.data.hours.sunday.end}}</p>
                         </md-list-item>
