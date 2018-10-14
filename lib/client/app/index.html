@@ -43,11 +43,20 @@
 
         <!-- Scripts -->
         <script type="text/javascript">
-          var onloadCallback = function() {
-            grecaptcha.render('html_element', {
-              'sitekey' : '6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'
-            });
-          };
+            var recaptcha1;
+            var recaptcha2;
+            var recaptcha3;
+            var onloadCallback = function() {
+                grecaptcha.render('recaptcha1', {
+                    'sitekey' : '6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'
+                });
+                grecaptcha.render('recaptcha2', {
+                    'sitekey' : '6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'
+                });
+                grecaptcha.render('recaptcha3', {
+                    'sitekey' : '6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'
+                });
+            };
         </script>
         <!-- Scripts -->
 
