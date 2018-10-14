@@ -47,13 +47,13 @@
             var recaptcha2;
             var recaptcha3;
             var onloadCallback = function() {
-                grecaptcha.render('recaptcha1', {
+                recaptcha1 = grecaptcha.render('recaptcha1', {
                     'sitekey' : '6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'
                 });
-                grecaptcha.render('recaptcha2', {
+                recaptcha2 = grecaptcha.render('recaptcha2', {
                     'sitekey' : '6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'
                 });
-                grecaptcha.render('recaptcha3', {
+                recaptcha3 = grecaptcha.render('recaptcha3', {
                     'sitekey' : '6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'
                 });
             };
