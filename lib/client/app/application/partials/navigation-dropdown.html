@@ -101,7 +101,7 @@
         </div>
         
 
-        <div class="navigation widget" ng-if="menu_title == 'Capabilities'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget">
+        <div class="navigation widget" ng-show="menu_title == 'Capabilities'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget">
 
         <!-- Map Widget -->
             <div class="md-whiteframe-8dp" flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 8px 0 40px 0;">
@@ -111,7 +111,7 @@
 					</div>
 				</div>
 				
-				<md-button href="{{settings.data.address.google_address_link}}" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{base_hue_lightest.value}}; position: absolute; bottom: -36px; right: 8px;">
+				<md-button href="{{settings.data.address.google_address_link}}" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -36px; right: 8px;">
 			        <md-icon style="color: {{primary_hue_normal.value}};">directions</md-icon>
 			    </md-button>
 			    
