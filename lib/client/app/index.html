@@ -42,7 +42,13 @@
         <!-- Stylesheets -->
 
         <!-- Scripts -->
-        <script src='https://www.google.com/recaptcha/api.js'></script>
+        <script type="text/javascript">
+          var onloadCallback = function() {
+            grecaptcha.render('html_element', {
+              'sitekey' : '6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'
+            });
+          };
+        </script>
         <!-- Scripts -->
 
 
