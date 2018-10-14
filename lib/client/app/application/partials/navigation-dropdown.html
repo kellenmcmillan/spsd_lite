@@ -26,7 +26,7 @@
     </div>
 
 
-    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center">
+    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-show="menu_title != 'Capabilities'">
     	
 
     	<div class="container navigation widget" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-show="menu_title == 'Galleries'">
@@ -100,9 +100,10 @@
                 </md-tab> -->
             </md-tabs>
         </div>
-        
+    </div>
+    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-show="menu_title == 'Capabilities'">
 
-        <div class="navigation map-widget" ng-if="menu_title == 'Capabilities'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget" style="position: relative;">
+        <div class="navigation map-widget" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget" style="position: relative;">
 
         	<!-- Map Widget -->
             <div class="md-whiteframe-8dp" flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 8px 0 40px 0;">
