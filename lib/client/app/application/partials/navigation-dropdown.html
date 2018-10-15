@@ -15,14 +15,14 @@
 	<div flex="100" flex-gt-sm="40" layout="row" layout-align="start center" layout-margin>
         <md-list flex="100">
         	<md-list-item flex="100" layout-padding>
-        		<h2 ng-attr-style="color: {{base_hue_lightest.value}}; font-weight: lighter;">
+        		<h2 ng-attr-style="color: {{base_hue_lightest.value}};">
 		            {{menu_title}}
 		        </h2>
         	</md-list-item>
             <a href="{{child.url}}" ng-repeat="child in child_items" class="navigation link mobile" style="cursor: pointer;">
                 <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding>
                     <!-- <md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{child.name}}" md-font-library="material-icons">link</md-icon> -->
-                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter">{{child.name}}</p>
+                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{child.name}}</p>
                 </md-list-item>
                 <md-divider ng-if="!$last"></md-divider>
             </a>
