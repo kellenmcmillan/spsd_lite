@@ -1,7 +1,6 @@
 <style>
 	md-tabs.md-default-theme .md-tab, md-tabs .md-tab, md-tabs .md-tab.md-active {color:{{base_hue_lightest.value}}!important;}
-	.dropdown div.maps > a:not(.md-fab)[href*="maps"] {width: 100%!important; display: block!important}
-    .dropdown div:not(.maps) > a:not(.md-fab)[href*="maps"] {width: 0!important; display: none!important}
+	.dropdown div > a:not(.md-fab)[href*="maps"] {width: 100%!important; display: block!important}
 	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
     md-card > a:not(.addr_widget)[href*="maps"] {width: 0; display: none;}
 </style>
@@ -30,7 +29,7 @@
     </div>
 
 
-    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-class="{'maps': menu_title == 'Locate Us', 'maps': menu_title == 'Contact Us'}">
+    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center">
     	
 
     	<div class="container navigation widget" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-show="menu_title == 'Galleries'">
