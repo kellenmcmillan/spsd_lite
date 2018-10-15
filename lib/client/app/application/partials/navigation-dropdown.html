@@ -3,7 +3,7 @@
 	.dropdown div.maps > a:not(.md-fab)[href*="maps"] {width: 100%!important; display: block!important}
     .dropdown div:not(.maps) > a:not(.md-fab)[href*="maps"] {width: 0!important; display: none!important}
 	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
-    md-card > a[href*="maps"] {width: 0; display: none;}
+    md-card > a:not(.addr_widget)[href*="maps"] {width: 0; display: none;}
 </style>
 
 <md-card ng-show="sub_navigation_panel" flex="100" layout="row" layout-align="center center" class="sub-navigation dropdown md-whiteframe-8dp" ng-attr-style="overflow: hidden; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0;" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': sub_navigation_panel, 'close': !sub_navigation_panel}">
@@ -57,7 +57,7 @@
 							</div>
 						</md-list-item>
 						<md-divider></md-divider>
-						<a ng-href="{{settings.data.address.google_address_link}}" target="_blank">
+						<a class="addr_widget" ng-href="{{settings.data.address.google_address_link}}" target="_blank">
 							<md-list-item class="md-2-line">
 								<md-icon ng-attr-style="color: {{base_hue_lightest.value}}">location_on</md-icon>
 								<div class="md-list-item-text">
