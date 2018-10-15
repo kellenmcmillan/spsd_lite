@@ -3,7 +3,10 @@
 	md-tabs.md-default-theme .md-tab {color:{{base_hue_lighter.value}}!important;}
     md-tabs .md-tab, md-tabs .md-tab.md-active {color:{{base_hue_lightest.value}}!important;}
 
-	.dropdown div.maps > a:not(.md-fab)[href*="maps"] {width: 100%!important; display: block!important}
+	.dropdown div.maps > a:not(.md-fab)[href*="maps"], 
+    .dropdown div.maps > a:not(.addr_widget)[href*="maps"] {
+        width: 100%!important; display: block!important
+    }
 
     .dropdown div:not(.maps) > a:not(.md-fab)[href*="maps"] {width: 0!important; display: none!important}
 	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
