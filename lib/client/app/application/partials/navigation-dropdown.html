@@ -4,7 +4,7 @@
     md-tabs .md-tab.md-active {color:{{base_hue_lightest.value}}!important;}
 
 	.dropdown div.maps > a:not(.md-fab)[href*="maps"], 
-    .dropdown div.maps > a:not(.addr_widget)[href*="maps"] {
+    .dropdown div.maps > a.addr_widget) {
         width: 100%!important; display: block!important
     }
 
@@ -41,7 +41,8 @@
 
     <!-- ================== Column Two ================== -->
 
-    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-class="{'maps': menu_title == 'Locate Us', 'maps': menu_title == 'Contact Us'}">
+    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" 
+    ng-class="{'maps': menu_title == 'Locate Us', 'maps': menu_title == 'Contact Us'}">
     	
         <!-- Featured Galleries Widget -->
 
