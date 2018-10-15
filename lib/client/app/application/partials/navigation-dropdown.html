@@ -27,27 +27,47 @@
                 <md-divider ng-if="!$last"></md-divider>
             </a>
         </md-list>
+    </div>
+
+
+    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-class="{'null': menu_title == 'Galleries'}">
+    	
+
+    	<div class="container navigation widget" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-show="menu_title == 'Galleries'">
+            <div flex="100" layout-margin>
+                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="150px" md-row-height="125px" md-gutter="8px" md-gutter-gt-sm="4px">
+                    <md-grid-tile class="md-whiteframe-4dp" ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+                        <a href="{{tile.url}}">
+                            <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
+                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
+                        </a>
+                    </md-grid-tile>
+                </md-grid-list>
+            </div>
+        </div>
+
+
         <div ng-show="menu_title == 'Contact Us'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget">
             <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%;">
                 <md-tab label="Contact Info">
                     <md-content class="md-padding" style="background-color: transparent!important;">
                         <md-list-item class="md-2-line">
-                            <md-icon ng-attr-style="color: {{base_hue_lightest.value}}">phone</md-icon>
-                            <div class="md-list-item-text">
-                                <h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.phone_1}}</h3>
-                                <p ng-attr-style="color: {{base_hue_lightest.value}}">Office</p>
-                            </div>
-                        </md-list-item>
-                        <md-divider></md-divider>
-                        <a class="addr_widget" ng-href="{{settings.data.address.google_address_link}}" target="_blank">
-                            <md-list-item class="md-2-line">
-                                <md-icon ng-attr-style="color: {{base_hue_lightest.value}}">location_on</md-icon>
-                                <div class="md-list-item-text">
-                                    <h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.address.street}} </h3>
-                                    <h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
-                                    
-                                </div>
-                            </md-list-item>
+							<md-icon ng-attr-style="color: {{base_hue_lightest.value}}">phone</md-icon>
+							<div class="md-list-item-text">
+								<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.phone_1}}</h3>
+								<p ng-attr-style="color: {{base_hue_lightest.value}}">Office</p>
+							</div>
+						</md-list-item>
+						<md-divider></md-divider>
+						<a class="addr_widget" ng-href="{{settings.data.address.google_address_link}}" target="_blank">
+							<md-list-item class="md-2-line">
+								<md-icon ng-attr-style="color: {{base_hue_lightest.value}}">location_on</md-icon>
+								<div class="md-list-item-text">
+									<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.address.street}} </h3>
+									<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
+									
+								</div>
+							</md-list-item>
                     </md-content>
                 </md-tab>
                 <md-tab label="Hours">
@@ -84,27 +104,6 @@
                 </md-tab>
             </md-tabs>
         </div>
-    </div>
-
-
-    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-class="{'null': menu_title == 'Galleries'}">
-    	
-
-    	<div class="container navigation widget" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-show="menu_title == 'Galleries'">
-            <div flex="100" layout-margin>
-                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="150px" md-row-height="125px" md-gutter="8px" md-gutter-gt-sm="4px">
-                    <md-grid-tile class="md-whiteframe-4dp" ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
-                        <a href="{{tile.url}}">
-                            <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
-                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
-                        </a>
-                    </md-grid-tile>
-                </md-grid-list>
-            </div>
-        </div>
-
-
-        
         
 
         <div class="navigation map-widget" ng-show="menu_title == 'Locate Us'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget">
