@@ -187,7 +187,7 @@
                                     </md-list-item>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button class="md-raised" ng-click="overview = false; edit_info = true; file_view = false;" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Edit Your Personal Info</md-button>
+                                    <md-button class="custom-deep-button lightweight-round" ng-click="overview = false; edit_info = true; file_view = false;" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">Edit Your Personal Info</md-button>
                                 </md-card-actions>
                             </md-card>
 
@@ -207,7 +207,7 @@
                                         </md-card-header-text>
                                     </md-card-header>
                                     <md-card-content>
-                                        <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                        <div layout="column" layout-align="center start" style="margin: 0" flex>
                                             <md-list class="md-dense" flex>
                                                 <md-list-item ng-repeat="file in me.files | limitTo:3" flex>
                                                     <p md-truncate>{{file.name || file.title}}</p>
@@ -223,7 +223,7 @@
                                         </div>
                                     </md-card-content>
                                     <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button class="md-raised" ng-click="overview = false; edit_info = false; file_view = true;" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">View Your Files</md-button>
+                                        <md-button class="custom-deep-button lightweight-round" ng-click="overview = false; edit_info = false; file_view = true;" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">View Your Files</md-button>
                                     </md-card-actions>
                                 </md-card>
 
@@ -238,7 +238,7 @@
                                             </md-card-header-text>
                                         </md-card-header>
                                         <md-card-content>
-                                            <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                            <div layout="column" layout-align="center start" style="margin: 0" flex>
                                                 <md-list class="md-dense" flex>
                                                     <md-list-item ng-repeat="notification in me.chatter | limitTo:3" flex>
                                                         <p ng-class="{'bold': notification.unread == true}" md-truncate>{{notification.title}} | {{notification.subject}}</p>
@@ -254,7 +254,7 @@
                                             </div>
                                         </md-card-content>
                                         <md-card-actions layout="row" layout-align="end center" flex>
-                                            <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">View Your Notifications</md-button>
+                                            <md-button class="custom-deep-button lightweight-round" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">View Your Notifications</md-button>
                                         </md-card-actions>
                                 </md-card>
 
@@ -350,8 +350,8 @@
                                         </md-list-item>
                                     </md-card-content>
                                     <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button ng-click="edit_info = false; overview = true; file_view = false;" style="color: {{base_hue_darkest.value}};">Cancel</md-button>
-                                        <md-button class="md-raised" ng-click="updateUser(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                        <md-button  class="custom-deep-button lightweight-round" ng-click="edit_info = false; overview = true; file_view = false;" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; width: 150px; height: 48px">Cancel</md-button>
+                                        <md-button class="custom-deep-button lightweight-round" ng-click="updateUser(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">Update</md-button>
                                     </md-card-actions>
                                 </form>
                             </md-card>
@@ -371,7 +371,7 @@
                                 </md-card-header>
                                 <md-card-content>
                                     <md-content style="padding: 0;">
-                                        <div layout="column" layout-align="center stretch" style="margin: 0" flex>
+                                        <div layout="column" layout-align="center start" style="margin: 0" flex>
                                             <md-list class="md-dense" flex>
                                                 <md-list-item ng-repeat="file in me.files" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
                                                     <p md-truncate>{{file.name || file.title}}</p>
@@ -406,10 +406,10 @@
                                     </md-content>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button ng-click="edit_info = false; overview = true; file_view = false;" style="color: {{base_hue_darkest.value}};">Close</md-button>&nbsp;
+                                    <md-button class="custom-deep-button lightweight-round" ng-click="edit_info = false; overview = true; file_view = false;" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; width: 150px; height: 48px">Close</md-button>&nbsp;
                                     <!-- =================== Upload Various Resources =================== -->
                                     <md-menu>
-                                        <md-button class="md-raised" aria-label="upload media" md-menu-origin ng-click="openMenu($mdMenu, $event)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Upload Files</md-button>
+                                        <md-button class="custom-deep-button lightweight-round" aria-label="upload media" md-menu-origin ng-click="openMenu($mdMenu, $event)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">Upload Files</md-button>
                                         <md-menu-content width="4">
                                             <md-menu-item>
                                                 <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.doc,.docx'" ngf-accept="'.doc,.docx'" ngf-max-size="20MB">
