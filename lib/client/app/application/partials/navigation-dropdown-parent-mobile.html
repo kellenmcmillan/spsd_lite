@@ -5,7 +5,7 @@
 <md-card ng-show="navigation_panel" layout="row" layout-align="start start" class="navigation panel md-whiteframe-8dp" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': navigation_panel, 'close': !navigation_panel}" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0; top: 60px; left: 0;">
     <!-- <img src="https://storage.googleapis.com/spsd-189118.appspot.com/navigation-background.jpg" style="position: absolute; top: 0; left: 0; min-height: 100%; min-width: 100%; opacity: .1; z-index: 1;"> -->
     <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap>
-        <md-button class="md-icon-button" ng-click="close_parent_menu()" style="position: fixed; top: 33px; right: 32px; z-index: 5; cursor: pointer;" aria-label="Close">
+        <md-button class="md-icon-button" ng-click="close_parent_menu()" style="position: absolute; top: 33px; right: 32px; z-index: 5; cursor: pointer;" aria-label="Close">
             <md-icon ng-attr-style="color: {{base_hue_lightest.value}};">close</md-icon>
         </md-button>
         <md-list flex="100" style="padding-bottom: 48px; padding-top: 32px;">
