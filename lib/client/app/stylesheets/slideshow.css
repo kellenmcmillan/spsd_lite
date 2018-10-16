@@ -5,7 +5,7 @@
 /* Structure */
 
 .lightweight-hero--slideshow {width: 100%; margin: 0!important; padding: 0!important; position: relative; cursor: default; background-color: rgba(0, 0, 0, .8); overflow:hidden;}
-.slide--display {position: absolute; top: 0; height: 100%!important; margin: 0!important; box-sizing: border-box; padding: 0!important; left: 0; top: 0;}
+.slide--display {position: absolute; top: 0; height: 100%!important; width: 100%; margin: 0!important; box-sizing: border-box; padding: 0!important; left: 0; top: 0;}
 
 /* Structure */
 
@@ -20,7 +20,7 @@
 	transform: translate(-96px, 0);
 }
 
-.slide-text-one.ng-hide-remove {
+.slide-text-one.active {
   -webkit-animation: slide-in-out 6s ease-in-out forwards;
     animation: slide-in-out 6s ease-in-out forwards;
     animation-timing-function: ease-in-out; 
@@ -33,7 +33,7 @@
 	transform: translate(-96px, 0);
 }
 
-.slide-text-two.ng-hide-remove {
+.slide-text-two.active {
   -webkit-animation: slide-in-out 6s ease-in-out forwards;
     animation-delay: 1s;
     animation: slide-in-out 6s ease-in-out forwards;
@@ -59,7 +59,7 @@
     transform: translate(-96px, 0);
 }
 
-.slide-button-one.ng-hide-remove {
+.slide-button-one.active {
   -webkit-animation: slide-in-out 6s ease-in-out forwards;
     animation-delay: 2s;
     animation: slide-in-out 6s ease-in-out forwards;
@@ -85,12 +85,12 @@
 
 
 /* Media */
-.slideshow_slide_image {opacity: .75; z-index: 2}
+.slideshow_slide_image {opacity: .75;}
 .slideshow_slide_image.ng-hide-add,
 .slideshow_slide_image.ng-hide-remove {
   transition: all linear 0.5s;
 }
-.slideshow_slide_image.ng-hide {opacity: 0; z-index: 1; display: inline-block!important;}
+.slideshow_slide_image.ng-hide {opacity: 0; display: inline-block!important;}
 /* Media */
 
 /* Media Query */
