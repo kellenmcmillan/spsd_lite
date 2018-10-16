@@ -11,8 +11,7 @@
         <md-list flex="100" style="padding-bottom: 48px; padding-top: 48px;">
             <a href="/" style="text-decoration: none;">
                 <md-list-item ng-click="sub_navigation_panel = false; navigation_panel = false; open_menu(item)" class="navigation item" flex="100" layout-padding>
-                    <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{item.navigation.parent.name}}" md-font-library="material-icons">link</md-icon>
-                    <p>Home</p>
+                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">Home</p>
                 </md-list-item>
             </a>
             <md-list-item ng-repeat="item in settings.navigation.data track by $index" ng-click="navigation_panel = false; sub_navigation_panel = true; open_menu(item)" class="navigation item" flex="100" layout-padding>
