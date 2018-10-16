@@ -68,14 +68,14 @@
 
 }
 @-webkit-keyframes slide-in-out {
-	0% {opacity: 0; transform: translate(0, 0);}
-	50% {opacity: 1; transform: translate(96px, 0);}
-	100% {opacity: 0; transform: translate(192px, 0);}
+	0% {opacity: 0; transform: translate(-96px, 0);}
+	50% {opacity: 1; transform: translate(0, 0);}
+	100% {opacity: 0; transform: translate(96px, 0);}
 }
 @keyframes slide-in-out {
-	0% {opacity: 0; transform: translate(0, 0);}
-	50% {opacity: 1; transform: translate(96px, 0);}
-	100% {opacity: 0; transform: translate(192px, 0);}
+	0% {opacity: 0; transform: translate(-96px, 0);}
+	50% {opacity: 1; transform: translate(0, 0);}
+	100% {opacity: 0; transform: translate(96px, 0);}
 }
 
 
