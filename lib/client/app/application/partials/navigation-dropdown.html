@@ -6,7 +6,7 @@
     md-card > a:not(.addr_widget)[href*="maps"] {width: 0; display: none;}
 </style>
 
-<md-card ng-show="sub_navigation_panel" flex="100" layout="row" layout-align="center center" layout-wrap class="sub-navigation dropdown md-whiteframe-8dp" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0;" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': sub_navigation_panel, 'close': !sub_navigation_panel}">
+<md-card ng-show="sub_navigation_panel" flex="100" layout="row" layout-align="center start" layout-align-gt-sm="center center" layout-wrap class="sub-navigation dropdown md-whiteframe-8dp" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0;" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': sub_navigation_panel, 'close': !sub_navigation_panel}">
 
     <md-button class="md-icon-button" ng-click="close_menu()" style="position: absolute; top: 33px; right: 32px; z-index: 5; cursor: pointer;" aria-label="Close">
     	<md-icon ng-attr-style="color: {{base_hue_lightest.value}};">close</md-icon>
