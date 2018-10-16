@@ -41,7 +41,7 @@
     animation-timing-function: ease-in-out; 
     -webkit-animation-timing-function: ease-in-out;
     opacity: 0;
-    transform: translate(0, -48px);
+    transform: translate(0, -96px);
 }
 .slide-text-one.active {
 	-webkit-animation: slide-in-out 6s ease-in-out forwards;
