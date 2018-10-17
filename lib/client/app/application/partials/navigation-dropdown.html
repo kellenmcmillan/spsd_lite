@@ -5,7 +5,7 @@
 	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
     md-card > a:not(.addr_widget)[href*="maps"] {width: 0; display: none;}
     @media screen and (max-width: 960px) {
-        .featured_items {margin-bottom: 64px;}
+        .widget {margin-bottom: 64px;}
     }
 </style>
 
@@ -109,7 +109,7 @@
         </div>
         
 
-        <div class="navigation map-widget" ng-show="menu_title == 'Locate Us'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget">
+        <div class="navigation map-widget widget" ng-show="menu_title == 'Locate Us'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget">
 
         	<!-- Map Widget -->
             <div class="md-whiteframe-8dp" flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 16px 0 40px 0;">
