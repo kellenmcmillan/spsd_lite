@@ -7,6 +7,22 @@
 .grid-image:hover .featured-gallery-text {transform: translate(0, 0); opacity: 1;}
 .grid-image img {transition: all .4s ease-in-out;}
 </style>
+<div flex="100" layout="row" layout-wrap layout-align="center center" ng-attr-style="z-index: 2; background-color: {{base_hue_lightest.value}};" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
+        
+      <!-- Container Title -->
+      <div layout-padding flex="100" class="basic container">
+
+            <div layout="column" layout-align="center center" flex>
+
+                <div class="center--text">
+                    <h2 style="color: {{base_hue_darkest.value}}; font-weight: lighter; font-size: 48px;">Featured Galleries
+                    </h2>
+                </div>
+
+            </div>
+      </div>
+      <!-- Container Title -->
+</div>
 
 <md-grid-list md-cols="2" md-cols-sm="2" md-cols-md="4" md-cols-lg="12" md-cols-gt-lg="12" md-row-height="250px" md-row-height-lg="300px" md-row-height-gt-lg="400px" md-gutter="8px" md-gutter-gt-sm="0" class="md-whiteframe-8dp">
   	<md-grid-tile layout="row" layout-wrap layout-align="center center" md-colspan="2" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-rowspan="1" md-rowspan-md="2" class="grid-image">
