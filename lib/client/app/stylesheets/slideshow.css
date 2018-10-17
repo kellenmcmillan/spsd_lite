@@ -11,7 +11,7 @@
 
 
 /* Media */
-.slideshow_slide_image {opacity: .75;}
+.slideshow_slide_image {opacity: .75; will-change: opacity;}
 .slideshow_slide_image.ng-hide-add,
 .slideshow_slide_image.ng-hide-remove {
   transition: all linear 0.5s;
