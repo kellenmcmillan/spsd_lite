@@ -1,23 +1,41 @@
 /* css document */
-md-list md-list-item .md-avatar-icon {background-color: transparent!important;}
 
-.projects-listing {width: 100%; overflow: hidden; float: left; box-sizing: border-box;}
-.projects-listing md-card {overflow: hidden;}
-.projects-listing img {min-height: 100%; min-width: 100%; height: auto; width: auto; margin-left: -25%; margin-top: -50%;}
-.projects-listing .post-image {max-height: 300px;}
-
+md-list md-list-item .md-avatar-icon {
+	background-color: transparent!important;
+}
+.projects-listing {
+	width: 100%;
+	overflow: hidden;
+	float: left;
+	box-sizing: border-box;
+}
+.projects-listing md-card {
+	overflow: hidden;
+}
+.projects-listing img {
+	min-height: 100%;
+	min-width: 100%;
+	height: auto;
+	width: auto;
+	margin-left: -25%;
+	margin-top: -50%;
+}
+.projects-listing .post-image {
+	max-height: 300px;
+}
 @media screen and (max-width: 959px) {
 	/**/
 }
-
-@media screen and (max-width:599px) {
-  	.projects-listing.full-width {width: 100%!important;}
+@media screen and (max-width: 599px) {
+	.projects-listing.full-width {
+		width: 100%!important;
+	}
 }
-
 .rounded {
 	-webkit-border-radius: 24px!important;
 	-moz-border-radius: 24px!important;
 	border-radius: 24px!important;
 }
-
-.lightweight-md-input {width: 100%!important;}
+.lightweight-md-input {
+	width: 100%!important;
+}

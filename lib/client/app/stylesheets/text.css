@@ -1,21 +1,71 @@
-input:-webkit-autofill, textarea:-webkit-autofill {-webkit-box-shadow: 0 0 0 50px #e0e0e0 inset; box-shadow: 0 0 0 50px #e0e0e inset; -webkit-text-fill-color: #333; border-bottom: 2px solid rgb(33,33,33)!important;}
-input:-webkit-autofill:focus, textarea:-webkit-autofill:focus {-webkit-box-shadow: 0 0 0 50px #e0e0e0 inset; box-shadow: 0 0 0 50px #e0e0e inset; -webkit-text-fill-color: #333;}
-ul li {list-style-type: none!important;}
-p, h1, h2, h3, h4, h5, h6, li, form, textarea, span, 
-a, div, button{letter-spacing: 0em!important; font-family: 'Roboto', sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing: .4px!important;}
-a {text-decoration: none;}
-
-p {font-size: 18px;}
-md-card-content .md-select-value>span:not(.md-select-icon) .md-text {color: rgba(0,0,0,0.87)!important;}
-.type.simulated {font-size: 64px;}
-.type.heading {font-size: 32px;}
-.type.heading-2 {font-size: 24px;}
-.type.heading.footer {font-size: 18px;}
-@media screen and (max-width: 960px) {
-    .type.simulated {font-size: 42px;}
-    .type.heading {font-size: 24px;}
-    .type.heading-2 {font-size: 21px;}
-    .type.heading.footer {font-size: 16px;}
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 50px #e0e0e0 inset;
+	box-shadow: 0 0 0 50px #e0e0e inset;
+	-webkit-text-fill-color: #333;
+	border-bottom: 2px solid rgb(33, 33, 33)!important;
 }
-
-
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0 50px #e0e0e0 inset;
+	box-shadow: 0 0 0 50px #e0e0e inset;
+	-webkit-text-fill-color: #333;
+}
+ul li {
+	list-style-type: none!important;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+form,
+textarea,
+span,
+a,
+div,
+button {
+	letter-spacing: 0em!important;
+	font-family: 'Roboto', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	letter-spacing: .4px!important;
+}
+a {
+	text-decoration: none;
+}
+p {
+	font-size: 18px;
+}
+md-card-content .md-select-value>span:not(.md-select-icon) .md-text {
+	color: rgba(0, 0, 0, 0.87)!important;
+}
+.type.simulated {
+	font-size: 64px;
+}
+.type.heading {
+	font-size: 32px;
+}
+.type.heading-2 {
+	font-size: 24px;
+}
+.type.heading.footer {
+	font-size: 18px;
+}
+@media screen and (max-width: 960px) {
+	.type.simulated {
+		font-size: 42px;
+	}
+	.type.heading {
+		font-size: 24px;
+	}
+	.type.heading-2 {
+		font-size: 21px;
+	}
+	.type.heading.footer {
+		font-size: 16px;
+	}
+}

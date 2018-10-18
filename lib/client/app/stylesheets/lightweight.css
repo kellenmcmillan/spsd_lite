@@ -1,53 +1,49 @@
 /* css */
 
 /* ============================== Curtain ============================== */
-.dialog-curtain {z-index: 21;}
-.secondary-dialog-curtain {z-index: 22;}
-.tertiary-dialog-curtain {z-index: 23;}
-@media screen and (max-width: 839px) {
-/*.suite-dialog {position: relative!important; width: calc(100% - 300px); margin:0!important;}*/
-.dialog-curtain, 
-.secondary-dialog-curtain, 
-.tertiary-dialog-curtain {
-	overflow-y: scroll!important;
+
+.dialog-curtain {
+	z-index: 21;
 }
-/*.suite-dialog > md-card-title {max-height: 84px!important; box-sizing: border-box;}
-.mediaVault .suite-dialog > md-card-title {max-height: 64px; min-height: 64px;}
-.userVault .suite-dialog > md-card-title {max-height: 64px; min-height: 64px;}*/
+.secondary-dialog-curtain {
+	z-index: 22;
+}
+.tertiary-dialog-curtain {
+	z-index: 23;
 }
 .dialog-curtain,
-.suite-dialog, 
-.secondary-dialog-curtain, 
+.suite-dialog,
+.secondary-dialog-curtain,
 .tertiary-dialog-curtain {
-	position: fixed; top: 0; left: 0; right: 0; bottom: 0; overflow: hidden; margin:0!important;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	margin: 0!important;
+}
+@media screen and (max-width: 839px) {
+	.dialog-curtain,
+	.secondary-dialog-curtain,
+	.tertiary-dialog-curtain {
+		overflow-y: scroll!important;
+	}
 }
 
-	/*@media screen and (min-width: 840px) {
-		.userVault .suite-dialog > md-card-title, .mediaVault .suite-dialog > md-card-title, 
-		.blogVault .suite-dialog > md-card-title, .taskrunner .suite-dialog > md-card-title, 
-		.settings .suite-dialog > md-card-title {
-			height: 84px!important; min-height: 84px; max-height: 84px; box-sizing: border-box;
-		}
-	}
-	@media screen and (max-width: 839px) {
-		.userVault .suite-dialog > md-card-title, .mediaVault .suite-dialog > md-card-title, 
-		.blogVault .suite-dialog > md-card-title, .taskrunner .suite-dialog > md-card-title, 
-		.settings .suite-dialog > md-card-title {
-			height: 84px!important; min-height: 84px; max-height: 84px; box-sizing: border-box;
-		}
-		.suite-dialog {width: 100%; margin:0!important;}
-	}*/
 /* ============================== Curtain ============================== */
 
 /* ============================== dialogs ============================== */
-.suite-dialog {margin:0!important;}
+.suite-dialog {
+	margin: 0!important;
+}
 /*.mission-dialog {z-index: 2001;}*/
-.upload-dialog {z-index: 2003;}
+
+.upload-dialog {
+	z-index: 2003;
+}
 /* ============================== dialogs ============================== */
 
-/*.footer-backend {min-height: 48px; margin: 0!important; padding: 8px!important; border-top: 1px solid rgba(33,33,33,.15);}*/
-.footer-backend {display: none;}
-
-
-
-
+.footer-backend {
+	display: none;
+}
