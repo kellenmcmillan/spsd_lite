@@ -138,10 +138,13 @@
                                         <md-tab label="Details" layout-padding>
                                             <md-content>
                                                 <md-list-item style="margin-top:8px;">
-                                                    <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <md-input-container ng-if="image.source" class="md-block lightweight-md-input" flex>
                                                         <label>Cloud Storage Location</label>
-                                                        <input ng-if="image.source" ng-model="image.source">
-                                                        <input ng-if="image.avatar" ng-model="image.avatar">
+                                                        <input ng-model="image.source">
+                                                    </md-input-container>
+                                                    <md-input-container ng-if="image.avatar" class="md-block lightweight-md-input" flex>
+                                                        <label>Cloud Storage Location</label>
+                                                        <input ng-model="image.avatar">
                                                     </md-input-container>
                                                 </md-list-item>
                                                 <!-- <md-list-item>
