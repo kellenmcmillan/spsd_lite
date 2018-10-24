@@ -271,6 +271,9 @@
                 <!-- ======================== begin view - Upload files ======================== -->
 
                 <md-content class="md-padding" flex ng-show="view_upload == true">
+                    <div flex="100">
+                        <h1 class="h1">Upload Files</h1>
+                    </div>
                     <div layout-margin flex>
                         <form name="uploads">
                             <md-button ng-click="mediaVaultView = 'new download'" class="button-color-border" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-multiple="true">Upload A New File</md-button>
@@ -358,7 +361,7 @@
                         <h1 class="h1">Manage Galleries</h1>
                     </div>
 
-                    <div layout-margin flex>
+                    <div layout-margin flex="100">
                         <form name="uploads">
                             <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || galleriesgridview == false">Add A Project</md-button>
                             <md-button class="button-color-border" ng-click="switchViewGalleries()" ng-disabled="new_gallery">
@@ -369,9 +372,9 @@
                         </form>
                     </div>
 
-                    <div flex>
+                    <div flex="100">
                         <div ng-show="galleriesgridview == false" layout="column" layout-align="center center" flex="100" layout-wrap layout-margin>
-                            <md-card class="md-card-base md-whiteframe-4dp" style="width: 90%">
+                            <md-card flex="100" class="md-card-base" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
                                 <md-card-content class="lightweight-list-control" ui-sortable="sortableList" ng-model="gallerySortObj">
                                     <div ng-repeat="gallery in gallerySortObj" style="width: 100%;">
                                         <md-list-item class="noright">
@@ -386,7 +389,7 @@
                                 </md-card-actions>
                             </md-card>
                         </div>
-                        <div ng-show="galleriesgridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex layout-wrap layout-margin>
+                        <div ng-show="galleriesgridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex="100" layout-wrap layout-margin>
                             <div ng-show="galleries.length > 9" layout="row" layout-align="start center" layout-margin flex="100">
                                 <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" aria-label="previous gallery">
                                     <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
@@ -396,7 +399,7 @@
                                     <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
                                 </md-button>
                             </div>
-                            <md-card ng-show="galleries" class="md-card-base md-whiteframe-4dp" ng-repeat="gallery in galleries | startFrom:currentGalleryPage*gallerySize | limitTo:gallerySize" flex flex-gt-sm="30">
+                            <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries | startFrom:currentGalleryPage*gallerySize | limitTo:gallerySize" flex flex-gt-sm="30" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
                                 <md-card-title>
                                     <md-card-title-text layout="row" layout-align="start center">
                                         <span class="md-headline">{{gallery.name || "New Project"}}</span>

@@ -371,8 +371,8 @@
                                 </md-card-header>
                                 <md-card-content>
                                     <md-content style="padding: 0;">
-                                        <div layout="column" layout-align="center start" style="margin: 0" flex>
-                                            <md-list class="md-dense" flex>
+                                        <div layout="column" layout-align="center start" style="margin: 0" flex="100">
+                                            <md-list class="md-dense" flex="100">
                                                 <md-list-item ng-repeat="file in me.files" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
                                                     <p md-truncate>{{file.name || file.title}}</p>
                                                     <span class="md-secondary" ng-show="hovered">
