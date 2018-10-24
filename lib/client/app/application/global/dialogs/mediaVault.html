@@ -132,7 +132,7 @@
                                 <md-button ng-show="gallery_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;" ng-click="gallery_detail_view = false">
                                     <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
                                 </md-button>
-                                <img ng-show="!gallery_detail_view" ng-cloak ng-src="{{image.source}}" class="md-card-image" ng-init="gallery_detail_view = false">
+                                <img ng-show="!gallery_detail_view" ng-cloak ng-src="{{image.source ? image.source : image.avatar}}" class="md-card-image" ng-init="gallery_detail_view = false">
                                 <md-card-content ng-show="gallery_detail_view">
                                     <md-tabs md-dynamic-height md-border-bottom>
                                         <md-tab label="Details" layout-padding>
