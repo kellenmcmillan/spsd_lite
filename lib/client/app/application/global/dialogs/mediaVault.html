@@ -94,17 +94,17 @@
                     <div layout="column" layout-wrap layout-align="space-around center" flex>
                         <div layout="column" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="start center" layout-margin flex="100" style="width: 100%">
                             <div layout="row" layout-align="start center">
-                                <md-button ng-disabled="currentPage == 0" ng-click="paginate_media_list(-1)" class="md-icon-button" aria-label="Clear Media Search">
+                                <md-button ng-disabled="currentPage == 0" ng-click="currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
                                     <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
                                 </md-button>
-                                <md-button ng-disabled="currentPage == 0" ng-click="paginate_media_list(0)" class="md-icon-button" aria-label="Clear Media Search">
+                                <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="md-icon-button" aria-label="Clear Media Search">
                                     <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
                                 </md-button>
                                 <span>{{currentPage+1}}/{{numberOfPages}}</span>
-                                <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="paginate_media_list(1)" class="md-icon-button" aria-label="Clear Media Search">
+                                <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="md-icon-button" aria-label="Clear Media Search">
                                     <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
                                 </md-button>
-                                <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="paginate_media_list(2)" class="md-icon-button" aria-label="Clear Media Search">
+                                <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage = numberOfPages - 1" class="md-icon-button" aria-label="Clear Media Search">
                                     <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
                                 </md-button>
                                 <md-button ng-show="elementToUpdate" ng-click="selectMedia(mediaVaultSelect); closeMediaVault()" class="md-icon-button" aria-label="Clear Media Search">
@@ -112,10 +112,10 @@
                                 </md-button>
                             </div>
                             <div flex="100" flex-gt-sm="50" layout="row" layout="start center" style="max-height: 38px;">
-                                <md-button ng-click="clearQueryMedia(); queryFilter = null" class="md-icon-button" aria-label="Clear Media Search">
+                                <md-button ng-click="clearQueryMedia(); queryFilter = null; currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
                                     <md-icon style="color: {{base_hue_darker.value}};">clear</md-icon>
                                 </md-button>
-                                <md-button ng-click="queryMedia(queryFilter)" class="md-icon-button" aria-label="Search Media">
+                                <md-button ng-click="queryMedia(queryFilter); currentPage = 0" class="md-icon-button" aria-label="Search Media">
                                     <md-icon style="color: {{base_hue_darker.value}};">search</md-icon>
                                 </md-button>
                                 <md-input-container class="md-block lightweight-md-input" style="margin: 0;" flex>
