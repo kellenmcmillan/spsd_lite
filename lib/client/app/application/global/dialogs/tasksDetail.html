@@ -54,7 +54,7 @@
 
                 <div flex="50" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
                     <md-button class="md-icon-button" aria-label="Close My Vault">
-                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(taskUpdateForm)" ng-confirm-condition="true">close</md-icon>
+                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true">close</md-icon>
                     </md-button>
                 </div>
 
@@ -87,7 +87,7 @@
 
                         <div style="width: 100%" layout="row" layout-align="center start" flex>
 
-                            <form name="taskUpdateForm" ng-init="part_one = true; part_two = false; part_three = false" style="width: 100%" layout="row" layout-align="center start" flex>
+                            <form name="createTaskForm" ng-init="part_one = true; part_two = false; part_three = false" style="width: 100%" layout="row" layout-align="center start" flex>
                                 
                             <!-- ============================= PART ONE CONTENT =============================== -->
                             <!-- ============================= PART ONE CONTENT =============================== -->
@@ -99,7 +99,7 @@
 
                                         <md-card-header>
                                             <md-card-header-text>
-                                                <span class="md-title">Task Content</span>
+                                                <span class="md-title">Content</span>
                                                 <span class="md-subhead">Information Users Will See</span>
                                             </md-card-header-text>
                                         </md-card-header>
@@ -107,8 +107,8 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Title</label>
-                                                <input name="title" ng-model="taskUpdateObj.title" minlength="3" required>
-                                                <div ng-messages="taskUpdateForm.title.$error" ng-show="taskUpdateForm.title.$invalid">
+                                                <input name="title" ng-model="taskAddObj.title" minlength="3" required>
+                                                <div ng-messages="createTaskForm.title.$error" ng-show="createTaskForm.title.$invalid">
                                                     <div ng-message="required">Task title required!</div>
                                                     <div ng-message="minlength">Task title too short!</div>
                                                 </div>
@@ -118,8 +118,8 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Subject</label>
-                                                <input name="subject" ng-model="taskUpdateObj.subject" minlength="3" required>
-                                                <div ng-messages="taskUpdateForm.subject.$error" ng-show="taskUpdateForm.subject.$invalid">
+                                                <input name="subject" ng-model="taskAddObj.subject" minlength="3" required>
+                                                <div ng-messages="createTaskForm.subject.$error" ng-show="createTaskForm.subject.$invalid">
                                                     <div ng-message="required">Task subject required!</div>
                                                     <div ng-message="minlength">Task subject too short!</div>
                                                 </div>
@@ -129,7 +129,7 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Greeting <i>(Optional)</i></label>
-                                                <md-select name="greeting" ng-model="taskUpdateObj.greeting">
+                                                <md-select name="greeting" ng-model="taskAddObj.greeting">
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-value="'Hello Name'">
                                                         Hello Name
@@ -153,8 +153,8 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Body</label>
-                                                <textarea name="body" md-detect-hidden="true" ng-model="taskUpdateObj.body" rows="3" minlength="10" md-maxlength="250" required></textarea>
-                                                <div ng-messages="taskUpdateForm.body.$error" ng-show="taskUpdateForm.body.$invalid">
+                                                <textarea name="body" md-detect-hidden="true" ng-model="taskAddObj.body" rows="3" minlength="10" md-maxlength="250" required></textarea>
+                                                <div ng-messages="createTaskForm.body.$error" ng-show="createTaskForm.body.$invalid">
                                                     <div ng-message="required">Task body required!</div>
                                                     <div ng-message="minlength">Task body too short!</div>
                                                     <div ng-message="md-maxlength">Task body too long!</div>
@@ -165,7 +165,7 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Salutation <i>(Optional)</i></label>
-                                                <md-select name="salutation" ng-model="taskUpdateObj.salutation">
+                                                <md-select name="salutation" ng-model="taskAddObj.salutation">
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-value="'Sincerely'">
                                                         Sincerely
@@ -189,7 +189,7 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Link <i>(Optional)</i></label>
-                                                <md-select name="item_url" ng-model="taskUpdateObj.link">
+                                                <md-select name="item_url" ng-model="taskAddObj.link">
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-value="'Custom'">Enter a custom URL</md-option>
                                                     <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
@@ -199,11 +199,11 @@
                                             </md-input-container>
                                         </md-list-item>
 
-                                        <md-list-item ng-show="taskUpdateObj.link == 'Custom'">
+                                        <md-list-item ng-show="taskAddObj.link == 'Custom'">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Custom URL</label>
-                                                <input name="customURL" ng-model="taskUpdateObj.customURL" minlength="3" ng-required="taskUpdateObj.link == 'Custom'">
-                                                <div ng-messages="taskUpdateForm.customURL.$error" ng-show="taskUpdateForm.customURL.$invalid">
+                                                <input name="customURL" ng-model="taskAddObj.customURL" minlength="3" ng-required="taskAddObj.link == 'Custom'">
+                                                <div ng-messages="createTaskForm.customURL.$error" ng-show="createTaskForm.customURL.$invalid">
                                                     <div ng-message="required">Task custom URL required!</div>
                                                     <div ng-message="minlength">Task custom URL too short!</div>
                                                 </div>
@@ -213,7 +213,7 @@
                                     </md-card-content>
 
                                     <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button ng-disabled="taskUpdateForm.title.$invalid || taskUpdateForm.body.$invalid || taskUpdateForm.subject.$invalid || taskUpdateForm.customURL.$invalid" ng-click="part_one = false; part_two = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                        <md-button ng-disabled="createTaskForm.title.$invalid || createTaskForm.body.$invalid || createTaskForm.subject.$invalid || createTaskForm.customURL.$invalid" ng-click="part_one = false; part_two = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                     </md-card-actions>
                                 
                                 </md-card>
@@ -238,15 +238,15 @@
 
                                         <md-card-header>
                                             <md-card-header-text>
-                                                <span class="md-title">Task Targeting</span>
-                                                <span class="md-subhead">Control Delivery Of Task Content</span>
+                                                <span class="md-title">Targeting</span>
+                                                <span class="md-subhead">Control Delivery Of Content</span>
                                             </md-card-header-text>
                                         </md-card-header> 
 
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Choose Channels</label>
-                                                <md-select name="channels" ng-model="taskUpdateObj.channels" multiple ng-required="true">
+                                                <md-select name="channels" ng-model="taskAddObj.channels" multiple ng-required="true">
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-value="'Email'">
                                                         Email
@@ -258,7 +258,7 @@
                                                         In App Dialog
                                                     </md-option> -->
                                                 </md-select>
-                                                <div ng-messages="taskUpdateForm.channels.$error" ng-show="taskUpdateForm.channels.$invalid">
+                                                <div ng-messages="createTaskForm.channels.$error" ng-show="createTaskForm.channels.$invalid">
                                                     <div ng-message="required">Task channel required!</div>
                                                 </div>
                                             </md-input-container>
@@ -267,26 +267,26 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-dropdown">
                                                 <label>Specify Users To Send Message To</label>
-                                                <md-select name="send_to_users" ng-model="taskUpdateObj.send_to_users" multiple flex>
+                                                <md-select name="send_to_users" ng-model="taskAddObj.send_to_users" multiple flex>
                                                     <md-option><em>None</em></md-option>
                                                     <!-- <md-option ng-value="'respond'">Respond To User Action</md-option> -->
-                                                    <md-option ng-hide="taskUpdateObj.send_to_users == 'respond'" ng-repeat="user in userslist" ng-value="user.id">
+                                                    <md-option ng-hide="taskAddObj.send_to_users == 'respond'" ng-repeat="user in userslist" ng-value="user.id">
                                                         {{user.firstname}} {{user.lastname}}
                                                     </md-option>
                                                 </md-select>
                                             </md-input-container>
                                         </md-list-item>
 
-                                        <md-list-item ng-show="!taskUpdateObj.isGeneratedByUser">
+                                        <md-list-item ng-show="!taskAddObj.isGeneratedByUser">
                                             <md-input-container class="md-block lightweight-md-input">
                                                 <label>User Types To Send Message To</label>
-                                                <md-select name="send_to_roles" ng-model="taskUpdateObj.send_to_roles" multiple flex>
+                                                <md-select name="send_to_roles" ng-model="taskAddObj.send_to_roles" multiple flex>
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                         {{role.role}}
                                                     </md-option>
                                                 </md-select>
-                                                <!-- <div ng-messages="taskUpdateForm.send_to_roles.$invalid" ng-show="taskUpdateForm.send_to_roles.$dirty">
+                                                <!-- <div ng-messages="createTaskForm.send_to_roles.$invalid" ng-show="createTaskForm.send_to_roles.$dirty">
                                                     <div ng-message="required">Recipient type required!</div>
                                                 </div> -->
                                             </md-input-container>
@@ -295,7 +295,7 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-dropdown">
                                                 <label>Specify Users To Send Report To</label>
-                                                <md-select name="send_report_to_users" ng-model="taskUpdateObj.send_report_to_users" multiple flex>
+                                                <md-select name="send_report_to_users" ng-model="taskAddObj.send_report_to_users" multiple flex>
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-repeat="user in userslist" ng-value="user.id">
                                                         {{user.firstname}} {{user.lastname}}
@@ -307,13 +307,13 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>User Types To Send Report To</label>
-                                                <md-select name="send_alert_to_roles" ng-model="taskUpdateObj.alert_roles" multiple>
+                                                <md-select name="send_alert_to_roles" ng-model="taskAddObj.alert_roles" multiple>
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-repeat="role in rolelist" ng-value="role.role">
                                                         {{role.role}}
                                                     </md-option>
                                                 </md-select>
-                                                <!-- <div ng-messages="taskUpdateForm.send_alert_to_roles.$invalid" ng-show="taskUpdateForm.send_alert_to_roles.$dirty">
+                                                <!-- <div ng-messages="createTaskForm.send_alert_to_roles.$invalid" ng-show="createTaskForm.send_alert_to_roles.$dirty">
                                                     <div ng-message="required">Alert receiver type required!</div>
                                                 </div> -->
                                             </md-input-container>
@@ -323,7 +323,7 @@
 
                                     <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button ng-click="part_two = false; part_one = true">Back</md-button>
-                                        <md-button ng-disabled="taskUpdateForm.channels.$invalid" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                        <md-button ng-disabled="createTaskForm.channels.$invalid" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                     </md-card-actions>
                                 
                                 </md-card>
@@ -346,7 +346,7 @@
 
                                         <md-card-header>
                                             <md-card-header-text>
-                                                <span class="md-title">Task Trigger</span>
+                                                <span class="md-title">Triggers</span>
                                                 <span class="md-subhead">Control Task Automation</span>
                                             </md-card-header-text>
                                         </md-card-header> 
@@ -354,39 +354,45 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>What type of task is this?</label>
-                                                <md-select name="typeOfTrigger" ng-model="taskUpdateObj.task_type" ng-required="true">
+                                                <md-select name="typeOfTrigger" ng-model="taskAddObj.task_type" ng-required="true">
+
                                                     <md-option><em>None</em></md-option>
+
                                                     <md-option ng-value="'onetime'">
                                                         One Time
                                                     </md-option>
+
                                                     <md-option ng-value="'reoccuring'">
                                                         Reoccuring
                                                     </md-option>
+
                                                     <md-option ng-value="'manual'">
                                                         Manual
                                                     </md-option>
-                                                    <md-option ng-disabled="true" ng-value="'user generated'">
+                                                    
+                                                    <md-option ng-value="'user generated'">
                                                         User Generated
                                                     </md-option>
+
                                                 </md-select>
-                                                <div ng-messages="taskUpdateForm.typeOfTrigger.$touched" ng-show="taskUpdateForm.typeOfTrigger.$invalid">
+                                                <div ng-messages="createTaskForm.typeOfTrigger.$touched" ng-show="createTaskForm.typeOfTrigger.$invalid">
                                                     <div ng-message="required">This option must be selected!</div>
                                                 </div>
                                             </md-input-container>
                                         </md-list-item>
 
-                                        <span ng-show="taskUpdateObj.task_type == 'user generated'">
+                                        <span ng-show="taskAddObj.task_type == 'user generated'">
 
                                             <md-list-item>
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>App Activity Trigger</label>
-                                                    <md-select name="activity_trigger" ng-model="taskUpdateObj.activity_trigger" ng-required="taskUpdateObj.task_type == 'user generated'">
+                                                    <md-select name="activity_trigger" ng-model="taskAddObj.activity_trigger" ng-required="taskAddObj.task_type == 'user generated'">
                                                         <md-option><em>None</em></md-option>
                                                         <md-option ng-repeat="trigger in app_triggers" ng-value="trigger">
                                                             {{trigger}}
                                                         </md-option>
                                                     </md-select>
-                                                    <div ng-messages="taskUpdateForm.activity_trigger.$invalid" ng-show="taskUpdateForm.activity_trigger.$dirty">
+                                                    <div ng-messages="createTaskForm.activity_trigger.$invalid" ng-show="createTaskForm.activity_trigger.$dirty">
                                                         <div ng-message="required">App interaction trigger required!</div>
                                                     </div>
                                                 </md-input-container>
@@ -394,7 +400,7 @@
 
                                         </span>
 
-                                        <span ng-show="taskUpdateObj.task_type == 'onetime' || taskUpdateObj.task_type == 'reoccuring'">
+                                        <span ng-show="taskAddObj.task_type == 'onetime' || taskAddObj.task_type == 'reoccuring'">
 
                                             <md-card-header>
                                                 <md-card-header-text>
@@ -403,10 +409,10 @@
                                                 </md-card-header-text>
                                             </md-card-header>                                        
                                                                 
-                                            <md-list-item ng-show="taskUpdateObj.task_type == 'reoccuring'">
+                                            <md-list-item ng-show="taskAddObj.task_type == 'reoccuring'">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>How Often Does This Task Run?</label>
-                                                    <md-select ng-model="taskUpdateObj.frequency" name="taskUpdateForm.frequency" ng-required="taskUpdateObj.task_type == 'reoccuring'">
+                                                    <md-select ng-model="taskAddObj.frequency" name="createTaskForm.frequency" ng-required="taskAddObj.task_type == 'reoccuring'">
                                                         <md-option ng-value="'daily'">
                                                             Daily
                                                         </md-option>
@@ -423,16 +429,16 @@
                                                             Annually
                                                         </md-option>
                                                     </md-select>
-                                                    <div ng-messages="taskUpdateForm.frequency.$invalid">
+                                                    <div ng-messages="createTaskForm.frequency.$invalid">
                                                         <div ng-message="required">Run frequency required!</div>
                                                     </div>
                                                 </md-input-container>
                                             </md-list-item>
 
-                                            <md-list-item ng-show="taskUpdateObj.frequency == 'monthly'">
+                                            <md-list-item ng-show="taskAddObj.frequency == 'monthly'">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>Choose Which Week To Run The Task</label>
-                                                    <md-select ng-model="taskUpdateObj.run_week" name="taskUpdateForm.run_week" ng-required="taskUpdateObj.frequency == 'monthly'">
+                                                    <md-select ng-model="taskAddObj.run_week" name="createTaskForm.run_week" ng-required="taskAddObj.frequency == 'monthly'">
                                                         <md-option><em>None</em></md-option>
                                                         <md-option ng-value="0">
                                                             Week 1
@@ -448,15 +454,15 @@
                                                         </md-option>
                                                     </md-select>
                                                 </md-input-container>
-                                                <div ng-messages="taskUpdateForm.run_week.$invalid">
+                                                <div ng-messages="createTaskForm.run_week.$invalid">
                                                     <div ng-message="required">Run week required!</div>
                                                 </div>
                                             </md-list-item>
                                             
-                                            <md-list-item ng-show="taskUpdateObj.frequency != 'daily' && taskUpdateObj.task_type != 'onetime' && taskUpdateObj.frequency != 'annually'">
+                                            <md-list-item ng-show="taskAddObj.frequency != 'daily' && taskAddObj.task_type != 'onetime' && taskAddObj.frequency != 'annually'">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>Choose Which Day To Run The Task</label>
-                                                    <md-select ng-model="taskUpdateObj.run_day" ng-required="taskUpdateObj.frequency == 'monthly' || taskUpdateObj.frequency == 'bi-weekly' || taskUpdateObj.frequency == 'weekly'" name="taskUpdateForm.run_day">
+                                                    <md-select ng-model="taskAddObj.run_day" ng-required="taskAddObj.frequency == 'monthly' || taskAddObj.frequency == 'bi-weekly' || taskAddObj.frequency == 'weekly'" name="createTaskForm.run_day">
                                                         <md-option><em>None</em></md-option>
                                                         <md-option ng-value="0">
                                                             Sunday
@@ -481,18 +487,18 @@
                                                         </md-option>
                                                     </md-select>
                                                 </md-input-container>
-                                                <div ng-messages="taskUpdateForm.run_day.$invalid">
+                                                <div ng-messages="createTaskForm.run_day.$invalid">
                                                     <div ng-message="required">Run day required!</div>
                                                 </div>
                                             </md-list-item>
 
-                                            <md-list-item ng-show="taskUpdateObj.task_type == 'onetime' || taskUpdateObj.frequency == 'annually'">
-                                                <md-input-container class="md-block lightweight-md-input" ng-required="taskUpdateObj.task_type == 'onetime' || taskUpdateObj.task_type == 'annually'" flex>
+                                            <md-list-item ng-show="taskAddObj.task_type == 'onetime' || taskAddObj.frequency == 'annually'">
+                                                <md-input-container class="md-block lightweight-md-input" ng-required="taskAddObj.task_type == 'onetime' || taskAddObj.task_type == 'annually'" flex>
                                                     <label>Specify A Date To Run This Task</label>
 
-                                                    <md-datepicker flex="80" ng-model="taskUpdateObj.task_date" name="task_date" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
+                                                    <md-datepicker flex="80" ng-model="taskAddObj.task_date" name="task_date" md-placeholder="No Date Chosen" md-open-on-focus></md-datepicker>
                                                     
-                                                    <div ng-messages="taskUpdateForm.task_date.$invalid">
+                                                    <div ng-messages="createTaskForm.task_date.$invalid">
                                                         <div ng-message="required">Run date required!</div>
                                                     </div>
 
@@ -502,13 +508,13 @@
                                             <md-list-item>
                                                 <md-input-container class="md-block lightweight-md-input" flex="100" flex-sm="100" flex-gt-sm="100">
                                                     <label>Hour</label>
-                                                    <md-select ng-model="taskUpdateObj.run_clock_time" ng-required="true" name="taskUpdateForm.run_clock_time">
+                                                    <md-select ng-model="taskAddObj.run_clock_time" ng-required="true" name="createTaskForm.run_clock_time">
                                                         <md-option ng-repeat="time in timesSans" ng-value="time">
                                                             {{time}}
                                                         </md-option>
                                                     </md-select>
                                                 </md-input-container>
-                                                <div ng-messages="taskUpdateForm.run_clock_time.$invalid">
+                                                <div ng-messages="createTaskForm.run_clock_time.$invalid">
                                                     <div ng-message="required">Run time required!</div>
                                                 </div>                                                
                                             </md-list-item>
@@ -519,7 +525,7 @@
 
                                     <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button ng-click="part_three = false; part_two = true">Back</md-button>
-                                        <md-button ng-disabled="taskUpdateForm.$invalid" ng-click="part_three = false; part_four = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                        <md-button ng-disabled="createTaskForm.$invalid" ng-click="part_three = false; part_four = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
                                     </md-card-actions>
 
                                 </md-card>
@@ -549,141 +555,141 @@
                                     <md-card ng-show="part_four == true" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
                                         <md-card-header>
                                             <md-card-header-text>
-                                                <span class="md-title">Task Review</span>
-                                                <span class="md-subhead">Review Your Task Details Before Saving</span>
+                                                <span class="md-title">Review</span>
+                                                <span class="md-subhead">Review Details Before Saving</span>
                                             </md-card-header-text>
                                         </md-card-header>
                                         <md-card-content>
                                             <md-list-item>
                                                 <span>Title</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.title}}
+                                                {{taskAddObj.title}}
                                                 </span>
                                             </md-list-item>
                                             <md-divider></md-divider>
                                             <md-list-item>
                                                 <span>Subject</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.subject}}
+                                                {{taskAddObj.subject}}
                                                 </span>
                                             </md-list-item>
                                             <md-divider></md-divider>
-                                            <md-list-item ng-if="taskUpdateObj.greeting">
+                                            <md-list-item ng-if="taskAddObj.greeting">
                                                 <span>Greeting</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.greeting}}
+                                                {{taskAddObj.greeting}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.greeting"></md-divider>
+                                            <md-divider ng-if="taskAddObj.greeting"></md-divider>
                                             <md-list-item>
                                                 <span>Body&nbsp;&nbsp;</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.body}}
+                                                {{taskAddObj.body}}
                                                 </span>
                                             </md-list-item>
                                             <md-divider></md-divider>
-                                            <md-list-item ng-if="taskUpdateObj.salutation">
+                                            <md-list-item ng-if="taskAddObj.salutation">
                                                 <span>Salutation</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.salutation}}
+                                                {{taskAddObj.salutation}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.salutation"></md-divider>
-                                            <md-list-item ng-if="taskUpdateObj.link">
+                                            <md-divider ng-if="taskAddObj.salutation"></md-divider>
+                                            <md-list-item ng-if="taskAddObj.link">
                                                 <span>Link</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.link}}
+                                                {{taskAddObj.link}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.link"></md-divider>
-                                            <md-list-item ng-if="taskUpdateObj.customURL">
+                                            <md-divider ng-if="taskAddObj.link"></md-divider>
+                                            <md-list-item ng-if="taskAddObj.customURL">
                                                 <span>Custom Link</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.customURL}}
+                                                {{taskAddObj.customURL}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.customURL"></md-divider>
+                                            <md-divider ng-if="taskAddObj.customURL"></md-divider>
                                             <md-list-item>
                                                 <span>Channels</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.channels.join(', ')}}
+                                                {{taskAddObj.channels.join(', ')}}
                                                 </span>
                                             </md-list-item>
                                             <md-divider></md-divider>
-                                            <md-list-item ng-if="taskUpdateObj.send_to_users">
+                                            <md-list-item ng-if="taskAddObj.send_to_users">
                                                 <span>Send To Individuals</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.send_to_users.length > 1 ? 'Multiple Users' : 'Single User'}}
+                                                {{taskAddObj.send_to_users.length > 1 ? 'Multiple Users' : 'Single User'}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.send_to_users"></md-divider>
-                                            <md-list-item ng-if="taskUpdateObj.send_to_roles">
+                                            <md-divider ng-if="taskAddObj.send_to_users"></md-divider>
+                                            <md-list-item ng-if="taskAddObj.send_to_roles">
                                                 <span>Send To Groups</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.send_to_roles.join(', ')}}
+                                                {{taskAddObj.send_to_roles.join(', ')}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.send_to_roles"></md-divider>
-                                            <md-list-item ng-if="taskUpdateObj.send_report_to_users">
+                                            <md-divider ng-if="taskAddObj.send_to_roles"></md-divider>
+                                            <md-list-item ng-if="taskAddObj.send_report_to_users">
                                                 <span>Report To Individuals</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.send_report_to_users.length > 1 ? 'Multiple Users' : 'Single User'}}
+                                                {{taskAddObj.send_report_to_users.length > 1 ? 'Multiple Users' : 'Single User'}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.send_report_to_users"></md-divider>
+                                            <md-divider ng-if="taskAddObj.send_report_to_users"></md-divider>
                                             <md-list-item>
                                                 <span>Report To Groups</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.alert_roles.join(', ')}}
+                                                {{taskAddObj.alert_roles.join(', ')}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.alert_roles"></md-divider>
+                                            <md-divider ng-if="taskAddObj.alert_roles"></md-divider>
                                             <md-list-item>
                                                 <span>Task Type</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.task_type}}
+                                                {{taskAddObj.task_type}}
                                                 </span>
                                             </md-list-item>
                                             <md-divider></md-divider>
-                                            <md-list-item ng-if="taskUpdateObj.frequency">
+                                            <md-list-item ng-if="taskAddObj.frequency">
                                                 <span>Reoccurs</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.frequency}}
+                                                {{taskAddObj.frequency}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.frequency"></md-divider>
-                                            <md-list-item ng-if="taskUpdateObj.run_week">
+                                            <md-divider ng-if="taskAddObj.frequency"></md-divider>
+                                            <md-list-item ng-if="taskAddObj.run_week">
                                                 <span>Runs On Week</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.run_week + 1}}
+                                                {{taskAddObj.run_week + 1}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.run_week"></md-divider>
+                                            <md-divider ng-if="taskAddObj.run_week"></md-divider>
                                             <md-list-item>
                                                 <span>Day Of The Week</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.run_day == 0 ? 'Sunday' : taskUpdateObj.run_day == 1 ? 'Monday' : taskUpdateObj.run_day == 2 ? 'Tuesday' : taskUpdateObj.run_day == 3 ? 'Wednesday' : taskUpdateObj.run_day == 4 ? 'Thursday' : taskUpdateObj.run_day == 5 ? 'Friday' : taskUpdateObj.run_day == 6 ? 'Saturday' : 'Not Determined'}}
+                                                {{taskAddObj.run_day == 0 ? 'Sunday' : taskAddObj.run_day == 1 ? 'Monday' : taskAddObj.run_day == 2 ? 'Tuesday' : taskAddObj.run_day == 3 ? 'Wednesday' : taskAddObj.run_day == 4 ? 'Thursday' : taskAddObj.run_day == 5 ? 'Friday' : taskAddObj.run_day == 6 ? 'Saturday' : 'Not Determined'}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.run_day"></md-divider>
-                                            <md-list-item ng-if="taskUpdateObj.task_date">
+                                            <md-divider ng-if="taskAddObj.run_day"></md-divider>
+                                            <md-list-item ng-if="taskAddObj.task_date">
                                                 <span>Runs On This Date</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.task_date}}
+                                                {{taskAddObj.task_date}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskUpdateObj.task_date"></md-divider>
+                                            <md-divider ng-if="taskAddObj.task_date"></md-divider>
                                             <md-list-item>
                                                 <span>Runs At This Time</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.run_clock_time}}
+                                                {{taskAddObj.run_clock_time}}
                                                 </span>
                                             </md-list-item>
                                         </md-card-content>
 
                                     <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button ng-click="part_four = false; part_three = true">Back</md-button>
-                                        <md-button ng-disabled="taskUpdateForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskUpdateObj); closeCreateTask(); clearForm(taskUpdateForm); part_four = false; part_one = true;" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                        <md-button ng-disabled="createTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm); part_four = false; part_one = true;" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
                                     </md-card-actions>
                                 
                                 
@@ -706,7 +712,7 @@
             <!-- <md-card-actions layout="row" layout-align="end center" class="footer-backend">
                 <md-button disabled>Superpowered by Lightweight</md-button>
                 <div flex></div>
-                <md-button class="md-raised" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(taskUpdateForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
+                <md-button class="md-raised" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
             </md-card-actions> -->
 
         </md-card>
@@ -715,4 +721,3 @@
 
 </div>
 <!-- Backend Dialog Boilerplate -->
-
