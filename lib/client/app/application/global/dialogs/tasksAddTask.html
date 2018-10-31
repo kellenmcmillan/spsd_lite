@@ -355,19 +355,25 @@
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>What type of task is this?</label>
                                                 <md-select name="typeOfTrigger" ng-model="taskAddObj.task_type" ng-required="true">
+
                                                     <md-option><em>None</em></md-option>
+
                                                     <md-option ng-value="'onetime'">
                                                         One Time
                                                     </md-option>
+
                                                     <md-option ng-value="'reoccuring'">
                                                         Reoccuring
                                                     </md-option>
+
                                                     <md-option ng-value="'manual'">
                                                         Manual
                                                     </md-option>
+                                                    
                                                     <md-option ng-value="'user generated'">
                                                         User Generated
                                                     </md-option>
+
                                                 </md-select>
                                                 <div ng-messages="createTaskForm.typeOfTrigger.$touched" ng-show="createTaskForm.typeOfTrigger.$invalid">
                                                     <div ng-message="required">This option must be selected!</div>
