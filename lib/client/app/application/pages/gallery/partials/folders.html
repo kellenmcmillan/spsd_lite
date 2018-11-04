@@ -47,6 +47,7 @@
 			  		<div layout-fill layout-wrap layout="row" layout-align="center center">
 			  			<span flex="50" class="featured-gallery-text" style="text-align: center; color: {{base_hue_lightest.value}}; font-size: 18px;">{{item.name}}</span>
 			  			<img style="position: absolute; min-height: 100%; max-width: 200%; height: auto; width: auto;" ng-src="{{item.cover}}" alt="{{item.name}}">
+			  			<md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{item.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{item.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
 			  		</div>
 		  		</a>
 		  	</md-grid-tile>
