@@ -45,7 +45,7 @@
 		  	<md-grid-tile ng-href="/gallery/{{item.url}}" ng-repeat="item in all_galleries" layout="row" layout-wrap layout-align="center center" md-colspan="2" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="3" md-colspan-gt-lg="3" md-rowspan="1" md-rowspan-md="2" class="grid-image">
 		  		<div layout-fill layout-wrap layout="row" layout-align="center center">
 		  			<span flex="50" class="featured-gallery-text" style="text-align: center; color: {{base_hue_lightest.value}}; font-size: 18px;">{{item.name}}</span>
-		  			<img style="position: absolute; min-height: 100%; max-width: 200%; height: auto; width: auto;" ng-src="{{{item.cover}}" alt="homepage image">
+		  			<img style="position: absolute; min-height: 100%; max-width: 200%; height: auto; width: auto;" ng-src="{{item.cover}}" alt="homepage image">
 		  		</div>
 		  	</md-grid-tile>
 
