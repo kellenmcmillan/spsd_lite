@@ -1,5 +1,11 @@
 <style>
-.grid-image {overflow: hidden!important;}
+.grid-image {transition: all .4s ease-in-out; overflow: hidden; background: {{primary_hue_normal.value}};}
+/*.grid-image:hover {}*/
+.grid-image:hover img {opacity: .1; transform: scale(1.2);}
+.grid-image .featured-gallery-text {transition: all .4s ease-in-out; transform: translate(0, -48px); opacity: 0;}
+.grid-image .featured-gallery-text:after {content:""; display: block; width: 25%; left: 37.5%; bottom: -16px; height: 2px; position: absolute; background-color: {{base_hue_lightest.value}};}
+.grid-image:hover .featured-gallery-text {transform: translate(0, 0); opacity: 1;}
+.grid-image img {transition: all .4s ease-in-out;}
 .galleries md-grid-tile-footer {transition: .2s all ease-in;}
 .galleries md-grid-tile-footer.active {background: {{primary_hue_normal_darkest_opacity.value}}; height: 100%;}
 </style>
