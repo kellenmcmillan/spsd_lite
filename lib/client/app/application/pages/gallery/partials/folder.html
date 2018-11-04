@@ -8,9 +8,9 @@
 		transition: all .2s ease-in-out;
 	}
 	.lightbox_curtain {
-		height: calc(100% - 49px);
+		height: {{window_height - 120}}px;
 		overflow: hidden;
-		position: fixed; top: 51px; 
+		position: fixed; top: 120px; 
 		right: 0; bottom: 0; left: 0; 
 		background-color: rgba(0,0,0,.9);
 		opacity: 0;
@@ -25,7 +25,7 @@
 		opacity: 0;
 	    transition-timing-function: cubic-bezier(.4,0,.2,1);
 	    transition-property: opacity;
-	    max-height: calc(100% - 49px);
+	    max-height: {{window_height - 120}}px;
 	    top: 49px;
 	    /*transform: scale(0.8);*/
 	}
