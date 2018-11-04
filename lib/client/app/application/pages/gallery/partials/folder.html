@@ -62,7 +62,7 @@
 
 		<div layout="row" layout-align="center center" style="height: {{window_height - 120}}px;" layout-padding>
 			<div flex="100" style="position: relative; width: 100%; height: 100%;">
-				<img ng-repeat="image in folder.images" class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" style="position: absolute; width: auto; height: auto; max-height: {{window_height - 132}}px; max-width: calc(100% - 32px)">
+				<img ng-repeat="image in folder.images" class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" style="position: absolute; width: auto; height: auto; max-height: {{window_height - 132}}px; max-width: calc(100% - 32px); top: 16px">
 			</div>
 		</div>
 
