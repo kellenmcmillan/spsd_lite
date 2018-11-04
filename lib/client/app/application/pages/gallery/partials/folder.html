@@ -57,7 +57,7 @@
 				<md-list-item>
 	                <md-input-container class="md-block lightweight-md-dropdown">
 	                    <label>Galleries</label>
-	                    <md-select>
+	                    <md-select ng-model="select_gallery">
 	                        <md-option ng-click="null" ng-repeat="gallery in all_galleries">
 	                            {{gallery.name}}
 	                        </md-option>
