@@ -1,12 +1,7 @@
 <style>
-.interior-page-background {
-    background: url('{{spotlightPage.data.page.background.images.source}}') no-repeat;
-    background-size: cover; width: 100%!important; height: 100%; 
-    right: 0; top: 200px; padding:0; margin: 0!important;
-}
-	.header-ms-explorer {position: fixed; width: 100%;}
+
 </style>
-<md-content class="page spotlight" style="height: {{window_height}}px">
+<md-content class="page galleries" style="height: {{window_height}}px">
 	<section style="background: {{base_hue_lighter.value}}">
 
 		<!-- header -->
@@ -57,6 +52,11 @@
 		</md-grid-list>
 
 	</section>
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
 </md-content>
+
+
 
 
