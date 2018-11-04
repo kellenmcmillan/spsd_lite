@@ -18,7 +18,9 @@
 	    transition-timing-function: cubic-bezier(.4,0,.2,1);
 	    transition-property: border-radius, transform;
 	}
-	/*footer {display: none!important;}*/
+	.grid-image {overflow: hidden!important;}
+	.galleries md-grid-tile-footer {transition: .2s all ease-in;}
+	.galleries md-grid-tile-footer.active {background: {{primary_hue_normal_darkest_opacity.value}}; height: 100%;}
 </style>
 
 <md-content class="page galleries" style="height: {{window_height}}px">
@@ -59,14 +61,14 @@
 		</div>
 
 		<div layout="row" layout-align="center center" style="height: {{window_height - 120}}px;" layout-padding>
-			<div ng-repeat="image in folder.images" flex="100">
-				<img class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}">
+			<div flex="100">
+				<img ng-repeat="image in folder.images" class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" style="position: absolute; width: 100%; height: auto; max-height: {{window_height - 132}}px; max-width: calc(100% - 32px)">
 			</div>
 		</div>
 
 		<md-grid-list md-cols="2" md-cols-sm="2" md-cols-md="4" md-cols-lg="12" md-cols-gt-lg="12" md-row-height="250px" md-row-height-lg="300px" md-row-height-gt-lg="400px" md-gutter="0" class="md-whiteframe-8dp">
 
-		  	<md-grid-tile ng-repeat="item in folder.images" layout="row" layout-wrap layout-align="center center" md-colspan="2" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-rowspan="1" md-rowspan-md="randomizer($index)" class="grid-image md-whiteframe-6dp" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+		  	<md-grid-tile ng-repeat="item in folder.images" layout="row" layout-wrap layout-align="center center" md-colspan="2" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-rowspan="1" md-rowspan="randomizer($index)" class="grid-image md-whiteframe-6dp" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" style="overflow: hidden;">
 		  		<a href="/gallery/{{item.url}}">
 			  		<div layout-fill layout-wrap layout="row" layout-align="center center">
 			  			<span flex="50" class="featured-gallery-text" style="text-align: center; color: {{base_hue_lightest.value}}; font-size: 18px;">{{item.name}}</span>
