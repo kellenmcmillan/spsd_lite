@@ -6,7 +6,6 @@
 	    transition-timing-function: cubic-bezier(.4,0,.2,1);
 	    transition-property: opacity;
 	    max-height: {{window_height - 120}}px;
-	    top: 49px;
 	    /*transform: scale(0.8);*/
 	}
 	.lightbox-image.active {
@@ -49,7 +48,7 @@
 
 		</div>
 
-		<div layout="row" layout-align="center center" style="position: relative; width: 100%; height: {{window_height - 120}}px;" style="background-color: {{base_hue_darkest.value}};">
+		<div layout="row" layout-align="center center" style="position: relative; width: 100%; height: {{window_height - 120}}px; background-color: {{base_hue_darkest.value}};">
 			<img flex ng-repeat="image in folder.images" class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" style="position: absolute; width: auto!important; height: auto!important; max-height: {{window_height - 132}}px!important; max-width: calc(100% - 32px)!important;">
 		</div>
 
