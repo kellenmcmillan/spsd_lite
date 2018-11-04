@@ -1,25 +1,6 @@
 <style>
-	.back-home {
-		color: {{base_hue_darker.value}};
-		transition: all .2s ease-in-out;
-	}
-	.back-home:hover {
-		color: {{base_hue_darkest.value}};
-		transition: all .2s ease-in-out;
-	}
-	.lightbox_curtain {
-		height: {{window_height - 120}}px;
-		overflow: hidden;
-		position: relative;
-		background-color: {{base_hue_lighter.value}};
-		opacity: 0;
-		display: none;
-		transition-duration: .5s;
-	    transition-timing-function: cubic-bezier(.4,0,.2,1);
-	    transition-property: opacity;
-	}
+
 	.lightbox-image {
-		position: absolute;
 		transition-duration: .5s;
 		opacity: 0;
 	    transition-timing-function: cubic-bezier(.4,0,.2,1);
@@ -57,7 +38,7 @@
 				<md-list-item>
 	                <md-input-container class="md-block lightweight-md-dropdown">
 	                    <label>Galleries</label>
-	                    <md-select ng-model="select_gallery">
+	                    <md-select>
 	                        <md-option ng-click="null" ng-repeat="gallery in all_galleries">
 	                            {{gallery.name}}
 	                        </md-option>
@@ -77,19 +58,19 @@
 
 		</div>
 
-		<div class="lightbox_curtain" style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
-			<div ng-repeat="image in folder.images">
+		<div layout="row" layout-align="center center" style="height: {{window_height - 120}}px;" layout-padding>
+			<div ng-repeat="image in folder.images" flex="100">
 				<img class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}">
 			</div>
 		</div>
 
 		<md-grid-list md-cols="2" md-cols-sm="2" md-cols-md="4" md-cols-lg="12" md-cols-gt-lg="12" md-row-height="250px" md-row-height-lg="300px" md-row-height-gt-lg="400px" md-gutter="0" class="md-whiteframe-8dp">
 
-		  	<md-grid-tile ng-repeat="item in all_galleries" layout="row" layout-wrap layout-align="center center" md-colspan="2" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-rowspan="1" md-rowspan-md="randomizer($index)" class="grid-image md-whiteframe-6dp" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+		  	<md-grid-tile ng-repeat="item in folder.images" layout="row" layout-wrap layout-align="center center" md-colspan="2" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-rowspan="1" md-rowspan-md="randomizer($index)" class="grid-image md-whiteframe-6dp" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 		  		<a href="/gallery/{{item.url}}">
 			  		<div layout-fill layout-wrap layout="row" layout-align="center center">
 			  			<span flex="50" class="featured-gallery-text" style="text-align: center; color: {{base_hue_lightest.value}}; font-size: 18px;">{{item.name}}</span>
-			  			<img style="position: absolute; min-height: 100%; max-width: 200%; height: auto; width: auto;" ng-src="{{item.cover}}" alt="{{item.name}}">
+			  			<img style="position: absolute; min-height: 100%; max-width: 200%; height: auto; width: auto;" ng-src="{{item.source || item.avatar}}" alt="{{item.name}}">
 			  			<md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{item.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{item.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
 			  		</div>
 		  		</a>
