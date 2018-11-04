@@ -10,8 +10,7 @@
 	.lightbox_curtain {
 		height: {{window_height - 120}}px;
 		overflow: hidden;
-		position: fixed; top: 120px; 
-		right: 0; bottom: 0; left: 0; 
+		position: relative;
 		background-color: {{base_hue_lighter.value}};
 		opacity: 0;
 		display: none;
@@ -72,7 +71,7 @@
 			</span>
 			<span flex></span>
 			<md-button class="md-icon-button">
-				<md-icon style="color: {{primary_hue_normal.value}};">share</md-icon>
+				<md-icon style="color: {{base_hue_darkest.value}};">share</md-icon>
 			</md-button>
 
 
@@ -80,7 +79,7 @@
 
 		<div class="lightbox_curtain" style="height: 100%;" ng-class="{'active-lightbox': lightbox_active}" ng-if="lightbox_active">
 			<div ng-repeat="image in folder.images">
-				<img class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" lightbox-image>
+				<img class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}">
 			</div>
 		</div>
 
