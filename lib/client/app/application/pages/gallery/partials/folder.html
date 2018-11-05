@@ -59,7 +59,7 @@
 		</div>
 		<!-- Container Title -->
 
-		<div layout="row" layout-align="center start" style="position: relative; width: 100%; max-height: {{window_height - 60}}px; background-color: {{base_hue_lightest.value}};">
+		<div layout="row" layout-align="center start" style="position: relative; width: 100%; height: {{window_height - 60}}px; background-color: {{base_hue_lightest.value}};">
 			<img flex ng-repeat="image in folder.images" class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" style="position: absolute; width: auto!important; height: auto!important; max-height: {{window_height - 92}}px!important; max-width: calc(100% - 32px)!important;">
 		</div>
 
