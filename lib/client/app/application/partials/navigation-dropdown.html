@@ -29,7 +29,7 @@
 		            {{menu_title}}
 		        </h2>
         	</md-list-item>
-            <a href="{{child.url}}" ng-repeat="child in child_items" class="navigation link mobile" style="cursor: pointer;">
+            <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="navigation link mobile" style="cursor: pointer;">
                 <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding>
                     <!-- <md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{child.name}}" md-font-library="material-icons">link</md-icon> -->
                     <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{child.name}}</p>
@@ -126,7 +126,7 @@
 					</div>
 				</div>
 				
-				<md-button href="{{settings.data.address.google_address_link}}" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -36px; right: 8px;">
+				<md-button href="{{settings.data.address.google_address_link}}" target="_blank" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -36px; right: 8px;">
 			        <md-icon style="color: {{primary_hue_normal.value}};">directions</md-icon>
 			    </md-button>
 			    
