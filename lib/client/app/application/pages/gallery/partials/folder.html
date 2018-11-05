@@ -20,6 +20,10 @@
 	.grid-image {overflow: hidden!important;}
 	.galleries md-grid-tile-footer {transition: .2s all ease-in;}
 	.galleries md-grid-tile-footer.active {background: {{primary_hue_normal_darkest_opacity.value}}; height: 100%;}
+	.slideshow-gallery-container {min-height: {{window_height - 60}}px;}
+	@media screen and (max-width: 839px) {
+	    .slideshow-gallery-container {min-height: 250px;}
+	}
 </style>
 
 <md-content class="page galleries" style="height: {{window_height}}px">
@@ -59,7 +63,7 @@
 		</div>
 		<!-- Container Title -->
 
-		<div layout="row" layout-align="center start" style="position: relative; width: 100%; height: {{window_height - 60}}px; background-color: {{base_hue_lightest.value}};">
+		<div class="slideshow-gallery-container" layout="row" layout-align="center start" style="position: relative; width: 100%; background-color: {{base_hue_lightest.value}};">
 			<img flex ng-repeat="image in folder.images" class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" style="position: absolute; width: auto!important; height: auto!important; max-height: {{window_height - 92}}px!important; max-width: calc(100% - 32px)!important;">
 		</div>
 
