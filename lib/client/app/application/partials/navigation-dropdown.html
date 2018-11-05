@@ -1,9 +1,10 @@
 <style>
 	.dropdown  md-tabs.md-default-theme .md-tab, .dropdown  md-tabs .md-tab, .dropdown md-tabs .md-tab.md-active {color:{{base_hue_lightest.value}}!important;}
-	.dropdown div > a:not(.md-fab)[href*="maps"], .dropdown md-content > a.addr_widget, .dropdown div > a.link {width: 100%!important; display: block!important}
+	.dropdown div > a:not(.md-fab)[href*="maps"], .dropdown md-content > a.addr_widget {width: 100%!important; display: block!important}
     .dropdown div.null > a:not(.md-fab)[href*="maps"] {width: 0!important; display: none!important}
 	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
     md-card > a:not(.addr_widget)[href*="maps"] {width: 0; display: none;}
+    .dropdown .navigation-list-items a.child.navigation[href*="maps"]{display: block!important; width: 100%!important;}
     @media screen and (max-width: 960px) {
         .widget {margin-bottom: 64px;}
     }
@@ -22,14 +23,14 @@
     	<md-icon ng-attr-style="color: {{base_hue_lightest.value}};">close</md-icon>
     </md-button>
 
-	<div flex="100" flex-gt-sm="40" layout="row" layout-align="start start" layout-margin>
+	<div class="navigation-list-items" flex="100" flex-gt-sm="40" layout="row" layout-align="start start" layout-margin>
         <md-list flex="100">
         	<md-list-item flex="100" layout-padding>
         		<h2 ng-attr-style="color: {{base_hue_lightest.value}};">
 		            {{menu_title}}
 		        </h2>
         	</md-list-item>
-            <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="navigation link mobile" style="cursor: pointer;">
+            <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="child navigation link mobile" style="cursor: pointer;">
                 <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding>
                     <!-- <md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Internal Link {{child.name}}" md-font-library="material-icons">link</md-icon> -->
                     <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{child.name}}</p>
