@@ -67,7 +67,7 @@
 		<br>
 		<br>
 
-		<md-grid-list flex="90" flex-gt-sm="100" md-cols="2" md-cols-sm="2" md-cols-md="4" md-cols-lg="12" md-cols-gt-lg="12" md-row-height="250px" md-row-height-lg="300px" md-row-height-gt-lg="400px" md-gutter="4px" md-gutter-gt-sm="0">
+		<md-grid-list md-cols="2" md-cols-sm="2" md-cols-md="4" md-cols-lg="12" md-cols-gt-lg="12" md-row-height="250px" md-row-height-lg="300px" md-row-height-gt-lg="400px" md-gutter="4px" md-gutter-gt-sm="0">
 
 		  	<md-grid-tile ng-repeat="item in folder.images" layout="row" layout-wrap layout-align="center center" md-colspan="2" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-rowspan="1" md-rowspan-gt-sm="{{item.rowspan}}" class="grid-image md-whiteframe-6dp" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" style="overflow: hidden;">
 		  		<div layout-fill layout-wrap layout="row" layout-align="center center">
