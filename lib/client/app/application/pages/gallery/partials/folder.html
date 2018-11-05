@@ -63,6 +63,10 @@
 			<img flex ng-repeat="image in folder.images" class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" style="position: absolute; width: auto!important; height: auto!important; max-height: {{window_height - 132}}px!important; max-width: calc(100% - 32px)!important;">
 		</div>
 
+		<br>
+		<br>
+		<br>
+
 		<md-grid-list md-cols="2" md-cols-sm="2" md-cols-md="4" md-cols-lg="12" md-cols-gt-lg="12" md-row-height="250px" md-row-height-lg="300px" md-row-height-gt-lg="400px" md-gutter="4px" md-gutter-gt-sm="0">
 
 		  	<md-grid-tile ng-repeat="item in folder.images" layout="row" layout-wrap layout-align="center center" md-colspan="2" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-rowspan="1" md-rowspan-gt-sm="{{item.rowspan}}" class="grid-image md-whiteframe-6dp" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" style="overflow: hidden;">
