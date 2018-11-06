@@ -296,13 +296,13 @@
                                             </md-input-container>
                                         </md-list-item> -->
 
-                                        <div flex="100" ng-init="show_add_task_message_variable_note = false" layout="row" layout-align="start start" layout-wrap>
+                                        <div flex="100" layout="row" layout-align="start center" layout-wrap>
                                             <md-button class="md-icon-button">
-                                                <md-icon ng-mouseenter="$parent.show_add_task_message_variable_note = true" ng-mouseleave="$parent.show_add_task_message_variable_note = false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
+                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
                                             </md-button>
-                                            <div ng-show="show_add_task_message_variable_note == true" flex>
-                                                <p style="color: {{base_hue_darkest.value}};">Dynamic Variables | <i style="color: {{base_hue_darker.value}};">Wrap them in brackets - [term]</i></p>
-                                                <span style="color: {{base_hue_darker.value}}; font-style: italic;" ng-repeat="variable in dynamic_task_message_variables">{{variable}}<span ng-hide="$last">,</span>&nbsp;&nbsp;</span>
+                                            <div flex>
+                                                <p style="color: {{base_hue_darkest.value}}; font-size: 11px;">Dynamic Variables | Wrap them in brackets - [term]</p>
+                                                <span style="color: {{base_hue_darker.value}}; font-style: italic; font-size: 11px;" ng-repeat="variable in dynamic_task_message_variables">{{variable}}<span ng-hide="$last" style="font-size: 11px;">,</span>&nbsp;&nbsp;</span>
                                             </div>
                                         </div>
                                         
