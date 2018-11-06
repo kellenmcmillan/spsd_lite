@@ -227,7 +227,7 @@
                         </md-card-content>
                         <md-card-actions layout="row" layout-align="end center">
                             <div flex></div>
-                            <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-confirm-message="Are you sure you want to update your company settings?" ng-confirm-click="updateSettings()" ng-confirm-condition="true">Update</md-button>
+                            <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" ng-confirm-message="Are you sure you want to update your company settings?" ng-confirm-click="updateSettings()" ng-confirm-condition="true">Update</md-button>
                         </md-card-actions>
                     </md-card>
                 </div>
@@ -383,7 +383,7 @@
                         </md-card-content>
                         <md-card-actions layout="row" layout-align="end center">
                             <div flex></div>
-                            <md-button md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-confirm-message="Are you sure you want to update your company settings?" ng-confirm-click="updateSettings()" ng-confirm-condition="true">Update</md-button>
+                            <md-button class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" ng-confirm-message="Are you sure you want to update your company settings?" ng-confirm-click="updateSettings()" ng-confirm-condition="true">Update</md-button>
                         </md-card-actions>
                     </md-card>
                 </div>
@@ -420,7 +420,7 @@
                                 </md-list-item>
                             </md-card-content>
                             <md-card-actions layout="row" layout-align="end center">
-                                <md-button ng-confirm-message="Are you sure you want to remove this page?" ng-confirm-click="deletePage($index)" ng-confirm-condition="!page.settings.locked || !page.settings.linked" ng-disabled="page.settings.locked == true || page.settings.linked == true" class="md-whiteframe-2dp" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Delete</md-button>
+                                <md-button ng-confirm-message="Are you sure you want to remove this page?" ng-confirm-click="deletePage($index)" ng-confirm-condition="!page.settings.locked || !page.settings.linked" ng-disabled="page.settings.locked == true || page.settings.linked == true" class="md-whiteframe-2dp md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Delete</md-button>
                             </md-card-actions>
                         </md-card>
                     </div>
@@ -500,8 +500,8 @@
                             </md-card-content>
                             <md-card-actions layout="row" layout-align="end center">
                                 <div flex></div>
-                                <md-button style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="setting = 'Manage Pages'">Cancel</md-button>
-                                <md-button ng-disabled="addNewPage.$invalid" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-confirm-message="Are you sure you want to add this page?" ng-confirm-click="addPage(newPageData.type, newPageData); setting = 'Manage Pages'" ng-confirm-condition="addNewPage.$valid">Add</md-button>
+                                <md-button class="md-raised" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;" ng-click="setting = 'Manage Pages'">Cancel</md-button>
+                                <md-button ng-disabled="addNewPage.$invalid" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" ng-confirm-message="Are you sure you want to add this page?" ng-confirm-click="addPage(newPageData.type, newPageData); setting = 'Manage Pages'" ng-confirm-condition="addNewPage.$valid">Add</md-button>
                             </md-card-actions>
                         </form>
                     </md-card>
@@ -562,7 +562,7 @@
                             <md-card-actions ng-if="child_nav_items.length > 0" layout="row" layout-align="end center">
                                 <div flex></div>
                                 <!-- <md-button ng-confirm-message="Are you sure you want to deselect this navigation item?" ng-confirm-click="clearParentNav()" ng-confirm-condition="true" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Cancel</md-button> -->
-                                <md-button ng-confirm-message="Are you sure you want to update the navigation?" ng-confirm-click="updateNavigation()" ng-confirm-condition="manageNavigation.$valid" ng-disabled="manageNavigation.$invalid" md-raised style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                <md-button ng-confirm-message="Are you sure you want to update the navigation?" ng-confirm-click="updateNavigation()" ng-confirm-condition="manageNavigation.$valid" ng-disabled="manageNavigation.$invalid" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
                             </md-card-actions>
                         </form>
                     </md-card>
@@ -686,10 +686,10 @@
                                 </md-tabs>
                             </md-card-content>
                             <md-card-actions ng-show="staff_detail_view" layout="row" layout-align="end center">
-                                <md-button ng-if="staff.id == undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="cancelStaff()">Cancel</md-button>
-                                <md-button class="md-whiteframe-2dp" ng-if="staff.id == undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="addStaffMember(staff)">Save</md-button>
-                                <md-button ng-if="staff.id != undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}};" ng-click="removeStaff(staff.id, settings.staff.members)">Remove</md-button>
-                                <md-button class="md-whiteframe-2dp" ng-if="staff.id != undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" ng-click="updateStaffMember(staff)">Update</md-button>
+                                <md-button class="md-raised" ng-if="staff.id == undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;" ng-click="cancelStaff()">Cancel</md-button>
+                                <md-button class="md-raised" ng-if="staff.id == undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" ng-click="addStaffMember(staff)">Save</md-button>
+                                <md-button class="md-raised" ng-if="staff.id != undefined" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;" ng-click="removeStaff(staff.id, settings.staff.members)">Remove</md-button>
+                                <md-button class="md-raised" ng-if="staff.id != undefined" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" ng-click="updateStaffMember(staff)">Update</md-button>
                             </md-card-actions>
                         </md-card>
                     </div>

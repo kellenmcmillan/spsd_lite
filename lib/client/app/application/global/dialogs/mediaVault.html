@@ -186,13 +186,13 @@
                                         </md-tab>
                                     </md-tabs>                                            
                                 </md-card-content>
-                                <md-card-actions ng-show="gallery_detail_view" layout="row" layout-align="center center">
+                                <md-card-actions layout="row" layout-align="center center">
                                     <span>
                                         <md-radio-button ng-show="elementToUpdate" value="{{image.avatar ? image.avatar : image.source}}">Select Media</md-radio-button>
                                     </span>
                                     <span flex></span>
-                                    <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="deleteMedia(image, $index); gallery_detail_view = false;" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Delete</md-button>
-                                    <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="updateMedia(image)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                    <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="deleteMedia(image, $index); gallery_detail_view = false;" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}}; padding-left: 16px; padding-right: 16px;">Delete</md-button>
+                                    <md-button ng-show="gallery_detail_view" class="md-raised" ng-click="updateMedia(image)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
                                 </md-card-actions>
                             </md-card>
                         </md-radio-group>
@@ -308,8 +308,8 @@
                                     </md-list-item>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center">
-                                    <md-button ng-click="files.splice($index, 1)" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Cancel</md-button>
-                                    <md-button class="md-raised" ng-click="$parent.mediaVaultView = 'downloads in progress'; sendFiles(files);" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Upload</md-button>
+                                    <md-button ng-click="files.splice($index, 1)" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}}; padding-left: 16px; padding-right: 16px;">Cancel</md-button>
+                                    <md-button class="md-raised" ng-click="$parent.mediaVaultView = 'downloads in progress'; sendFiles(files);" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Upload</md-button>
                                 </md-card-actions>
                             </md-card>
                         </div>
@@ -385,7 +385,7 @@
                                     </div>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center">
-                                    <md-button class="md-raised" ng-click="updateGalleries(gallerySortObj)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                    <md-button class="md-raised" ng-click="updateGalleries(gallerySortObj)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
                                 </md-card-actions>
                             </md-card>
                         </div>
@@ -440,18 +440,18 @@
                                     </md-list-item>  
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center">
-                                    <md-button ng-if="!gallery.id" ng-click="cancelGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}};">Cancel</md-button>
-                                    <md-button ng-if="!gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
-                                    <md-button ng-if="gallery.id" class="md-raised" ng-click="updateGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                    <md-button ng-if="!gallery.id" ng-click="cancelGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}}; padding-left: 16px; padding-right: 16px;">Cancel</md-button>
+                                    <md-button ng-if="!gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Save</md-button>
+                                    <md-button ng-if="gallery.id" class="md-raised" ng-click="updateGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
                                 </md-card-actions>
                             </md-card>
                         </div>
                     </div>
                     
                     <div ng-show="galleries.length > 20 && galleriesgridview == true" layout="row" layout-align="start center" layout-margin flex>
-                        <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="button-color-border">Previous</md-button>
+                        <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Next</md-button>
                         <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
-                        <md-button ng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="button-color-border">Next</md-button>
+                        <md-button ng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Next</md-button>
                     </div>
                 </md-content> 
             </md-card-content>

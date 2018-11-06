@@ -393,9 +393,7 @@
                                                     </span>
                                                     <md-divider ng-if="!$last"></md-divider>
                                                 </md-list-item>
-                                            </md-list>
-                                            <md-list ng-show="!me.files" class="md-dense" flex>
-                                                <md-list-item flex layout="row" layout-align="start center">
+                                                <md-list-itemn g-show="!me.files" flex layout="row" layout-align="start center">
                                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
                                                     <div class="md-list-item-text">
                                                         <h3 style="font-size: 16px;">No Files</h3>
@@ -409,7 +407,7 @@
                                     <md-button class="md-raised" ng-click="edit_info = false; overview = true; file_view = false;" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;">Close</md-button>&nbsp;
                                     <!-- =================== Upload Various Resources =================== -->
                                     <md-menu>
-                                        <md-button class="md-raised" aria-label="upload media" md-menu-origin ng-click="openMenu($mdMenu, $event)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">Upload Files</md-button>
+                                        <md-button class="md-raised" aria-label="upload media" md-menu-origin ng-click="openMenu($mdMenu, $event)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Upload Files</md-button>
                                         <md-menu-content width="4">
                                             <md-menu-item>
                                                 <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.doc,.docx'" ngf-accept="'.doc,.docx'" ngf-max-size="20MB">

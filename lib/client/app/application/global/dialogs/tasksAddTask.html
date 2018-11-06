@@ -154,8 +154,8 @@
                                                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
                                             </md-button>
                                             <div flex>
-                                                <p style="color: {{base_hue_darkest.value}}; font-size: 11px;">Dynamic Variables | Wrap them in brackets - [term]</p>
-                                                <span style="color: {{base_hue_darker.value}}; font-style: italic; font-size: 11px;" ng-repeat="variable in dynamic_task_message_variables">{{variable}}<span ng-hide="$last" style="font-size: 11px;">,</span>&nbsp;&nbsp;</span>
+                                                <p style="color: {{base_hue_darkest.value}}; font-size: 12px;">Dynamic Variables | Wrap them in brackets - [term]</p>
+                                                <span style="color: {{base_hue_darker.value}}; font-style: italic; font-size: 12px;" ng-repeat="variable in dynamic_task_message_variables">{{variable}}<span ng-hide="$last" style="font-size: 12px;">,</span>&nbsp;&nbsp;</span>
                                             </div>
                                         </div>
                                         
@@ -224,7 +224,7 @@
                                     </md-card-content>
 
                                     <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button ng-disabled="createTaskForm.title.$invalid || createTaskForm.body.$invalid || createTaskForm.subject.$invalid || createTaskForm.customURL.$invalid" ng-click="part_one = false; part_two = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                        <md-button ng-disabled="createTaskForm.title.$invalid || createTaskForm.body.$invalid || createTaskForm.subject.$invalid || createTaskForm.customURL.$invalid" ng-click="part_one = false; part_two = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Next</md-button>
                                     </md-card-actions>
                                 
                                 </md-card>
@@ -333,8 +333,8 @@
                                     </md-card-content>
 
                                     <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button ng-click="part_two = false; part_one = true">Back</md-button>
-                                        <md-button ng-disabled="createTaskForm.channels.$invalid" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                        <md-button class="md-raised" ng-click="part_two = false; part_one = true">Back</md-button>
+                                        <md-button ng-disabled="createTaskForm.channels.$invalid" ng-click="part_two = false; part_three = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Next</md-button>
                                     </md-card-actions>
                                 
                                 </md-card>
@@ -535,8 +535,8 @@
                                     </md-card-content>
 
                                     <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button ng-click="part_three = false; part_two = true">Back</md-button>
-                                        <md-button ng-disabled="createTaskForm.$invalid" ng-click="part_three = false; part_four = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Next</md-button>
+                                        <md-button class="md-raised" ng-click="part_three = false; part_two = true">Back</md-button>
+                                        <md-button ng-disabled="createTaskForm.$invalid" ng-click="part_three = false; part_four = true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Next</md-button>
                                     </md-card-actions>
 
                                 </md-card>
@@ -699,8 +699,8 @@
                                         </md-card-content>
 
                                     <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button ng-click="part_four = false; part_three = true">Back</md-button>
-                                        <md-button ng-disabled="createTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm); part_four = false; part_one = true;" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Save</md-button>
+                                        <md-button class="md-raised" ng-click="part_four = false; part_three = true" style="padding-left: 16px; padding-right: 16px;">Back</md-button>
+                                        <md-button class="md-raised" ng-disabled="createTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm); part_four = false; part_one = true;" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Save</md-button>
                                     </md-card-actions>
                                 
                                 
@@ -719,12 +719,6 @@
                 </md-content>
 
             </md-card-content>
-
-            <!-- <md-card-actions layout="row" layout-align="end center" class="footer-backend">
-                <md-button disabled>Superpowered by Lightweight</md-button>
-                <div flex></div>
-                <md-button class="md-raised" ng-confirm-message="Are you sure you want to cancel adding a new task?" ng-confirm-click="closeCreateTask(); clearForm(createTaskForm)" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
-            </md-card-actions> -->
 
         </md-card>
 

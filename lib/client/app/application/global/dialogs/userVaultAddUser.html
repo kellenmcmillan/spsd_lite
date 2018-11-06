@@ -152,8 +152,8 @@
                                     </md-list-item>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button ng-click="closeAddUser()">Cancel</md-button>
-                                    <md-button class="md-raised" ng-disabled="signup.$invalid" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};" type="submit" style="margin-right:20px;">
+                                    <md-button ng-click="closeAddUser()" class="md-raised" style="padding-left: 16px; padding-right: 16px;">Cancel</md-button>
+                                    <md-button class="md-raised" ng-disabled="signup.$invalid" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" type="submit" style="margin-right:20px;">
                                         Sign up
                                     </md-button>
                                 </md-card-actions>
@@ -168,10 +168,5 @@
 
         </md-card-content>
 
-        <!-- <md-card-actions layout="row" layout-align="end center" class="footer-backend">
-            <md-button disabled>Superpowered by Lightweight</md-button>
-            <div flex></div>
-            <md-button class="md-raised" ng-click="closeAddUser()" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Close</md-button>
-        </md-card-actions> -->
     </md-card>
 </div>
