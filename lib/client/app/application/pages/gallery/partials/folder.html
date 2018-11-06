@@ -80,72 +80,71 @@
 		  			<!-- <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{item.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{item.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer> -->
 		  		</div>
 		  	</md-grid-tile>
+		  	<md-grid-tile md-colspan="2" md-colspan-sm="2" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-rowspan="3" md-rowspan-gt-sm="{{item.rowspan}}" class="md-whiteframe-6dp">
+		  		<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative; margin: 0;">
+					<div style="text-align: center">
+						<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+					</div>
+	                <form name="gallery_form" ng-show="!progressAnimation">
+	                	<div style="text-align: left; padding-left: 16px; border-left: 4px solid {{primary_hue_normal.value}}; box-sizing: border-box;">
+	                		<h1 style="color: {{primary_hue_normal.value}};">Contact {{settings.data.company_name}} Today!</h1>
+	                	</div>
+	                    <md-card-content>
+	                        <md-list-item>
+	                            <md-input-container class="md-block lightweight-md-input">
+	                                <label>Full Name</label>
+	                                <input name="name" ng-model="gallery_page_contact_form.name" minlength="4" required>
+	                                <div ng-messages="gallery_form.name.$error" ng-show="gallery_form.name.$dirty">
+	                                    <div ng-message="required">Name required!</div>
+	                                    <div ng-message="minlength">Name too short!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <md-list-item>
+	                            <md-input-container class="md-block lightweight-md-input">
+	                                <label>Email</label>
+	                                <input type="email" name="email" ng-model="gallery_page_contact_form.email" required>
+	                                <div ng-messages="gallery_form.email.$error" ng-show="gallery_form.email.$dirty">
+	                                    <div ng-message="required">Email required!</div>
+	                                    <div ng-message="email">Enter a valid email!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <md-list-item>
+	                            <md-input-container class="md-block lightweight-md-input">
+	                                <label>Phone</label>
+	                                <input ng-model="gallery_page_contact_form.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
+	                                <div ng-messages="gallery_form.phone.$error" ng-show="gallery_form.phone.$dirty">
+	                                    <div ng-message="required">Phone number required!</div>
+	                                    <div ng-message="minlength">Phone number too short!</div>
+	                                    <div ng-message="pattern">Not a valid phone number!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <md-list-item>
+	                        	<md-input-container class="md-block lightweight-md-input" flex>
+	                                <label>Message</label>
+	                                <textarea name="message" md-detect-hidden="true" ng-model="gallery_page_contact_form.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+	                                <div ng-messages="gallery_form.message.$error" ng-show="gallery_form.message.$dirty">
+	                                    <div ng-message="required">Message required!</div>
+	                                    <div ng-message="minlength">Message too short!</div>
+	                                    <div ng-message="md-maxlength">Message too long!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="gallery_page_contact_form.recaptcha"></div>
+	                    </md-card-content>
+	                    <md-button ng-click="sendLead(gallery_page_contact_form, folder.name); clearForm(Form)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+					        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
+					    </md-button>
+	                </form>
+	            </md-card>
+		  	</md-grid-tile>
 
 		</md-grid-list>
 		<br>
 		<br>
-		<div class="md-whiteframe-8dp sidebar form" layout="row" layout-wrap flex="100" flex-sm="100" flex-gt-sm="25" layout-align="start start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; padding: 0; margin-bottom: 40px;">
-			<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative; margin: 0;">
-				<div style="text-align: center">
-					<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
-				</div>
-                <form name="gallery_form" ng-show="!progressAnimation">
-                	<div style="text-align: left; padding-left: 16px; border-left: 4px solid {{primary_hue_normal.value}}; box-sizing: border-box;">
-                		<h1 style="color: {{primary_hue_normal.value}};">Contact {{settings.data.company_name}} Today!</h1>
-                	</div>
-                    <md-card-content>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input">
-                                <label>Full Name</label>
-                                <input name="name" ng-model="gallery_page_contact_form.name" minlength="4" required>
-                                <div ng-messages="gallery_form.name.$error" ng-show="gallery_form.name.$dirty">
-                                    <div ng-message="required">Name required!</div>
-                                    <div ng-message="minlength">Name too short!</div>
-                                </div>
-                            </md-input-container>
-                        </md-list-item>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input">
-                                <label>Email</label>
-                                <input type="email" name="email" ng-model="gallery_page_contact_form.email" required>
-                                <div ng-messages="gallery_form.email.$error" ng-show="gallery_form.email.$dirty">
-                                    <div ng-message="required">Email required!</div>
-                                    <div ng-message="email">Enter a valid email!</div>
-                                </div>
-                            </md-input-container>
-                        </md-list-item>
-                        <md-list-item>
-                            <md-input-container class="md-block lightweight-md-input">
-                                <label>Phone</label>
-                                <input ng-model="gallery_page_contact_form.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
-                                <div ng-messages="gallery_form.phone.$error" ng-show="gallery_form.phone.$dirty">
-                                    <div ng-message="required">Phone number required!</div>
-                                    <div ng-message="minlength">Phone number too short!</div>
-                                    <div ng-message="pattern">Not a valid phone number!</div>
-                                </div>
-                            </md-input-container>
-                        </md-list-item>
-                        <md-list-item>
-                        	<md-input-container class="md-block lightweight-md-input" flex>
-                                <label>Message</label>
-                                <textarea name="message" md-detect-hidden="true" ng-model="gallery_page_contact_form.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
-                                <div ng-messages="gallery_form.message.$error" ng-show="gallery_form.message.$dirty">
-                                    <div ng-message="required">Message required!</div>
-                                    <div ng-message="minlength">Message too short!</div>
-                                    <div ng-message="md-maxlength">Message too long!</div>
-                                </div>
-                            </md-input-container>
-                        </md-list-item>
-                        <div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="gallery_page_contact_form.recaptcha"></div>
-                    </md-card-content>
-                    <md-button ng-click="sendLead(gallery_page_contact_form, folder.name); clearForm(Form)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
-				        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
-				    </md-button>
-                </form>
-            </md-card>
-		</div>
-		<br>
-		<br>
+		
 
 	</section>
 	<!-- Footer -->
