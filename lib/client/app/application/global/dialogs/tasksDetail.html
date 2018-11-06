@@ -1,4 +1,4 @@
-<!-- View Styles -->
+View Styles -->
 
 <style>
     md-list-item md-input-container {width: 100%;}
@@ -114,13 +114,13 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
-                                        <md-list-item ng-if="taskUpdateObj.greeting">
+                                        <!-- <md-list-item ng-if="taskUpdateObj.greeting">
                                             <span>Greeting</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.greeting}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskUpdateObj.greeting"></md-divider>
+                                        <md-divider ng-if="taskUpdateObj.greeting"></md-divider> -->
                                         <md-list-item>
                                             <span>Body&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
@@ -128,13 +128,13 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
-                                        <md-list-item ng-if="taskUpdateObj.salutation">
+                                        <!-- <md-list-item ng-if="taskUpdateObj.salutation">
                                             <span>Salutation</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.salutation}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskUpdateObj.salutation"></md-divider>
+                                        <md-divider ng-if="taskUpdateObj.salutation"></md-divider> -->
                                         <md-list-item ng-if="taskUpdateObj.link">
                                             <span>Link</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
@@ -272,7 +272,7 @@
                                             </md-input-container>
                                         </md-list-item>
 
-                                        <md-list-item>
+                                        <!-- <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Greeting <i>(Optional)</i></label>
                                                 <md-select name="greeting" ng-model="taskUpdateObj.greeting">
@@ -294,6 +294,16 @@
                                                     </md-option>
                                                 </md-select>
                                             </md-input-container>
+                                        </md-list-item> -->
+
+                                        <md-list-item>
+                                            <md-button class="md-icon-button">
+                                                <md-icon ng-mouseenter="show_add_task_message_variable_note = true" ng-mouseleave="show_add_task_message_variable_note = false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
+                                            </md-button>
+                                            <div ng-show="$parent.show_add_task_message_variable_note == true" class="md-secondary">
+                                                <p style="color: {{base_hue_darkest.value}};">The Following Can Be Used To Represent Dynamic Variables. <i style="color: {{base_hue_darkest.value}};">Wrap them in brackets - [term]</i></p>
+                                                <span style="color: {{base_hue_darkest.value}}; font-size: 8px; font-style: italic;" ng-repeat="variable in dynamic_task_message_variables">{{variable}}</span>
+                                            </div>
                                         </md-list-item>
                                         
                                         <md-list-item>
@@ -308,7 +318,7 @@
                                             </md-input-container>
                                         </md-list-item>
 
-                                        <md-list-item>
+                                        <!-- <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Salutation <i>(Optional)</i></label>
                                                 <md-select name="salutation" ng-model="taskUpdateObj.salutation">
@@ -330,7 +340,7 @@
                                                     </md-option>
                                                 </md-select>
                                             </md-input-container>
-                                        </md-list-item>
+                                        </md-list-item> -->
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
@@ -714,13 +724,13 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
-                                        <md-list-item ng-if="taskUpdateObj.greeting">
+                                        <!-- <md-list-item ng-if="taskUpdateObj.greeting">
                                             <span>Greeting</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.greeting}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskUpdateObj.greeting"></md-divider>
+                                        <md-divider ng-if="taskUpdateObj.greeting"></md-divider> -->
                                         <md-list-item>
                                             <span>Body&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
@@ -728,13 +738,13 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
-                                        <md-list-item ng-if="taskUpdateObj.salutation">
+                                        <!-- <md-list-item ng-if="taskUpdateObj.salutation">
                                             <span>Salutation</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.salutation}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskUpdateObj.salutation"></md-divider>
+                                        <md-divider ng-if="taskUpdateObj.salutation"></md-divider> -->
                                         <md-list-item ng-if="taskUpdateObj.link">
                                             <span>Link</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
@@ -860,4 +870,4 @@
     </md-content>
 
 </div>
-<!-- Backend Dialog Boilerplate -->
+<!-- Backend Dialog Boilerplate
