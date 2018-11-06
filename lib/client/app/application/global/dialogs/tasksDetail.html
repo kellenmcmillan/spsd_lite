@@ -296,15 +296,15 @@
                                             </md-input-container>
                                         </md-list-item> -->
 
-                                        <md-list-item ng-init="show_add_task_message_variable_note = false">
+                                        <div flex="100" ng-init="show_add_task_message_variable_note = false" layout="row" layout-align="center center" layout-wrap>
                                             <md-button class="md-icon-button">
-                                                <md-icon ng-mouseenter="show_add_task_message_variable_note = true" ng-mouseleave="show_add_task_message_variable_note = false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
+                                                <md-icon ng-mouseenter="$parent.show_add_task_message_variable_note = true" ng-mouseleave="$parent.show_add_task_message_variable_note = false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
                                             </md-button>
-                                            <div class="md-secondary">
-                                                <p ng-show="show_add_task_message_variable_note == true" style="color: {{base_hue_darkest.value}};">The Following Can Be Used To Represent Dynamic Variables. <i style="color: {{base_hue_darkest.value}};">Wrap them in brackets - [term]</i></p>
-                                                <span ng-show="show_add_task_message_variable_note == true" style="color: {{base_hue_darkest.value}}; font-size: 8px; font-style: italic;" ng-repeat="variable in dynamic_task_message_variables">{{variable}}</span>
+                                            <div ng-show="show_add_task_message_variable_note == true" flex>
+                                                <p style="color: {{base_hue_darkest.value}};">Dynamic Variables <i style="color: {{base_hue_darkest.value}};">Wrap them in brackets - [term]</i></p>
+                                                <span style="color: {{base_hue_darkest.value}}; font-style: italic;" ng-repeat="variable in dynamic_task_message_variables">{{variable}},&nbsp;&nbsp;</span>
                                             </div>
-                                        </md-list-item>
+                                        </div>
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
