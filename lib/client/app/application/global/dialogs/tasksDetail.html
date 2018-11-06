@@ -301,8 +301,8 @@
                                                 <md-icon ng-mouseenter="$parent.show_add_task_message_variable_note = true" ng-mouseleave="$parent.show_add_task_message_variable_note = false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
                                             </md-button>
                                             <div ng-show="show_add_task_message_variable_note == true" flex>
-                                                <p style="color: {{base_hue_darkest.value}};">Dynamic Variables <i style="color: {{base_hue_darkest.value}};">Wrap them in brackets - [term]</i></p>
-                                                <span style="color: {{base_hue_darkest.value}}; font-style: italic;" ng-repeat="variable in dynamic_task_message_variables">{{variable}}&nbsp;&nbsp;</span>
+                                                <p style="color: {{base_hue_darkest.value}};">Dynamic Variables | <i style="color: {{base_hue_darker.value}};">Wrap them in brackets - [term]</i></p>
+                                                <span style="color: {{base_hue_darker.value}}; font-style: italic;" ng-repeat="variable in dynamic_task_message_variables">{{variable}}<span ng-hide="$last">,</span>&nbsp;&nbsp;</span>
                                             </div>
                                         </div>
                                         
