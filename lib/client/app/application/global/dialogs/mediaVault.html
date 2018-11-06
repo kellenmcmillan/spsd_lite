@@ -126,14 +126,10 @@
                         </div>
                         <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex style="width: 100%;">
                             <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize track by $index" flex flex-gt-sm="25" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
-                                <md-button ng-show="!gallery_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 8px; right: 8px; background-color: {{base_hue_lightest.value}}!important;" ng-click="gallery_detail_view = true">
-                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
-                                </md-button>
-                                <md-button ng-show="gallery_detail_view" class="md-fab md-mini" aria-label="edit staff member" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;" ng-click="gallery_detail_view = false">
-                                    <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="edit staff member" md-font-library="material-icons">mode_edit</md-icon>
-                                </md-button>
-                                <img ng-show="!gallery_detail_view" ng-cloak ng-src="{{image.source ? image.source : image.avatar}}" class="md-card-image" ng-init="gallery_detail_view = false">
-                                <md-card-content ng-show="gallery_detail_view">
+                                <div ng-cloak class="lightweight-card-image md-card" style="position: relative; overflow: hidden; height: 150px;">
+                                    <img style="max-width: 150%; max-height: 150%; width: auto; height: auto;" ng-cloak ng-src="{{image.source ? image.source : image.avatar}}" class="md-card-image" ng-init="gallery_detail_view = false">
+                                </div>
+                                <md-card-content>
                                     <md-tabs md-dynamic-height md-border-bottom>
                                         <md-tab label="Details" layout-padding>
                                             <md-content>
