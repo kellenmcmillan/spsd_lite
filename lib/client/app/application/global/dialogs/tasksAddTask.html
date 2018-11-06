@@ -149,9 +149,8 @@
                                                 </md-select>
                                             </md-input-container>
                                         </md-list-item> -->
-                                        
+                                        <p style="color: {{base_hue_darkest.value}};">The Following Can Be Used To Represent Dynamic Variables. <i style="color: {{base_hue_darker.value}};">Wrap them in brackets - [term]</i></p><p style="color: {{base_hue_darkest.value}};" ng-repeat="variable in dynamic_task_message_variables">{{variable}}</p>
                                         <md-button class="md-icon-button">
-                                            <md-tooltip md-direction="left">The Following Can Be Used To Represent Dynamic Variables. Wrap them in brackets - [term]<br><p ng-repeat="variable in dynamic_task_message_variables">{{variable}}</p></md-tooltip>
                                             <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
                                         </md-button>
                                         <md-list-item>
