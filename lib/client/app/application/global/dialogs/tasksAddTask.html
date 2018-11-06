@@ -149,15 +149,14 @@
                                                 </md-select>
                                             </md-input-container>
                                         </md-list-item> -->
-                                        
+                                        <md-button class="md-icon-button">
+                                            <md-tooltip md-direction="left">The Following Can Be Used To Represent Dynamic Variables. Wrap them in brackets - [term]<br><p ng-repeat="variable in dynamic_task_message_variables">{{variable}}</p></md-tooltip>
+                                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
+                                        </md-button>
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>
-                                                    Task Body&nbsp;&nbsp;&nbsp;
-                                                    <md-button class="md-icon-button">
-                                                        <md-tooltip md-direction="left">The Following Can Be Used To Represent Dynamic Variables. Wrap them in brackets - [term]<br><p ng-repeat="variable in dynamic_task_message_variables">{{variable}}</p></md-tooltip>
-                                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
-                                                    </md-button>
+                                                    Task Body
                                                 </label>
                                                 <textarea name="body" md-detect-hidden="true" ng-model="taskAddObj.body" rows="3" minlength="10" md-maxlength="250" required></textarea>
                                                 <div ng-messages="createTaskForm.body.$error" ng-show="createTaskForm.body.$invalid">
