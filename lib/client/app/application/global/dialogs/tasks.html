@@ -103,7 +103,7 @@
                                     <md-divider ng-if="!$last"></md-divider>
                                 </md-list-item>
                             </md-list>
-                            <md-list ng-if="!tasklist.length" class="md-dense" flex>
+                            <md-list ng-if="tasklist.length == 0" class="md-dense" flex>
                                 <md-list-item flex layout="row" layout-align="start center">
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
                                     <div>
@@ -126,7 +126,7 @@
                             <md-card-content>                             
                                 <md-list-item class="md-dense" flex layout="row" layout-align="start center">
                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
-                                    <p md-truncate>You don't have any incoming messsages yet.</p>
+                                    <p md-truncate>No incoming messsages yet.</p>
                                 </md-list-item>        
                         </md-card-content>
                         <md-card-actions layout="row" layout-align="end center" flex>
