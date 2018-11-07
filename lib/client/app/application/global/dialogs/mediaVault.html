@@ -162,7 +162,7 @@
                         </div>
                         <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="space-around center" flex style="width: 100%;">
                             <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize track by $index" flex flex-gt-sm="25" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
-                                <div ng-cloak class="lightweight-card-image md-card" style="position: relative; overflow: hidden; height: 150px;">
+                                <div ng-cloak class="lightweight-card-image md-card" style="position: relative; overflow: hidden; height: 200px;">
                                     <img style="max-width: 200%; max-height: 250%; width: auto; height: auto;" ng-cloak ng-src="{{image.source ? image.source : image.avatar}}" class="md-card-image" ng-init="gallery_detail_view = false">
                                 </div>
                                 <md-card-content>
