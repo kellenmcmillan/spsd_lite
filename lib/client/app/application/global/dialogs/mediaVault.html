@@ -56,20 +56,20 @@
                             </md-button>
                         </md-menu-item>
                         <md-menu-item>
-                            <md-button>
-                                <md-icon ng-click="$parent.mediaView = 'galleries'" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">burst_mode</md-icon>
+                            <md-button ng-click="$parent.mediaView = 'galleries'">
+                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">burst_mode</md-icon>
                                 Manage Galleries
                             </md-button>
                         </md-menu-item>
                         <md-menu-item>
-                            <md-button>
-                                <md-icon ng-click="$parent.mediaView = 'tags'" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">style</md-icon>
+                            <md-button ng-click="$parent.mediaView = 'tags'">
+                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">style</md-icon>
                                 Manage Tags
                             </md-button>
                         </md-menu-item>
                         <md-menu-item>
-                            <md-button>
-                                <md-icon ng-click="$parent.mediaView = 'upload'" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_upload</md-icon>
+                            <md-button ng-click="$parent.mediaView = 'upload'">
+                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_upload</md-icon>
                                 Upload Media
                             </md-button>
                         </md-menu-item>
@@ -304,7 +304,7 @@
                 <!-- ======================== begin view - Upload files ======================== -->
                 <!-- ======================== begin view - Upload files ======================== -->
 
-                <md-content class="md-padding" flex ng-show="mediaView =='upload'">
+                <md-content class="md-padding" flex ng-show="mediaView == 'upload'">
                     <div flex="100">
                         <h1 class="h1">Upload Files</h1>
                     </div>
