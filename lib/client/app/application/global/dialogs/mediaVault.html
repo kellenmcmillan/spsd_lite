@@ -224,7 +224,7 @@
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="center center">
                                     <span flex></span>
-                                    <md-button ng-show="elementToUpdate" class="md-raised" ng-click="selectMedia({{image.avatar ? image.avatar : image.source}}); closeMediaVault();" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}}; padding-left: 16px; padding-right: 16px;">Select Media</md-button>
+                                    <md-button ng-show="elementToUpdate" class="md-raised" ng-click="selectMedia(image.avatar ? image.avatar : image.source); closeMediaVault();" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}}; padding-left: 16px; padding-right: 16px;">Select Media</md-button>
                                     <md-button ng-hide="elementToUpdate" class="md-raised" ng-click="deleteMedia(image, $index);" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}}; padding-left: 16px; padding-right: 16px;">Delete</md-button>
                                     <md-button ng-hide="elementToUpdate" class="md-raised" ng-click="updateMedia(image)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
                                 </md-card-actions>
