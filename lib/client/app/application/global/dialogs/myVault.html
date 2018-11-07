@@ -371,7 +371,7 @@
                                 </md-card-header>
                                 <md-card-content>
                                     <md-content style="padding: 0;">
-                                        <div layout="row" layout-align="center start" layout-wrap style="margin: 0" flex="100">
+                                        <div layout="row" layout-align="center start" layout-wrap style="margin: 0" flex>
                                             <md-list class="md-dense" flex="100">
                                                 <md-list-item ng-repeat="file in me.files" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
                                                     <p md-truncate>{{file.name || file.title}}</p>
@@ -393,10 +393,10 @@
                                                     </span>
                                                     <md-divider ng-if="!$last"></md-divider>
                                                 </md-list-item>
-                                                <md-list-itemn g-show="!me.files" flex layout="row" layout-align="start center">
+                                                <md-list-item class="md-dense" ng-show="!me.files" flex layout="row" layout-align="start center">
                                                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
-                                                    <div class="md-list-item-text">
-                                                        <h3 style="font-size: 16px;">No Files</h3>
+                                                    <div>
+                                                        <p>No Files</p>
                                                     </div>
                                                 </md-list-item>
                                             </md-list>
