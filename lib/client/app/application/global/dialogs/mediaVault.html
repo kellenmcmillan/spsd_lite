@@ -50,26 +50,26 @@
 
                     <md-menu-content width="4">
                         <md-menu-item>
-                            <md-button ng-click="view_galleries = false; view_media = true; view_tags = false; view_upload = false">
+                            <md-button ng-click="$parent.view_galleries = false; $parent.view_media = true; $parent.view_tags = false; $parent.view_upload = false">
                                 <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">perm_media</md-icon>
                                 Manage Media
                             </md-button>
                         </md-menu-item>
                         <md-menu-item>
                             <md-button>
-                                <md-icon ng-click="view_galleries = true; view_media = false; view_tags = false; view_upload = false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">burst_mode</md-icon>
+                                <md-icon ng-click="$parent.view_galleries = true; $parent.view_media = false; $parent.view_tags = false; $parent.view_upload = false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">burst_mode</md-icon>
                                 Manage Galleries
                             </md-button>
                         </md-menu-item>
                         <md-menu-item>
                             <md-button>
-                                <md-icon ng-click="view_galleries = false; view_media = false; view_tags = true; view_upload = false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">style</md-icon>
+                                <md-icon ng-click="$parent.view_galleries = false; $parent.view_media = false; $parent.view_tags = true; $parent.view_upload = false" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">style</md-icon>
                                 Manage Tags
                             </md-button>
                         </md-menu-item>
                         <md-menu-item>
                             <md-button>
-                                <md-icon ng-click="view_galleries = false; view_media = false; view_tags = false; view_upload = true" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_upload</md-icon>
+                                <md-icon ng-click="$parent.view_galleries = false; $parent.view_media = false; $parent.view_tags = false; $parent.view_upload = true" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_upload</md-icon>
                                 Upload Media
                             </md-button>
                         </md-menu-item>
