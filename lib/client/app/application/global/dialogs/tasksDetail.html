@@ -128,6 +128,13 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Chatter&nbsp;&nbsp;</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
+                                            {{taskUpdateObj.chatter}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
                                         <!-- <md-list-item ng-if="taskUpdateObj.salutation">
                                             <span>Salutation</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
@@ -317,7 +324,19 @@
                                                 </div>
                                             </md-input-container>
                                         </md-list-item>
-
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>
+                                                    Private Chatter
+                                                </label>
+                                                <textarea name="chatter" md-detect-hidden="true" ng-model="taskUpdateObj.chatter" rows="3" minlength="10" md-maxlength="250"></textarea>
+                                                <div ng-messages="updateTaskForm.chatter.$error" ng-show="updateTaskForm.chatter.$invalid">
+                                                    <!-- <div ng-message="required">Task chatter required!</div> -->
+                                                    <div ng-message="minlength">Task chatter too short!</div>
+                                                    <div ng-message="md-maxlength">Task chatter too long!</div>
+                                                </div>
+                                            </md-input-container>
+                                        </md-list-item>
                                         <!-- <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Salutation <i>(Optional)</i></label>
@@ -735,6 +754,13 @@
                                             <span>Body&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.body}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Chatter&nbsp;&nbsp;</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
+                                            {{taskUpdateObj.chatter}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>

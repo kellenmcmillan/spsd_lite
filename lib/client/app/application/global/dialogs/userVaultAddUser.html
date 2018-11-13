@@ -41,7 +41,7 @@
                     <div style="width: 100%" layout="row" layout-align="center center" flex>
 
                         <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
-                            <form name="signup" ng-submit="addUser(newUser)">
+                            <form name="signup" ng-submit="addInternalUser(newUser)">
                                 <md-card-content>
                                     <md-list-item>
                                         <md-input-container class="md-block lightweight-md-input" flex>
@@ -152,7 +152,7 @@
                                     </md-list-item>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button ng-click="closeAddUser()" class="md-raised" style="padding-left: 16px; padding-right: 16px;">Cancel</md-button>
+                                    <md-button ng-confirm-message="Are you sure you want to discard changes?" ng-confirm-click="closeAddUser(); clearForm(signup);" ng-confirm-condition="true" class="md-raised" style="padding-left: 16px; padding-right: 16px;">Cancel</md-button>
                                     <md-button class="md-raised" ng-disabled="signup.$invalid" style="background: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;" type="submit" style="margin-right:20px;">
                                         Sign up
                                     </md-button>

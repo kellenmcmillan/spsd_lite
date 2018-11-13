@@ -100,7 +100,7 @@
                                         <md-card-header>
                                             <md-card-header-text>
                                                 <span class="md-title">Content</span>
-                                                <span class="md-subhead">Information Users Will See</span>
+                                                <span class="md-subhead">How Your App Responds To Users</span>
                                             </md-card-header-text>
                                         </md-card-header>
                                         
@@ -162,17 +162,25 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>
-                                                    Task Body
+                                                    Outbound Chatter
                                                 </label>
-                                                <textarea name="body" md-detect-hidden="true" ng-model="taskAddObj.body" rows="3" minlength="10" md-maxlength="250" required></textarea>
+                                                <textarea name="body" md-detect-hidden="true" ng-model="taskAddObj.body" rows="3" minlength="10" md-maxlength="500"</textarea>
                                                 <div ng-messages="createTaskForm.body.$error" ng-show="createTaskForm.body.$invalid">
-                                                    <div ng-message="required">Task body required!</div>
-                                                    <div ng-message="minlength">Task body too short!</div>
-                                                    <div ng-message="md-maxlength">Task body too long!</div>
+                                                    <div ng-message="md-maxlength">Outbound chatter too long!</div>
                                                 </div>
                                             </md-input-container>
                                         </md-list-item>
-
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>
+                                                    Inbound Chatter
+                                                </label>
+                                                <textarea name="chatter" md-detect-hidden="true" ng-model="taskAddObj.chatter" rows="3" md-maxlength="500"></textarea>
+                                                <div ng-messages="createTaskForm.chatter.$error" ng-show="createTaskForm.chatter.$invalid">
+                                                    <div ng-message="md-maxlength">Inbound too long!</div>
+                                                </div>
+                                            </md-input-container>
+                                        </md-list-item>
                                         <!-- <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Task Salutation <i>(Optional)</i></label>
@@ -599,6 +607,13 @@
                                                 </span>
                                             </md-list-item>
                                             <md-divider></md-divider>
+                                            <md-list-item>
+                                            <span>Chatter&nbsp;&nbsp;</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
+                                            {{taskAddObj.chatter}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
                                             <!-- <md-list-item ng-if="taskAddObj.salutation">
                                                 <span>Salutation</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
