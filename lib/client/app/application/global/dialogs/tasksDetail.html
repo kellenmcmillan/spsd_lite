@@ -122,16 +122,16 @@
                                         </md-list-item>
                                         <md-divider ng-if="taskUpdateObj.greeting"></md-divider> -->
                                         <md-list-item>
-                                            <span>Body&nbsp;&nbsp;</span>
+                                            <span>Outbound Chatter&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.body}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item>
-                                            <span>Chatter&nbsp;&nbsp;</span>
+                                            <span>Inbound Chatter&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                            {{taskUpdateObj.chatter}}
+                                            {{taskUpdateObj.inbound}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
@@ -315,10 +315,10 @@
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>Task Body</label>
-                                                <textarea name="body" md-detect-hidden="true" ng-model="taskUpdateObj.body" rows="3" minlength="10" md-maxlength="250" required></textarea>
+                                                <label>Outbound Chatter</label>
+                                                <textarea name="body" md-detect-hidden="true" ng-model="taskUpdateObj.body" rows="3" minlength="10" md-maxlength="250"></textarea>
                                                 <div ng-messages="updateTaskForm.body.$error" ng-show="updateTaskForm.body.$invalid">
-                                                    <div ng-message="required">Task body required!</div>
+                                                    <!-- <div ng-message="required">Task body required!</div> -->
                                                     <div ng-message="minlength">Task body too short!</div>
                                                     <div ng-message="md-maxlength">Task body too long!</div>
                                                 </div>
@@ -327,39 +327,17 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>
-                                                    Private Chatter
+                                                    Inbound Chatter
                                                 </label>
-                                                <textarea name="chatter" md-detect-hidden="true" ng-model="taskUpdateObj.chatter" rows="3" minlength="10" md-maxlength="250"></textarea>
-                                                <div ng-messages="updateTaskForm.chatter.$error" ng-show="updateTaskForm.chatter.$invalid">
+                                                <textarea name="Inbound" md-detect-hidden="true" ng-model="taskUpdateObj.Inbound" rows="3" minlength="10" md-maxlength="250"></textarea>
+                                                <div ng-messages="updateTaskForm.Inbound.$error" ng-show="updateTaskForm.Inbound.$invalid">
                                                     <!-- <div ng-message="required">Task chatter required!</div> -->
-                                                    <div ng-message="minlength">Task chatter too short!</div>
-                                                    <div ng-message="md-maxlength">Task chatter too long!</div>
+                                                    <div ng-message="minlength">Task Inbound too short!</div>
+                                                    <div ng-message="md-maxlength">Task Inbound too long!</div>
                                                 </div>
                                             </md-input-container>
                                         </md-list-item>
                                         <!-- <md-list-item>
-                                            <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>Task Salutation <i>(Optional)</i></label>
-                                                <md-select name="salutation" ng-model="taskUpdateObj.salutation">
-                                                    <md-option><em>None</em></md-option>
-                                                    <md-option ng-value="'Sincerely'">
-                                                        Sincerely
-                                                    </md-option>
-                                                    <md-option ng-value="'Kindly'">
-                                                        Kindly
-                                                    </md-option>
-                                                    <md-option ng-value="'Thanks'">
-                                                        Thanks
-                                                    </md-option>
-                                                    <md-option ng-value="'Have a great day'">
-                                                        Have a great day
-                                                    </md-option>
-                                                    <md-option ng-value="'See you soon'">
-                                                        See you soon
-                                                    </md-option>
-                                                </md-select>
-                                            </md-input-container>
-                                        </md-list-item> -->
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
@@ -751,16 +729,16 @@
                                         </md-list-item>
                                         <md-divider ng-if="taskUpdateObj.greeting"></md-divider> -->
                                         <md-list-item>
-                                            <span>Body&nbsp;&nbsp;</span>
+                                            <span>Outbound Chatter&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.body}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item>
-                                            <span>Chatter&nbsp;&nbsp;</span>
+                                            <span>Inbound Chatter&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                            {{taskUpdateObj.chatter}}
+                                            {{taskUpdateObj.inbound}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
