@@ -304,7 +304,7 @@
                                         <div layout="column" layout-align="center start" style="margin: 0" flex>
                                             <md-list class="md-dense" flex>
                                                 <md-list-item ng-repeat="receipt in me.receipts | limitTo:3" flex>
-                                                    <p md-truncate>{{receipt.title}} | {{receipt.type == 'merch' ? receipt.amount : receipt.date}}</p>
+                                                    <p md-truncate>{{receipt.title}} | {{receipt.date}}</p>
                                                     <md-divider ng-if="!$last"></md-divider>
                                                 </md-list-item>
                                                 <md-list-item ng-show="!me.receipts" flex layout="row" layout-align="start center">
@@ -414,7 +414,7 @@
                                     </md-card-content>
                                     <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button  class="md-raised" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;">Cancel</md-button>
-                                        <md-button class="md-raised" ng-click="updateUser(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
+                                        <md-button class="md-raised" ng-click="updateMe(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
                                     </md-card-actions>
                                 </form>
                             </md-card>
