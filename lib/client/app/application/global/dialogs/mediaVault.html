@@ -407,9 +407,9 @@
                         <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Manage Galleries</h1>
                     </div>
 
-                    <div layout-margin flex="100">
+                    <div layout-margin flex="100" layout="row" layout-align="center center">
                         <form name="uploads">
-                            <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || galleriesgridview == false">Add A Project</md-button>
+                            <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || galleriesgridview == false">Add A Gallery</md-button>
                             <md-button class="button-color-border" ng-click="switchViewGalleries()" ng-disabled="new_gallery">
                             {{galleriesgridview == false ? "Grid View" : "List View"}}
                             <md-icon ng-show="galleriesgridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
@@ -436,14 +436,16 @@
                             </md-card>
                         </div>
                         <div ng-show="galleriesgridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex="100" layout-wrap layout-margin>
-                            <div layout="row" layout-align="start center">
-                                <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="md-icon-button" aria-label="Clear Media Search">
-                                    <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
-                                </md-button>
-                                <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
-                                <md-button nng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="md-icon-button" aria-label="Clear Media Search">
-                                    <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
-                                </md-button>
+                            <div layout="column" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="center center" layout-margin flex="100" style="width: 100%">
+                                <div layout="row" layout-align="start center">
+                                    <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                                    </md-button>
+                                    <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
+                                    <md-button nng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                                    </md-button>
+                                </div>
                             </div>
                             <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries | startFrom:currentGalleryPage*gallerySize | limitTo:gallerySize" flex flex-gt-sm="30" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
                                 <md-card-title>
@@ -494,14 +496,16 @@
                         </div>
                     </div>
                     
-                    <div ng-show="galleries.length > 9 && galleriesgridview == true" layout="row" layout-align="start center">
-                        <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="md-icon-button" aria-label="Clear Media Search">
-                            <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
-                        </md-button>
-                        <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
-                        <md-button nng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="md-icon-button" aria-label="Clear Media Search">
-                            <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
-                        </md-button>
+                    <div ng-show="galleries.length > 9 && galleriesgridview == true" layout="column" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="center center" layout-margin flex="100" style="width: 100%">
+                        <div layout="row" layout-align="start center">
+                            <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                                <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                            </md-button>
+                            <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
+                            <md-button nng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                                <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                            </md-button>
+                        </div>
                     </div>
 
                 </md-content>
