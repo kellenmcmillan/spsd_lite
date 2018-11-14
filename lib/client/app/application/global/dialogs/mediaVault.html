@@ -76,6 +76,9 @@
                     </md-menu-content>
 
                 </md-menu>
+                <md-button ng-show="mediaView == 'upload'" ng-click="mediaVaultView = 'new download'" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-multiple="true" class="md-fab md-mini" aria-label="Add a user" style="position: absolute; bottom: -26px; left: 128px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">add</md-icon>
+                </md-button>
                 <!-- Account Major Action Button -->
 
                 <!-- =================== End Action Buttons =================== -->
@@ -128,7 +131,7 @@
                         <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Manage Media</h1>
                     </div>
                     <div layout="column" layout-wrap layout-align="space-around center" flex>
-                        <div layout="column" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="start center" layout-margin flex="100" style="width: 100%">
+                        <div layout="column" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="center center" layout-margin flex="100" style="width: 100%">
                             <div layout="row" layout-align="start center">
                                 <md-button ng-disabled="currentPage == 0" ng-click="currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
                                     <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
@@ -240,7 +243,7 @@
                             </md-card>
                         </md-radio-group>
                     </div>
-                    <div layout="row" layout-align="start center" layout-margin flex>
+                    <div layout="row" layout-align="center center" layout-margin flex>
                         <md-button ng-disabled="currentPage == 0" ng-click="currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
                             <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
                         </md-button>
@@ -254,9 +257,9 @@
                         <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage = numberOfPages - 1" class="md-icon-button" aria-label="Clear Media Search">
                             <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
                         </md-button>
-                        <md-button  ng-show="elementToUpdate" ng-click="selectMedia(mediaVaultSelect); closeMediaVault()" class="md-icon-button" aria-label="Clear Media Search">
+                        <!-- <md-button  ng-show="elementToUpdate" ng-click="selectMedia(mediaVaultSelect); closeMediaVault()" class="md-icon-button" aria-label="Clear Media Search">
                             <md-icon style="color: {{base_hue_darker.value}};">done_all</md-icon>
-                        </md-button>
+                        </md-button> -->
                     </div>
                 </md-content>
 
@@ -317,11 +320,11 @@
                     <div flex layout="row" layout-wrap layout-align="center center">
                         <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Upload Files</h1>
                     </div>
-                    <div layout-margin flex>
+                    <!-- <div layout-margin flex>
                         <form name="uploads">
                             <md-button ng-click="mediaVaultView = 'new download'" class="button-color-border" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-multiple="true">Upload A New File</md-button>
                         </form>
-                    </div>
+                    </div> -->
                     <!-- view - download preview -->
                     <div flex ng-show="mediaVaultView == 'new download'">
                         <div layout="column" layout-gt-sm="row" flex layout-margin>
