@@ -230,9 +230,16 @@
                                     <md-button ng-show="elementToUpdate" style="margin: 0; padding: 0;" ng-click="selectMedia(image.avatar ? image.avatar : image.source); closeMediaVault();" class="md-icon-button" aria-label="Clear Media Search">
                                         <md-icon style="color: {{primary_hue_normal.value}};">image_search</md-icon>
                                     </md-button>
-                                    <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" ng-click="downloadMedia(image)" class="md-icon-button" aria-label="Clear Media Search">
-                                        <md-icon style="color: {{primary_hue_normal.value}};">save_alt</md-icon>
-                                    </md-button>
+                                    <a ng-if="image.source" href="{{image.source}}" download>
+                                        <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" ng-click="downloadMedia(image)" class="md-icon-button" aria-label="Clear Media Search">
+                                            <md-icon style="color: {{primary_hue_normal.value}};">save_alt</md-icon>
+                                        </md-button>
+                                    </a>
+                                    <a ng-if="image.avatar" href="{{image.avatar}}" download>
+                                        <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" ng-click="downloadMedia(image)" class="md-icon-button" aria-label="Clear Media Search">
+                                            <md-icon style="color: {{primary_hue_normal.value}};">save_alt</md-icon>
+                                        </md-button>
+                                    </a>
                                     <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" ng-click="deleteMedia(image, $index)" class="md-icon-button" aria-label="Clear Media Search">
                                         <md-icon style="color: {{primary_hue_normal.value}};">delete</md-icon>
                                     </md-button>
