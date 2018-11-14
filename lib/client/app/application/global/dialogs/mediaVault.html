@@ -403,7 +403,7 @@
                     
                 <md-content class="md-padding" flex ng-show="mediaView == 'galleries'" layout="row" layout-wrap>
                     
-                    <div flex layout="row" layout-wrap layout-align="center center">
+                    <div flex="100" layout="row" layout-wrap layout-align="center center">
                         <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Manage Galleries</h1>
                     </div>
 
@@ -450,7 +450,7 @@
                             <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries | startFrom:currentGalleryPage*gallerySize | limitTo:gallerySize" flex flex-gt-sm="30" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
                                 <md-card-title>
                                     <md-card-title-text layout="row" layout-align="start center">
-                                        <span class="md-headline">{{gallery.name || "New Project"}}</span>
+                                        <span class="md-headline">{{gallery.name || "New Gallery"}}</span>
                                     </md-card-title-text>
                                 </md-card-title>
                                 <md-card-content>
@@ -473,7 +473,7 @@
                                         </md-input-container>
                                     </md-list-item>
                                     <md-list-item>
-                                        <p>Featured Project</p>
+                                        <p>Featured Gallery</p>
                                         <md-switch class="md-secondary" ng-model="gallery.featured"></md-switch>
                                     </md-list-item>
                                     <md-list-item flex layout="row">
