@@ -312,32 +312,30 @@
                                                 <span style="color: {{base_hue_darker.value}};" ng-repeat="variable in dynamic_task_message_variables">{{variable}}<span ng-hide="$last" style="font-size: 12px;">,</span>&nbsp;&nbsp;</span>
                                             </div>
                                         </md-card>
-                                        
+
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>Outbound Chatter</label>
-                                                <textarea name="body" md-detect-hidden="true" ng-model="taskUpdateObj.body" rows="3" minlength="10" md-maxlength="250"></textarea>
+                                                <label>
+                                                    Outbound Chatter
+                                                </label>
+                                                <textarea name="body" md-detect-hidden="true" ng-model="taskUpdateObj.body" rows="4" minlength="10" md-maxlength="500"</textarea>
                                                 <div ng-messages="updateTaskForm.body.$error" ng-show="updateTaskForm.body.$invalid">
-                                                    <!-- <div ng-message="required">Task body required!</div> -->
-                                                    <div ng-message="minlength">Task body too short!</div>
-                                                    <div ng-message="md-maxlength">Task body too long!</div>
+                                                    <div ng-message="md-maxlength">Outbound chatter too long!</div>
                                                 </div>
                                             </md-input-container>
                                         </md-list-item>
+                                        
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>
                                                     Inbound Chatter
                                                 </label>
-                                                <textarea name="inbound" md-detect-hidden="true" ng-model="taskUpdateObj.inbound" rows="3" minlength="10" md-maxlength="250"></textarea>
+                                                <textarea name="inbound" md-detect-hidden="true" ng-model="taskUpdateObj.inbound" rows="4" minlength="10" md-maxlength="500"></textarea>
                                                 <div ng-messages="updateTaskForm.inbound.$error" ng-show="updateTaskForm.inbound.$invalid">
-                                                    <!-- <div ng-message="required">Task chatter required!</div> -->
-                                                    <div ng-message="minlength">Inbound chatter too short!</div>
                                                     <div ng-message="md-maxlength">Inbound chatter too long!</div>
                                                 </div>
                                             </md-input-container>
                                         </md-list-item>
-                                        <md-list-item>
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>

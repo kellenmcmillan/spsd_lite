@@ -141,46 +141,24 @@
                                                 <label>
                                                     Outbound Chatter
                                                 </label>
-                                                <textarea name="body" md-detect-hidden="true" ng-model="taskAddObj.body" rows="3" minlength="10" md-maxlength="500"</textarea>
+                                                <textarea name="body" md-detect-hidden="true" ng-model="taskAddObj.body" rows="4" minlength="10" md-maxlength="500"</textarea>
                                                 <div ng-messages="createTaskForm.body.$error" ng-show="createTaskForm.body.$invalid">
                                                     <div ng-message="md-maxlength">Outbound chatter too long!</div>
                                                 </div>
                                             </md-input-container>
                                         </md-list-item>
+                                        
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>
                                                     Inbound Chatter
                                                 </label>
-                                                <textarea name="inbound" md-detect-hidden="true" ng-model="taskAddObj.inbound" rows="3" md-maxlength="500"></textarea>
+                                                <textarea name="inbound" md-detect-hidden="true" ng-model="taskAddObj.inbound" rows="4" minlength="10" md-maxlength="500"></textarea>
                                                 <div ng-messages="createTaskForm.inbound.$error" ng-show="createTaskForm.inbound.$invalid">
-                                                    <div ng-message="md-maxlength">Inbound too long!</div>
+                                                    <div ng-message="md-maxlength">Inbound chatter too long!</div>
                                                 </div>
                                             </md-input-container>
                                         </md-list-item>
-                                        <!-- <md-list-item>
-                                            <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>Task Salutation <i>(Optional)</i></label>
-                                                <md-select name="salutation" ng-model="taskAddObj.salutation">
-                                                    <md-option><em>None</em></md-option>
-                                                    <md-option ng-value="'Sincerely'">
-                                                        Sincerely
-                                                    </md-option>
-                                                    <md-option ng-value="'Kindly'">
-                                                        Kindly
-                                                    </md-option>
-                                                    <md-option ng-value="'Thanks'">
-                                                        Thanks
-                                                    </md-option>
-                                                    <md-option ng-value="'Have a great day'">
-                                                        Have a great day
-                                                    </md-option>
-                                                    <md-option ng-value="'See you soon'">
-                                                        See you soon
-                                                    </md-option>
-                                                </md-select>
-                                            </md-input-container>
-                                        </md-list-item> -->
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
