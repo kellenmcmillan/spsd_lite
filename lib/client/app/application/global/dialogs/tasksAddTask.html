@@ -127,11 +127,13 @@
                                         </md-list-item>
 
                                         <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; background-color: {{base_hue_lightest.value}};" flex="100" layout="row" layout-align="start center" layout-wrap layout-padding layout-margin>
-                                            <md-button class="md-icon-button" style="position: absolute; top: 16px; right: 16px;">
-                                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
-                                            </md-button>
-                                            <div flex>
-                                                <p style="color: {{base_hue_darkest.value}};">Wrap dynamic variables in brackets - [term]</p>
+                                            <div flex="20" layout="row" layout-align="center center">
+                                                <md-button class="md-icon-button">
+                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
+                                                </md-button>
+                                            </div>
+                                            <div flex="80">
+                                                <p style="color: {{base_hue_darkest.value}};">Wrap dynamic variables in brackets ex. [term]</p>
                                                 <span style="color: {{base_hue_darker.value}};" ng-repeat="variable in dynamic_task_message_variables">{{variable}}<span ng-hide="$last" style="font-size: 12px;">,</span>&nbsp;&nbsp;</span>
                                             </div>
                                         </md-card>
@@ -141,13 +143,13 @@
                                                 <label>
                                                     Outbound Chatter
                                                 </label>
-                                                <textarea name="body" md-detect-hidden="true" ng-model="taskAddObj.body" rows="4" minlength="10" md-maxlength="500"</textarea>
-                                                <div ng-messages="createTaskForm.body.$error" ng-show="createTaskForm.body.$invalid">
+                                                <textarea name="outbound" md-detect-hidden="true" ng-model="taskAddObj.outbound" rows="4" minlength="10" md-maxlength="500"></textarea>
+                                                <div ng-messages="createTaskForm.outbound.$error" ng-show="createTaskForm.outbound.$invalid">
                                                     <div ng-message="md-maxlength">Outbound chatter too long!</div>
                                                 </div>
                                             </md-input-container>
                                         </md-list-item>
-                                        
+
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>
@@ -558,7 +560,7 @@
                                             <md-list-item>
                                                 <span>Outbound Chatter&nbsp;&nbsp;</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskAddObj.body}}
+                                                {{taskAddObj.outbound}}
                                                 </span>
                                             </md-list-item>
                                             <md-divider></md-divider>
