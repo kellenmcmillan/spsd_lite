@@ -641,7 +641,7 @@
 
                 <!-- Primary Image Editor | Index Element - Multiple Columns/Tabs -->
                 <div flex="100" flex-gt-sm="40" ng-if="editor_element.data.items[view].background.images && editor_element.settings.configs.primary_image == true">
-                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 0;">
+                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                         <md-button ng-click="mediavault_filepicker(editor_element.data.items[view].background.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
@@ -649,7 +649,7 @@
                     </md-card>
                 </div>
                 <div flex="100" flex-gt-sm="40" ng-if="editor_element.data.items[view].foreground.images && editor_element.settings.configs.primary_image == true">
-                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 0;">
+                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                         <md-button ng-click="mediavault_filepicker(editor_element.data.items[view].foreground.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
@@ -660,7 +660,7 @@
 
                 <!-- Primary Image Editor | Page -->
                 <div flex="100" flex-gt-sm="40" ng-if="editor_element.data.page.background.images && editor_element.settings.configs.primary_image == true">
-                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 0;">
+                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                         <md-button ng-click="mediavault_filepicker(editor_element.data.page.background.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
@@ -668,7 +668,7 @@
                     </md-card>
                 </div>
                 <div flex="100" flex-gt-sm="40" ng-if="editor_element.data.page.foreground.images && editor_element.settings.configs.primary_image == true">
-                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 0;">
+                    <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                         <md-button ng-click="mediavault_filepicker(editor_element.data.page.foreground.images)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                             <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                         </md-button>
@@ -683,15 +683,6 @@
             </md-card-content>
             <!-- Dialog Editor | Body -->
 
-
-            <!-- Dialog Editor | Cancel or Update Action -->
-            <!-- <md-card-actions layout="row" layout-align="end center" class="footer-backend">
-                <md-button disabled>Superpowered by Lightweight</md-button>
-                <div flex></div>
-                <md-button ng-confirm-message="Are you sure you want to cancel editing?" ng-confirm-click="end_edit()" ng-confirm-condition="true">Cancel</md-button>
-                <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateApp(editor_element)" ng-confirm-condition="true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
-            </md-card-actions> -->
-            <!-- Dialog Editor | Cancel or Update Action -->
 
 
         </md-card>
