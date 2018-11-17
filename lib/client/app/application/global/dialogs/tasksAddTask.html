@@ -106,7 +106,7 @@
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>Task Title</label>
+                                                <label>Title</label>
                                                 <input name="title" ng-model="taskAddObj.title" minlength="3" required>
                                                 <div ng-messages="createTaskForm.title.$error" ng-show="createTaskForm.title.$invalid">
                                                     <div ng-message="required">Task title required!</div>
@@ -127,15 +127,10 @@
                                         </md-list-item>
 
                                         <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; background-color: {{base_hue_lightest.value}};" flex="100" layout="row" layout-align="start center" layout-wrap layout-padding layout-margin>
-                                            <div flex="20" layout="row" layout-align="center center">
-                                                <md-button class="md-icon-button">
-                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">priority_high</md-icon>
-                                                </md-button>
-                                            </div>
-                                            <div flex="70">
+                                            <md-card-content flex="70">
                                                 <p style="color: {{base_hue_darkest.value}};">Wrap dynamic variables in brackets ex. [term]</p>
-                                                <span style="color: {{base_hue_darker.value}};" ng-repeat="variable in dynamic_task_message_variables">{{variable}}<span ng-hide="$last" style="font-size: 12px;">,</span>&nbsp;&nbsp;</span>
-                                            </div>
+                                                <span style="color: {{base_hue_darker.value}};" ng-repeat="variable in dynamic_task_message_variables">{{variable}}<span ng-hide="$last" style="font-size: 11px;">,</span>&nbsp;&nbsp;</span>
+                                            </md-card-content>
                                         </md-card>
                                         
                                         <md-list-item>
@@ -164,8 +159,8 @@
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>Task Link <i>(Optional)</i></label>
-                                                <md-select name="item_url" ng-model="taskAddObj.link">
+                                                <label>Link <i>(Optional)</i></label>
+                                                <md-select name="item_url" ng-model="taskAddObj.action">
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-value="'Custom'">Enter a custom URL</md-option>
                                                     <md-option ng-value="url.url" ng-repeat="url in app_pages track by $index">
@@ -175,10 +170,10 @@
                                             </md-input-container>
                                         </md-list-item>
 
-                                        <md-list-item ng-show="taskAddObj.link == 'Custom'">
+                                        <md-list-item ng-show="taskAddObj.action == 'Custom'">
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>Custom URL</label>
-                                                <input name="customURL" ng-model="taskAddObj.customURL" minlength="3" ng-required="taskAddObj.link == 'Custom'">
+                                                <input name="customURL" ng-model="taskAddObj.customURL" minlength="3" ng-required="taskAddObj.action == 'Custom'">
                                                 <div ng-messages="createTaskForm.customURL.$error" ng-show="createTaskForm.customURL.$invalid">
                                                     <div ng-message="required">Task custom URL required!</div>
                                                     <div ng-message="minlength">Task custom URL too short!</div>
@@ -230,9 +225,9 @@
                                                     <md-option ng-value="'Notification'">
                                                         Notification
                                                     </md-option>
-                                                    <!-- <md-option ng-value="'In App Dialog'">
-                                                        In App Dialog
-                                                    </md-option> -->
+                                                    <md-option ng-value="'In App Notification'">
+                                                        In App Notification
+                                                    </md-option>
                                                 </md-select>
                                                 <div ng-messages="createTaskForm.channels.$error" ng-show="createTaskForm.channels.$invalid">
                                                     <div ng-message="required">Task channel required!</div>
@@ -242,7 +237,7 @@
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-dropdown">
-                                                <label>Specify Users To Send Message To</label>
+                                                <label>Specify Users To Send Outbound Chatter To</label>
                                                 <md-select name="send_to_users" ng-model="taskAddObj.send_to_users" multiple flex>
                                                     <md-option><em>None</em></md-option>
                                                     <!-- <md-option ng-value="'respond'">Respond To User Action</md-option> -->
@@ -253,9 +248,9 @@
                                             </md-input-container>
                                         </md-list-item>
 
-                                        <md-list-item ng-show="!taskAddObj.isGeneratedByUser">
+                                        <md-list-item ng-show="!taskAddObj.task_type">
                                             <md-input-container class="md-block lightweight-md-input">
-                                                <label>User Types To Send Message To</label>
+                                                <label>User Types To Send Outbound Chatter To</label>
                                                 <md-select name="send_to_roles" ng-model="taskAddObj.send_to_roles" multiple flex>
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-repeat="role in rolelist" ng-value="role.role">
@@ -270,7 +265,7 @@
 
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-dropdown">
-                                                <label>Specify Users To Send Report To</label>
+                                                <label>Specify Users To Send Inbound Chatter To</label>
                                                 <md-select name="send_report_to_users" ng-model="taskAddObj.send_report_to_users" multiple flex>
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-repeat="user in userslist" ng-value="user.id">
@@ -282,7 +277,7 @@
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
-                                                <label>User Types To Send Report To</label>
+                                                <label>User Types To Send Inbound Chatter To</label>
                                                 <md-select name="send_alert_to_roles" ng-model="taskAddObj.alert_roles" multiple>
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-repeat="role in rolelist" ng-value="role.role">
@@ -550,13 +545,6 @@
                                                 </span>
                                             </md-list-item>
                                             <md-divider></md-divider>
-                                            <!-- <md-list-item ng-if="taskAddObj.greeting">
-                                                <span>Greeting</span>
-                                                <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskAddObj.greeting}}
-                                                </span>
-                                            </md-list-item>
-                                            <md-divider ng-if="taskAddObj.greeting"></md-divider> -->
                                             <md-list-item>
                                                 <span>Outbound Chatter&nbsp;&nbsp;</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
@@ -565,26 +553,19 @@
                                             </md-list-item>
                                             <md-divider></md-divider>
                                             <md-list-item>
-                                            <span>Inbound Chatter&nbsp;&nbsp;</span>
-                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                            {{taskAddObj.inbound}}
+                                                <span>Inbound Chatter&nbsp;&nbsp;</span>
+                                                <span md-truncate style="max-width: 200px;" class="md-secondary">
+                                                {{taskAddObj.inbound}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
-                                            <!-- <md-list-item ng-if="taskAddObj.salutation">
-                                                <span>Salutation</span>
-                                                <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskAddObj.salutation}}
-                                                </span>
-                                            </md-list-item>
-                                            <md-divider ng-if="taskAddObj.salutation"></md-divider> -->
-                                            <md-list-item ng-if="taskAddObj.link">
+                                            <md-list-item ng-if="taskAddObj.action">
                                                 <span>Link</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskAddObj.link}}
+                                                {{taskAddObj.action}}
                                                 </span>
                                             </md-list-item>
-                                            <md-divider ng-if="taskAddObj.link"></md-divider>
+                                            <md-divider ng-if="taskAddObj.action"></md-divider>
                                             <md-list-item ng-if="taskAddObj.customURL">
                                                 <span>Custom Link</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
@@ -600,14 +581,14 @@
                                             </md-list-item>
                                             <md-divider></md-divider>
                                             <md-list-item ng-if="taskAddObj.send_to_users">
-                                                <span>Send To Individuals</span>
+                                                <span>Outbound To Individuals</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
                                                 {{taskAddObj.send_to_users.length > 1 ? 'Multiple Users' : 'Single User'}}
                                                 </span>
                                             </md-list-item>
                                             <md-divider ng-if="taskAddObj.send_to_users"></md-divider>
                                             <md-list-item ng-if="taskAddObj.send_to_roles">
-                                                <span>Send To Groups</span>
+                                                <span>Outbound To Groups</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
                                                 {{taskAddObj.send_to_roles.join(', ')}}
                                                 </span>
