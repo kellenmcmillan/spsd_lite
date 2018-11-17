@@ -181,19 +181,7 @@
                                                         <label>Cloud Storage Location</label>
                                                         <input ng-model="image.avatar">
                                                     </md-input-container>
-                                                </md-list-item>
-                                                <!-- <md-list-item>
-                                                    <md-input-container class="md-block lightweight-md-input" flex>
-                                                        <label>Display Name</label>
-                                                        <input ng-model="image.metadata.name">
-                                                    </md-input-container>
-                                                </md-list-item>
-                                                <md-list-item>
-                                                    <md-input-container class="md-block lightweight-md-input" flex>
-                                                        <label>Description</label>
-                                                        <input ng-model="image.metadata.description">
-                                                    </md-input-container>
-                                                </md-list-item>  -->                                                     
+                                                </md-list-item>                                                    
                                             </md-content>
                                         </md-tab>
                                         <md-tab label="Settings" layout-padding>
@@ -414,16 +402,14 @@
                         <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Manage Galleries</h1>
                     </div>
 
-                    <div flex="100" layout="row" layout-align="center center">
-                        <form name="uploads">
-                            <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || galleriesgridview == false">Add A Gallery</md-button>
-                            <md-button class="button-color-border" ng-click="switchViewGalleries()" ng-disabled="new_gallery">
-                            {{galleriesgridview == false ? "Grid View" : "List View"}}
-                            <md-icon ng-show="galleriesgridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
-                            <md-icon ng-show="galleriesgridview == false" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
-                            </md-button>
-                        </form>
-                    </div>
+                    <!-- <div flex="100" layout="row" layout-align="center center">
+                        <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || galleriesgridview == false">Add A Gallery</md-button>
+                        <md-button class="button-color-border" ng-click="switchViewGalleries()" ng-disabled="new_gallery">
+                        {{galleriesgridview == false ? "Grid View" : "List View"}}
+                        <md-icon ng-show="galleriesgridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
+                        <md-icon ng-show="galleriesgridview == false" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
+                        </md-button>
+                    </div> -->
 
                     <div flex="100">
                         <div ng-show="galleriesgridview == false" layout="column" layout-align="center center" flex="100" layout-wrap layout-margin>
@@ -438,11 +424,11 @@
                                     </div>
                                 </md-card-content>
                                 <md-card-actions layout="row" layout-align="end center">
-                                    <md-button class="md-raised" ng-click="updateGalleries(gallerySortObj)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
+                                    <md-button class="md-raised" ng-click="updateGalleries(gallerySortObj)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
                                 </md-card-actions>
                             </md-card>
                         </div>
-                        <div ng-show="galleriesgridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex="100" layout-wrap layout-margin>
+                        <div ng-show="galleriesgridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex="100" layout-wrap>
                             <div layout="column" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="center center" layout-margin flex="100" style="width: 100%">
                                 <div layout="row" layout-align="start center">
                                     <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="md-icon-button" aria-label="Clear Media Search">
@@ -453,6 +439,12 @@
                                         <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
                                     </md-button>
                                 </div>
+                                <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || galleriesgridview == false">Add A Gallery</md-button>
+                                <md-button class="button-color-border" ng-click="switchViewGalleries()" ng-disabled="new_gallery">
+                                {{galleriesgridview == false ? "Grid View" : "List View"}}
+                                    <md-icon ng-show="galleriesgridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
+                                    <md-icon ng-show="galleriesgridview == false" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
+                                </md-button>
                             </div>
                             <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries | startFrom:currentGalleryPage*gallerySize | limitTo:gallerySize" flex flex-gt-sm="30" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
                                 <md-card-title>
