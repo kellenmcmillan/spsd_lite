@@ -11,16 +11,19 @@
 		<md-button class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="open_parent_menu()">
 			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">menu</md-icon>
 		</md-button>
-		<md-button class="navigation link" ng-click="" ng-attr-style="color: {{base_hue_darkest.value}};">
+		<!-- <md-button class="navigation link" ng-click="" ng-attr-style="color: {{base_hue_darkest.value}};">
 			Sign In
 		</md-button>
 		<span>or</span>
 		<md-button class="navigation link" ng-click="" ng-attr-style="color: {{primary_hue_normal.value}};">
 			Sign Up
-		</md-button>
+		</md-button> -->
 		<md-button ng-repeat="item in settings.navigation.data track by $index" class="navigation link" ng-click="sub_navigation_panel = true; open_menu(item)" ng-attr-style="color: {{base_hue_darkest.value}};">
 			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
 			{{item.navigation.parent.name}}
+		</md-button>
+		<md-button class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="null">
+			<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">account_circle</md-icon>
 		</md-button>
 	</div>
 	<!-- Navigation Items -->
