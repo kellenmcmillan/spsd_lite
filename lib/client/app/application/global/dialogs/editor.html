@@ -84,7 +84,7 @@
                             </md-button>
                         </md-menu-item>
                         <md-menu-item ng-repeat="views in editor_element.data.items track by $index">
-                            <md-button ng-click="$parent.editor_view = $index">
+                            <md-button ng-click="editor_view = $index">
                                 {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
                             </md-button>
                         </md-menu-item>
