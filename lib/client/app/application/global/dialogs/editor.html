@@ -84,7 +84,7 @@
                             </md-button>
                         </md-menu-item>
                         <md-menu-item ng-repeat="views in editor_element.data.items track by $index">
-                            <md-button ng-click="editor_view = $index">
+                            <md-button ng-click="$parent.editor_view = $index">
                                 {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
                             </md-button>
                         </md-menu-item>
@@ -221,7 +221,7 @@
 
             <!-- Dialog Editor | Body -->
             <!-- If its an element with a title -->
-            <md-card-content ng-if="editor_element.settings.configs.title_view == true" ng-show="editor_view == title" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" style="padding: 0;">
+            <md-card-content ng-if="editor_element.settings.configs.title_view == true" ng-show="editor_view == 'title'" layout="column" layout-gt-sm="row" layout-align="space-around center" layout-align-gt-sm="center start" style="padding: 0;">
                 <div flex="100" flex-gt-sm="40">
                     <md-card class="md-card-base">
                         <md-card-content>
@@ -255,7 +255,7 @@
             </md-card-content>
             <!-- If its an element with a title -->
 
-            <md-card-content ng-hide="editor_element.settings.configs.title_view == true && editor_view == title" layout="column" layout-gt-sm="row" layout-align="start center" layout-align-gt-sm="center start" style="padding: 0;">
+            <md-card-content ng-hide="editor_element.settings.configs.title_view == true && editor_view == 'title'" layout="column" layout-gt-sm="row" layout-align="start center" layout-align-gt-sm="center start" style="padding: 0;">
 
                 <!-- Content Editor -->
                 <div flex="100" flex-gt-sm="40" style="width: 100%">
