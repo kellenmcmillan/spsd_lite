@@ -1,4 +1,4 @@
-<div class="dialog-curtain" ng-if="edit_mode == true">
+<div class="dialog-curtain" ng-show="edit_mode == true">
 
 
 
@@ -163,9 +163,9 @@
 
                 <!-- =================== Navigation Items =================== -->
 
-                <div flex="25" flex-gt-sm="50" layout-align="end center" layout="row" ng-init="navigation_panel = false">
+                <div flex="50" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
                     <!-- Account Major Action Button -->
-                    <md-list-item ng-show="editor_element.settings.configs.multiview == true">
+                    <md-list-item flex="50" ng-show="editor_element.settings.configs.multiview == true">
                         <md-input-container class="md-block lightweight-md-dropdown">
                             <label>{{editor_element.settings.configs.multiview_label}}</label>
                             <md-select ng-model="view">
@@ -179,25 +179,15 @@
                         </md-input-container>
                     </md-list-item>
                     <!-- Account Major Action Button -->
-
-                    <!-- =================== Navigation Items =================== -->
-
-                    <!-- Account Major Action Button -->
                     <md-button class="md-icon-button" aria-label="Close My Vault">
                         <md-icon ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateApp(editor_element)" ng-confirm-condition="true" style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
                     </md-button>
                     <md-button class="md-icon-button" aria-label="Close My Vault">
                         <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons" ng-confirm-message="Are you sure you want to cancel editing?" ng-confirm-click="end_edit()" ng-confirm-condition="true">close</md-icon>
                     </md-button>
-                    <!-- Account Major Action Button -->
-
-                    <!-- =================== Navigation Items =================== -->
-
                 </div>
 
-                
-                </div>
-
+                <!-- =================== Navigation Items =================== -->
 
             </div>
 
@@ -228,25 +218,25 @@
                 <div flex="100" flex-gt-sm="40">
                     <md-card class="md-card-base">
                         <md-card-content>
-                            <md-list-item ng-show="editor_element.data">
+                            <md-list-item ng-if="editor_element.data">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Title</label>
                                     <input ng-model="editor_element.data.title">
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item ng-show="editor_element.title">
+                            <md-list-item ng-if="editor_element.title">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Title</label>
                                     <input ng-model="editor_element.title">
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item ng-show="editor_element.data">
+                            <md-list-item ng-if="editor_element.data">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Subtitle</label>
                                     <input ng-model="editor_element.data.subtitle">
                                 </md-input-container>
                             </md-list-item>
-                            <md-list-item ng-show="editor_element.subtitle">
+                            <md-list-item ng-if="editor_element.subtitle">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>Subtitle</label>
                                     <input ng-model="editor_element.subtitle">
@@ -686,6 +676,15 @@
             </md-card-content>
             <!-- Dialog Editor | Body -->
 
+
+            <!-- Dialog Editor | Cancel or Update Action -->
+            <!-- <md-card-actions layout="row" layout-align="end center" class="footer-backend">
+                <md-button disabled>Superpowered by Lightweight</md-button>
+                <div flex></div>
+                <md-button ng-confirm-message="Are you sure you want to cancel editing?" ng-confirm-click="end_edit()" ng-confirm-condition="true">Cancel</md-button>
+                <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateApp(editor_element)" ng-confirm-condition="true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+            </md-card-actions> -->
+            <!-- Dialog Editor | Cancel or Update Action -->
 
 
         </md-card>
