@@ -440,7 +440,7 @@
                             <!-- Pages -->
 
                             <!-- Complex Editor -->
-                            <div ng-if="editor_element.data.items" ng-show="editor_view != title" class="lightweight-list-control" ui-sortable="sortableList" ng-model="editor_element.data.items[editor_view].contents">
+                            <div ng-if="editor_element.data.items" ng-show="editor_view != 'title'" class="lightweight-list-control" ui-sortable="sortableList" ng-model="editor_element.data.items[editor_view].contents">
                                 <div ng-repeat="content in editor_element.data.items[editor_view].contents track by $index">
                                     <md-card-title ng-show="!items_sortable">
                                         <md-card-title-text>
