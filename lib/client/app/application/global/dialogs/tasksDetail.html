@@ -496,6 +496,21 @@
 
                                             <md-list-item>
                                                 <md-input-container class="md-block lightweight-md-input" flex>
+                                                    <label>App Activity Trigger Type</label>
+                                                    <md-select name="activity_trigger_type" ng-model="taskUpdateObj.activity_trigger_types" ng-required="taskUpdateObj.task_type == 'user generated'">
+                                                        <md-option><em>None</em></md-option>
+                                                        <md-option ng-repeat="trigger_type in app_trigger_types" ng-value="trigger_type">
+                                                            {{trigger_type}}
+                                                        </md-option>
+                                                    </md-select>
+                                                    <div ng-messages="updateTaskForm.activity_trigger_type.$invalid" ng-show="updateTaskForm.activity_trigger.$dirty">
+                                                        <div ng-message="required">App interaction trigger type required!</div>
+                                                    </div>
+                                                </md-input-container>
+                                            </md-list-item>
+
+                                            <md-list-item>
+                                                <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>App Activity Trigger</label>
                                                     <md-select name="activity_trigger" ng-model="taskUpdateObj.activity_trigger" ng-required="taskUpdateObj.task_type == 'user generated'">
                                                         <md-option><em>None</em></md-option>
