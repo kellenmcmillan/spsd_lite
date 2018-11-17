@@ -595,14 +595,14 @@
                                             </md-list-item>
                                             <md-divider ng-if="taskAddObj.send_to_roles"></md-divider>
                                             <md-list-item ng-if="taskAddObj.send_report_to_users">
-                                                <span>Report To Individuals</span>
+                                                <span>Inbound To Individuals</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
                                                 {{taskAddObj.send_report_to_users.length > 1 ? 'Multiple Users' : 'Single User'}}
                                                 </span>
                                             </md-list-item>
                                             <md-divider ng-if="taskAddObj.send_report_to_users"></md-divider>
                                             <md-list-item>
-                                                <span>Report To Groups</span>
+                                                <span>Inbound To Groups</span>
                                                 <span md-truncate style="max-width: 200px;" class="md-secondary">
                                                 {{taskAddObj.alert_roles.join(', ')}}
                                                 </span>
