@@ -83,8 +83,8 @@
                                 Title &amp; Subtitle
                             </md-button>
                         </md-menu-item>
-                        <md-menu-item ng-repeat="views in editor_element.data.items track by $index">
-                            <md-button ng-click="$parent.editor_view = $index">
+                        <md-menu-item ng-repeat="views in editor_element.data.items track by $index" ng-click="$parent.editor_view = $index">
+                            <md-button>
                                 {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
                             </md-button>
                         </md-menu-item>
