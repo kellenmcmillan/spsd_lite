@@ -218,6 +218,12 @@
                                             {{taskUpdateObj.run_clock_time}}
                                             </span>
                                         </md-list-item>
+                                        <md-list-item>
+                                            <span>Next Runtime</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
+                                            {{taskUpdateObj.next_runtime | 'MMM d, y h:mm a'}}
+                                            </span>
+                                        </md-list-item>
                                     </md-card-content>
 
                                     <md-card-actions layout="row" layout-align="end center" flex>
@@ -809,6 +815,12 @@
                                             <span>Runs At This Time</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.run_clock_time}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-list-item>
+                                            <span>Next Runtime</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
+                                            This will calculate while saving...
                                             </span>
                                         </md-list-item>
                                     </md-card-content>
