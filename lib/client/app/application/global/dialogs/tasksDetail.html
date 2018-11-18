@@ -191,13 +191,13 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskUpdateObj.frequency"></md-divider>
-                                        <md-list-item ng-if="taskUpdateObj.run_week">
+                                        <md-list-item ng-if="taskUpdateObj.run_week >= 0">
                                             <span>Runs On Week</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.run_week + 1}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskUpdateObj.run_week"></md-divider>
+                                        <md-divider ng-if="taskUpdateObj.run_week >= 0"></md-divider>
                                         <md-list-item>
                                             <span>Day Of The Week</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
@@ -218,6 +218,7 @@
                                             {{taskUpdateObj.run_clock_time}}
                                             </span>
                                         </md-list-item>
+                                        <md-divider></md-divider>
                                         <md-list-item>
                                             <span>Next Runtime</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
@@ -790,13 +791,13 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskUpdateObj.frequency"></md-divider>
-                                        <md-list-item ng-if="taskUpdateObj.run_week">
+                                        <md-list-item ng-if="taskUpdateObj.run_week >= 0">
                                             <span>Runs On Week</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.run_week + 1}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskUpdateObj.run_week"></md-divider>
+                                        <md-divider ng-if="taskUpdateObj.run_week >= 0"></md-divider>
                                         <md-list-item>
                                             <span>Day Of The Week</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
@@ -817,6 +818,7 @@
                                             {{taskUpdateObj.run_clock_time}}
                                             </span>
                                         </md-list-item>
+                                        <md-divider></md-divider>
                                         <md-list-item>
                                             <span>Next Runtime</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
