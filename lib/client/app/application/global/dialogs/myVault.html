@@ -434,22 +434,21 @@
                                         </md-card-header-text>
                                     </md-card-header>
                                     <md-card-content>
-                                        <md-list-item>
-                                            <span><p>Enable Notifications</p></span>
-                                            <md-input-container class="md-block lightweight-md-input md-secondary">
-                                                <md-switch ng-model="me.permissions.notifications" aria-label="notification permission">
-                                                    
-                                                </md-switch>
-                                            </md-input-container>
-                                        </md-list-item>
-                                        <md-list-item>
-                                            <span><p>Enable Email</p></span>
-                                            <md-input-container class="md-block lightweight-md-input md-secondary">
-                                                <md-switch ng-model="me.permissions.emails" aria-label="notification permission">
-                                                    
-                                                </md-switch>
-                                            </md-input-container>
-                                        </md-list-item>                                        
+                                        <md-list class="md-dense" flex>
+                                            <md-list-item>
+                                                <span><p>Enable Notifications</p></span>
+                                                <md-input-container class="md-block lightweight-md-input md-secondary">
+                                                    <md-switch ng-model="me.permissions.notifications" aria-label="notification permission"></md-switch>
+                                                </md-input-container>
+                                            </md-list-item>
+                                            <md-divider></md-divider>
+                                            <md-list-item>
+                                                <span><p>Enable Email</p></span>
+                                                <md-input-container class="md-block lightweight-md-input md-secondary">
+                                                    <md-switch ng-model="me.permissions.emails" aria-label="email permission"></md-switch>
+                                                </md-input-container>
+                                            </md-list-item>
+                                        </md-list>                                       
                                     </md-card-content>
                                     <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button  class="md-raised" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;">Cancel</md-button>
