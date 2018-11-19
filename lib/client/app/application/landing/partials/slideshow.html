@@ -30,7 +30,9 @@
 				<p class="slide-text-one" ng-class="{'active': $index == visible_slide}" style="color: {{base_hue_lightest.value}};">{{slide.metadata.name}}</p>
 				<p class="slide-text-two" ng-class="{'active': $index == visible_slide}" style="color: {{base_hue_lightest.value}};">{{slide.metadata.description}}</p>
 				<br>
-				<md-button ng-href="/gallery" class="custom-deep-button lightweight-round slide-button-one" ng-class="{'active': $index == visible_slide}" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 250px; height: 48px">View All Galleries</md-button>
+				<a href="/gallery">
+					<md-button class="custom-deep-button lightweight-round slide-button-one" ng-class="{'active': $index == visible_slide}" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 250px; height: 48px">View All Galleries</md-button>
+				</a>
 			</span>
 
 		</div>
