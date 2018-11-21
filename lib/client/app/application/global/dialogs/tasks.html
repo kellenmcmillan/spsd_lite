@@ -87,17 +87,17 @@
                                 <md-list-item ng-repeat="task in tasklist track by $index" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
                                     <p md-truncate>{{task.title}}</p>
                                     <span class="md-secondary" ng-show="hovered">
-                                        <md-button class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
-                                            <md-icon ng-confirm-message="Are you sure you want to update this task?" ng-confirm-click="updateTask(task)" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_upload</md-icon>
+                                        <md-button ng-confirm-message="Are you sure you want to update this task?" ng-confirm-click="updateTask(task)" class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
+                                            <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_upload</md-icon>
                                         </md-button>
-                                        <md-button class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
-                                            <md-icon ng-confirm-message="Are you sure you want to run this task now?" ng-confirm-click="runTask(task)" ng-confirm-condition="true" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">sync</md-icon>
+                                        <md-button ng-confirm-message="Are you sure you want to run this task now?" ng-confirm-click="runTask(task)" ng-confirm-condition="true" class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
+                                            <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">sync</md-icon>
                                         </md-button>
-                                        <md-button class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
-                                            <md-icon ng-confirm-message="Are you sure you want to delete this task?" ng-confirm-click="deleteTask(task)" ng-confirm-condition="true" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
+                                        <md-button ng-confirm-message="Are you sure you want to delete this task?" ng-confirm-click="deleteTask(task)" ng-confirm-condition="true" class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
+                                            <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
                                         </md-button>
-                                        <md-button class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
-                                            <md-icon ng-click="openUpdateTask(task)" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">edit</md-icon>
+                                        <md-button ng-click="openUpdateTask(task)" class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
+                                            <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">edit</md-icon>
                                         </md-button>
                                     </span>
                                     <md-divider ng-if="!$last"></md-divider>
