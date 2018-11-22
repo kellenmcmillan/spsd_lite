@@ -165,7 +165,7 @@
 
                 <div flex="50" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
                     <!-- Account Major Action Button -->
-                    <md-list-item flex="25" ng-show="editor_element.settings.configs.multiview == true">
+                    <!-- <md-list-item flex="25" ng-show="editor_element.settings.configs.multiview == true">
                         <md-input-container class="md-block lightweight-md-dropdown">
                             <label>{{editor_element.settings.configs.multiview_label}}</label>
                             <md-select ng-model="view">
@@ -177,7 +177,22 @@
                                 </md-option>
                             </md-select>
                         </md-input-container>
-                    </md-list-item>
+                    </md-list-item> -->
+                    <md-menu ng-show="editor_element.settings.configs.multiview == true">
+                        <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Add Content" style="color: {{base_hue_darkest.value}}; cursor: pointer;">
+                            <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">more_vert</md-icon>
+                        </md-button>
+                        <md-menu-content width="4">
+                            <md-menu-item ng-repeat="views in editor_element.data.items track by $index">
+                                <md-button ng-click="$parent.view = 'title'">
+                                        Title
+                                </md-button>
+                                <md-button ng-click="$parent.view = $index">
+                                        {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
                     <!-- Account Major Action Button -->
                     <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateApp(editor_element)" ng-confirm-condition="true" class="md-icon-button" aria-label="Close My Vault">
                         <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
