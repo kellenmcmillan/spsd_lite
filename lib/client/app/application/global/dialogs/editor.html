@@ -198,6 +198,8 @@
         <!-- ======================== View ======================== -->
         <md-card class="md-card-base card">
 
+            <br ng-if="editor_element.settings.configs.multiview == true">
+
             <div flex layout="row" layout-wrap layout-align="center center" ng-show="editor_element.settings.configs.multiview == true">
                 <md-list-item flex="75" flex-gt-sm="25">
                     <md-input-container class="md-block lightweight-md-dropdown">
