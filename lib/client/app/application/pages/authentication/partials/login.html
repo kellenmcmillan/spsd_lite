@@ -16,7 +16,7 @@
 		<div ng-include src="'application/partials/navigation-dropdown.html'"></div>
 
 		<div layout="row" layout-align="center center">
-			<div flex="80" flex-sm="60" flex-gt-sm="40" style="margin-top: 64px;">
+			<div flex="80" flex-sm="60" flex-gt-sm="40" style="margin-top: 64px;" ng-hide="isSignedIn == true">
 				<div style="width: 100%; text-align: center;">
 					<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
 				</div>
@@ -59,6 +59,14 @@
 						</div>
 					</md-content>
 				</form>
+			</div>
+			<div flex="80" flex-sm="60" flex-gt-sm="40" style="margin-top: 64px;" ng-hide="isSignedIn == false">
+				<div style="width: 100%; text-align: center;">
+					<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
+				</div>
+				<div class="center--text">
+					<h2 style="color: {{base_hue_darkest.value}}; font-weight: lighter; font-size: 48px;">Welcome {{me.firstname || me.email}}</h2>
+				</div>
 			</div>
 
 	</section>
