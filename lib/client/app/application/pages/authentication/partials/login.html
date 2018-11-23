@@ -16,7 +16,7 @@
 		<div ng-include src="'application/partials/navigation-dropdown.html'"></div>
 
 		<div layout="row" layout-align="center center">
-			<div flex="80" flex-sm="60" flex-gt-sm="40" style="margin-top: 64px;" ng-hide="isSignedIn == true">
+			<div flex="80" flex-sm="60" flex-gt-sm="40" style="margin-top: 64px;">
 				<div style="width: 100%; text-align: center;">
 					<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
 				</div>
@@ -48,7 +48,7 @@
 						<div layout-padding layout="row" layout-align="start center">
 							
 							
-							<md-button ng-click="signIn(); click_event({'action': 'Sign In'})" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px; z-index: 2;">
+							<md-button ng-click="signIn()" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px; z-index: 2;">
 	                            <md-icon style="color: {{base_hue_lightest.value}};">send</md-icon>&nbsp;&nbsp;Sign In
 	                        </md-button>
 
@@ -59,14 +59,6 @@
 						</div>
 					</md-content>
 				</form>
-			</div>
-			<div flex="80" flex-sm="60" flex-gt-sm="40" style="margin-top: 64px;" ng-hide="isSignedIn == false">
-				<div style="width: 100%; text-align: center;">
-					<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
-				</div>
-				<div class="center--text">
-					<h2 style="color: {{base_hue_darkest.value}}; font-weight: lighter; font-size: 48px;">Welcome {{me.firstname || me.email}}</h2>
-				</div>
 			</div>
 
 	</section>
