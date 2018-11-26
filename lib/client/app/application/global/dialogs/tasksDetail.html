@@ -16,8 +16,7 @@
 
 
 
-<md-content class="page suite-dialog" style="height: {{window_height}}px; overflow: auto;">
-
+    <md-content class="page suite-dialog" style="height: {{window_height}}px; overflow: auto;">
 
 
 
@@ -27,6 +26,7 @@
         <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 21; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
 
             <div layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex>
+            
                 <!-- =================== Mini App Title =================== -->
                 <div flex="50" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="start center" layout="row">
                     <h3 class="md-headline" style="font-size: 24px;" md-truncate style="max-width: 100px;">{{taskUpdateObj.title}}</h3>
@@ -89,9 +89,9 @@
 
                             <form name="updateTaskForm" ng-init="part_one = true; part_two = false; part_three = false" style="width: 100%" layout="row" layout-align="center start" flex>
 
-                            <!-- ============================= PART One Review TASK =============================== -->
-                            <!-- ============================= PART One Review TASK =============================== -->
-                            <!-- ============================= PART One Review TASK =============================== -->
+                                <!-- ============================= PART One Review Task =============================== -->
+                                <!-- ============================= PART One Review Task =============================== -->
+                                <!-- ============================= PART One Review Task =============================== -->
                                 <md-card ng-show="part_one == true" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100" flex-gt-sm="60">
                                     <md-card-header>
                                         <md-card-header-text>
@@ -248,10 +248,19 @@
                                 
 
                                 </md-card>
+
+                                <!-- ============================= PART One Review Task =============================== -->
+                                <!-- ============================= PART One Review Task =============================== -->
+                                <!-- ============================= PART One Review Task =============================== -->
                                 
-                            <!-- ============================= PART ONE CONTENT =============================== -->
-                            <!-- ============================= PART ONE CONTENT =============================== -->
-                            <!-- ============================= PART ONE CONTENT =============================== -->
+
+
+
+
+
+                                <!-- ============================= PART Two Task Content =============================== -->
+                                <!-- ============================= PART Two Task Content =============================== -->
+                                <!-- ============================= PART Two Task Content =============================== -->
 
                                 <md-card ng-show="part_two == true" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
                                     
@@ -350,10 +359,9 @@
                                 
                                 </md-card>
 
-                                <!-- ============================= PART ONE CONTENT =============================== -->
-                                <!-- ============================= PART ONE CONTENT =============================== -->
-                                <!-- ============================= PART ONE CONTENT =============================== -->
-
+                                <!-- ============================= PART Two Task Content =============================== -->
+                                <!-- ============================= PART Two Task Content =============================== -->
+                                <!-- ============================= PART Two Task Content =============================== -->
 
 
 
@@ -463,6 +471,7 @@
                                 <!-- ============================= PART TWO DELIVERY =============================== -->
                                 <!-- ============================= PART TWO DELIVERY =============================== -->
                                 <!-- ============================= PART TWO DELIVERY =============================== -->
+
 
 
 
@@ -709,13 +718,11 @@
 
                                 </md-card>
 
-                                    
-                                
-                                
+                                <!-- ============================= PART THREE AUTOMATION =============================== -->
+                                <!-- ============================= PART THREE AUTOMATION =============================== -->
+                                <!-- ============================= PART THREE AUTOMATION =============================== -->
 
-                                <!-- ============================= PART THREE AUTOMATION =============================== -->
-                                <!-- ============================= PART THREE AUTOMATION =============================== -->
-                                <!-- ============================= PART THREE AUTOMATION =============================== -->
+
 
 
 
@@ -881,6 +888,10 @@
                                 
 
                                 </md-card>
+
+                                <!-- ============================= PART FOUR RE-CONFIRM TASK =============================== -->
+                                <!-- ============================= PART FOUR RE-CONFIRM TASK =============================== -->
+                                <!-- ============================= PART FOUR RE-CONFIRM TASK =============================== -->
 
                             </form>
 
