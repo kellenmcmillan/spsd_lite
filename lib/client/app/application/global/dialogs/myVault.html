@@ -115,7 +115,7 @@
 
 
 
-                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 48px" flex="100" flex-gt-sm="40">
+                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100" flex-gt-sm="40">
                                 <md-card-header>
                                     <md-card-header-text>
                                         <span class="md-title">Personal Info</span>
@@ -186,9 +186,12 @@
                                         </span>
                                     </md-list-item>
                                 </md-card-content>
-                                <md-card-actions layout="row" layout-align="end center" flex>
+                                <!-- <md-card-actions layout="row" layout-align="end center" flex>
                                     <md-button class="md-raised" ng-click="overview = false; edit_info = true; file_view = false; edit_permissions = false" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Edit Your Personal Info</md-button>
-                                </md-card-actions>
+                                </md-card-actions> -->
+                                <md-button ng-click="overview = false; edit_info = true; file_view = false; edit_permissions = false" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                    <md-icon style="color: {{primary_hue_normal.value}};">edit</md-icon>
+                                </md-button>
                             </md-card>
 
 
@@ -200,7 +203,7 @@
 
 
 
-                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 48px" flex="100">
+                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
                                     <md-card-header>
                                         <md-card-header-text>
                                             <span class="md-title">App Permissions</span>
@@ -233,7 +236,7 @@
 
 
 
-                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 48px" flex="100">
+                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
                                     <md-card-header>
                                         <md-card-header-text>
                                             <span class="md-title">Files</span>
@@ -256,15 +259,18 @@
                                             </md-list>
                                         </div>
                                     </md-card-content>
-                                    <md-card-actions layout="row" layout-align="end center" flex>
+                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button class="md-raised" ng-click="overview = false; edit_info = false; file_view = true; edit_permissions = false" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">View Your Files</md-button>
-                                    </md-card-actions>
+                                    </md-card-actions> -->
+                                    <md-button ng-click="overview = false; edit_info = false; file_view = true; edit_permissions = false" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">folder</md-icon>
+                                    </md-button>
                                 </md-card>
 
 
 
 
-                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 48px" flex="100">
+                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
                                     <md-card-header>
                                         <md-card-header-text>
                                             <span class="md-title">Chatter</span>
@@ -287,16 +293,19 @@
                                             </md-list>
                                         </div>
                                     </md-card-content>
-                                    <md-card-actions layout="row" layout-align="end center" flex>
+                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">View Your Notifications</md-button>
-                                    </md-card-actions>
+                                    </md-card-actions> -->
+                                    <md-button ng-click="null" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">chat</md-icon>
+                                    </md-button>
                                 </md-card>
 
 
 
 
 
-                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 48px" flex="100">
+                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
                                     <md-card-header>
                                         <md-card-header-text>
                                             <span class="md-title">Receipts</span>
@@ -319,9 +328,12 @@
                                             </md-list>
                                         </div>
                                     </md-card-content>
-                                    <md-card-actions layout="row" layout-align="end center" flex>
+                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">View Your Receipts</md-button>
-                                    </md-card-actions>
+                                    </md-card-actions> -->
+                                    <md-button ng-click="null" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">receipt</md-icon>
+                                    </md-button>
                                 </md-card>
 
 
@@ -415,10 +427,16 @@
                                             </md-input-container>
                                         </md-list-item>
                                     </md-card-content>
-                                    <md-card-actions layout="row" layout-align="end center" flex>
+                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button  class="md-raised" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;">Cancel</md-button>
                                         <md-button class="md-raised" ng-click="updateMe(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
-                                    </md-card-actions>
+                                    </md-card-actions> -->
+                                    <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateMe(me)" ng-confirm-condition="true" class="md-fab md-mini" aria-label="Save Changes To My Details" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 64px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
+                                    </md-button>
+                                    <md-button aria-label="Close My Vault" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" class="md-fab md-mini" aria-label="Close My Details" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
+                                    </md-button>
                                 </form>
                             </md-card>
                         </div>
