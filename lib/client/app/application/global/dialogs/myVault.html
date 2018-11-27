@@ -354,7 +354,7 @@
                 <md-content flex ng-show="edit_info == true" style="padding: 0;">
                     <div layout="column" layout-align="center center" flex>
                         <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
-                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative;" flex flex-gt-sm="60">
+                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 24px;" flex flex-gt-sm="60">
                                 <form name="myvault">
                                     <md-card-header>
                                         <md-card-header-text>
@@ -362,7 +362,7 @@
                                             <span class="md-subhead">Adjust Basic User Settings</span>
                                         </md-card-header-text>
                                     </md-card-header>
-                                    <md-card-content>
+                                    <md-card-content style="margin-bottom: 24px;">
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input">
                                                 <label>Firstname</label>
@@ -431,7 +431,7 @@
                                         <md-button  class="md-raised" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;">Cancel</md-button>
                                         <md-button class="md-raised" ng-click="updateMe(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
                                     </md-card-actions> -->
-                                    <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateMe(me)" ng-confirm-condition="true" class="md-fab md-mini" aria-label="Save Changes To My Details" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 48px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                    <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateMe(me)" ng-confirm-condition="true" class="md-fab md-mini" aria-label="Save Changes To My Details" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 56px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
                                         <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
                                     </md-button>
                                     <md-button aria-label="Close My Vault" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" class="md-fab md-mini" aria-label="Close My Details" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
@@ -446,7 +446,7 @@
                 <md-content flex ng-show="edit_permissions == true" style="padding: 0;">
                     <div layout="column" layout-align="center center" flex>
                         <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
-                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
+                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 24px;" flex flex-gt-sm="60">
                                 <form name="myvault">
                                     <md-card-header>
                                         <md-card-header-text>
@@ -454,7 +454,7 @@
                                             <span class="md-subhead">How can we contact you when necessary?</span>
                                         </md-card-header-text>
                                     </md-card-header>
-                                    <md-card-content>
+                                    <md-card-content style="margin-bottom: 24px">
                                         <md-list class="md-dense" flex>
                                             <md-list-item>
                                                 <span><p>Enable Notifications</p></span>
@@ -471,10 +471,16 @@
                                             </md-list-item>
                                         </md-list>                                       
                                     </md-card-content>
-                                    <md-card-actions layout="row" layout-align="end center" flex>
+                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button  class="md-raised" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;">Cancel</md-button>
                                         <md-button class="md-raised" ng-click="updateUser(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
-                                    </md-card-actions>
+                                    </md-card-actions> -->
+                                    <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateMe(me)" ng-confirm-condition="true" class="md-fab md-mini" aria-label="Save Changes To My Details" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 56px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
+                                    </md-button>
+                                    <md-button aria-label="Close My Vault" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" class="md-fab md-mini" aria-label="Close My Details" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
+                                    </md-button>
                                 </form>
                             </md-card>
                         </div>
@@ -484,14 +490,14 @@
                 <md-content flex ng-show="file_view == true" style="padding: 0;">
                     <div layout="column" layout-align="center center" flex>
                         <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
-                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex flex-gt-sm="60">
+                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 24px;" flex flex-gt-sm="60">
                                 <md-card-header>
                                     <md-card-header-text>
                                         <span class="md-title">Files</span>
                                         <span class="md-subhead">Manage Your Files</span>
                                     </md-card-header-text>
                                 </md-card-header>
-                                <md-card-content>
+                                <md-card-content style="margin-bottom: 24px;">
                                     <md-content style="padding: 0;">
                                         <div layout="row" layout-align="center start" layout-wrap style="margin: 0" flex>
                                             <md-list class="md-dense" flex="100">
@@ -525,56 +531,57 @@
                                         </div>
                                     </md-content>
                                 </md-card-content>
-                                <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button class="md-raised" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;">Close</md-button>&nbsp;
-                                    <!-- =================== Upload Various Resources =================== -->
-                                    <md-menu>
-                                        <md-button class="md-raised" aria-label="upload media" md-menu-origin ng-click="openMenu($mdMenu, $event)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Upload Files</md-button>
-                                        <md-menu-content width="4">
-                                            <md-menu-item>
-                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.doc,.docx'" ngf-accept="'.doc,.docx'" ngf-max-size="20MB">
-                                                    Word Document
-                                                </md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.xls,.xlsx'" ngf-accept="'.xls,.xlsx'" ngf-max-size="20MB">
-                                                    Excel Document
-                                                </md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.ppt,.pptx'" ngf-accept="'.ppt,.pptx'" ngf-max-size="20MB">
-                                                    Powerpoint Document
-                                                </md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.pdf'" ngf-accept="'.pdf'" ngf-max-size="20MB">
-                                                    PDF Document
-                                                </md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">
-                                                    Image
-                                                </md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.mp4'" ngf-accept="'video/mp4'" ngf-max-size="20MB">
-                                                    MP4 Video
-                                                </md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.zip'" ngf-accept="'application/zip,application/x-zip-compressed'" ngf-max-size="50MB">
-                                                    Zipped File
-                                                </md-button>
-                                            </md-menu-item>
-                                            <md-menu-item>
-                                                <md-button ng-click="openIframeUpload()">
-                                                    Iframe
-                                                </md-button>
-                                            </md-menu-item>
-                                        </md-menu-content>
-                                    </md-menu>
-                                    <!-- =================== Upload Various Resources =================== -->
-                                </md-card-actions>
+                                
+                                <md-menu>
+                                    <md-button ng-click="openMenu($mdMenu, $event)" aria-label="Save Changes To My Details" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 56px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">cloud_upload</md-icon>
+                                    </md-button>
+                                    <md-menu-content width="4">
+                                        <md-menu-item>
+                                            <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.doc,.docx'" ngf-accept="'.doc,.docx'" ngf-max-size="20MB">
+                                                Word Document
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.xls,.xlsx'" ngf-accept="'.xls,.xlsx'" ngf-max-size="20MB">
+                                                Excel Document
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.ppt,.pptx'" ngf-accept="'.ppt,.pptx'" ngf-max-size="20MB">
+                                                Powerpoint Document
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.pdf'" ngf-accept="'.pdf'" ngf-max-size="20MB">
+                                                PDF Document
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB">
+                                                Image
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.mp4'" ngf-accept="'video/mp4'" ngf-max-size="20MB">
+                                                MP4 Video
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ngf-select="uploadMyFiles($files, $invalidFiles)" ng-model="files" ngf-pattern="'.zip'" ngf-accept="'application/zip,application/x-zip-compressed'" ngf-max-size="50MB">
+                                                Zipped File
+                                            </md-button>
+                                        </md-menu-item>
+                                        <md-menu-item>
+                                            <md-button ng-click="openIframeUpload()">
+                                                Iframe
+                                            </md-button>
+                                        </md-menu-item>
+                                    </md-menu-content>
+                                </md-menu>
+                                <md-button aria-label="Close My Vault" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" class="md-fab md-mini" aria-label="Close My Details" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                    <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
+                                </md-button>
                             </md-card>
                         </div>
                     </div>
