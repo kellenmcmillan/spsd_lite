@@ -367,7 +367,7 @@
                                                             {{trigger_type}}
                                                         </md-option>
                                                     </md-select>
-                                                    <div ng-messages="createTaskForm.activity_trigger_type.$invalid" ng-show="createTaskForm.activity_trigger.$dirty">
+                                                    <div ng-messages="createTaskForm.activity_trigger_type.$invalid" ng-show="createTaskForm.activity_trigger_type.$dirty">
                                                         <div ng-message="required">App interaction trigger type required!</div>
                                                     </div>
                                                 </md-input-container>
@@ -377,7 +377,7 @@
                                             <md-list-item ng-show="taskAddObj.type == 'user generated'">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>App Interaction Trigger</label>
-                                                    <md-select name="activity_trigger" ng-model="taskAddObj.activity_trigger" ng-required="taskAddObj.type == 'user generated'">
+                                                    <md-select name="activity_trigger" ng-model="taskAddObj.user_action_trigger" ng-required="taskAddObj.type == 'user generated'">
                                                         <md-option><em>None</em></md-option>
                                                         <md-option ng-show="taskAddObj.activity_trigger_types == 'action'" ng-repeat="trigger in app_triggers track by $index" ng-value="trigger">
                                                             {{trigger}}
