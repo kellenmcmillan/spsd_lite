@@ -325,7 +325,7 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>What type of task is this?</label>
-                                                <md-select name="type" ng-model="taskAddObj.type" ng-required="true">
+                                                <md-select name="type" ng-model="taskAddObj.type" ng-change="alter_task_form_state(taskAddObj, taskAddObj.type)" ng-required="true">
 
                                                     <md-option><em>None</em></md-option>
 
@@ -657,9 +657,16 @@
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.type == 'user generated'"></md-divider>
                                         <md-list-item ng-if="taskAddObj.type == 'user generated'">
-                                            <span md-truncate style="max-width: 100px;">App Interaction Trigger</span>
+                                            <span md-truncate style="max-width: 100px;">Interaction Type</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskAddObj.activity_trigger}}
+                                                {{taskAddObj.activity_trigger_types}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskAddObj.type == 'user generated'"></md-divider>
+                                        <md-list-item ng-if="taskAddObj.type == 'user generated'">
+                                            <span md-truncate style="max-width: 100px;">Interaction Trigger</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
+                                                {{taskAddObj.user_action_trigger}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskAddObj.type == 'reporting'"></md-divider>

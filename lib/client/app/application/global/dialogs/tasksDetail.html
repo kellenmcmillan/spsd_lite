@@ -185,9 +185,16 @@
                                         </md-list-item>
                                         <md-divider ng-if="taskUpdateObj.type == 'user generated'"></md-divider>
                                         <md-list-item ng-if="taskUpdateObj.type == 'user generated'">
-                                            <span md-truncate style="max-width: 100px;">App Interaction Trigger</span>
+                                            <span md-truncate style="max-width: 100px;">Interaction Type</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.activity_trigger}}
+                                                {{taskUpdateObj.activity_trigger_types}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskUpdateObj.type == 'user generated'"></md-divider>
+                                        <md-list-item ng-if="taskUpdateObj.type == 'user generated'">
+                                            <span md-truncate style="max-width: 100px;">Interaction Trigger</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
+                                                {{taskUpdateObj.user_action_trigger}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskUpdateObj.type == 'reporting'"></md-divider>
@@ -495,7 +502,7 @@
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
                                                 <label>What type of task is this?</label>
-                                                <md-select name="typeOfTrigger" ng-model="taskUpdateObj.type" ng-required="true">
+                                                <md-select name="typeOfTrigger" ng-model="taskUpdateObj.type" ng-change="alter_task_form_state(taskUpdateObj, taskAddObj.type)" ng-required="true">
 
                                                     <md-option><em>None</em></md-option>
 
@@ -824,9 +831,16 @@
                                         </md-list-item>
                                         <md-divider ng-if="taskUpdateObj.type == 'user generated'"></md-divider>
                                         <md-list-item ng-if="taskUpdateObj.type == 'user generated'">
-                                            <span md-truncate style="max-width: 100px;">App Interaction Trigger</span>
+                                            <span md-truncate style="max-width: 100px;">Interaction Type</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
-                                                {{taskUpdateObj.activity_trigger}}
+                                                {{taskUpdateObj.activity_trigger_types}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider ng-if="taskUpdateObj.type == 'user generated'"></md-divider>
+                                        <md-list-item ng-if="taskUpdateObj.type == 'user generated'">
+                                            <span md-truncate style="max-width: 100px;">Interaction Trigger</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
+                                                {{taskUpdateObj.user_action_trigger}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-if="taskUpdateObj.type == 'reporting'"></md-divider>
