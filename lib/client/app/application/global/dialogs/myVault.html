@@ -113,95 +113,86 @@
                         <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
 
 
-
-
-                            <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100" flex-gt-sm="40">
-                                <md-card-header>
-                                    <md-card-header-text>
-                                        <span class="md-title">Personal Info</span>
-                                        <span class="md-subhead">Your Basic Bio</span>
-                                    </md-card-header-text>
-                                </md-card-header>
-                                <md-card-content style="margin-bottom: 24px;">
-                                    <md-list-item>
-                                        <span>Role</span>
-                                        <span class="md-secondary">
-                                        {{me.security.roles}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Firstname</span>
-                                        <span class="md-secondary">
-                                        {{me.firstname}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Lastname</span>
-                                        <span class="md-secondary">
-                                        {{me.lastname}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Email</span>
-                                        <span class="md-secondary">
-                                        {{me.email}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Phone</span>
-                                        <span class="md-secondary">
-                                        {{me.phone}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Street Address</span>
-                                        <span class="md-secondary">
-                                        {{me.address.street}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>City</span>
-                                        <span class="md-secondary">
-                                        {{me.address.city}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>State</span>
-                                        <span class="md-secondary">
-                                        {{me.address.state}}
-                                        </span>
-                                    </md-list-item>
-                                    <md-divider></md-divider>
-                                    <md-list-item>
-                                        <span>Zipcode</span>
-                                        <span class="md-secondary">
-                                        {{me.address.zipcode}}
-                                        </span>
-                                    </md-list-item>
-                                </md-card-content>
-                                <!-- <md-card-actions layout="row" layout-align="end center" flex>
-                                    <md-button class="md-raised" ng-click="overview = false; edit_info = true; file_view = false; edit_permissions = false" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Edit Your Personal Info</md-button>
-                                </md-card-actions> -->
-                                <md-button ng-click="overview = false; edit_info = true; file_view = false; edit_permissions = false" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
-                                    <md-icon style="color: {{primary_hue_normal.value}};">edit</md-icon>
-                                </md-button>
-                            </md-card>
-
-
-
-
                             <div flex="100" flex-gt-sm="40" layout-align="row" layout-wrap>
-
-
-
-
+                                
+                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
+                                    <md-card-header>
+                                        <md-card-header-text>
+                                            <span class="md-title">Personal Info</span>
+                                            <span class="md-subhead">Your Basic Bio</span>
+                                        </md-card-header-text>
+                                    </md-card-header>
+                                    <md-card-content style="margin-bottom: 24px;">
+                                        <md-list-item>
+                                            <span>Role</span>
+                                            <span class="md-secondary">
+                                            {{me.security.roles}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Firstname</span>
+                                            <span class="md-secondary">
+                                            {{me.firstname}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Lastname</span>
+                                            <span class="md-secondary">
+                                            {{me.lastname}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Email</span>
+                                            <span class="md-secondary">
+                                            {{me.email}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Phone</span>
+                                            <span class="md-secondary">
+                                            {{me.phone}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Street Address</span>
+                                            <span class="md-secondary">
+                                            {{me.address.street}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>City</span>
+                                            <span class="md-secondary">
+                                            {{me.address.city}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>State</span>
+                                            <span class="md-secondary">
+                                            {{me.address.state}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
+                                        <md-list-item>
+                                            <span>Zipcode</span>
+                                            <span class="md-secondary">
+                                            {{me.address.zipcode}}
+                                            </span>
+                                        </md-list-item>
+                                    </md-card-content>
+                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
+                                        <md-button class="md-raised" ng-click="overview = false; edit_info = true; file_view = false; edit_permissions = false" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Edit Your Personal Info</md-button>
+                                    </md-card-actions> -->
+                                    <md-button ng-click="overview = false; edit_info = true; file_view = false; edit_permissions = false" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">edit</md-icon>
+                                    </md-button>
+                                </md-card>
 
                                 <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
                                     <md-card-header>
@@ -225,51 +216,16 @@
                                             </span>
                                         </md-list-item>                                    
                                     </md-card-content>
-                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button class="md-raised" ng-click="overview = false; edit_info = false; file_view = false; edit_permissions = true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Edit App Permissions</md-button>
-                                    </md-card-actions> -->
                                     <md-button ng-click="overview = false; edit_info = false; file_view = false; edit_permissions = true" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
                                         <md-icon style="color: {{primary_hue_normal.value}};">edit</md-icon>
                                     </md-button>
                                 </md-card>
 
+                            </div>
 
+                            <div flex="100" flex-gt-sm="40" layout-align="row" layout-wrap>
 
-
-                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
-                                    <md-card-header>
-                                        <md-card-header-text>
-                                            <span class="md-title">Files</span>
-                                            <span class="md-subhead">Manage Your Files</span>
-                                        </md-card-header-text>
-                                    </md-card-header>
-                                    <md-card-content style="margin-bottom: 24px;">
-                                        <div layout="column" layout-align="center start" style="margin: 0" flex>
-                                            <md-list class="md-dense" flex>
-                                                <md-list-item ng-repeat="file in me.files | limitTo:3" flex>
-                                                    <p md-truncate>{{file.name || file.title}}</p>
-                                                    <md-divider ng-if="!$last"></md-divider>
-                                                </md-list-item>
-                                                <md-list-item class="md-dense" ng-if="!me.files" flex layout="row" layout-align="start center">
-                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
-                                                    <div>
-                                                        <p>No Files</p>
-                                                    </div>
-                                                </md-list-item>
-                                            </md-list>
-                                        </div>
-                                    </md-card-content>
-                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button class="md-raised" ng-click="overview = false; edit_info = false; file_view = true; edit_permissions = false" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">View Your Files</md-button>
-                                    </md-card-actions> -->
-                                    <md-button ng-click="overview = false; edit_info = false; file_view = true; edit_permissions = false" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
-                                        <md-icon style="color: {{primary_hue_normal.value}};">folder</md-icon>
-                                    </md-button>
-                                </md-card>
-
-
-
-
+                                <!-- Chatter -->
                                 <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
                                     <md-card-header>
                                         <md-card-header-text>
@@ -293,18 +249,42 @@
                                             </md-list>
                                         </div>
                                     </md-card-content>
-                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">View Your Notifications</md-button>
-                                    </md-card-actions> -->
                                     <md-button ng-click="null" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
                                         <md-icon style="color: {{primary_hue_normal.value}};">chat</md-icon>
                                     </md-button>
                                 </md-card>
 
 
+                                <!-- Files -->
+                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
+                                    <md-card-header>
+                                        <md-card-header-text>
+                                            <span class="md-title">Files</span>
+                                            <span class="md-subhead">Manage Your Files</span>
+                                        </md-card-header-text>
+                                    </md-card-header>
+                                    <md-card-content style="margin-bottom: 24px;">
+                                        <div layout="column" layout-align="center start" style="margin: 0" flex>
+                                            <md-list class="md-dense" flex>
+                                                <md-list-item ng-repeat="file in me.files | limitTo:3" flex>
+                                                    <p md-truncate>{{file.name || file.title}}</p>
+                                                    <md-divider ng-if="!$last"></md-divider>
+                                                </md-list-item>
+                                                <md-list-item class="md-dense" ng-if="!me.files" flex layout="row" layout-align="start center">
+                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
+                                                    <div>
+                                                        <p>No Files</p>
+                                                    </div>
+                                                </md-list-item>
+                                            </md-list>
+                                        </div>
+                                    </md-card-content>
+                                    <md-button ng-click="overview = false; edit_info = false; file_view = true; edit_permissions = false" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">folder</md-icon>
+                                    </md-button>
+                                </md-card>
 
-
-
+                                <!-- Receipts -->
                                 <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
                                     <md-card-header>
                                         <md-card-header-text>
@@ -328,22 +308,11 @@
                                             </md-list>
                                         </div>
                                     </md-card-content>
-                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button class="md-raised" ng-click="null" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">View Your Receipts</md-button>
-                                    </md-card-actions> -->
                                     <md-button ng-click="null" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
                                         <md-icon style="color: {{primary_hue_normal.value}};">receipt</md-icon>
                                     </md-button>
                                 </md-card>
-
-
-
-
                             </div>
-
-
-
-
                         </div>
                     </div>
                 </md-content>
