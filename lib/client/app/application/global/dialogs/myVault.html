@@ -237,7 +237,7 @@
                                         <div layout="column" layout-align="center start" style="margin: 0" flex>
                                             <md-list class="md-dense" flex>
                                                 <md-list-item ng-repeat="notification in me.chatter | limitTo:-3" flex>
-                                                    <p ng-class="{'bold': notification.unread == true}" md-truncate>{{notification.title}}</p>
+                                                    <p ng-class="{'bold': notification.unread == true}">{{notification.title}}</p>
                                                     <md-divider ng-if="!$last"></md-divider>
                                                 </md-list-item>
                                                 <md-list-item ng-show="!me.chatter" flex layout="row" layout-align="start center">
