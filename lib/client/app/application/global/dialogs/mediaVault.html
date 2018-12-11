@@ -228,6 +228,16 @@
                                             <md-icon style="color: {{primary_hue_normal.value}};">save_alt</md-icon>
                                         </md-button>
                                     </a>
+                                    <a ng-if="image.source" href="{{image.source}}" target="_blank">
+                                        <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" class="md-icon-button" aria-label="Clear Media Search">
+                                            <md-icon style="color: {{primary_hue_normal.value}};">open_in_browser</md-icon>
+                                        </md-button>
+                                    </a>
+                                    <a ng-if="image.avatar" href="{{image.avatar}}" target="_blank">
+                                        <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" class="md-icon-button" aria-label="Clear Media Search">
+                                            <md-icon style="color: {{primary_hue_normal.value}};">open_in_browser</md-icon>
+                                        </md-button>
+                                    </a>
                                     <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" ng-click="deleteMedia(image, $index)" class="md-icon-button" aria-label="Clear Media Search">
                                         <md-icon style="color: {{primary_hue_normal.value}};">delete</md-icon>
                                     </md-button>
