@@ -7,13 +7,8 @@
 }
 #loading {
     will-change: transform;
-    transition: all 3s linear;
-    /*-webkit-animation: grow 3s ease-in-out;*/
+    -webkit-animation: grow 3s ease-in-out;
     transition-delay: 1s;
-    transform: scale(1.4);
-    -webkit-transform: scale(1.4);
-    /*transform: scale(1);
-    -webkit-transform: scale(1);*/
 }
 
 @-webkit-keyframes grow {
@@ -22,7 +17,8 @@
         -webkit-transform: scale(1);
     }
     to {
-        
+        transform: scale(1.4);
+        -webkit-transform: scale(1.4);
     }
 }
 </style>
