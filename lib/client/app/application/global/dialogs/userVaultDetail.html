@@ -28,7 +28,7 @@
             <div layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex>
                 <!-- =================== Mini App Title =================== -->
                 <div flex="50" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="start center" layout="row">
-                    <h3 class="md-headline" style="font-size: 24px;">{{selectedUser.firstname || selectedUser.email}} {{selectedUser.lastname}}</h3>
+                    <h3 md-truncate class="md-headline" style="font-size: 24px;">{{selectedUser.firstname || selectedUser.email}} {{selectedUser.lastname}}</h3>
                 </div>
                 <!-- =================== Mini App Title =================== -->
 
@@ -166,7 +166,6 @@
                                     <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button ng-confirm-message="Are you sure you want to update this user?" ng-confirm-click="click_event({'action': 'modify-account'}); updateUser(selectedUser); clearForm(userVaultDetail);" ng-confirm-condition="true" class="md-raised" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
                                         <md-button ng-confirm-message="Are you sure you want to delete this user?" ng-confirm-click="deleteUser();" ng-confirm-condition="true" class="md-raised" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;">Delete</md-button>
-                                        <md-button ng-click="test_endpoint()" class="md-raised" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;">Test</md-button>
                                     </md-card-actions>
                                 </form>
                             </md-card>
