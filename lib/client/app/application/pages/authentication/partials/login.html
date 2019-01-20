@@ -15,52 +15,55 @@
 		<div ng-include src="'application/partials/navigation-dropdown-parent-mobile.html'"></div>
 		<div ng-include src="'application/partials/navigation-dropdown.html'"></div>
 
-		<div layout="row" layout-align="center center">
-			<div flex="80" flex-sm="60" flex-gt-sm="40" style="margin-top: 64px;">
-				<div style="width: 100%; text-align: center;">
-					<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
+		<div layout="row" layout-align="center center" layout-wrap>
+
+			<!-- Page Title -->
+			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{primary_hue_normal.value}};">
+				<div style="width: 100%; height: 100%; position: absolute;">
+				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" src="https://storage.googleapis.com/spsd-189118.appspot.com/media/images/routhStreetFlats1-hi-res.jpg">
 				</div>
-				<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
-				<form name="login" autocomplete="none" ng-show="!progressAnimation">
-					<md-content>
-						<md-list-item>
-							<md-input-container class="md-block lightweight-md-input" flex>
-								<label>Email</label>
-								<input type="email" name="email" ng-required="true" ng-model="email">
-								<div ng-messages="login.email.$error">
-							    	<div ng-message="required">Email required...</div>
-							    	<div ng-message="email">Enter a valid email...</div>
-							    </div>
-							</md-input-container>
-						</md-list-item>
-						<md-list-item>
-							<md-input-container class="md-block lightweight-md-input" flex>
-								<label>Password</label>
-								<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
-								<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
-							    	<div ng-message="required">Password required!</div>
-							    	<div ng-message="minlength">Password too short!</div>
-							    </div>
-							</md-input-container>
-						</md-list-item>
-						<!-- <div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="login_recaptcha"></div> -->
-                        <br>
-						<div layout-padding layout="row" layout-align="start center">
-							
-							
-							<md-button ng-click="signIn()" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px; z-index: 2;">
-	                            <md-icon style="color: {{base_hue_lightest.value}};">send</md-icon>&nbsp;&nbsp;Sign In
-	                        </md-button>
-
-	                        <!-- <md-button ng-click="signUp()" class="custom-deep-button lightweight-round" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; width: 150px; height: 48px">
-	                            <md-icon style="color:{{primary_hue_normal.value}};">send</md-icon>&nbsp;&nbsp;Sign Up
-	                        </md-button> -->
-							
-						</div>
-					</md-content>
-				</form>
 			</div>
+			<!-- =Page Title -->
 
+			<div flex="80" flex-sm="60" flex-gt-sm="40">
+
+				<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" flex-sm="100" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
+					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; position: relative;">
+						<div style="width: 100%; text-align: center;">
+							<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
+						</div>
+					</div>
+			    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lighter.value}}; min-height: 400px;" layout-margin layout-padding>
+			    		<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+			    		<form name="login" autocomplete="none" ng-show="!progressAnimation">
+							<md-content>
+					    		<md-list-item>
+									<md-input-container class="md-block lightweight-md-input" flex>
+										<label>Email</label>
+										<input type="email" name="email" ng-required="true" ng-model="email">
+										<div ng-messages="login.email.$error">
+									    	<div ng-message="required">Email required...</div>
+									    	<div ng-message="email">Enter a valid email...</div>
+									    </div>
+									</md-input-container>
+								</md-list-item>
+								<md-list-item>
+									<md-input-container class="md-block lightweight-md-input" flex>
+										<label>Password</label>
+										<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
+										<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
+									    	<div ng-message="required">Password required!</div>
+									    	<div ng-message="minlength">Password too short!</div>
+									    </div>
+									</md-input-container>
+								</md-list-item>
+							</md-content>
+						</form>
+			    	</div>
+
+				</md-card>
+			</div>
+		</div>
 	</section>
 
 	<!-- Footer -->
