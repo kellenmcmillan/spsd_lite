@@ -64,9 +64,30 @@
 								</md-list-item>
 							</md-content>
 							<div style="width: 100%;" layout="row" layout-align="center center" layout-wrap>
-								<md-button class="md-whiteframe-6dp" flex="45" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
-									Options
-								</md-button>
+								<!-- Account Major Action Button -->
+								<md-menu>
+								    
+								    <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-whiteframe-6dp" aria-label="open options" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+								        Options
+								    </md-button>
+
+								    <md-menu-content width="4">
+								        <md-menu-item>
+								            <md-button ng-click="">
+								                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">rotate_left</md-icon>
+								                Forgot Password
+								            </md-button>
+								        </md-menu-item>
+								        <md-menu-item>
+								            <md-button>
+								                <md-icon ng-click="" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
+								                Sign Up
+								            </md-button>
+								        </md-menu-item>
+								    </md-menu-content>
+
+								</md-menu>
+								<!-- Account Major Action Button -->
 								<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
 									Sign In
 								</md-button>
