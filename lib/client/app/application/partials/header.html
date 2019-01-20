@@ -28,31 +28,48 @@
 
 		<md-card class="md-whiteframe-6dp" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 36px; top: 84px; width: 300px;" flex="100" layout="row" layout-wrap>
 
-			<div ng-attr-style="min-height: 200px; background-color: {{base_hue_lightest.value}};" flex="100" layout="row" layout-align="center center" layout-wrap>
+			<div ng-show="me" ng-attr-style="min-height: 200px; background-color: {{base_hue_lightest.value}};" flex="100" layout="row" layout-align="center center" layout-wrap>
 				<span flex="100" style="text-align: center;">
 					<md-icon ng-attr-style="color: {{primary_hue_normal.value}}; font-size: 64px; height: 64px; width: 64px;">face</md-icon>
 				</span>
 				<md-list flex="100">
 	                <md-list-item flex="100" layout-padding style="text-align: center;">
-		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Firstname Lastname</p>
+		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">{{me.firstname}} {{me.lastname}}</p>
+		        	</md-list-item>
+		        </md-list>
+			</div>
+
+			<div ng-show="!me" ng-attr-style="min-height: 200px; background-color: {{base_hue_lightest.value}};" flex="100" layout="row" layout-align="center center" layout-wrap>
+				<span flex="100" style="text-align: center;">
+					<md-icon ng-attr-style="color: {{primary_hue_normal.value}}; font-size: 64px; height: 64px; width: 64px;">face</md-icon>
+				</span>
+				<md-list flex="100">
+	                <md-list-item flex="100" layout-padding style="text-align: center;">
+		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Not logged In</p>
 		        	</md-list-item>
 		        </md-list>
 			</div>
 
 			<div layout="row" layout-align="center center" layout-wrap flex="100" ng-attr-style="background-color: {{base_hue_lighter.value}}; min-height: 250px;">
-				<md-list flex="100">
+				<md-list flex="100" ng-show="me">
 		        	<md-list-item flex="100" layout-padding style="text-align: center;">
-		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Acct#</p>
+		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Acct# {{me.id}}</p>
 		        	</md-list-item>
 	                <md-list-item flex="100" layout-padding style="text-align: center;">
-		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Role</p>
+		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">{{me.security.roles}}</p>
 		        	</md-list-item>
 		        </md-list>
-		        <md-button class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
+		        <md-button ng-show="!me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
 					Sign In
 				</md-button>
-				<md-button class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
+				<md-button ng-show="!me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
 					Sign Up
+				</md-button>
+				<md-button ng-show="me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
+					My Vault
+				</md-button>
+				<md-button ng-show="me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
+					Sign Out
 				</md-button>
 			</div>
 
