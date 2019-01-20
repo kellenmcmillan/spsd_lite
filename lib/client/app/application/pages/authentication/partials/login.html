@@ -7,7 +7,7 @@
 	<section ng-cloak>
 
 		<!-- header -->
-		<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 21!important; box-shadow: none; border-bottom: 1px solid #e0e0e0; height: 60px;">
+		<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 21!important; height: 60px;">
 			<div ng-include src="'application/partials/header.html'"></div>
 		</md-subheader>
 		<!-- header -->
@@ -18,11 +18,11 @@
 		<div layout="row" layout-align="center center" layout-wrap ng-attr-style="background-color: {{base_hue_lighter.value}}">
 
 			<!-- Page Title -->
-			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{primary_hue_normal.value}};">
+			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_lightest.value}};">
 			</div>
 			<!-- =Page Title -->
 
-			<div flex="80" flex-sm="60" flex-gt-sm="40">
+			<div flex="80" flex-sm="40" flex-gt-sm="30">
 
 				<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
 					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; border-bottom: rgba(0,0,0,0.15) solid 1px;" layout="row" layout-align="center center" layout-wrap>
@@ -30,7 +30,7 @@
 							<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
 						</div>
 					</div>
-			    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout="row" layout-align="center center" layout-wrap>
+			    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 350px;" layout="row" layout-align="center center" layout-wrap>
 			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 			    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
 							<md-content>
