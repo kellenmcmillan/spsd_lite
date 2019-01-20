@@ -37,7 +37,7 @@
 			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 			    		<md-list flex="100" ng-show="!progressAnimation">
 				        	<md-list-item flex="100" layout-padding style="text-align: center;">
-				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Welcome to {{settings.data.company_name}}!</p>
+				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold;">Sign in to {{settings.data.company_name}}!</p>
 				        	</md-list-item>
 				        </md-list>
 			    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
@@ -65,10 +65,10 @@
 							</md-content>
 							<div style="width: 100%;" layout="row" layout-align="center center" layout-wrap>
 								<!-- Account Major Action Button -->
-								<md-menu flex="45">
+								<md-menu flex="45" layout>
 								    
 								    <md-button flex="100" md-menu-origin ng-click="openMenu($mdMenu, $event)" aria-label="open options" ng-attr-style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; height: 48px;">
-								        Options
+								        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">settings</md-icon>
 								    </md-button>
 
 								    <md-menu-content width="4">
@@ -80,7 +80,7 @@
 								        </md-menu-item>
 								        <md-menu-item>
 								            <md-button>
-								                <md-icon ng-click="" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
+								                <md-icon ng-click="" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">edit</md-icon>
 								                Sign Up
 								            </md-button>
 								        </md-menu-item>
