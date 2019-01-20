@@ -87,6 +87,10 @@
 .interior-page {
 	min-height: 600px;
 }
+
+.page {
+	position: relative;
+}
 /* ===== Lighweight Image Cards ===== */
 
 @media (max-width: 959px) {

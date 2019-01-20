@@ -39,3 +39,23 @@ md-list md-list-item .md-avatar-icon {
 .lightweight-md-input {
 	width: 100%!important;
 }
+
+.lightweight-in-app-dialog-curtain {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	margin: 0!important;
+	z-index: 20;
+}
+
+.lightweight-in-app-dialog-container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	margin: 0!important;
+	z-index: 1;
+}
