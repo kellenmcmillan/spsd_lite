@@ -22,15 +22,15 @@
 			</div>
 			<!-- =Page Title -->
 
-			<div flex="80" flex-sm="60" flex-gt-sm="60">
+			<div flex="80" flex-sm="60" flex-gt-sm="40">
 
 				<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
-					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden;" layout="row" layout-align="center center" layout-wrap>
+					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; border-bottom: rgba(0,0,0,0.15) solid 1px;" layout="row" layout-align="center center" layout-wrap>
 						<div flex="100" style="text-align: center;">
 							<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
 						</div>
 					</div>
-			    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lighter.value}}; min-height: 400px;" layout="row" layout-align="center center" layout-wrap>
+			    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout="row" layout-align="center center" layout-wrap>
 			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 			    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
 							<md-content>
@@ -55,9 +55,12 @@
 									</md-input-container>
 								</md-list-item>
 							</md-content>
-							<md-button ng-click="signIn()" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px; z-index: 2;">
-	                            <md-icon style="color: {{base_hue_lightest.value}};">send</md-icon>&nbsp;&nbsp;Sign In
-	                        </md-button>
+							<md-button class="md-whiteframe-6dp" flex="50" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;" layout-margin>
+								Options
+							</md-button>
+							<md-button class="md-whiteframe-6dp" flex="50" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;" layout-margin>
+								Sign In
+							</md-button>
 						</form>
 			    	</div>
 
