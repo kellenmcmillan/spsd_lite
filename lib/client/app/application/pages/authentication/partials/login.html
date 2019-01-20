@@ -18,7 +18,7 @@
 		<div layout="row" layout-align="center center" layout-wrap ng-attr-style="background-color: {{base_hue_lighter.value}}">
 
 			<!-- Page Title -->
-			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{primary_hue_normal.value}};">
+			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_lightest.value}};">
 			</div>
 			<!-- =Page Title -->
 
@@ -30,7 +30,7 @@
 							<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
 						</div>
 					</div>
-			    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lighter.value}}; min-height: 350px;" layout="row" layout-align="center center" layout-wrap>
+			    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 350px;" layout="row" layout-align="center center" layout-wrap>
 			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 			    		<md-list flex="100" ng-show="!progressAnimation">
 				        	<md-list-item flex="100" layout-padding style="text-align: center;">
@@ -38,7 +38,7 @@
 				        	</md-list-item>
 				        </md-list>
 			    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
-							<md-content ng-attr-style="background-color: {{base_hue_lighter.value}};">
+							<md-content ng-attr-style="background-color: {{base_hue_lightest.value}};">
 					    		<md-list-item>
 									<md-input-container class="md-block lightweight-md-input" flex>
 										<label>Email</label>
