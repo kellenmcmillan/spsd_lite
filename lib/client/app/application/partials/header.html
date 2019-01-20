@@ -28,27 +28,25 @@
 
 		<md-card class="md-whiteframe-6dp" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; margin-top: 24px; margin-bottom: 24px; right: 36px; top: 36px; width: 300px;" flex="100" layout="row" layout-wrap>
 
-			<div style="height: 200px; background-color: {{base_hue_lightest.value}};" layout="row" layout-align="center center">
+			<div ng-attr-style="min-height: 200px; background-color: {{base_hue_lightest.value}};" flex="100" layout="row" layout-align="center center" layout-wrap>
 				<span flex="100" style="text-align: center;">
-					<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">face</md-icon>
+					<md-icon ng-attr-style="color: {{primary_hue_normal.value}}; font-size: 64px; height: 64px; width: 64px;">face</md-icon>
 				</span>
-			</div>
-
-			<div>
 				<md-list flex="100">
 		        	<md-list-item flex="100" layout-padding>
-		        		<p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">Acct#</p>
+		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Acct#</p>
 		        	</md-list-item>
-	                <md-divider ng-if="!$last"></md-divider>
 	                <md-list-item flex="100" layout-padding>
-		        		<p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">Name</p>
+		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Name</p>
 		        	</md-list-item>
 		        </md-list>
-		        <md-button ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_darkest.value}};">
+			</div>
+
+			<div layout="row" layout-align="center start" layout-wrap ng-attr-style="background-color: {{base_hue_lighter.value}};">
+		        <md-button flex="100" ng-click="" ng-attr-style="background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}};">
 					Sign In
 				</md-button>
-				<span>or</span>
-				<md-button ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{primary_hue_normal.value}};">
+				<md-button flex="100" ng-click="" ng-attr-style="background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}};">
 					Sign Up
 				</md-button>
 			</div>
