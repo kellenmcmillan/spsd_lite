@@ -19,23 +19,20 @@
 
 			<!-- Page Title -->
 			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{primary_hue_normal.value}};">
-				<div style="width: 100%; height: 100%; position: absolute;">
-				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" src="https://storage.googleapis.com/spsd-189118.appspot.com/media/images/routhStreetFlats1-hi-res.jpg">
-				</div>
 			</div>
 			<!-- =Page Title -->
 
-			<div flex="80" flex-sm="60" flex-gt-sm="40">
+			<div flex="80" flex-sm="60" flex-gt-sm="60">
 
 				<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" flex-sm="100" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
-					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; position: relative;">
-						<div style="width: 100%; text-align: center;">
+					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden;" layout="row" layout-align="center center" layout-wrap>
+						<div flex="100" style="text-align: center;">
 							<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
 						</div>
 					</div>
-			    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lighter.value}}; min-height: 400px;" layout-margin layout-padding>
-			    		<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
-			    		<form name="login" autocomplete="none" ng-show="!progressAnimation">
+			    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lighter.value}}; min-height: 400px;" layout="row" layout-align="center center" layout-wrap>
+			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+			    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
 							<md-content>
 					    		<md-list-item>
 									<md-input-container class="md-block lightweight-md-input" flex>
@@ -58,6 +55,9 @@
 									</md-input-container>
 								</md-list-item>
 							</md-content>
+							<md-button ng-click="signIn()" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px; z-index: 2;">
+	                            <md-icon style="color: {{base_hue_lightest.value}};">send</md-icon>&nbsp;&nbsp;Sign In
+	                        </md-button>
 						</form>
 			    	</div>
 
