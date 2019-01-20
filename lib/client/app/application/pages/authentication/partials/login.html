@@ -7,7 +7,7 @@
 	<section ng-cloak>
 
 		<!-- header -->
-		<md-subheader class="header" layout-align="center center" layout="row" layout flex style="z-index: 21!important; height: 60px;">
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
 			<div ng-include src="'application/partials/header.html'"></div>
 		</md-subheader>
 		<!-- header -->
@@ -55,12 +55,14 @@
 									</md-input-container>
 								</md-list-item>
 							</md-content>
-							<md-button class="md-whiteframe-6dp" flex="50" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;" layout-margin>
-								Options
-							</md-button>
-							<md-button class="md-whiteframe-6dp" flex="50" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;" layout-margin>
-								Sign In
-							</md-button>
+							<div style="width: 100%;" layout="row" layout-align="center center" layout-wrap>
+								<md-button class="md-whiteframe-6dp" flex="50" ng-click="" ng-attr-style="background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}}; height: 48px;" layout-margin>
+									Options
+								</md-button>
+								<md-button class="md-whiteframe-6dp" flex="50" ng-click="signIn()" ng-attr-style="background-color: {{base_hue_lighter.value}}; color: {{primary_hue_normal.value}}; height: 48px;" layout-margin>
+									Sign In
+								</md-button>
+							</div>
 						</form>
 			    	</div>
 
