@@ -32,6 +32,11 @@
 					</div>
 			    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lighter.value}}; min-height: 350px;" layout="row" layout-align="center center" layout-wrap>
 			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+			    		<md-list flex="100" ng-show="!progressAnimation">
+				        	<md-list-item flex="100" layout-padding style="text-align: center;">
+				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Welcome to {{settings.data.company_name}}!</p>
+				        	</md-list-item>
+				        </md-list>
 			    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
 							<md-content>
 					    		<md-list-item>
