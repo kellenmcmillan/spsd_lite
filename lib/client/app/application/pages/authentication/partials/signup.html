@@ -41,7 +41,7 @@
 								<md-content layout="row" layout-align="center center" layout-wrap>
 									<md-tabs flex="90" md-dynamic-height md-border-bottom>
 										<md-tab label="Basic Info">
-											<md-content ng-attr-style="background-color: {{base_hue_lightest.value}};">
+											<md-content style="margin-top: 16px;">
 									    		<md-list-item>
 				                                    <md-input-container class="md-block lightweight-md-input">
 				                                        <label>Firstname</label>
@@ -84,8 +84,8 @@
 				                                </md-list-item>
 											</md-content>
 										</md-tab>
-										<md-tab label="Address">
-											<md-content>
+										<md-tab label="Address" ng-disabled="signup.firstname.$invalid || signup.lastname.$invalid || signup.phone.$invalid || signup.birthday.$invalid">
+											<md-content style="margin-top: 16px;">
 												<md-list-item>
 				                                    <md-input-container class="md-block lightweight-md-input">
 				                                        <label>Street Address</label>
@@ -132,8 +132,8 @@
 				                                </md-list-item>
 											</md-content>
 										</md-tab>
-										<md-tab label="Credentials">
-											<md-content ng-attr-style="background-color: {{base_hue_lightest.value}};">
+										<md-tab label="Credentials" ng-disabled="signup.street.$invalid || signup.city.$invalid || signup.state.$invalid || signup.zipcode.$invalid">
+											<md-content style="margin-top: 16px;">
 									    		<md-list-item>
 													<md-input-container class="md-block lightweight-md-input" flex>
 														<label>Email</label>
