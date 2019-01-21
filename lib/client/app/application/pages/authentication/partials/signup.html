@@ -40,7 +40,7 @@
 				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold;">Sign up for a {{settings.data.company_name}} account!</p>
 				        	</md-list-item>
 				        </md-list>
-			    		<form flex="90" name="signup" autocomplete="none" ng-show="!progressAnimation">
+			    		<form flex="100" name="signup" autocomplete="none" ng-show="!progressAnimation">
 							<md-content layout="row" layout-align="center center" layout-wrap>
 								<br>
 								<md-tabs flex="100" md-dynamic-height md-border-bottom>
@@ -112,9 +112,9 @@
 			                                    </md-input-container>
 			                                </md-list-item>
 			                                <md-list-item style="padding: 0;">
-			                                    <md-input-container class="md-block lightweight-md-dropdown">
+			                                    <md-input-container class="md-block lightweight-md-dropdown" style="width: 100%;">
 			                                        <label>State</label>
-			                                        <md-select ng-model="new_user_signup.address.state" name="state" style="width:100%;" ng-required>
+			                                        <md-select ng-model="new_user_signup.address.state" name="state" ng-required>
 			                                            <md-option><em>None</em></md-option>
 			                                            <md-option ng-repeat="state in states" ng-value="state.abbrev">
 			                                                {{state.abbrev}}
