@@ -45,7 +45,7 @@
 								<br>
 								<md-tabs flex="100" md-dynamic-height md-border-bottom>
 									<md-tab label="Basic Info">
-										<md-content style="margin-top: 32px;">
+										<md-content style="margin-top: 32px; overflow: hidden;">
 								    		<md-list-item style="padding: 0;">
 			                                    <md-input-container class="md-block lightweight-md-input">
 			                                        <label>Firstname</label>
@@ -90,7 +90,7 @@
 										</md-content>
 									</md-tab>
 									<md-tab label="Address" ng-disabled="signup.firstname.$invalid || signup.lastname.$invalid || signup.phone.$invalid || signup.birthday.$invalid">
-										<md-content style="margin-top: 32px;">
+										<md-content style="margin-top: 32px; overflow: hidden;">
 											<md-list-item style="padding: 0;">
 			                                    <md-input-container class="md-block lightweight-md-input">
 			                                        <label>Street Address</label>
@@ -112,9 +112,9 @@
 			                                    </md-input-container>
 			                                </md-list-item>
 			                                <md-list-item style="padding: 0;">
-			                                    <md-input-container class="md-block lightweight-md-dropdown"">
+			                                    <md-input-container class="md-block lightweight-md-dropdown" style="width: 100%">
 			                                        <label>State</label>
-			                                        <md-select ng-model="new_user_signup.address.state" name="state" ng-required>
+			                                        <md-select ng-model="new_user_signup.address.state" name="state" ng-required style="width: 100%">
 			                                            <md-option><em>None</em></md-option>
 			                                            <md-option ng-repeat="state in states" ng-value="state.abbrev">
 			                                                {{state.abbrev}}
@@ -138,7 +138,7 @@
 										</md-content>
 									</md-tab>
 									<md-tab label="Credentials" ng-disabled="signup.street.$invalid || signup.city.$invalid || signup.state.$invalid || signup.zipcode.$invalid">
-										<md-content style="margin-top: 32px;">
+										<md-content style="margin-top: 32px; overflow: hidden;">
 								    		<md-list-item style="padding: 0;">
 												<md-input-container class="md-block lightweight-md-input" flex>
 													<label>Email</label>
