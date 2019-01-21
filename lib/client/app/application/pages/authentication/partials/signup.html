@@ -74,11 +74,12 @@
 				                                    </md-input-container>
 				                                </md-list-item>
 				                                <md-list-item>
-				                                    <md-input-container class="md-block lightweight-md-input" flex="100">
+				                                    <md-input-container class="md-block lightweight-md-input">
 				                                        <label>Birthday</label>
-				                                        <md-datepicker flex ng-model="newUser.birthday" md-placeholder="Birthday" name="birthday" ng-required="true"></md-datepicker>
-				                                        <div ng-messages="signup.birthday.$error" ng-show="signup.birthday.$dirty">
+				                                        <input ng-model="newUser.phone" ng-pattern="/^((0[13578]|1[02])[\/.]31[\/.](18|19|20)[0-9]{2})|((01|0[3-9]|1[1-2])[\/.](29|30)[\/.](18|19|20)[0-9]{2})|((0[1-9]|1[0-2])[\/.](0[1-9]|1[0-9]|2[0-8])[\/.](18|19|20)[0-9]{2})|((02)[\/.]29[\/.](((18|19|20)(04|08|[2468][048]|[13579][26]))|2000))$/" name="phone" minlength="10" required>
+				                                        <div ng-messages="signup.phone.$error" ng-show="signup.phone.$dirty">
 				                                            <div ng-message="required">Birthday required!</div>
+				                                            <div ng-message="pattern">Not a valid date!</div>
 				                                        </div>
 				                                    </md-input-container>
 				                                </md-list-item>
