@@ -41,7 +41,7 @@
 								<md-content layout="row" layout-align="center center" layout-wrap>
 									<md-tabs flex="90" md-dynamic-height md-border-bottom>
 										<md-tab label="Basic Info">
-											<md-content style="margin-top: 16px;">
+											<md-content style="margin-top: 32px;">
 									    		<md-list-item>
 				                                    <md-input-container class="md-block lightweight-md-input">
 				                                        <label>Firstname</label>
@@ -76,8 +76,8 @@
 				                                <md-list-item>
 				                                    <md-input-container class="md-block lightweight-md-input">
 				                                        <label>Birthday</label>
-				                                        <input ng-model="newUser.phone" ng-pattern="/^((0[13578]|1[02])[\/.]31[\/.](18|19|20)[0-9]{2})|((01|0[3-9]|1[1-2])[\/.](29|30)[\/.](18|19|20)[0-9]{2})|((0[1-9]|1[0-2])[\/.](0[1-9]|1[0-9]|2[0-8])[\/.](18|19|20)[0-9]{2})|((02)[\/.]29[\/.](((18|19|20)(04|08|[2468][048]|[13579][26]))|2000))$/" name="phone" minlength="10" required>
-				                                        <div ng-messages="signup.phone.$error" ng-show="signup.phone.$dirty">
+				                                        <input ng-model="newUser.birthday" ng-pattern="/^((0[13578]|1[02])[\/.]31[\/.](18|19|20)[0-9]{2})|((01|0[3-9]|1[1-2])[\/.](29|30)[\/.](18|19|20)[0-9]{2})|((0[1-9]|1[0-2])[\/.](0[1-9]|1[0-9]|2[0-8])[\/.](18|19|20)[0-9]{2})|((02)[\/.]29[\/.](((18|19|20)(04|08|[2468][048]|[13579][26]))|2000))$/" name="birthday" required>
+				                                        <div ng-messages="signup.birthday.$error" ng-show="signup.birthday.$dirty">
 				                                            <div ng-message="required">Birthday required!</div>
 				                                            <div ng-message="pattern">Not a valid date!</div>
 				                                        </div>
@@ -86,7 +86,7 @@
 											</md-content>
 										</md-tab>
 										<md-tab label="Address" ng-disabled="signup.firstname.$invalid || signup.lastname.$invalid || signup.phone.$invalid || signup.birthday.$invalid">
-											<md-content style="margin-top: 16px;">
+											<md-content style="margin-top: 32px;">
 												<md-list-item>
 				                                    <md-input-container class="md-block lightweight-md-input">
 				                                        <label>Street Address</label>
@@ -134,7 +134,7 @@
 											</md-content>
 										</md-tab>
 										<md-tab label="Credentials" ng-disabled="signup.street.$invalid || signup.city.$invalid || signup.state.$invalid || signup.zipcode.$invalid">
-											<md-content style="margin-top: 16px;">
+											<md-content style="margin-top: 32px;">
 									    		<md-list-item>
 													<md-input-container class="md-block lightweight-md-input" flex>
 														<label>Email</label>
