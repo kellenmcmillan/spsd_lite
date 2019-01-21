@@ -64,30 +64,9 @@
 								</md-list-item>
 							</md-content>
 							<div style="width: 100%;" layout="row" layout-align="center center" layout-wrap>
-								<!-- Account Major Action Button -->
-								<md-menu flex="45" layout>
-								    
-								    <md-button class="md-fab md-mini" md-menu-origin ng-click="openMenu($mdMenu, $event)" aria-label="open options" ng-attr-style="background-color: {{base_hue_lightest.value}}!important; color: {{primary_hue_normal.value}}!important;">
-								        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">settings</md-icon>
-								    </md-button>
-
-								    <md-menu-content width="4">
-								        <md-menu-item>
-								            <md-button ng-click="">
-								                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">rotate_left</md-icon>
-								                Forgot Password
-								            </md-button>
-								        </md-menu-item>
-								        <md-menu-item>
-								            <md-button>
-								                <md-icon ng-click="" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">edit</md-icon>
-								                Sign Up
-								            </md-button>
-								        </md-menu-item>
-								    </md-menu-content>
-
-								</md-menu>
-								<!-- Account Major Action Button -->
+								<md-button flex="45" ng-click="" ng-attr-style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; height: 48px;">
+									Forgot Password
+								</md-button>
 								<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
 									Sign In
 								</md-button>
