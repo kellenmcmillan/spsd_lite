@@ -18,11 +18,11 @@
 		<div layout="row" layout-align="center center" layout-wrap ng-attr-style="background-color: {{base_hue_lighter.value}}">
 
 			<!-- Page Title -->
-			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_darkest.value}}; height: {{window_height}}!important">
-				<div style="width: 100%; height: 100%; position: absolute;">
+			<div class="spotlight hero" layout="row" flex="100" layout-align="center center" layout-wrap style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_darkest.value}}; min-height: {{window_height}}!important">
+				<div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0">
 				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg">
 				</div>
-				<div style="width: 100%; height: 100%; position: absolute;" layout="row" layout-align="center center" layout-wrap>
+				<div style="width: 100%; height: 100%; position: relative;" layout="row" layout-align="center center" layout-wrap>
 					<div flex="80" flex-sm="40" flex-gt-sm="30">
 
 						<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
