@@ -37,49 +37,63 @@
 			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 			    		<md-list flex="100" ng-show="!progressAnimation">
 				        	<md-list-item flex="100" layout-padding style="text-align: center;">
-				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Sign up for an account with {{settings.data.company_name}}!</p>
+				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Recover Your {{settings.data.company_name}} Account.</p>
 				        	</md-list-item>
 				        </md-list>
-			    		<form flex="100" name="signup" autocomplete="none" ng-show="!progressAnimation">
+			    		<form flex="100" name="recover" autocomplete="none" ng-show="!progressAnimation">
 							<md-content ng-attr-style="background-color: {{base_hue_lightest.value}};">
 					    		<md-list-item>
 									<md-input-container class="md-block lightweight-md-input" flex>
 										<label>Email</label>
 										<input type="email" name="email" ng-required="true" ng-model="email">
-										<div ng-messages="signup.email.$error">
+										<div ng-messages="recover.email.$error">
 									    	<div ng-message="required">Email required...</div>
 									    	<div ng-message="email">Enter a valid email...</div>
 									    </div>
 									</md-input-container>
 								</md-list-item>
-								<md-list-item>
-									<md-input-container class="md-block lightweight-md-input" flex>
-										<label>Password</label>
-										<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
-										<div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
-									    	<div ng-message="required">Password required!</div>
-									    	<div ng-message="minlength">Password too short!</div>
-									    </div>
-									</md-input-container>
-								</md-list-item>
-								<md-list-item>
-									<md-input-container class="md-block lightweight-md-input" flex>
-										<label>Password</label>
-										<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
-										<div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
-									    	<div ng-message="required">Password required!</div>
-									    	<div ng-message="minlength">Password too short!</div>
-									    </div>
-									</md-input-container>
-								</md-list-item>
 							</md-content>
 							<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
-								<md-button class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="signUp()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+								<md-button class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="recover()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
 									Sign Up
 								</md-button>
 							</div>
 						</form>
 			    	</div>
+
+			    	<md-content layout="row" layout-align="center center" layout-wrap layout-padding>
+						<br>
+						<md-tabs flex="100" md-dynamic-height md-border-bottom md-center-tabs>
+							<md-tab label="Security Question #1">
+								<md-content style="margin-top: 32px; overflow: hidden;">
+						    		<md-list-item style="padding: 0;">
+	                                    <md-input-container class="md-block lightweight-md-input">
+	                                        <label>{{security_question_1}}</label>
+	                                        <input name="question1" ng-model="user_recovery.answer[0]" minlength="3" required>
+	                                        <div ng-messages="recover.question1.$error" ng-show="recover.question1.$dirty">
+	                                            <div ng-message="required">Firstname required!</div>
+	                                            <div ng-message="minlength">Firstname too short!</div>
+	                                        </div>
+	                                    </md-input-container>
+	                                </md-list-item>
+								</md-content>
+							</md-tab>
+							<md-tab label="Security Question #2" ng-disabled="recover.firstname.$invalid || recover.lastname.$invalid || recover.phone.$invalid || recover.birthday.$invalid">
+								<md-content style="margin-top: 32px; overflow: hidden;">
+									<md-list-item style="padding: 0;">
+	                                    <md-input-container class="md-block lightweight-md-input">
+	                                        <label>{{security_question_2}}</label>
+	                                        <input ng-model="user_recovery.answer[1]" name="question2" required minlength="5" required>
+	                                        <div ng-messages="recover.question2.$error" ng-show="recover.question2.$dirty">
+	                                            <div ng-message="required">Street address required!</div>
+	                                            <div ng-message="minlength">Street address too short!</div>
+	                                        </div>
+	                                    </md-input-container>
+	                                </md-list-item>
+								</md-content>
+							</md-tab>
+						</md-tabs>
+					</md-content>
 
 				</md-card>
 			</div>

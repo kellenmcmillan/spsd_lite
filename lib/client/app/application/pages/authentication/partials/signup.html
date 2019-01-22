@@ -55,7 +55,7 @@
 								<md-list-item>
 									<md-input-container class="md-block lightweight-md-input" flex>
 										<label>Password</label>
-										<input type="password" name="password" ng-required="true" ng-model="password" minlength="7" password-verify="{{signup.confirm_password}}">
+										<input type="password" name="password" ng-required="true" ng-model="password" minlength="7" password-verify="{{password}}">
 										<div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
 									    	<div ng-message="required">Password required!</div>
 									    	<div ng-message="minlength">Password too short!</div>
@@ -66,7 +66,7 @@
 								<md-list-item>
 									<md-input-container class="md-block lightweight-md-input" flex>
 										<label>Password</label>
-										<input type="confirm_password" name="confirm_password" ng-required="true" ng-model="confirm_password" minlength="7" password-verify="{{signup.password}}">
+										<input type="confirm_password" name="confirm_password" ng-required="true" ng-model="confirm_password" minlength="7" password-verify="{{password}}">
 										<div ng-messages="signup.confirm_password.$error" ng-show="signup.confirm_password.$dirty">
 									    	<div ng-message="required">Password required!</div>
 									    	<div ng-message="minlength">Password too short!</div>
