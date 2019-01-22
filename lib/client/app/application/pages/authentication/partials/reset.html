@@ -42,16 +42,6 @@
 				        </md-list>
 			    		<form flex="100" name="reset" autocomplete="none" ng-show="!progressAnimation">
 							<md-content ng-attr-style="background-color: {{base_hue_lightest.value}};">
-					    		<md-list-item>
-									<md-input-container class="md-block lightweight-md-input" flex>
-										<label>Email</label>
-										<input type="email" name="email" ng-required="true" ng-model="reset.email">
-										<div ng-messages="reset.email.$error">
-									    	<div ng-message="required">Email required...</div>
-									    	<div ng-message="email">Enter a valid email...</div>
-									    </div>
-									</md-input-container>
-								</md-list-item>
 								<md-list-item>
 									<md-input-container class="md-block lightweight-md-input" flex>
 										<label>Password</label>
