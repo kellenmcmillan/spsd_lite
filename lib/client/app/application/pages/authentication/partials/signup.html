@@ -19,171 +19,67 @@
 
 			<!-- Page Title -->
 			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{primary_hue_normal.value}};">
-				<div style="width: 100%; height: 100%; position: absolute;">
-				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg">
+				<div layout="row" layout-align="center center" layout-wrap style="width: 100%; height: 100%; position: absolute; background: url('https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg') no-repeat contain;">
+					<div flex="80" flex-sm="40" flex-gt-sm="30">
+						<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="z-index: 1; background-color: transparent; padding: 0; position: relative;">
+							<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; border-bottom: rgba(0,0,0,0.15) solid 1px;" layout="row" layout-align="center center" layout-wrap>
+								<div flex="100" style="text-align: center;">
+									<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
+								</div>
+							</div>
+					    	<div flex="100" ng-attr-style="width: 100%; background-color: transparent; min-height: 350px;" layout="row" layout-align="center center" layout-wrap>
+					    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+					    		<md-list flex="100" ng-show="!progressAnimation">
+						        	<md-list-item flex="100" layout-padding style="text-align: center;">
+						        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold;">Sign up for a {{settings.data.company_name}} account!</p>
+						        	</md-list-item>
+						        </md-list>
+					    		<form flex="100" name="signup" autocomplete="none" ng-show="!progressAnimation">
+									<md-content style="margin-top: 32px; overflow: hidden;">
+							    		<md-list-item style="padding: 0;">
+											<md-input-container class="md-block lightweight-md-input" flex>
+												<label>Email</label>
+												<input type="email" name="email" ng-required="true" ng-model="email">
+												<div ng-messages="login.email.$error">
+											    	<div ng-message="required">Email required...</div>
+											    	<div ng-message="email">Enter a valid email...</div>
+											    </div>
+											</md-input-container>
+										</md-list-item>
+										<md-list-item style="padding: 0;">
+											<md-input-container class="md-block lightweight-md-input" flex>
+												<label>Password</label>
+												<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
+												<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
+											    	<div ng-message="required">Password required!</div>
+											    	<div ng-message="minlength">Password too short!</div>
+											    </div>
+											</md-input-container>
+										</md-list-item>
+										<md-list-item style="padding: 0;">
+											<md-input-container class="md-block lightweight-md-input" flex>
+												<label>Re-enter Password</label>
+												<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
+												<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
+											    	<div ng-message="required">Password required!</div>
+											    	<div ng-message="minlength">Password too short!</div>
+											    </div>
+											</md-input-container>
+										</md-list-item>
+									</md-content>
+
+									<div style="width: 100%; margin-bottom: 24px;" layout="row" layout-align="end center" layout-wrap>
+										<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+											Sign Up
+										</md-button>
+									</div>
+								</form>
+					    	</div>
+						</md-card>
+					</div>
 				</div>
 			</div>
 			<!-- =Page Title -->
-
-			<div flex="80" flex-sm="40" flex-gt-sm="30">
-
-				<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
-					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; border-bottom: rgba(0,0,0,0.15) solid 1px;" layout="row" layout-align="center center" layout-wrap>
-						<div flex="100" style="text-align: center;">
-							<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
-						</div>
-					</div>
-			    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 350px;" layout="row" layout-align="center center" layout-wrap>
-			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
-			    		<md-list flex="100" ng-show="!progressAnimation">
-				        	<md-list-item flex="100" layout-padding style="text-align: center;">
-				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold;">Sign up for a {{settings.data.company_name}} account!</p>
-				        	</md-list-item>
-				        </md-list>
-			    		<form flex="100" name="signup" autocomplete="none" ng-show="!progressAnimation">
-							<md-content layout="row" layout-align="center center" layout-wrap layout-padding>
-								<br>
-								<md-tabs flex="100" md-dynamic-height md-border-bottom>
-									<md-tab label="Basic Info">
-										<md-content style="margin-top: 32px; overflow: hidden;">
-								    		<md-list-item style="padding: 0;">
-			                                    <md-input-container class="md-block lightweight-md-input">
-			                                        <label>Firstname</label>
-			                                        <input name="firstname" ng-model="new_user_signup.firstname" minlength="3" required>
-			                                        <div ng-messages="signup.firstname.$error" ng-show="signup.firstname.$dirty">
-			                                            <div ng-message="required">Firstname required!</div>
-			                                            <div ng-message="minlength">Firstname too short!</div>
-			                                        </div>
-			                                    </md-input-container>
-			                                </md-list-item>
-											<md-list-item style="padding: 0;">
-			                                    <md-input-container class="md-block lightweight-md-input">
-			                                        <label>Lastname</label>
-			                                        <input name="lastname" ng-model="new_user_signup.lastname" minlength="3" required>
-			                                        <div ng-messages="signup.lastname.$error" ng-show="signup.lastname.$dirty">
-			                                            <div ng-message="required">Lastname required!</div>
-			                                            <div ng-message="minlength">Lastname too short!</div>
-			                                        </div>
-			                                    </md-input-container>
-			                                </md-list-item>
-											<md-list-item style="padding: 0;">
-			                                    <md-input-container class="md-block lightweight-md-input">
-			                                        <label>Phone</label>
-			                                        <input ng-model="new_user_signup.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
-			                                        <div ng-messages="signup.phone.$error" ng-show="signup.phone.$dirty">
-			                                            <div ng-message="required">Phone number required!</div>
-			                                            <div ng-message="minlength">Phone number too short!</div>
-			                                            <div ng-message="pattern">Not a valid phone number!</div>
-			                                        </div>
-			                                    </md-input-container>
-			                                </md-list-item>
-			                                <md-list-item style="padding: 0;">
-			                                    <md-input-container class="md-block lightweight-md-input">
-			                                        <label>Birthday MM/DD/YYYY</label>
-			                                        <input ng-model="new_user_signup.birthday" ng-pattern="/^((0[13578]|1[02])[\/.]31[\/.](18|19|20)[0-9]{2})|((01|0[3-9]|1[1-2])[\/.](29|30)[\/.](18|19|20)[0-9]{2})|((0[1-9]|1[0-2])[\/.](0[1-9]|1[0-9]|2[0-8])[\/.](18|19|20)[0-9]{2})|((02)[\/.]29[\/.](((18|19|20)(04|08|[2468][048]|[13579][26]))|2000))$/" name="birthday" required>
-			                                        <div ng-messages="signup.birthday.$error" ng-show="signup.birthday.$dirty">
-			                                            <div ng-message="required">Birthday required!</div>
-			                                            <div ng-message="pattern">Not a valid date!</div>
-			                                        </div>
-			                                    </md-input-container>
-			                                </md-list-item>
-										</md-content>
-									</md-tab>
-									<md-tab label="Address" ng-disabled="signup.firstname.$invalid || signup.lastname.$invalid || signup.phone.$invalid || signup.birthday.$invalid">
-										<md-content style="margin-top: 32px; overflow: hidden;">
-											<md-list-item style="padding: 0;">
-			                                    <md-input-container class="md-block lightweight-md-input">
-			                                        <label>Street Address</label>
-			                                        <input ng-model="new_user_signup.address.street" name="street" required minlength="5" required>
-			                                        <div ng-messages="signup.street.$error" ng-show="signup.street.$dirty">
-			                                            <div ng-message="required">Street address required!</div>
-			                                            <div ng-message="minlength">Street address too short!</div>
-			                                        </div>
-			                                    </md-input-container>
-			                                </md-list-item>
-			                                <md-list-item style="padding: 0;">
-			                                    <md-input-container class="md-block lightweight-md-input">
-			                                        <label>City</label>
-			                                        <input ng-model="new_user_signup.address.city" name="city" required minlength="4">
-			                                        <div ng-messages="signup.city.$error" ng-show="signup.city.$dirty">
-			                                            <div ng-message="required">City required!</div>
-			                                            <div ng-message="minlength">City name too short!</div>
-			                                        </div>
-			                                    </md-input-container>
-			                                </md-list-item>
-			                                <md-list-item style="padding: 0;">
-			                                    <md-input-container class="md-block lightweight-md-dropdown" style="width: 100%">
-			                                        <label>State</label>
-			                                        <md-select ng-model="new_user_signup.address.state" name="state" ng-required style="width: 100%">
-			                                            <md-option><em>None</em></md-option>
-			                                            <md-option ng-repeat="state in states" ng-value="state.abbrev">
-			                                                {{state.abbrev}}
-			                                            </md-option>
-			                                        </md-select>
-			                                        <div ng-messages="signup.state.$error" ng-show="signup.state.$dirty">
-			                                            <div ng-message="required">State required!</div>
-			                                        </div>
-			                                    </md-input-container>
-			                                </md-list-item>
-			                                <md-list-item style="padding: 0;">
-			                                    <md-input-container class="md-block lightweight-md-input">
-			                                        <label>Zip Code</label>
-			                                        <input type="number" ng-model="new_user_signup.address.zipcode" name="zipcode" minlength="5" required>
-			                                        <div ng-messages="signup.zipcode.$error" ng-show="signup.zipcode.$dirty">
-			                                            <div ng-message="required">Zipcode required!</div>
-			                                            <div ng-message="minlength">Zipcode too short!</div>
-			                                        </div>
-			                                    </md-input-container>
-			                                </md-list-item>
-										</md-content>
-									</md-tab>
-									<md-tab label="Credentials" ng-disabled="signup.street.$invalid || signup.city.$invalid || signup.state.$invalid || signup.zipcode.$invalid">
-										<md-content style="margin-top: 32px; overflow: hidden;">
-								    		<md-list-item style="padding: 0;">
-												<md-input-container class="md-block lightweight-md-input" flex>
-													<label>Email</label>
-													<input type="email" name="email" ng-required="true" ng-model="email">
-													<div ng-messages="login.email.$error">
-												    	<div ng-message="required">Email required...</div>
-												    	<div ng-message="email">Enter a valid email...</div>
-												    </div>
-												</md-input-container>
-											</md-list-item>
-											<md-list-item style="padding: 0;">
-												<md-input-container class="md-block lightweight-md-input" flex>
-													<label>Password</label>
-													<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
-													<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
-												    	<div ng-message="required">Password required!</div>
-												    	<div ng-message="minlength">Password too short!</div>
-												    </div>
-												</md-input-container>
-											</md-list-item>
-											<md-list-item style="padding: 0;">
-												<md-input-container class="md-block lightweight-md-input" flex>
-													<label>Re-enter Password</label>
-													<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
-													<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
-												    	<div ng-message="required">Password required!</div>
-												    	<div ng-message="minlength">Password too short!</div>
-												    </div>
-												</md-input-container>
-											</md-list-item>
-										</md-content>
-									</md-tab>
-								</md-tabs>
-							</md-content>
-
-							<div style="width: 100%; margin-bottom: 24px;" layout="row" layout-align="end center" layout-wrap>
-								<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
-									Sign Up
-								</md-button>
-							</div>
-						</form>
-			    	</div>
-
-				</md-card>
-			</div>
 		</div>
 	</section>
 
