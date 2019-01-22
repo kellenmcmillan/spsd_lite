@@ -15,10 +15,10 @@
 		<div ng-include src="'application/partials/navigation-dropdown-parent-mobile.html'"></div>
 		<div ng-include src="'application/partials/navigation-dropdown.html'"></div>
 
-		<div layout="row" layout-align="center center" layout-wrap ng-attr-style="background-color: {{base_hue_darkest.value}}">
+		<div layout="row" layout-align="center center" layout-wrap ng-attr-style="background-color: {{base_hue_lighter.value}}">
 
 			<!-- Page Title -->
-			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{primary_hue_normal.value}};">
+			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_darkest.value}};">
 				<div style="width: 100%; height: 100%; position: absolute;">
 				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg">
 				</div>
@@ -28,7 +28,7 @@
 			<div flex="80" flex-sm="40" flex-gt-sm="30">
 
 				<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
-					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; border-bottom: rgba(0,0,0,0.15) solid 1px;" layout="row" layout-align="center center" layout-wrap>
+					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden" layout="row" layout-align="center center" layout-wrap>
 						<div flex="100" style="text-align: center;">
 							<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
 						</div>
@@ -37,7 +37,7 @@
 			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 			    		<md-list flex="100" ng-show="!progressAnimation">
 				        	<md-list-item flex="100" layout-padding style="text-align: center;">
-				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold;">Sign in to {{settings.data.company_name}}!</p>
+				        		<h1 md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold;">Sign in to {{settings.data.company_name}}!</h1>
 				        	</md-list-item>
 				        </md-list>
 			    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">

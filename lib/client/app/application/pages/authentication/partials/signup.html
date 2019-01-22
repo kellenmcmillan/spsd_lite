@@ -28,7 +28,7 @@
 			<div flex="80" flex-sm="40" flex-gt-sm="30">
 
 				<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
-					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; border-bottom: rgba(0,0,0,0.15) solid 1px;" layout="row" layout-align="center center" layout-wrap>
+					<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden;" layout="row" layout-align="center center" layout-wrap>
 						<div flex="100" style="text-align: center;">
 							<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
 						</div>
@@ -42,7 +42,7 @@
 				        </md-list>
 			    		<form flex="100" name="signup" autocomplete="none" ng-show="!progressAnimation">
 							<md-content style="margin-top: 32px; overflow: hidden;">
-					    		<md-list-item style="padding: 0;">
+					    		<md-list-item]>
 									<md-input-container class="md-block lightweight-md-input" flex>
 										<label>Email</label>
 										<input type="email" name="email" ng-required="true" ng-model="email">
@@ -52,7 +52,7 @@
 									    </div>
 									</md-input-container>
 								</md-list-item>
-								<md-list-item style="padding: 0;">
+								<md-list-item>
 									<md-input-container class="md-block lightweight-md-input" flex>
 										<label>Password</label>
 										<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
@@ -62,7 +62,7 @@
 									    </div>
 									</md-input-container>
 								</md-list-item>
-								<md-list-item style="padding: 0;">
+								<md-list-item>
 									<md-input-container class="md-block lightweight-md-input" flex>
 										<label>Re-enter Password</label>
 										<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
