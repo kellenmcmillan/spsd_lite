@@ -37,7 +37,7 @@
 			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 			    		<md-list flex="100" ng-show="!progressAnimation">
 				        	<md-list-item flex="100" layout-padding style="text-align: center;">
-				        		<h1 md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold;">Sign in to {{settings.data.company_name}}!</h1>
+				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Sign in to {{settings.data.company_name}}!</p>
 				        	</md-list-item>
 				        </md-list>
 			    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
