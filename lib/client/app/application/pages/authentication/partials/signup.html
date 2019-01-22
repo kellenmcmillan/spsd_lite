@@ -37,12 +37,12 @@
 			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 			    		<md-list flex="100" ng-show="!progressAnimation">
 				        	<md-list-item flex="100" layout-padding style="text-align: center;">
-				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold;">Sign up for a {{settings.data.company_name}} account!</p>
+				        		<h1 md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold;">Sign up for a {{settings.data.company_name}} account!</h1>
 				        	</md-list-item>
 				        </md-list>
 			    		<form flex="100" name="signup" autocomplete="none" ng-show="!progressAnimation">
 							<md-content style="margin-top: 32px; overflow: hidden;">
-					    		<md-list-item]>
+					    		<md-list-item>
 									<md-input-container class="md-block lightweight-md-input" flex>
 										<label>Email</label>
 										<input type="email" name="email" ng-required="true" ng-model="email">
