@@ -66,7 +66,7 @@
 								<md-list-item>
 									<md-input-container class="md-block lightweight-md-input" flex>
 										<label>Password</label>
-										<input type="confirm_password" name="confirm_password" ng-required="true" ng-model="confirm_password" minlength="7" password-verify="{{password}}">
+										<input type="password" name="confirm_password" ng-required="true" ng-model="confirm_password" minlength="7" password-verify="{{password}}">
 										<div ng-messages="signup.confirm_password.$error" ng-show="signup.confirm_password.$dirty">
 									    	<div ng-message="required">Password required!</div>
 									    	<div ng-message="minlength">Password too short!</div>
@@ -76,7 +76,7 @@
 								</md-list-item>
 							</md-content>
 							<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
-								<md-button class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="signUp()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+								<md-button ng-disabled="signup.email.$invalid || signup.password.$invalid || signup.confirm_password.$invalid" class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="signUp()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
 									Sign Up
 								</md-button>
 							</div>
