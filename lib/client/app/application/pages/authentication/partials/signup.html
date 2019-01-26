@@ -40,7 +40,7 @@
 				    		<form flex="100" name="signup" autocomplete="none" ng-show="!progressAnimation">
 								<md-content ng-attr-style="background-color: {{base_hue_lightest.value}};">
 						    		<md-list-item>
-										<md-input-container class="md-block lightweight-md-input" flex>
+										<md-input-container style="text-align: center;" class="md-block lightweight-md-input" flex>
 											<label>Email</label>
 											<input type="email" name="email" ng-required="true" ng-model="sign_up_email">
 											<div ng-messages="signup.email.$error">
@@ -50,7 +50,7 @@
 										</md-input-container>
 									</md-list-item>
 									<md-list-item>
-										<md-input-container class="md-block lightweight-md-input" flex>
+										<md-input-container style="text-align: center;" class="md-block lightweight-md-input" flex>
 											<label>Password</label>
 											<input type="password" name="password" ng-required="true" ng-model="sign_up_password" minlength="7" password-verify="{{password}}">
 											<div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
@@ -61,7 +61,7 @@
 										</md-input-container>
 									</md-list-item>
 									<md-list-item>
-										<md-input-container class="md-block lightweight-md-input" flex>
+										<md-input-container style="text-align: center;" class="md-block lightweight-md-input" flex>
 											<label>Re-enter Password</label>
 											<input type="password" name="confirm_password" ng-required="true" ng-model="sign_up_confirm_password" minlength="7" password-verify="{{password}}">
 											<div ng-messages="signup.confirm_password.$error" ng-show="signup.confirm_password.$dirty">

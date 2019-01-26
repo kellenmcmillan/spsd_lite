@@ -44,7 +44,7 @@
 										<md-tab label="Security Question #1">
 											<md-content style="margin-top: 32px; overflow: hidden;">
 									    		<md-list-item style="padding: 0;">
-				                                    <md-input-container class="md-block lightweight-md-input">
+				                                    <md-input-container style="text-align: center;" class="md-block lightweight-md-input">
 				                                        <label>{{security_question_1}}</label>
 				                                        <input name="question1" ng-model="user_recovery.answer[0]" required>
 				                                        <div ng-messages="recover.question1.$error" ng-show="recover.question1.$dirty">
@@ -57,7 +57,7 @@
 										<md-tab label="Security Question #2" ng-disabled="recover.question1.$invalid">
 											<md-content style="margin-top: 32px; overflow: hidden;">
 												<md-list-item style="padding: 0;">
-				                                    <md-input-container class="md-block lightweight-md-input">
+				                                    <md-input-container style="text-align: center;" class="md-block lightweight-md-input">
 				                                        <label>{{security_question_2}}</label>
 				                                        <input ng-model="user_recovery.answer[1]" name="question2" required>
 				                                        <div ng-messages="recover.question2.$error" ng-show="recover.question2.$dirty">
