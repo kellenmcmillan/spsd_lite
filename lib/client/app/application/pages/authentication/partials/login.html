@@ -31,59 +31,55 @@
 							</div>
 						</div>
 
-				    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 350px;" layout="row" layout-align="start center" layout-wrap>
+			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 
-				    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+			    		<md-list ng-show="!progressAnimation">
+				        	<md-list-item layout-padding style="text-align: center;">
+				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Sign in to {{settings.data.company_name}}!</p>
+				        	</md-list-item>
+				        </md-list>
 
-				    		<md-list flex="100" ng-show="!progressAnimation">
-					        	<md-list-item flex="100" layout-padding style="text-align: center;">
-					        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Sign in to {{settings.data.company_name}}!</p>
-					        	</md-list-item>
-					        </md-list>
+			    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
 
-				    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
+							<md-content ng-attr-style="background-color: {{base_hue_lightest.value}};">
+								<md-list>
+						    		<md-list-item>
+										<md-input-container class="md-block lightweight-md-input" flex>
+											<label>Email</label>
+											<input type="email" name="email" ng-required="true" ng-model="email">
+											<div ng-messages="login.email.$error">
+										    	<div ng-message="required">Email required...</div>
+										    	<div ng-message="email">Enter a valid email...</div>
+										    </div>
+										</md-input-container>
+									</md-list-item>
+									<md-list-item>
+										<md-input-container class="md-block lightweight-md-input" flex>
+											<label>Password</label>
+											<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
+											<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
+										    	<div ng-message="required">Password required!</div>
+										    	<div ng-message="minlength">Password too short!</div>
+										    </div>
+										</md-input-container>
+									</md-list-item>
+								</md-list>
+								<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="indexForm2.recaptcha" style="margin: 0 16px;"></div>
+							</md-content>
 
-								<md-content ng-attr-style="background-color: {{base_hue_lightest.value}};">
-									<md-list>
-							    		<md-list-item>
-											<md-input-container class="md-block lightweight-md-input" flex>
-												<label style="text-align: center">Email</label>
-												<input type="email" name="email" ng-required="true" ng-model="email">
-												<div ng-messages="login.email.$error">
-											    	<div ng-message="required">Email required...</div>
-											    	<div ng-message="email">Enter a valid email...</div>
-											    </div>
-											</md-input-container>
-										</md-list-item>
-										<md-list-item>
-											<md-input-container class="md-block lightweight-md-input" flex>
-												<label style="text-align: center">Password</label>
-												<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
-												<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
-											    	<div ng-message="required">Password required!</div>
-											    	<div ng-message="minlength">Password too short!</div>
-											    </div>
-											</md-input-container>
-										</md-list-item>
-									</md-list>
-									<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="indexForm2.recaptcha" style="margin: 0 16px;"></div>
-								</md-content>
+							<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
 
-								<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
+								<md-button ng-href="/recover" flex="45" ng-click="" ng-attr-style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; height: 48px;">
+									Forgot Password
+								</md-button>
 
-									<md-button ng-href="/recover" flex="45" ng-click="" ng-attr-style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; height: 48px;">
-										Forgot Password
-									</md-button>
+								<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+									Sign In
+								</md-button>
 
-									<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
-										Sign In
-									</md-button>
-
-								</div>
+							</div>
 
 							</form>
-
-				    	</div>
 
 					</md-card>
 
