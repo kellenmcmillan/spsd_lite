@@ -113,7 +113,7 @@ md-card.section-6-ms-explorer {min-height: 600px;}
                             <!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
                             </script> -->
                         </md-card-content>
-                        <md-button ng-disabled="index_2.$invalid" ng-click="sendLead(indexForm2, 'Home Page'); clearForm(indexForm2)" aria-label="Edit Info Page" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">
+                        <md-button ng-disabled="index_2.$invalid" ng-click="sendLead(indexForm2, 'Home Page'); clearForm(indexForm2); click_event({'action': 'send-lead', 'task_id': 'lw011', 'name': 'Lead Submitted - Home Page', 'payload': indexForm2});" aria-label="Edit Info Page" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">
                             <md-icon style="color: {{base_hue_lightest.value}};">send</md-icon>&nbsp;&nbsp;Send
                         </md-button>
                     </form>
