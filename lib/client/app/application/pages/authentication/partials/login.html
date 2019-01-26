@@ -18,70 +18,69 @@
 		<div layout="row" layout-align="start center" layout-wrap ng-attr-style="background-color: {{base_hue_lighter.value}}">
 
 			<!-- Page Title -->
-			<div layout="row" layout-align="center center" layout-wrap flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_darkest.value}}; min-height: {{window_height}}px!important;">
+			<div layout="row" layout-wrap flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{base_hue_darkest.value}}; min-height: {{window_height}}px!important;">
 
+				<div style="position: absolute; top: 0; left: 0; width: {{scroll_bar_aware_window_width}}px;">
+				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg">
+				</div>
+				
+				<md-card class="md-whiteframe-8dp" flex="100" flex-offset-gt-md="20" flex-gt-md="60" flex-offset-gt-sm="30" flex-gt-sm="40" ng-attr-style="z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
 
+					<div flex="100" style="height: 300px; width: 100%; margin: 0; overflow: hidden" layout="row" layout-align="center center" layout-wrap>
+						<div flex="100" style="text-align: center;">
+							<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
+						</div>
+					</div>
 
-					<!-- Need Offset -->
-					<md-card class="md-whiteframe-8dp" flex="100" flex-gt-md="60" flex-gt-sm="40" ng-attr-style="z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
+		    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 
-						<div flex="100" style="height: 300px; width: 100%; margin: 0; overflow: hidden" layout="row" layout-align="center center" layout-wrap>
-							<div flex="100" style="text-align: center;">
-								<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
-							</div>
+		    		<md-list ng-show="!progressAnimation">
+			        	<md-list-item layout-padding style="text-align: center;">
+			        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Sign in to {{settings.data.company_name}}!</p>
+			        	</md-list-item>
+			        </md-list>
+
+		    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
+
+						<md-list>
+				    		<md-list-item>
+								<md-input-container class="md-block lightweight-md-input" flex>
+									<label>Email</label>
+									<input type="email" name="email" ng-required="true" ng-model="email">
+									<div ng-messages="login.email.$error">
+								    	<div ng-message="required">Email required...</div>
+								    	<div ng-message="email">Enter a valid email...</div>
+								    </div>
+								</md-input-container>
+							</md-list-item>
+							<md-list-item>
+								<md-input-container class="md-block lightweight-md-input" flex>
+									<label>Password</label>
+									<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
+									<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
+								    	<div ng-message="required">Password required!</div>
+								    	<div ng-message="minlength">Password too short!</div>
+								    </div>
+								</md-input-container>
+							</md-list-item>
+						</md-list>
+						<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="indexForm2.recaptcha" style="margin: 0 16px;"></div>
+
+						<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
+
+							<md-button ng-href="/recover" flex="45" ng-click="" ng-attr-style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; height: 48px;">
+								Forgot Password
+							</md-button>
+
+							<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+								Sign In
+							</md-button>
+
 						</div>
 
-			    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+					</form>
 
-			    		<md-list ng-show="!progressAnimation">
-				        	<md-list-item layout-padding style="text-align: center;">
-				        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Sign in to {{settings.data.company_name}}!</p>
-				        	</md-list-item>
-				        </md-list>
-
-			    		<form flex="100" name="login" autocomplete="none" ng-show="!progressAnimation">
-
-							<md-content ng-attr-style="background-color: {{base_hue_lightest.value}};">
-								<md-list>
-						    		<md-list-item>
-										<md-input-container class="md-block lightweight-md-input" flex>
-											<label>Email</label>
-											<input type="email" name="email" ng-required="true" ng-model="email">
-											<div ng-messages="login.email.$error">
-										    	<div ng-message="required">Email required...</div>
-										    	<div ng-message="email">Enter a valid email...</div>
-										    </div>
-										</md-input-container>
-									</md-list-item>
-									<md-list-item>
-										<md-input-container class="md-block lightweight-md-input" flex>
-											<label>Password</label>
-											<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
-											<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
-										    	<div ng-message="required">Password required!</div>
-										    	<div ng-message="minlength">Password too short!</div>
-										    </div>
-										</md-input-container>
-									</md-list-item>
-								</md-list>
-								<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="indexForm2.recaptcha" style="margin: 0 16px;"></div>
-							</md-content>
-
-							<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
-
-								<md-button ng-href="/recover" flex="45" ng-click="" ng-attr-style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; height: 48px;">
-									Forgot Password
-								</md-button>
-
-								<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
-									Sign In
-								</md-button>
-
-							</div>
-
-							</form>
-
-					</md-card>
+				</md-card>
 
 			</div>
 			<!-- =Page Title -->
