@@ -241,7 +241,7 @@
                                                 <md-select name="outbound_to" ng-model="taskAddObj.outbound_to" multiple flex>
                                                     <md-option><em>None</em></md-option>
                                                     <md-option ng-value="'autorespond'">Respond To User Action</md-option>
-                                                    <md-option ng-hide="taskAddObj.outbound_to == 'respond'" ng-repeat="user in userslist" ng-value="user.id">
+                                                    <md-option ng-hide="taskAddObj.outbound_to == 'autorespond'" ng-repeat="user in userslist" ng-value="user.id">
                                                         {{user.firstname}} {{user.lastname}}
                                                     </md-option>
                                                 </md-select>
@@ -573,147 +573,147 @@
                                     </md-card-header>
                                     <md-card-content>
                                         <md-list-item>
-                                            <span md-truncate style="max-width: 100px;">Title</span>
+                                            <span md-truncate style="max-width: 150px;">Title</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.title}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item>
-                                            <span md-truncate style="max-width: 100px;">Subject</span>
+                                            <span md-truncate style="max-width: 150px;">Subject</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.subject}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item>
-                                            <span md-truncate style="max-width: 100px;">Outbound Chatter&nbsp;&nbsp;</span>
+                                            <span md-truncate style="max-width: 150px;">Outbound Chatter&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.outbound}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item ng-show="taskAddObj.inbound">
-                                            <span md-truncate style="max-width: 100px;">Inbound Chatter&nbsp;&nbsp;</span>
+                                            <span md-truncate style="max-width: 150px;">Inbound Chatter&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.inbound}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.inbound"></md-divider>
                                         <md-list-item ng-show="taskAddObj.action">
-                                            <span md-truncate style="max-width: 100px;">Link</span>
+                                            <span md-truncate style="max-width: 150px;">Link</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.action}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.action"></md-divider>
                                         <md-list-item ng-show="taskAddObj.customURL">
-                                            <span md-truncate style="max-width: 100px;">Custom Link</span>
+                                            <span md-truncate style="max-width: 150px;">Custom Link</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.customURL}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.customURL"></md-divider>
                                         <md-list-item>
-                                            <span md-truncate style="max-width: 100px;">Channels</span>
+                                            <span md-truncate style="max-width: 150px;">Channels</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.channels.join(', ')}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item ng-show="taskAddObj.outbound_to">
-                                            <span md-truncate style="max-width: 100px;">Outbound To Individuals</span>
+                                            <span md-truncate style="max-width: 150px;">Outbound To Individuals</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.outbound_to.length > 1 ? 'Multiple Users' : 'Single User'}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.outbound_to"></md-divider>
                                         <md-list-item ng-show="taskAddObj.outbound_to_roles">
-                                            <span md-truncate style="max-width: 100px;">Outbound To Groups</span>
+                                            <span md-truncate style="max-width: 150px;">Outbound To Groups</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.outbound_to_roles.join(', ')}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.outbound_to_roles"></md-divider>
                                         <md-list-item ng-show="taskAddObj.inbound_to">
-                                            <span md-truncate style="max-width: 100px;">Inbound To Individuals</span>
+                                            <span md-truncate style="max-width: 150px;">Inbound To Individuals</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.inbound_to.length > 1 ? 'Multiple Users' : 'Single User'}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.inbound_to"></md-divider>
-                                        <md-list-item>
-                                            <span md-truncate style="max-width: 100px;">Inbound To Groups</span>
+                                        <md-list-item ng-show="taskAddObj.inbound_to_roles">
+                                            <span md-truncate style="max-width: 150px;">Inbound To Groups</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.inbound_to_roles.join(', ')}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.inbound_to_roles"></md-divider>
                                         <md-list-item>
-                                            <span md-truncate style="max-width: 100px;">Task Type</span>
+                                            <span md-truncate style="max-width: 150px;">Task Type</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.type}}
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
                                         <md-list-item ng-show="taskAddObj.type == 'user generated'">
-                                            <span md-truncate style="max-width: 100px;">Interaction Type</span>
+                                            <span md-truncate style="max-width: 150px;">Interaction Type</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                                 {{taskAddObj.activity_trigger_types}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.type == 'user generated'"></md-divider>
                                         <md-list-item ng-show="taskAddObj.type == 'user generated'">
-                                            <span md-truncate style="max-width: 100px;">Interaction Trigger</span>
+                                            <span md-truncate style="max-width: 150px;">Interaction Trigger</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                                 {{taskAddObj.user_action_trigger}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.type == 'user generated'"></md-divider>
                                         <md-list-item ng-show="taskAddObj.type == 'reporting'">
-                                            <span md-truncate style="max-width: 100px;">Report Type</span>
+                                            <span md-truncate style="max-width: 150px;">Report Type</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                                 {{taskAddObj.report_type}}
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.type == 'reporting'"></md-divider>
-                                        <md-list-item ng-if="taskAddObj.frequency">
-                                            <span md-truncate style="max-width: 100px;">Reoccurs</span>
+                                        <md-list-item ng-show="taskAddObj.frequency">
+                                            <span md-truncate style="max-width: 150px;">Reoccurs</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.frequency}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskAddObj.frequency"></md-divider>
-                                        <md-list-item ng-if="taskAddObj.run_week > 0">
-                                            <span md-truncate style="max-width: 100px;">Runs On Week</span>
+                                        <md-divider ng-show="taskAddObj.frequency"></md-divider>
+                                        <md-list-item ng-show="taskAddObj.run_week > 0">
+                                            <span md-truncate style="max-width: 150px;">Runs On Week</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.run_week + 1}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskAddObj.run_week >= 0"></md-divider>
+                                        <md-divider ng-show="taskAddObj.run_week >= 0"></md-divider>
                                         <md-list-item>
-                                            <span md-truncate style="max-width: 100px;">Day Of The Week</span>
+                                            <span md-truncate style="max-width: 150px;">Day Of The Week</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.run_day == 0 ? 'Sunday' : taskAddObj.run_day == 1 ? 'Monday' : taskAddObj.run_day == 2 ? 'Tuesday' : taskAddObj.run_day == 3 ? 'Wednesday' : taskAddObj.run_day == 4 ? 'Thursday' : taskAddObj.run_day == 5 ? 'Friday' : taskAddObj.run_day == 6 ? 'Saturday' : 'Not Determined'}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskAddObj.run_day"></md-divider>
-                                        <md-list-item ng-if="taskAddObj.task_date">
-                                            <span md-truncate style="max-width: 100px;">Runs On This Date</span>
+                                        <md-divider ng-show="taskAddObj.run_day"></md-divider>
+                                        <md-list-item ng-show="taskAddObj.task_date">
+                                            <span md-truncate style="max-width: 150px;">Runs On This Date</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.task_date}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider ng-if="taskAddObj.task_date"></md-divider>
-                                        <md-list-item>
-                                            <span md-truncate style="max-width: 100px;">Runs At This Time</span>
+                                        <md-divider ng-show="taskAddObj.task_date"></md-divider>
+                                        <md-list-item ng-show="taskAddObj.run_clock_time">
+                                            <span md-truncate style="max-width: 150px;">Runs At This Time</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.run_clock_time}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider></md-divider>
-                                        <md-list-item>
-                                            <span md-truncate style="max-width: 100px;">Next Runtime</span>
+                                        <md-divider ng-show="taskAddObj.run_clock_time"></md-divider>
+                                        <md-list-item ng-show="taskAddObj.frequency">
+                                            <span md-truncate style="max-width: 150px;">Next Runtime</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             This will calculate while saving...
                                             </span>
@@ -722,7 +722,7 @@
 
                                     <md-card-actions layout="row" layout-align="end center" flex>
                                         <md-button class="md-raised" ng-click="part_four = false; part_three = true" style="padding-left: 16px; padding-right: 16px;">Back</md-button>
-                                        <md-button class="md-raised" ng-disabled="createTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm); part_four = false; part_one = true;" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Save</md-button>
+                                        <md-button class="md-raised" class="md-raised" ng-confirm-message="Are you ready to save this task?" ng-confirm-click="createTask(taskAddObj); closeCreateTask(); clearForm(createTaskForm); part_four = false; part_one = true;" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Save</md-button>
                                     </md-card-actions>
                                 
                                 
