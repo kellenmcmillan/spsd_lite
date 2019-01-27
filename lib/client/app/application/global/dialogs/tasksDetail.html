@@ -556,7 +556,7 @@
                                             <md-list-item ng-show="taskUpdateObj.type == 'user generated'">
                                                 <md-input-container class="md-block lightweight-md-input" flex>
                                                     <label>App Interaction Trigger</label>
-                                                    <md-select name="activity_trigger" ng-model="taskUpdateObj.activity_trigger" ng-required="taskUpdateObj.type == 'user generated'">
+                                                    <md-select name="activity_trigger" ng-model="taskUpdateObj.user_action_trigger" ng-required="taskUpdateObj.type == 'user generated'">
                                                         <md-option><em>None</em></md-option>
                                                         <md-option ng-show="taskUpdateObj.activity_trigger_types == 'action'" ng-repeat="trigger in app_triggers track by $index" ng-value="trigger">
                                                             {{trigger}}
