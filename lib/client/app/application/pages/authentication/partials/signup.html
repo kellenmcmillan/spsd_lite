@@ -41,7 +41,7 @@
 								<md-content ng-attr-style="background-color: {{base_hue_lightest.value}};">
 						    		<md-list-item>
 										<md-input-container class="md-block lightweight-md-input" flex>
-											<label style="text-align: center">Email</label>
+											<label style="text-align: left;">Email</label>
 											<input type="email" name="email" ng-required="true" ng-model="sign_up_email">
 											<div ng-messages="signup.email.$error">
 										    	<div ng-message="required">Email required...</div>
@@ -51,7 +51,7 @@
 									</md-list-item>
 									<md-list-item>
 										<md-input-container class="md-block lightweight-md-input" flex>
-											<label style="text-align: center">Password</label>
+											<label style="text-align: left;">Password</label>
 											<input type="password" name="password" ng-required="true" ng-model="sign_up_password" minlength="7" password-verify="{{password}}">
 											<div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
 										    	<div ng-message="required">Password required!</div>
@@ -62,7 +62,7 @@
 									</md-list-item>
 									<md-list-item>
 										<md-input-container class="md-block lightweight-md-input" flex>
-											<label style="text-align: center">Re-enter Password</label>
+											<label style="text-align: left;">Re-enter Password</label>
 											<input type="password" name="confirm_password" ng-required="true" ng-model="sign_up_confirm_password" minlength="7" password-verify="{{password}}">
 											<div ng-messages="signup.confirm_password.$error" ng-show="signup.confirm_password.$dirty">
 										    	<div ng-message="required">Password required!</div>

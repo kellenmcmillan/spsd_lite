@@ -17,7 +17,6 @@
 
 		<div layout="row" layout-align="start center" layout-wrap ng-attr-style="background-color: {{base_hue_lighter.value}}">
 
-			<!-- Page Title -->
 			<div layout="row" layout-align="center center" layout-wrap flex="100" style="position: relative; top: 0; overflow: hidden; background-color: {{base_hue_darkest.value}}; min-height: {{window_height}}px!important;">
 				<div style="position: absolute; top: 0; left: 0; width: {{scroll_bar_aware_window_width}}px;">
 				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg">
@@ -48,7 +47,7 @@
 									<md-list>
 							    		<md-list-item>
 											<md-input-container class="md-block lightweight-md-input" flex>
-												<label style="text-align: center">Email</label>
+												<label style="text-align: left;">Email</label>
 												<input type="email" name="email" ng-required="true" ng-model="email">
 												<div ng-messages="login.email.$error">
 											    	<div ng-message="required">Email required...</div>
@@ -58,7 +57,7 @@
 										</md-list-item>
 										<md-list-item>
 											<md-input-container class="md-block lightweight-md-input" flex>
-												<label style="text-align: center">Password</label>
+												<label style="text-align: left;">Password</label>
 												<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
 												<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
 											    	<div ng-message="required">Password required!</div>
