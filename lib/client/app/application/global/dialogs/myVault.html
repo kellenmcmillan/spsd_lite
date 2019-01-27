@@ -312,6 +312,36 @@
                                         <md-icon style="color: {{primary_hue_normal.value}};">receipt</md-icon>
                                     </md-button>
                                 </md-card>
+
+                                <!-- My Wallet -->
+                                <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
+                                    <md-card-header>
+                                        <md-card-header-text>
+                                            <span class="md-title">My Wallet</span>
+                                            <span class="md-subhead">Edit And View Your Payment Methods</span>
+                                        </md-card-header-text>
+                                    </md-card-header>
+                                    <md-card-content style="margin-bottom: 24px;">
+                                        <div layout="column" layout-align="center start" style="margin: 0" flex>
+                                            <md-list class="md-dense" flex>
+                                                <md-list-item ng-repeat="method in me.payment_methods" flex>
+                                                    <p md-truncate>{{method.title}} | {{method.date}}</p>
+                                                    <md-divider ng-if="!$last"></md-divider>
+                                                </md-list-item>
+                                                <md-list-item ng-show="!me.receipts" flex layout="row" layout-align="start center">
+                                                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">report_problem</md-icon>
+                                                    <div>
+                                                        <p>No Payment Methods</p>
+                                                    </div>
+                                                </md-list-item>
+                                            </md-list>
+                                        </div>
+                                    </md-card-content>
+                                    <md-button ng-click="null" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">credit_card</md-icon>
+                                    </md-button>
+                                </md-card>
+
                             </div>
                         </div>
                     </div>
