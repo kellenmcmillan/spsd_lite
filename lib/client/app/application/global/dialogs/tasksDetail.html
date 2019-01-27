@@ -121,7 +121,7 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
-                                        <md-list-item>
+                                        <md-list-item ng-show="taskUpdateObj.outbound">
                                             <span md-truncate style="max-width: 150px;">Outbound Chatter&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.outbound}}
@@ -770,13 +770,13 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider></md-divider>
-                                        <md-list-item>
+                                        <md-list-item ng-show="taskUpdateObj.outbound">
                                             <span md-truncate style="max-width: 150px;">Outbound Chatter&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.outbound}}
                                             </span>
                                         </md-list-item>
-                                        <md-divider></md-divider>
+                                        <md-divider ng-show="taskUpdateObj.outbound"></md-divider>
                                         <md-list-item ng-show="taskUpdateObj.inbound">
                                             <span md-truncate style="max-width: 150px;">Inbound Chatter&nbsp;&nbsp;</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
