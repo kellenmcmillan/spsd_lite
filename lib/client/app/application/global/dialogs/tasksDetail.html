@@ -742,7 +742,8 @@
                                 <!-- ============================= PART FOUR RE-CONFIRM TASK =============================== -->
                                 <!-- ============================= PART FOUR RE-CONFIRM TASK =============================== -->
 
-                                <md-card ng-show="part_five == true" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15);" flex="100" flex-gt-sm="60">
+                                <md-card ng-show="part_five == true" style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative;" flex="100" flex-gt-sm="60">
+
                                     <md-card-header>
                                         <md-card-header-text>
                                             <span class="md-title">Review</span>
@@ -903,12 +904,12 @@
                                             </span>
                                         </md-list-item>
                                     </md-card-content>
-                                    <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button class="md-raised" ng-click="part_five = false; part_four = true" style="padding-left: 16px; padding-right: 16px;">Back</md-button>
-                                        <md-button class="md-raised" ng-disabled="updateTaskForm.$invalid" class="md-raised" ng-confirm-message="Are you ready to update this task?" ng-confirm-click="updateTask(taskUpdateObj); closeUpdateTask(); clearForm(updateTaskForm); part_five = false; part_one = true;" ng-confirm-condition="true" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Save</md-button>
-                                    </md-card-actions>
-                                
-                                
+                                    <md-button ng-click="part_five = false; part_four = true" class="md-fab md-mini" aria-label="Edit My Permissions" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 56px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">keyboard_backspace</md-icon>
+                                    </md-button>
+                                    <md-button class="md-raised" ng-confirm-message="Are you ready to update this task?" ng-confirm-click="updateTask(taskUpdateObj); closeUpdateTask(); clearForm(updateTaskForm); part_five = false; part_one = true;" ng-confirm-condition="true" class="md-fab md-mini" aria-label="Save new task" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">done</md-icon>
+                                    </md-button>
 
                                 </md-card>
 
