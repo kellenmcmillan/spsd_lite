@@ -219,7 +219,7 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskUpdateObj.run_week >= 0"></md-divider>
-                                        <md-list-item>
+                                        <md-list-item ng-show="taskUpdateObj.run_day">
                                             <span md-truncate style="max-width: 150px;">Day Of The Week</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.run_day == 0 ? 'Sunday' : taskUpdateObj.run_day == 1 ? 'Monday' : taskUpdateObj.run_day == 2 ? 'Tuesday' : taskUpdateObj.run_day == 3 ? 'Wednesday' : taskUpdateObj.run_day == 4 ? 'Thursday' : taskUpdateObj.run_day == 5 ? 'Friday' : taskUpdateObj.run_day == 6 ? 'Saturday' : 'Not Determined'}}
@@ -862,7 +862,7 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskUpdateObj.run_week >= 0"></md-divider>
-                                        <md-list-item>
+                                        <md-list-item ng-show="taskUpdateObj.run_day">
                                             <span md-truncate style="max-width: 150px;">Day Of The Week</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskUpdateObj.run_day == 0 ? 'Sunday' : taskUpdateObj.run_day == 1 ? 'Monday' : taskUpdateObj.run_day == 2 ? 'Tuesday' : taskUpdateObj.run_day == 3 ? 'Wednesday' : taskUpdateObj.run_day == 4 ? 'Thursday' : taskUpdateObj.run_day == 5 ? 'Friday' : taskUpdateObj.run_day == 6 ? 'Saturday' : 'Not Determined'}}

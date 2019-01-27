@@ -691,7 +691,7 @@
                                             </span>
                                         </md-list-item>
                                         <md-divider ng-show="taskAddObj.run_week >= 0"></md-divider>
-                                        <md-list-item>
+                                        <md-list-item ng-show="taskAddObj.run_day">
                                             <span md-truncate style="max-width: 150px;">Day Of The Week</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
                                             {{taskAddObj.run_day == 0 ? 'Sunday' : taskAddObj.run_day == 1 ? 'Monday' : taskAddObj.run_day == 2 ? 'Tuesday' : taskAddObj.run_day == 3 ? 'Wednesday' : taskAddObj.run_day == 4 ? 'Thursday' : taskAddObj.run_day == 5 ? 'Friday' : taskAddObj.run_day == 6 ? 'Saturday' : 'Not Determined'}}
