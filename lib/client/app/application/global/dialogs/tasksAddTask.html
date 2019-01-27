@@ -103,6 +103,17 @@
                                                 <span class="md-subhead">How Your App Responds To Users</span>
                                             </md-card-header-text>
                                         </md-card-header>
+
+                                        <md-list-item>
+                                            <md-input-container class="md-block lightweight-md-input" flex>
+                                                <label>Task ID</label>
+                                                <input name="id" ng-model="taskAddObj.id" minlength="4" required>
+                                                <div ng-messages="createTaskForm.id.$error" ng-show="createTaskForm.id.$invalid">
+                                                    <div ng-message="required">Task ID required!</div>
+                                                    <div ng-message="minlength">Task ID too short!</div>
+                                                </div>
+                                            </md-input-container>
+                                        </md-list-item>
                                         
                                         <md-list-item>
                                             <md-input-container class="md-block lightweight-md-input" flex>
@@ -572,6 +583,13 @@
                                         </md-card-header-text>
                                     </md-card-header>
                                     <md-card-content>
+                                        <md-list-item>
+                                            <span md-truncate style="max-width: 150px;">Task ID</span>
+                                            <span md-truncate style="max-width: 200px;" class="md-secondary">
+                                            {{taskAddObj.id}}
+                                            </span>
+                                        </md-list-item>
+                                        <md-divider></md-divider>
                                         <md-list-item>
                                             <span md-truncate style="max-width: 150px;">Title</span>
                                             <span md-truncate style="max-width: 200px;" class="md-secondary">
