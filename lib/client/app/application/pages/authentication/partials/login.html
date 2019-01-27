@@ -48,7 +48,7 @@
 							    		<md-list-item>
 											<md-input-container class="md-block lightweight-md-input" flex>
 												<label style="text-align: left;">Email</label>
-												<input type="email" name="email" ng-required="true" ng-model="email">
+												<input type="email" name="email" ng-required="true" ng-model="sign_in.email">
 												<div ng-messages="login.email.$error">
 											    	<div ng-message="required">Email required...</div>
 											    	<div ng-message="email">Enter a valid email...</div>
@@ -58,7 +58,7 @@
 										<md-list-item>
 											<md-input-container class="md-block lightweight-md-input" flex>
 												<label style="text-align: left;">Password</label>
-												<input type="password" name="password" ng-required="true" ng-model="password" minlength="7">
+												<input type="password" name="password" ng-required="true" ng-model="sign_in.password" minlength="7">
 												<div ng-messages="login.password.$error" ng-show="login.password.$dirty">
 											    	<div ng-message="required">Password required!</div>
 											    	<div ng-message="minlength">Password too short!</div>
@@ -75,7 +75,7 @@
 										Forgot Password
 									</md-button>
 
-									<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+									<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn(sign_in)" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
 										Sign In
 									</md-button>
 
