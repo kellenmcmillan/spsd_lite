@@ -74,7 +74,7 @@
 									<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="indexForm2.recaptcha" style="margin: 0 16px;"></div>
 								</md-content>
 								<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
-									<md-button ng-disabled="signup.email.$invalid || signup.password.$invalid || signup.confirm_password.$invalid" class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="click_event({'action': 'create-external-account', 'task_id': 'lw005', 'name': 'Created A User Account', 'payload': sign_up});" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+									<md-button ng-disabled="signup.email.$invalid || signup.password.$invalid || signup.confirm_password.$invalid" class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="newUserSignup(sign_up);" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
 										Sign Up
 									</md-button>
 								</div>
