@@ -61,16 +61,16 @@
 		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">{{me.security.roles}}</p>
 		        	</md-list-item>
 		        </md-list>
-		        <md-button ng-show="!me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
+		        <md-button ng-href="/login" ng-show="!me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
 					Sign In
 				</md-button>
-				<md-button ng-show="!me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
+				<md-button ng-href="/signup" ng-show="!me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
 					Sign Up
 				</md-button>
-				<md-button ng-show="me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
+				<md-button ng-click="openMyVault()" ng-show="me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
 					My Vault
 				</md-button>
-				<md-button ng-show="me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
+				<md-button ng-click="auth.$signOut();" ng-show="me" class="md-whiteframe-6dp" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
 					Sign Out
 				</md-button>
 			</div>
