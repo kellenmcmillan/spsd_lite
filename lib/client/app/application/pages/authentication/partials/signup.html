@@ -52,7 +52,7 @@
 									<md-list-item>
 										<md-input-container class="md-block lightweight-md-input" flex>
 											<label style="text-align: left;">Password</label>
-											<input type="password" name="password" ng-required="true" ng-model="sign_up.password" minlength="7">
+											<input type="password" name="password" ng-required="true" ng-model="sign_up.password" minlength="7" password-verify="{{password}}">
 											<div ng-messages="signup.password.$error" ng-show="signup.password.$dirty">
 										    	<div ng-message="required">Password required!</div>
 										    	<div ng-message="minlength">Password too short!</div>
