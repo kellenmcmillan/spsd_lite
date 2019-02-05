@@ -38,7 +38,7 @@ a {
 	text-decoration: none;
 }
 p {
-	font-size: 18px;
+	font-size: 18px; line-height: 24px;
 }
 md-card-content .md-select-value>span:not(.md-select-icon) .md-text {
 	color: rgba(0, 0, 0, 0.87)!important;
