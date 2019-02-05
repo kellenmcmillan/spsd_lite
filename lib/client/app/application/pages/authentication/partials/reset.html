@@ -44,19 +44,18 @@
 									<md-list-item>
 										<md-input-container class="md-block lightweight-md-input" flex>
 											<label style="text-align: left">Password</label>
-											<input type="password" name="password" ng-required="true" ng-model="reset_password" minlength="7" password-verify="{{password}}">
-											<div ng-messages="reset.password.$error" ng-show="reset.password.$dirty">
+											<input type="password" name="reset_password" ng-required="true" ng-model="resetUser.resetPassword" minlength="7" password-verify="{{reset_password}}">
+											<div ng-messages="reset.reset_password.$error" ng-show="reset.reset_password.$dirty">
 										    	<div ng-message="required">Password required!</div>
 										    	<div ng-message="minlength">Password too short!</div>
-										    	<div ng-message="passwordVerify">Password doesn't match!</div>
 										    </div>
 										</md-input-container>
 									</md-list-item>
 									<md-list-item>
 										<md-input-container class="md-block lightweight-md-input" flex>
 											<label style="text-align: left">Re-enter Password</label>
-											<input type="password" name="confirm_password" ng-required="true" ng-model="reset_confirm_password" minlength="7" password-verify="{{password}}">
-											<div ng-messages="reset.confirm_password.$error" ng-show="reset.confirm_password.$dirty">
+											<input type="password" name="confirm_reset_password" ng-required="true" ng-model="reset_confirm_password" minlength="7" password-verify="{{reset_password}}">
+											<div ng-messages="reset.confirm_reset_password.$error" ng-show="reset.confirm_reset_password.$dirty">
 										    	<div ng-message="required">Password required!</div>
 										    	<div ng-message="minlength">Password too short!</div>
 										    	<div ng-message="passwordVerify">Password doesn't match!</div>
@@ -66,7 +65,7 @@
 									<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="indexForm2.recaptcha" style="margin: 0 16px;"></div>
 								</md-content>
 								<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
-									<md-button class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="reset()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+									<md-button class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="passReset(resetUser)" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
 										Reset Password
 									</md-button>
 								</div>
