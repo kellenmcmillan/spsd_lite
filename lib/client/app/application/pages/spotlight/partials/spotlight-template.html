@@ -10,7 +10,7 @@
 	<section style="background: {{base_hue_lighter.value}}">
 
 		<!-- header -->
-		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21; border-bottom: 1px solid #e0e0e0" ng-class="{'header-ms-explorer': browser == 'ie'}">
 			<div ng-include src="'application/partials/header.html'"></div>
 		</md-subheader>
 		<!-- header -->
@@ -26,19 +26,49 @@
 
 			<!-- Page Title -->
 			<div class="spotlight hero" layout="row" flex="100" style="position: relative; top: 0; overflow: hidden; text-align: center; background-color: {{primary_hue_normal.value}};">
-				<div style="width: 100%; height: 100%; position: absolute;">
-				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="{{spotlightPage.data.page.background.images.source}}">
+				<div flex="100" style="height: 420px; width: 100%; margin: 0; overflow: hidden; position: relative;">
+					<img ng-src="{{spotlightPage.data.page.background.images.source}}">
 				</div>
 			</div>
+
+
 			<!-- =Page Title -->
 			
 			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="margin-top: -400px; z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
 				<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; position: relative;">
 					<img style="min-height: 100%; min-width: 100%; height: auto; width: auto; position: absolute; top: -75%; left: -16.5%;" ng-src="{{spotlightPage.data.page.background.images.source}}">
 				</div>
-				<md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 364px; right: 8px;">
-			        <md-icon style="color: {{base_hue_lighter.value}};">share</md-icon>
-			    </md-button>
+				<div layout="row" layout-align="center center" style="position: absolute; top: 364px; right: 8px;">
+
+					<md-fab-speed-dial md-direction="left" class="md-scale">
+
+						<md-fab-trigger>
+							<md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}};">
+						        <md-icon style="color: {{base_hue_lighter.value}};">share</md-icon>
+						    </md-button>
+						</md-fab-trigger>
+
+						<md-fab-actions>
+							<a href="#" socialshare socialshare-provider="twitter" socialshare-text="{{spotlightPage.data.title}}" socialshare-hashtags="mmatexas, {{spotlightPage.data.title}}" socialshare-url="{{whole_url}}" socialshare-trigger="click">
+								<md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+									<md-icon ng-attr-style="color: {{base_hue_lighter.value}}" md-svg-src="media/003-twitter.svg" aria-label="Share on Twitter"></md-icon>
+								</md-button>
+							</a>
+							<a href="#" socialshare socialshare-provider="facebook" socialshare-url="{{whole_url}}" socialshare-text="{{spotlightPage.data.title}}" socialshare-trigger="click" socialshare-type="sharer">
+								<md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+									<md-icon ng-attr-style="color: {{base_hue_lighter.value}}" md-svg-src="media/001-facebook.svg" aria-label="Share on Facebook"></md-icon>
+								</md-button>
+							</a>
+							<a href="#" socialshare socialshare-provider="linkedin" socialshare-url="{{whole_url}}" socialshare-text="{{spotlightPage.data.title}}" socialshare-trigger="click" socialshare-description="{{projectPage.data.page.contents[1]}}" socialshare-source="{{settings.data.company_name}}">
+								<md-button aria-label="Linked In" class="md-fab md-raised md-mini" socialshare-trigger="click">
+									<md-icon ng-attr-style="color: {{base_hue_lighter.value}}" md-svg-src="media/005-linkedin.svg" aria-label="Share on Linked In"></md-icon>
+								</md-button>
+							</a>
+						</md-fab-actions>
+
+					</md-fab-speed-dial>
+
+				</div>
 		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
 		    		<h1 class="type simulated" style="margin-bottom: 24px;">{{spotlightPage.data.title}}</h1>
 			    	<div ng-repeat="content in spotlightPage.data.page.contents">
@@ -112,7 +142,7 @@
 	                                </div>
 	                            </md-input-container>
 	                        </md-list-item>
-	                        <div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="spotlight_page_contact_form.recaptcha"></div>
+	                        <div vc-recaptcha key="'6LdzITUUAAAAAJc60kmGZt8DBnyf-xbdPkv8JDff'" ng-model="spotlight_page_contact_form.recaptcha"></div>
 	                    </md-card-content>
 	                    <md-button ng-click="sendLead(spotlight_page_contact_form, spotlightPage.data.title); clearForm(Form)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
 					        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
@@ -124,9 +154,7 @@
 		</div>
 
 	</section>
-	
 	<!-- Footer -->
 	<div ng-include src="'application/partials/footer.html'"></div>
 	<!-- Footer -->
-
 </md-content>

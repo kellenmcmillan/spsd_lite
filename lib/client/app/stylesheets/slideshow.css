@@ -46,6 +46,7 @@
 
 .slide-text-one {
 	font-size: 84px!important;
+	line-height: 84px!important;
 	margin: 8px;
 	font-weight: bold;
 	opacity: 0;
@@ -59,6 +60,7 @@
 }
 .slide-text-two {
 	font-size: 84px!important;
+	line-height: 84px!important;
 	margin: 8px;
 	opacity: 0;
 	transform: translate(-96px, 0);
@@ -95,6 +97,7 @@
 	.slide-text-one,
 	.slide-text-two {
 		font-size: 36px!important;
+		line-height: 36px!important
 	}
 }
 @media screen and (orientation: landscape) {
