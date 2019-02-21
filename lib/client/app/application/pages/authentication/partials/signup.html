@@ -29,7 +29,7 @@
 								<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
 							</div>
 						</div>
-				    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 350px;" layout="row" layout-align="start center" layout-wrap>
+				    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}};" layout="row" layout-align="start center" layout-wrap>
 				    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 				    		<md-list flex="100" ng-show="!progressAnimation">
 					        	<md-list-item flex="100" layout-padding style="text-align: center;">
@@ -50,14 +50,14 @@
 									</md-list-item>
 								</md-content>
 								<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
-									<md-button ng-disabled="signup.email.$invalid" class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="newUserSignup(sign_up);" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+									<md-button ng-disabled="signup.email.$invalid" class="md-whiteframe-6dp lightweight-round" flex="45" ng-click="newUserSignup(sign_up);" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
 										Sign Up
 									</md-button>
 								</div>
 							</form>
 				    	</div>
 					</md-card>
-					<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="sign_up.recaptcha"></div>
+					<div style="width: 304px; margin: 36px auto 0 auto;" vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="sign_up.recaptcha"></div>
 				</div>
 			</div>
 			<!-- =Page Title -->
