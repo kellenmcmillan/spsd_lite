@@ -21,7 +21,7 @@
 				<div style="position: absolute; top: 0; left: 0; width: {{scroll_bar_aware_window_width}}px;">
 				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg">
 				</div>
-				<div flex="80" flex-sm="40" flex-gt-sm="30">
+				<div style="z-index: 1;" flex="100" flex-sm="40" flex-gt-sm="25" layout="row" layout-align="start center" layout-wrap>
 
 					<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
 
@@ -31,7 +31,7 @@
 							</div>
 						</div>
 
-				    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 350px;" layout="row" layout-align="start center" layout-wrap>
+				    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}};" layout="row" layout-align="start center" layout-wrap>
 
 				    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 
@@ -66,26 +66,19 @@
 											</md-input-container>
 										</md-list-item>
 									</md-list>
-									<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="indexForm2.recaptcha" style="margin: 0 16px;"></div>
 								</md-content>
-
 								<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
-
-									<md-button ng-href="/recover" flex="45" ng-click="" ng-attr-style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; height: 48px;">
+									<md-button ng-href="/recover" flex="45" class="lightweight-round" ng-attr-style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; height: 48px;">
 										Forgot Password
 									</md-button>
-
-									<md-button class="md-whiteframe-6dp" flex="45" ng-click="signIn(sign_in)" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+									<md-button class="md-whiteframe-6dp lightweight-round" flex="45" ng-click="signIn(sign_in)" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
 										Sign In
 									</md-button>
-
 								</div>
-
 							</form>
-
 				    	</div>
-
 					</md-card>
+					<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="indexForm2.recaptcha" style="width: 304px; margin: 36px auto 36px auto;"></div>
 				</div>
 			</div>
 			<!-- =Page Title -->

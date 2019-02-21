@@ -22,7 +22,7 @@
 				<div style="position: absolute; top: 0; left: 0; width: {{scroll_bar_aware_window_width}}px;">
 				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg">
 				</div>
-				<div flex="80" flex-sm="40" flex-gt-sm="30">
+				<div style="z-index: 1;" flex="100" flex-sm="40" flex-gt-sm="25" layout="row" layout-align="start center" layout-wrap>
 
 					<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
 						<div flex="100" style="height: 300px; width: 100%; margin: 0; overflow: hidden" layout="row" layout-align="center center" layout-wrap>
@@ -30,11 +30,11 @@
 								<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
 							</div>
 						</div>
-				    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 350px;" layout="row" layout-align="start center" layout-wrap>
+				    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}};" layout="row" layout-align="start center" layout-wrap>
 				    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 				    		<md-list flex="100" ng-show="!progressAnimation">
 					        	<md-list-item flex="100" layout-padding style="text-align: center;">
-					        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Recover Your {{settings.data.company_name}} Account.</p>
+					        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Recover your password.</p>
 					        	</md-list-item>
 					        </md-list>
 				    		<form flex="100" name="recover" autocomplete="none" ng-show="!progressAnimation">
@@ -70,7 +70,7 @@
 									</md-tabs>
 								</md-content>
 								<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
-									<md-button ng-disabled="recover.question1.$invalid || recover.question2.$invalid" class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="recoverAccount()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+									<md-button ng-disabled="recover.question1.$invalid || recover.question2.$invalid" class="md-whiteframe-6dp lightweight-round" flex="45" ng-click="recoverAccount()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
 										Recover Account
 									</md-button>
 								</div>

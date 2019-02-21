@@ -22,7 +22,7 @@
 				<div style="position: absolute; top: 0; left: 0; width: {{scroll_bar_aware_window_width}}px;">
 				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg">
 				</div>
-				<div flex="100" flex-sm="40" flex-gt-sm="25">
+				<div flex="100" flex-sm="40" flex-gt-sm="25" style="z-index: 1;">
 					<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
 						<div flex="100" style="height: 300px; width: 100%; margin: 0; overflow: hidden" layout="row" layout-align="center center" layout-wrap>
 							<div flex="100" style="text-align: center;">
@@ -33,7 +33,7 @@
 				    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
 				    		<md-list flex="100" ng-show="!progressAnimation">
 					        	<md-list-item flex="100" layout-padding style="text-align: center;">
-					        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Sign up!</p>
+					        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Create an account</p>
 					        	</md-list-item>
 					        </md-list>
 				    		<form flex="100" name="signup" autocomplete="none" ng-show="!progressAnimation">
