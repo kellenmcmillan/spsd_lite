@@ -41,7 +41,7 @@
 				</div>
 			</div>
 			<!-- Container Title -->
-	    	<md-card class="md-whiteframe-6dp" flex="100" flex-sm="33" flex-gt-sm="30" ng-repeat="member in settings.staff.members" ng-click="select_member(member);">
+	    	<md-card class="md-whiteframe-6dp" flex="100" flex-sm="33" flex-gt-sm="30" ng-repeat="member in settings.staff.members" style="max-height: 709px; overflow: hidden;" ng-click="select_member(member);">
 	    		<img ng-src="{{member.source || '/assets/design/missing-person-image.gif'}}" class="md-card-image team_member_picture" alt="Team Member {{member.name}}" ng-class="{'hovered': hovered}" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 	    	</md-card>
 		</div>
