@@ -23,7 +23,6 @@
 				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg">
 				</div>
 				<div flex="80" flex-sm="40" flex-gt-sm="30">
-
 					<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
 						<div flex="100" style="height: 300px; width: 100%; margin: 0; overflow: hidden" layout="row" layout-align="center center" layout-wrap>
 							<div flex="100" style="text-align: center;">
@@ -49,7 +48,6 @@
 										    </div>
 										</md-input-container>
 									</md-list-item>
-									<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="sign_up.recaptcha" style="margin: 0 16px;"></div>
 								</md-content>
 								<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
 									<md-button ng-disabled="signup.email.$invalid" class="md-whiteframe-6dp" flex="45" flex-offset-gt-sm="50" ng-click="newUserSignup(sign_up);" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
@@ -58,8 +56,8 @@
 								</div>
 							</form>
 				    	</div>
-
 					</md-card>
+					<div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="sign_up.recaptcha"></div>
 				</div>
 			</div>
 			<!-- =Page Title -->
