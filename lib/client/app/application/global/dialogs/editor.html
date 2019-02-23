@@ -113,7 +113,7 @@
                 <!-- Add Content Pages - Multiple Views -->
 
                 <!-- Add New Views To Content Pages - Multiple Views -->
-                <md-button md-menu-origin ng-disabled="items_sortable" ng-click="editor_element.data.page.tabs.push('New Tab'), editor_element.data.page.contents.push({'items': {'data':'New Tab', 'type':'title'},{'data':[{'item':'Custom text here...'}],'type':'list'},{'data':{'button':'Example Button','url':'/'},'type':'button'}})" class="md-fab md-mini" aria-label="Add Tabbed Content" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-button md-menu-origin ng-disabled="items_sortable" ng-click="editor_element.data.page.tabs.push('New Tab'); editor_element.data.page.contents.push({'items': {'data':'New Tab', 'type':'title'},{'data':[{'item':'Custom text here...'}],'type':'list'},{'data':{'button':'Example Button','url':'/'},'type':'button'}})" class="md-fab md-mini" aria-label="Add Tabbed Content" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;">
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">tab</md-icon>
                 </md-button>
                 <!-- Add New Views To Content Pages - Multiple Views -->
@@ -254,7 +254,7 @@
                             <md-option ng-if="editor_element.data.items" ng-repeat="views in editor_element.data.items track by $index" ng-value="$index">
                                 {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
                             </md-option>
-                            <md-option ng-if="editor_element.data.page.contents[view].items" ng-repeat="views in editor_element.data.page.contents[view] track by $index" ng-value="$index">
+                            <md-option ng-if="editor_element.data.page.contents[view].items" ng-repeat="views in editor_element.data.page.contents track by $index" ng-value="$index">
                                 {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
                             </md-option>
                         </md-select>
