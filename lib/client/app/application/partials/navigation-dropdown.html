@@ -82,7 +82,8 @@
     </div>
 
 
-    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-class="{'null': menu_title == 'Galleries', 'null': menu_title == 'Projects', 'null': menu_title == 'People', 'null': menu_title == 'Services'}">
+    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-class="
+    {'null': menu_title == 'Galleries', 'null': menu_title == 'Contact Us', 'null': menu_title == 'Capabilities'}">
 
         <div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-if="menu_title == 'Projects' && featured_projects.length > 0">
             <div flex="100" layout-margin>
@@ -184,7 +185,7 @@
 							</md-list-item>
                     </md-content>
                 </md-tab>
-                <md-tab label="Hours" ng-show="settings.data.hours.enabled">
+                <md-tab label="Hours" ng-if="settings.data.hours.enabled == true">
                     <md-content class="md-padding" style="background-color: transparent!important;">
                         <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
                         Sunday <p class="md-secondary">{{settings.data.hours.sunday.start == 'Closed' ? 'Closed' : settings.data.hours.sunday.start + ' - '}}{{settings.data.hours.sunday.end == 'Closed' ? '' : settings.data.hours.sunday.end}}</p>
