@@ -20,7 +20,7 @@
 	    <div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
 			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;" ng-init="selected_tab = 0;">
 		    	<md-tabs md-dynamic-height md-border-bottom ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;">
-	                <md-tab ng-repeat="tab in explore_tabs.contents[selected_tab].items" label="{{explore_tabs.title[selected_tab]}}" ng-click="selected_tab = $index">
+	                <md-tab ng-repeat="tab in explore_tabs.data.page.contents[selected_tab].items" label="{{explore_tabs.title[selected_tab]}}" ng-click="selected_tab = $index">
 	                    <md-content class="md-padding">
 	                    	<h1 class="type simulated" style="margin-bottom: 24px;">{{explore_tabs.title[selected_tab]}}</h1>
 					    	<div ng-repeat="content in tab">
@@ -43,7 +43,7 @@
 	            </md-tabs>
 			</md-card>
 
-			<div class="md-whiteframe-8dp sidebar form" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; padding: 0; margin-bottom: 40px;">
+			<div class="md-whiteframe-8dp sidebar form" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; padding: 0; margin-bottom: 40px; margin-top: 8px;">
 				<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative; margin: 0;">
 					<div style="text-align: center">
 						<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
