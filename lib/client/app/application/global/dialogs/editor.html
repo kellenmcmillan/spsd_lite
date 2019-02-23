@@ -406,7 +406,7 @@
                             <md-list-item ng-show="!items_sortable && editor_element.settings.page_type == 'explore'">
                                 <md-input-container class="md-block lightweight-md-input" flex>
                                     <label>{{editor_element.settings.configs.multiview_label}}</label>
-                                    <input ng-model="editor_element.page.tabs[view]">
+                                    <input ng-model="editor_element.data.page.tabs[view]">
                                 </md-input-container>
                             </md-list-item>
                             <!-- If it's a page with tabs -->
@@ -416,7 +416,7 @@
 
 
                             <!-- Pages -->
-                            <div ng-if="editor_element.data.page.contents && !editor_element.data.page.contents.items" class="lightweight-list-control" ui-sortable="sortableList" ng-model="editor_element.data.page.contents">
+                            <div ng-if="editor_element.data.page.contents && !editor_element.data.page.contents[view].items" class="lightweight-list-control" ui-sortable="sortableList" ng-model="editor_element.data.page.contents">
                                 <div ng-repeat="content in editor_element.data.page.contents track by $index">
 
                                     <md-card-title ng-show="!items_sortable">
