@@ -1,8 +1,8 @@
 <style>
-    .editor-visibility md-icon {transition: all .5s ease-out; color: {{primary_hue_normal.value}}; will-change: color;}
-    .editor-visibility.active-button md-icon {color: {{base_hue_lightest.value}};}
-    .editor-visibility {transition: all .5s ease-out; background-color: {{base_hue_lightest.value}}; will-change: color;}
-    .editor-visibility.active-button {background-color: {{primary_hue_normal.value}};}
+    .editor-visibility md-icon {transition: all .5s ease-out; color: {{primary_hue_normal.value}}!important; will-change: color;}
+    .editor-visibility.active-button md-icon {color: {{base_hue_lightest.value}}!important;}
+    .editor-visibility {transition: all .5s ease-out; background-color: {{base_hue_lightest.value}}!important; will-change: background-color;}
+    .editor-visibility.active-button {background-color: {{primary_hue_normal.value}}!important;}
     md-content.transparent {background: transparent!important; transition: all .5s ease-out;}
 
 </style>
@@ -36,7 +36,7 @@
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
                 </md-button>
 
-                <md-button ng-class="{'active-button': editor_hidden}" class="md-fab md-mini editor-visibility" aria-label="Enable Draggable" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;" ng-click="toggleEditorVisibility()">
+                <md-button ng-class="{'active-button': editor_hidden}" class="md-fab md-mini editor-visibility" aria-label="Enable Draggable" style="position: absolute; bottom: -26px; left: 72px;" ng-click="toggleEditorVisibility()">
                     <md-icon style="cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">visibility</md-icon>
                 </md-button>
 
@@ -45,8 +45,8 @@
                 </md-button>
 
                 <!-- Add Content Pages -->
-                <md-menu ng-disabled="editor_hidden" ng-if="editor_element.settings.configs.contentId == 'pages' && !editor_element.data.page.contents.items">
-                    <md-button md-menu-origin ng-disabled="items_sortable" ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Add Content" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-menu ng-if="editor_element.settings.configs.contentId == 'pages' && !editor_element.data.page.contents.items">
+                    <md-button md-menu-origin ng-disabled="items_sortable || editor_hidden" ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Add Content" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;">
                         <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">add</md-icon>
                     </md-button>
                     <md-menu-content width="4">
@@ -85,8 +85,8 @@
                 <!-- Add Content Pages -->
 
                 <!-- Add Content Pages - Multiple Views -->
-                <md-menu ng-disabled="editor_hidden" ng-if="editor_element.settings.configs.contentId == 'pages' && editor_element.data.page.contents[view].items">
-                    <md-button md-menu-origin ng-disabled="items_sortable" ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Add Content" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-menu ng-if="editor_element.settings.configs.contentId == 'pages' && editor_element.data.page.contents[view].items">
+                    <md-button md-menu-origin ng-disabled="items_sortable || editor_hidden" ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Add Content" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;">
                         <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">add</md-icon>
                     </md-button>
                     <md-menu-content width="4">
@@ -131,8 +131,8 @@
                 <!-- Add New Views To Content Pages - Multiple Views -->
 
                 <!-- Add Content Multiple View -->
-                <md-menu ng-disabled="editor_hidden" ng-if="editor_element.settings.configs.add_content == true && editor_element.data.items[view].contents">
-                    <md-button md-menu-origin ng-disabled="items_sortable" ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Add Content" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-menu ng-if="editor_element.settings.configs.add_content == true && editor_element.data.items[view].contents">
+                    <md-button md-menu-origin ng-disabled="items_sortable || editor_hidden" ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Add Content" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;">
                         <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">add</md-icon>
                     </md-button>
                     <md-menu-content width="4">
@@ -171,8 +171,8 @@
                 <!-- Add Content Multiple View -->
 
                 <!-- Add Content Single View -->
-                <md-menu ng-disabled="editor_hidden" ng-if="editor_element.settings.configs.add_content == true && editor_element.data.length > 0">
-                    <md-button md-menu-origin ng-disabled="items_sortable" ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Add Content" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;">
+                <md-menu ng-if="editor_element.settings.configs.add_content == true && editor_element.data.length > 0">
+                    <md-button md-menu-origin ng-disabled="items_sortable || editor_hidden" ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="Add Content" style="position: absolute; bottom: -26px; left: 184px; background-color: {{base_hue_lightest.value}}!important;">
                         <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">add</md-icon>
                     </md-button>
                     <md-menu-content width="4">
@@ -538,7 +538,7 @@
 
                                         <md-icon ng-if="items_sortable" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" aria-label="Drag List Item" md-font-library="material-icons">drag_handle</md-icon>
 
-                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" ng-if="items_sortable" ng-click="editor_element.data.page.contents.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
+                                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer; margin-right: 8px;" ng-if="items_sortable" ng-click="editor_element.data.page.contents[view].items.splice($index, 1)" aria-label="Remove List Item" md-font-library="material-icons">delete</md-icon>
 
                                         <p ng-show="items_sortable && content.type == 'title'">Title</p>
                                         <p ng-show="items_sortable && content.type == 'text'">Paragraph</p>
