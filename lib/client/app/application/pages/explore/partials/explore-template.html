@@ -20,7 +20,7 @@
 	    <div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
 			<md-card class="md-whiteframe-8dp md-padding" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; position: relative;" ng-init="selected_tab = 0;">
 		    	<md-tabs md-dynamic-height ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;">
-	                <md-tab ng-repeat="tab in explorePage.data.page.contents" label="{{explorePage.data.page.tabs[selected_tab]}}" ng-click="selected_tab = $index">
+	                <md-tab ng-repeat="tab in explorePage.data.page.contents" label="{{explorePage.data.page.tabs[$index]}}" ng-click="selected_tab = $index">
 	                    <md-content class="md-padding">
 	                    	<h1 class="type simulated" style="margin-bottom: 24px;">{{explorePage.data.page.tabs[selected_tab]}}</h1>
 					    	<div ng-repeat="content in tab.items">
