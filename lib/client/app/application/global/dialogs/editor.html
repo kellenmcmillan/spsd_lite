@@ -254,7 +254,7 @@
                             <md-option ng-if="editor_element.data.items" ng-repeat="views in editor_element.data.items track by $index" ng-value="$index">
                                 {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
                             </md-option>
-                            <md-option ng-if="editor_element.data.page.contents[view].items" ng-repeat="views in editor_element.data.page.contents track by $index" ng-value="$index">
+                            <md-option ng-if="editor_element.data.page.contents[$index].items" ng-repeat="views in editor_element.data.page.contents track by $index" ng-value="$index">
                                 {{editor_element.settings.configs.multiview_label}} {{$index + 1}}
                             </md-option>
                         </md-select>
