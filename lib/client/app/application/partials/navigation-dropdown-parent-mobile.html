@@ -19,11 +19,18 @@
                 </md-list-item>
             </a>
             <md-divider></md-divider>
-            <md-list-item ng-repeat="item in settings.navigation.data track by $index" ng-click="close_parent_menu(); sub_navigation_panel = true; open_menu(item)" class="navigation item" flex="100" layout-padding>
-                <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
-                <md-divider ng-if="!$last"></md-divider>
-            </md-list-item>
-            
+            <span ng-repeat="item in settings.navigation.data track by $index">
+                <md-list-item ng-if="!item.navigation.parent.url" ng-click="close_parent_menu(); sub_navigation_panel = true; open_menu(item)">
+                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+                <a ng-if="item.navigation.parent.url" ng-click="close_parent_menu(); sub_navigation_panel = false;" ng-href="{{item.navigation.parent.url}}">
+                    <md-list-item>
+                        <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
+                        <md-divider ng-if="!$last"></md-divider>
+                    </md-list-item>
+                </a>
+            </span>
         </md-list>
     </div>
 </md-card>
