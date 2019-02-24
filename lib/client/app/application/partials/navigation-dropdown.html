@@ -148,7 +148,7 @@
             </div>
         </div>
     	
-    	<div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-show="menu_title == 'Galleries'">
+    	<div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-if="menu_title == 'Galleries'">
             <div flex="100" layout-margin>
                 <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
                     <md-grid-tile class="md-whiteframe-4dp" ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
@@ -161,7 +161,7 @@
             </div>
         </div>
 
-        <div ng-show="menu_title == 'Contact Us'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget" style="min-width: 100%;">
+        <div ng-if="menu_title == 'Contact Us'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget" style="min-width: 100%;">
             <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%; margin-top: 32px; margin-bottom: 32px;">
                 <md-tab label="Contact Info">
                     <md-content class="md-padding" style="background-color: transparent!important;">
