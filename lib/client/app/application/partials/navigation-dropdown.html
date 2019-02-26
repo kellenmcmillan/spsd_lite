@@ -19,70 +19,14 @@
     .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_darkest.value}}!important;}
 </style>
 
-<md-card ng-show="navigation_panel" layout="row" layout-align="start start" class="navigation panel md-whiteframe-8dp" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': navigation_panel, 'close': !navigation_panel}" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0; top: 60px; left: 0; z-index: 3!important;">
-    <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap layout-margin>
-        <md-list flex="100" style="padding-bottom: 48px; padding-top: 32px;">
-            <md-list-item flex="100" layout-padding>
-                <h2 ng-attr-style="color: {{base_hue_lightest.value}};">
-                    Menu
-                </h2>
-                <div class="md-secondary">
-                    <md-button class="md-icon-button" ng-click="close_parent_menu()" aria-label="Close">
-                        <md-icon ng-attr-style="color: {{base_hue_lightest.value}};">close</md-icon>
-                    </md-button>
-                </div>
-            </md-list-item>
-            <a href="/" style="text-decoration: none;">
-                <md-list-item ng-click="sub_navigation_panel = false; close_parent_menu(); open_menu(item)" class="navigation item" flex="100" layout-padding>
-                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">Home</p>
-                </md-list-item>
-            </a>
-            <md-divider></md-divider>
-            <span ng-repeat="item in settings.navigation.data track by $index">
-                <md-list-item ng-if="!item.navigation.parent.url" ng-click="navigation_panel = false; sub_navigation_panel = true; open_menu(item); menu_title = item.navigation.parent.name">
-                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
-                    <md-divider ng-if="!$last"></md-divider>
-                </md-list-item>
-                <a ng-if="item.navigation.parent.url" ng-click="close_parent_menu(); sub_navigation_panel = false;" ng-href="{{item.navigation.parent.url}}">
-                    <md-list-item>
-                        <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
-                        <md-divider ng-if="!$last"></md-divider>
-                    </md-list-item>
-                </a>
-            </span>
-        </md-list>
-    </div>
-</md-card>
-
-<md-card ng-show="sub_navigation_panel" flex="100" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap class="sub-navigation dropdown" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0;" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': sub_navigation_panel, 'close': !sub_navigation_panel}">
+<md-card ng-show="sub_navigation_panel" flex="100" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap class="sub-navigation dropdown md-whiteframe-8dp" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0;" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': sub_navigation_panel, 'close': !sub_navigation_panel}">
 
     <md-button hide show-gt-sm class="md-icon-button" ng-click="close_menu(); close_parent_menu()" style="position: absolute; top: 33px; right: 16px; z-navigation: 5; cursor: pointer;" aria-label="Close">
         <md-icon ng-attr-style="color: {{base_hue_lightest.value}};">close</md-icon>
     </md-button>
 
-	<div class="navigation-list-items" flex="100" flex-gt-sm="40" layout="row" layout-align="start start" layout-margin>
-        <md-list flex="100">
-            <md-list-item flex="100" layout-padding>
-                <h2 ng-attr-style="color: {{base_hue_lightest.value}};">
-                    {{menu_title}}
-                </h2>
-                <div class="md-secondary" hide-gt-sm>
-                    <md-button class="md-icon-button" ng-click="close_menu(); close_parent_menu()" aria-label="Close">
-                        <md-icon ng-attr-style="color: {{base_hue_lightest.value}};">close</md-icon>
-                    </md-button>
-                </div>
-            </md-list-item>
-            <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="child navigation link mobile" style="cursor: pointer;">
-                <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding>
-                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{child.name}}</p>
-                </md-list-item>
-                <md-divider ng-if="!$last"></md-divider>
-            </a>
-        </md-list>
-    </div>
 
-
-    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" layout-wrap ng-class="{'null': menu_title == 'Galleries', 'null': menu_title == 'Contact Us', 'null': menu_title == 'Capabilities'}">
+    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" ng-class="{'null': menu_title == 'Galleries', 'null': menu_title == 'Contact Us', 'null': menu_title == 'Capabilities'}">
 
         <div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-if="menu_title == 'Projects' && featured_projects.length > 0">
             <div flex="100" layout-margin>
@@ -148,7 +92,7 @@
             </div>
         </div>
     	
-    	<div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-if="menu_title == 'Galleries'">
+    	<div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-show="menu_title == 'Galleries'">
             <div flex="100" layout-margin>
                 <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
                     <md-grid-tile class="md-whiteframe-4dp" ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
@@ -161,7 +105,7 @@
             </div>
         </div>
 
-        <div ng-if="menu_title == 'Contact Us'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget" style="min-width: 100%;">
+        <div ng-show="menu_title == 'Contact Us'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget" style="min-width: 100%;">
             <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%; margin-top: 32px; margin-bottom: 32px;">
                 <md-tab label="Contact Info">
                     <md-content class="md-padding" style="background-color: transparent!important;">
