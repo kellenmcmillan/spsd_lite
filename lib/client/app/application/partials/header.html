@@ -9,8 +9,8 @@
 	<!-- Navigation Items -->
 	<div flex="25" flex-gt-sm="75" layout-align="end center" layout="row">
 		<md-button class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="toggleMobileMenu()">
-			<md-icon ng-show="navigation_panel == false" ng-attr-style="color: {{base_hue_darkest.value}}">menu</md-icon>
-			<md-icon ng-show="navigation_panel == true" ng-attr-style="color: {{base_hue_darkest.value}}">close</md-icon>
+			<md-icon ng-if="navigation_panel == false" ng-attr-style="color: {{base_hue_darkest.value}}">menu</md-icon>
+			<md-icon ng-if="navigation_panel == true" ng-attr-style="color: {{base_hue_darkest.value}}">close</md-icon>
 		</md-button>
 		<md-button ng-repeat="item in settings.navigation.data track by $index" class="navigation link" ng-click="open_menu(item); menu_title = item.navigation.parent.name" ng-attr-style="color: {{base_hue_darkest.value}};">
 			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
