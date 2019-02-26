@@ -20,7 +20,7 @@
 </style>
 
 <md-card ng-show="navigation_panel" layout="row" layout-align="start start" class="navigation panel md-whiteframe-8dp" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': navigation_panel, 'close': !navigation_panel}" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0; top: 60px; left: 0; z-index: 3!important;">
-    <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap layout-margin>
+    <div ng-hide="sub_navigation_panel == true" layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap layout-margin>
         <md-list flex="100" style="padding-bottom: 48px; padding-top: 32px;">
             <md-list-item flex="100" layout-padding>
                 <h2 ng-attr-style="color: {{base_hue_lightest.value}};">
