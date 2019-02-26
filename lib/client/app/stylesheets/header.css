@@ -1,7 +1,7 @@
 /* css document */
 
 .header {
-    z-index: 4!important;
+    z-index: 6!important;
 }
 .suite-dialog .header {
     z-index: 21!important;
