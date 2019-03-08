@@ -56,8 +56,8 @@
 				<img layout-margin flex="100" flex-gt-sm="60" ng-repeat="image in folder.images" class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" ng-attr-style="position: absolute; width: auto!important; height: auto!important; max-height: {{window_height - header_height - 160}}px;">
 			</div>
 
-			<div ng-attr-style="position: absolute; top: {{window_height - header_height - 128}}px; width: 100%; min-height: 300px;" layout="row" layout-align="center start" layout-wrap>
-				<div class="md-whiteframe-6dp" flex="100" flex-gt-sm="60" ng-attr-style="position: relative; background-color: {{base_hue_lightest.value}};" layout="row" layout-align="center start" layout-wrap layout-padding>
+			<div ng-attr-style="position: absolute; top: {{window_height - header_height - 128}}px; width: {{scroll_bar_aware_window_width}}px; min-height: 300px;" layout="row" layout-align="center start" layout-wrap>
+				<div class="md-whiteframe-6dp" flex="100" flex-gt-sm="60" ng-attr-style="position: relative; background-color: {{base_hue_lightest.value}}; min-height: 300px;" layout="row" layout-align="center start" layout-wrap layout-padding>
 					<md-button ng-click="" class="md-fab custom-deep-button" aria-label="open backend sidebar" ng-attr-style="position: absolute; top: -42px; left: calc(50% - 28px); background-color: {{primary_hue_normal.value}}!important;">
 	                    <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">arrow_upward</md-icon>
 	                </md-button>
