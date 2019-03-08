@@ -19,10 +19,10 @@
 	    transition-timing-function: cubic-bezier(.4,0,.2,1);
 	    transition-property: border-radius, transform;
 	}
-	/*.slideshow-gallery-container {min-height: {{window_height - 60}}px;}
+	.slideshow-gallery-container {min-height: {{window_height - header_height - 160}}px;}
 	@media screen and (max-width: 839px) {
 	    .slideshow-gallery-container {min-height: 250px;}
-	}*/
+	}
 </style>
 
 <md-content class="page galleries" ng-attr-style="height: {{window_height - header_height}}px;">
