@@ -37,19 +37,6 @@
 		<div ng-include src="'application/partials/navigation-dropdown-parent-mobile.html'"></div>
 		<div ng-include src="'application/partials/navigation-dropdown.html'"></div>
 
-		<!-- Container Title -->
-		<!-- <div layout-padding flex="100" class="basic container">
-
-			<div layout="column" layout-align="center center" flex>
-
-				<div class="center--text">
-					<h2 style="color: {{base_hue_darkest.value}}; font-weight: lighter; font-size: 48px;">{{folder.name}}&nbsp;&nbsp;{{slide_count + 1}}/{{slideshow_length}}</h2>
-				</div>
-
-			</div>
-		</div> -->
-		<!-- Container Title -->
-
 		<div flex="100" layout="row" layout-align="center center" layout-wrap ng-attr-style="height: {{window_height - header_height}}px;">
 
 			<div class="slideshow-gallery-container" layout="row" layout-align="center start" layout-wrap ng-attr-style="position: relative; width: 100%; background-color: {{base_hue_lightest.value}};" flex="100">
@@ -58,15 +45,15 @@
 
 			<div class="md-whiteframe-6dp" ng-attr-style="position: absolute; top: {{window_height - header_height - 128}}px; width: {{scroll_bar_aware_window_width}}px; min-height: 300px; left: 0; background-color: {{base_hue_lightest.value}};" layout="row" layout-align="center start" layout-wrap>
 				<div flex="100" flex-gt-sm="60" ng-attr-style="position: relative; min-height: 300px;" layout="row" layout-align="center start" layout-wrap>
-					<md-button ng-click="" class="md-fab custom-deep-button" aria-label="open backend sidebar" ng-attr-style="position: absolute; top: -42px; left: calc(50% - 28px); background-color: {{primary_hue_normal.value}}!important;">
+					<md-button ng-click="" class="md-fab custom-deep-button" aria-label="open backend sidebar" ng-attr-style="position: absolute; top: -36px; left: calc(50% - 28px); background-color: {{primary_hue_normal.value}}!important;">
 	                    <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">arrow_upward</md-icon>
 	                </md-button>
-					<div flex="40" layout-margin layout-padding>
-						<p style="font-size: 48px; font-weight: lighter; color: {{base_hue_darkest.value}};">{{folder.name}}</p>
+					<div flex="70" layout-margin layout-padding>
+						<p style="font-size: 42px; font-weight: lighter; color: {{base_hue_darkest.value}};">{{folder.name}}</p>
 					</div>
 					<span flex></span>
 					<div flex="20" layout-margin layout-padding>
-						<p style="font-size: 48px; font-weight: lighter; color: {{base_hue_darkest.value}}; text-align: right;">{{slide_count + 1}}/{{slideshow_length}}</p>
+						<p style="font-size: 42px; font-weight: lighter; color: {{base_hue_darkest.value}}; text-align: right;">{{slide_count + 1}}/{{slideshow_length}}</p>
 					</div>
 				</div>
 			</div>
