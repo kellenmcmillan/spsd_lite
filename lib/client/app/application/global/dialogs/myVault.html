@@ -113,7 +113,7 @@
                         <div layout-wrap style="width: 100%;" layout="row" layout-align="center start" flex>
 
 
-                            <div flex="100" flex-gt-sm="40" layout-align="row" layout-wrap>
+                            <div flex="100" flex-gt-sm="40" layout="row" layout-align="center start" layout-wrap>
                                 
                                 <md-card style="background: #fafafa; border: 1px solid rgba(33,33,33,.15); position: relative; margin-bottom: 36px" flex="100">
                                     <md-card-header>
@@ -426,10 +426,6 @@
                                             </md-input-container>
                                         </md-list-item>
                                     </md-card-content>
-                                    <!-- <md-card-actions layout="row" layout-align="end center" flex>
-                                        <md-button  class="md-raised" ng-click="edit_info = false; overview = true; file_view = false; edit_permissions = false" style="background-color: {{base_hue_lightest.value}}; color: {{primary_hue_normal.value}}; padding-left: 16px; padding-right: 16px;">Cancel</md-button>
-                                        <md-button class="md-raised" ng-click="updateMe(me)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
-                                    </md-card-actions> -->
                                     <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="updateMe(me)" ng-confirm-condition="true" class="md-fab md-mini" aria-label="Save Changes To My Details" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 56px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
                                         <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
                                     </md-button>
