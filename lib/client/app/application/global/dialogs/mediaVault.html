@@ -544,7 +544,7 @@
                                                     </span>
                                                     <md-divider ng-if="!$last"></md-divider>
                                                 </md-list-item>
-                                                <md-list-item ng-show="folders.length < 1" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
+                                                <md-list-item ng-show="!folders.length" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
                                                     <p md-truncate>You don't have any folders.</p>
                                                     <span class="md-secondary" ng-show="hovered">
                                                         <md-button class="md-icon-button" ng-disabled="true" style="margin: 0; padding: 0; height: 36px; width: 36px;">
