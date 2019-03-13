@@ -606,7 +606,7 @@
                             </md-button>
                         </md-card>
 
-                        <div ng-show="folders_view == 'edit Folder'" flex="100" flex-gt-sm="40" layout="row" layout-align="center start" style="width: 100%" layout-wrap layout-margin>
+                        <div ng-show="folders_view == 'edit Folder'" flex="100" flex-gt-sm="40" layout="row" layout-align="center start" layout-wrap layout-margin>
                             <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
                                 <md-grid-media class="md-whiteframe-4dp" ng-repeat="media in selected_folder.items" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden; position: relative;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
                                     <md-button ng-click="mediavault_filepicker(media.source)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
