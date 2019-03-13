@@ -601,7 +601,7 @@
                             <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="modifyFolder(selected_folder)" ng-confirm-condition="true" class="md-fab md-mini" aria-label="Save Changes To Folder" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 56px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
                                 <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
                             </md-button>
-                            <md-button aria-label="Close Folder Editor" ng-click="folders_view = 'list'; deselectFolder()" class="md-fab md-mini" aria-label="Close Edit Folder" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                            <md-button aria-label="Close Folder Editor" ng-click="deselectFolder()" class="md-fab md-mini" aria-label="Close Edit Folder" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 8px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
                                 <md-icon style="color: {{primary_hue_normal.value}};" aria-label="close" md-font-library="material-icons">close</md-icon>
                             </md-button>
                         </md-card>
