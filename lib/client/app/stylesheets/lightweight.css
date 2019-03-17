@@ -50,10 +50,23 @@
 
 md-icon.asset.folder {
 	font-size: 72px!important;
+	height: 72px!important;
+	width: 72px!important;
+	min-width: 72px!important;
 }
 @media screen and (min-width: 600px) and (max-width: 960px) {
-	md-icon.asset.folder {font-size: 96px!important;}
+	md-icon.asset.folder {
+		font-size: 96px!important;
+		height: 96px!important;
+		width: 96px!important;
+		min-width: 96px!important;
+	}
 }
 @media screen and (min-width: 960px){
-	md-icon.asset.folder {font-size: 112px!important;}
+	md-icon.asset.folder {
+		font-size: 112px!important;
+		height: 112px!important;
+		width: 112px!important;
+		min-width: 112px!important;
+	}
 }
