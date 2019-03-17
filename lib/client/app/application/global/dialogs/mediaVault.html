@@ -75,7 +75,7 @@
                 </md-button>
                 <!-- Add new slideshow object -->
                 <md-button ng-show="mediaView == 'folders' && folders_view == 'list'" ng-click="createFolder()" class="md-fab md-mini" aria-label="Add a user" style="position: absolute; bottom: -26px; left: 128px; background-color: {{base_hue_lightest.value}}!important;">
-                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Create a media folder" md-font-library="material-icons">add</md-icon>
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Create a media folder" md-font-library="material-icons">create_new_folder</md-icon>
                 </md-button>
                 <md-button ng-show="mediaView == 'folders' && folders_view == 'edit folder'" ng-click="addFolderItem()" class="md-fab md-mini" aria-label="Add a user" style="position: absolute; bottom: -26px; left: 128px; background-color: {{base_hue_lightest.value}}!important;">
                     <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add items to a media folder" md-font-library="material-icons">add</md-icon>
@@ -533,8 +533,12 @@
                             <div layout="row" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="center start" layout-margin layout-wrap flex="100" style="width: 100%">
                                 <md-card flex="60" class="md-card-base" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
                                     <md-card-content>
-                                        <div layout="column" layout-align="center stretch" layout-margin flex>
-                                            <md-list class="md-dense" flex>
+                                        <div layout="row" layout-align="center start" layout-wrap flex>
+                                            <div ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]" flex="50" flex-xs="50" flex-sm="33" flex-gt-sm="20" ng-click="selectFolder(folder); folders_view = 'edit folder'">
+                                                <md-icon class="asset folder" aria-label="Asset Folder Icon" md-font-library="material-icons" style="color: {{base_hue_darkest.value}};">folder</md-icon><br>
+                                                <p>Folder {{i}}</p>
+                                            </div>
+                                            <!-- <md-list class="md-dense" flex>
                                                 <md-list-item ng-repeat="folder in folders" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
                                                     <p md-truncate>{{folder.name}} | {{ folder.settings.enabled ? "Enabled" : "Disabled" }}</p>
                                                     <span class="md-secondary" ng-show="hovered">
@@ -553,7 +557,7 @@
                                                     </span>
                                                     <md-divider ng-if="!$last"></md-divider>
                                                 </md-list-item>
-                                            </md-list>
+                                            </md-list> -->
                                         </div>
                                     </md-card-content>
                                 </md-card>

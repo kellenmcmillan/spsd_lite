@@ -21,14 +21,14 @@
     </md-list-item>
     <md-list-item ng-if="isAuthorized('UserVault', me.security.roles)" flex="100" ng-click="closeAllApps(); openUserVault(); toggleSidebar()">
         <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer; margin-left: 16px; margin-right: 16px;" aria-label="Remove Task" md-font-library="material-icons">recent_actors</md-icon>
-        <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">User Vault</span>
+        <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">Users</span>
     </md-list-item>
     <md-list-item ng-if="isAuthorized('MediaVault', me.security.roles)" flex="100" ng-click="closeAllApps(); openMediaVault(null); toggleSidebar()">
         <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer; margin-left: 16px; margin-right: 16px;" aria-label="Remove Task" md-font-library="material-icons">photo_library</md-icon>
-        <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">Media Vault</span>
+        <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">Assets</span>
     </md-list-item>
     <md-list-item ng-if="isAuthorized('TaskRunner', me.security.roles)" flex="100" ng-click="closeAllApps(); openTaskRunner(); toggleSidebar()">
         <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer; margin-left: 16px; margin-right: 16px;" aria-label="Remove Task" md-font-library="material-icons">assignment</md-icon>
-        <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">Task Runner</span>
+        <span style="color: {{base_hue_darkest.value}}; font-size: 18px;">Automate</span>
     </md-list-item>
 </div>
