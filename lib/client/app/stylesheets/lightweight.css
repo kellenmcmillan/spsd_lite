@@ -70,3 +70,8 @@ md-icon.asset.folder {
 		min-width: 112px!important;
 	}
 }
+
+.asset.folder.container:focus {
+	border: none!important;
+	cursor: pointer;
+}
