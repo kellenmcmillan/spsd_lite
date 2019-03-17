@@ -531,7 +531,7 @@
 
                         <div ng-show="folders_view == 'list'" layout="column" layout-align="center center" flex="100" style="width: 100%" layout-wrap layout-margin>
                             <div layout="row" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="center start" layout-margin layout-wrap flex="100" style="width: 100%">
-                                <md-card flex="60" class="md-card-base" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
+                                <md-card flex="100" class="md-card-base" layout-padding>
                                     <md-card-content>
                                         <div layout="row" layout-align="center start" layout-wrap flex>
                                             <div ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]" flex="50" flex-xs="50" flex-sm="33" flex-gt-sm="20" ng-click="selectFolder(folder); folders_view = 'edit folder'">

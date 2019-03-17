@@ -48,12 +48,12 @@
 	display: none;
 }
 
-md-icon .asset.folder {
+md-icon.asset.folder {
 	font-size: 72px!important;
 }
 @media screen and (min-width: 600px) and (max-width: 960px) {
-	md-icon .asset.folder {font-size: 96px!important;}
+	md-icon.asset.folder {font-size: 96px!important;}
 }
 @media screen and (min-width: 960px){
-	md-icon .asset.folder {font-size: 112px!important;}
+	md-icon.asset.folder {font-size: 112px!important;}
 }
