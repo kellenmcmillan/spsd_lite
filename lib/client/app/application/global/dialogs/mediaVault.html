@@ -523,8 +523,8 @@
     
                     <div flex="100" layout="row" layout-wrap layout-align="center center">
                         <h1 ng-if="folders_view == 'list'" class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Folders</h1>
-                        <h1 ng-if="folders_view == 'edit folder'" class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Folders</h1>
-                        <h1 ng-if="folders_view == 'edit folder item'" class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Folders</h1>
+                        <h1 ng-if="folders_view == 'edit folder'" class="h1" style="margin: 0; color: {{base_hue_darker.value}};">{{selected_folder.name}}</h1>
+                        <h1 ng-if="folders_view == 'edit folder item'" class="h1" style="margin: 0; color: {{base_hue_darker.value}};">{{folder_item.name}}</h1>
                     </div>
 
                     <div flex="100" layout="column" layout-gt-sm="row" layout-align="start center" layout-align-gt-sm="center start" style="padding: 0;">
