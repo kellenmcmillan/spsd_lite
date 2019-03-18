@@ -522,7 +522,7 @@
                 <md-content class="md-padding" flex ng-show="mediaView == 'folders'" layout="row" layout-wrap>
     
                     <div flex="100" layout="row" layout-wrap layout-align="center center">
-                        <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Manage Folders</h1>
+                        <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Asset Folders</h1>
                     </div>
 
                     <div flex="100" layout="column" layout-gt-sm="row" layout-align="start center" layout-align-gt-sm="center start" style="padding: 0;">
@@ -534,31 +534,11 @@
                                 <md-card flex="100" flex-gt-sm="90" class="md-card-base" layout-padding>
                                     <md-card-content>
                                         <div layout="row" layout-align="center start" layout-wrap flex>
-                                            <div ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]" class="asset folder container" flex="50" flex-xs="50" flex-sm="33" flex-gt-sm="20" style="text-align: center;" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
-                                                <md-icon ng-click="selectFolder(folder); folders_view = 'edit folder'" class="asset folder" aria-label="Asset Folder Icon" md-font-library="material-icons" ng-attr-style="color: {{base_hue_darker.value}}; cursor: pointer; border: none!important;">{{hovered ? 'folder_open' : 'folder'}}</md-icon>
+                                            <div ng-repeat="folder in folders" class="asset folder container" flex="50" flex-xs="50" flex-sm="33" flex-gt-sm="20" style="text-align: center;">
+                                                <md-icon ng-click="selectFolder(folder); folders_view = 'edit folder'" class="asset folder" aria-label="Asset Folder Icon" md-font-library="material-icons" ng-attr-style="color: {{base_hue_darker.value}}; cursor: pointer; border: none!important;">folder</md-icon>
                                                 <br>
                                                 <p>Folder {{i}}</p>
                                             </div>
-                                            <!-- <md-list class="md-dense" flex>
-                                                <md-list-item ng-repeat="folder in folders" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
-                                                    <p md-truncate>{{folder.name}} | {{ folder.settings.enabled ? "Enabled" : "Disabled" }}</p>
-                                                    <span class="md-secondary" ng-show="hovered">
-                                                        <md-button class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
-                                                            <md-icon ng-click="selectFolder(folder); folders_view = 'edit folder'" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">edit</md-icon>
-                                                        </md-button>
-                                                    </span>
-                                                    <md-divider ng-if="!$last"></md-divider>
-                                                </md-list-item>
-                                                <md-list-item ng-show="!folders.length" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
-                                                    <p md-truncate>You don't have any folders.</p>
-                                                    <span class="md-secondary" ng-show="hovered">
-                                                        <md-button class="md-icon-button" ng-disabled="true" style="margin: 0; padding: 0; height: 36px; width: 36px;">
-                                                            <md-icon style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">priority_high</md-icon>
-                                                        </md-button>
-                                                    </span>
-                                                    <md-divider ng-if="!$last"></md-divider>
-                                                </md-list-item>
-                                            </md-list> -->
                                         </div>
                                     </md-card-content>
                                 </md-card>
@@ -584,6 +564,16 @@
                                         <textarea md-detect-hidden="true" ng-model="selected_folder.description" rows="3" md-maxlength="250"></textarea>
                                     </md-input-container>
                                 </md-list-item>
+                                <md-list-item flex="50" flex-xs="100" style="max-height: 70px;">
+                                    <md-input-container class="md-block lightweight-md-dropdown normal">
+                                        <label>Folder Type</label>
+                                        <md-select name="folder_type" ng-model="selected_folder.settings.type">
+                                            <md-option ng-value="type" ng-repeat="type in folderTypes track by $index">
+                                                {{type}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </md-list-item>
                                 <md-list-item flex layout="row">
                                     <p flex="20" hide-xs>Speed</p>
                                     <md-slider-container flex="100" flex-gt-sm="80">
@@ -603,6 +593,9 @@
                                     <md-switch class="md-secondary" ng-model="selected_folder.settings.enabled"></md-switch>
                                 </md-list-item>
                             </md-card-content>
+                            <md-button ng-confirm-message="Are you sure you want to delete this folder?" ng-confirm-click="deleteFolder(folder_item)" ng-confirm-condition="true" class="md-fab md-mini" aria-label="Save Changes To Folder" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 104px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
+                                <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">delete</md-icon>
+                            </md-button>
                             <md-button ng-confirm-message="Are you sure you want to save your changes?" ng-confirm-click="modifyFolder(selected_folder)" ng-confirm-condition="true" class="md-fab md-mini" aria-label="Save Changes To Folder" style="background-color: {{base_hue_lightest.value}}!important; position: absolute; bottom: -24px; right: 56px; box-shadow: none!important; border: 1px solid rgba(33,33,33,.15);">
                                 <md-icon style="color: {{primary_hue_normal.value}};" aria-label="Remove Task" md-font-library="material-icons">done</md-icon>
                             </md-button>
@@ -613,14 +606,12 @@
 
                         <div ng-show="folders_view == 'edit folder'" flex="100" flex-gt-sm="40" layout="row" layout-align="center start" layout-wrap layout-margin>
                             <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
-                                <md-grid-media class="md-whiteframe-4dp" ng-repeat="media in selected_folder.items" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden; position: relative;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+                                <md-grid-tile class="md-whiteframe-4dp" ng-repeat="media in selected_folder.items" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden; position: relative;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
                                     <md-button ng-click="mediavault_filepicker(media.source)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
                                         <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                                     </md-button>
                                     <img ng-click="selectFolderItem(media)" ng-disabled="!media.source" ng-src="{{media.source ? media.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" style="width: auto; max-width:100%; min-height: 100%;">
-                                    <md-icon ng-show="media.source == null" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">add</md-icon>
-                                    <!-- <md-grid-media-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{media.title}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{media.title}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-media-footer> -->
-                                </md-grid-media>
+                                </md-grid-tile>
                             </md-grid-list>
                         </div>
 
