@@ -522,7 +522,9 @@
                 <md-content class="md-padding" flex ng-show="mediaView == 'folders'" layout="row" layout-wrap>
     
                     <div flex="100" layout="row" layout-wrap layout-align="center center">
-                        <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Asset Folders</h1>
+                        <h1 ng-if="folders_view == 'list'" class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Folders</h1>
+                        <h1 ng-if="folders_view == 'edit folder'" class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Folders</h1>
+                        <h1 ng-if="folders_view == 'edit folder item'" class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Folders</h1>
                     </div>
 
                     <div flex="100" layout="column" layout-gt-sm="row" layout-align="start center" layout-align-gt-sm="center start" style="padding: 0;">
@@ -537,7 +539,7 @@
                                             <div ng-repeat="folder in folders" class="asset folder container" flex="50" flex-xs="50" flex-sm="33" flex-gt-sm="20" style="text-align: center;">
                                                 <md-icon ng-click="selectFolder(folder); folders_view = 'edit folder'" class="asset folder" aria-label="Asset Folder Icon" md-font-library="material-icons" ng-attr-style="color: {{base_hue_darker.value}}; cursor: pointer; border: none!important;">folder</md-icon>
                                                 <br>
-                                                <p>Folder {{i}}</p>
+                                                <p>{{folder.name}}</p>
                                             </div>
                                         </div>
                                     </md-card-content>
@@ -604,7 +606,7 @@
                             </md-button>
                         </md-card>
 
-                        <div ng-show="folders_view == 'edit folder'" flex="100" flex-gt-sm="40" layout="row" layout-align="center start" layout-wrap layout-margin>
+                        <div ng-show="folders_view == 'edit folder' && selected_folder.items" flex="100" flex-gt-sm="40" layout="row" layout-align="center start" layout-wrap layout-margin>
                             <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
                                 <md-grid-tile class="md-whiteframe-4dp" ng-repeat="media in selected_folder.items" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden; position: relative;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
                                     <md-button ng-click="mediavault_filepicker(media.source)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
@@ -670,7 +672,7 @@
                             </md-button>
                         </md-card>
 
-                        <div ng-show="folders_view == 'edit slide'" flex="100" flex-gt-sm="40">
+                        <div ng-show="folders_view == 'edit folder item'" flex="100" flex-gt-sm="40">
                             <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
                                 <md-button ng-click="mediavault_filepicker(folder_item.source)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                                     <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
