@@ -608,11 +608,11 @@
 
                         <div ng-show="folders_view == 'edit folder' && selected_folder.items" flex="100" flex-gt-sm="40" layout="row" layout-align="center start" layout-wrap layout-margin>
                             <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
-                                <md-grid-tile class="md-whiteframe-4dp" ng-repeat="media in selected_folder.items" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden; position: relative;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
-                                    <md-button ng-click="mediavault_filepicker(media.source)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
+                                <md-grid-tile class="md-whiteframe-4dp" ng-repeat="media in selected_folder.items" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+                                    <!-- <md-button ng-click="mediavault_filepicker(media.source)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 16px; right: 16px; background-color: {{primary_hue_normal.value}}!important;">
                                         <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
-                                    </md-button>
-                                    <img ng-click="selectFolderItem(media)" ng-disabled="!media.source" ng-src="{{media.source ? media.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" style="width: auto; max-width:100%; min-height: 100%;">
+                                    </md-button> -->
+                                    <img ng-click="selectFolderItem(media)" ng-src="{{media.source ? media.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" style="width: auto; max-width:100%; min-height: 100%;">
                                 </md-grid-tile>
                             </md-grid-list>
                         </div>
@@ -677,7 +677,7 @@
                                 <md-button ng-click="mediavault_filepicker(folder_item)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                                     <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                                 </md-button>
-                                <img ng-src="{{folder_item.source}}" class="md-card-image" alt="Washed Out">
+                                <img ng-src="{{folder_item.source ? folder_item.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}} class="md-card-image" alt="Washed Out">
                             </md-card>
                         </div>
 
