@@ -674,7 +674,7 @@
 
                         <div ng-show="folders_view == 'edit folder item'" flex="100" flex-gt-sm="40">
                             <md-card class="md-card-base" style="background-color: {{base_hue_lightest.value}}; position: relative; margin: 8px;">
-                                <md-button ng-click="mediavault_filepicker(folder_item.source)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
+                                <md-button ng-click="mediavault_filepicker(folder_item)" class="md-fab md-mini" aria-label="Edit Element Image" style="position: absolute; top: 8px; right: 8px; background-color: {{primary_hue_normal.value}}!important;">
                                     <md-icon style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="change photo" md-font-library="material-icons">insert_photo</md-icon>
                                 </md-button>
                                 <img ng-src="{{folder_item.source}}" class="md-card-image" alt="Washed Out">
