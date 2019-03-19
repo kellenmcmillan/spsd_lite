@@ -30,9 +30,9 @@
 		<!-- Header duplicate goes here -->
 
 		<!-- Navigation Body -->
-		<md-card flex="100" class="card sub-navigation dropdown" layout="row" layout-align="center start" layout-align-gt-sm="center start">
+		<md-card flex="100" class="card sub-navigation dropdown" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap>
 
-			<div class="navigation-list-items" flex="100" flex-gt-sm="40" layout="row" layout-align="start start" layout-margin style="margin-top: 0;">
+			<div class="navigation-list-items" flex="100" flex-gt-sm="50" layout="row" layout-align="start start" layout-margin style="margin-top: 0;">
 				<h2 ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px;">
                     {{menu_title}}
                 </h2>
@@ -45,7 +45,7 @@
 		        </md-list>
 		    </div>
 
-		    <div flex="100" flex-gt-sm="40" layout="row" layout-align="center center" layout-wrap>
+		    <div flex="100" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap>
 
 		        <div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-if="menu_title == 'Projects' && featured_projects.length > 0" style="margin: 32px 0 0 0;">
 		            <div flex="100">
