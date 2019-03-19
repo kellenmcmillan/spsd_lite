@@ -1,5 +1,5 @@
 <style>
-	.dropdown  md-tabs.md-default-theme .md-tab, .dropdown  md-tabs .md-tab, .dropdown md-tabs .md-tab.md-active {color:{{base_hue_darkest.value}}!important;}
+	.dropdown  md-tabs.md-default-theme .md-tab, .dropdown  md-tabs .md-tab, .dropdown md-tabs .md-tab.md-active {color:{{base_hue_lightest.value}}!important;}
 	.dropdown div > a:not(.md-fab)[href*="maps"], .dropdown md-content > a.addr_widget {width: 100%!important; display: block!important}
     .dropdown div.null > a:not(.md-fab)[href*="maps"] {width: 0!important; display: none!important}
 	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
@@ -9,17 +9,17 @@
         .widget {margin-bottom: 64px;}
     }
    .dropdown md-tabs.md-default-theme md-ink-bar, .dropdown md-tabs md-ink-bar {
-        color: {{base_hue_darkest.value}}!important; 
+        color: {{base_hue_lightest.value}}!important; 
         background: {{base_hue_darkest.value}}!important;
     }
     .dropdown md-tabs.md-default-theme .md-tab .md-ripple-container, .dropdown md-tabs .md-tab .md-ripple-container {
-        color: {{base_hue_darkest.value}}!important; 
+        color: {{base_hue_lightest.value}}!important; 
     }
     .navigation.widget md-input-container {margin: 8px 0!important;}
-    .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_darkest.value}}!important;}
+    .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_lightest.value}}!important;}
 </style>
 
-<div ng-show="sub_navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 0; left: 0; background: {{base_hue_lightest.value}}; height: {{window_height}}px; width: {{window_width}}px; margin: 0; z-index: 23!important;">
+<div ng-show="sub_navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 0; left: 0; background: {{primary_hue_normal.value}}; width: {{window_width}}px; margin: 0; z-index: 23!important;">
 	
 	<section layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap class="lightweight-navigation-mega-sheet" ng-attr-style="position: relative; margin: 0; padding: 0">
 
@@ -32,28 +32,28 @@
 		<!-- Navigation Body -->
 		<md-card flex="100" class="md-card-base card sub-navigation dropdown" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap>
 
-			<div class="navigation-list-items" flex="100" flex-gt-sm="30" layout="row" layout-align="start start" layout-wrap style="margin-top: 0;">
-				<h2 flex="100" ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px;">
+			<div class="navigation-list-items" flex="100" flex-gt-sm="30" layout="row" layout-align="start start" layout-wrap layout-padding style="margin-top: 0;">
+				<h2 flex="100" ng-attr-style="color: {{base_hue_lightest.value}}; font-weight: normal; font-size: 32px;">
                     {{menu_title}}
                 </h2>
 		        <md-list flex="100">
 		            <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="child navigation link mobile" style="cursor: pointer;">
 		                <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding style="height: 48px;">
-		                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter; font-size: 24px;">{{child.name}}</p>
+		                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter; font-size: 24px;">{{child.name}}</p>
 		                </md-list-item>
 		            </a>
 		        </md-list>
 		    </div>
 
-		    <div flex="100" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap>
+		    <div flex="100" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap layout-padding style="margin-bottom: 32px;">
 
-		        <div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-if="menu_title == 'Projects' && featured_projects.length > 0" style="margin: 32px 0 0 0;">
+		        <div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap ng-if="menu_title == 'Projects' && featured_projects.length > 0">
 		            <div flex="100">
 		                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
 		                    <md-grid-tile class="md-whiteframe-2dp" ng-repeat="tile in featured_projects | limitTo: 12" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 		                        <a href="{{tile.settings.url}}" ng-click="close_menu(); close_parent_menu()">
 		                            <img ng-src="{{tile.data.page.foreground.images.source}}" style="width: auto; max-width:200%; max-height: 100%;">
-		                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.data.title}}<md-icon ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.data.title}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
+		                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.data.title}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.data.title}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
 		                        </a>
 		                    </md-grid-tile>
 		                </md-grid-list>
@@ -117,7 +117,7 @@
 		                    <md-grid-tile ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 		                        <a href="{{tile.url}}">
 		                            <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
-		                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.name}}<md-icon ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
+		                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
 		                        </a>
 		                    </md-grid-tile>
 		                </md-grid-list>
@@ -129,19 +129,19 @@
 		                <md-tab label="Contact Info">
 		                    <md-content class="md-padding" style="background-color: transparent!important;">
 		                        <md-list-item class="md-2-line">
-									<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">phone</md-icon>
+									<md-icon ng-attr-style="color: {{base_hue_lightest.value}}">phone</md-icon>
 									<div class="md-list-item-text">
-										<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.phone_1}}</h3>
-										<p ng-attr-style="color: {{base_hue_darkest.value}}">Office</p>
+										<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.phone_1}}</h3>
+										<p ng-attr-style="color: {{base_hue_lightest.value}}">Office</p>
 									</div>
 								</md-list-item>
 								<md-divider></md-divider>
 								<a class="addr_widget" ng-href="{{settings.data.address.google_address_link}}" target="_blank">
 									<md-list-item class="md-2-line">
-										<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">location_on</md-icon>
+										<md-icon ng-attr-style="color: {{base_hue_lightest.value}}">location_on</md-icon>
 										<div class="md-list-item-text">
-											<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.street}} </h3>
-											<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
+											<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.address.street}} </h3>
+											<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
 											
 										</div>
 									</md-list-item>
@@ -149,31 +149,31 @@
 		                </md-tab>
 		                <md-tab label="Hours" ng-if="settings.data.hours.enabled == true">
 		                    <md-content class="md-padding" style="background-color: transparent!important;">
-		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 		                        Sunday <p class="md-secondary">{{settings.data.hours.sunday.start == 'Closed' ? 'Closed' : settings.data.hours.sunday.start + ' - '}}{{settings.data.hours.sunday.end == 'Closed' ? '' : settings.data.hours.sunday.end}}</p>
 		                        </md-list-item>
 		                        <md-divider></md-divider>
-		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 		                        Monday <p class="md-secondary">{{settings.data.hours.monday.start == 'Closed' ? 'Closed' : settings.data.hours.monday.start + ' - '}}{{settings.data.hours.monday.end == 'Closed' ? '' : settings.data.hours.monday.end}}</p>
 		                        </md-list-item>
 		                        <md-divider></md-divider>
-		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 		                        Tuesday <p class="md-secondary">{{settings.data.hours.tuesday.start == 'Closed' ? 'Closed' : settings.data.hours.tuesday.start + ' - '}}{{settings.data.hours.tuesday.end == 'Closed' ? '' : settings.data.hours.tuesday.end}}</p>
 		                        </md-list-item>
 		                        <md-divider></md-divider>
-		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 		                        Wednesday <p class="md-secondary">{{settings.data.hours.wednesday.start == 'Closed' ? 'Closed' : settings.data.hours.wednesday.start + ' - '}}{{settings.data.hours.wednesday.end == 'Closed' ? '' : settings.data.hours.wednesday.end}}</p>
 		                        </md-list-item>
 		                        <md-divider></md-divider>
-		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 		                        Thursday <p class="md-secondary">{{settings.data.hours.thursday.start == 'Closed' ? 'Closed' : settings.data.hours.thursday.start + ' - '}}{{settings.data.hours.thursday.end == 'Closed' ? '' : settings.data.hours.thursday.end}}</p>
 		                        </md-list-item>
 		                        <md-divider></md-divider>
-		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 		                        Friday <p class="md-secondary">{{settings.data.hours.friday.start == 'Closed' ? 'Closed' : settings.data.hours.friday.start + ' - '}}{{settings.data.hours.friday.end == 'Closed' ? '' : settings.data.hours.friday.end}}</p>
 		                        </md-list-item>
 		                        <md-divider></md-divider>
-		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+		                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 		                        Saturday <p class="md-secondary">{{settings.data.hours.saturday.start == 'Closed' ? 'Closed' : settings.data.hours.saturday.start + ' - '}}{{settings.data.hours.saturday.end == 'Closed' ? '' : settings.data.hours.saturday.end}}</p>
 		                        </md-list-item>
 		                        <md-divider></md-divider>
