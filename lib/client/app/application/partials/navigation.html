@@ -35,13 +35,13 @@
 			<div class="navigation-list-items" flex="100" flex-gt-sm="40" layout="row" layout-align="start start" layout-margin>
 		        <md-list flex="100">
 		            <md-list-item flex="100" layout-padding>
-		                <h2 ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 24px;">
+		                <h2 ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px;">
 		                    {{menu_title}}
 		                </h2>
 		            </md-list-item>
 		            <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="child navigation link mobile" style="cursor: pointer;">
 		                <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding style="height: 48px;">
-		                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter; font-size: 21px;">{{child.name}}</p>
+		                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter; font-size: 24px;">{{child.name}}</p>
 		                </md-list-item>
 		            </a>
 		        </md-list>
@@ -62,16 +62,16 @@
 		            </div>
 		        </div>
 
-		        <div ng-if="menu_title == 'Capabilities'" layout="row" layout-align="center center" flex="100" layout-margin class="container navigation widget" style="min-width: 100%; border: 1px solid rgba(33,33,33,.15);">
+		        <div ng-if="menu_title == 'Capabilities'" layout="row" layout-align="center center" flex="100" layout-margin class="container navigation widget" style="min-width: 100%;">
 		            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
 		                <div style="text-align: center" ng-show="progressAnimation">
 		                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
 		                </div>
 		                <form name="navigation" ng-show="!progressAnimation" style="z-index: 2; position: relative; background: {{base_hue_lightest.value}}; margin-bottom: 48px; margin-top: 36px; width: 100%;">
-		                    <div style="text-align: left">
-		                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal;">Contact <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">{{settings.data.company_name}} Today!</span></h1>
-		                    </div>
 		                    <md-card-content>
+		                    	<div style="text-align: left">
+			                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal;">Contact <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">{{settings.data.company_name}} Today!</span></h1>
+			                    </div>
 		                        <md-list-item>
 		                            <md-input-container class="md-block lightweight-md-input">
 		                                <label style="color: {{base_hue_darkest.value}}!important">Full Name</label>
