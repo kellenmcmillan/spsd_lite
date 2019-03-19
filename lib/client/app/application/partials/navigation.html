@@ -1,5 +1,5 @@
 <style>
-	.dropdown  md-tabs.md-default-theme .md-tab, .dropdown  md-tabs .md-tab, .dropdown md-tabs .md-tab.md-active {color:{{base_hue_lightest.value}}!important;}
+	.dropdown  md-tabs.md-default-theme .md-tab, .dropdown  md-tabs .md-tab, .dropdown md-tabs .md-tab.md-active {color:{{base_hue_darkest.value}}!important;}
 	.dropdown div > a:not(.md-fab)[href*="maps"], .dropdown md-content > a.addr_widget {width: 100%!important; display: block!important}
     .dropdown div.null > a:not(.md-fab)[href*="maps"] {width: 0!important; display: none!important}
 	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
@@ -21,10 +21,10 @@
 
 <div ng-show="sub_navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 0; left: 0; background: {{base_hue_lightest.value}}; width: {{window_width}}px; height: {{window_height}}px; margin: 0; z-index: 23!important;">
 	
-	<div layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap class="lightweight-navigation-mega-sheet" ng-attr-style="overflow: hidden; overflow-y: auto; position: relative; background: {{base_hue_lightest.value}}; width: {{window_width}}px; height: {{window_height - 60}}px; margin: 0 0 60px 0; padding: 0">
+	<div layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap class="lightweight-navigation-mega-sheet" ng-attr-style="overflow: hidden; overflow-y: auto; position: relative; background: {{base_hue_lightest.value}}; width: {{window_width}}px; height: {{window_height - 60}}px; margin: 0; padding: 0">
 
 		<!-- Header duplicate goes here -->
-		<md-subheader class="header md-whiteframe-2dp md-no-sticky" layout-align="center center" layout="row" layout flex style="height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+		<md-subheader class="header md-no-sticky" layout-align="center center" layout="row" layout flex style="height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
 			<div ng-include src="'application/partials/header.html'"></div>
 		</md-subheader>
 		<!-- Header duplicate goes here -->
@@ -35,13 +35,13 @@
 			<div class="navigation-list-items" flex="100" flex-gt-sm="40" layout="row" layout-align="start start" layout-margin>
 		        <md-list flex="100">
 		            <md-list-item flex="100" layout-padding>
-		                <h2 ng-attr-style="color: {{base_hue_darkest.value}};">
+		                <h2 ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px;">
 		                    {{menu_title}}
 		                </h2>
 		            </md-list-item>
 		            <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="child navigation link mobile" style="cursor: pointer;">
-		                <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding>
-		                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">{{child.name}}</p>
+		                <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding style="height: 64px;">
+		                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter; font-size: 24px;">{{child.name}}</p>
 		                </md-list-item>
 		            </a>
 		        </md-list>
@@ -52,7 +52,7 @@
 		        <div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-if="menu_title == 'Projects' && featured_projects.length > 0">
 		            <div flex="100" layout-margin>
 		                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
-		                    <md-grid-tile class="md-whiteframe-4dp" ng-repeat="tile in featured_projects | limitTo: 12" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+		                    <md-grid-tile ng-repeat="tile in featured_projects | limitTo: 12" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 		                        <a href="{{tile.settings.url}}" ng-click="close_menu(); close_parent_menu()">
 		                            <img ng-src="{{tile.data.page.foreground.images.source}}" style="width: auto; max-width:100%; min-height: 100%;">
 		                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.data.title}}<md-icon ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.data.title}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
@@ -67,9 +67,9 @@
 		                <div style="text-align: center" ng-show="progressAnimation">
 		                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
 		                </div>
-		                <form name="navigation" class="md-whiteframe-2dp" ng-show="!progressAnimation" style="z-index: 2; position: relative; background: {{base_hue_lightest.value}}; margin-bottom: 48px; margin-top: 36px; width: 100%;">
+		                <form name="navigation" ng-show="!progressAnimation" style="z-index: 2; position: relative; background: {{base_hue_lightest.value}}; margin-bottom: 48px; margin-top: 36px; width: 100%;">
 		                    <div style="text-align: center">
-		                        <h1 style="color: {{base_hue_darkest.value}}!important;">Contact <span style="color: {{primary_hue_normal.value}}">{{settings.data.company_name}} Today!</span></h1>
+		                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal;">Contact <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">{{settings.data.company_name}} Today!</span></h1>
 		                    </div>
 		                    <md-card-content>
 		                        <md-list-item>
@@ -116,7 +116,7 @@
 		    	<div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap ng-show="menu_title == 'Galleries'">
 		            <div flex="100" layout-margin>
 		                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
-		                    <md-grid-tile class="md-whiteframe-2dp" ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+		                    <md-grid-tile ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 		                        <a href="{{tile.url}}">
 		                            <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
 		                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.name}}<md-icon ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
@@ -186,7 +186,7 @@
 		        
 		        <div class="navigation map-widget widget" ng-show="menu_title == 'Locate Us'" layout="row" layout-align="center center" flex="100" layout-margin class="navigation widget">
 		            <!-- Map Widget -->
-		            <div class="md-whiteframe-8dp" flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 16px 0 40px 0;">
+		            <div flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 16px 0 40px 0;">
 		                <div style="margin: 0; width: 100%" layout-wrap layout="row" layout-align="start center" flex>
 		                    <div flex="100" style="margin-bottom: -5px; position: relative;" layout-align="end center">
 		                        <iframe ng-src="{{trusted_google_address_widget_map}}" width="auto" height="400" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
@@ -208,9 +208,9 @@
 	</div>
 
 	<!-- Navigation 'footer' goes here -->
-	<div class="md-whiteframe-2dp" flex="100" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap ng-attr-style="margin: 0; height: 60px; z-index: 2; background-color: {{primary_hue_normal.value}};">
+	<div class="md-whiteframe-6dp" flex="100" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap ng-attr-style="margin: 0; height: 60px; z-index: 2; background-color: {{primary_hue_normal.value}}; position: absolute;">
 		<div flex="50">
-			<md-button class="md-fab md-mini" aria-label="open backend sidebar" style="background-color: transparent;!important;">
+			<md-button class="md-fab md-mini" aria-label="open backend sidebar" style="background-color: transparent!important;">
 		        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">close</md-icon>
 		    </md-button>
 		    Close
