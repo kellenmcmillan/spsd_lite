@@ -19,9 +19,9 @@
     .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_lightest.value}}!important;}
 </style>
 
-<div ng-show="sub_navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 60px; left: 0; width: {{scroll_bar_aware_window_width}}px; margin: 0; z-index: 23!important;" layout="row" layout-align="end start" layout-wrap>
+<div ng-show="sub_navigation_panel == true" ng-attr-style="overflow: hidden; overflow: hidden; position: fixed; top: 60px; left: 0; width: {{scroll_bar_aware_window_width}}px; margin: 0; z-index: 23!important;" layout="row" layout-align="end start" layout-wrap>
 	
-	<section flex="100" flex-xs="100" flex-sm="80" flex-gt-sm="50" flex-gt-lg="50" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap layout-margin class="lightweight-navigation-mini md-whiteframe-6dp" ng-attr-style="position: relative; padding: 0; background: {{base_hue_lightest.value}};">
+	<section flex="100" flex-xs="100" flex-sm="80" flex-gt-sm="60" flex-gt-lg="60" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap layout-margin class="lightweight-navigation-mini" ng-attr-style="position: relative; padding: 0; background: transparent;">
 
 		<!-- Navigation Body -->
 		<md-card flex="100" class="card sub-navigation dropdown" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap style="background: transparent!important; margin: 0 0 32px 0">
@@ -44,7 +44,7 @@
 
 			<!-- Nav Items -->
 
-			<div class="navigation-list-items" flex="100" flex-sm="80" flex-gt-sm="35" layout="row" layout-align="start start" layout-wrap layout-padding ng-attr-style="margin: 0; padding: 0; background: {{base_hue_lightest.value}};">
+			<div class="navigation-list-items md-whiteframe-6dp" flex="100" flex-sm="80" flex-gt-sm="35" layout="row" layout-align="start start" layout-wrap layout-padding ng-attr-style="margin: 0; padding: 0; background: {{base_hue_lightest.value}};">
 				<h2 flex="100" ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px; padding: 0 32px;">
                     {{menu_title}}
                 </h2>
@@ -63,7 +63,7 @@
 
 	    	<!-- Featured Projects -->
 
-	    	<div ng-if="menu_title == 'Projects' && featured_projects.length > 0" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0; padding: 0">
+	    	<div class="md-whiteframe-6dp" ng-if="menu_title == 'Projects' && featured_projects.length > 0" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0; padding: 0">
 
 		        <div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap>
 
@@ -86,9 +86,9 @@
 
 	        <!-- Contact form -->
 
-	        <div flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0">
+	        <div ng-if="menu_title == 'Capabilities'" class="md-whiteframe-6dp" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0">
 
-		        <div ng-if="menu_title == 'Capabilities'" layout="row" layout-align="center center" flex="100" class="container navigation widget" style="min-width: 100%;">
+		        <div layout="row" layout-align="center center" flex="100" class="container navigation widget" style="min-width: 100%;">
 		            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
 		                <div style="text-align: center" ng-show="progressAnimation">
 		                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
@@ -149,7 +149,7 @@
 	    	<div ng-show="menu_title == 'Galleries'" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
 
 		    	<div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
-		            <div flex="100" layout-margin>
+		            <div flex="100">
 		                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
 		                    <md-grid-tile class="md-whiteframe-6dp" ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 		                        <a href="{{tile.url}}">
@@ -167,9 +167,9 @@
 
 	        <!-- Hours and Contact Info -->
 
-	        <div ng-show="menu_title == 'Contact Us'" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
+	        <div class="md-whiteframe-6dp" ng-show="menu_title == 'Contact Us'" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap ng-attr-style="margin: 0; padding: 0; background: {{base_hue_lightest.value}}; border-left: 1px solid rgba(33,33,33,.15);">
 
-		        <div layout="row" layout-align="center center" flex="100" class="navigation widget" style="min-width: 100%;">
+		        <div layout="row" layout-align="center center" flex="100" class="navigation widget">
 		            <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%;">
 		                <md-tab label="Contact Info">
 		                    <md-content class="md-padding" style="background-color: transparent!important;">
@@ -234,9 +234,9 @@
 
 	        <!-- Google Map -->
 
-	        <div ng-show="menu_title == 'Locate Us'" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0 0; padding: 0;">
+	        <div ng-show="menu_title == 'Locate Us'" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
 	        
-		        <div class="navigation map-widget widget" layout="row" layout-align="center center" flex="100" layout-margin>
+		        <div class="navigation map-widget widget" layout="row" layout-align="center center" flex="100">
 		            <!-- Map Widget -->
 		            <div flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 0;">
 		                <div style="margin: 0; width: 100%" layout-wrap layout="row" layout-align="start center" flex>
