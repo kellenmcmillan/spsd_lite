@@ -19,9 +19,9 @@
     .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_lightest.value}}!important;}
 </style>
 
-<div ng-show="sub_navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 60px; left: 0; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0; z-index: 23!important;" layout="row" layout-align="end start" layout-wrap>
+<div ng-show="sub_navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 60px; left: 0; width: {{scroll_bar_aware_window_width}}px; margin: 0; z-index: 23!important;" layout="row" layout-align="end start" layout-wrap>
 	
-	<section flex="100" flex-xs="100" flex-sm="80" flex-gt-sm="50" flex-gt-lg="30" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap layout-margin class="lightweight-navigation-mini md-whiteframe-6dp" ng-attr-style="position: relative; padding: 0">
+	<section flex="100" flex-xs="100" flex-sm="80" flex-gt-sm="50" flex-gt-lg="50" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap layout-margin class="lightweight-navigation-mini md-whiteframe-6dp" ng-attr-style="position: relative; padding: 0; background: {{primary_hue_normal.value}};">
 
 		<!-- Navigation Body -->
 		<md-card flex="100" class="card sub-navigation dropdown" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap style="background: transparent!important;">
@@ -44,14 +44,14 @@
 
 			<!-- Nav Items -->
 
-			<div class="navigation-list-items" flex="100" flex-sm="80" flex-gt-sm="35" layout="row" layout-align="start start" layout-wrap layout-padding style="margin: 0; padding: 0">
-				<h2 flex="100" ng-attr-style="color: {{base_hue_lightest.value}}; font-weight: normal; font-size: 32px; padding: 0 32px;">
+			<div class="navigation-list-items" flex="100" flex-sm="80" flex-gt-sm="35" layout="row" layout-align="start start" layout-wrap layout-padding ng-attr-style="margin: 0; padding: 0; background: {{base_hue_lightest.value}};">
+				<h2 flex="100" ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px; padding: 0 32px;">
                     {{menu_title}}
                 </h2>
 		        <md-list flex="100">
 		            <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="child navigation link mobile" style="cursor: pointer;">
 		                <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding style="height: 48px;">
-		                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter; font-size: 24px;">{{child.name}}</p>
+		                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter; font-size: 18px;">{{child.name}}</p>
 		                </md-list-item>
 		            </a>
 		        </md-list>
