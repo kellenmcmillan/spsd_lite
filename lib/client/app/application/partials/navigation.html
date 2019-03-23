@@ -47,7 +47,7 @@
 				<!-- Nav Items -->
 
 				<div class="navigation-list-items" flex="100" flex-gt-sm="45" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 16px;">
-					<h2 flex="100" ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px; padding: 0 32px; margin-top: 0;">
+					<h2 flex="100" ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px; padding: 0 16px; margin-top: 0;">
 	                    {{menu_title}}
 	                </h2>
 			        <md-list flex="100">
@@ -134,7 +134,62 @@
 			                        <div vc-recaptcha theme="light" key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="navForm.recaptcha" style="margin: 0 16px;"></div>
 			                        <br>
 			                    </md-card-content>
-			                    <md-button ng-disabled="navigation.$invalid" ng-click="sendLead(navForm, 'Navigation'); clearForm(navForm)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+			                    <md-button ng-disabled="navigation.$invalid" ng-click="sendLead(navForm, 'Navigation - Capabilities'); clearForm(navForm)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+			                        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
+			                    </md-button>
+			                </form>
+			            </div>
+			        </div>
+
+		    	</div>
+
+		    	<div ng-if="menu_title == 'Our Team'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0">
+
+			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget" style="min-width: 100%;">
+			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
+			                <div style="text-align: center" ng-show="progressAnimation">
+			                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
+			                </div>
+			                <form name="navigation2" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%; border-left: 1px solid rgba(33,33,33,.15);">
+			                    <md-card-content>
+			                    	<div style="text-align: left">
+				                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Join <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">Team {{settings.data.company_name}}!</span></h1>
+				                    </div>
+			                        <md-list-item>
+			                            <md-input-container class="md-block lightweight-md-input">
+			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Full Name</label>
+			                                <input name="name" ng-model="navForm2.name" minlength="4" required>
+			                                <div ng-messages="navigation2.name.$error" ng-show="navigation2.name.$dirty">
+			                                    <div ng-message="required">Name required!</div>
+			                                    <div ng-message="minlength">Name too short!</div>
+			                                </div>
+			                            </md-input-container>
+			                        </md-list-item>
+			                        <md-list-item>
+			                            <md-input-container class="md-block lightweight-md-input">
+			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Email</label>
+			                                <input type="email" name="email" ng-model="navForm2.email" required>
+			                                <div ng-messages="navigation2.email.$error" ng-show="navigation2.email.$dirty">
+			                                    <div ng-message="required">Email required!</div>
+			                                    <div ng-message="email">Enter a valid email!</div>
+			                                </div>
+			                            </md-input-container>
+			                        </md-list-item>
+			                        <md-list-item>
+			                            <md-input-container class="md-block lightweight-md-input" flex>
+			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Message</label>
+			                                <textarea name="message" md-detect-hidden="true" ng-model="navForm2.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+			                                <div ng-messages="navigation2.message.$error" ng-show="navigation2.message.$dirty">
+			                                    <div ng-message="required">Message required!</div>
+			                                    <div ng-message="minlength">Message too short!</div>
+			                                    <div ng-message="md-maxlength">Message too long!</div>
+			                                </div>
+			                            </md-input-container>
+			                        </md-list-item>
+			                        <div vc-recaptcha theme="light" key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="navForm2.recaptcha" style="margin: 0 16px;"></div>
+			                        <br>
+			                    </md-card-content>
+			                    <md-button ng-disabled="navigation2.$invalid" ng-click="sendLead(navForm2, 'Navigation - Employment Opportunity'); clearForm(navForm2)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
 			                        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
 			                    </md-button>
 			                </form>
