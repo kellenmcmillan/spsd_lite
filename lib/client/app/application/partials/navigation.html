@@ -21,21 +21,21 @@
 
 <div ng-show="sub_navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 60px; left: 0; width: {{scroll_bar_aware_window_width}}px; margin: 0; z-index: 23!important;" layout="row" layout-align="end start" layout-wrap>
 	
-	<section flex="100" flex-xs="100" flex-sm="80" flex-gt-sm="50" flex-gt-lg="50" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap layout-margin class="lightweight-navigation-mini md-whiteframe-6dp" ng-attr-style="position: relative; padding: 0; background: {{primary_hue_normal.value}};">
+	<section flex="100" flex-xs="100" flex-sm="80" flex-gt-sm="50" flex-gt-lg="50" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap layout-margin class="lightweight-navigation-mini md-whiteframe-6dp" ng-attr-style="position: relative; padding: 0; background: {{base_hue_lightest.value}};">
 
 		<!-- Navigation Body -->
-		<md-card flex="100" class="card sub-navigation dropdown" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap style="background: transparent!important;">
+		<md-card flex="100" class="card sub-navigation dropdown" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap style="background: transparent!important; margin: 0 0 32px 0">
 
 			<!-- Social Tabs -->
 			<div flex="100" flex-sm="80" flex-gt-sm="15" flex-gt-lg="15" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 0">
 				<div flex="100" layout="column" layout-align="center start">
-					<div flex="100" style="height: 60px; background-color: blue;">
+					<div flex="100" style="height: 60px; width:100%; background-color: blue;">
 						
 					</div>
-					<div flex="100" style="height: 60px; background-color: yellow;">
+					<div flex="100" style="height: 60px; width:100%; background-color: yellow;">
 						
 					</div>
-					<div flex="100" style="height: 60px; background-color: red;">
+					<div flex="100" style="height: 60px; width:100%; background-color: red;">
 						
 					</div>
 				</div>
@@ -93,7 +93,7 @@
 		                <div style="text-align: center" ng-show="progressAnimation">
 		                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
 		                </div>
-		                <form class="md-whiteframe-6dp" name="navigation" ng-show="!progressAnimation" style="z-index: 2; position: relative; background: {{base_hue_lightest.value}}; width: 100%;">
+		                <form name="navigation" ng-show="!progressAnimation" style="z-index: 2; position: relative; background: {{base_hue_lightest.value}}; width: 100%;">
 		                    <md-card-content>
 		                    	<div style="text-align: left">
 			                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Contact <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">{{settings.data.company_name}} Today!</span></h1>
@@ -148,7 +148,7 @@
 
 	    	<div ng-show="menu_title == 'Galleries'" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
 
-		    	<div class="container navigation widget featured_items" layout-margin flex="100" layout="row" layout-align="center center" layout-wrap>
+		    	<div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
 		            <div flex="100" layout-margin>
 		                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
 		                    <md-grid-tile class="md-whiteframe-6dp" ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
@@ -167,7 +167,7 @@
 
 	        <!-- Hours and Contact Info -->
 
-	        <div ng-show="menu_title == 'Contact Us'" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0; padding: 0;">
+	        <div ng-show="menu_title == 'Contact Us'" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
 
 		        <div layout="row" layout-align="center center" flex="100" class="navigation widget" style="min-width: 100%;">
 		            <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%;">
@@ -234,7 +234,7 @@
 
 	        <!-- Google Map -->
 
-	        <div ng-show="menu_title == 'Locate Us'" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0; padding: 0;">
+	        <div ng-show="menu_title == 'Locate Us'" flex="100" flex-sm="80" flex-gt-sm="50" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0 0; padding: 0;">
 	        
 		        <div class="navigation map-widget widget" layout="row" layout-align="center center" flex="100" layout-margin>
 		            <!-- Map Widget -->
