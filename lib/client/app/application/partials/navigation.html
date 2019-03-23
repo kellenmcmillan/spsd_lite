@@ -88,7 +88,7 @@
 
 		        <!-- Contact form -->
 
-		        <div ng-if="menu_title == 'Capabilities'" class="md-whiteframe-6dp" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0">
+		        <div ng-if="menu_title == 'Capabilities'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0">
 
 			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget" style="min-width: 100%;">
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
@@ -152,7 +152,7 @@
 
 			    	<div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
 			            <div flex="100">
-			                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
+			                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="16px" md-gutter-gt-sm="4px">
 			                    <md-grid-tile class="md-whiteframe-6dp" ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 			                        <a href="{{tile.url}}">
 			                            <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
@@ -242,8 +242,8 @@
 			            <!-- Map Widget -->
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 0;">
 			                <div style="margin: 0; width: 100%" layout-wrap layout="row" layout-align="start center" flex>
-			                    <div flex="100" style="margin-bottom: -5px; position: relative;" layout-align="end center">
-			                        <iframe class="md-whiteframe-6dp" ng-src="{{trusted_google_address_widget_map}}" width="auto" height="500" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
+			                    <div flex="100" style="margin-bottom: -5px; position: relative; overflow: hidden;" layout-align="end center">
+			                        <iframe ng-src="{{trusted_google_address_widget_map}}" width="auto" height="500" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
 			                    </div>
 			                </div>
 			                
