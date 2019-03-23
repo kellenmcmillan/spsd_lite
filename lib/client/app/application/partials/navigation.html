@@ -95,7 +95,7 @@
 			                <div style="text-align: center" ng-show="progressAnimation">
 			                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
 			                </div>
-			                <form name="navigation" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%;">
+			                <form name="navigation" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%; border-left: 1px solid rgba(33,33,33,.15);">
 			                    <md-card-content>
 			                    	<div style="text-align: left">
 				                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Contact <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">{{settings.data.company_name}} Today!</span></h1>
@@ -152,7 +152,7 @@
 
 			    	<div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
 			            <div flex="100">
-			                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="16px" md-gutter-gt-sm="4px">
+			                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="16px">
 			                    <md-grid-tile class="md-whiteframe-6dp" ng-repeat="tile in featured_galleries | limitTo: 6" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 			                        <a href="{{tile.url}}">
 			                            <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
@@ -169,7 +169,7 @@
 
 		        <!-- Hours and Contact Info -->
 
-		        <div class="md-whiteframe-6dp" ng-show="menu_title == 'Contact Us'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap ng-attr-style="margin: 0; padding: 0;">
+		        <div ng-show="menu_title == 'Contact Us'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap ng-attr-style="margin: 0; padding: 0;">
 
 			        <div layout="row" layout-align="center center" flex="100" class="navigation widget">
 			            <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%;">
@@ -241,7 +241,7 @@
 			        <div class="navigation map-widget widget" layout="row" layout-align="center center" flex="100">
 			            <!-- Map Widget -->
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 0;">
-			                <div style="margin: 0; width: 100%" layout-wrap layout="row" layout-align="start center" flex>
+			                <div style="margin: 0; width: 100%; overflow: hidden;" layout-wrap layout="row" layout-align="start center" flex>
 			                    <div flex="100" style="margin-bottom: -5px; position: relative; overflow: hidden;" layout-align="end center">
 			                        <iframe ng-src="{{trusted_google_address_widget_map}}" width="auto" height="500" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
 			                    </div>
