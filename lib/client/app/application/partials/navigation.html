@@ -68,13 +68,13 @@
 
 		    	<!-- Featured Projects -->
 
-		    	<div ng-if="menu_title == 'Projects' && featured_projects.length > 0" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0;">
+		    	<div ng-if="menu_title == 'Projects' && featured_projects.length > 0" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0; border-left: 1px solid rgba(33,33,33,.15);">
 
 			        <div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap>
 
 			            <div flex="100">
 			                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
-			                    <md-grid-tile class="md-whiteframe-6dp" ng-repeat="tile in featured_projects | limitTo: 12" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+			                    <md-grid-tile ng-repeat="tile in featured_projects | limitTo: 12" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
 			                        <a href="{{tile.settings.url}}" ng-click="close_menu(); close_parent_menu()">
 			                            <img ng-src="{{tile.data.page.foreground.images.source}}" style="width: auto; max-width:200%; max-height: 100%;">
 			                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.data.title}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.data.title}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
@@ -91,9 +91,9 @@
 
 		        <!-- Contact form -->
 
-		        <div ng-if="menu_title == 'Capabilities'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0">
+		        <div ng-if="menu_title == 'Capabilities'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15);">
 
-			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget md-whiteframe-6dp" style="min-width: 100%;">
+			        <div layout="row" layout-align="center center" flex="100" class="container navigation" style="min-width: 100%;">
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
 			                <div style="text-align: center" ng-show="progressAnimation">
 			                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
@@ -146,9 +146,9 @@
 
 		    	</div>
 
-		    	<div ng-if="menu_title == 'Our Team'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0">
+		    	<div ng-if="menu_title == 'Our Team'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15);">
 
-			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget md-whiteframe-6dp" style="min-width: 100%;">
+			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget" style="min-width: 100%;">
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
 			                <div style="text-align: center" ng-show="progressAnimation">
 			                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
@@ -227,7 +227,7 @@
 
 		        <!-- Hours and Contact Info -->
 
-		        <div class="md-whiteframe-6dp" ng-show="menu_title == 'Contact Us'" flex="100" flex-gt-sm="55" layout="row" layout-align="center start" layout-wrap style="margin: 0; padding: 16px; min-height: 400px;">
+		        <div ng-show="menu_title == 'Contact Us'" flex="100" flex-gt-sm="55" layout="row" layout-align="center start" layout-wrap style="margin: 0; padding: 16px; min-height: 400px; border-left: 1px solid rgba(33,33,33,.15);">
 
 			        <div layout="row" layout-align="center center" flex="100" class="navigation widget">
 			            <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%;">
@@ -296,7 +296,7 @@
 
 		        <div ng-show="menu_title == 'Locate Us'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
 		        
-			        <div class="navigation map-widget widget md-whiteframe-6dp" layout="row" layout-align="center center" flex="100">
+			        <div class="navigation map-widget widget" layout="row" layout-align="center center" flex="100">
 			            <!-- Map Widget -->
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 0;">
 			                <div style="margin: 0; width: 100%; overflow: hidden;" layout-wrap layout="row" layout-align="start center" flex>
