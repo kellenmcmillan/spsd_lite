@@ -53,17 +53,16 @@
 			    	<md-list flex="100">
 					    <a href="/" style="text-decoration: none;">
 			                <md-list-item ng-click="open_menu(item)" class="navigation item" flex="100" layout-padding>
-			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Home</p>
+			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 21px;">Home</p>
 			                </md-list-item>
 			            </a>
-			            <md-divider></md-divider>
 			            <span ng-repeat="item in settings.navigation.data track by $index">
-			                <md-list-item ng-if="!item.navigation.parent.url" ng-click="nav_children_visible = true; open_menu(item)">
-			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
+			                <md-list-item ng-if="!item.navigation.parent.url" ng-click="open_menu(item)" class="navigation item" flex="100" layout-padding style="height: 48px;">
+			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 21px;">{{item.navigation.parent.name}}</p>
 			                </md-list-item>
 			                <a ng-if="item.navigation.parent.url" ng-click="close_parent_menu(); navigation_panel = false;" ng-href="{{item.navigation.parent.url}}">
-			                    <md-list-item>
-			                        <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
+			                    <md-list-item class="navigation item" flex="100" layout-padding style="height: 48px;">
+			                        <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 21px;">{{item.navigation.parent.name}}</p>
 			                    </md-list-item>
 			                </a>
 			            </span>
