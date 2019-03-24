@@ -19,7 +19,7 @@
     .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_darkest.value}}!important;}
 </style>
 
-<div ng-show="sub_navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 60px; left: 0; width: {{scroll_bar_aware_window_width}}px; margin: 0; height:{{window_height - 60}}px; z-index: 23!important; background: rgba(250,250,250,0.15);" layout="row" layout-align="end start" layout-wrap>
+<div ng-show="navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 60px; left: 0; width: {{scroll_bar_aware_window_width}}px; margin: 0; height:{{window_height - 60}}px; z-index: 23!important; background: rgba(250,250,250,0.15);" layout="row" layout-align="end start" layout-wrap>
 	
 	<section flex="100" flex-xs="100" flex-sm="80" flex-gt-sm="60" flex-gt-lg="60" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap layout-margin class="lightweight-navigation-mini" ng-attr-style="position: relative; padding: 0; background: transparent;">
 
@@ -29,7 +29,7 @@
 			<!-- Social Tabs -->
 			<div flex="100" flex-sm="90" flex-gt-sm="10" flex-gt-lg="10" flex-order="3" flex-order-gt-sm="-1" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 0" class="md-whiteframe-4dp">
 				<div flex="100" layout="column" layout-align="center start">
-					<md-button ng-click="close_menu(); close_parent_menu()" flex="100" layout="row" layout-align="center center" ng-attr-style="height: 60px; width:100%; background-color: {{base_hue_normal.value}}; margin: 0!important;">
+					<md-button hide-xs hide-sm ng-click="close_menu();" flex="100" layout="row" layout-align="center center" ng-attr-style="height: 60px; width:100%; background-color: {{base_hue_normal.value}}; margin: 0!important;">
 						<md-icon ng-attr-style="color: {{base_hue_darkest.value}}; font-size: 24px; height: 24px; width: 24px; min-height: 24px; min-width: 24px;" aria-label="Close menu">close</md-icon>
 					</md-button>
 					<md-button ng-href="https://www.facebook.com/SPSDTX/" target="_blank" flex="100" layout="row" layout-align="center center" style="height: 60px; width:100%; background-color: #3b5998; margin: 0!important;">
@@ -47,9 +47,34 @@
 
 			<div class="md-whiteframe-6dp" flex="100" flex-sm="90" flex-gt-sm="90" layout="row" layout-align="start start" layout-wrap ng-attr-style="margin: 0; padding: 0; background: {{base_hue_lightest.value}}; min-height: 400px; z-index: 2;">
 
-				<!-- Nav Items -->
+				<!-- Parent Nav Items -->
 
-				<div class="navigation-list-items" flex="100" flex-gt-sm="45" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 16px;">
+			    <div ng-show="!nav_children_visible" class="navigation-list-items" flex="100" flex-gt-sm="45" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 16px;">
+			    	<md-list flex="100">
+					    <a href="/" style="text-decoration: none;">
+			                <md-list-item ng-click="open_menu(item)" class="navigation item" flex="100" layout-padding>
+			                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">Home</p>
+			                </md-list-item>
+			            </a>
+			            <md-divider></md-divider>
+			            <span ng-repeat="item in settings.navigation.data track by $index">
+			                <md-list-item ng-if="!item.navigation.parent.url" ng-click="nav_children_visible = true; open_menu(item)">
+			                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
+			                </md-list-item>
+			                <a ng-if="item.navigation.parent.url" ng-click="close_parent_menu(); navigation_panel = false;" ng-href="{{item.navigation.parent.url}}">
+			                    <md-list-item>
+			                        <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
+			                    </md-list-item>
+			                </a>
+			            </span>
+			        </md-list>
+		        </div>
+		        
+			    <!-- Parent Nav Items -->
+
+				<!-- Child Nav Items -->
+
+				<div ng-show="nav_children_visible" class="navigation-list-items" flex="100" flex-gt-sm="45" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 16px;">
 					<h2 flex="100" ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px; padding: 0 16px; margin-top: 0;">
 	                    {{menu_title}}
 	                </h2>
@@ -62,9 +87,7 @@
 			        </md-list>
 			    </div>
 
-			    <!-- Nav Items -->
-
-
+			    <!-- Child Nav Items -->
 
 		    	<!-- Featured Projects -->
 

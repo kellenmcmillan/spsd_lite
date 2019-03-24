@@ -8,11 +8,14 @@
 	<!-- Logo -->
 	<!-- Navigation Items -->
 	<div flex="35" flex-gt-sm="75" layout-align="end center" layout="row">
-		<md-button ng-if="navigation_panel == false" class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="open_parent_menu()">
+		<md-button ng-if="navigation_panel == false" class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="open_menu(null)">
 			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">menu</md-icon>
 		</md-button>
-		<md-button ng-if="navigation_panel == true || sub_navigation_panel == true" class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="close_menu()">
+		<md-button ng-if="navigation_panel == true && nav_children_visible == false" class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="close_menu()">
 			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">close</md-icon>
+		</md-button>
+		<md-button ng-if="navigation_panel == true && nav_children_visible == true" class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="nav_children_visible = false;">
+			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_arrow_left</md-icon>
 		</md-button>
 		<md-button ng-repeat="item in settings.navigation.data track by $index" class="navigation link" ng-click="open_menu(item);" ng-attr-style="color: {{base_hue_darkest.value}};">
 			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
