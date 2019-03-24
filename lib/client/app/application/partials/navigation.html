@@ -1,5 +1,5 @@
 <style>
-	.dropdown  md-tabs.md-default-theme .md-tab, .dropdown  md-tabs .md-tab, .dropdown md-tabs .md-tab.md-active {color:{{base_hue_darkest.value}}!important; font-size: 18px;}
+	.dropdown  md-tabs.md-default-theme .md-tab, .dropdown  md-tabs .md-tab, .dropdown md-tabs .md-tab.md-active {color:{{base_hue_lightest.value}}!important; font-size: 18px;}
 	.dropdown div > a:not(.md-fab)[href*="maps"], .dropdown md-content > a.addr_widget {width: 100%!important; display: block!important}
     .dropdown div.null > a:not(.md-fab)[href*="maps"] {width: 0!important; display: none!important}
 	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
@@ -9,14 +9,14 @@
         .widget {margin-bottom: 64px;}
     }*/
    .dropdown md-tabs.md-default-theme md-ink-bar, .dropdown md-tabs md-ink-bar {
-        color: {{base_hue_darkest.value}}!important; 
-        background: {{base_hue_darkest.value}}!important;
+        color: {{base_hue_lightest.value}}!important; 
+        background: {{base_hue_lightest.value}}!important;
     }
     .dropdown md-tabs.md-default-theme .md-tab .md-ripple-container, .dropdown md-tabs .md-tab .md-ripple-container {
-        color: {{base_hue_darkest.value}}!important; 
+        color: {{base_hue_lightest.value}}!important; 
     }
     .navigation.widget md-input-container {margin: 8px 0!important;}
-    .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_darkest.value}}!important;}
+    .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_lightest.value}}!important;}
 </style>
 
 <div ng-show="navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 60px; left: 0; width: {{scroll_bar_aware_window_width}}px; margin: 0; height:{{window_height - 60}}px; z-index: 23!important;" layout="row" layout-align="end start" layout-wrap>
@@ -88,7 +88,7 @@
 
 		    	<!-- Featured Projects -->
 
-		    	<div ng-if="menu_title == 'Projects' && featured_projects.length > 0 && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0; border-left: 1px solid rgba(33,33,33,.15);">
+		    	<div ng-if="menu_title == 'Projects' && featured_projects.length > 0 && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap layout-padding ng-attr-style="margin: 0; border-left: 1px solid rgba(33,33,33,.15); background-color: {{primary_hue_normal.value}};">
 
 			        <div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap>
 
@@ -111,7 +111,7 @@
 
 		        <!-- Contact form -->
 
-		        <div ng-if="menu_title == 'Capabilities' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15);">
+		        <div ng-if="menu_title == 'Capabilities' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap ng-attr-style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15); background-color: {{primary_hue_normal.value}};">
 
 			        <div layout="row" layout-align="center center" flex="100" class="container navigation" style="min-width: 100%;">
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
@@ -121,11 +121,11 @@
 			                <form name="navigation" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%;">
 			                    <md-card-content>
 			                    	<div style="text-align: left">
-				                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Contact <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">{{settings.data.company_name}} Today!</span></h1>
+				                        <h1 ng-attr-style="color: {{base_hue_lightest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Contact <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">{{settings.data.company_name}} Today!</span></h1>
 				                    </div>
 			                        <md-list-item>
 			                            <md-input-container class="md-block lightweight-md-input">
-			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Full Name</label>
+			                                <label ng-attr-style="color: {{base_hue_lightest.value}}!important">Full Name</label>
 			                                <input name="name" ng-model="navForm.name" minlength="4" required>
 			                                <div ng-messages="navigation.name.$error" ng-show="navigation.name.$dirty">
 			                                    <div ng-message="required">Name required!</div>
@@ -135,7 +135,7 @@
 			                        </md-list-item>
 			                        <md-list-item>
 			                            <md-input-container class="md-block lightweight-md-input">
-			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Email</label>
+			                                <label ng-attr-style="color: {{base_hue_lightest.value}}!important">Email</label>
 			                                <input type="email" name="email" ng-model="navForm.email" required>
 			                                <div ng-messages="navigation.email.$error" ng-show="navigation.email.$dirty">
 			                                    <div ng-message="required">Email required!</div>
@@ -145,7 +145,7 @@
 			                        </md-list-item>
 			                        <md-list-item>
 			                            <md-input-container class="md-block lightweight-md-input" flex>
-			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Message</label>
+			                                <label ng-attr-style="color: {{base_hue_lightest.value}}!important">Message</label>
 			                                <textarea name="message" md-detect-hidden="true" ng-model="navForm.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
 			                                <div ng-messages="navigation.message.$error" ng-show="navigation.message.$dirty">
 			                                    <div ng-message="required">Message required!</div>
@@ -166,7 +166,7 @@
 
 		    	</div>
 
-		    	<div ng-if="menu_title == 'Our Team' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15);">
+		    	<div ng-if="menu_title == 'Our Team' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap ng-attr-style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15); background-color: {{primary_hue_normal.value}};">
 
 			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget" style="min-width: 100%;">
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
@@ -176,11 +176,11 @@
 			                <form name="navigation2" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%;">
 			                    <md-card-content>
 			                    	<div style="text-align: left">
-				                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Join <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">Team {{settings.data.company_name}}!</span></h1>
+				                        <h1 ng-attr-style="color: {{base_hue_lightest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Join <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">Team {{settings.data.company_name}}!</span></h1>
 				                    </div>
 			                        <md-list-item>
 			                            <md-input-container class="md-block lightweight-md-input">
-			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Full Name</label>
+			                                <label ng-attr-style="color: {{base_hue_lightest.value}}!important">Full Name</label>
 			                                <input name="name" ng-model="navForm2.name" minlength="4" required>
 			                                <div ng-messages="navigation2.name.$error" ng-show="navigation2.name.$dirty">
 			                                    <div ng-message="required">Name required!</div>
@@ -190,7 +190,7 @@
 			                        </md-list-item>
 			                        <md-list-item>
 			                            <md-input-container class="md-block lightweight-md-input">
-			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Email</label>
+			                                <label ng-attr-style="color: {{base_hue_lightest.value}}!important">Email</label>
 			                                <input type="email" name="email" ng-model="navForm2.email" required>
 			                                <div ng-messages="navigation2.email.$error" ng-show="navigation2.email.$dirty">
 			                                    <div ng-message="required">Email required!</div>
@@ -200,7 +200,7 @@
 			                        </md-list-item>
 			                        <md-list-item>
 			                            <md-input-container class="md-block lightweight-md-input" flex>
-			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Message</label>
+			                                <label ng-attr-style="color: {{base_hue_lightest.value}}!important">Message</label>
 			                                <textarea name="message" md-detect-hidden="true" ng-model="navForm2.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
 			                                <div ng-messages="navigation2.message.$error" ng-show="navigation2.message.$dirty">
 			                                    <div ng-message="required">Message required!</div>
@@ -226,7 +226,7 @@
 
 		    	<!-- Featured Galleries -->
 
-		    	<div ng-show="menu_title == 'Galleries' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0;">
+		    	<div ng-show="menu_title == 'Galleries' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap layout-padding ng-attr-style="margin: 0; background-color: {{primary_hue_normal.value}};">
 
 			    	<div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0; padding: 0;">
 			            <div flex="100">
@@ -247,26 +247,26 @@
 
 		        <!-- Hours and Contact Info -->
 
-		        <div ng-show="menu_title == 'About Us' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center start" layout-wrap style="margin: 0; padding: 16px; min-height: 400px; border-left: 1px solid rgba(33,33,33,.15);">
+		        <div ng-show="menu_title == 'About Us' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center start" layout-wrap ng-attr-style="margin: 0; padding: 16px; min-height: 400px; border-left: 1px solid rgba(33,33,33,.15); background-color: {{primary_hue_normal.value}};">
 
 			        <div layout="row" layout-align="center center" flex="100" class="navigation widget">
 			            <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%;">
 			                <md-tab label="Contact Info">
 			                    <md-content class="md-padding" style="background-color: transparent!important;">
 			                        <md-list-item class="md-2-line">
-										<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">phone</md-icon>
+										<md-icon ng-attr-style="color: {{base_hue_lightest.value}}">phone</md-icon>
 										<div class="md-list-item-text">
-											<h3 ng-attr-style="color: {{base_hue_darkest.value}};">{{settings.data.phone_1}}</h3>
-											<p ng-attr-style="color: {{base_hue_darkest.value}}">Office</p>
+											<h3 ng-attr-style="color: {{base_hue_lightest.value}};">{{settings.data.phone_1}}</h3>
+											<p ng-attr-style="color: {{base_hue_lightest.value}}">Office</p>
 										</div>
 									</md-list-item>
 									<md-divider></md-divider>
 									<a class="addr_widget" ng-href="{{settings.data.address.google_address_link}}" target="_blank">
 										<md-list-item class="md-2-line">
-											<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">location_on</md-icon>
+											<md-icon ng-attr-style="color: {{base_hue_lightest.value}}">location_on</md-icon>
 											<div class="md-list-item-text">
-												<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.street}} </h3>
-												<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
+												<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.address.street}} </h3>
+												<h3 ng-attr-style="color: {{base_hue_lightest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
 												
 											</div>
 										</md-list-item>
@@ -275,31 +275,31 @@
 			                </md-tab>
 			                <md-tab label="Hours" ng-if="settings.data.hours.enabled == true">
 			                    <md-content class="md-padding" style="background-color: transparent!important;">
-			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 			                        Sunday <p class="md-secondary">{{settings.data.hours.sunday.start == 'Closed' ? 'Closed' : settings.data.hours.sunday.start + ' - '}}{{settings.data.hours.sunday.end == 'Closed' ? '' : settings.data.hours.sunday.end}}</p>
 			                        </md-list-item>
 			                        <md-divider></md-divider>
-			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 			                        Monday <p class="md-secondary">{{settings.data.hours.monday.start == 'Closed' ? 'Closed' : settings.data.hours.monday.start + ' - '}}{{settings.data.hours.monday.end == 'Closed' ? '' : settings.data.hours.monday.end}}</p>
 			                        </md-list-item>
 			                        <md-divider></md-divider>
-			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 			                        Tuesday <p class="md-secondary">{{settings.data.hours.tuesday.start == 'Closed' ? 'Closed' : settings.data.hours.tuesday.start + ' - '}}{{settings.data.hours.tuesday.end == 'Closed' ? '' : settings.data.hours.tuesday.end}}</p>
 			                        </md-list-item>
 			                        <md-divider></md-divider>
-			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 			                        Wednesday <p class="md-secondary">{{settings.data.hours.wednesday.start == 'Closed' ? 'Closed' : settings.data.hours.wednesday.start + ' - '}}{{settings.data.hours.wednesday.end == 'Closed' ? '' : settings.data.hours.wednesday.end}}</p>
 			                        </md-list-item>
 			                        <md-divider></md-divider>
-			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 			                        Thursday <p class="md-secondary">{{settings.data.hours.thursday.start == 'Closed' ? 'Closed' : settings.data.hours.thursday.start + ' - '}}{{settings.data.hours.thursday.end == 'Closed' ? '' : settings.data.hours.thursday.end}}</p>
 			                        </md-list-item>
 			                        <md-divider></md-divider>
-			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 			                        Friday <p class="md-secondary">{{settings.data.hours.friday.start == 'Closed' ? 'Closed' : settings.data.hours.friday.start + ' - '}}{{settings.data.hours.friday.end == 'Closed' ? '' : settings.data.hours.friday.end}}</p>
 			                        </md-list-item>
 			                        <md-divider></md-divider>
-			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_lightest.value}};">
 			                        Saturday <p class="md-secondary">{{settings.data.hours.saturday.start == 'Closed' ? 'Closed' : settings.data.hours.saturday.start + ' - '}}{{settings.data.hours.saturday.end == 'Closed' ? '' : settings.data.hours.saturday.end}}</p>
 			                        </md-list-item>
 			                        <md-divider></md-divider>
