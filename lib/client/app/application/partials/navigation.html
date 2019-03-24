@@ -56,11 +56,11 @@
 			    	<md-list flex="100">
 			            <span ng-repeat="item in settings.navigation.data track by $index">
 			                <md-list-item ng-if="!item.navigation.parent.url" ng-click="open_menu(item)" class="navigation item" flex="100" layout-padding style="height: 48px;">
-			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 21px;">{{item.navigation.parent.name}}</p>
+			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 18px;">{{item.navigation.parent.name}}</p>
 			                </md-list-item>
 			                <a ng-if="item.navigation.parent.url" ng-click="close_parent_menu(); navigation_panel = false;" ng-href="{{item.navigation.parent.url}}">
 			                    <md-list-item class="navigation item" flex="100" layout-padding style="height: 48px;">
-			                        <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 21px;">{{item.navigation.parent.name}}</p>
+			                        <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 18px;">{{item.navigation.parent.name}}</p>
 			                    </md-list-item>
 			                </a>
 			            </span>
@@ -78,7 +78,7 @@
 			        <md-list flex="100">
 			            <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="child navigation link mobile" style="cursor: pointer;">
 			                <md-list-item ng-click="close_menu(); close_parent_menu()" class="navigation item" flex="100" layout-padding style="height: 48px;">
-			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 21px;">{{child.name}}</p>
+			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 18px;">{{child.name}}</p>
 			                </md-list-item>
 			            </a>
 			        </md-list>
