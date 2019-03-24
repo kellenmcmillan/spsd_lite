@@ -90,12 +90,12 @@
 
 		        <div ng-if="menu_title == 'Capabilities'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0">
 
-			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget" style="min-width: 100%;">
+			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget md-whiteframe-6dp" style="min-width: 100%;">
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
 			                <div style="text-align: center" ng-show="progressAnimation">
 			                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
 			                </div>
-			                <form name="navigation" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%; border-left: 1px solid rgba(33,33,33,.15);">
+			                <form name="navigation" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%;">
 			                    <md-card-content>
 			                    	<div style="text-align: left">
 				                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Contact <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">{{settings.data.company_name}} Today!</span></h1>
@@ -145,12 +145,12 @@
 
 		    	<div ng-if="menu_title == 'Our Team'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0">
 
-			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget" style="min-width: 100%;">
+			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget md-whiteframe-6dp" style="min-width: 100%;">
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
 			                <div style="text-align: center" ng-show="progressAnimation">
 			                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
 			                </div>
-			                <form name="navigation2" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%; border-left: 1px solid rgba(33,33,33,.15);">
+			                <form name="navigation2" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%;">
 			                    <md-card-content>
 			                    	<div style="text-align: left">
 				                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Join <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">Team {{settings.data.company_name}}!</span></h1>
