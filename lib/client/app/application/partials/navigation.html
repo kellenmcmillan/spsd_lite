@@ -5,9 +5,9 @@
 	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
     md-card > a:not(.addr_widget)[href*="maps"] {width: 0; display: none;}
     .dropdown .navigation-list-items a.child.navigation[href*="maps"]{display: block!important; width: 100%!important;}
-    @media screen and (max-width: 960px) {
+    /*@media screen and (max-width: 960px) {
         .widget {margin-bottom: 64px;}
-    }
+    }*/
    .dropdown md-tabs.md-default-theme md-ink-bar, .dropdown md-tabs md-ink-bar {
         color: {{base_hue_darkest.value}}!important; 
         background: {{base_hue_darkest.value}}!important;
@@ -51,11 +51,11 @@
 
 			    <div ng-show="!nav_children_visible" class="navigation-list-items" flex="100" flex-gt-sm="45" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 16px;">
 			    	<md-list flex="100">
-					    <a href="/" style="text-decoration: none;">
+					    <!-- <a href="/" style="text-decoration: none;">
 			                <md-list-item ng-click="open_menu(item)" class="navigation item" flex="100" layout-padding>
 			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 21px;">Home</p>
 			                </md-list-item>
-			            </a>
+			            </a> -->
 			            <span ng-repeat="item in settings.navigation.data track by $index">
 			                <md-list-item ng-if="!item.navigation.parent.url" ng-click="open_menu(item)" class="navigation item" flex="100" layout-padding style="height: 48px;">
 			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 21px;">{{item.navigation.parent.name}}</p>
