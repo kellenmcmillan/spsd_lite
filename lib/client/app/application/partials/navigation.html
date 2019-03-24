@@ -42,12 +42,12 @@
 			</div>
 			<!-- Social Tabs -->
 
-			<div class="md-whiteframe-6dp" flex="100" flex-sm="90" flex-gt-sm="90" layout="row" layout-align="start start" layout-wrap ng-attr-style="margin: 0; padding: 0; background: {{base_hue_lightest.value}}; min-height: 400px;">
+			<div class="md-whiteframe-6dp" flex="100" flex-sm="90" flex-gt-sm="90" layout="row" layout-align="start start" layout-wrap ng-attr-style="margin: 0; padding: 0; background: {{base_hue_lightest.value}}; min-height: 400px; z-index: 2;">
 
 				<!-- Nav Items -->
 
 				<div class="navigation-list-items" flex="100" flex-gt-sm="45" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 16px;">
-					<h2 flex="100" ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px; padding: 0 16px; margin-top: 0;">
+					<h2 flex="100" ng-attr-style="color: {{primary_hue_normal.value}}; font-weight: normal; font-size: 32px; padding: 0 16px; margin-top: 0;">
 	                    {{menu_title}}
 	                </h2>
 			        <md-list flex="100">
@@ -224,7 +224,7 @@
 
 		        <!-- Hours and Contact Info -->
 
-		        <div ng-show="menu_title == 'Contact Us'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 16px;">
+		        <div ng-show="menu_title == 'Contact Us'" flex="100" flex-gt-sm="55" layout="row" layout-align="center start" layout-wrap style="margin: 0; padding: 16px; min-height: 400px;">
 
 			        <div layout="row" layout-align="center center" flex="100" class="navigation widget">
 			            <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%;">
@@ -293,7 +293,7 @@
 
 		        <div ng-show="menu_title == 'Locate Us'" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
 		        
-			        <div class="navigation map-widget widget" layout="row" layout-align="center center" flex="100">
+			        <div class="navigation map-widget widget md-whiteframe-6dp" layout="row" layout-align="center center" flex="100">
 			            <!-- Map Widget -->
 			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 0;">
 			                <div style="margin: 0; width: 100%; overflow: hidden;" layout-wrap layout="row" layout-align="start center" flex>
