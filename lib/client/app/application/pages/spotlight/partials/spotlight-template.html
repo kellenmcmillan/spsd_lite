@@ -15,8 +15,7 @@
 		</md-subheader>
 		<!-- header -->
 
-		<div ng-include src="'application/partials/navigation-dropdown-parent-mobile.html'"></div>
-		<div ng-include src="'application/partials/navigation-dropdown.html'"></div>
+		<div ng-include src="'application/partials/navigation.html'"></div>
 
 		<md-button ng-if="me.security.roles == 'Lightweight Internet Coordinator' || me.security.roles == 'Lightweight Support'" ng-click="edit(spotlightPage.settings.configs, spotlightPage)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
 	        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
