@@ -57,7 +57,7 @@
     "serve-favicon": "^2.5.0",
     "serve-static": "^1.13.2",
     "socket.io": "~1.4.5",
-    "superagent": "3.5.x",
+    "superagent": "3.7.x",
     "throng": "4.0.x",
     "time": "0.12.x",
     "underscore": "^1.6.0",
