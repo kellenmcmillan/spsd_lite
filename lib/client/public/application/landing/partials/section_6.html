@@ -1,0 +1,130 @@
+<style>
+	
+md-card.section-6-ms-explorer {min-height: 600px;}
+.icon-container.section-6-ms-explorer {width: {{window_width}}px; margin-top: 250px;}
+.inner-icon-container.section-6-ms-explorer {width: 100%;}
+
+</style>
+
+<div id="contact-us" layout="column" layout-gt-sm="row" layout-align="center center" style="min-height: 500px; padding-top: 128px; padding-bottom: 128px; position: relative; background: #f7f7f7;">
+	<md-button ng-if="user" ng-click="edit(section_6.settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit element" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
+        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+  	</md-button>
+	<md-card flex="100" layout="row" layout-align="center center" style="z-index: 2; overflow: hidden; position: relative; background: transparent;" ng-class="{'section-6-ms-explorer': browser == 'ie'}">
+		<span style="position: absolute; top: 0; left: 50%; width: 1px; height: 1px; background-color: transparent!important;" id="contact"></span>
+		<div flex="100" layout="row" layout-wrap layout-align="center center" style="z-index: 2;" ng-class="{'section-6-ms-explorer': browser == 'ie'}">
+				
+			<!-- Container Title -->
+			<div layout-padding flex="100" flex-gt-sm="30" class="basic container">
+
+                <div layout="column" layout-align="center start" flex layout-padding>
+
+                    <div flex>
+                        <h2 class="complementary-text no-margin no-padding" style="font-size: 32px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10; font-weight: lighter;" ng-bind-html="section_6.title"></h2>
+                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10; font-weight: lighter;" ng-bind-html="section_6.subtitle"></h2>
+                    </div>
+                    <br>
+                    <br>
+                    <div flex ng-repeat="content in section_6.data">
+                        <h1 class="h1" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
+                        <p style="color: {{base_hue_darkest.value}}; font-weight: normal;" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+                        <p style="color: {{base_hue_darkest.value}}; font-weight: normal;" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+                        <div class="full-width no-padding">
+                            <!-- panel images -->
+                            <div ng-cloak class="lightweight-card-image md-card md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+                                <img ng-src="content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/media/images/missing-image.png" class="md-card-image" alt="homepage image" style="height: 100%; width: auto;">
+                            </div>
+                            <!-- panel images -->
+                        </div>
+                        <a ng-if="content.type == 'button'" href="{{content.data.url}}">
+                            <md-button class="custom-deep-button lightweight-round" style="background-color: {{base_hue_darkest.value}}; color: {{primary_hue_normal.value}}; width: 250px; height: 48px">{{content.data.button}}</md-button>
+                        </a>
+	                </div>
+	                <div flex style="width: 100%" layout="column" layout-align="center start">
+		                <md-list-item class="md-2-line">
+							<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">phone</md-icon>
+							<div class="md-list-item-text">
+								<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.phone_1}}</h3>
+								<p ng-attr-style="color: {{base_hue_darkest.value}}">Office</p>
+							</div>
+						</md-list-item>
+						<a ng-href="{{settings.data.address.google_address_link}}" target="_blank">
+							<md-list-item class="md-2-line">
+								<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">location_on</md-icon>
+								<div class="md-list-item-text">
+									<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.street}} </h3>
+									<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
+									<p ng-attr-style="color: {{base_hue_darkest.value}}">Address</p>
+								</div>
+							</md-list-item>
+						</a>
+					</div>
+
+                </div>
+
+			</div>
+			<!-- Container Title -->
+
+
+			<div flex="100" flex-gt-sm="40" layout="row" layout-align="center start" layout-wrap class="services container" style="margin: 0; padding: 0">
+
+
+
+				<div flex="100" flex-sm="100">
+
+					<div style="text-align: center">
+                        <div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+                    </div>
+                    <form name="index_2" ng-show="!progressAnimation">
+                        <md-card-content>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" style="width: 100%;">
+                                    <label>Full Name</label>
+                                    <input name="name" ng-model="indexForm2.name" minlength="4" required>
+                                    <div ng-messages="index_2.name.$error" ng-show="index_2.name.$dirty">
+                                        <div ng-message="required">Name required!</div>
+                                        <div ng-message="minlength">Name too short!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input" style="width: 100%;">
+                                    <label>Email</label>
+                                    <input type="email" name="email" ng-model="indexForm2.email" required>
+                                    <div ng-messages="index_2.email.$error" ng-show="index_2.email.$dirty">
+                                        <div ng-message="required">Email required!</div>
+                                        <div ng-message="email">Enter a valid email!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+                            <md-list-item>
+                            	<md-input-container class="md-block lightweight-md-input" flex>
+                                    <label>Message</label>
+                                    <textarea name="message" md-detect-hidden="true" ng-model="indexForm2.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+                                    <div ng-messages="index_2.message.$error" ng-show="index_2.message.$dirty">
+                                        <div ng-message="required">Message required!</div>
+                                        <div ng-message="minlength">Message too short!</div>
+                                        <div ng-message="md-maxlength">Message too long!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+                            <div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="indexForm2.recaptcha" style="margin: 0 16px;"></div>
+                            <br>
+                            <!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+                            </script> -->
+                        </md-card-content>
+                        <md-button ng-disabled="index_2.$invalid" ng-click="sendLead(indexForm2, 'Home Page'); clearForm(indexForm2); click_event({'action': 'send-lead', 'task_id': 'lw011', 'name': 'Lead Submitted - Home Page', 'payload': indexForm2});" aria-label="Edit Info Page" class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 150px; height: 48px">
+                            <md-icon style="color: {{base_hue_lightest.value}};">send</md-icon>&nbsp;&nbsp;Send
+                        </md-button>
+                    </form>
+
+				</div>
+
+			</div>
+
+				
+
+
+		</div>
+	</md-card>
+</div>

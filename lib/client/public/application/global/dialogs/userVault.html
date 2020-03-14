@@ -1,0 +1,143 @@
+<div class="dialog-curtain userVault" ng-show="user_vault_visible == true">
+
+    <md-content class="page suite-dialog" style="height: {{window_height}}px; overflow: auto;">
+
+
+
+
+
+        <!-- =================== header =================== -->
+
+        <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 21; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
+
+            <div layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex>
+                <!-- =================== Mini App Title =================== -->
+                <div flex="50" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="start center" layout="row">
+                    <h3 class="md-headline" style="font-size: 24px;">User Vault</h3>
+                </div>
+                <!-- =================== Mini App Title =================== -->
+
+                <!-- =================== Start Action Buttons =================== -->
+
+                <!-- Mini App Menu Button -->
+                <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
+                </md-button>
+                <md-button ng-click="openAddUser()" class="md-fab md-mini" aria-label="Add a user" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">add</md-icon>
+                </md-button>
+                <!-- Mini App Menu Button -->
+
+                <!-- Account Major Action Button -->
+
+                <!-- Account Major Action Button -->
+
+                <!-- =================== End Action Buttons =================== -->
+
+
+
+
+                <!-- =================== Navigation Items =================== -->
+
+                <div flex="50" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
+                    <md-button class="md-icon-button" aria-label="Close My Vault" ng-confirm-message="Are you sure you want to exit?" ng-confirm-click="closeUserVault()" ng-confirm-condition="true">
+                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Remove Task" md-font-library="material-icons">close</md-icon>
+                    </md-button>
+                </div>
+
+                <!-- =================== Navigation Items =================== -->
+
+            </div>
+
+        </md-subheader>
+
+        <!-- =================== header =================== -->
+
+
+
+
+        <!-- =================== Mini App Side Menu =================== -->
+
+        <div ng-include src="'application/partials/backend-menu.html'"></div>
+
+        <!-- =================== Mini App Side Menu =================== -->
+    
+        <md-card class="md-card-base card inputs">
+
+            <md-card-content flex>
+
+                <md-content class="md-padding" flex>
+
+                    <div layout="column" layout-wrap layout-align="space-around center" flex>
+
+                        <div layout="column" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="start center" layout-margin flex="100" style="width: 100%">
+
+                            <div layout="row" layout-align="start center">
+                                <md-button ng-disabled="currentUserPage == 0" ng-click="currentUserPage = 0" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
+                                </md-button>
+                                <md-button ng-disabled="currentUserPage == 0" ng-click="currentUserPage=currentUserPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                                </md-button>
+                                <span>{{currentUserPage+1}}/{{numberOfUserPages}}</span>
+                                <md-button ng-disabled="currentUserPage == numberOfUserPages - 1" ng-click="currentUserPage=currentUserPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                                </md-button>
+                                <md-button ng-disabled="currentUserPage == numberOfUserPages - 1" ng-click="currentUserPage = numberOfUserPages - 1" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
+                                </md-button>
+                            </div>
+                            <div flex="100" flex-gt-sm="50" layout="row" layout="start center" style="max-height: 38px;">
+                                <!-- <md-button ng-click="clearQueryMedia(); queryFilter = null" class="button-color-border">Clear Search</md-button> -->
+                                <md-button ng-click="clearQueryUser(); queryUserFilter = null" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">clear</md-icon>
+                                </md-button>
+                                <!-- <md-button ng-click="queryMedia(queryFilter)" class="button-color-border">
+                                Search</md-button> -->
+                                <md-button ng-click="queryUser(queryUserFilter)" class="md-icon-button" aria-label="Search Media">
+                                    <md-icon style="color: {{base_hue_darker.value}};">search</md-icon>
+                                </md-button>
+                                <md-input-container class="md-block lightweight-md-input" style="margin: 0;" flex>
+                                    <label>Search</label>
+                                    <input ng-model="queryUserFilter">
+                                </md-input-container>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div layout="column" layout-align="center stretch" layout-margin flex>
+                        <md-list class="md-dense" flex>
+                            <md-list-item ng-repeat="user in userslist | startFrom:currentUserPage*usersPageSize | limitTo:usersPageSize" class="noright" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" ng-class="{'hovered': hovered}">
+                                <p md-truncate>{{user.firstname}} {{user.lastname}} | {{ user.email }}</p>
+                                <span class="md-secondary" ng-show="hovered">
+                                    <md-button class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
+                                        <md-icon ng-confirm-message="Are you sure you want to delete this user?" ng-confirm-click="deleteUser(user)" ng-confirm-condition="true" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">delete</md-icon>
+                                    </md-button>
+                                    <md-button class="md-icon-button" style="margin: 0; padding: 0; height: 36px; width: 36px;">
+                                        <md-icon ng-click="selectUser(user)" style="color: {{base_hue_darker.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">edit</md-icon>
+                                    </md-button>
+                                </span>
+                                <md-divider ng-if="!$last"></md-divider>
+                            </md-list-item>
+                        </md-list>
+                    </div>
+                    <div layout="row" layout-align="start center" layout-margin flex>
+                        <md-button ng-disabled="currentUserPage == 0" ng-click="currentUserPage = 0" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
+                        </md-button>
+                        <md-button ng-disabled="currentUserPage == 0" ng-click="currentUserPage=currentUserPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                        </md-button>
+                        <span>{{currentUserPage+1}}/{{numberOfUserPages}}</span>
+                        <md-button ng-disabled="currentUserPage == numberOfUserPages - 1" ng-click="currentUserPage=currentUserPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                        </md-button>
+                        <md-button ng-disabled="currentUserPage == numberOfUserPages - 1" ng-click="currentUserPage = numberOfUserPages - 1" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
+                        </md-button>
+                    </div>
+                </md-content>
+            </md-card-content>
+        </md-card>
+    </md-content>
+</div>

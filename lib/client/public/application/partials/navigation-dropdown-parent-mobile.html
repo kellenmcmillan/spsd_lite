@@ -1,0 +1,37 @@
+<md-card ng-show="navigation_panel" layout="row" layout-align="start start" class="navigation panel md-whiteframe-8dp" ng-class="{'section-3-ms-explorer': browser == 'ie', 'open': navigation_panel, 'close': !navigation_panel}" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; background: {{primary_hue_normal.value}}; width: {{scroll_bar_aware_window_width}}px; margin: 0; top: 60px; left: 0; z-index: 3!important;">
+    <div layout="row" layout-align="start start" style="position: relative;" flex="100" layout-wrap layout-margin>
+        
+        <md-list flex="100" style="padding-bottom: 48px; padding-top: 32px;">
+            <md-list-item flex="100" layout-padding>
+                <h2 ng-attr-style="color: {{base_hue_lightest.value}};">
+                    Menu
+                </h2>
+                <div class="md-secondary">
+                    <md-button class="md-icon-button" ng-click="close_parent_menu()" aria-label="Close">
+                        <md-icon ng-attr-style="color: {{base_hue_lightest.value}};">close</md-icon>
+                    </md-button>
+                </div>
+            </md-list-item>
+            <a href="/" style="text-decoration: none;">
+                <md-list-item ng-click="sub_navigation_panel = false; close_parent_menu(); open_menu(item)" class="navigation item" flex="100" layout-padding>
+                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">Home</p>
+                </md-list-item>
+            </a>
+            <md-divider></md-divider>
+            <span ng-repeat="item in settings.navigation.data track by $index">
+                <md-list-item ng-if="!item.navigation.parent.url" ng-click="close_parent_menu(); sub_navigation_panel = true; open_menu(item)">
+                    <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+                <a ng-if="item.navigation.parent.url" ng-click="close_parent_menu(); sub_navigation_panel = false;" ng-href="{{item.navigation.parent.url}}">
+                    <md-list-item>
+                        <p ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer; font-weight: lighter;">{{item.navigation.parent.name}}</p>
+                        <md-divider ng-if="!$last"></md-divider>
+                    </md-list-item>
+                </a>
+            </span>
+        </md-list>
+    </div>
+</md-card>
+<!-- Menu Panel -->
+

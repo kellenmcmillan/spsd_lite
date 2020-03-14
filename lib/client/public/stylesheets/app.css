@@ -1,0 +1,61 @@
+/* css document */
+
+md-list md-list-item .md-avatar-icon {
+	background-color: transparent!important;
+}
+.projects-listing {
+	width: 100%;
+	overflow: hidden;
+	float: left;
+	box-sizing: border-box;
+}
+.projects-listing md-card {
+	overflow: hidden;
+}
+.projects-listing img {
+	min-height: 100%;
+	min-width: 100%;
+	height: auto;
+	width: auto;
+	margin-left: -25%;
+	margin-top: -50%;
+}
+.projects-listing .post-image {
+	max-height: 300px;
+}
+@media screen and (max-width: 959px) {
+	/**/
+}
+@media screen and (max-width: 599px) {
+	.projects-listing.full-width {
+		width: 100%!important;
+	}
+}
+.rounded {
+	-webkit-border-radius: 24px!important;
+	-moz-border-radius: 24px!important;
+	border-radius: 24px!important;
+}
+.lightweight-md-input {
+	width: 100%!important;
+}
+
+.lightweight-in-app-dialog-curtain {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	margin: 0!important;
+	z-index: 20;
+}
+
+.lightweight-in-app-dialog-container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	margin: 0!important;
+	z-index: 1;
+}

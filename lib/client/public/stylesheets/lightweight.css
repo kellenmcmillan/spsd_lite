@@ -1,0 +1,77 @@
+/* css */
+
+/* ============================== Curtain ============================== */
+
+.dialog-curtain {
+	z-index: 21;
+}
+.secondary-dialog-curtain {
+	z-index: 22;
+}
+.tertiary-dialog-curtain {
+	z-index: 23;
+}
+.dialog-curtain,
+.suite-dialog,
+.secondary-dialog-curtain,
+.tertiary-dialog-curtain {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: hidden;
+	margin: 0!important;
+}
+@media screen and (max-width: 839px) {
+	.dialog-curtain,
+	.secondary-dialog-curtain,
+	.tertiary-dialog-curtain {
+		overflow-y: scroll!important;
+	}
+}
+
+/* ============================== Curtain ============================== */
+
+/* ============================== dialogs ============================== */
+.suite-dialog {
+	margin: 0!important;
+}
+/*.mission-dialog {z-index: 2001;}*/
+
+.upload-dialog {
+	z-index: 2003;
+}
+/* ============================== dialogs ============================== */
+
+.footer-backend {
+	display: none;
+}
+
+md-icon.asset.folder {
+	font-size: 72px!important;
+	height: 72px!important;
+	width: 72px!important;
+	min-width: 72px!important;
+}
+@media screen and (min-width: 600px) and (max-width: 960px) {
+	md-icon.asset.folder {
+		font-size: 96px!important;
+		height: 96px!important;
+		width: 96px!important;
+		min-width: 96px!important;
+	}
+}
+@media screen and (min-width: 960px){
+	md-icon.asset.folder {
+		font-size: 112px!important;
+		height: 112px!important;
+		width: 112px!important;
+		min-width: 112px!important;
+	}
+}
+
+.asset.folder.container:focus {
+	border: none!important;
+	cursor: pointer;
+}

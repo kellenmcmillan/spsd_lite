@@ -1,0 +1,86 @@
+<style>
+	.header-ms-explorer {position: fixed; width: 100%;}
+</style>
+<md-content class="page" style="height: {{window_height}}px">
+	<section style="background: {{base_hue_lighter.value}}">
+		
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation.html'"></div>
+
+		<div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
+
+		    <div class="md-whiteframe-8dp sidebar form" layout="row" layout-wrap flex="100" flex-sm="100" flex-gt-sm="25" layout-align="start start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; padding: 0; margin: 8px 0 32px 0;">
+				<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative; margin: 0;">
+	                <form name="spotlight">
+	                	<div style="text-align: left; padding-left: 16px; border-left: 4px solid {{primary_hue_normal.value}}; box-sizing: border-box;">
+	                		<h1 style="color: {{primary_hue_normal.value}};">{{settings.data.company_name}} News</h1>
+	                	</div>
+	                    <md-card-content>
+	                    	<h3 style="color: {{base_hue_darkest.value}}; font-weight: normal;">Enter Search Term</h3>
+	                        <md-list-item>
+	                            <md-button ng-click="queryUser(queryUserFilter)" class="md-icon-button" aria-label="Search Media">
+	                                <md-icon style="color: {{base_hue_darker.value}};">search</md-icon>
+	                            </md-button>
+	                            <md-input-container class="md-block lightweight-md-input" style="margin: 0;" flex>
+	                                <label>Search</label>
+	                                <input ng-model="queryUserFilter">
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <h3 style="color: {{base_hue_darkest.value}}; font-weight: normal;">Filter By Date</h3>
+	                        <md-list-item>
+		                        <md-radio-group>
+	                                <span>
+	                                    <md-radio-button value="before">Before</md-radio-button>
+	                                </span>
+	                                <br>
+	                                <span>
+	                                    <md-radio-button value="after">After</md-radio-button>
+	                                </span>
+	                            </md-radio-group>
+                            </md-list-item>
+                            <br>
+                            <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input">
+                                    <label>Select Date</label>
+                                    <md-datepicker style="min-width: 75%;" flex ng-model="selectedDate" md-placeholder="Pick a date"></md-datepicker>
+                                </md-input-container>
+                            </md-list-item>
+	                    </md-card-content>
+	                    <md-button class="md-fab custom-deep-button" aria-label="filter blog posts by date" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+					        <md-icon style="color: {{base_hue_lighter.value}};">check</md-icon>
+					    </md-button>
+	                </form>
+	            </md-card>
+			</div>
+			<div layout="column" layout-wrap flex="100" flex-sm="100" flex-gt-sm="50" layout-align="space-around stretch" layout-align-gt-sm="space-around stretch">
+				<md-card class="md-whiteframe-8dp" ng-repeat="blog in bloglist | orderBy : 'blog.data.date' : true" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="100" layout-align="start start" ng-attr-style="z-index: 3; background-color: {{base_hue_lightest.value}}; cursor: pointer; margin-bottom: 0;" layout-padding>
+					<md-list class="md-dense" flex>
+						<a ng-href="{{blog.settings.url}}">
+	                    <md-list-item class="md-3-line" flex>
+	                    	<md-icon class="md-avatar-icon" aria-label="View details" style="color: {{primary_hue_normal.value}};">description</md-icon>
+	                        <div class="md-list-item-text">
+	                        	<h3 style="font-size: 24px;">{{blog.data.title}}</h3>
+	                            <p style="color: {{primary_hue_normal.value}};">{{blog.data.headline}}</p>
+	                            <p>By {{blog.data.author}}  /  {{blog.data.date | date : "MMM d, y h:mm:ss a"}}</p>
+	                        </div>                        
+	                    </md-list-item>
+	                    </a>
+	                </md-list>
+
+			    </md-card>
+		    </div>
+		</div>
+		<br>
+	    <br>
+	</section>
+	
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+	
+</md-content>

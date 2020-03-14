@@ -1,0 +1,43 @@
+<style>
+	.section-two-background {
+		/*width: 200px;
+		height: 200px;
+		display: block;*/
+		position: relative;
+		/*border-bottom: 4px solid {{primary_hue_normal.value}};*/
+	}
+
+	.section-two-background::after {
+		content: "";
+		background: url('{{section_2.background.images.source ? section_2.background.images.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/media/images/missing-image.png'}}') no-repeat 50%;
+		background-size: cover;
+		opacity: 0.1;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		position: absolute;  
+	}
+</style>
+<div class="section-two-background" flex layout="row" layout-align="center start" layout-wrap ng-attr-style="background-color: {{base_hue_darker_darkest_opacity.value}}; margin: 0; padding: 0; padding-bottom: 64px; position: relative;">
+	<md-button ng-if="user" ng-click="edit(section_2.settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit content" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
+        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+    </md-button>
+	<div flex="100" layout-align="center center" layout="row" layout-padding>
+		<div ng-repeat="content in section_2.data">
+            <h1 class="primary-heading-text base-hlst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" ng-attr-style="color: {{base_hue_lightest.value}}; margin-top: 8px; margin-bottom: 8px; font-weight: bold;"></h1>
+            <p class="base-hlst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+            <p class="base-hlst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+            <div class="full-width no-padding">
+                <!-- panel images -->
+                <div ng-cloak class="lightweight-card-image md-card md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+                    <img ng-src="content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/media/images/missing-image.png" class="md-card-image" alt="homepage image" style="height: 100%; width: auto;">
+                </div>
+                <!-- panel images -->
+            </div>
+            <a ng-if="content.type == 'button'" href="{{content.data.url}}">
+                <md-button class="custom-deep-button lightweight-round" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; width: 250px; height: 48px">{{content.data.button}}</md-button>
+            </a>
+        </div>
+	</div>
+</div>

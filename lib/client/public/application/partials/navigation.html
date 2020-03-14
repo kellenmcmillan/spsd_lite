@@ -1,0 +1,347 @@
+<style>
+	.dropdown  md-tabs.md-default-theme .md-tab, .dropdown  md-tabs .md-tab, .dropdown md-tabs .md-tab.md-active {color:{{base_hue_darkest.value}}!important; font-size: 18px;}
+	.dropdown div > a:not(.md-fab)[href*="maps"], .dropdown md-content > a.addr_widget {width: 100%!important; display: block!important}
+    .dropdown div.null > a:not(.md-fab)[href*="maps"] {width: 0!important; display: none!important}
+	.dropdown a:last-child:not(.md-fab)[href*="maps"] {width: 0; display: none;}
+    md-card > a:not(.addr_widget)[href*="maps"] {width: 0; display: none;}
+    .dropdown .navigation-list-items a.child.navigation[href*="maps"]{display: block!important; width: 100%!important;}
+    /*@media screen and (max-width: 960px) {
+        .widget {margin-bottom: 64px;}
+    }*/
+   .dropdown md-tabs.md-default-theme md-ink-bar, .dropdown md-tabs md-ink-bar {
+        color: {{base_hue_darkest.value}}!important; 
+        background: {{base_hue_darkest.value}}!important;
+    }
+    .dropdown md-tabs.md-default-theme .md-tab .md-ripple-container, .dropdown md-tabs .md-tab .md-ripple-container {
+        color: {{base_hue_darkest.value}}!important; 
+    }
+    .navigation.widget md-input-container {margin: 8px 0!important;}
+    .navigation.widget md-input-container.md-default-theme .md-input, .navigation.widget md-input-container .md-input {color: {{base_hue_darkest.value}}!important;}
+</style>
+
+<div ng-show="navigation_panel == true" ng-attr-style="overflow: hidden; overflow-y: auto; position: fixed; top: 60px; left: 0; width: {{scroll_bar_aware_window_width}}px; margin: 0; height:{{window_height - 60}}px; z-index: 23!important;" layout="row" layout-align="end start" layout-wrap>
+	
+	<section flex="100" flex-xs="100" flex-sm="80" flex-gt-sm="60" flex-gt-lg="60" layout="row" layout-align="center start" layout-align-gt-sm="center start" layout-wrap layout-margin class="lightweight-navigation-mini" ng-attr-style="position: relative; padding: 0; background: transparent;">
+
+		<!-- Navigation Body -->
+		<md-card flex="100" class="card sub-navigation dropdown" layout="row" layout-align="end start" layout-align-gt-sm="center start" layout-wrap style="background: transparent!important; margin: 0 0 32px 0">
+
+			<!-- Social Tabs -->
+			<div flex="100" flex-sm="90" flex-gt-sm="10" flex-gt-lg="10" flex-order="3" flex-order-gt-sm="-1" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 0" class="md-whiteframe-4dp">
+				<div flex="100" layout="column" layout-align="center start">
+					<md-button hide-xs hide-sm ng-click="close_menu();" flex="100" layout="row" layout-align="center center" ng-attr-style="height: 60px; width:100%; background-color: {{base_hue_normal.value}}; margin: 0!important;">
+						<md-icon ng-attr-style="color: {{base_hue_darkest.value}}; font-size: 24px; height: 24px; width: 24px; min-height: 24px; min-width: 24px;" aria-label="Close menu">close</md-icon>
+					</md-button>
+					<md-button hide-gt-sm ng-href="https://www.facebook.com/SPSDTX/" target="_blank" flex="100" layout="row" layout-align="center center" style="height: 60px; width:100%; background-color: #3b5998; margin: 0!important;">
+						<md-icon ng-attr-style="color: {{base_hue_lighter.value}}; font-size: 24px; height: 24px; width: 24px; min-height: 24px; min-width: 24px;" md-svg-src="media/001-facebook.svg" class="s36" aria-label="Visit SPSD's Facebook page"></md-icon>
+					</md-button>
+					<md-button hide-gt-sm ng-href="https://www.instagram.com/spsdinc/" target="_blank" flex="100" layout="row" layout-align="center center" style="height: 60px; width:100%; background-color: #c32aa3; margin: 0!important;">
+						<md-icon ng-attr-style="color: {{base_hue_lighter.value}}; font-size: 24px; height: 24px; width: 24px; min-height: 24px; min-width: 24px;" md-svg-src="media/002-instagram.svg" class="s36" aria-label="Visit SPSD's Instagram page"></md-icon>
+					</md-button>
+					<md-button hide-gt-sm ng-href="https://www.linkedin.com/company/site-planning-site-development/" target="_blank" flex="100" layout="row" layout-align="center center" style="height: 60px; width:100%; background-color: #007bb5; margin: 0!important;">
+						<md-icon ng-attr-style="color: {{base_hue_lighter.value}}; font-size: 24px; height: 24px; width: 24px; min-height: 24px; min-width: 24px;" md-svg-src="media/005-linkedin.svg" class="s36" aria-label="Visit SPSD's Linkedin page"></md-icon>
+					</md-button>
+				</div>
+			</div>
+			<!-- Social Tabs -->
+
+			<div class="md-whiteframe-6dp" flex="100" flex-sm="90" flex-gt-sm="90" layout="row" layout-align="start start" layout-wrap ng-attr-style="margin: 0; padding: 0; background: {{base_hue_lightest.value}}; min-height: 400px; z-index: 2;">
+
+				<!-- Parent Nav Items -->
+
+			    <div ng-show="!nav_children_visible" class="navigation-list-items" flex="100" flex-gt-sm="45" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 16px;">
+			    	<h2 flex="100" ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px; padding: 0 16px; margin-top: 0;">
+	                    Main Menu
+	                </h2>
+			    	<md-list flex="100">
+			            <span ng-repeat="item in settings.navigation.data track by $index">
+			                <md-list-item ng-if="!item.navigation.parent.url" ng-click="open_menu(item)" class="navigation item" flex="100" layout-padding style="height: 48px;">
+			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 18px;">{{item.navigation.parent.name}}</p>
+			                </md-list-item>
+			                <a ng-if="item.navigation.parent.url" ng-click="close_parent_menu(); navigation_panel = false;" ng-href="{{item.navigation.parent.url}}">
+			                    <md-list-item class="navigation item" flex="100" layout-padding style="height: 48px;">
+			                        <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 18px;">{{item.navigation.parent.name}}</p>
+			                    </md-list-item>
+			                </a>
+			            </span>
+			        </md-list>
+		        </div>
+		        
+			    <!-- Parent Nav Items -->
+
+				<!-- Child Nav Items -->
+
+				<div ng-show="nav_children_visible" class="navigation-list-items" flex="100" flex-gt-sm="45" layout="row" layout-align="start start" layout-wrap style="margin: 0; padding: 16px;">
+					<h2 flex="100" ng-attr-style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 32px; padding: 0 16px; margin-top: 0;">
+	                    {{menu_title}}
+	                </h2>
+			        <md-list flex="100">
+			            <a ng-href="{{child.url}}" ng-repeat="child in child_items" class="child navigation link mobile" style="cursor: pointer;">
+			                <md-list-item ng-click="close_menu()" class="navigation item" flex="100" layout-padding style="height: 48px;">
+			                    <p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: normal; font-size: 18px;">{{child.name}}</p>
+			                </md-list-item>
+			            </a>
+			        </md-list>
+			    </div>
+
+			    <!-- Child Nav Items -->
+
+		    	<!-- Featured Projects -->
+
+		    	<div ng-if="menu_title == 'Projects' && featured_projects.length > 0 && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0; border-left: 1px solid rgba(33,33,33,.15);">
+
+			        <div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap>
+
+			            <div flex="100">
+			                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="4px">
+			                    <md-grid-tile ng-repeat="tile in featured_projects | limitTo: 12" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+			                        <a href="{{tile.settings.url}}" ng-click="close_menu()">
+			                            <img ng-src="{{tile.data.page.foreground.images.source}}" style="width: auto; max-width:200%; max-height: 100%;">
+			                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.data.title}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.data.title}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
+			                        </a>
+			                    </md-grid-tile>
+			                </md-grid-list>
+			            </div>
+
+			        </div>
+
+		    	</div>
+
+		        <!-- Featured Projects -->
+
+		        <!-- Contact form -->
+
+		        <div ng-if="menu_title == 'Capabilities' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15);">
+
+			        <div layout="row" layout-align="center center" flex="100" class="container navigation" style="min-width: 100%;">
+			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
+			                <div style="text-align: center" ng-show="progressAnimation">
+			                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
+			                </div>
+			                <form name="navigation" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%;">
+			                    <md-card-content>
+			                    	<div style="text-align: left">
+				                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Contact <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">{{settings.data.company_name}} Today!</span></h1>
+				                    </div>
+			                        <md-list-item>
+			                            <md-input-container class="md-block lightweight-md-input">
+			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Full Name</label>
+			                                <input name="name" ng-model="navForm.name" minlength="4" required>
+			                                <div ng-messages="navigation.name.$error" ng-show="navigation.name.$dirty">
+			                                    <div ng-message="required">Name required!</div>
+			                                    <div ng-message="minlength">Name too short!</div>
+			                                </div>
+			                            </md-input-container>
+			                        </md-list-item>
+			                        <md-list-item>
+			                            <md-input-container class="md-block lightweight-md-input">
+			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Email</label>
+			                                <input type="email" name="email" ng-model="navForm.email" required>
+			                                <div ng-messages="navigation.email.$error" ng-show="navigation.email.$dirty">
+			                                    <div ng-message="required">Email required!</div>
+			                                    <div ng-message="email">Enter a valid email!</div>
+			                                </div>
+			                            </md-input-container>
+			                        </md-list-item>
+			                        <md-list-item>
+			                            <md-input-container class="md-block lightweight-md-input" flex>
+			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Message</label>
+			                                <textarea name="message" md-detect-hidden="true" ng-model="navForm.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+			                                <div ng-messages="navigation.message.$error" ng-show="navigation.message.$dirty">
+			                                    <div ng-message="required">Message required!</div>
+			                                    <div ng-message="minlength">Message too short!</div>
+			                                    <div ng-message="md-maxlength">Message too long!</div>
+			                                </div>
+			                            </md-input-container>
+			                        </md-list-item>
+			                        <div vc-recaptcha theme="light" key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="navForm.recaptcha" style="margin: 0 16px;"></div>
+			                        <br>
+			                    </md-card-content>
+			                    <md-button ng-disabled="navigation.$invalid" ng-click="sendLead(navForm, 'Navigation - Capabilities'); clearForm(navForm)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+			                        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
+			                    </md-button>
+			                </form>
+			            </div>
+			        </div>
+
+		    	</div>
+
+		    	<div ng-if="menu_title == 'Our Team' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0; border-left: 1px solid rgba(33,33,33,.15);">
+
+			        <div layout="row" layout-align="center center" flex="100" class="container navigation widget" style="min-width: 100%;">
+			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2;">
+			                <div style="text-align: center" ng-show="progressAnimation">
+			                    <div ng-include src="'application/partials/loading-spinner.html'"></div>
+			                </div>
+			                <form name="navigation2" ng-show="!progressAnimation" style="z-index: 2; position: relative; width: 100%;">
+			                    <md-card-content>
+			                    	<div style="text-align: left">
+				                        <h1 ng-attr-style="color: {{base_hue_darkest.value}}!important; font-weight: normal; margin-top: 0; padding: 0 16px; font-size: 32px;">Join <span ng-attr-style="color: {{primary_hue_normal.value}} font-weight: normal;">Team {{settings.data.company_name}}!</span></h1>
+				                    </div>
+			                        <md-list-item>
+			                            <md-input-container class="md-block lightweight-md-input">
+			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Full Name</label>
+			                                <input name="name" ng-model="navForm2.name" minlength="4" required>
+			                                <div ng-messages="navigation2.name.$error" ng-show="navigation2.name.$dirty">
+			                                    <div ng-message="required">Name required!</div>
+			                                    <div ng-message="minlength">Name too short!</div>
+			                                </div>
+			                            </md-input-container>
+			                        </md-list-item>
+			                        <md-list-item>
+			                            <md-input-container class="md-block lightweight-md-input">
+			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Email</label>
+			                                <input type="email" name="email" ng-model="navForm2.email" required>
+			                                <div ng-messages="navigation2.email.$error" ng-show="navigation2.email.$dirty">
+			                                    <div ng-message="required">Email required!</div>
+			                                    <div ng-message="email">Enter a valid email!</div>
+			                                </div>
+			                            </md-input-container>
+			                        </md-list-item>
+			                        <md-list-item>
+			                            <md-input-container class="md-block lightweight-md-input" flex>
+			                                <label ng-attr-style="color: {{base_hue_darkest.value}}!important">Message</label>
+			                                <textarea name="message" md-detect-hidden="true" ng-model="navForm2.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+			                                <div ng-messages="navigation2.message.$error" ng-show="navigation2.message.$dirty">
+			                                    <div ng-message="required">Message required!</div>
+			                                    <div ng-message="minlength">Message too short!</div>
+			                                    <div ng-message="md-maxlength">Message too long!</div>
+			                                </div>
+			                            </md-input-container>
+			                        </md-list-item>
+			                        <div vc-recaptcha theme="light" key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="navForm2.recaptcha" style="margin: 0 16px;"></div>
+			                        <br>
+			                    </md-card-content>
+			                    <md-button ng-disabled="navigation2.$invalid" ng-click="sendLead(navForm2, 'Navigation - Employment Opportunity'); clearForm(navForm2)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+			                        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
+			                    </md-button>
+			                </form>
+			            </div>
+			        </div>
+
+		    	</div>
+
+		        <!-- Contact form -->
+
+
+		    	<!-- Featured Galleries -->
+
+		    	<div ng-show="menu_title == 'Galleries' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0;">
+
+			    	<div class="container navigation widget featured_items" flex="100" layout="row" layout-align="center center" layout-wrap layout-padding style="margin: 0; padding: 0;">
+			            <div flex="100">
+			                <md-grid-list md-cols="4" md-cols-xs="4" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6" md-row-height-gt-md="200px" md-row-height-gt-sm="250px" md-row-height="175px" md-gutter="8px" md-gutter-gt-sm="16px">
+			                    <md-grid-tile class="md-whiteframe-6dp" ng-repeat="tile in featured_galleries | limitTo: 4" md-rowspan="1" md-rowspan-xs="1" md-rowspan-sm="1" md-colspan="4" md-colspan-gt-md="3" md-colspan-md="3" md-colspan-sm="4" md-colspan-xs="4" style="overflow: hidden;" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+			                        <a href="{{tile.url}}" ng-click="close_menu()">
+			                            <img ng-src="{{tile.source}}" style="width: auto; max-width:300%; min-height: 100%;">
+			                            <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{tile.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{tile.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer>
+			                        </a>
+			                    </md-grid-tile>
+			                </md-grid-list>
+			            </div>
+			        </div>
+
+		    	</div>
+
+		        <!-- Featured Galleries -->
+
+		        <!-- Hours and Contact Info -->
+
+		        <div ng-show="menu_title == 'About Us' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center start" layout-wrap style="margin: 0; padding: 16px; min-height: 400px; border-left: 1px solid rgba(33,33,33,.15);">
+
+			        <div layout="row" layout-align="center center" flex="100" class="navigation widget">
+			            <md-tabs md-dynamic-height md-border-bottom style="min-width: 100%;">
+			                <md-tab label="Contact Info">
+			                    <md-content class="md-padding" style="background-color: transparent!important;">
+			                        <md-list-item class="md-2-line">
+										<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">phone</md-icon>
+										<div class="md-list-item-text">
+											<h3 ng-attr-style="color: {{base_hue_darkest.value}};">{{settings.data.phone_1}}</h3>
+											<p ng-attr-style="color: {{base_hue_darkest.value}}">Office</p>
+										</div>
+									</md-list-item>
+									<md-divider></md-divider>
+									<a class="addr_widget" ng-href="{{settings.data.address.google_address_link}}" target="_blank">
+										<md-list-item class="md-2-line">
+											<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">location_on</md-icon>
+											<div class="md-list-item-text">
+												<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.street}} </h3>
+												<h3 ng-attr-style="color: {{base_hue_darkest.value}}">{{settings.data.address.city}}, {{ settings.data.address.state}} {{settings.data.address.zipcode}}</h3>
+												
+											</div>
+										</md-list-item>
+									</a>
+			                    </md-content>
+			                </md-tab>
+			                <md-tab label="Hours" ng-if="settings.data.hours.enabled == true">
+			                    <md-content class="md-padding" style="background-color: transparent!important;">
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        Sunday <p class="md-secondary">{{settings.data.hours.sunday.start == 'Closed' ? 'Closed' : settings.data.hours.sunday.start + ' - '}}{{settings.data.hours.sunday.end == 'Closed' ? '' : settings.data.hours.sunday.end}}</p>
+			                        </md-list-item>
+			                        <md-divider></md-divider>
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        Monday <p class="md-secondary">{{settings.data.hours.monday.start == 'Closed' ? 'Closed' : settings.data.hours.monday.start + ' - '}}{{settings.data.hours.monday.end == 'Closed' ? '' : settings.data.hours.monday.end}}</p>
+			                        </md-list-item>
+			                        <md-divider></md-divider>
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        Tuesday <p class="md-secondary">{{settings.data.hours.tuesday.start == 'Closed' ? 'Closed' : settings.data.hours.tuesday.start + ' - '}}{{settings.data.hours.tuesday.end == 'Closed' ? '' : settings.data.hours.tuesday.end}}</p>
+			                        </md-list-item>
+			                        <md-divider></md-divider>
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        Wednesday <p class="md-secondary">{{settings.data.hours.wednesday.start == 'Closed' ? 'Closed' : settings.data.hours.wednesday.start + ' - '}}{{settings.data.hours.wednesday.end == 'Closed' ? '' : settings.data.hours.wednesday.end}}</p>
+			                        </md-list-item>
+			                        <md-divider></md-divider>
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        Thursday <p class="md-secondary">{{settings.data.hours.thursday.start == 'Closed' ? 'Closed' : settings.data.hours.thursday.start + ' - '}}{{settings.data.hours.thursday.end == 'Closed' ? '' : settings.data.hours.thursday.end}}</p>
+			                        </md-list-item>
+			                        <md-divider></md-divider>
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        Friday <p class="md-secondary">{{settings.data.hours.friday.start == 'Closed' ? 'Closed' : settings.data.hours.friday.start + ' - '}}{{settings.data.hours.friday.end == 'Closed' ? '' : settings.data.hours.friday.end}}</p>
+			                        </md-list-item>
+			                        <md-divider></md-divider>
+			                        <md-list-item class="secondary-button-padding" ng-attr-style="color: {{base_hue_darkest.value}};">
+			                        Saturday <p class="md-secondary">{{settings.data.hours.saturday.start == 'Closed' ? 'Closed' : settings.data.hours.saturday.start + ' - '}}{{settings.data.hours.saturday.end == 'Closed' ? '' : settings.data.hours.saturday.end}}</p>
+			                        </md-list-item>
+			                        <md-divider></md-divider>
+			                    </md-content>
+			                </md-tab>
+			            </md-tabs>
+			        </div>
+
+		    	</div>
+
+		        <!-- Hours and Contact Info -->
+
+		        <!-- Google Map -->
+
+		        <div ng-show="menu_title == 'Locate Us' && nav_children_visible" flex="100" flex-gt-sm="55" layout="row" layout-align="center center" layout-wrap style="margin: 0; padding: 0;">
+		        
+			        <div class="navigation map-widget widget" layout="row" layout-align="center center" flex="100">
+			            <!-- Map Widget -->
+			            <div flex="100" layout="row" layout-align="center start" style="z-index: 2; position: relative; margin: 0;">
+			                <div style="margin: 0; width: 100%; overflow: hidden;" layout-wrap layout="row" layout-align="start center" flex>
+			                    <div flex="100" style="margin-bottom: -5px; position: relative; overflow: hidden;" layout-align="end center">
+			                        <iframe ng-src="{{trusted_google_address_widget_map}}" width="auto" height="500" frameborder="0" style="border:0; width: 100%;" allowfullscreen></iframe>
+			                    </div>
+			                </div>
+			                
+			                <md-button ng-show="menu_title == 'Locate Us'" href="{{settings.data.address.google_address_link}}" target="_blank" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}!important; position: absolute; bottom: -36px; right: 8px;">
+			                    <md-icon style="color: {{base_hue_lighter.value}};">directions</md-icon>
+			                </md-button>
+			                
+			            </div>
+			            <!-- Map Widget -->
+			        </div>
+
+		    	</div>
+
+		        <!-- Google Map -->
+
+		    </div>
+
+		</md-card>
+		<!-- Navigation Body -->
+
+	</section>
+
+</div>

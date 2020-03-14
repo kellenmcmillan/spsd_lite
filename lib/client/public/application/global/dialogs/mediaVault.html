@@ -1,0 +1,516 @@
+<div class="tertiary-dialog-curtain mediaVault" ng-show="media_vault_visible == true">
+
+
+
+
+
+    <md-content class="page suite-dialog" style="height: {{window_height}}px; overflow: auto;">
+
+
+
+
+
+        <!-- =================== header =================== -->
+
+        <md-subheader class="header" layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; position: relative; height: 84px!important" ng-class="{'header-ms-explorer': browser == 'ie'}">
+
+            <div layout="row" layout-align="start center" layout-gt-sm="row" layout-align-gt-sm="center center" layout-wrap flex>
+                <!-- =================== Mini App Title =================== -->
+                <div flex="50" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="start center" layout="row">
+                    <h3 class="md-headline" style="font-size: 24px;">Media Vault</h3>
+                </div>
+                <!-- =================== Mini App Title =================== -->
+
+                <!-- =================== Start Action Buttons =================== -->
+
+                <!-- Mini App Menu Button -->
+                <md-button ng-click="toggleSidebar()" class="md-fab md-mini" aria-label="open backend sidebar" style="position: absolute; bottom: -26px; left: 16px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">menu</md-icon>
+                </md-button>
+                <!-- Mini App Menu Button -->
+
+                <!-- Account Major Action Button -->
+                <md-menu>
+                    
+                    <md-button md-menu-origin ng-click="openMenu($mdMenu, $event)" class="md-fab md-mini" aria-label="open options" style="position: absolute; bottom: -26px; left: 72px; background-color: {{base_hue_lightest.value}}!important;">
+                        <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Open Options Menu" md-font-library="material-icons">more_vert</md-icon>
+                    </md-button>
+
+                    <md-menu-content width="4">
+                        <md-menu-item>
+                            <md-button ng-click="$parent.mediaView = 'media'">
+                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">perm_media</md-icon>
+                                Manage Media
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="$parent.mediaView = 'galleries'">
+                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">burst_mode</md-icon>
+                                Manage Galleries
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="$parent.mediaView = 'tags'">
+                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">style</md-icon>
+                                Manage Tags
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button ng-click="$parent.mediaView = 'upload'">
+                                <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add Content Icon" md-font-library="material-icons">cloud_upload</md-icon>
+                                Upload Media
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+
+                </md-menu>
+                <md-button ng-show="mediaView == 'upload'" ng-click="mediaVaultView = 'new download'" ngf-select ng-model="files" ngf-pattern="'image/*'" ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" ngf-multiple="true" class="md-fab md-mini" aria-label="Add a user" style="position: absolute; bottom: -26px; left: 128px; background-color: {{base_hue_lightest.value}}!important;">
+                    <md-icon style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Add User" md-font-library="material-icons">add</md-icon>
+                </md-button>
+                <!-- Add new slideshow object -->
+                
+                <!-- Account Major Action Button -->
+
+                <!-- =================== End Action Buttons =================== -->
+
+
+
+
+                <!-- =================== Navigation Items =================== -->
+
+                <div flex="50" flex-gt-sm="75" layout-align="end center" layout="row" ng-init="navigation_panel = false">
+                    <md-button class="md-icon-button" aria-label="Close My Vault" ng-confirm-message="Are you sure you want to exit Media Vault?" ng-confirm-click="closeMediaVault(); switchMediaViews('media')" ng-confirm-condition="true">
+                        <md-icon style="color: {{base_hue_darkest.value}}; cursor: pointer;" aria-label="Close Media Vault" md-font-library="material-icons">close</md-icon>
+                    </md-button>
+                </div>
+
+                <!-- =================== Navigation Items =================== -->
+
+            </div>
+
+        </md-subheader>
+
+        <!-- =================== header =================== -->
+
+
+
+
+        <!-- =================== Mini App Side Menu =================== -->
+
+        <div ng-include src="'application/partials/backend-menu.html'"></div>
+
+        <!-- =================== Mini App Side Menu =================== -->
+
+
+
+
+        <!-- ======================== View ======================== -->
+        <md-card class="md-card-base card inputs">
+
+
+
+
+            <md-card-content flex style="padding: 0;">
+
+                <!-- ======================== Begin view - Manage Media ======================== -->
+                <!-- ======================== Begin view - Manage Media ======================== -->
+                <!-- ======================== Begin view - Manage Media ======================== -->
+
+                <md-content class="md-padding" flex ng-show="mediaView == 'media'">
+                    <div flex layout="row" layout-wrap layout-align="center center">
+                        <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Manage Media</h1>
+                    </div>
+                    <div layout="column" layout-wrap layout-align="space-around center" flex>
+                        <div layout="column" layout-gt-sm="row" layout-align="center center" layout-align-gt-sm="center center" layout-margin flex="100" style="width: 100%">
+                            <div layout="row" layout-align="start center">
+                                <md-button ng-disabled="currentPage == 0" ng-click="currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
+                                </md-button>
+                                <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                                </md-button>
+                                <span>{{currentPage+1}}/{{numberOfPages}}</span>
+                                <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                                </md-button>
+                                <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage = numberOfPages - 1" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
+                                </md-button>
+                            </div>
+                            <div flex="100" flex-gt-sm="50" layout="row" layout="start center" style="max-height: 38px;">
+                                <md-button ng-click="clearQueryMedia(); queryFilter = null; currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
+                                    <md-icon style="color: {{base_hue_darker.value}};">clear</md-icon>
+                                </md-button>
+                                <md-button ng-click="queryMedia(queryFilter); currentPage = 0" class="md-icon-button" aria-label="Search Media">
+                                    <md-icon style="color: {{base_hue_darker.value}};">search</md-icon>
+                                </md-button>
+                                <md-input-container class="md-block lightweight-md-input" style="margin: 0;" flex>
+                                    <label>Search</label>
+                                    <input ng-model="queryFilter">
+                                </md-input-container>
+                            </div>
+                        </div>
+                        <md-radio-group ng-model="mediaVaultSelect" layout="column" layout-gt-sm="row" layout-wrap layout-align="center center" flex style="width: 100%;">
+                            <md-card ng-cloak ng-show="imagelist" class="md-card-base" ng-repeat="image in imagelist | startFrom:currentPage*pageSize | limitTo:pageSize track by $index" flex flex-md="50" flex-gt-sm="30" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
+                                <div ng-cloak class="lightweight-card-image md-card" style="position: relative; overflow: hidden; height: 200px;">
+                                    <img style="max-width: 200%; max-height: 250%; width: auto; height: auto;" ng-cloak ng-src="{{image.source ? image.source : image.avatar}}" class="md-card-image" ng-init="gallery_detail_view = false">
+                                </div>
+                                <md-card-content>
+                                    <md-tabs md-dynamic-height md-border-bottom>
+                                        <md-tab label="Details" layout-padding>
+                                            <md-content>
+                                                <md-list-item style="margin-top:8px;">
+                                                    <md-input-container ng-if="image.source" class="md-block lightweight-md-input" flex>
+                                                        <label>Cloud Storage Location</label>
+                                                        <input ng-model="image.source">
+                                                    </md-input-container>
+                                                    <md-input-container ng-if="image.avatar" class="md-block lightweight-md-input" flex>
+                                                        <label>Cloud Storage Location</label>
+                                                        <input ng-model="image.avatar">
+                                                    </md-input-container>
+                                                </md-list-item>                                                    
+                                            </md-content>
+                                        </md-tab>
+                                        <md-tab label="Settings" layout-padding>
+                                            <md-content>
+                                                <md-list-item style="margin-top:8px;">
+                                                    <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex>
+                                                        <label class="lightweight-md-option-label">Choose Tags</label>
+                                                        <md-select ng-model="image.metadata.tags" multiple>
+                                                            <md-option class="lightweight-md-option" ng-repeat="fileTag in taglist" value="{{fileTag.tag}}">
+                                                                {{fileTag.tag}}
+                                                            </md-option>
+                                                        </md-select>
+                                                    </md-input-container>
+                                                </md-list-item>
+                                                <md-list-itme>
+                                                    <div flex layout-align="end center" ng-show="image.metadata.tags">
+                                                        <md-chips ng-model="image.metadata.tags" md-removable="false">
+                                                            <md-chip-template>
+                                                                {{ $chip }}
+                                                            </md-chip-template>
+                                                        </md-chips>
+                                                    </div>
+                                                </md-list-itme>
+                                                <md-list-item>
+                                                    <p>Cover of gallery</p>
+                                                    <md-switch class="md-secondary" ng-model="image.metadata.cover"></md-switch>
+                                                </md-list-item>
+                                            </md-content>
+                                        </md-tab>
+                                    </md-tabs>                                            
+                                </md-card-content>
+                                <md-card-actions layout="row" layout-align="center center">
+                                    <span flex></span>
+                                    <md-button ng-show="elementToUpdate" style="margin: 0; padding: 0;" ng-click="selectMedia(image.avatar ? image.avatar : image.source); closeMediaVault();" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">image_search</md-icon>
+                                    </md-button>
+                                    <a ng-if="image.source" href="{{image.source}}" download>
+                                        <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" ng-click="downloadMedia(image)" class="md-icon-button" aria-label="Clear Media Search">
+                                            <md-icon style="color: {{primary_hue_normal.value}};">save_alt</md-icon>
+                                        </md-button>
+                                    </a>
+                                    <a ng-if="image.avatar" href="{{image.avatar}}" download>
+                                        <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" ng-click="downloadMedia(image)" class="md-icon-button" aria-label="Clear Media Search">
+                                            <md-icon style="color: {{primary_hue_normal.value}};">save_alt</md-icon>
+                                        </md-button>
+                                    </a>
+                                    <a ng-if="image.source" href="{{image.source}}" target="_blank">
+                                        <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" class="md-icon-button" aria-label="Clear Media Search">
+                                            <md-icon style="color: {{primary_hue_normal.value}};">open_in_browser</md-icon>
+                                        </md-button>
+                                    </a>
+                                    <a ng-if="image.avatar" href="{{image.avatar}}" target="_blank">
+                                        <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" class="md-icon-button" aria-label="Clear Media Search">
+                                            <md-icon style="color: {{primary_hue_normal.value}};">open_in_browser</md-icon>
+                                        </md-button>
+                                    </a>
+                                    <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" ng-click="deleteMedia(image, $index)" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">delete</md-icon>
+                                    </md-button>
+                                    <md-button ng-hide="elementToUpdate" style="margin: 0; padding: 0;" ng-click="updateMedia(image)" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{primary_hue_normal.value}};">cloud_done</md-icon>
+                                    </md-button>
+                                </md-card-actions>
+                            </md-card>
+                        </md-radio-group>
+                    </div>
+                    <div layout="row" layout-align="center center" layout-margin flex>
+                        <md-button ng-disabled="currentPage == 0" ng-click="currentPage = 0" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">first_page</md-icon>
+                        </md-button>
+                        <md-button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                        </md-button>
+                        <span>{{currentPage+1}}/{{numberOfPages}}</span>
+                        <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage=currentPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                        </md-button>
+                        <md-button ng-disabled="currentPage == numberOfPages - 1" ng-click="currentPage = numberOfPages - 1" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">last_page</md-icon>
+                        </md-button>
+                        <!-- <md-button  ng-show="elementToUpdate" ng-click="selectMedia(mediaVaultSelect); closeMediaVault()" class="md-icon-button" aria-label="Clear Media Search">
+                            <md-icon style="color: {{base_hue_darker.value}};">done_all</md-icon>
+                        </md-button> -->
+                    </div>
+                </md-content>
+
+                <!-- ======================== Begin view - Manage Media ======================== -->
+                <!-- ======================== Begin view - Manage Media ======================== -->
+                <!-- ======================== Begin view - Manage Media ======================== -->
+
+
+
+
+
+                <!-- ======================== Begin view - Manage Media Tags ======================== -->
+                <!-- ======================== Begin view - Manage Media Tags ======================== -->
+                <!-- ======================== Begin view - Manage Media Tags ======================== -->
+
+                <md-content class="md-padding" layout="column" ng-show="mediaView == 'tags'">
+                    <div flex layout="row" layout-wrap layout-align="center center">
+                        <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Manage Tags</h1>
+                    </div>
+                    <div flex>
+                        <md-chips
+                        ng-model="tags"
+                        md-removable="true"
+                        placeholder="Enter a tag"
+                        delete-button-label="Remove Tag"
+                        delete-hint="Press delete to remove tag"
+                        secondary-placeholder="+Tag"></md-chips>
+                    </div>
+                    <br>
+                    <div flex layout-align="end center" style="margin-bottom: 48px;">
+                        <md-button ng-click="updateTags(tags)" class="button-color-border">Add Tags</md-button>
+                    </div>
+                    <div flex layout-align="end center" ng-show="taglist">
+                        <md-chips ng-model="taglist" md-removable="false">
+                            <md-chip-template>
+                                {{ $chip.tag }}
+                            </md-chip-template>
+                        </md-chips>
+                    </div>
+                </md-content>
+
+                <!-- ======================== end view - Manage Media Tags ======================== -->
+                <!-- ======================== end view - Manage Media Tags ======================== -->
+                <!-- ======================== end view - Manage Media Tags ======================== -->
+
+
+
+
+
+
+
+
+                <!-- ======================== begin view - Upload files ======================== -->
+                <!-- ======================== begin view - Upload files ======================== -->
+                <!-- ======================== begin view - Upload files ======================== -->
+
+                <md-content class="md-padding" flex ng-show="mediaView == 'upload'">
+                    <div flex layout="row" layout-wrap layout-align="center center">
+                        <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Upload Files</h1>
+                    </div>
+
+                    <!-- view - download preview -->
+                    <div flex ng-show="mediaVaultView == 'new download'">
+                        <div layout="column" layout-gt-sm="row" flex layout-margin>
+                            <md-card ng-show="files" class="md-card-base" ng-repeat="file in files" flex flex-gt-sm="33">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-headline">Upload Preview</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                <img ngf-src="file" class="md-card-image">
+                                <md-card-content>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Filename</label>
+                                            <input disabled ng-model="file.name">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item flex>
+                                        <md-input-container style="margin-right: 16px" class="md-block lightweight-md-dropdown" flex>
+                                            <label class="lightweight-md-option-label">Choose Tags</label>
+                                            <md-select ng-model="file.tags" multiple>
+                                                <md-option class="lightweight-md-option" ng-repeat="imageTag in taglist" value="{{imageTag.tag}}">
+                                                    {{imageTag.tag}}
+                                                </md-option>
+                                            </md-select>
+                                        </md-input-container>
+                                    </md-list-item>
+                                </md-card-content>
+                                <md-card-actions layout="row" layout-align="end center">
+                                    <md-button ng-click="files.splice($index, 1)" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}}; padding-left: 16px; padding-right: 16px;">Cancel</md-button>
+                                    <md-button class="md-raised" ng-click="$parent.mediaVaultView = 'downloads in progress'; add_images(files);" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Upload</md-button>
+                                </md-card-actions>
+                            </md-card>
+                        </div>
+                    </div>
+                    <!-- view - download preview -->
+
+                    <!-- view - downloading files -->
+                    <div flex flex-gt-sm="40" ng-show="mediaVaultView == 'downloads in progress'">
+                        <div layout="column" flex>
+                            <md-card ng-repeat="f in files" class="md-card-base" style="background-color: {{base_hue_lightest.value}};">
+                                <md-card-title>
+                                    <md-card-title-text>
+                                        <span class="md-headline">Uploaded File</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                <md-progress-linear md-mode="determinate" value="{{f.percentage}}"></md-progress-linear>
+                                <img src="{{f.source}}" class="md-card-image" alt="{{f.filename}}">
+                                <md-card-content>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Filename</label>
+                                            <input disabled ng-model="f.filename">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item layout="row" layout-align="start center">
+                                        <div flex layout-align="end center" ng-show="f.tags">
+                                            <md-chips ng-model="f.tags" md-removable="false">
+                                                <md-chip-template>
+                                                    {{ $chip }}
+                                                </md-chip-template>
+                                            </md-chips>
+                                        </div>
+                                    </md-list-item>
+                                </md-card-content>
+                            </md-card>
+                        </div>
+                    </div>
+                    
+                </md-content>
+
+                <!-- ======================== end view - Upload files ======================== -->
+                <!-- ======================== end view - Upload files ======================== -->
+                <!-- ======================== end view - Upload files ======================== -->
+
+                    
+                <md-content class="md-padding" flex ng-show="mediaView == 'galleries'" layout="row" layout-wrap>
+                    
+                    <div flex="100" layout="row" layout-wrap layout-align="center center">
+                        <h1 class="h1" style="margin: 0; color: {{base_hue_darker.value}};">Manage Galleries</h1>
+                    </div>
+
+                    <div flex="100">
+                        <div ng-show="galleriesgridview == false" layout="column" layout-align="center center" flex="100" style="width: 100%" layout-wrap layout-margin>
+                            <div layout="row" layout-gt-sm="row" layout-align="center center" layout-align-gt-sm="center center" layout-margin flex="100" style="width: 100%">
+                                <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || galleriesgridview == false">Add A Gallery</md-button>
+                                <md-button class="button-color-border" ng-click="switchViewGalleries()" ng-disabled="new_gallery">
+                                {{galleriesgridview == false ? "Grid View" : "List View"}}
+                                    <md-icon ng-show="galleriesgridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
+                                    <md-icon ng-show="galleriesgridview == false" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
+                                </md-button>
+                                <md-card flex="100" class="md-card-base" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
+                                    <md-card-content class="lightweight-list-control" ui-sortable="sortableList" ng-model="gallerySortObj">
+                                        <div ng-repeat="gallery in gallerySortObj" style="width: 100%;">
+                                            <md-list-item class="noright">
+                                                <p>{{ gallery.name }}</p>
+                                                <md-icon class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">drag_handle</md-icon>
+                                            </md-list-item>
+                                            <md-divider></md-divider>
+                                        </div>
+                                    </md-card-content>
+                                    <md-card-actions layout="row" layout-align="end center">
+                                        <md-button class="md-raised" ng-click="updateGalleries(gallerySortObj)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">Update</md-button>
+                                    </md-card-actions>
+                                </md-card>
+                            </div>
+                        </div>
+                        <div ng-show="galleriesgridview == true" layout="column" layout-gt-sm="row" layout-align="center center" flex="100" layout-wrap>
+                            <div layout="column" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="center center" layout-margin flex="100" style="width: 100%">
+                                <div layout="row" layout-align="start center" layout-wrap>
+                                    <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                                    </md-button>
+                                    <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
+                                    <md-button nng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                                        <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                                    </md-button>
+                                    <md-button class="button-color-border" ng-click="addGalleryTemplate()" ng-disabled="new_gallery || galleriesgridview == false">Add A Gallery</md-button>
+                                    <md-button class="button-color-border" ng-click="switchViewGalleries()" ng-disabled="new_gallery">
+                                    {{galleriesgridview == false ? "Grid View" : "List View"}}
+                                        <md-icon ng-show="galleriesgridview == true" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_list</md-icon>
+                                        <md-icon ng-show="galleriesgridview == false" class="list-handle" style="color: {{primary_hue_normal.value}}; cursor: pointer;" aria-label="Remove List Item" md-font-library="material-icons">view_module</md-icon>
+                                    </md-button>
+                                </div>
+                                
+                            </div>
+                            <md-card ng-show="galleries" class="md-card-base" ng-repeat="gallery in galleries | startFrom:currentGalleryPage*gallerySize | limitTo:gallerySize" flex flex-gt-sm="30" style="position: relative; border: 1px solid rgba(0,0,0,.15);">
+                                <md-card-title>
+                                    <md-card-title-text layout="row" layout-align="start center">
+                                        <span class="md-headline">{{gallery.name || "New Gallery"}}</span>
+                                    </md-card-title-text>
+                                </md-card-title>
+                                <md-card-content>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Name</label>
+                                            <input ng-disabled="gallery.key" ng-model="gallery.name">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>Description</label>
+                                            <input ng-model="gallery.description">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <md-input-container class="md-block lightweight-md-input" flex>
+                                            <label>URL</label>
+                                            <input disabled ng-model="gallery.url">
+                                        </md-input-container>
+                                    </md-list-item>
+                                    <md-list-item>
+                                        <p>Featured Gallery</p>
+                                        <md-switch class="md-secondary" ng-model="gallery.featured"></md-switch>
+                                    </md-list-item>
+                                    <md-list-item flex layout="row">
+                                        <p flex="20" hide-xs>Speed</p>
+                                        <md-slider-container flex="100" flex-gt-sm="80">
+                                            <md-slider flex min="0" max="10" ng-model="gallery.transition" aria-label="slider" id="slider[$index]">
+                                            </md-slider>
+                                            <md-input-container flex>
+                                                <input type="number" ng-model="gallery.transition" aria-label="slider" aria-controls="slider[$index]">
+                                            </md-input-container>
+                                        </md-slider-container>
+                                    </md-list-item>  
+                                </md-card-content>
+                                <md-card-actions layout="row" layout-align="end center">
+                                    <md-button ng-if="!gallery.id" ng-click="cancelGallery()" style="background-color: {{base_hue_lighter.value}}; color: {{base_hue_darkest.value}}; padding-left: 16px; padding-right: 16px;">Cancel</md-button>
+                                    <md-button ng-if="!gallery.id" class="md-raised" ng-click="addGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Save</md-button>
+                                    <md-button ng-if="gallery.id" class="md-raised" ng-click="updateGallery(gallery)" style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; padding-left: 16px; padding-right: 16px;">Update</md-button>
+                                </md-card-actions>
+                            </md-card>
+                        </div>
+                    </div>
+                    
+                    <div ng-show="galleries.length > 9 && galleriesgridview == true" layout="column" layout-gt-sm="row" layout-align="center start" layout-align-gt-sm="center center" layout-margin flex="100" style="width: 100%">
+                        <div layout="row" layout-align="start center">
+                            <md-button ng-disabled="currentGalleryPage == 0" ng-click="currentGalleryPage=currentGalleryPage-1" class="md-icon-button" aria-label="Clear Media Search">
+                                <md-icon style="color: {{base_hue_darker.value}};">chevron_left</md-icon>
+                            </md-button>
+                            <span>{{currentGalleryPage+1}}/{{numberOfGalleryPages}}</span>
+                            <md-button nng-disabled="currentGalleryPage == numberOfGalleryPages - 1" ng-click="currentGalleryPage=currentGalleryPage+1" class="md-icon-button" aria-label="Clear Media Search">
+                                <md-icon style="color: {{base_hue_darker.value}};">chevron_right</md-icon>
+                            </md-button>
+                        </div>
+                    </div>
+
+                </md-content>
+
+            </md-card-content>
+
+
+
+
+        </md-card>
+
+
+
+
+    </md-content>
+</div>

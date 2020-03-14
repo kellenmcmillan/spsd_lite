@@ -1,0 +1,120 @@
+<style>
+	.header-ms-explorer {position: fixed; width: 100%;}
+</style>
+<md-content class="page" style="height: {{window_height}}px">
+	<section style="background: {{base_hue_lighter.value}}">
+		
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation.html'"></div>
+
+		<md-button ng-if="me.security.roles == 'Lightweight Internet Coordinator' || me.security.roles == 'Lightweight Support'" ng-click="edit(blogPage.settings.configs, blogPage)" class="md-fab custom-deep-button" aria-label="Edit Blog Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
+	        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+	    </md-button>
+
+		<div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
+
+		    <md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="z-index: 3; background-color: {{base_hue_lightest.value}};" layout-padding>
+
+				<md-list layout-margin layout-padding class="md-dense" flex="100" flex-gt-sm="100">
+                    <md-list-item class="md-3-line" flex style="padding: 0;">                        
+                        <div class="md-list-item-text">
+                        	<h3 style="font-size: 24px; white-space: pre-wrap; font-weight: normal;">{{blogPage.data.title}}</h3>
+                        	<h3 style="font-size: 42px; white-space: pre-wrap; font-weight: bold">{{blogPage.data.headline}}</h3>
+                            <h3 ng-attr-style="font-size: 16px; color: {{primary_hue_normal.value}};">{{blogPage.data.subtitle}}</h3>
+                            <p style="font-size: 16px;">By {{blogPage.data.author}}  /  {{blogPage.data.date | date : "MMM d, y h:mm:ss a"}}</p>
+                        </div>
+                    </md-list-item>
+                </md-list>
+                <div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; min-height: 400px;" layout-margin layout-padding>
+			    	<div ng-repeat="content in blogPage.data.page.contents" flex="100">
+			    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px;"></h1>
+						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+						<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+						<div style="width: 100%; padding: 0">
+							<!-- panel images -->
+								<md-card ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+									<img ng-src="{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" class="md-card-image">
+								</md-card>
+							<!-- panel images -->
+						</div>
+						<a ng-if="content.type == 'button'" href="{{content.data.url}}">
+	                        <md-button class="md-raised" style="margin-top: 8px; margin-bottom: 16px; background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">{{content.data.button}}</md-button>
+	                    </a>
+			        </div>
+		        </div>
+		    </md-card>
+
+		    <div class="md-whiteframe-8dp sidebar form" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; padding: 0; margin: 8px 0; margin-bottom: 40px;">
+				<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative; margin: 0;">
+					<div style="text-align: center">
+						<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+					</div>
+	                <form name="blogForm" ng-show="!progressAnimation">
+	                	<div style="text-align: left; padding-left: 16px; border-left: 4px solid {{primary_hue_normal.value}}; box-sizing: border-box;">
+	                		<h1 style="color: {{primary_hue_normal.value}};">Contact {{settings.data.company_name}} Today!</h1>
+	                	</div>
+	                    <md-card-content>
+	                        <md-list-item>
+	                            <md-input-container class="md-block lightweight-md-input">
+	                                <label>Full Name</label>
+	                                <input name="name" ng-model="blogForm_page_contact_form.name" minlength="4" required>
+	                                <div ng-messages="blogForm.name.$error" ng-show="blogForm.name.$dirty">
+	                                    <div ng-message="required">Name required!</div>
+	                                    <div ng-message="minlength">Name too short!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <md-list-item>
+	                            <md-input-container class="md-block lightweight-md-input">
+	                                <label>Email</label>
+	                                <input type="email" name="email" ng-model="blogForm_page_contact_form.email" required>
+	                                <div ng-messages="blogForm.email.$error" ng-show="blogForm.email.$dirty">
+	                                    <div ng-message="required">Email required!</div>
+	                                    <div ng-message="email">Enter a valid email!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input">
+                                    <label>Phone</label>
+                                    <input ng-model="blogForm_page_contact_form.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
+                                    <div ng-messages="blogForm.phone.$error" ng-show="blogForm.phone.$dirty">
+                                        <div ng-message="required">Phone number required!</div>
+                                        <div ng-message="minlength">Phone number too short!</div>
+                                        <div ng-message="pattern">Not a valid phone number!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+	                        <md-list-item>
+	                        	<md-input-container class="md-block lightweight-md-input" flex>
+	                                <label>Message</label>
+	                                <textarea name="message" md-detect-hidden="true" ng-model="blogForm_page_contact_form.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+	                                <div ng-messages="blogForm.message.$error" ng-show="blogForm.message.$dirty">
+	                                    <div ng-message="required">Message required!</div>
+	                                    <div ng-message="minlength">Message too short!</div>
+	                                    <div ng-message="md-maxlength">Message too long!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="blogForm_page_contact_form.recaptcha"></div>
+	                    </md-card-content>
+	                    <md-button ng-click="sendLead(blogForm_page_contact_form, blogPage.data.title); clearForm(blogForm)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+					        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
+					    </md-button>
+	                </form>
+	            </md-card>
+			</div>
+
+		</div>
+	</section>
+	
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+	
+</md-content>

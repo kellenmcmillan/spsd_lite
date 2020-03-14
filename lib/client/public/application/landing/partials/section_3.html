@@ -1,0 +1,80 @@
+<style>
+	
+md-card.section-3-ms-explorer {min-height: 600px;}
+.icon-container.section-3-ms-explorer {width: {{window_width}}px; margin-top: 250px;}
+.inner-icon-container.section-3-ms-explorer {width: 100%;}
+
+</style>
+
+<div layout="column" layout-gt-sm="row" layout-align="center center" style="min-height: 500px; padding-top: 64px; padding-bottom: 64px; position: relative; background: {{base_hue_lightest.value}};">
+	<span id="capabilities" style="position: absolute; top: 0;"></span>
+	<md-button ng-if="user" ng-click="edit(section_3.settings.configs, null)" class="md-fab custom-deep-button" aria-label="Edit element" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 32px; right: 8px;">
+        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+  	</md-button>
+	<md-card flex="100" layout="row" layout-align="center center" style="z-index: 2; overflow: hidden; position: relative; background: transparent;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
+		
+		<div flex="100" layout="row" layout-wrap layout-align="center center" style="z-index: 2;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
+				
+			<!-- Container Title -->
+			<div layout-padding flex="100" class="basic container">
+
+                <div layout="column" layout-align="center center" flex>
+
+                    <div class="center--text">
+                        <h2 class="complementary-text no-margin no-padding" style="font-size: 64px; margin-bottom: -48px!important; color:{{base_hue_darkest.value}}; z-index: 10;" ng-bind-html="section_3.data.title"></h2>
+                        <h2 style="color: {{base_hue_darkest.value}}; font-weight: lighter; font-size: 48px;" ng-bind-html="section_3.data.subtitle">
+                        </h2>
+                    </div>
+
+                </div>
+
+			</div>
+			<!-- Container Title -->
+
+
+			<div flex="100" layout="row" layout-align="center start" layout-wrap class="services container" style="margin: 0; padding: 0">
+
+
+
+				<div flex="100" flex-sm="100" flex-gt-sm="30" ng-repeat="product in section_3.data.items">
+
+					<md-card style="position: relative; background-color: {{base_hue_lightest.value}};" class="md-whiteframe-8dp rounded">
+
+						<img ng-src="{{product.background.images.source}}" class="md-card-image" style="border-radius: 24px 24px 0 0!important; -webkit-border-radius: 24px 24px 0 0!important; -moz-border-radius: 24px 24px 0 0!important;">
+
+						<div style="text-align: left; padding: 24px;">
+
+							<div ng-repeat="content in product.contents">
+								<h4 ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px; color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 24px;"></h4>
+								<p style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 14px;" class="padded--top16" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+								<p style="color: {{base_hue_darkest.value}}; font-weight: normal; font-size: 14px;" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+								<div class="full-width no-padding" style="margin-top: 32px;">
+									<!-- panel images -->
+									<div ng-cloak class="lightweight-card-image md-card md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+										<img ng-src="content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png" class="md-card-image" alt="homepage image" style="height: 100%; width: auto;">
+									<!-- panel images -->
+									</div>
+									<a ng-if="content.type == 'button'" href="{{content.data.url}}" ng-click="click_event({'action': 'View Services Button Clicked'})" style="margin-top: 16px;">
+										<p style="color: {{base_hue_darkest.value}}; font-size: 14px; font-weight: normal;">{{content.data.button}}</p>
+									</a>
+								</div>
+								<a ng-if="content.data.url" href="{{content.data.url}}" ng-click="click_event({'action': 'View Services Button Clicked'})" style="position: absolute; bottom: 32px; right: 32px; color: {{primary_hue_normal.value}};">
+									<md-icon class="md-icon-button" style="color: {{primary_hue_normal.value}};">launch</md-icon>
+								</a>
+							</div>
+						</div>
+
+						
+
+					</md-card>
+
+				</div>
+
+			</div>
+
+				
+
+
+		</div>
+	</md-card>
+</div>

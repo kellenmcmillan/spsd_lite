@@ -1,0 +1,90 @@
+
+<!-- sticky header -->
+<div layout-align="center center" layout="row" layout flex>
+	<!-- Logo -->
+	<div flex="65" flex-gt-sm="25" layout-align="start center" layout-align-gt-sm="start center" layout="row">
+		<span flex="50"><a href="/" style="display: block"><img ng-src="{{settings.data.logo}}" style="max-height: 48px; padding-left: 16px;"></a></span>
+	</div>
+	<!-- Logo -->
+	<!-- Navigation Items -->
+	<div flex="35" flex-gt-sm="75" layout-align="end center" layout="row">
+		<md-button ng-if="navigation_panel == false" class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="open_menu(null)">
+			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">menu</md-icon>
+		</md-button>
+		<md-button ng-if="navigation_panel == true && nav_children_visible == false" class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="close_menu()">
+			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">close</md-icon>
+		</md-button>
+		<md-button ng-if="navigation_panel == true && nav_children_visible == true" class="md-icon-button navigation menu" ng-attr-style="color: {{base_hue_darkest.value}};" ng-click="open_menu(null)">
+			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_backspace</md-icon>
+		</md-button>
+		<md-button ng-repeat="item in settings.navigation.data track by $index" class="navigation link" ng-click="open_menu(item);" ng-attr-style="color: {{base_hue_darkest.value}};">
+			<md-icon ng-attr-style="color: {{base_hue_darkest.value}}">keyboard_arrow_down</md-icon>
+			{{item.navigation.parent.name}}
+		</md-button>
+		<md-button class="md-icon-button navigation" style="background-color: #d1d2d3;" ng-click="auth_popup = 'active'">
+			<md-icon ng-attr-style="color: {{primary_hue_normal.value}}">face</md-icon>
+		</md-button>
+	</div>
+	<!-- Navigation Items -->
+</div>
+<!-- sticky header -->
+<div class="lightweight-in-app-dialog-curtain" ng-show="auth_popup == 'active'">
+
+	<div class="lightweight-in-app-dialog-container" ng-show="auth_popup == 'active'" ng-click="auth_popup = 'inactive'">
+
+		<md-card class="md-whiteframe-6dp" ng-attr-style="background-color: {{base_hue_lightest.value}}; position: absolute; right: 36px; top: 84px; width: 300px;" flex="100" layout="row" layout-wrap>
+
+			<div ng-show="me" ng-attr-style="min-height: 200px; background-color: {{base_hue_lightest.value}};" flex="100" layout="row" layout-align="center center" layout-wrap>
+				<span flex="100" style="text-align: center;">
+					<md-icon ng-attr-style="color: {{primary_hue_normal.value}}; font-size: 64px; height: 64px; width: 64px;">face</md-icon>
+				</span>
+				<md-list flex="100">
+	                <md-list-item flex="100" layout-padding style="text-align: center;">
+		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold;">{{me.firstname}} {{me.lastname}}</p>
+		        	</md-list-item>
+		        </md-list>
+			</div>
+
+			<div ng-show="!me" ng-attr-style="min-height: 200px; background-color: {{base_hue_lightest.value}};" flex="100" layout="row" layout-align="center center" layout-wrap>
+				<!-- Logo -->
+				<div flex="100" layout-align="center center" layout="row" layout-wrap>
+					<span flex="100" style="text-align: center;"><img ng-src="{{settings.data.logo}}" style="max-height: 80px;"></span>
+				</div>
+				<!-- Logo -->
+			</div>
+
+			<div layout="row" layout-align="center center" layout-wrap flex="100" ng-attr-style="background-color: {{base_hue_lightest.value}}; min-height: 250px;">
+				<md-list flex="100" ng-show="!me">
+		        	<md-list-item flex="100" layout-padding style="text-align: center;">
+		        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">Welcome to {{settings.data.company_name}}!</p>
+		        	</md-list-item>
+		        </md-list>
+				<md-list flex="100" ng-show="me">
+		        	<md-list-item flex="100" layout-padding style="text-align: center;">
+		        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">{{me.email}}</p>
+		        	</md-list-item>
+	                <md-list-item flex="100" layout-padding style="text-align: center;">
+		        		<p ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: lighter;">{{me.security.roles}}</p>
+		        	</md-list-item>
+		        </md-list>
+		        <md-button ng-href="/login" ng-show="!me" class="md-whiteframe-6dp lightweight-round" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px; line-height: 48px;">
+					Sign In
+				</md-button>
+				<!--  ng-href="/signup" -->
+				<md-button disabled="true" ng-show="!me" class="md-whiteframe-1dp lightweight-round" flex="90" ng-click="" ng-attr-style="background-color: {{base_hue_darker.value}}; color: {{base_hue_lightest.value}}; height: 48px; line-height: 48px;">
+					Sign Up
+				</md-button>
+				<md-button ng-click="openMyVault()" ng-show="me" class="md-whiteframe-6dp lightweight-round" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
+					My Vault
+				</md-button>
+				<md-button ng-click="auth.$signOut();" ng-show="me" class="md-whiteframe-6dp lightweight-round" flex="90" ng-click="" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}}; height: 48px;">
+					Sign Out
+				</md-button>
+			</div>
+
+
+		</md-card>
+
+	</div>
+</div>
+

@@ -1,0 +1,91 @@
+<style type="text/css">
+	md-input-container:not(.md-input-invalid).md-input-focused .md-input {border-color: {{primary_hue_text__normal.value}};}
+	md-input-container:not(.md-input-invalid).md-input-focused label {color: {{primary_hue_text__normal.value}};}
+</style>
+
+<md-content class="page" style="height: {{window_height}}px">
+	<section ng-cloak>
+
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="start center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation.html'"></div>
+
+		<div layout="row" layout-align="center center" layout-wrap ng-attr-style="background-color: {{base_hue_lighter.value}}">
+
+			<!-- Page Title -->
+			<div layout="row" layout-align="center center" layout-wrap flex="100" style="position: relative; top: 0; overflow: hidden; background-color: {{base_hue_darkest.value}}; min-height: {{window_height}}px!important;">
+				<div style="position: absolute; top: 0; left: 0; width: {{scroll_bar_aware_window_width}}px;">
+				    <img style="opacity: .1; min-width: 100%; min-height: 100%; width: auto; height: auto;" ng-src="https://storage.googleapis.com/spsd-189118.appspot.com/landscapeConstruction2-landscape.jpg">
+				</div>
+				<div style="z-index: 1;" flex="100" flex-sm="40" flex-gt-sm="25" layout="row" layout-align="start center" layout-wrap>
+
+					<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="100" layout-align="start start" ng-attr-style="z-index: 1; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
+						<div flex="100" style="height: 300px; width: 100%; margin: 0; overflow: hidden" layout="row" layout-align="center center" layout-wrap>
+							<div flex="100" style="text-align: center;">
+								<img src="{{settings.data.logo}}" style="width: 300px; height: auto;" ng-cloak="true">
+							</div>
+						</div>
+				    	<div flex="100" ng-attr-style="width: 100%; background-color: {{base_hue_lightest.value}};" layout="row" layout-align="start center" layout-wrap>
+				    		<div flex="100" ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+				    		<md-list flex="100" ng-show="!progressAnimation">
+					        	<md-list-item flex="100" layout-padding style="text-align: center;">
+					        		<p md-truncate ng-attr-style="color: {{base_hue_darkest.value}}; cursor: pointer; font-weight: bold; font-size: 28px;">Recover your password.</p>
+					        	</md-list-item>
+					        </md-list>
+				    		<form flex="100" name="recover" autocomplete="none" ng-show="!progressAnimation">
+								<md-content layout="row" layout-align="center center" layout-wrap layout-padding>
+									<br>
+									<md-tabs flex="100" md-dynamic-height md-border-bottom md-center-tabs>
+										<md-tab label="Security Question #1">
+											<md-content style="margin-top: 32px; overflow: hidden;">
+									    		<md-list-item style="padding: 0;">
+				                                    <md-input-container class="md-block lightweight-md-input">
+				                                        <label style="text-align: left;">{{security_question_1}}</label>
+				                                        <input name="question1" ng-model="user_recovery.answer[0]" required>
+				                                        <div ng-messages="recover.question1.$error" ng-show="recover.question1.$dirty">
+				                                            <div ng-message="required">Answer required!</div>
+				                                        </div>
+				                                    </md-input-container>
+				                                </md-list-item>
+											</md-content>
+										</md-tab>
+										<md-tab label="Security Question #2" ng-disabled="recover.question1.$invalid">
+											<md-content style="margin-top: 32px; overflow: hidden;">
+												<md-list-item style="padding: 0;">
+				                                    <md-input-container class="md-block lightweight-md-input">
+				                                        <label style="text-align: left;">{{security_question_2}}</label>
+				                                        <input ng-model="user_recovery.answer[1]" name="question2" required>
+				                                        <div ng-messages="recover.question2.$error" ng-show="recover.question2.$dirty">
+				                                            <div ng-message="required">Answer required!</div>
+				                                        </div>
+				                                    </md-input-container>
+				                                </md-list-item>
+											</md-content>
+										</md-tab>
+									</md-tabs>
+								</md-content>
+								<div style="width: 100%; margin-bottom: 36px;" layout="row" layout-align="center center" layout-wrap>
+									<md-button ng-disabled="recover.question1.$invalid || recover.question2.$invalid" class="md-whiteframe-6dp lightweight-round" flex="45" ng-click="recoverAccount()" ng-attr-style="background-color: {{primary_hue_normal.value}}; color: {{base_hue_lighter.value}}; height: 48px;">
+										Recover Account
+									</md-button>
+								</div>
+							</form>
+				    	</div>
+					</md-card>
+				</div>
+			</div>
+			<!-- =Page Title -->
+
+				
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+
+</md-content>

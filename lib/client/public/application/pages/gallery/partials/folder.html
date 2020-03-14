@@ -1,0 +1,147 @@
+<style>
+
+	.lightbox-image {
+		transition-duration: .5s;
+		opacity: 0;
+		box-shadow: none;
+	    transition-timing-function: cubic-bezier(.4,0,.2,1);
+	    transition-property: opacity, box-shadow;
+	    max-height: {{window_height - 60}}px;
+	    /*transform: scale(0.8);*/
+	}
+	.lightbox-image.active {
+		opacity: 1;
+		box-shadow: 0 5px 5px -3px rgba(0, 0, 0, .2), 0 8px 10px 1px rgba(0, 0, 0, .14), 0 3px 14px 2px rgba(0, 0, 0, .12)!important
+	}
+	.lightbox_curtain.active-lightbox {opacity: 1; display: block;}
+	.slide-controller {
+		transition-duration: .5s;
+	    transition-timing-function: cubic-bezier(.4,0,.2,1);
+	    transition-property: border-radius, transform;
+	}
+	.grid-image {overflow: hidden!important;}
+	.galleries md-grid-tile-footer {transition: .2s all ease-in;}
+	.galleries md-grid-tile-footer.active {background: {{primary_hue_normal_darkest_opacity.value}}; height: 100%;}
+	.slideshow-gallery-container {min-height: {{window_height - 60}}px;}
+	@media screen and (max-width: 839px) {
+	    .slideshow-gallery-container {min-height: 250px;}
+	}
+</style>
+
+<md-content class="page galleries" style="height: {{window_height}}px">
+	<section style="background: {{base_hue_lightest.value}}">
+
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation.html'"></div>
+
+		<!-- Container Title -->
+		<div layout-padding flex="100" class="basic container">
+
+			<div layout="column" layout-align="center center" flex>
+
+				<div class="center--text">
+					<h2 style="color: {{base_hue_darkest.value}}; font-weight: lighter; font-size: 48px;">{{folder.name}}&nbsp;&nbsp;{{slide_count + 1}}/{{slideshow_length}}</h2>
+				</div>
+
+			</div>
+		</div>
+		<!-- Container Title -->
+
+		<div class="slideshow-gallery-container" layout="row" layout-align="center start" style="position: relative; width: 100%; background-color: {{base_hue_lightest.value}};">
+			<img flex ng-repeat="image in folder.images" class="lightbox-image" ng-src="{{image.source || image.avatar}}" ng-class="{'active': $index == slide_count}" style="position: absolute; width: auto!important; height: auto!important; max-height: {{window_height - 92}}px!important; max-width: calc(100% - 32px)!important;">
+		</div>
+
+		<br>
+		<br>
+		<br>
+
+		<md-grid-list md-cols="2" md-cols-sm="2" md-cols-md="4" md-cols-lg="12" md-cols-gt-lg="12" md-row-height="150px" md-row-height-lg="300px" md-row-height-gt-lg="400px" md-gutter="8px" md-gutter-gt-sm="16px" style="margin: 24px;">
+
+		  	<md-grid-tile ng-repeat="item in folder.images" layout="row" layout-wrap layout-align="center center" md-colspan="1" md-colspan-sm="1" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-rowspan="1" md-rowspan-gt-sm="1" class="grid-image md-whiteframe-6dp" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false" style="overflow: hidden;">
+		  		<div layout-fill layout-wrap layout="row" layout-align="center center">
+		  			<span flex="50" class="featured-gallery-text" style="text-align: center; color: {{base_hue_lightest.value}}; font-size: 18px;">{{item.name}}</span>
+		  			<img style="position: absolute; min-height: 100%; max-width: 300%; height: auto; width: auto;" ng-src="{{item.source || item.avatar}}" alt="{{item.name}}">
+		  			<!-- <md-grid-tile-footer md-truncate ng-class="{'active': hovered}"><h3 style="white-space: pre-wrap;">{{item.name}}<md-icon ng-attr-style="color: {{base_hue_lightest.value}}; cursor: pointer;" aria-label="Go to gallery {{item.name}}" md-font-library="material-icons">chevron_right</md-icon></h3></md-grid-tile-footer> -->
+		  		</div>
+		  	</md-grid-tile>
+
+		</md-grid-list>
+		<br>
+		<br>
+		<div class="sidebar form" layout="row" layout-wrap layout-padding flex="100" flex-sm="100" flex-gt-sm="100" layout-align="end start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; margin-bottom: 40px;">
+			<md-card class="md-whiteframe-8dp" ng-attr-style="background: {{base_hue_lightest.value}}; position: relative; margin: 0;" flex="100" flex-sm="100" flex-gt-sm="25">
+				<div style="text-align: center">
+					<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+				</div>
+                <form name="gallery_form" ng-show="!progressAnimation">
+                	<div style="text-align: left; padding-left: 16px; border-left: 4px solid {{primary_hue_normal.value}}; box-sizing: border-box;">
+                		<h1 style="color: {{primary_hue_normal.value}};">Contact {{settings.data.company_name}} Today!</h1>
+                	</div>
+                    <md-card-content>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input">
+                                <label>Full Name</label>
+                                <input name="name" ng-model="gallery_page_contact_form.name" minlength="4" required>
+                                <div ng-messages="gallery_form.name.$error" ng-show="gallery_form.name.$dirty">
+                                    <div ng-message="required">Name required!</div>
+                                    <div ng-message="minlength">Name too short!</div>
+                                </div>
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input">
+                                <label>Email</label>
+                                <input type="email" name="email" ng-model="gallery_page_contact_form.email" required>
+                                <div ng-messages="gallery_form.email.$error" ng-show="gallery_form.email.$dirty">
+                                    <div ng-message="required">Email required!</div>
+                                    <div ng-message="email">Enter a valid email!</div>
+                                </div>
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                            <md-input-container class="md-block lightweight-md-input">
+                                <label>Phone</label>
+                                <input ng-model="gallery_page_contact_form.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
+                                <div ng-messages="gallery_form.phone.$error" ng-show="gallery_form.phone.$dirty">
+                                    <div ng-message="required">Phone number required!</div>
+                                    <div ng-message="minlength">Phone number too short!</div>
+                                    <div ng-message="pattern">Not a valid phone number!</div>
+                                </div>
+                            </md-input-container>
+                        </md-list-item>
+                        <md-list-item>
+                        	<md-input-container class="md-block lightweight-md-input" flex>
+                                <label>Message</label>
+                                <textarea name="message" md-detect-hidden="true" ng-model="gallery_page_contact_form.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+                                <div ng-messages="gallery_form.message.$error" ng-show="gallery_form.message.$dirty">
+                                    <div ng-message="required">Message required!</div>
+                                    <div ng-message="minlength">Message too short!</div>
+                                    <div ng-message="md-maxlength">Message too long!</div>
+                                </div>
+                            </md-input-container>
+                        </md-list-item>
+                        <div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="gallery_page_contact_form.recaptcha"></div>
+                    </md-card-content>
+                    <md-button ng-click="sendLead(gallery_page_contact_form, folder.name); clearForm(Form)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+				        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
+				    </md-button>
+                </form>
+            </md-card>
+		</div>
+		<br>
+		<br>
+
+	</section>
+	
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+
+</md-content>
+
+

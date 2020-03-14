@@ -1,0 +1,124 @@
+/* CSS Document */
+
+/* ========== Lighweight Hero Slideshow ========== */
+
+/* Structure */
+
+.lightweight-hero--slideshow {
+	width: 100%;
+	margin: 0!important;
+	padding: 0!important;
+	position: relative;
+	cursor: default;
+	background-color: rgba(0, 0, 0, .8);
+	overflow: hidden;
+}
+.slide--display {
+	position: absolute;
+	top: 0;
+	height: 100%!important;
+	width: 100%;
+	margin: 0!important;
+	box-sizing: border-box;
+	padding: 0!important;
+	left: 0;
+	top: 0;
+}
+/* Structure */
+
+/* Media */
+
+.slideshow_slide_image {
+	opacity: .75;
+	will-change: opacity;
+}
+.slideshow_slide_image.ng-hide-add,
+.slideshow_slide_image.ng-hide-remove {
+	transition: all linear 0.5s;
+}
+.slideshow_slide_image.ng-hide {
+	opacity: 0;
+	display: inline-block!important;
+}
+/* Media */
+
+/* Text */
+
+.slide-text-one {
+	font-size: 84px!important;
+	line-height: 84px!important;
+	margin: 8px;
+	font-weight: bold;
+	opacity: 0;
+	transform: translate(-96px, 0);
+}
+.slide-text-one.active {
+	-webkit-animation: slide-in-out 6s ease-in-out forwards;
+	animation: slide-in-out 6s ease-in-out forwards;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+}
+.slide-text-two {
+	font-size: 84px!important;
+	line-height: 84px!important;
+	margin: 8px;
+	opacity: 0;
+	transform: translate(-96px, 0);
+}
+.slide-text-two.active {
+	-webkit-animation: slide-in-out 6s ease-in-out forwards;
+	animation: slide-in-out 6s ease-in-out forwards;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+}
+/* Text */
+
+/* Action */
+
+.slide-button-one {
+	-webkit-animation: slide-in-out 6s ease-in-out forwards;
+	animation: slide-in-out 6s ease-in-out forwards;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+	opacity: 0;
+	transform: translate(-96px, 0);
+}
+.slide-button-one.active {
+	-webkit-animation: slide-in-out 6s ease-in-out forwards;
+	animation: slide-in-out 6s ease-in-out forwards;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+}
+/* Action */
+
+/* Media Query */
+
+@media screen and (max-width: 840px) {
+	.slide-text-one,
+	.slide-text-two {
+		font-size: 36px!important;
+		line-height: 36px!important
+	}
+}
+@media screen and (orientation: landscape) {
+	.lightweight-hero--slideshow .slide--display img {
+		width: 100%;
+		height: auto;
+	}
+}
+@media screen and (orientation: landscape) and (max-width: 1400px) and (min-height: 750px) {
+	.lightweight-hero--slideshow .slide--display img {
+		width: auto;
+		height: 100%;
+	}
+}
+@media screen and (orientation: portrait) {
+	.lightweight-hero--slideshow .slide--display img {
+		width: auto;
+		height: 100%;
+		margin-left: -12.5%;
+	}
+}
+/* Media Query */
+
+/* ========== Lighweight Hero Slideshow ========== */

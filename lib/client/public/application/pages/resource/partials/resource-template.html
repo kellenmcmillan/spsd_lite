@@ -1,0 +1,40 @@
+<style>
+	.header-ms-explorer {position: fixed; width: 100%;}
+</style>
+<md-content class="page project" style="height: {{window_height}}px">
+	<section style="background: {{base_hue_lighter.value}}">
+
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation.html'"></div>
+
+	    <div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
+			
+			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="100" layout-align="start start" ng-attr-style="z-index: 1; min-height: calc({{window_height}} - 100px); background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
+				
+				<div layout="row" layout-align="center center" layout-wrap>
+					<div flex="100" layout="row" layout-align="center center" style="background-color: #F5F5F5; z-index: 2;">
+						<div layout-wrap layout="row" layout-align="start center" flex>
+							<div flex style="margin-bottom: -5px; position: relative;" layout-align="end center">
+								<iframe ng-src="{{trusted_resource_iframe}}" width="{{window_width}}" height="{{window_height}}" frameborder="0" ng-attr-style="border:0; width: {{window_width}}px; height: {{window_height}}px" allowfullscreen></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</md-card>
+
+		</div>
+
+
+	</section>
+	
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+
+</md-content>

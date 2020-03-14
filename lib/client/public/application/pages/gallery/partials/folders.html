@@ -1,0 +1,65 @@
+<style>
+.grid-image {transition: all .4s ease-in-out; overflow: hidden; background: {{primary_hue_normal.value}};}
+/*.grid-image:hover {}*/
+.grid-image:hover img {opacity: .1; transform: scale(1.2);}
+.grid-image .featured-gallery-text {transition: all .4s ease-in-out; transform: translate(0, -48px); opacity: 0;}
+.grid-image .featured-gallery-text:after {
+	content:""; display: block; width: 25%; left: 37.5%; bottom: -16px; height: 2px; position: absolute; background-color: {{base_hue_lightest.value}};
+}
+.grid-image:hover .featured-gallery-text {transform: translate(0, 0); opacity: 1;}
+.grid-image img {transition: all .4s ease-in-out;}
+.galleries md-grid-tile-footer {transition: .2s all ease-in;}
+.galleries md-grid-tile-footer.active {height: 100%;}
+</style>
+<md-content class="page galleries" style="height: {{window_height}}px">
+	<section style="background: {{base_hue_lighter.value}}">
+
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation.html'"></div>
+
+		<div flex="100" layout="row" layout-wrap layout-align="center center" ng-attr-style="z-index: 2; background-color: {{base_hue_lightest.value}}; position: relative;" ng-class="{'section-3-ms-explorer': browser == 'ie'}">
+			<!-- Container Title -->
+			<div layout-padding flex="100" class="basic container">
+
+				<div layout="column" layout-align="center center" flex>
+
+					<div class="center--text">
+						<h2 style="color: {{base_hue_darkest.value}}; font-weight: lighter; font-size: 48px;">All Galleries</h2>
+					</div>
+
+				</div>
+			</div>
+			<!-- Container Title -->
+		</div>
+
+		<md-grid-list md-cols="2" md-cols-sm="2" md-cols-md="4" md-cols-lg="12" md-cols-gt-lg="12" md-row-height="150px" md-row-height-lg="300px" md-row-height-gt-lg="400px" md-gutter="8px" md-gutter-gt-sm="0">
+
+		  	<md-grid-tile ng-repeat="item in all_galleries" layout="row" layout-wrap layout-align="center center" md-colspan="1" md-colspan-sm="1" md-colspan-md="4" md-colspan-lg="4" md-colspan-gt-lg="4" md-rowspan="1" md-rowspan-gt-sm="{{item.rowspan}}" class="grid-image md-whiteframe-6dp" ng-init="hovered = false" ng-mouseenter="hovered = true" ng-mouseleave="hovered = false">
+		  		<a href="/gallery/{{item.url}}">
+			  		<div layout-fill layout-wrap layout="row" layout-align="center center">
+			  			<span flex="50" class="featured-gallery-text" style="text-align: center; color: {{base_hue_lightest.value}}; font-size: 18px;">{{item.name}}</span>
+			  			<img style="position: absolute; min-height: 100%; max-width: 300%; height: auto; width: auto;" ng-src="{{item.cover}}" alt="{{item.name}}">
+			  		</div>
+		  		</a>
+		  	</md-grid-tile>
+
+		</md-grid-list>
+		<br>
+		<br>
+
+	</section>
+	
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+
+</md-content>
+
+
+
+

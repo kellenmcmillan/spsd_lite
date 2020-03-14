@@ -1,0 +1,297 @@
+
+<style>
+	.header-ms-explorer {position: fixed; width: 100%;}
+</style>
+<md-content class="page projects" style="height: {{window_height}}px">
+	<section style="background: {{base_hue_lighter.value}}">
+		
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation.html'"></div>
+
+		<div class="md-whiteframe-4dp projects-dropdown" layout="row" layout-wrap layout-align="start center" flex="100" ng-attr-style="background-color: {{primary_hue_normal.value}}; padding: 0; margin: 0; width: 100%; min-height: 110px;">
+			<div layout-margin layout-padding flex="100" flex-sm="30" flex-gt-sm="30">
+				<h1 ng-attr-style="color: {{base_hue_lightest.value}};">{{select_project_type}}</h1>
+			</div>
+			<div flex></div>
+			<md-list-item layout-margin layout-padding flex="100" flex-sm="60" flex-gt-sm="50">
+                <md-input-container class="md-block lightweight-md-dropdown">
+                    <label>Select a project category</label>
+                    <md-select ng-model="select_project_type">
+                    	<md-option ng-selected="true" value="Select a project type">
+                            Select a project type
+                        </md-option>
+                        <md-option ng-if="projects_commercial.length" value="Commercial">
+                            Commercial
+                        </md-option>
+                        <md-option ng-if="projects_education.length" value="Education">
+                            Education
+                        </md-option>
+                        <md-option ng-if="projects_energy.length" value="Energy">
+                            Energy
+                        </md-option>
+                        <md-option ng-if="projects_entertainment.length" value="Entertainment">
+                            Entertainment
+                        </md-option>
+                        <md-option ng-if="projects_government.length" value="Government">
+                            Government
+                        </md-option>
+                        <md-option ng-if="projects_healthcare.length" value="Healthcare">
+                            Healthcare
+                        </md-option>
+                        <md-option ng-if="projects_multi_family_residential.length" value="Multi-Family Residential">
+                            Multi-Family Residential
+                        </md-option>
+                        <md-option ng-if="projects_single_family_residential.length" value="Single Family Residential">
+                            Single Family Residential
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </md-list-item>
+		</div>
+
+		<div class="listing" flex="100" layout="row" layout-align="center center" layout-wrap style="position: relative;" ng-show="select_project_type == 'Select a project type'">
+			<span flex style="text-align: center;"><h1 ng-attr-style="color: {{base_hue_darkest.value}};">Select A Project Category Above To View Projects</h1></span>
+		</div>
+
+		<!-- slider #1 -->
+		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Commercial'" ng-if="projects_commercial.length">
+
+			<div layout-padding class="projects-listing" ng-repeat="item in projects_commercial" flex="100" flex-sm="100" flex-gt-sm="50">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
+						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
+					</div>
+					<a ng-href="{{item.settings.url}}" style="position: absolute; bottom: 8px; right: 8px;">
+					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit Project" style="background-color: {{primary_hue_normal.value}}; z-index: 3">
+	        			<md-icon style="color: {{base_hue_lighter.value}};">subdirectory_arrow_right</md-icon>
+    				</md-button>
+					</a>
+					<div flex="100" flex-sm="50" flex-gt-sm="50" style="background-color: {{base_hue_lightest.value}}; opacity: .9; z-index: 2; margin: 0; padding: 0; min-width: 50%; min-height: 250px">
+						<md-card-header>
+							<md-card-header-text>
+								<h1 class="type heading" style="font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
+							</md-card-header-text>
+						</md-card-header>
+						<md-card-content>
+							<p md-truncate style="color: {{base_hue_darker.value}}; max-height: 100px;">{{item.data.description}};</p>
+						</md-card-content>
+					</div>
+				</md-card>
+			</div>
+
+		</div>
+		<!-- slider #1 -->
+
+		<!-- slider #2 -->
+		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Education'" ng-if="projects_education.length">
+			
+			<div layout-padding class="projects-listing" ng-repeat="item in projects_education" flex="100" flex-sm="100" flex-gt-sm="50">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
+						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
+					</div>
+					<a ng-href="{{item.settings.url}}" style="position: absolute; bottom: 8px; right: 8px;">
+					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit Project" style="background-color: {{primary_hue_normal.value}}; z-index: 3">
+	        			<md-icon style="color: {{base_hue_lighter.value}};">subdirectory_arrow_right</md-icon>
+    				</md-button>
+					</a>
+					<div flex="100" flex-sm="50" flex-gt-sm="50" style="background-color: {{base_hue_lightest.value}}; opacity: .9; z-index: 2; margin: 0; padding: 0; min-width: 50%; min-height: 250px">
+						<md-card-header>
+							<md-card-header-text>
+								<h1 class="type heading" style="font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
+							</md-card-header-text>
+						</md-card-header>
+						<md-card-content>
+							<p md-truncate style="color: {{base_hue_darker.value}};">{{item.data.description}}; max-height: 200px;</p>
+						</md-card-content>
+					</div>
+				</md-card>
+			</div>
+
+		</div>
+		<!-- slider #2 -->
+
+		<!-- slider #3 -->
+		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Energy'" ng-if="projects_energy.length">
+
+			<div layout-padding class="projects-listing" ng-repeat="item in projects_energy" flex="100" flex-sm="100" flex-gt-sm="50">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
+						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
+					</div>
+					<a ng-href="{{item.settings.url}}" style="position: absolute; bottom: 8px; right: 8px;">
+					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit Project" style="background-color: {{primary_hue_normal.value}}; z-index: 3">
+	        			<md-icon style="color: {{base_hue_lighter.value}};">subdirectory_arrow_right</md-icon>
+    				</md-button>
+					</a>
+					<div flex="100" flex-sm="50" flex-gt-sm="50" style="background-color: {{base_hue_lightest.value}}; opacity: .9; z-index: 2; margin: 0; padding: 0; min-width: 50%; min-height: 250px">
+						<md-card-header>
+							<md-card-header-text>
+								<h1 class="type heading" style="font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
+							</md-card-header-text>
+						</md-card-header>
+						<md-card-content>
+							<p md-truncate style="color: {{base_hue_darker.value}};">{{item.data.description}}; max-height: 200px;</p>
+						</md-card-content>
+					</div>
+				</md-card>
+			</div>
+
+		</div>
+		<!-- slider #3 -->
+
+		<!-- slider #4 -->
+		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Entertainment'" ng-if="projects_entertainment.length">
+
+			<div layout-padding class="projects-listing" ng-repeat="item in projects_entertainment" flex="100" flex-sm="100" flex-gt-sm="50">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
+						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
+					</div>
+					<a ng-href="{{item.settings.url}}" style="position: absolute; bottom: 8px; right: 8px;">
+					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit Project" style="background-color: {{primary_hue_normal.value}}; z-index: 3">
+	        			<md-icon style="color: {{base_hue_lighter.value}};">subdirectory_arrow_right</md-icon>
+    				</md-button>
+					</a>
+					<div flex="100" flex-sm="50" flex-gt-sm="50" style="background-color: {{base_hue_lightest.value}}; opacity: .9; z-index: 2; margin: 0; padding: 0; min-width: 50%; min-height: 250px">
+						<md-card-header>
+							<md-card-header-text>
+								<h1 class="type heading" style="font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
+							</md-card-header-text>
+						</md-card-header>
+						<md-card-content>
+							<p md-truncate style="color: {{base_hue_darker.value}};">{{item.data.description}}; max-height: 200px;</p>
+						</md-card-content>
+					</div>
+				</md-card>
+			</div>
+
+		</div>
+		<!-- slider #4 -->
+
+		<!-- slider #5 -->
+		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Government'" ng-if="projects_government.length">
+
+			<div layout-padding class="projects-listing" ng-repeat="item in projects_government" flex="100" flex-sm="100" flex-gt-sm="50">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
+						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
+					</div>
+					<a ng-href="{{item.settings.url}}" style="position: absolute; bottom: 8px; right: 8px;">
+					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit Project" style="background-color: {{primary_hue_normal.value}}; z-index: 3">
+	        			<md-icon style="color: {{base_hue_lighter.value}};">subdirectory_arrow_right</md-icon>
+    				</md-button>
+					</a>
+					<div flex="100" flex-sm="50" flex-gt-sm="50" style="background-color: {{base_hue_lightest.value}}; opacity: .9; z-index: 2; margin: 0; padding: 0; min-width: 50%; min-height: 250px">
+						<md-card-header>
+							<md-card-header-text>
+								<h1 class="type heading" style="font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
+							</md-card-header-text>
+						</md-card-header>
+						<md-card-content>
+							<p md-truncate style="color: {{base_hue_darker.value}};">{{item.data.description}}; max-height: 200px;</p>
+						</md-card-content>
+					</div>
+				</md-card>
+			</div>
+
+		</div>
+		<!-- slider #5 -->
+
+		<!-- slider #6 -->
+		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Healthcare'" ng-if="projects_healthcare.length">
+
+			<div layout-padding class="projects-listing" ng-repeat="item in projects_healthcare" flex="100" flex-sm="100" flex-gt-sm="50">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
+						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
+					</div>
+					<a ng-href="{{item.settings.url}}" style="position: absolute; bottom: 8px; right: 8px;">
+					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit Project" style="background-color: {{primary_hue_normal.value}}; z-index: 3">
+	        			<md-icon style="color: {{base_hue_lighter.value}};">subdirectory_arrow_right</md-icon>
+    				</md-button>
+					</a>
+					<div flex="100" flex-sm="50" flex-gt-sm="50" style="background-color: {{base_hue_lightest.value}}; opacity: .9; z-index: 2; margin: 0; padding: 0; min-width: 50%; min-height: 250px">
+						<md-card-header>
+							<md-card-header-text>
+								<h1 class="type heading" style="font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
+							</md-card-header-text>
+						</md-card-header>
+						<md-card-content>
+							<p md-truncate style="color: {{base_hue_darker.value}};">{{item.data.description}}; max-height: 200px;</p>
+						</md-card-content>
+					</div>
+				</md-card>
+			</div>
+
+		</div>
+		<!-- slider #6 -->
+
+		<!-- slider #6 -->
+		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Multi-Family Residential'" ng-if="projects_multi_family_residential.length">
+
+			<div layout-padding class="projects-listing" ng-repeat="item in projects_multi_family_residential" flex="100" flex-sm="100" flex-gt-sm="50">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
+						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
+					</div>
+					<a ng-href="{{item.settings.url}}" style="position: absolute; bottom: 8px; right: 8px;">
+					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit Project" style="background-color: {{primary_hue_normal.value}}; z-index: 3">
+	        			<md-icon style="color: {{base_hue_lighter.value}};">subdirectory_arrow_right</md-icon>
+    				</md-button>
+					</a>
+					<div flex="100" flex-sm="50" flex-gt-sm="50" style="background-color: {{base_hue_lightest.value}}; opacity: .9; z-index: 2; margin: 0; padding: 0; min-width: 50%; min-height: 250px">
+						<md-card-header>
+							<md-card-header-text>
+								<h1 class="type heading" style="font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
+							</md-card-header-text>
+						</md-card-header>
+						<md-card-content>
+							<p md-truncate style="color: {{base_hue_darker.value}};">{{item.data.description}}; max-height: 200px;</p>
+						</md-card-content>
+					</div>
+				</md-card>
+			</div>
+
+		</div>
+		<!-- slider #6 -->
+
+		<!-- slider #6 -->
+		<div class="listing" flex="100" layout="row" layout-align="start start" layout-wrap style="position: relative;" ng-show="select_project_type == 'Single Family Residential'" ng-if="projects_single_family_residential.length">
+
+			<div layout-padding class="projects-listing" ng-repeat="item in projects_single_family_residential" flex="100" flex-sm="100" flex-gt-sm="50">
+				<md-card class="md-whiteframe-6dp" layout="column" layout-wrap layout-sm="row" layout-gt-sm="row" style="background: {{base_hue_lightest.value}}; height: 100%; padding: 0; position: relative;">
+					<div class="post-image" flex="100" flex-sm="50" flex-gt-sm="50" style="margin: 0; padding: 0; min-width: 50%;">
+						<img ng-cloak src="{{item.data.page.foreground.images.source || 'https://storage.googleapis.com/mma-texas.appspot.com/media/images/missing-image-wide.png'}}" class="md-card-image">
+					</div>
+					<a ng-href="{{item.settings.url}}" style="position: absolute; bottom: 8px; right: 8px;">
+					<md-button class="md-fab custom-deep-button md-whiteframe-6dp" aria-label="Visit Project" style="background-color: {{primary_hue_normal.value}}; z-index: 3">
+	        			<md-icon style="color: {{base_hue_lighter.value}};">subdirectory_arrow_right</md-icon>
+    				</md-button>
+					</a>
+					<div flex="100" flex-sm="50" flex-gt-sm="50" style="background-color: {{base_hue_lightest.value}}; opacity: .9; z-index: 2; margin: 0; padding: 0; min-width: 50%; min-height: 250px">
+						<md-card-header>
+							<md-card-header-text>
+								<h1 class="type heading" style="font-weight: bold; color: {{primary_hue_normal.value}};">{{item.data.title}}</h1>
+							</md-card-header-text>
+						</md-card-header>
+						<md-card-content>
+							<p md-truncate style="color: {{base_hue_darker.value}};">{{item.data.description}}; max-height: 200px;</p>
+						</md-card-content>
+					</div>
+				</md-card>
+			</div>
+
+		</div>
+		<!-- slider #6 -->
+
+	</section>
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+</md-content>

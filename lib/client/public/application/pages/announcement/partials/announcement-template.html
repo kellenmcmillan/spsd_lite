@@ -1,0 +1,52 @@
+<style>
+	.header-ms-explorer {position: fixed; width: 100%;}
+</style>
+<md-content class="page" style="height: {{window_height}}px">
+	<section class="{{base_hue_lightest.name}}">
+
+		<!-- header -->
+		<md-subheader class="header" layout-align="center center" layout="row" flex style="z-index: 21!important; box-shadow: none; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation.html'"></div>
+
+		<md-button ng-if="me.security.roles == 'Lightweight Internet Coordinator' || me.security.roles == 'Lightweight Support'" ng-click="edit(announcementPage.settings.configs, announcementPage)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
+	        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+	    </md-button>
+
+		<div class="interior-page" layout="row" layout-wrap style="width: 100%;">
+
+		    	<!-- tab Panel -->
+	    		<!-- panel title -->
+		    	<div flex="100" style="padding-top: 16px;">
+			        <h1 class="type heading base-hdst--text" style="margin-top: 8px;">{{announcementPage.data.title}}</h1>
+			    </div>
+			    <!-- panel title -->
+
+		    	<div ng-repeat="content in announcementPage.data.page.contents" flex="100">
+		    		<h1 class="h1 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px;"></h1>
+					<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+					<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+					<div style="width: 100%;">
+						<!-- panel images -->
+							<md-card ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+								<img ng-src="{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" class="md-card-image">
+							</md-card>
+						<!-- panel images -->
+					</div>
+					<a ng-if="content.type == 'button'" href="{{content.data.url}}">
+	                    <md-button class="md-raised" style="margin-top: 8px; margin-bottom: 16px; background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">{{content.data.button}}</md-button>
+	                </a>
+		        </div>
+		    	<!-- tab Panel -->
+
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+	
+</md-content>

@@ -1,0 +1,116 @@
+<style>
+	.header-ms-explorer {position: fixed; width: 100%;}
+</style>
+<md-content class="page project" style="height: {{window_height}}px">
+	<section style="background: {{base_hue_lighter.value}}">
+
+		<!-- header -->
+		<md-subheader class="header md-whiteframe-6dp" layout-align="center center" layout="row" layout flex style="z-index: 21!important; border-bottom: 1px solid #e0e0e0; height: 60px;" ng-class="{'header-ms-explorer': browser == 'ie'}">
+			<div ng-include src="'application/partials/header.html'"></div>
+		</md-subheader>
+		<!-- header -->
+
+		<div ng-include src="'application/partials/navigation.html'"></div>
+
+		<md-button ng-if="me.security.roles == 'Lightweight Internet Coordinator' || me.security.roles == 'Lightweight Support'" ng-click="edit(projectPage.settings.configs, projectPage)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: fixed; bottom: 128px; right: 24px;">
+	        <md-icon style="color: {{base_hue_lighter.value}};">build</md-icon>
+	    </md-button>
+
+	    <div class="interior-page" flex="100" layout="row" layout-align="center start" layout-wrap style="width: 100%;">
+			
+			<md-card class="md-whiteframe-8dp" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="50" layout-align="start start" ng-attr-style="z-index: 1; min-height: 800px; background-color: {{base_hue_lightest.value}}; padding: 0; position: relative;">
+				<div flex="100" style="height: 400px; width: 100%; margin: 0; overflow: hidden; position: relative;">
+					<img style="min-height: 100%; min-width: 100%; height: auto; width: auto; position: absolute; top: -75%; left: -16.5%;" ng-src="{{projectPage.data.page.foreground.images.source}}">
+				</div>
+				<md-button class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; top: 364px; right: 8px;">
+			        <md-icon style="color: {{base_hue_lighter.value}};">share</md-icon>
+			    </md-button>
+		    	<div flex="100" ng-attr-style="margin-bottom: 100px; width: 100%; background-color: {{base_hue_lightest.value}}; min-height: 400px;" layout-margin layout-padding>
+		    		<h1 class="type heading" style="margin-bottom: 24px;">{{projectPage.data.title}}</h1>
+			    	<div ng-repeat="content in projectPage.data.page.contents">
+			    		<h1 class="type heading-2 base-hdst--text" ng-if="content.type == 'title'" ng-bind-html="content.data" style="margin-top: 8px; margin-bottom: 8px;"></h1>
+						<p class="base-hdst--text" ng-if="content.type == 'text'" ng-bind-html="content.data"></p>
+						<p class="base-hdst--text" ng-repeat="listItem in content.data track by $index" ng-if="content.type == 'list'">&bull;&nbsp;&nbsp;{{listItem.item}}</p>
+						<div style="width: 100%; padding: 0">
+							<!-- panel images -->
+								<md-card ng-cloak class="lightweight-card-image md-whiteframe-2dp" ng-if="content.type == 'image'" ng-attr-style="position: relative;">
+									<img ng-src="{{content.source ? content.source : 'https://storage.googleapis.com/spsd-189118.appspot.com/missing-image.png'}}" class="md-card-image">
+								</md-card>
+							<!-- panel images -->
+						</div>
+						<a ng-if="content.type == 'button'" href="{{content.data.url}}">
+	                        <md-button class="md-raised" style="margin-top: 8px; margin-bottom: 16px; background-color: {{primary_hue_normal.value}}; color: {{base_hue_lightest.value}};">{{content.data.button}}</md-button>
+	                    </a>
+			        </div>
+		    	</div>
+
+			</md-card>
+
+			<div class="md-whiteframe-8dp sidebar form" layout="row" layout-wrap flex="90" flex-sm="90" flex-gt-sm="25" layout-align="start start" ng-attr-style="z-index: 1; min-height: 200px; background-color: {{base_hue_lightest.value}}; margin-top: 8px; padding: 0; margin-bottom: 40px;">
+				<md-card ng-attr-style="background: {{base_hue_lightest.value}}; width: 100%; position: relative; margin: 0;">
+					<div style="text-align: center">
+						<div ng-include ng-show="progressAnimation" src="'application/partials/loading-spinner.html'"></div>
+					</div>
+	                <form name="project" ng-show="!progressAnimation">
+	                	<div style="text-align: left; padding-left: 16px; border-left: 4px solid {{primary_hue_normal.value}}; box-sizing: border-box;">
+	                		<h1 style="color: {{primary_hue_normal.value}};">Contact {{settings.data.company_name}} Today!</h1>
+	                	</div>
+	                    <md-card-content>
+	                        <md-list-item>
+	                            <md-input-container class="md-block lightweight-md-input">
+	                                <label>Full Name</label>
+	                                <input name="name" ng-model="project_page_contact_form.name" minlength="4" required>
+	                                <div ng-messages="projectForm.name.$error" ng-show="projectForm.name.$dirty">
+	                                    <div ng-message="required">Name required!</div>
+	                                    <div ng-message="minlength">Name too short!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <md-list-item>
+	                            <md-input-container class="md-block lightweight-md-input">
+	                                <label>Email</label>
+	                                <input type="email" name="email" ng-model="project_page_contact_form.email" required>
+	                                <div ng-messages="projectForm.email.$error" ng-show="projectForm.email.$dirty">
+	                                    <div ng-message="required">Email required!</div>
+	                                    <div ng-message="email">Enter a valid email!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <md-list-item>
+                                <md-input-container class="md-block lightweight-md-input">
+                                    <label>Phone</label>
+                                    <input ng-model="project_page_contact_form.phone" ng-pattern="/^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/" name="phone" minlength="10" required>
+                                    <div ng-messages="projectForm.phone.$error" ng-show="projectForm.phone.$dirty">
+                                        <div ng-message="required">Phone number required!</div>
+                                        <div ng-message="minlength">Phone number too short!</div>
+                                        <div ng-message="pattern">Not a valid phone number!</div>
+                                    </div>
+                                </md-input-container>
+                            </md-list-item>
+	                        <md-list-item>
+	                        	<md-input-container class="md-block lightweight-md-input" flex>
+	                                <label>Message</label>
+	                                <textarea name="message" md-detect-hidden="true" ng-model="project_page_contact_form.message" rows="3" minlength="10" md-maxlength="250" required></textarea>
+	                                <div ng-messages="projectForm.message.$error" ng-show="projectForm.message.$dirty">
+	                                    <div ng-message="required">Message required!</div>
+	                                    <div ng-message="minlength">Message too short!</div>
+	                                    <div ng-message="md-maxlength">Message too long!</div>
+	                                </div>
+	                            </md-input-container>
+	                        </md-list-item>
+	                        <div vc-recaptcha key="'6LcI7HQUAAAAAJNcej9U0cgepLlhFjwBPLO3fZpL'" ng-model="project_page_contact_form.recaptcha"></div>
+	                    </md-card-content>
+	                    <md-button ng-click="sendLead(project_page_contact_form, projectPage.data.title); clearForm(projectForm)" class="md-fab custom-deep-button" aria-label="Edit Info Page" style="background-color: {{primary_hue_normal.value}}; position: absolute; bottom: -36px; right: 8px;">
+					        <md-icon style="color: {{base_hue_lighter.value}};">send</md-icon>
+					    </md-button>
+	                </form>
+	            </md-card>
+			</div>
+
+		</div>
+
+	</section>
+	<!-- Footer -->
+	<div ng-include src="'application/partials/footer.html'"></div>
+	<!-- Footer -->
+</md-content>

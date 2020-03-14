@@ -1,0 +1,17 @@
+.footer-content-top {
+	width: 100%;
+}
+.footer-content-bottom {
+	width: 100%;
+}
+.footer-container {
+	width: 100%;
+}
+.footer.logo {
+	max-height: 120px;
+}
+@media screen and (max-width: 840px) {
+	.footer.logo {
+		max-height: 85px;
+	}
+}
