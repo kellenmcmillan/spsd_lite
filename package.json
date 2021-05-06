@@ -60,7 +60,7 @@
     "superagent": "3.5.x",
     "throng": "4.0.x",
     "time": "0.12.x",
-    "underscore": "^1.6.0",
+    "underscore": "^1.12.1",
     "uuid": "^3.0.1"
   },
   "devDependencies": {},
