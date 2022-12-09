@@ -27,7 +27,7 @@
     "cron": "1.2.x",
     "dotenv": "2.0.0",
     "emailjs": "1.0.x",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-session": "^1.15.2",
     "express-sslify": "1.2.x",
     "express-validator": "3.2.x",
